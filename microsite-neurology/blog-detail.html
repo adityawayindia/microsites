@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brain Health Article | Neurology Microsite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Dr. Sarah Smith">
+        <span class="avatar" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
+            alt="Dr. Sarah Smith"
+          />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Dr. Sarah Smith</span>
+          <span class="brand-role">Neurologist</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact-us">Contact</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <a href="#" class="cta-btn">
+        <span class="cta-text-desktop">Book Appointment</span>
+        <span class="cta-text-mobile">Book Now</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-detail-section">
+      <div class="container">
+        <article class="blog-detail-article">
+          <a href="blog.html" class="blog-detail-back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Blog
+          </a>
+
+          <p class="blog-detail-meta">Neurology Care | March 2026</p>
+          <h1 class="blog-detail-title">How To Reduce Migraine Triggers During Busy Work Weeks</h1>
+
+          <div class="blog-detail-author-row">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
+              alt="Dr. Sarah Smith"
+              class="blog-detail-author-image"
+            />
+            <div class="blog-detail-author-info">
+              <p class="blog-detail-author-name">Dr. Sarah Smith</p>
+              <p class="blog-detail-author-role">Consultant Neurologist</p>
+            </div>
+            <p class="blog-detail-date">Updated on 20 Apr 2026</p>
+          </div>
+
+          <figure class="blog-detail-featured-media">
+            <img
+              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=80"
+              alt="Doctor discussing migraine management plan with patient"
+            />
+          </figure>
+
+          <div class="blog-detail-content">
+            <p>
+              Managing migraines can feel difficult when your calendar is packed, meals are irregular,
+              and stress runs high. The good news is that small and consistent steps can protect your brain
+              even during your busiest weeks.
+            </p>
+
+            <h2>1) Build A 10-Minute Morning Routine</h2>
+            <p>
+              Start the day with hydration, light movement, and a calm breathing practice. This helps reduce
+              morning stress spikes and sets a healthier baseline for your nervous system throughout the day.
+            </p>
+
+            <h2>2) Keep Caffeine And Triggers In Check During Office Meals</h2>
+            <p>
+              Processed foods, irregular meals, dehydration, and excess caffeine can trigger headaches.
+              Choose balanced meals, avoid long gaps without food, and maintain hydration through the day
+              for better migraine control.
+            </p>
+
+            <h2>3) Do Movement Snacks Between Meetings</h2>
+            <p>
+              You do not need a full workout every day to support neurological health. Two to three short walks,
+              stair-climbs, or stretching breaks can improve circulation and reduce sedentary stress on your
+              overall brain-body function.
+            </p>
+
+            <h2>4) Track Symptoms The Smart Way</h2>
+            <p>
+              Track headache timing, duration, intensity, sleep quality, and potential triggers in a daily log.
+              Share trends with your neurologist during follow-ups. Pattern tracking is far more useful than
+              isolated episodes.
+            </p>
+
+            <!-- <blockquote>
+              "Consistency beats intensity in blood pressure care. Sustainable daily choices create long-term
+              brain protection."
+            </blockquote> -->
+
+            <h2>When To Seek Urgent Medical Advice</h2>
+            <p>
+              Consult your neurologist if headaches become more frequent or severe, or seek urgent care for
+              warning signs such as sudden weakness, slurred speech, facial droop, confusion, or loss of vision.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Booking Form Modal -->
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">
+        &times;
+      </button>
+
+      <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+        <button
+          type="button"
+          class="booking-tab is-active"
+          id="clinicVisitTab"
+          role="tab"
+          aria-selected="true"
+        >
+          Clinic Visit
+        </button>
+        <button
+          type="button"
+          class="booking-tab"
+          id="onlineConsultTab"
+          role="tab"
+          aria-selected="false"
+        >
+          Online Consultation
+        </button>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate>
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter Your Full Name"
+              required
+            />
+            <p class="booking-error" data-error-for="fullName"></p>
+          </div>
+
+          <div class="booking-field">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+91 1234567890"
+              required
+            />
+            <p class="booking-error" data-error-for="phone"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
+            <p class="booking-error" data-error-for="email"></p>
+          </div>
+
+          <div class="booking-field booking-field--date">
+            <label for="preferredDateText">Preferred Date</label>
+            <div class="booking-datepicker" id="preferredDateField">
+              <div class="booking-input-with-icon">
+                <input
+                  type="text"
+                  id="preferredDateText"
+                  class="booking-date-display"
+                  placeholder="Select a date"
+                  readonly
+                  autocomplete="off"
+                />
+              </div>
+              <input type="hidden" id="preferredDate" name="preferredDate" />
+              <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                <div class="booking-calendar-header">
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                  <span class="booking-calendar-title" data-cal-title></span>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="booking-calendar-weekdays">
+                  <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+                <div class="booking-calendar-grid" data-cal-grid></div>
+              </div>
+            </div>
+            <p class="booking-error" data-error-for="preferredDate"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="preferredTime">Preferred Time</label>
+            <div class="booking-select-wrap">
+              <select id="preferredTime" name="preferredTime" required>
+                <option value="">Select Time Slot</option>
+                <option value="09:00-10:00">09:00 - 10:00 AM</option>
+                <option value="10:00-11:00">10:00 - 11:00 AM</option>
+                <option value="11:00-12:00">11:00 - 12:00 PM</option>
+                <option value="14:00-15:00">02:00 - 03:00 PM</option>
+                <option value="15:00-16:00">03:00 - 04:00 PM</option>
+                <option value="16:00-17:00">04:00 - 05:00 PM</option>
+              </select>
+              <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+            </div>
+            <p class="booking-error" data-error-for="preferredTime"></p>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="reason">Reason For Visit</label>
+          <textarea
+            id="reason"
+            name="reason"
+            rows="3"
+            placeholder="Please describe your symptoms or reason for consultation..."
+            required
+          ></textarea>
+          <p class="booking-error" data-error-for="reason"></p>
+        </div>
+
+        <div class="booking-field booking-field--file">
+          <label for="report">Upload Report</label>
+          <div class="booking-upload-row">
+            <label class="booking-upload-btn" for="report">Upload</label>
+            <input
+              type="file"
+              id="report"
+              name="report"
+              accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf"
+            />
+            <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+          </div>
+          <p class="booking-error" data-error-for="report"></p>
+        </div>
+
+        <button type="submit" class="booking-submit-btn">
+          Book Appointment
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact-us">Contact</a>
+        <a href="index.html#testimonials">Testimonials</a>
+      </nav>
+
+      <div class="footer-social" aria-label="Footer social links">
+        <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-x" aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+
+      <p class="footer-copy">Dr. Sarah Smith. All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="./script/index.js"></script>
+</body>
+</html>

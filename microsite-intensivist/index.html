@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Sarah Jenkins | Intensivist Doctor</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230284c7'/%3E%3Cpath d='M16 32h8l4-12 5 24 5-18 4 6h8' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Dr. Sarah Jenkins">
+        <span class="avatar" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
+            alt="Dr. Sarah Jenkins"
+          />
+        </span>
+        <span class="brand-text">
+            <span class="brand-name">Dr. Sarah Jenkins</span>
+            <span class="brand-role">Intensivist Doctor</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact-us">Contact</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#gallery">Gallery</a>
+          <a href="blog.html">Blog</a>
+      </nav>
+
+      <a href="#" class="cta-btn">
+        <span class="cta-text-desktop">Book Appointment</span>
+        <span class="cta-text-mobile">Book Now</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-mesh" aria-hidden="true"></div>
+    <div class="container hero-layout">
+      <div class="hero-content">
+            <div class="expert-badge">
+                <i class="fa-solid fa-heart-pulse"></i>
+                Intensivist Doctor
+            </div>
+
+            <h1 class="hero-title">Dr. Sarah Jenkins</h1>
+            <p class="hero-subtitle">MD, FNB (Intensive Care) · Board Certified Intensivist Doctor</p>
+            <p class="mic">MCI Registration Number: MCI-CCM-2012-73892</p>
+
+            <div class="hero-stats-grid">
+                <article class="hero-stat-box">
+                    <i class="fa-solid fa-award"></i>
+                    <strong>12+ Years</strong>
+                    <span>Experience</span>
+                </article>
+                <article class="hero-stat-box">
+                    <i class="fa-solid fa-users"></i>
+                    <strong>8,200+</strong>
+                    <span>Patients Treated</span>
+                </article>
+                <article class="hero-stat-box">
+                    <i class="fa-solid fa-star"></i>
+                    <strong>98%</strong>
+                    <span>Patient Rating</span>
+                </article>
+            </div>
+
+            <p class="languages">
+                <strong>Language Proficiency:</strong> English, Hindi, Kannada
+            </p>
+
+        <div class="hero-actions">
+            <a href="#contact-us" class="contact-btn">Contact Now</a>
+            <div class="social-links" aria-label="Social media links">
+                <a href="#" class="social social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-blob" aria-hidden="true"></div>
+        <div class="hero-portrait">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80"
+            alt="Dr. Sarah Jenkins"
+            class="hero-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 C240,40 480,80 720,80 C960,80 1200,40 1440,0 L1440,90 L0,90 Z" fill="var(--bg)"></path>
+    </svg>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-intro">
+        <p class="about-kicker"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> About the Intensivist</p>
+        <h2 class="about-title">Life support. Critical healing. Resilient hope.</h2>
+        <p class="about-subtitle">
+          Advanced intensive care and clinical monitoring for critical recoveries and post-operative management.
+        </p>
+      </div>
+
+      <div class="about-story-new" style="max-width: 880px; margin: 40px auto 0;">
+        <p>
+            Dr. Sarah Jenkins is a board-certified Intensivist with over 12 years of experience in managing high-acuity patients, respiratory failure, cardiac emergencies, and systemic infections. She specializes in intensive care coordination, hemodynamic monitoring, and multi-organ life support.
+        </p>
+        <p>
+            Recognized for her swift decision-making and empathetic family consultations, Dr. Jenkins leads multidisciplinary ICU teams to deliver evidence-based, compassionate care when patients and their families need it most.
+        </p>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="services-header">
+        <p class="services-kicker"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Intensivist Services</p>
+        <h2 class="services-title">Precision Intensive Care</h2>
+        <p class="services-subtitle">
+          Specialized medical interventions, life support systems, and continuous physiological monitoring.
+        </p>
+      </div>
+
+      <div class="services-grid-new">
+          <article class="service-card-new">
+              <div class="service-icon-wrap" aria-hidden="true">
+                  <i class="fa-solid fa-bed-pulse"></i>
+              </div>
+              <div class="service-body-new">
+                <h3>ICU Management</h3>
+                <p>Comprehensive clinical supervision and life-support management for critically ill patients in the Intensive Care Unit.</p>
+              </div>
+          </article>
+          <article class="service-card-new">
+              <div class="service-icon-wrap" aria-hidden="true">
+                  <i class="fa-solid fa-lungs"></i>
+              </div>
+              <div class="service-body-new">
+                <h3>Mechanical Ventilation</h3>
+                <p>Expert management of invasive and non-invasive airway support, tailoring ventilator settings for optimal respiratory recovery.</p>
+              </div>
+          </article>
+          <article class="service-card-new">
+              <div class="service-icon-wrap" aria-hidden="true">
+                  <i class="fa-solid fa-kit-medical"></i>
+              </div>
+              <div class="service-body-new">
+                <h3>Hemodynamic Monitoring</h3>
+                <p>Continuous monitoring and drug titration to maintain cardiovascular stability and target organ perfusion.</p>
+              </div>
+          </article>
+          <article class="service-card-new">
+              <div class="service-icon-wrap" aria-hidden="true">
+                  <i class="fa-solid fa-suitcase-medical"></i>
+              </div>
+              <div class="service-body-new">
+                <h3>Trauma &amp; Emergency Care</h3>
+                <p>Immediate resuscitation, advanced cardiac life support, and rapid triage coordination for severe trauma cases.</p>
+              </div>
+          </article>
+          <article class="service-card-new">
+              <div class="service-icon-wrap" aria-hidden="true">
+                  <i class="fa-solid fa-file-waveform"></i>
+              </div>
+              <div class="service-body-new">
+                <h3>Post-Operative Recovery</h3>
+                <p>Specialized monitoring and pain management following high-risk surgical procedures to ensure stable patient transitions.</p>
+              </div>
+          </article>
+          <article class="service-card-new">
+              <div class="service-icon-wrap" aria-hidden="true">
+                  <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="service-body-new">
+                <h3>Sepsis Management</h3>
+                <p>Early detection protocols, source control, and targeted antimicrobial stewardship to combat severe systemic infections.</p>
+              </div>
+          </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact-us">
+    <div class="container">
+      <div class="contact-layout-new">
+        <aside class="contact-card-new contact-card-new--info">
+          <h3>ICU &amp; Clinic Details</h3>
+          <div class="contact-list-new">
+            <div class="contact-item-new">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Address</h4>
+                <p>
+                    Metro Intensivist Suite,<br />
+                    3rd Floor, City General Hospital, 100 Feet Road,<br />
+                    Indiranagar, Bengaluru, Karnataka 560038
+                </p>
+              </div>
+            </div>
+            <div class="contact-item-new">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <h4>Consultation Hours</h4>
+                <p>
+                    ICU Rounds: 24/7 availability<br />
+                    Clinic: Monday – Saturday<br />
+                    11:00 AM – 02:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <aside class="contact-card-new contact-card-new--reach">
+          <h3>Reach Us</h3>
+          <div class="contact-list-new">
+            <div class="contact-item-new">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <h4>Phone &amp; Email</h4>
+                <p>
+                    <a href="tel:+918045678901">+91-8045678901</a><br />
+                    <a href="mailto:dr.sarah@metro-icu.care">dr.sarah@metro-icu.care</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-cta-wrap">
+            <a href="#" class="cta-btn">Book Appointment</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <p class="testimonials-kicker"><i class="fa-solid fa-circle-h" aria-hidden="true"></i> Patient Experiences</p>
+        <h2 class="testimonials-title">Patient Experiences</h2>
+        <p class="testimonials-subtitle">
+            Feedback from patients and families who received care under Dr. Sarah Jenkins during critical hospitalizations.
+        </p>
+      </div>
+
+      <div class="testimonials-carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+            <div class="testimonials-track" id="testimonialsTrack">
+                <article class="testimonial-card testimonial-card-new">
+                    <p class="testimonial-quote">"Saved my father's life during severe respiratory distress. Dr. Jenkins' diagnostic speed and steady presence in the ICU are unmatched."</p>
+                    <div class="testimonial-footer">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Rohan Mehta" class="testimonial-avatar" />
+                      <div>
+                        <h3 class="testimonial-name">Rohan Mehta</h3>
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                      </div>
+                    </div>
+                </article>
+                <article class="testimonial-card testimonial-card-new">
+                    <p class="testimonial-quote">"The clarity Dr. Jenkins provided during my husband's post-op recovery was a huge comfort. Extremely professional and reassuring."</p>
+                    <div class="testimonial-footer">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Sneha Reddy" class="testimonial-avatar" />
+                      <div>
+                        <h3 class="testimonial-name">Sneha Reddy</h3>
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                      </div>
+                    </div>
+                </article>
+                <article class="testimonial-card testimonial-card-new">
+                    <p class="testimonial-quote">"A true professional. Her prompt handling of my mother's septic shock in the emergency wing made all the difference."</p>
+                    <div class="testimonial-footer">
+                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Amit Joshi" class="testimonial-avatar" />
+                      <div>
+                        <h3 class="testimonial-name">Amit Joshi</h3>
+                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                      </div>
+                    </div>
+                </article>
+                <article class="testimonial-card testimonial-card-new">
+                    <p class="testimonial-quote">"Very systematic approach. Explained complex telemetry details in simple terms to help us make the right medical choices."</p>
+                    <div class="testimonial-footer">
+                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Kavya Nair" class="testimonial-avatar" />
+                      <div>
+                        <h3 class="testimonial-name">Kavya Nair</h3>
+                        <div class="testimonial-stars" aria-label="4 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                        </div>
+                      </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <p class="gallery-kicker"><i class="fa-solid fa-hospital" aria-hidden="true"></i> Practice Gallery</p>
+        <h2 class="gallery-title">Moments from the practice</h2>
+        <p class="gallery-subtitle">
+            A selection of clinical and hospital facility environments.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+          <figure class="gallery-item">
+              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div>
+    <figure class="gallery-lightbox-content">
+      <img src="" alt="Enlarged gallery image" id="galleryLightboxImage" />
+    </figure>
+    <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">
+      &times;
+    </button>
+  </div>
+
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">
+        &times;
+      </button>
+
+      <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+        <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
+          Clinic Visit
+        </button>
+        <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">
+          Online Consultation
+        </button>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+                  <p class="booking-error" data-error-for="fullName"></p>
+              </div>
+              <div class="booking-field">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" inputmode="numeric" required />
+                  <p class="booking-error" data-error-for="phone"></p>
+              </div>
+          </div>
+
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                  <p class="booking-error" data-error-for="email"></p>
+              </div>
+              <div class="booking-field booking-field--date">
+                  <label for="preferredDateText">Preferred Date</label>
+                  <div class="booking-datepicker" id="preferredDateField">
+                      <div class="booking-input-with-icon">
+                          <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+                      </div>
+                      <input type="hidden" id="preferredDate" name="preferredDate" />
+                      <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                          <div class="booking-calendar-header">
+                              <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                              <span class="booking-calendar-title" data-cal-title></span>
+                              <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                          </div>
+                          <div class="booking-calendar-weekdays">
+                              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                          </div>
+                          <div class="booking-calendar-grid" data-cal-grid></div>
+                      </div>
+                  </div>
+                  <p class="booking-error" data-error-for="preferredDate"></p>
+              </div>
+          </div>
+
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="preferredTime">Preferred Time</label>
+                  <div class="booking-select-wrap">
+                      <select id="preferredTime" name="preferredTime" required>
+                          <option value="">Select Time Slot</option>
+                          <option value="10:00 AM">10:00 AM</option>
+                          <option value="11:30 AM">11:30 AM</option>
+                          <option value="02:00 PM">02:00 PM</option>
+                          <option value="04:30 PM">04:30 PM</option>
+                          <option value="06:00 PM">06:00 PM</option>
+                      </select>
+                      <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+                  </div>
+                  <p class="booking-error" data-error-for="preferredTime"></p>
+              </div>
+          </div>
+
+          <div class="booking-field">
+              <label for="reason">Reason For Visit</label>
+              <textarea id="reason" name="reason" rows="3" placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+              <p class="booking-error" data-error-for="reason"></p>
+          </div>
+
+          <div class="booking-field booking-field--file">
+              <label for="report">Upload Report</label>
+              <div class="booking-upload-row">
+                  <label class="booking-upload-btn" for="report">Upload</label>
+                  <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+                  <span class="booking-upload-help">(JPEG, PNG file formats supported)</span>
+              </div>
+              <div class="booking-file-preview" id="filePreview"></div>
+              <p class="booking-error" data-error-for="report"></p>
+          </div>
+
+          <button type="submit" class="booking-submit-btn" id="submitBtn">
+              Book Appointment
+          </button>
+
+          <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+              <div class="loader-spinner"></div>
+              <p>Booking your appointment...</p>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact-us">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+      </nav>
+
+      <div class="footer-social" aria-label="Footer social links">
+          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+
+      <p class="footer-copy"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Dr. Sarah Jenkins. All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="script/index.js"></script>
+  <script src="script/auto-open-modal.js"></script>
+</body>
+</html>
+

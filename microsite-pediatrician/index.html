@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pediatrician Microsite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#" class="brand" aria-label="Dr. Sarah Smith">
+        <span class="avatar" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
+            alt="Dr. Sarah Smith"
+          />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Dr. Sarah Smith</span>
+          <span class="brand-role">Pediatrician</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact-us">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#gallery">Gallery</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <a href="#" class="cta-btn">
+        <span class="cta-text-desktop">Book Appointment</span>
+        <span class="cta-text-mobile">Book Now</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="container hero-layout">
+      <div class="hero-main-card">
+        <div class="expert-badge">
+          <i class="fa-solid fa-stethoscope"></i>
+          Child Health Care Hub
+        </div>
+        <h1 class="hero-title">Dr. Sarah Smith</h1>
+        <p class="hero-subtitle">
+          MBBS, MD (Pediatrics), Fellowship in Neonatal & Child Health - personalized care plans for newborns, toddlers, school-age children, and teens.
+        </p>
+        <p class="hero-credentials"><b>Language Proficiency:</b> English, Hindi, Odia</p>
+        <!-- <div class="hero-action-row">
+          <a href="#" class="hero-primary-btn">Book Appointment</a>
+          <a href="#services" class="hero-secondary-btn">View Services</a>
+        </div> -->
+
+        <div class="hero-rail-inline">
+          <div class="hero-stats-grid" aria-label="Doctor outcomes">
+            <article class="hero-stat-card">
+              <p class="hero-stat-value">20+</p>
+              <small class="hero-stat-label">Years Of Experience</small>
+            </article>
+            <article class="hero-stat-card">
+              <p class="hero-stat-value">8k+</p>
+              <small class="hero-stat-label">Patients Treated</small>
+            </article>
+            <article class="hero-stat-card">
+              <p class="hero-stat-value">95%</p>
+              <small class="hero-stat-label">Patient Rating</small>
+            </article>
+          </div>
+
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side-rail hero-side-rail-right">
+        <div class="hero-image-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80"
+            alt="Dr. Sarah Smith portrait"
+            class="hero-image"
+          />
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-lead">
+          <span class="about-badge">
+            <i class="fa-solid fa-stethoscope"></i>
+            About Dr. Smith
+          </span>
+          <h2 class="about-title">Trusted Pediatric Care For Growing Families</h2>
+          <p class="about-subtitle">
+            Combining over two decades of pediatric experience with compassionate, family-first care.
+          </p>
+        </div>
+
+        <div class="about-body">
+          <div class="about-description">
+            <p>
+              Dr. Sarah Smith is a board-certified pediatrician specializing in newborn, infant, child,
+              and adolescent care. She treats common childhood illnesses, growth and nutrition concerns,
+              respiratory infections, allergies, skin conditions, and developmental challenges with a calm
+              and reassuring approach. Trained at leading institutions in India and abroad, Dr. Smith blends
+              evidence-based medicine with clear communication for parents. She takes time to explain
+              every step of your child’s care plan, so families feel informed and supported. Beyond treatment,
+              Dr. Smith is passionate about preventive pediatrics&mdash;ensuring vaccinations are on schedule,
+              monitoring milestones, guiding healthy habits, and helping children thrive physically and emotionally.
+              Many families trust her as their long-term partner in their child’s health journey.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="services-shell">
+        <div class="services-header">
+          <span class="services-badge">
+            <i class="fa-solid fa-stethoscope"></i>
+            Specialized Services
+          </span>
+          <h2 class="services-title">Comprehensive Pediatric Care</h2>
+          <p class="services-subtitle">
+            Offering A Complete Range Of Child Healthcare Services With Personalized Treatment And Preventive Guidance.
+          </p>
+          <a href="#contact-us" class="services-main-cta">Book A Consultation</a>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-step">01</span>
+            <div class="service-icon">
+              <i class="fa-solid fa-kit-medical"></i>
+            </div>
+            <h3 class="service-card-title">Newborn & Infant Care</h3>
+            <p class="service-card-desc">Comprehensive Care For Newborns, Feeding Guidance, Early Development Support, And Infant Wellness.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-step">02</span>
+            <div class="service-icon">
+              <i class="fa-solid fa-wave-square"></i>
+            </div>
+            <h3 class="service-card-title">Vaccination & Immunization</h3>
+            <p class="service-card-desc">Routine Vaccination Schedules, Catch-Up Plans, And Parent Education For Complete Protection.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-step">03</span>
+            <div class="service-icon">
+              <i class="fa-solid fa-stethoscope"></i>
+            </div>
+            <h3 class="service-card-title">Fever & Infection Management</h3>
+            <p class="service-card-desc">Evidence-Based Treatment For Seasonal Infections, Viral Illnesses, And Recurring Fevers.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-step">04</span>
+            <div class="service-icon">
+              <i class="fa-solid fa-lungs"></i>
+            </div>
+            <h3 class="service-card-title">Asthma & Allergy Care</h3>
+            <p class="service-card-desc">Long-Term Management Plans For Childhood Asthma, Allergies, And Breathing Concerns.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-step">05</span>
+            <div class="service-icon">
+              <i class="fa-solid fa-child-reaching"></i>
+            </div>
+            <h3 class="service-card-title">Growth & Nutrition Monitoring</h3>
+            <p class="service-card-desc">Regular Growth Tracking, Nutrition Counseling, And Early Intervention For Developmental Concerns.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-step">06</span>
+            <div class="service-icon">
+              <i class="fa-solid fa-notes-medical"></i>
+            </div>
+            <h3 class="service-card-title">Adolescent Health Counseling</h3>
+            <p class="service-card-desc">Support For Teenage Health, Lifestyle, Emotional Wellbeing, And Preventive Checkups.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact-us">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <h2>Contact Us</h2>
+          <p>
+            Give Your Child The Best Start With Compassionate Pediatric Care. Schedule A Consultation With Dr. Sarah Today.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-item contact-item--pink">
+            <div class="contact-item-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3>Address</h3>
+            <p>
+              Building Number: 1800<br />
+              Street Name: Orchids Lane<br />
+              Street Address: Walt Disney World, Bay Lake<br />
+              State: FL<br />
+              City: Orlando<br />
+              Post Code: 32805
+            </p>
+          </article>
+
+          <article class="contact-item contact-item--blue">
+            <div class="contact-item-icon">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+            <h3>Consultation Hours</h3>
+            <p>
+              Monday - Friday: 9:00 AM - 5:00 PM<br />
+              Saturday: 9:00 AM - 1:00 PM<br />
+              Sunday: By Appointment Only
+            </p>
+          </article>
+
+          <article class="contact-item contact-item--pink">
+            <div class="contact-item-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <h3>Contact Information</h3>
+            <p>
+            <a href="tel:+919068935571">+91-9068935571</a><br />
+            <a href="mailto:dr.smith@minneasotahospitals.com">dr.smith@minneasotahospitals.com</a>
+            </p>
+          </article>
+        </div>
+
+        <div class="contact-cta-wrap">
+          <a href="#" class="cta-btn">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="testimonials-badge">
+          <i class="fa-solid fa-stethoscope"></i>
+          Testimonials
+        </span>
+        <h2 class="testimonials-title">What Our Patients Say</h2>
+        <p class="testimonials-subtitle">
+          Read Testimonials From Families Who Have Experienced Compassionate Pediatric Care Under Dr. Sarah Smith's Guidance.
+        </p>
+      </div>
+
+      <div class="testimonials-carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+          <div class="testimonials-track" id="testimonialsTrack">
+            <article class="testimonial-card">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="James Pattinson" class="testimonial-avatar" />
+              <h3 class="testimonial-name">James Pattinson</h3>
+              <div class="testimonial-stars" aria-label="4 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"Dr. Sarah Smith provided exceptional care for my son during a difficult fever episode. Her expertise and compassionate approach made all the difference. I highly recommend her for pediatric care."</p>
+            </article>
+            <article class="testimonial-card">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop" alt="Greg Stuart" class="testimonial-avatar" />
+              <h3 class="testimonial-name">Greg Stuart</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"Outstanding experience from start to finish. Dr. Smith explained everything clearly and took time to address all my concerns. The entire team was professional and caring. Five stars!"</p>
+            </article>
+            <article class="testimonial-card">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop" alt="Trevor Mitchell" class="testimonial-avatar" />
+              <h3 class="testimonial-name">Trevor Mitchell</h3>
+              <div class="testimonial-stars" aria-label="3 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"Good care overall. Dr. Smith helped manage my migraine episodes effectively. The follow-up process was thorough. Would recommend for neurological consultations."</p>
+            </article>
+            <article class="testimonial-card">
+              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop" alt="Maria Rodriguez" class="testimonial-avatar" />
+              <h3 class="testimonial-name">Maria Rodriguez</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"After my seizure diagnosis, Dr. Smith's rehabilitation guidance was invaluable. She genuinely cares about her patients' long-term health. I feel confident and well-supported."</p>
+            </article>
+            <article class="testimonial-card">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop" alt="David Chen" class="testimonial-avatar" />
+              <h3 class="testimonial-name">David Chen</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"The best pediatrician we've consulted. Dr. Smith's diagnostic skills are remarkable. She identified the issue quickly and guided us clearly. Forever grateful for her expertise."</p>
+            </article>
+            <article class="testimonial-card">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Emily Watson" class="testimonial-avatar" />
+              <h3 class="testimonial-name">Emily Watson</h3>
+              <div class="testimonial-stars" aria-label="4 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"Professional, knowledgeable, and kind. Dr. Smith made my stress test and follow-up consultations stress-free. The clinic runs smoothly and appointments are always on time."</p>
+            </article>
+            <article class="testimonial-card">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop" alt="Robert Williams" class="testimonial-avatar" />
+              <h3 class="testimonial-name">Robert Williams</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-quote">"From preventive care to post-treatment follow-up, Dr. Sarah Smith has been exceptional. Her holistic approach to neurological health has improved my quality of life significantly."</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-media-section" id="social-media">
+    <div class="container">
+      <div class="social-media-header">
+        <h2 class="social-media-title">Child Health Tips & Updates</h2>
+        <p class="social-media-subtitle">
+          Stay connected with Dr. Sarah Smith for expert child health tips, vaccination reminders, and parenting guidance across social platforms.
+        </p>
+      </div>
+
+      <div class="social-media-carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev social-carousel-prev" aria-label="Previous posts">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn carousel-btn--next social-carousel-next" aria-label="Next posts">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="social-media-carousel" id="socialMediaCarousel">
+          <div class="social-media-track" id="socialMediaTrack">
+            <!-- Facebook -->
+            <article class="social-post-card social-post-card--facebook">
+              <div class="social-post-header social-post-header--bar">
+                <div class="social-post-avatar social-post-avatar--facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="social-post-header-main">
+                  <span class="social-post-username">Dr. Sarah Smith</span>
+                  <span class="social-post-meta-text">Pediatrician · <i class="fa-solid fa-earth-americas"></i></span>
+                </div>
+                <span class="social-post-time social-post-time--inline">3 hrs</span>
+              </div>
+              <p class="social-post-text">Recurring fever in kids can be worrying. Here’s when to monitor at home and when to visit your pediatrician.</p>
+              <div class="social-post-image">
+                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&h=400&fit=crop" alt="Child health" />
+              </div>
+              <div class="social-post-actions social-post-actions--facebook">
+                <span><i class="fa-regular fa-thumbs-up"></i> 2.5K</span>
+                <span>·</span>
+                <span>320 Comments</span>
+                <span>·</span>
+                <span>45 Shares</span>
+              </div>
+            </article>
+
+            <!-- Instagram -->
+            <article class="social-post-card social-post-card--instagram">
+              <div class="social-post-header">
+                <div class="social-post-avatar social-post-avatar--instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="social-post-header-main">
+                  <span class="social-post-username">dr.smith.pediatrics</span>
+                  <span class="social-post-meta-text">Orlando, Florida</span>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical social-post-options"></i>
+              </div>
+              <div class="social-post-image social-post-image--square">
+                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=600&fit=crop" alt="Brain healthy foods" />
+              </div>
+              <div class="social-post-actions social-post-actions--instagram">
+                <div class="social-post-actions-left">
+                  <span><i class="fa-regular fa-heart"></i></span>
+                  <span><i class="fa-regular fa-comment"></i></span>
+                  <span><i class="fa-regular fa-paper-plane"></i></span>
+                </div>
+                <span><i class="fa-regular fa-bookmark"></i></span>
+              </div>
+              <p class="social-post-text"><strong>1,842 likes</strong></p>
+              <p class="social-post-text">5 immunity-supporting foods I recommend for growing children. Save this for your next grocery run. <span class="more">more</span></p>
+              <span class="social-post-time">2 HOURS AGO</span>
+            </article>
+
+            <!-- Twitter -->
+            <article class="social-post-card social-post-card--twitter">
+              <div class="social-post-header">
+                <div class="social-post-avatar social-post-avatar--twitter">
+                  <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="social-post-header-main">
+                  <span class="social-post-username">Dr. Sarah Smith <i class="fa-solid fa-circle-check"></i></span>
+                  <span class="social-post-meta-text">@dr_smith · 1h</span>
+                </div>
+              </div>
+              <p class="social-post-text">3 child health signs parents should not ignore: persistent high fever, breathing difficulty, and unusual sleepiness.</p>
+              <div class="social-post-image">
+                <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=450&fit=crop" alt="Neurological monitoring" />
+              </div>
+              <p class="social-post-hashtags">#ChildHealth #Pediatrics #HealthyKids</p>
+              <div class="social-post-actions social-post-actions--twitter">
+                <span><i class="fa-regular fa-comment"></i> 220</span>
+                <span><i class="fa-solid fa-retweet"></i> 1,1K</span>
+                <span><i class="fa-regular fa-heart"></i> 5,8K</span>
+                <span><i class="fa-solid fa-chart-simple"></i> 120K</span>
+              </div>
+            </article>
+
+            <!-- LinkedIn -->
+            <article class="social-post-card social-post-card--linkedin">
+              <div class="social-post-header">
+                <div class="social-post-avatar social-post-avatar--linkedin">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div class="social-post-header-main">
+                  <span class="social-post-username">Dr. Sarah Smith</span>
+                  <span class="social-post-meta-text">Consultant Pediatrician | Child Growth & Wellness Specialist</span>
+                </div>
+              </div>
+              <p class="social-post-text">Not sure if your child needs urgent care or a clinic visit? Here’s a simple framework I share with parents every week.</p>
+              <div class="social-post-image">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=450&fit=crop" alt="Doctor discussing with patient" />
+              </div>
+              <div class="social-post-actions social-post-actions--linkedin">
+                <span><i class="fa-regular fa-thumbs-up"></i> 1,021</span>
+                <span><i class="fa-regular fa-comment"></i> 94</span>
+                <span><i class="fa-solid fa-repeat"></i> 37</span>
+                <span><i class="fa-regular fa-paper-plane"></i></span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="socialCarouselDots" aria-label="Social media carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <h2 class="gallery-title">Clinic Photo Gallery</h2>
+        <p class="gallery-subtitle">
+          A glimpse into our child-friendly pediatric clinic, consultation rooms, and wellness facilities.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80" alt="Modern clinic exterior" />
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80" alt="Clinic reception and waiting area" />
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Clinic consultation room" />
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Clinic corridor and seating" />
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=900&q=80" alt="Diagnostic equipment area" />
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Treatment room" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div>
+    <figure class="gallery-lightbox-content">
+      <img src="" alt="Enlarged gallery image" id="galleryLightboxImage" />
+    </figure>
+    <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">
+      &times;
+    </button>
+  </div>
+
+  <!-- Booking Form Modal -->
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">
+        &times;
+      </button>
+
+      <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+        <button
+          type="button"
+          class="booking-tab is-active"
+          id="clinicVisitTab"
+          role="tab"
+          aria-selected="true"
+        >
+          Clinic Visit
+        </button>
+        <button
+          type="button"
+          class="booking-tab"
+          id="onlineConsultTab"
+          role="tab"
+          aria-selected="false"
+        >
+          Online Consultation
+        </button>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate>
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter Your Full Name"
+              required
+            />
+            <p class="booking-error" data-error-for="fullName"></p>
+          </div>
+
+          <div class="booking-field">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+91 1234567890"
+              required
+            />
+            <p class="booking-error" data-error-for="phone"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
+            <p class="booking-error" data-error-for="email"></p>
+          </div>
+
+          <div class="booking-field booking-field--date">
+            <label for="preferredDateText">Preferred Date</label>
+            <div class="booking-datepicker" id="preferredDateField">
+              <div class="booking-input-with-icon">
+                <input
+                  type="text"
+                  id="preferredDateText"
+                  class="booking-date-display"
+                  placeholder="Select a date"
+                  readonly
+                  autocomplete="off"
+                />
+              </div>
+              <input type="hidden" id="preferredDate" name="preferredDate" />
+              <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                <div class="booking-calendar-header">
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                  <span class="booking-calendar-title" data-cal-title></span>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="booking-calendar-weekdays">
+                  <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+                <div class="booking-calendar-grid" data-cal-grid></div>
+              </div>
+            </div>
+            <p class="booking-error" data-error-for="preferredDate"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="preferredTime">Preferred Time</label>
+            <div class="booking-select-wrap">
+              <select id="preferredTime" name="preferredTime" required>
+                <option value="">Select Time Slot</option>
+                <option value="09:00-10:00">09:00 - 10:00 AM</option>
+                <option value="10:00-11:00">10:00 - 11:00 AM</option>
+                <option value="11:00-12:00">11:00 - 12:00 PM</option>
+                <option value="14:00-15:00">02:00 - 03:00 PM</option>
+                <option value="15:00-16:00">03:00 - 04:00 PM</option>
+                <option value="16:00-17:00">04:00 - 05:00 PM</option>
+              </select>
+              <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+            </div>
+            <p class="booking-error" data-error-for="preferredTime"></p>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="reason">Reason For Visit</label>
+          <textarea
+            id="reason"
+            name="reason"
+            rows="3"
+            placeholder="Please describe your symptoms or reason for consultation..."
+            required
+          ></textarea>
+          <p class="booking-error" data-error-for="reason"></p>
+        </div>
+
+        <div class="booking-field booking-field--file">
+          <label for="report">Upload Report</label>
+          <div class="booking-upload-row">
+            <label class="booking-upload-btn" for="report">Upload</label>
+            <input
+              type="file"
+              id="report"
+              name="report"
+              accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf"
+            />
+            <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+          </div>
+          <p class="booking-error" data-error-for="report"></p>
+        </div>
+
+        <button type="submit" class="booking-submit-btn">
+          Book Appointment
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact-us">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+      </nav>
+
+      <div class="footer-social" aria-label="Footer social links">
+        <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-x" aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+
+      <p class="footer-copy">Dr. Sarah Smith. All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="./script/index.js"></script>
+  <script src="./script/auto-open-modal.js"></script>
+</body>
+</html>

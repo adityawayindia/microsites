@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Dr. Anika Sharma</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%232d5a27'/%3E%3Cpath d='M32 12c-10 0-15 8-15 17s7 15 15 15 15-6 15-15-5-17-15-17zm0 28c-7 0-11-5-11-11s4-11 11-11v22z' fill='%23fff'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Dr. Anika Sharma">
+        <span class="avatar" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
+            alt="Dr. Anika Sharma"
+          />
+        </span>
+        <span class="brand-text">
+            <span class="brand-name">Dr. Anika Sharma</span>
+            <span class="brand-role">Ayurvedic Physician</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+          <a href="index.html#about">About</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#contact-us">Contact</a>
+          <a href="index.html#testimonials">Testimonials</a>
+          <a href="index.html#gallery">Gallery</a>
+          <a href="blog.html">Blog</a>
+      </nav>
+
+      <a href="#" class="cta-btn">
+        <span class="cta-text-desktop">Book Appointment</span>
+        <span class="cta-text-mobile">Book Now</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-hero-section">
+      <div class="container">
+        <div class="blog-hero-content">
+          <span class="blog-hero-badge">
+            <i class="fa-solid fa-leaf"></i>
+            Ayurvedic Insights
+          </span>
+          <h1>Latest Health Articles</h1>
+          <p>
+              Explore expert insights from Dr. Anika Sharma on Panchakarma therapies, dietary balance, stress management, and
+              everyday Ayurvedic habits for wellness.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-listing-section">
+      <div class="container">
+          <div class="blog-grid">
+              <article class="blog-card">
+                  <a href="blog-detail.html" class="blog-card-image-link" aria-label="Understanding Panchakarma: What to Expect During Ayurvedic Detox">
+                      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Understanding Panchakarma: What to Expect During Ayurvedic Detox" class="blog-card-image" />
+                  </a>
+                  <div class="blog-card-content">
+                      <p class="blog-card-meta">Therapies | 12 Jun 2026</p>
+                      <h2 class="blog-card-title">Understanding Panchakarma: What to Expect During Ayurvedic Detox</h2>
+                      <a href="blog-detail.html" class="blog-read-more">Read More</a>
+                  </div>
+              </article>
+              <article class="blog-card">
+                  <a href="blog-detail.html" class="blog-card-image-link" aria-label="Daily Ayurvedic Rituals: Simple Practices for Better Digestion">
+                      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Daily Ayurvedic Rituals: Simple Practices for Better Digestion" class="blog-card-image" />
+                  </a>
+                  <div class="blog-card-content">
+                      <p class="blog-card-meta">Wellness | 28 May 2026</p>
+                      <h2 class="blog-card-title">Daily Ayurvedic Rituals: Simple Practices for Better Digestion</h2>
+                      <a href="blog-detail.html" class="blog-read-more">Read More</a>
+                  </div>
+              </article>
+              <article class="blog-card">
+                  <a href="blog-detail.html" class="blog-card-image-link" aria-label="Natural Ayurvedic Approaches to Managing Chronic Stress">
+                      <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" alt="Natural Ayurvedic Approaches to Managing Chronic Stress" class="blog-card-image" />
+                  </a>
+                  <div class="blog-card-content">
+                      <p class="blog-card-meta">Wellness | 04 May 2026</p>
+                      <h2 class="blog-card-title">Natural Ayurvedic Approaches to Managing Chronic Stress</h2>
+                      <a href="blog-detail.html" class="blog-read-more">Read More</a>
+                  </div>
+              </article>
+          </div>
+
+        <nav class="blog-pagination" aria-label="Blog page navigation">
+          <a href="#" class="blog-page-link is-active" aria-current="page">1</a>
+          <a href="#" class="blog-page-link">2</a>
+          <a href="#" class="blog-page-link">3</a>
+          <a href="#" class="blog-page-link">Next</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+      <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+        <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+        <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+      </div>
+      <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+                  <p class="booking-error" data-error-for="fullName"></p>
+              </div>
+              <div class="booking-field">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" inputmode="numeric" required />
+                  <p class="booking-error" data-error-for="phone"></p>
+              </div>
+          </div>
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                  <p class="booking-error" data-error-for="email"></p>
+              </div>
+              <div class="booking-field booking-field--date">
+                  <label for="preferredDateText">Preferred Date</label>
+                  <div class="booking-datepicker" id="preferredDateField">
+                      <div class="booking-input-with-icon">
+                          <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+                      </div>
+                      <input type="hidden" id="preferredDate" name="preferredDate" />
+                      <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                          <div class="booking-calendar-header">
+                              <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                              <span class="booking-calendar-title" data-cal-title></span>
+                              <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                          </div>
+                          <div class="booking-calendar-weekdays">
+                              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                          </div>
+                          <div class="booking-calendar-grid" data-cal-grid></div>
+                      </div>
+                  </div>
+                  <p class="booking-error" data-error-for="preferredDate"></p>
+              </div>
+          </div>
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="preferredTime">Preferred Time</label>
+                  <div class="booking-select-wrap">
+                      <select id="preferredTime" name="preferredTime" required>
+                          <option value="">Select Time Slot</option>
+                          <option value="10:00 AM">10:00 AM</option>
+                          <option value="11:30 AM">11:30 AM</option>
+                          <option value="02:00 PM">02:00 PM</option>
+                          <option value="04:30 PM">04:30 PM</option>
+                      </select>
+                      <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+                  </div>
+                  <p class="booking-error" data-error-for="preferredTime"></p>
+              </div>
+          </div>
+          <div class="booking-field">
+              <label for="reason">Reason For Visit</label>
+              <textarea id="reason" name="reason" rows="3" placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+              <p class="booking-error" data-error-for="reason"></p>
+          </div>
+          <div class="booking-field booking-field--file">
+              <label for="report">Upload Report</label>
+              <div class="booking-upload-row">
+                  <label class="booking-upload-btn" for="report">Upload</label>
+                  <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+                  <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+              </div>
+              <div class="booking-file-preview" id="filePreview"></div>
+              <p class="booking-error" data-error-for="report"></p>
+          </div>
+          <button type="submit" class="booking-submit-btn" id="submitBtn">Book Appointment</button>
+          <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+              <div class="loader-spinner"></div>
+              <p>Booking your appointment...</p>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact-us">Contact</a>
+        <a href="index.html#testimonials">Testimonials</a>
+      </nav>
+      <div class="footer-social" aria-label="Footer social links">
+          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+      <p class="footer-copy"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Dr. Anika Sharma. All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="script/index.js"></script>
+</body>
+</html>
