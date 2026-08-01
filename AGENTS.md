@@ -38,6 +38,20 @@ microsite-<specialty>/
   assets/             ← Images and media
 ```
 
+### 1.1 Standard Page Sections
+
+The main page (`index.html`) of each microsite is structured into the following sequential sections:
+1. **Header / Navigation:** Sticky header containing the doctor's name, specialty role, navigation links, and a prominent Booking Call-to-Action button.
+2. **Hero Section:** High-impact landing zone displaying the doctor's portrait, core values, quick credentials/languages, key practice statistics (experience, patients), and direct call-to-actions.
+3. **About Section:** Highly highlighted professional bio detailing the doctor's credentials and clinical expertise (no icons, premium typography, executive design).
+4. **Services Section:** A responsive grid showing the core clinical services offered, styled with custom pills and informative descriptions.
+5. **Care Philosophy Section:** Split-screen trust section illustrating the practice's clinical approach (e.g. Preventive, Evidence-Based, Shared Decisions) next to a generic medical workspace flat-lay image.
+6. **Consultation Journey Section:** A 4-step process timeline explaining the consultation workflow, using animated circles with outer dotted rings that rotate and glow on hover.
+7. **Testimonials Section:** Carousel slider showing patient reviews, star ratings, quotes, and patient avatars.
+8. **Practice Gallery Section:** Grid showcasing high-quality images of the clinic or hospital facility.
+9. **Booking Modal:** Integrated popup form for choosing preferred date, time slot, entering details, and uploading medical files.
+10. **Footer:** Final branding, social links, terms/privacy links, page links, and copyright text.
+
 ---
 
 ## 2. Mandatory Responsive Text & Auto-Height Rules
@@ -205,7 +219,11 @@ When creating any new microsite from scratch:
 
 All microsites must follow these design principles:
 
-- **Typography:** Use Google Fonts (Inter, Roboto, or Outfit preferred). Never use browser-default fonts.
+- **Typography:** Use Google Fonts (Inter, Roboto, or Outfit preferred). Never use browser-default fonts. Adhere to the following exact type scale to maintain clean hierarchy:
+  - **Section Titles (h2):** `32px` to `38px` for clear heading prominence.
+  - **Card/Feature Headings (h3):** `22px` on desktop, scaled down to `20px` on mobile (`<= 480px`).
+  - **Body/Paragraph Text (p, li):** Minimum `16px` everywhere, styled in a very dark contrast color (e.g., `#0f172a`, `#2c3531`) for optimal legibility.
+  - **Metadata, Badges, and Pills (.pill, .step-number, tag labels):** `12px` to `13px` for secondary details.
 - **Colour Palette:** Use curated, specialty-appropriate colours (HSL preferred). Avoid plain red/blue/green.
 - **Micro-animations:** Include subtle hover effects and transitions on interactive elements.
 - **Responsiveness:** All layouts must be fully responsive from 320px mobile up to 1440px desktop.

@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles/style.css?v=10" />
+  <link rel="stylesheet" href="styles/style.css?v=11" />
 </head>
 
 <body>
@@ -111,10 +111,10 @@
 
         <!-- CTA + Socials -->
         <div class="hero-v2-actions">
-          <a href="#contact-us" class="hero-v2-cta">
+          <!-- <a href="#contact-us" class="hero-v2-cta">
             <i class="fa-solid fa-calendar-check"></i>
             Book Appointment
-          </a>
+          </a> -->
           <a href="#contact-us" class="hero-v2-cta-secondary">Contact Now</a>
         </div>
 
@@ -174,8 +174,7 @@
   <section class="services-section" id="services">
     <div class="container">
       <div class="services-header">
-        <p class="services-kicker"><i class="fa-solid fa-house-medical" aria-hidden="true"></i> General Medicine
-          Services</p>
+        <p class="services-kicker">General Medicine Services</p>
         <h2 class="services-title">Comprehensive Clinical Care</h2>
         <p class="services-subtitle">
           Personalized primary care, preventive screenings, chronic disease management, and family health wellness.
@@ -270,7 +269,7 @@
       </div>
       <!-- Right: Content Column -->
       <div class="philosophy-content">
-        <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Healthcare Philosophy</p>
+        <p class="about-kicker">Healthcare Philosophy</p>
         <h2 class="about-title">A Partnership for Long-Term Wellness</h2>
         <p class="about-subtitle">
           We believe in primary care that goes beyond treating symptoms. Our approach is designed to keep you healthy,
@@ -309,7 +308,7 @@
   <section class="process-section" id="process">
     <div class="container">
       <div class="process-header">
-        <p class="about-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
+        <p class="about-kicker">Consultation Journey</p>
         <h2 class="about-title" style="text-align: center;">How We Care For You</h2>
         <p class="about-subtitle" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
           A seamless, systematic consultation process designed to understand your unique health needs and design a
@@ -446,7 +445,7 @@
     <div class="container">
       <div class="testimonials-header">
         <div class="testimonials-header-left">
-          <p class="testimonials-kicker"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Patient Experiences
+          <p class="testimonials-kicker">Patient Experiences
           </p>
           <h2 class="testimonials-title">Patient Experiences</h2>
           <p class="testimonials-subtitle">
@@ -538,7 +537,7 @@
   <section class="gallery-section" id="gallery">
     <div class="container">
       <div class="gallery-header">
-        <p class="gallery-kicker"><i class="fa-solid fa-hospital" aria-hidden="true"></i> Practice Gallery</p>
+        <p class="gallery-kicker">Practice Gallery</p>
         <h2 class="gallery-title">Moments from the practice</h2>
         <p class="gallery-subtitle">
           A selection of clinical and hospital facility environments.
@@ -547,27 +546,27 @@
 
       <div class="gallery-grid">
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+          <img src="assets/gallery-reception.png" alt="Clinic Reception Area" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+          <img src="assets/gallery-consultation.png" alt="Doctor Consultation Room" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+          <img src="assets/gallery-examination.png" alt="Clinical Examination Bed" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+          <img src="assets/gallery-lab.png" alt="Modern Diagnostics Laboratory" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+          <img src="assets/gallery-lounge.png" alt="Premium Patient Waiting Lounge" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+          <img src="assets/gallery-facade.png" alt="Clinic Entrance Facade" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
       </div>
@@ -728,6 +727,31 @@
         reserved</p>
     </div>
   </footer>
+
+  <!-- Floating Language Switcher -->
+  <div class="lang-switcher-floating" id="langSwitcher">
+    <button type="button" class="lang-switcher-btn" id="langSwitcherBtn" aria-label="Select Language"
+      aria-expanded="false" aria-controls="langDropdown">
+      <i class="fa-solid fa-globe" aria-hidden="true"></i>
+      <span class="lang-current">English</span>
+      <i class="fa-solid fa-chevron-up lang-chevron" aria-hidden="true"></i>
+    </button>
+    <div class="lang-dropdown" id="langDropdown" role="menu" hidden>
+      <button type="button" class="lang-option is-active" data-lang="en" role="menuitem">
+        <span class="lang-name">English</span>
+        <i class="fa-solid fa-check lang-check" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="lang-option" data-lang="hi" role="menuitem">
+        <span class="lang-name">हिन्दी (Hindi)</span>
+      </button>
+      <button type="button" class="lang-option" data-lang="kn" role="menuitem">
+        <span class="lang-name">ಕನ್ನಡ (Kannada)</span>
+      </button>
+      <button type="button" class="lang-option" data-lang="ta" role="menuitem">
+        <span class="lang-name">தமிழ் (Tamil)</span>
+      </button>
+    </div>
+  </div>
 
   <script src="script/index.js"></script>
   <script src="script/auto-open-modal.js"></script>
