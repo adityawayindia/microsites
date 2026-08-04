@@ -4,6 +4,7 @@
   --muted: #334155;
   --button: #1e3a8a;
   --button-hover: #1a347a;
+    --button-light: #dbeafe;
   --white: #ffffff;
   --shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
 }
@@ -13,7 +14,7 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 15px;
   margin: 0;
   font-family: "DM Sans", sans-serif;
   background: var(--bg);
@@ -85,12 +86,12 @@ body {
 }
 
 .brand-name {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .brand-role {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--muted);
 }
 
@@ -105,7 +106,7 @@ body {
 .nav-links a {
   text-decoration: none;
   color: #32343a;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -120,7 +121,7 @@ body {
   color: var(--white);
   padding: 12px 20px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   white-space: nowrap;
   transition: background 0.2s ease;
@@ -191,7 +192,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -255,7 +256,7 @@ body {
 
 .stat-card p {
   margin: 6px 0 0;
-  font-size: 16px;
+  font-size: 15px;
   color: #4e5159;
   min-height: 34px;
   display: flex;
@@ -266,7 +267,7 @@ body {
 
 .languages {
   margin: 0 0 2px;
-  font-size: 16px;
+  font-size: 15px;
   color: #475569;
   padding: 0;
   border-radius: 10px;
@@ -333,7 +334,7 @@ body {
   border: 1px solid #c4d4ff;
   border-radius: 12px;
   padding: 11px 18px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   background: #ffffff;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
@@ -402,7 +403,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -415,7 +416,7 @@ body {
 }
 
 .about-badge i {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .about-title {
@@ -440,7 +441,7 @@ body {
 
 .about-description p {
   margin: 0 0 14px;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.85;
   color: #334155;
   max-width: 96ch;
@@ -494,12 +495,12 @@ body {
 
   .about-subtitle {
     margin-bottom: 18px;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.65;
   }
 
   .about-description p {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.75;
   }
 }
@@ -524,7 +525,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #1e3a8a;
   background: #dbeafe;
@@ -534,7 +535,7 @@ body {
 }
 
 .services-badge i {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .services-title {
@@ -548,7 +549,7 @@ body {
 
 .services-subtitle {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
   color: #6d7076;
 }
@@ -604,7 +605,7 @@ body {
 
 .service-card-desc {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   color: #6d7076;
 }
@@ -663,7 +664,7 @@ body {
 
 .contact-header p {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
   color: #64748b;
   max-width: 36ch;
@@ -724,7 +725,7 @@ body {
 
 .contact-item h3 {
   margin: 0 0 6px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #0f172a;
@@ -734,7 +735,7 @@ body {
 
 .contact-item p {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
   color: #475569;
   flex: 1;
@@ -779,7 +780,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -792,7 +793,7 @@ body {
 }
 
 .testimonials-badge i {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .testimonials-title {
@@ -806,7 +807,7 @@ body {
 
 .testimonials-subtitle {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   color: #64748b;
 }
@@ -849,7 +850,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: background 0.2s, color 0.2s, border-color 0.2s;
   z-index: 10;
@@ -948,7 +949,7 @@ body {
 
 .testimonial-quote {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   color: #475569;
 }
@@ -1023,7 +1024,7 @@ body {
 
 .social-media-subtitle {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
   color: #6d7076;
 }
@@ -1102,7 +1103,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 15px;
   flex-shrink: 0;
 }
 
@@ -1123,7 +1124,7 @@ body {
 }
 
 .social-post-username {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #1f2937;
 }
@@ -1134,13 +1135,13 @@ body {
 }
 
 .social-post-meta-text {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--muted);
 }
 
 .social-post-username .fa-circle-check {
   color: #3b82f6;
-  font-size: 16px;
+  font-size: 15px;
   margin-left: 2px;
 }
 
@@ -1155,7 +1156,7 @@ body {
 .social-post-options {
   margin-left: auto;
   color: #6b7280;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .social-post-subscribe {
@@ -1164,7 +1165,7 @@ body {
   border: none;
   padding: 6px 14px;
   border-radius: 999px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -1176,7 +1177,7 @@ body {
 
 .social-post-time--inline {
   margin-left: auto;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--muted);
 }
 
@@ -1196,25 +1197,25 @@ body {
 
 .social-post-text {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   color: #4b5563;
 }
 
 .social-post-text .more {
   color: var(--muted);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .social-post-hashtags {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   color: #3b82f6;
   line-height: 1.4;
 }
 
 .social-post-time {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--muted);
 }
 
@@ -1222,7 +1223,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 16px;
+  font-size: 15px;
   color: #6b7280;
 }
 
@@ -1275,14 +1276,14 @@ body {
 
 .social-post-link-title {
   margin: 4px 0;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #111827;
 }
 
 .social-post-link-desc {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   color: #4b5563;
 }
 
@@ -1452,7 +1453,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #1e3a8a;
   background: #dbeafe;
@@ -1472,7 +1473,7 @@ body {
 .blog-hero-content p {
   margin: 0;
   color: #5c6068;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -1549,7 +1550,7 @@ body {
   color: #ffffff;
   border-radius: 8px;
   padding: 8px 14px;
-  font-size: 16px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   font-weight: 600;
@@ -1575,7 +1576,7 @@ body {
   border: 1px solid #d4d7dc;
   color: #4a4d55;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1612,7 +1613,7 @@ body {
   gap: 8px;
   text-decoration: none;
   color: #4b5563;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   margin-bottom: 18px;
 }
@@ -1624,7 +1625,7 @@ body {
 .blog-detail-meta {
   margin: 0 0 8px;
   color: #9aa0aa;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
@@ -1664,19 +1665,19 @@ body {
 }
 
 .blog-detail-author-name {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #111827;
 }
 
 .blog-detail-author-role {
-  font-size: 16px;
+  font-size: 15px;
   color: #6b7280;
 }
 
 .blog-detail-date {
   margin: 0 0 0 auto;
-  font-size: 16px;
+  font-size: 15px;
   color: #6b7280;
 }
 
@@ -1700,7 +1701,7 @@ body {
 .blog-detail-content p {
   margin: 0 0 14px;
   color: #4b5563;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -1718,7 +1719,7 @@ body {
   background: #e0e7ff;
   border-radius: 10px;
   color: #374151;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   font-weight: 500;
 }
@@ -1743,7 +1744,7 @@ body {
 .footer-nav {
   display: flex;
   gap: 36px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.01em;
 }
@@ -1814,7 +1815,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 15px;
   color: #a8b4cb;
 }
 
@@ -1846,7 +1847,7 @@ body {
 
   .footer-nav {
     gap: 20px;
-    font-size: 16px;
+    font-size: 15px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -1854,11 +1855,11 @@ body {
   .footer-social-icon {
     width: 38px;
     height: 38px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .footer-links {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .footer-copy {
@@ -1912,7 +1913,7 @@ body {
   }
 
   .contact-header p {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .contact-item {
@@ -1940,7 +1941,7 @@ body {
   .contact-item-icon {
     width: 40px;
     height: 40px;
-    font-size: 16px;
+    font-size: 15px;
     grid-column: 1;
     grid-row: 1;
   }
@@ -1963,7 +1964,7 @@ body {
     order: 1;
     margin-left: auto;
     padding: 10px 14px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .nav-links {
@@ -2074,7 +2075,7 @@ body {
   .carousel-btn {
     width: 38px;
     height: 38px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -2099,7 +2100,7 @@ body {
   }
 
   .brand-name {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .brand-role {
@@ -2115,7 +2116,7 @@ body {
   .cta-btn {
     display: inline-block;
     padding: 10px 18px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .cta-text-desktop {
@@ -2144,7 +2145,7 @@ body {
   }
 
   .hero-subtitle {
-    font-size: 16px;
+    font-size: 15px;
     max-width: 100%;
   }
 
@@ -2164,11 +2165,11 @@ body {
   }
 
   .stat-card p {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .languages {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.45;
   }
 
@@ -2181,13 +2182,13 @@ body {
   .social {
     width: 34px;
     height: 34px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .contact-btn {
     margin-top: 8px;
     padding: 9px 16px;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 10px;
   }
 
@@ -2209,7 +2210,7 @@ body {
   }
 
   .services-subtitle {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .service-card {
@@ -2221,11 +2222,11 @@ body {
   }
 
   .service-card-title {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .service-card-desc {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .testimonials-section {
@@ -2241,7 +2242,7 @@ body {
   }
 
   .testimonials-subtitle {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .testimonial-card {
@@ -2277,7 +2278,7 @@ body {
   }
 
   .social-media-subtitle {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .gallery-section {
@@ -2314,7 +2315,7 @@ body {
   }
 
   .blog-hero-content p {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .blog-listing-section {
@@ -2344,7 +2345,7 @@ body {
   }
 
   .blog-detail-content p {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.75;
   }
 
@@ -2365,7 +2366,7 @@ body {
   .carousel-btn {
     width: 34px;
     height: 34px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .testimonial-card {
@@ -2373,11 +2374,11 @@ body {
   }
 
   .testimonial-name {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .testimonial-quote {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -2472,7 +2473,7 @@ body {
   border: none;
   background: transparent;
   padding: 8px 22px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   border-radius: 999px;
   color: #1e3a8a;
@@ -2505,7 +2506,7 @@ body {
 }
 
 .booking-field label {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #374151;
 }
@@ -2518,7 +2519,7 @@ body {
   border: 1px solid #f3f4f6;
   background: #ffffff;
   padding: 10px 12px;
-  font-size: 16px;
+  font-size: 15px;
   font-family: "DM Sans", sans-serif;
   color: #111827;
   outline: none;
@@ -2556,7 +2557,7 @@ body {
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 15px;
   color: #1e3a8a;
   pointer-events: none;
 }
@@ -2579,7 +2580,7 @@ body {
   right: 14px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 15px;
   color: var(--button);
   pointer-events: none;
   transition: transform 0.2s ease;
@@ -2622,7 +2623,7 @@ body {
 }
 
 .booking-calendar-title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text);
 }
@@ -2637,7 +2638,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   transition: background 0.15s ease;
 }
@@ -2669,7 +2670,7 @@ body {
   border: none;
   background: transparent;
   border-radius: 50%;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text);
   cursor: pointer;
   display: inline-flex;
@@ -2709,7 +2710,7 @@ body {
   }
 
   .booking-calendar-day {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -2732,7 +2733,7 @@ body {
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 15px;
   color: #1e3a8a;
   pointer-events: none;
 }
@@ -2756,7 +2757,7 @@ body {
   border-radius: 8px;
   border: 1px solid #e5e7eb;
   background: #ffffff;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #111827;
   cursor: pointer;
@@ -2767,7 +2768,7 @@ body {
 }
 
 .booking-upload-help {
-  font-size: 16px;
+  font-size: 15px;
   color: #9ca3af;
 }
 
@@ -2786,7 +2787,7 @@ body {
   padding: 12px 16px;
   background: var(--button);
   color: #ffffff;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -2973,8 +2974,8 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background-color: rgba(10, 25, 47, 0.05);
-  color: var(--navy, #0f172a);
+  background-color: var(--button-light);
+  color: var(--button);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2991,7 +2992,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 }
 
 .pillar-text p {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--muted, #334155);
   line-height: 1.5;
   margin-top: 0;
@@ -3021,7 +3022,8 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   left: 12%;
   right: 12%;
   height: 2px;
-  background: linear-gradient(90deg, transparent 0%, rgba(10, 25, 47, 0.15) 15%, rgba(10, 25, 47, 0.15) 85%, transparent 100%);
+  background: var(--button-light);
+  opacity: 0.7;
   z-index: 1;
 }
 
@@ -3055,7 +3057,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   flex-shrink: 0;
   border-radius: 50%;
   background-color: #ffffff;
-  color: var(--navy, #0f172a);
+  color: var(--button);
   font-size: 32px;
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -3074,14 +3076,16 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   width: 136px;
   height: 136px;
   pointer-events: none;
-  color: rgba(10, 25, 47, 0.3);
+  color: var(--button);
+  opacity: 0.55;
   animation: spinRing 25s linear infinite;
   transform-origin: center center;
 }
 
 .process-step:hover .step-circle-ring {
   animation-duration: 8s;
-  color: var(--gold, #c59b27);
+  color: var(--button);
+  opacity: 1;
 }
 
 @keyframes spinRing {
@@ -3100,8 +3104,8 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   font-family: inherit;
   font-weight: 700;
   font-size: 12px;
-  color: var(--navy, #0f172a);
-  background-color: rgba(10, 25, 47, 0.08);
+  color: var(--button);
+  background-color: var(--button-light);
   padding: 3px 12px;
   border-radius: 50px;
   margin-bottom: 12px;
@@ -3117,7 +3121,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 }
 
 .step-body p {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--muted, #334155);
   line-height: 1.5;
   margin: 0;
@@ -3218,4 +3222,14 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   .gallery-lightbox-next {
     right: 12px;
   }
+}
+
+/* Fix visibility of Philosophy & Process section headings on light backgrounds */
+.philosophy-section .about-title,
+.process-section .about-title {
+  color: var(--deep, var(--text, #0f172a)) !important;
+}
+.philosophy-section .about-subtitle,
+.process-section .about-subtitle {
+  color: var(--muted, #334155) !important;
 }
