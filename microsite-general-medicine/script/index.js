@@ -205,42 +205,92 @@ if (menuToggle && mainNav) {
 
 // Gallery Lightbox
 (function () {
-    const lightbox = document.getElementById("galleryLightbox");
-    const lightboxImage = document.getElementById("galleryLightboxImage");
-    const closeBtn = document.getElementById("galleryLightboxClose");
-    const backdrop = document.getElementById("galleryLightboxBackdrop");
-    const galleryImages = document.querySelectorAll(".gallery-item img");
+  const lightbox = document.getElementById("galleryLightbox");
+  const lightboxImage = document.getElementById("galleryLightboxImage");
+  const closeBtn = document.getElementById("galleryLightboxClose");
+  const backdrop = document.getElementById("galleryLightboxBackdrop");
+  const galleryImages = document.querySelectorAll(".gallery-item img");
 
-    if (!lightbox || !lightboxImage || galleryImages.length === 0) return;
+  if (!lightbox || !lightboxImage || galleryImages.length === 0) return;
 
-    function openLightbox(src, alt) {
-        lightboxImage.src = src;
-        lightboxImage.alt = alt || "Enlarged gallery image";
-        lightbox.classList.add("is-open");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
+  // Create prev and next buttons dynamically if not present
+  let prevBtn = document.getElementById("galleryLightboxPrev");
+  let nextBtn = document.getElementById("galleryLightboxNext");
+  if (!prevBtn) {
+    prevBtn = document.createElement("button");
+    prevBtn.id = "galleryLightboxPrev";
+    prevBtn.className = "gallery-lightbox-nav gallery-lightbox-prev";
+    prevBtn.setAttribute("aria-label", "Previous image");
+    prevBtn.innerHTML = "&lsaquo;";
+    lightbox.appendChild(prevBtn);
+  }
+  if (!nextBtn) {
+    nextBtn = document.createElement("button");
+    nextBtn.id = "galleryLightboxNext";
+    nextBtn.className = "gallery-lightbox-nav gallery-lightbox-next";
+    nextBtn.setAttribute("aria-label", "Next image");
+    nextBtn.innerHTML = "&rsaquo;";
+    lightbox.appendChild(nextBtn);
+  }
+
+  let currentIdx = -1;
+
+  function openLightbox(index) {
+    currentIdx = index;
+    const img = galleryImages[currentIdx];
+    if (img) {
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt || "Enlarged gallery image";
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
     }
+  }
 
-    function closeLightbox() {
-        lightbox.classList.remove("is-open");
-        lightbox.setAttribute("aria-hidden", "true");
-        lightboxImage.src = "";
-        document.body.style.overflow = "";
+  function closeLightbox() {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImage.src = "";
+    document.body.style.overflow = "";
+    currentIdx = -1;
+  }
+
+  function showPrev() {
+    if (currentIdx > 0) {
+      openLightbox(currentIdx - 1);
+    } else {
+      openLightbox(galleryImages.length - 1);
     }
+  }
 
-    galleryImages.forEach((img) => {
-        img.style.cursor = "zoom-in";
-        img.addEventListener("click", () => openLightbox(img.src, img.alt));
-    });
+  function showNext() {
+    if (currentIdx < galleryImages.length - 1) {
+      openLightbox(currentIdx + 1);
+    } else {
+      openLightbox(0);
+    }
+  }
 
-    if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
-    if (backdrop) backdrop.addEventListener("click", closeLightbox);
+  galleryImages.forEach((img, idx) => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => openLightbox(idx));
+  });
 
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
-            closeLightbox();
-        }
-    });
+  if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+  if (backdrop) backdrop.addEventListener("click", closeLightbox);
+  if (prevBtn) prevBtn.addEventListener("click", (e) => { e.stopPropagation(); showPrev(); });
+  if (nextBtn) nextBtn.addEventListener("click", (e) => { e.stopPropagation(); showNext(); });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("is-open")) return;
+    if (event.key === "Escape") {
+      closeLightbox();
+    } else if (event.key === "ArrowLeft") {
+      showPrev();
+    } else if (event.key === "ArrowRight") {
+      showNext();
+    }
+  });
 })();
 
 // Booking Modal (frontend demo ? no API)

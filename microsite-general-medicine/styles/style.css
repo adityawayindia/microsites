@@ -37,17 +37,29 @@ body {
   max-width: 100%;
 }
 
-/* Global Responsive Typography & Defensive Overflow Protection */
+/* ==========================================================================
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   Apply to ALL microsites. Do not remove or override these.
+   ========================================================================== */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
+/* Rule 1: Universal Word Break & Text Wrapping */
 h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   overflow-wrap: break-word;
   word-break: break-word;
   max-width: 100%;
 }
 
+/* Rule 2: Flex & Grid Child Shrink Defense */
+.hero-content,
+.hero-visual,
+.hero-topbar,
+.hero-stats,
+.hero-stat,
+.hero-actions,
 .hero-v2-content,
 .hero-v2-visual,
 .hero-v2-topbar,
@@ -55,11 +67,17 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 .hero-v2-stat,
 .hero-v2-actions,
 .about-intro,
+.about-story,
 .about-story-new,
+.service-card,
 .service-card-new,
+.service-body,
 .service-body-new,
+.contact-card,
 .contact-card-new,
+.contact-item,
 .contact-item-new,
+.testimonial-card,
 .testimonial-card-new,
 .testimonial-footer,
 .brand-text,
@@ -67,6 +85,38 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 .container {
   min-width: 0;
 }
+
+/* Rule 3: Parent Container Auto-Height Expansion */
+.hero-badge,
+.hero-reg,
+.hero-title,
+.hero-subtitle,
+.hero-stats,
+.hero-stat,
+.hero-chip,
+.hero-v2-badge,
+.hero-v2-reg,
+.hero-v2-title,
+.hero-v2-subtitle,
+.hero-v2-stats,
+.hero-v2-stat,
+.hero-v2-chip,
+.service-card,
+.service-card-new,
+.testimonial-card,
+.testimonial-card-new,
+.contact-card,
+.contact-card-new,
+.about-story,
+.about-story-new,
+.card,
+article,
+aside {
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+}
+
 
 .site-header {
   background: rgba(255, 255, 255, 0.92);
@@ -1748,6 +1798,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   background: linear-gradient(180deg, rgba(10, 61, 63, 0) 40%, rgba(10, 61, 63, 0.45) 100%);
   opacity: 0;
   transition: opacity 0.25s ease;
+  pointer-events: none;
 }
 
 .gallery-item-overlay i {
@@ -5646,5 +5697,64 @@ body {
     left: -6px;
     width: 112px;
     height: 112px;
+  }
+}
+
+/* Gallery Lightbox Navigation Buttons */
+.gallery-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(15, 23, 42, 0.75);
+  color: #f9fafb;
+  font-size: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+.gallery-lightbox-prev {
+  left: 24px;
+}
+
+.gallery-lightbox-next {
+  right: 24px;
+}
+
+.gallery-lightbox-nav:hover {
+  background: rgba(248, 250, 252, 0.95);
+  color: #111827;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.gallery-lightbox-prev:hover {
+  transform: translateY(-50%) scale(1.1) translateX(-2px);
+}
+
+.gallery-lightbox-next:hover {
+  transform: translateY(-50%) scale(1.1) translateX(2px);
+}
+
+@media (max-width: 768px) {
+  .gallery-lightbox-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+  }
+  .gallery-lightbox-prev {
+    left: 12px;
+  }
+  .gallery-lightbox-next {
+    right: 12px;
   }
 }
