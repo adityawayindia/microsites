@@ -25,7 +25,7 @@
       <a href="#" class="brand" aria-label="Dr. Sarah Smith">
         <span class="avatar" aria-hidden="true">
           <img
-            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
+            src="assets/dr-sarah-smith.png"
             alt="Dr. Sarah Smith"
           />
         </span>
@@ -67,7 +67,7 @@
     <div class="container hero-layout">
       <div class="hero-main-card">
         <div class="expert-badge">
-          <i class="fa-solid fa-stethoscope"></i>
+          <i class="fa-solid fa-child-reaching"></i>
           Child Health Care Hub
         </div>
         <h1 class="hero-title">Dr. Sarah Smith</h1>
@@ -110,7 +110,7 @@
       <aside class="hero-side-rail hero-side-rail-right">
         <div class="hero-image-wrap">
           <img
-            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80"
+            src="assets/dr-sarah-smith.png"
             alt="Dr. Sarah Smith portrait"
             class="hero-image"
           />
@@ -124,7 +124,7 @@
       <div class="about-layout">
         <div class="about-lead">
           <span class="about-badge">
-            <i class="fa-solid fa-stethoscope"></i>
+            <i class="fa-solid fa-face-smile"></i>
             About Dr. Smith
           </span>
           <h2 class="about-title">Trusted Pediatric Care For Growing Families</h2>
@@ -157,7 +157,7 @@
       <div class="services-shell">
         <div class="services-header">
           <span class="services-badge">
-            <i class="fa-solid fa-stethoscope"></i>
+            <i class="fa-solid fa-heart"></i>
             Specialized Services
           </span>
           <h2 class="services-title">Comprehensive Pediatric Care</h2>
@@ -171,7 +171,7 @@
           <article class="service-card">
             <span class="service-step">01</span>
             <div class="service-icon">
-              <i class="fa-solid fa-kit-medical"></i>
+              <i class="fa-solid fa-baby"></i>
             </div>
             <h3 class="service-card-title">Newborn & Infant Care</h3>
             <p class="service-card-desc">Comprehensive Care For Newborns, Feeding Guidance, Early Development Support, And Infant Wellness.</p>
@@ -180,7 +180,7 @@
           <article class="service-card">
             <span class="service-step">02</span>
             <div class="service-icon">
-              <i class="fa-solid fa-wave-square"></i>
+              <i class="fa-solid fa-syringe"></i>
             </div>
             <h3 class="service-card-title">Vaccination & Immunization</h3>
             <p class="service-card-desc">Routine Vaccination Schedules, Catch-Up Plans, And Parent Education For Complete Protection.</p>
@@ -189,7 +189,7 @@
           <article class="service-card">
             <span class="service-step">03</span>
             <div class="service-icon">
-              <i class="fa-solid fa-stethoscope"></i>
+              <i class="fa-solid fa-thermometer"></i>
             </div>
             <h3 class="service-card-title">Fever & Infection Management</h3>
             <p class="service-card-desc">Evidence-Based Treatment For Seasonal Infections, Viral Illnesses, And Recurring Fevers.</p>
@@ -207,7 +207,7 @@
           <article class="service-card">
             <span class="service-step">05</span>
             <div class="service-icon">
-              <i class="fa-solid fa-child-reaching"></i>
+              <i class="fa-solid fa-apple-whole"></i>
             </div>
             <h3 class="service-card-title">Growth & Nutrition Monitoring</h3>
             <p class="service-card-desc">Regular Growth Tracking, Nutrition Counseling, And Early Intervention For Developmental Concerns.</p>
@@ -216,7 +216,7 @@
           <article class="service-card">
             <span class="service-step">06</span>
             <div class="service-icon">
-              <i class="fa-solid fa-notes-medical"></i>
+              <i class="fa-solid fa-user-group"></i>
             </div>
             <h3 class="service-card-title">Adolescent Health Counseling</h3>
             <p class="service-card-desc">Support For Teenage Health, Lifestyle, Emotional Wellbeing, And Preventive Checkups.</p>
@@ -371,7 +371,7 @@
             </div>
             <h3>Address</h3>
             <p>
-              Building Number: 1800<br />
+              <strong>Building Number: 1800</strong><br />
               Street Name: Orchids Lane<br />
               Street Address: Walt Disney World, Bay Lake<br />
               State: FL<br />
@@ -739,13 +739,7 @@
 
           <div class="booking-field">
             <label for="phone">Phone</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="+91 1234567890"
-              required
-            />
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
             <p class="booking-error" data-error-for="phone"></p>
           </div>
         </div>
@@ -839,7 +833,13 @@
           <p class="booking-error" data-error-for="report"></p>
         </div>
 
-        <button type="submit" class="booking-submit-btn">
+        
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" id="submitBtn" class="booking-submit-btn" disabled>
           Book Appointment
         </button>
       </form>

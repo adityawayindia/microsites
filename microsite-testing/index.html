@@ -25,7 +25,7 @@
     <div class="container navbar">
       <a href="index.html" class="brand" aria-label="Dr. Sarah Jenkins">
         <span class="avatar" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
+          <img src="assets/dr-sarah-jenkins.png"
             alt="Dr. Sarah Jenkins" />
         </span>
         <span class="brand-text">
@@ -131,7 +131,7 @@
       <!-- Right: Portrait Panel -->
       <div class="hero-v2-visual">
         <div class="hero-v2-portrait-frame">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80"
+          <img src="assets/dr-sarah-jenkins.png"
             alt="Dr. Sarah Jenkins" class="hero-v2-photo" />
 
         </div>
@@ -413,7 +413,7 @@
               <div>
                 <h4>Address</h4>
                 <p>
-                  Metro General Medicine Clinic,<br />
+                  <strong>Metro General Medicine Clinic,</strong><br />
                   Ground Floor, City General Hospital, 100 Feet Road,<br />
                   Indiranagar, Bengaluru, Karnataka 560038
                 </p>
@@ -613,8 +613,7 @@
           </div>
           <div class="booking-field">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10"
-              pattern="[6-9][0-9]{9}" inputmode="numeric" required />
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
             <p class="booking-error" data-error-for="phone"></p>
           </div>
         </div>
@@ -687,7 +686,13 @@
           <p class="booking-error" data-error-for="report"></p>
         </div>
 
-        <button type="submit" class="booking-submit-btn" id="submitBtn">
+        
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
           Book Appointment
         </button>
 

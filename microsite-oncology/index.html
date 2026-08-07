@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dr. Ananya Mehta | Medical Oncology</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f766e'/%3E%3Cpath d='M32 14c-2 6-8 10-8 18 0 6 3.5 10 8 12 4.5-2 8-6 8-12 0-8-6-12-8-18z' fill='%23fff'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%236b46c1'/%3E%3Cpath d='M32 14c-2 6-8 10-8 18 0 6 3.5 10 8 12 4.5-2 8-6 8-12 0-8-6-12-8-18z' fill='%23fff'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
@@ -22,7 +22,7 @@
       <a href="index.html" class="brand" aria-label="Dr. Ananya Mehta">
         <span class="avatar" aria-hidden="true">
           <img
-            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
+            src="assets/dr-ananya-mehta.png"
             alt="Dr. Ananya Mehta"
           />
         </span>
@@ -67,7 +67,7 @@
         <div class="hero-portrait-glow" aria-hidden="true"></div>
         <div class="hero-portrait-frame">
           <img
-            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80"
+            src="assets/dr-ananya-mehta.png"
             alt="Dr. Ananya Mehta"
             class="hero-image"
           />
@@ -358,7 +358,7 @@
             <div>
               <h3>Clinic Address</h3>
               <p>
-                  Hope Cancer Care Centre,<br />
+                  <strong>Hope Cancer Care Centre,</strong><br />
                   214, Linking Road, Bandra West,<br />
                   Mumbai, Maharashtra 400050
               </p>
@@ -530,7 +530,7 @@
               </div>
               <div class="booking-field">
                   <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" inputmode="numeric" required />
+                  <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
                   <p class="booking-error" data-error-for="phone"></p>
               </div>
           </div>
@@ -599,7 +599,13 @@
               <p class="booking-error" data-error-for="report"></p>
           </div>
 
-          <button type="submit" class="booking-submit-btn" id="submitBtn">
+          
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
               Book Appointment
           </button>
 

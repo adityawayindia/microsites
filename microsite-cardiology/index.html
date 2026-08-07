@@ -338,7 +338,7 @@
               <i class="fa-solid fa-location-dot"></i>
             </div>
             <h3>Address</h3>
-            <p>HeartCare Clinic, 204 Cardiac Tower, MG Road, Pune, Maharashtra - 411001</p>
+            <p><strong>HeartCare Clinic,</strong><br />204 Cardiac Tower, MG Road, Pune, Maharashtra - 411001</p>
           </article>
 
           <article class="contact-item contact-item--pink">
@@ -505,7 +505,7 @@
               </div>
               <div class="booking-field">
                   <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" inputmode="numeric" required />
+                  <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
                   <p class="booking-error" data-error-for="phone"></p>
               </div>
           </div>
@@ -569,7 +569,13 @@
               <p class="booking-error" data-error-for="report"></p>
           </div>
 
-          <button type="submit" class="booking-submit-btn" id="submitBtn">
+          
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
               Book Appointment
           </button>
 

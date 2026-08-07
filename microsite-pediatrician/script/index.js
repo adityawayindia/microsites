@@ -336,6 +336,37 @@ if (menuToggle && mainNav) {
   const backdrop = document.getElementById("bookingModalBackdrop");
   const closeBtn = document.getElementById("bookingModalClose");
   const form = document.getElementById("bookingForm");
+
+    // Consent checkbox logic
+    const consentCheckbox = document.getElementById("consentCheckbox");
+    const submitBtnEl = document.getElementById("submitBtn") || form.querySelector(".booking-submit-btn");
+
+    if (consentCheckbox && submitBtnEl) {
+        submitBtnEl.disabled = !consentCheckbox.checked;
+
+        consentCheckbox.addEventListener("change", () => {
+            submitBtnEl.disabled = !consentCheckbox.checked;
+        });
+
+        // Intercept disabled property sets to respect consent checkbox state
+        const descriptor = Object.getOwnPropertyDescriptor(HTMLButtonElement.prototype, 'disabled');
+        if (descriptor) {
+            Object.defineProperty(submitBtnEl, 'disabled', {
+                get() {
+                    return descriptor.get.call(this);
+                },
+                set(val) {
+                    if (!val && !consentCheckbox.checked) {
+                        descriptor.set.call(this, true);
+                    } else {
+                        descriptor.set.call(this, val);
+                    }
+                },
+                configurable: true
+            });
+        }
+    }
+
   const clinicTab = document.getElementById("clinicVisitTab");
   const onlineTab = document.getElementById("onlineConsultTab");
   const openTriggers = document.querySelectorAll(".cta-btn");

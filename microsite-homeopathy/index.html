@@ -22,7 +22,7 @@
       <a href="index.html" class="brand" aria-label="Dr. Evelyn Thorne">
         <span class="avatar" aria-hidden="true">
           <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
+            src="assets/dr-evelyn-thorne.png"
             alt="Dr. Evelyn Thorne"
           />
         </span>
@@ -112,7 +112,7 @@
         <div class="hero-visual-blob" aria-hidden="true"></div>
         <div class="hero-portrait">
           <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80"
+            src="assets/dr-evelyn-thorne.png"
             alt="Dr. Evelyn Thorne"
             class="hero-image"
           />
@@ -373,7 +373,7 @@
               <div>
                 <h4>Address</h4>
                 <p>
-                    Thorne Homeopathic Clinic,<br />
+                    <strong>Thorne Homeopathic Clinic,</strong><br />
                     2nd Floor, Garden Wellness Center, 80 Feet Road,<br />
                     Koramangala, Bengaluru, Karnataka 560034
                 </p>
@@ -565,7 +565,7 @@
               </div>
               <div class="booking-field">
                   <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" inputmode="numeric" required />
+                  <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
                   <p class="booking-error" data-error-for="phone"></p>
               </div>
           </div>
@@ -634,7 +634,13 @@
               <p class="booking-error" data-error-for="report"></p>
           </div>
 
-          <button type="submit" class="booking-submit-btn" id="submitBtn">
+          
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
               Book Appointment
           </button>
 

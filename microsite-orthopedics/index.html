@@ -22,7 +22,7 @@
       <a href="index.html" class="brand" aria-label="Dr. Kabir Malhotra">
         <span class="avatar" aria-hidden="true">
           <img
-            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=200&q=80"
+            src="assets/dr-kabir-malhotra.png"
             alt="Dr. Kabir Malhotra"
           />
         </span>
@@ -68,7 +68,7 @@
         <div class="hero-portrait-glow" aria-hidden="true"></div>
         <div class="hero-portrait-frame">
           <img
-            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=80"
+            src="assets/dr-kabir-malhotra.png"
             alt="Dr. Kabir Malhotra"
             class="hero-image"
           />
@@ -378,7 +378,7 @@
             <div>
               <h3>Clinic Address</h3>
               <p>
-                  Motion Ortho Clinic,<br />
+                  <strong>Motion Ortho Clinic,</strong><br />
                   118, Baner Road, Baner,<br />
                   Pune, Maharashtra 411045
               </p>
@@ -550,7 +550,7 @@
               </div>
               <div class="booking-field">
                   <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" inputmode="numeric" required />
+                  <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
                   <p class="booking-error" data-error-for="phone"></p>
               </div>
           </div>
@@ -619,7 +619,13 @@
               <p class="booking-error" data-error-for="report"></p>
           </div>
 
-          <button type="submit" class="booking-submit-btn" id="submitBtn">
+          
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
               Book Appointment
           </button>
 

@@ -1,18 +1,94 @@
 :root {
-    --bg: #f2f7f6;
+    --bg: #fdfcff;
     --text: #0f172a;
     --muted: #334155;
-    --button: #0f766e;
-    --button-hover: #0b5f59;
-    --button-light: #e0f2f1;
+    --button: #6b46c1;
+    --button-hover: #553c9a;
+    --button-light: #f3ebff;
     --accent-warm: #c4a574;
-    --deep: #0c2f2d;
+    --deep: #2d1b54;
     --white: #ffffff;
-    --shadow: 0 1px 2px rgba(15, 47, 45, 0.08);
+    --shadow: 0 1px 2px rgba(45, 27, 84, 0.08);
 }
 
-* {
+/* ==========================================================================
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   Apply to ALL microsites. Do not remove or override these.
+   ========================================================================== */
+
+*, *::before, *::after {
   box-sizing: border-box;
+}
+
+/* Rule 1: Universal Word Break & Text Wrapping */
+h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+/* Rule 2: Flex & Grid Child Shrink Defense */
+.hero-content,
+.hero-visual,
+.hero-topbar,
+.hero-stats,
+.hero-stat,
+.hero-actions,
+.hero-v2-content,
+.hero-v2-visual,
+.hero-v2-topbar,
+.hero-v2-stats,
+.hero-v2-stat,
+.hero-v2-actions,
+.about-intro,
+.about-story,
+.about-story-new,
+.service-card,
+.service-card-new,
+.service-body,
+.service-body-new,
+.contact-card,
+.contact-card-new,
+.contact-item,
+.contact-item-new,
+.testimonial-card,
+.testimonial-card-new,
+.testimonial-footer,
+.brand-text,
+.navbar,
+.container {
+  min-width: 0;
+}
+
+/* Rule 3: Parent Container Auto-Height Expansion */
+.hero-badge,
+.hero-reg,
+.hero-title,
+.hero-subtitle,
+.hero-stats,
+.hero-stat,
+.hero-chip,
+.hero-v2-badge,
+.hero-v2-reg,
+.hero-v2-title,
+.hero-v2-subtitle,
+.hero-v2-stats,
+.hero-v2-stat,
+.hero-v2-chip,
+.service-card,
+.service-card-new,
+.testimonial-card,
+.testimonial-card-new,
+.contact-card,
+.contact-card-new,
+.about-story,
+.about-story-new,
+.card,
+article,
+aside {
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
 }
 
 body {
@@ -26,8 +102,8 @@ body {
 .site-header {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(15, 118, 110, 0.12);
-  box-shadow: 0 4px 18px rgba(12, 47, 45, 0.06);
+  border-bottom: 1px solid rgba(107, 70, 193, 0.12);
+  box-shadow: 0 4px 18px rgba(45, 27, 84, 0.06);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -73,7 +149,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 2px solid rgba(15, 118, 110, 0.25);
+  border: 2px solid rgba(107, 70, 193, 0.25);
 }
 
 .avatar img {
@@ -130,7 +206,7 @@ body {
   font-weight: 600;
   white-space: nowrap;
   transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.22);
+  box-shadow: 0 8px 20px rgba(107, 70, 193, 0.22);
 }
 
 .cta-text-mobile {
@@ -143,7 +219,7 @@ body {
 .cta-btn:hover {
   background: var(--button-hover);
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(15, 118, 110, 0.28);
+  box-shadow: 0 12px 24px rgba(107, 70, 193, 0.28);
 }
 
 .menu-toggle {
@@ -172,9 +248,9 @@ body {
   margin-bottom: 0;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 80% 60% at 18% 40%, rgba(15, 118, 110, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 18% 40%, rgba(107, 70, 193, 0.18) 0%, transparent 55%),
     radial-gradient(ellipse 70% 50% at 88% 20%, rgba(196, 165, 116, 0.22) 0%, transparent 50%),
-    linear-gradient(165deg, #e8f4f1 0%, #f5f9f8 42%, #ffffff 100%);
+    linear-gradient(165deg, #f3ebff 0%, #fdfcff 42%, #ffffff 100%);
 }
 
 .hero-atmosphere {
@@ -182,9 +258,9 @@ body {
   inset: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(circle at 12% 78%, rgba(15, 118, 110, 0.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 12% 78%, rgba(107, 70, 193, 0.08) 0 2px, transparent 3px),
     radial-gradient(circle at 72% 18%, rgba(196, 165, 116, 0.14) 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 90% 70%, rgba(15, 118, 110, 0.07) 0 2px, transparent 3px);
+    radial-gradient(circle at 90% 70%, rgba(107, 70, 193, 0.07) 0 2px, transparent 3px);
   background-size: 120px 120px, 90px 90px, 140px 140px;
   opacity: 0.9;
   animation: atmosphereDrift 28s linear infinite;
@@ -196,7 +272,7 @@ body {
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  border: 1px solid rgba(15, 118, 110, 0.12);
+  border: 1px solid rgba(107, 70, 193, 0.12);
   left: -120px;
   top: 40%;
   transform: translateY(-50%);
@@ -243,8 +319,8 @@ body {
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--button-hover);
-    background: rgba(224, 242, 241, 0.95);
-    border: 1px solid rgba(15, 118, 110, 0.18);
+    background: rgba(243, 232, 255, 0.95);
+    border: 1px solid rgba(107, 70, 193, 0.18);
     border-radius: 999px;
     padding: 8px 14px;
 }
@@ -291,9 +367,9 @@ body {
 
 .stat-card {
   background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(15, 118, 110, 0.12);
+  border: 1px solid rgba(107, 70, 193, 0.12);
   border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(12, 47, 45, 0.06);
+  box-shadow: 0 8px 24px rgba(45, 27, 84, 0.06);
   min-width: 0;
   height: 100%;
   padding: 14px 10px;
@@ -307,7 +383,7 @@ body {
 
 .stat-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(12, 47, 45, 0.1);
+  box-shadow: 0 12px 28px rgba(45, 27, 84, 0.1);
 }
 
 .stat-card h3 {
@@ -439,7 +515,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.02em;
   background: var(--button);
-  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.28);
+  box-shadow: 0 10px 24px rgba(107, 70, 193, 0.28);
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -460,7 +536,7 @@ body {
   position: absolute;
   inset: 8% 6% 4%;
   border-radius: 48% 52% 42% 58% / 42% 48% 52% 58%;
-  background: radial-gradient(circle at 50% 40%, rgba(15, 118, 110, 0.35), rgba(196, 165, 116, 0.18) 55%, transparent 72%);
+  background: radial-gradient(circle at 50% 40%, rgba(107, 70, 193, 0.35), rgba(196, 165, 116, 0.18) 55%, transparent 72%);
   filter: blur(18px);
   animation: portraitPulse 5.5s ease-in-out infinite;
   z-index: 0;
@@ -473,9 +549,9 @@ body {
   overflow: hidden;
   border: 3px solid rgba(255, 255, 255, 0.95);
   box-shadow:
-    0 24px 60px rgba(12, 47, 45, 0.18),
-    0 0 0 10px rgba(15, 118, 110, 0.08);
-  background: #d7ebe7;
+    0 24px 60px rgba(45, 27, 84, 0.18),
+    0 0 0 10px rgba(107, 70, 193, 0.08);
+  background: #ebd9fc;
 }
 
 .hero-image {
@@ -498,10 +574,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, #0f766e, #0b5f59);
+  background: linear-gradient(145deg, #6b46c1, #553c9a);
   color: #ffffff;
   font-size: 20px;
-  box-shadow: 0 12px 28px rgba(15, 118, 110, 0.35);
+  box-shadow: 0 12px 28px rgba(107, 70, 193, 0.35);
   animation: ribbonFloat 3.8s ease-in-out infinite;
 }
 
@@ -562,7 +638,7 @@ body {
 
 .about-aside {
   background: var(--deep);
-  color: #e8f4f1;
+  color: #f3ebff;
   padding: 48px 36px;
   display: flex;
   flex-direction: column;
@@ -707,7 +783,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
-  border-top: 1px solid rgba(15, 118, 110, 0.15);
+  border-top: 1px solid rgba(107, 70, 193, 0.15);
 }
 
 .service-card {
@@ -716,7 +792,7 @@ body {
   padding: 28px 28px 28px 0;
   box-shadow: none;
   border: none;
-  border-bottom: 1px solid rgba(15, 118, 110, 0.15);
+  border-bottom: 1px solid rgba(107, 70, 193, 0.15);
   display: grid;
   grid-template-columns: 56px 1fr;
   gap: 16px;
@@ -726,7 +802,7 @@ body {
 
 .service-card:nth-child(odd) {
   padding-right: 36px;
-  border-right: 1px solid rgba(15, 118, 110, 0.15);
+  border-right: 1px solid rgba(107, 70, 193, 0.15);
 }
 
 .service-card:nth-child(even) {
@@ -736,7 +812,7 @@ body {
 .service-card:hover {
   transform: none;
   box-shadow: none;
-  background: rgba(224, 242, 241, 0.35);
+  background: rgba(243, 232, 255, 0.35);
 }
 
 .service-index {
@@ -795,7 +871,7 @@ body {
   padding: 72px 0;
   max-width: none;
   margin: 0;
-  color: #e8f4f1;
+  color: #f3ebff;
   text-align: center;
 }
 
@@ -949,7 +1025,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 4px;
-  border: 1px solid rgba(15, 118, 110, 0.2);
+  border: 1px solid rgba(107, 70, 193, 0.2);
   background: var(--white);
   color: var(--deep);
   cursor: pointer;
@@ -995,7 +1071,7 @@ body {
   padding: 32px 28px;
   border: none;
   border-left: 3px solid var(--button);
-  box-shadow: 0 12px 32px rgba(12, 47, 45, 0.06);
+  box-shadow: 0 12px 32px rgba(45, 27, 84, 0.06);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1005,7 +1081,7 @@ body {
 }
 
 .testimonial-card:hover {
-  box-shadow: 0 16px 40px rgba(12, 47, 45, 0.1);
+  box-shadow: 0 16px 40px rgba(45, 27, 84, 0.1);
   transform: translateY(-2px);
 }
 
@@ -1411,7 +1487,7 @@ body {
   margin: 0;
   border-radius: 12px;
   overflow: hidden;
-  background: #d7ebe7;
+  background: #ebd9fc;
   box-shadow: none;
   position: relative;
 }
@@ -2683,7 +2759,7 @@ body {
 .booking-field textarea:focus,
 .booking-select-wrap select:focus {
   border-color: var(--button);
-  box-shadow: 0 0 0 1px rgba(15, 118, 110, 0.45);
+  box-shadow: 0 0 0 1px rgba(107, 70, 193, 0.45);
 }
 
 .booking-input-with-icon {
@@ -2700,7 +2776,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 15px;
-  color: #0f766e;
+  color: #6b46c1;
   pointer-events: none;
 }
 
@@ -2876,7 +2952,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 15px;
-  color: #0f766e;
+  color: #6b46c1;
   pointer-events: none;
 }
 
@@ -3440,4 +3516,25 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 .philosophy-section .about-subtitle,
 .process-section .about-subtitle {
   color: var(--muted, #334155) !important;
+}
+
+/* Rule 4: Theme-Aware High Contrast Typography & Form Placeholders */
+p, li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: var(--text) !important;
+  opacity: 0.65 !important;
+}
+
+input, 
+textarea, 
+select {
+  font-size: 16px !important;
+  color: var(--text) !important;
 }

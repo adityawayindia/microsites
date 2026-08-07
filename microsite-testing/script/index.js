@@ -300,6 +300,37 @@ if (menuToggle && mainNav) {
     const backdrop = document.getElementById("bookingModalBackdrop");
     const closeBtn = document.getElementById("bookingModalClose");
     const form = document.getElementById("bookingForm");
+
+    // Consent checkbox logic
+    const consentCheckbox = document.getElementById("consentCheckbox");
+    const submitBtnEl = document.getElementById("submitBtn") || form.querySelector(".booking-submit-btn");
+
+    if (consentCheckbox && submitBtnEl) {
+        submitBtnEl.disabled = !consentCheckbox.checked;
+
+        consentCheckbox.addEventListener("change", () => {
+            submitBtnEl.disabled = !consentCheckbox.checked;
+        });
+
+        // Intercept disabled property sets to respect consent checkbox state
+        const descriptor = Object.getOwnPropertyDescriptor(HTMLButtonElement.prototype, 'disabled');
+        if (descriptor) {
+            Object.defineProperty(submitBtnEl, 'disabled', {
+                get() {
+                    return descriptor.get.call(this);
+                },
+                set(val) {
+                    if (!val && !consentCheckbox.checked) {
+                        descriptor.set.call(this, true);
+                    } else {
+                        descriptor.set.call(this, val);
+                    }
+                },
+                configurable: true
+            });
+        }
+    }
+
     const clinicTab = document.getElementById("clinicVisitTab");
     const onlineTab = document.getElementById("onlineConsultTab");
     const openTriggers = document.querySelectorAll(".cta-btn");
@@ -370,7 +401,8 @@ if (menuToggle && mainNav) {
     }
 
     function validatePhone(value) {
-        return /^[6-9][0-9]{9}$/.test(value);
+        const digits = value.replace(/[\s\-().+]/g, "");
+        return /^[0-9]{4,15}$/.test(digits);
     }
 
     function validateDateNotPast(value) {
@@ -566,6 +598,7 @@ if (menuToggle && mainNav) {
         const fullName = form.fullName.value.trim();
         const email = form.email.value.trim();
         const phone = form.phone.value.trim();
+        const fullPhone = phone;
         const preferredDate = form.preferredDate.value;
         const preferredTime = form.preferredTime.value;
         const reason = form.reason.value.trim();
@@ -588,7 +621,7 @@ if (menuToggle && mainNav) {
             showError("phone", "Please enter your phone number.");
             isValid = false;
         } else if (!validatePhone(phone)) {
-            showError("phone", "Please enter a valid 10-digit phone number.");
+            showError("phone", "Please enter a valid phone number.");
             isValid = false;
         }
         if (!preferredDate) {

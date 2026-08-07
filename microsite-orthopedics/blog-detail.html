@@ -142,7 +142,7 @@
               </div>
               <div class="booking-field">
                   <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" inputmode="numeric" required />
+                  <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
                   <p class="booking-error" data-error-for="phone"></p>
               </div>
           </div>
@@ -205,7 +205,13 @@
               <div class="booking-file-preview" id="filePreview"></div>
               <p class="booking-error" data-error-for="report"></p>
           </div>
-          <button type="submit" class="booking-submit-btn" id="submitBtn">Book Appointment</button>
+          
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" class="booking-submit-btn" id="submitBtn" disabled>Book Appointment</button>
           <div class="booking-loader" id="bookingLoader" aria-hidden="true">
               <div class="loader-spinner"></div>
               <p>Booking your appointment...</p>
