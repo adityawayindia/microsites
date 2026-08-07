@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg: #f8fafc;
     --text: #0f172a;
     --muted: #334155;
@@ -5330,22 +5330,23 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  color: var(--button);
+  background: var(--button);
+  color: #ffffff;
   font-size: 15px;
   font-weight: 600;
   padding: 13px 22px;
   border-radius: 10px;
-  border: 1.5px solid rgba(15, 118, 110, 0.35);
+  border: 1.5px solid var(--button);
   text-decoration: none;
   transition: all 0.18s ease;
+  box-shadow: 0 6px 20px rgba(15, 118, 110, 0.3);
 }
 
 .hero-v2-cta-secondary:hover {
-  background: rgba(15, 118, 110, 0.06);
-  border-color: var(--button);
+  background: #0a6460;
+  border-color: #0a6460;
   transform: translateY(-1px);
-  color: var(--button);
+  color: #ffffff;
 }
 
 .hero-v2-socials {

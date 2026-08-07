@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    DigiDr Alternate — General Medicine "Private Clinic" Editorial Theme
    Midnight Navy / Crisp Snow / Luxe Champagne Gold palette
    DM Serif Display (headings) + Inter (body)
@@ -689,22 +689,23 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  color: var(--navy);
+  background: var(--button);
+  color: var(--white);
   font-size: 15px;
   font-weight: 600;
   padding: 13px 24px;
   border-radius: 6px;
-  border: 1.5px solid rgba(10, 25, 47, 0.2);
+  border: 1.5px solid var(--button);
   text-decoration: none;
   transition: all 0.18s ease;
+  box-shadow: 0 10px 28px rgba(10, 25, 47, 0.15);
 }
 
 .hero-v2-cta-secondary:hover {
-  background: rgba(10, 25, 47, 0.04);
-  border-color: var(--navy);
+  background: var(--button-hover);
+  border-color: var(--button-hover);
   transform: translateY(-1px);
-  color: var(--navy);
+  color: var(--white);
 }
 
 .hero-v2-socials {
