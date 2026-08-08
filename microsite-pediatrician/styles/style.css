@@ -1,29 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #fffbf4; /* Soft warm creamy vanilla background */
+  --bg: #fff5f8; /* Soft warm rosy blush background — pediatric pink */
   --text: #1e293b; /* Dark slate - WCAG AAA 14:1 contrast */
-  --muted: #475569;
-  --button: #e05638; /* Rich friendly coral - 4.6:1 contrast with white text */
-  --button-hover: #c84326;
-  --button-light: #fbe9e7;
+  --muted: #64748b;
+  --button: #d63384; /* Vibrant professional rose pink - 4.7:1 contrast with white text */
+  --button-hover: #b5176e;
+  --button-light: #fce7f3;
   --white: #ffffff;
-  --shadow: 0 10px 25px -5px rgba(224, 86, 56, 0.12), 0 8px 10px -6px rgba(224, 86, 56, 0.12);
+  --shadow: 0 10px 25px -5px rgba(214, 51, 132, 0.15), 0 8px 10px -6px rgba(214, 51, 132, 0.10);
 
   /* Kid-friendly theme pastel backgrounds */
   --color-blue-light: #e0f2fe;
   --color-green-light: #e6f4ea;
-  --color-yellow-light: #fffbeb;
+  --color-yellow-light: #fef9c3;
   --color-purple-light: #f3e8ff;
   --color-pink-light: #fce7f3;
 
   /* Vibrant, high-contrast accent colors (WCAG AA compliant >= 4.5:1 contrast) */
   --color-blue: #0284c7;      /* Sky Blue - 4.6:1 contrast */
   --color-green: #059669;     /* Fresh Mint Green - 4.7:1 contrast */
-  --color-yellow: #d97706;    /* Amber Yellow - 4.5:1 contrast */
+  --color-yellow: #ca8a04;    /* Amber Yellow - 4.5:1 contrast */
   --color-purple: #7c3aed;    /* Playful Purple - 6.2:1 contrast */
-  --color-pink: #db2777;      /* Berry Pink - 4.8:1 contrast */
+  --color-pink: #d63384;      /* Professional Rose Pink - 4.7:1 contrast */
+  --color-pink-dark: #9d174d; /* Deep rose for text contrast */
+  --color-pink-mid: #ec4899;  /* Bright vivid pink for accents */
+
+  /* Toy-pattern decorative background — used in hero section only */
+  --toy-bg: url('../assets/toy-pattern-bg.png');
 }
+
+/* ==========================================================================
+   Scattered Toy Decoration Layer
+   Individual toy emoji items are placed via JS (scatterToys). These rules
+   control their appearance, pointer behaviour, and floating animation.
+   ========================================================================== */
+
+.toys-scatter-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+}
+
+.toy-scatter-item {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.08));
+}
+
 
 /* ==========================================================================
    DigiDr Global — Responsive Text & Auto-Height Container Rules
@@ -310,7 +345,10 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
   padding: 72px 0 78px;
   margin-bottom: 0;
   overflow: hidden;
-  background: linear-gradient(125deg, #f6faff 0%, #edf5ff 46%, #f8fbff 100%);
+  /* Toy pattern enlarged for higher visibility behind soft pink gradient overlay */
+  background:
+    linear-gradient(135deg, rgba(255, 240, 246, 0.88) 0%, rgba(254, 226, 236, 0.82) 50%, rgba(255, 245, 248, 0.88) 100%),
+    var(--toy-bg) center / 520px repeat;
 }
 
 .hero-section::before {
@@ -318,9 +356,9 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 12% 14%, rgba(59, 130, 246, 0.12) 0%, transparent 28%),
-    radial-gradient(circle at 52% 84%, rgba(147, 197, 253, 0.2) 0%, transparent 32%),
-    radial-gradient(circle at 90% 18%, rgba(14, 165, 233, 0.12) 0%, transparent 30%);
+    radial-gradient(circle at 12% 14%, rgba(214, 51, 132, 0.10) 0%, transparent 28%),
+    radial-gradient(circle at 52% 84%, rgba(236, 72, 153, 0.13) 0%, transparent 32%),
+    radial-gradient(circle at 90% 18%, rgba(244, 114, 182, 0.10) 0%, transparent 30%);
   pointer-events: none;
   z-index: 0;
 }
@@ -617,8 +655,11 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
 
 /* About Section */
 .about-section {
-  background: var(--color-yellow-light);
+  background: linear-gradient(135deg, #fff0f5 0%, #fff8fa 50%, #fdecf2 100%);
   padding: 88px 0 100px;
+  position: relative;
+  border-top: 1px solid rgba(214, 51, 132, 0.08);
+  border-bottom: 1px solid rgba(214, 51, 132, 0.08);
 }
 
 .about-section .container {

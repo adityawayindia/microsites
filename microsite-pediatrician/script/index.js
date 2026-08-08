@@ -714,3 +714,159 @@ if (menuToggle && mainNav) {
   }
 })();
 
+// ============================================================
+//  Scattered Toy Decorations — Pediatric Child-Friendly Theme
+// ============================================================
+(function scatterToys() {
+  const TOYS = [
+    { emoji: "🦆", label: "duck" },
+    { emoji: "🧸", label: "teddy bear" },
+    { emoji: "🚂", label: "toy train" },
+    { emoji: "🎀", label: "bow" },
+    { emoji: "🌈", label: "rainbow" },
+    { emoji: "🎈", label: "balloon" },
+    { emoji: "⭐", label: "star" },
+    { emoji: "🚗", label: "toy car" },
+    { emoji: "🎯", label: "target ball" },
+    { emoji: "🪀", label: "yo-yo" },
+    { emoji: "🦋", label: "butterfly" },
+    { emoji: "🌻", label: "sunflower" },
+    { emoji: "🐥", label: "chick" },
+    { emoji: "🎠", label: "carousel" },
+    { emoji: "🌟", label: "glowing star" },
+  ];
+
+  const COUNT = 16;
+
+  function randBetween(a, b) {
+    return a + Math.random() * (b - a);
+  }
+
+  function getObstacles() {
+    // Collect bounding rectangles of all visible main section cards & text containers
+    const selectors = [
+      ".container",
+      ".hero-main-card",
+      ".about-lead",
+      ".about-description",
+      ".service-card",
+      ".contact-card",
+      ".testimonial-card",
+      ".philosophy-content",
+      ".philosophy-visual",
+      ".process-header",
+      ".process-grid",
+      ".gallery-header",
+      ".gallery-grid",
+      "header",
+      "footer"
+    ];
+
+    const obstacles = [];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.width > 0 && r.height > 0) {
+          const scrollY = window.scrollY || window.pageYOffset;
+          const scrollX = window.scrollX || window.pageXOffset;
+          // Add 24px safety margin buffer around every content element
+          obstacles.push({
+            left: r.left + scrollX - 24,
+            right: r.right + scrollX + 24,
+            top: r.top + scrollY - 24,
+            bottom: r.bottom + scrollY + 24
+          });
+        }
+      });
+    });
+    return obstacles;
+  }
+
+  function hitsObstacle(x, y, sizePx, obstacles) {
+    const toyR = {
+      left: x,
+      right: x + sizePx,
+      top: y,
+      bottom: y + sizePx
+    };
+
+    return obstacles.some(obs => {
+      return !(
+        toyR.right < obs.left ||
+        toyR.left > obs.right ||
+        toyR.bottom < obs.top ||
+        toyR.top > obs.bottom
+      );
+    });
+  }
+
+  function placeToys() {
+    // Only scatter if screen is wide enough to have empty margin space (>= 1240px)
+    if (window.innerWidth < 1240) return;
+
+    const obstacles = getObstacles();
+    const docH = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      4000
+    );
+
+    const layer = document.createElement("div");
+    layer.className = "toys-scatter-layer";
+    layer.setAttribute("aria-hidden", "true");
+    document.body.appendChild(layer);
+
+    const startY = 750;
+    const endY = docH - 450;
+    const totalH = endY - startY;
+    const bandH = totalH / COUNT;
+
+    const winW = window.innerWidth;
+
+    for (let i = 0; i < COUNT; i++) {
+      const toy = TOYS[i % TOYS.length];
+      const sizeRem = randBetween(1.8, 2.4);
+      const sizePx = sizeRem * 16;
+      const opacity = 1.0;
+      const rotate = randBetween(-15, 15);
+
+      // Try placing in left gutter or right gutter
+      let placed = false;
+      let attempts = 0;
+
+      while (!placed && attempts < 25) {
+        attempts++;
+        const isLeft = Math.random() > 0.5;
+        // Random X position strictly inside outer margin whitespace
+        const x = isLeft
+          ? randBetween(8, Math.max(12, winW * 0.08))
+          : randBetween(winW - Math.max(12, winW * 0.08) - sizePx, winW - sizePx - 8);
+
+        const y = startY + i * bandH + randBetween(-bandH * 0.3, bandH * 0.3);
+
+        if (!hitsObstacle(x, y, sizePx, obstacles)) {
+          const el = document.createElement("span");
+          el.className = "toy-scatter-item";
+          el.textContent = toy.emoji;
+          el.setAttribute("title", toy.label);
+          el.style.cssText = [
+            `left:${Math.round(x)}px`,
+            `top:${Math.round(y)}px`,
+            `font-size:${sizeRem.toFixed(2)}rem`,
+            `opacity:${opacity.toFixed(3)}`,
+            `transform:rotate(${rotate.toFixed(1)}deg)`,
+          ].join(";");
+
+          layer.appendChild(el);
+          placed = true;
+        }
+      }
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", placeToys);
+  } else {
+    setTimeout(placeToys, 200);
+  }
+})();
