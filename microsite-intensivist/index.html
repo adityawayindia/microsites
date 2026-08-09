@@ -64,14 +64,19 @@
     <div class="hero-mesh" aria-hidden="true"></div>
     <div class="container hero-layout">
       <div class="hero-content">
+            <div class="vital-hud-bar">
+              <span class="hud-chip"><span class="hud-pulse-dot"></span> 24/7 ICU Response</span>
+              <span class="hud-chip"><i class="fa-solid fa-heart-pulse"></i> Hemodynamic Telemetry</span>
+            </div>
+
             <div class="expert-badge">
-                <i class="fa-solid fa-heart-pulse"></i>
-                Intensivist Doctor
+                <i class="fa-solid fa-user-doctor"></i>
+                Senior Consultant Intensivist &amp; Critical Care Specialist
             </div>
 
             <h1 class="hero-title">Dr. Sarah Jenkins</h1>
             <p class="hero-subtitle">MD, FNB (Intensive Care) · Board Certified Intensivist Doctor</p>
-            <p class="mic">MCI Registration Number: MCI-CCM-2012-73892</p>
+            <p class="mic"><i class="fa-solid fa-id-card"></i> MCI Registration Number: MCI-CCM-2012-73892</p>
 
             <div class="hero-stats-grid">
                 <article class="hero-stat-box">
@@ -82,12 +87,12 @@
                 <article class="hero-stat-box">
                     <i class="fa-solid fa-users"></i>
                     <strong>8,200+</strong>
-                    <span>Patients Treated</span>
+                    <span>ICU Recoveries</span>
                 </article>
                 <article class="hero-stat-box">
-                    <i class="fa-solid fa-star"></i>
-                    <strong>98%</strong>
-                    <span>Patient Rating</span>
+                    <i class="fa-solid fa-heart-circle-check"></i>
+                    <strong>99.2%</strong>
+                    <span>Protocol Success</span>
                 </article>
             </div>
 
@@ -96,7 +101,7 @@
             </p>
 
         <div class="hero-actions">
-            <a href="#contact-us" class="contact-btn">Contact Now</a>
+            <a href="#contact-us" class="contact-btn">Emergency ICU Consultation</a>
             <div class="social-links" aria-label="Social media links">
                 <a href="#" class="social social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -160,8 +165,11 @@
 
       <div class="services-grid-new">
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-bed-pulse"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-bed-pulse"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-heart-pulse"></i> High Acuity</span>
               </div>
               <div class="service-body-new">
                 <h3>ICU Management</h3>
@@ -169,8 +177,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-lungs"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-lungs"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-wind"></i> Airway Support</span>
               </div>
               <div class="service-body-new">
                 <h3>Mechanical Ventilation</h3>
@@ -178,8 +189,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-kit-medical"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-kit-medical"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-wave-square"></i> Telemetry</span>
               </div>
               <div class="service-body-new">
                 <h3>Hemodynamic Monitoring</h3>
@@ -187,8 +201,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-suitcase-medical"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-suitcase-medical"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-truck-medical"></i> 24/7 Triage</span>
               </div>
               <div class="service-body-new">
                 <h3>Trauma &amp; Emergency Care</h3>
@@ -196,8 +213,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-file-waveform"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-file-waveform"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-notes-medical"></i> Post-Surgical</span>
               </div>
               <div class="service-body-new">
                 <h3>Post-Operative Recovery</h3>
@@ -205,8 +225,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-shield-halved"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-shield-virus"></i> Protocol</span>
               </div>
               <div class="service-body-new">
                 <h3>Sepsis Management</h3>
@@ -223,7 +246,14 @@
       <!-- Left: Visual Column -->
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo" loading="lazy" />
+          <img src="assets/intensivist-workspace.png" alt="ICU Clinical Telemetry Workspace" class="philosophy-photo" loading="lazy" />
+          <div class="philosophy-float-badge">
+            <i class="fa-solid fa-chart-line"></i>
+            <div>
+              <strong>99.2% Protocol Success</strong>
+              <span>Target Organ Stability</span>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Right: Content Column -->
@@ -409,7 +439,7 @@
         <p class="testimonials-kicker"><i class="fa-solid fa-circle-h" aria-hidden="true"></i> Patient Experiences</p>
         <h2 class="testimonials-title">Patient Experiences</h2>
         <p class="testimonials-subtitle">
-            Feedback from patients and families who received care under Dr. Sarah Jenkins during critical hospitalizations.
+            Feedback from patients and families who received care under our specialist during critical hospitalizations.
         </p>
       </div>
 

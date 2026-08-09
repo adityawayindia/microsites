@@ -224,6 +224,8 @@ All microsites must follow these design principles:
   - **Card/Feature Headings (h3):** `22px` on desktop, scaled down to `20px` on mobile (`<= 480px`).
   - **Body/Paragraph Text (p, li):** Minimum `16px` everywhere, styled in a very dark contrast color (e.g., `#0f172a`, `#2c3531`) for optimal legibility.
   - **Metadata, Badges, and Pills (.pill, .step-number, tag labels):** `12px` to `13px` for secondary details.
+- **Large Screen Typography Scaling:** To prevent body text and subheadings from looking too small on wider viewports, all stylesheets must append media queries scaling up text sizing starting at viewport widths of `1400px` (body/paragraphs to 18px, subtitles to 20px) and `1900px` (body/paragraphs to 20px, subtitles to 22px).
+- **Generic Sub-headings:** Section subheadings, subtitle paragraphs, badges, and introductory kickers must remain generic. They must *never* contain specific doctor names (e.g. "Dr. Sarah Smith") or explicit years of experience (e.g. "20+ years"). Keep names and years of experience restricted to main section headings (`h1`), detailed paragraphs, list items, or footer elements.
 - **Colour Palette:** Use curated, specialty-appropriate colours (HSL preferred). Avoid plain red/blue/green.
 - **Micro-animations:** Include subtle hover effects and transitions on interactive elements.
 - **Responsiveness:** All layouts must be fully responsive from 320px mobile up to 1440px desktop.

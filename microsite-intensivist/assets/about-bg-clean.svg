@@ -1,0 +1,16 @@
+<svg width="1440" height="600" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soft telemetry grid -->
+  <defs>
+    <pattern id="aboutGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="rgba(2, 132, 199, 0.12)" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <rect width="1440" height="600" fill="url(#aboutGrid)"/>
+  
+  <!-- Vital wave lines -->
+  <path d="M0 350 L400 350 L415 350 L425 365 L433 300 L443 410 L453 340 L460 350 L500 350 L520 350 L530 365 L538 300 L548 410 L558 340 L565 350 L1440 350" 
+        stroke="rgba(2, 132, 199, 0.22)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        
+  <path d="M0 180 L800 180 L815 180 L825 195 L833 130 L843 240 L853 170 L860 180 L900 180 L920 180 L930 195 L938 130 L948 240 L958 170 L965 180 L1440 180" 
+        stroke="rgba(2, 132, 199, 0.18)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -3600,3 +3600,39 @@ select {
   font-size: 16px !important;
   color: var(--text) !important;
 }
+
+/* ==========================================================================
+   Fluid scaling for large screens (viewport >= 1400px)
+   ========================================================================== */
+@media (min-width: 1400px) {
+  body, p, li, .hero-subtitle, .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .blog-card-title, .blog-detail-content p, .privacy-content p, .terms-content p, .alt-hero-subtext, .alt-about-body, .alt-services-sub, .alt-philosophy-sub, .alt-journey-sub, .alt-contact-sub, .alt-testi-sub, .alt-gallery-sub {
+    font-size: 18px !important;
+  }
+  .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
+    font-size: 20px !important;
+  }
+}
+@media (min-width: 1900px) {
+  body, p, li, .hero-subtitle, .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .blog-card-title, .blog-detail-content p, .privacy-content p, .terms-content p, .alt-hero-subtext, .alt-about-body, .alt-services-sub, .alt-philosophy-sub, .alt-journey-sub, .alt-contact-sub, .alt-testi-sub, .alt-gallery-sub {
+    font-size: 20px !important;
+  }
+  .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
+    font-size: 22px !important;
+  }
+}
+
+
+/* ==========================================================================
+   Responsive 3x2 Gallery Grid in Mobile View
+   ========================================================================== */
+@media (max-width: 640px) {
+  .gallery-grid, .alt-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  .gallery-item, .alt-gallery-item {
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+  }
+}
+

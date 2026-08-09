@@ -345,10 +345,10 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
   padding: 72px 0 78px;
   margin-bottom: 0;
   overflow: hidden;
-  /* Toy pattern enlarged for higher visibility behind soft pink gradient overlay */
+  /* Reduced linear-gradient overlay opacity to make toy pattern significantly more visible */
   background:
-    linear-gradient(135deg, rgba(255, 240, 246, 0.88) 0%, rgba(254, 226, 236, 0.82) 50%, rgba(255, 245, 248, 0.88) 100%),
-    var(--toy-bg) center / 520px repeat;
+    linear-gradient(135deg, rgba(255, 240, 246, 0.60) 0%, rgba(254, 226, 236, 0.50) 50%, rgba(255, 245, 248, 0.60) 100%),
+    var(--toy-bg) center / 420px repeat;
 }
 
 .hero-section::before {
@@ -3775,3 +3775,47 @@ select {
   font-size: 16px !important;
   color: var(--text) !important;
 }
+
+/* ==========================================================================
+   Fluid scaling for large screens (viewport >= 1400px)
+   ========================================================================== */
+@media (min-width: 1400px) {
+  body, p, li, .hero-subtitle, .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .blog-card-title, .blog-detail-content p, .privacy-content p, .terms-content p, .alt-hero-subtext, .alt-about-body, .alt-services-sub, .alt-philosophy-sub, .alt-journey-sub, .alt-contact-sub, .alt-testi-sub, .alt-gallery-sub {
+    font-size: 18px !important;
+  }
+  .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
+    font-size: 20px !important;
+  }
+}
+@media (min-width: 1900px) {
+  body, p, li, .hero-subtitle, .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .blog-card-title, .blog-detail-content p, .privacy-content p, .terms-content p, .alt-hero-subtext, .alt-about-body, .alt-services-sub, .alt-philosophy-sub, .alt-journey-sub, .alt-contact-sub, .alt-testi-sub, .alt-gallery-sub {
+    font-size: 20px !important;
+  }
+  .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
+    font-size: 22px !important;
+  }
+}
+
+/* Hide scattered floating toy emojis on mobile/tablets */
+@media (max-width: 1240px) {
+  .toy-scatter-item, .toys-scatter-layer {
+    display: none !important;
+  }
+}
+
+
+
+/* ==========================================================================
+   Responsive 3x2 Gallery Grid in Mobile View
+   ========================================================================== */
+@media (max-width: 640px) {
+  .gallery-grid, .alt-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  .gallery-item, .alt-gallery-item {
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+  }
+}
+
