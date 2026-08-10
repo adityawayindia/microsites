@@ -17,6 +17,8 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  <link rel="stylesheet" href="../independence-day/independence-day.css" />
+  <link rel="stylesheet" href="./styles/banner-module.css" />
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
@@ -64,6 +66,43 @@
   </header>
 
   <section class="hero-section">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+         1. Server-Side Rendering (PHP/Node/Python):
+            - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+            - Set 'data-banner-active="false"' to hide banner if no active image.
+            - Set 'data-banner-href="URL"' to turn image into a clickable link.
+         2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div 
+      class="digidr-banner-module single-image-banner-section" 
+      id="digidrBannerModule"
+      aria-label="Main Clinic Banner"
+      data-banner-active="false"
+      data-banner-src="assets/pedia_banner-1.png"
+      data-banner-alt="Dr. Sarah Smith Pediatric Care Banner"
+      data-banner-href="#"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <img
+              src="assets/pedia_banner-1.png" 
+              alt="Dr. Sarah Smith Pediatric Care Banner"
+              class="digidr-banner-img single-image-banner-img"
+              id="digidrBannerImg"
+              loading="eager"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
+
     <div class="container hero-layout">
       <div class="hero-main-card">
         <div class="expert-badge">
@@ -884,7 +923,9 @@
     </div>
   </footer>
 
+  <script src="./script/banner-module.js"></script>
   <script src="./script/index.js"></script>
   <script src="./script/auto-open-modal.js"></script>
+  <script src="../independence-day/independence-day.js"></script>
 </body>
 </html>

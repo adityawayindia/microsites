@@ -86,54 +86,7 @@
 
 
 
-  /* ══════════════════════════════════════════
-     1. EXECUTIVE TOP BANNER (Injected inside .site-header)
-     ══════════════════════════════════════════ */
-  function createBanner() {
-    const banner = document.createElement('div');
-    banner.id = 'id-banner';
-    banner.setAttribute('role', 'banner');
-    
-    const mandalaSVG = `
-      <svg class="id-banner-mandala" viewBox="0 0 120 120" fill="none" stroke="#06038D" stroke-width="1.8" aria-hidden="true">
-        ${Array.from({ length: 8 }, (_, i) => {
-          const rot = i * 45;
-          return `<path d="M60 60 C32 25, 88 25, 60 60 Z" fill="#06038D" fill-opacity="0.08" transform="rotate(${rot} 60 60)"/>`;
-        }).join('')}
-        <circle cx="60" cy="60" r="15" />
-        <circle cx="60" cy="60" r="7" fill="#06038D" />
-      </svg>
-    `;
 
-    const leafSVG = `
-      <svg class="id-banner-leaf" viewBox="0 0 60 60" aria-hidden="true">
-        <path d="M30 30 C20 12 40 12 30 30 Z" fill="#046A38" stroke="#ffffff" stroke-width="1.8" />
-        <path d="M30 30 C12 20 12 40 30 30 Z" fill="#046A38" stroke="#ffffff" stroke-width="1.8" />
-        <path d="M30 30 C20 48 40 48 30 30 Z" fill="#046A38" stroke="#ffffff" stroke-width="1.8" />
-        <path d="M30 30 C48 20 48 40 30 30 Z" fill="#046A38" stroke="#ffffff" stroke-width="1.8" />
-        <circle cx="30" cy="30" r="3.5" fill="#ffffff" />
-      </svg>
-    `;
-
-    banner.innerHTML = `
-      <div class="id-banner-pattern left">${mandalaSVG}</div>
-      <div class="id-banner-leaf-wrap left">${leafSVG}</div>
-      <div class="id-banner-content">
-        <div class="id-banner-text-wrap">
-          <h2 class="id-banner-title">Freedom Celebration</h2>
-          <div class="id-banner-pills">
-            <span class="id-banner-pill-btn">Happy 79th Independence Day</span>
-            <span class="id-banner-pill-badge">Jai Hind! 🇮🇳</span>
-          </div>
-        </div>
-      </div>
-      <div class="id-banner-leaf-wrap right">${leafSVG}</div>
-      <div class="id-banner-pattern right">${mandalaSVG}</div>
-    `;
-
-    // Always insert at the top of the body, outside the sticky header container
-    document.body.insertBefore(banner, document.body.firstChild);
-  }
 
   /* ══════════════════════════════════════════
      3. BOOKING MODAL CONTROL
@@ -280,7 +233,6 @@
      ══════════════════════════════════════════ */
   function init() {
     if (!isActive()) return;
-    createBanner();
     // createChakraBadge();
     setupScrollAndModalListeners();
     // setTimeout(() => launchConfetti(CONFIG.confettiDuration), 500);
