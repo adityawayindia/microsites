@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles/banner-module.css" />
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 
@@ -58,6 +59,48 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero-section">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+                   1. Server-Side Rendering (PHP/Node/Python):
+             - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+             - Set 'data-banner-active="false"' to hide banner if no active image.
+             - Set 'data-banner-href="URL"' to turn image into a clickable link.
+          2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div 
+      class="digidr-banner-module single-image-banner-section" 
+      id="digidrBannerModule"
+      data-banner-active="true"
+      data-banner-start=""
+      data-banner-end=""
+      aria-label="Main Clinic Banner"
+      data-banner-src=""
+      data-banner-src-mobile=""
+      data-banner-alt=""
+      data-banner-href="#"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="" />
+              <img
+                src="" 
+                alt=""
+                class="digidr-banner-img single-image-banner-img"
+                id="digidrBannerImg"
+                loading="eager"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
     <div class="hero-mesh" aria-hidden="true"></div>
     <div class="container hero-layout-centered">
       <div class="hero-content-centered">
@@ -577,27 +620,27 @@
 
       <div class="gallery-grid">
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="ICU monitoring station" />
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="ICU monitoring station" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Modern ICU ward" />
+          <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80" alt="Modern ICU ward" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Ventilator management" />
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Ventilator management" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Critical care team" />
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Critical care team" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Family consultation room" />
+          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=600&q=80" alt="Family consultation room" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Step-down unit" />
+          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&q=80" alt="Step-down unit" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
       </div>
@@ -766,6 +809,7 @@
     </div>
   </footer>
 
+  <script src="./script/banner-module.js"></script>
   <script src="script/index.js"></script>
 </body>
 

@@ -14,7 +14,8 @@
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
   <header class="site-header">
@@ -61,6 +62,48 @@
   </header>
 
   <section class="hero-section hero-section--v2">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+                   1. Server-Side Rendering (PHP/Node/Python):
+             - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+             - Set 'data-banner-active="false"' to hide banner if no active image.
+             - Set 'data-banner-href="URL"' to turn image into a clickable link.
+          2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div 
+      class="digidr-banner-module single-image-banner-section" 
+      id="digidrBannerModule"
+      data-banner-active="true"
+      data-banner-start=""
+      data-banner-end=""
+      aria-label="Main Clinic Banner"
+      data-banner-src=""
+      data-banner-src-mobile=""
+      data-banner-alt=""
+      data-banner-href="#"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="" />
+              <img
+                src="" 
+                alt=""
+                class="digidr-banner-img single-image-banner-img"
+                id="digidrBannerImg"
+                loading="eager"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
     <!-- Animated hero background layer -->
     <div class="hero-bg-accent" aria-hidden="true">
 
@@ -621,27 +664,27 @@
 
       <div class="gallery-grid">
           <figure class="gallery-item">
-              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
               <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </figure>
           <figure class="gallery-item">
-              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
               <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </figure>
           <figure class="gallery-item">
-              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
               <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </figure>
           <figure class="gallery-item">
-              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
               <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </figure>
           <figure class="gallery-item">
-              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
               <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </figure>
           <figure class="gallery-item">
-              <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
               <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </figure>
       </div>
@@ -798,6 +841,7 @@
     </div>
   </footer>
 
+  <script src="./script/banner-module.js"></script>
   <script src="script/index.js"></script>
   <script src="script/auto-open-modal.js"></script>
 </body>

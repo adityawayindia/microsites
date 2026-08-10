@@ -3807,43 +3807,6 @@ select {
 }
 
 
-
-/* ==========================================================================
-   Responsive 3x2 Gallery Grid in Mobile View
-   ========================================================================== */
-@media (max-width: 640px) {
-  .gallery-grid, .alt-gallery-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 8px !important;
-  }
-  .gallery-item, .alt-gallery-item {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  min-width: 0;
-}
-
-.single-image-banner-wrap {
-  position: relative;
-  width: 100%;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 12px 35px rgba(214, 51, 132, 0.14), 0 4px 15px rgba(0, 0, 0, 0.04);
-    gap: 36px;
-  }
-  .step-circle {
-    width: 100px;
-    height: 100px !important;
-    font-size: 26px;
-  }
-  .step-circle-ring {
-    top: -6px;
-    left: -6px;
-    width: 112px;
-    height: 112px;
-  }
-}
-
 /* Gallery Lightbox Navigation Buttons */
 .gallery-lightbox-nav {
   position: absolute;
@@ -4025,6 +3988,8 @@ select {
   padding: 10px 0 24px;
   background-color: transparent;
   min-width: 0;
+  position: relative;
+  z-index: 1; /* Elevate banner above absolute background patterns */
 }
 
 .single-image-banner-container {
@@ -4050,8 +4015,8 @@ select {
 
 .single-image-banner-img {
   width: 100%;
-  height: auto !important;
-  aspect-ratio: 4.5 / 1; /* Reduced height desktop ratio */
+  height: auto;
+  max-height: 220px; /* Cap height on desktop so it doesn't feel oversized */
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease, filter 0.3s ease;
@@ -4074,6 +4039,7 @@ select {
     border-width: 2px;
   }
   .single-image-banner-img {
-    aspect-ratio: 2.2 / 1; /* Reduced height mobile ratio */
+    aspect-ratio: 16 / 5; /* Force 16:5 aspect ratio on mobile for readability */
+    max-height: none;
   }
 }

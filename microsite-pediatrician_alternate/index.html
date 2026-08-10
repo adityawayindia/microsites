@@ -18,6 +18,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  <link rel="stylesheet" href="./styles/banner-module.css" />
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
@@ -58,6 +59,48 @@
 
   <!-- ====== HERO ====== -->
   <section class="alt-hero" id="home">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+         1. Server-Side Rendering (PHP/Node/Python):
+            - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+            - Set 'data-banner-active="false"' to hide banner if no active image.
+            - Set 'data-banner-href="URL"' to turn image into a clickable link.
+         2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div 
+      class="digidr-banner-module single-image-banner-section" 
+      id="digidrBannerModule"
+      data-banner-active="true"
+      data-banner-start="2026-08-11T00:00:00+05:30"
+      data-banner-end="2026-08-15T23:59:59+05:30"
+      aria-label="Main Clinic Banner"
+      data-banner-src="assets/pedia_banner-1.jpeg"
+      data-banner-src-mobile="assets/pedia_independence_mobile.png"
+      data-banner-alt="Pediatric Care Banner"
+      data-banner-href="#"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/pedia_independence_mobile.png" />
+              <img
+                src="assets/pedia_banner-1.jpeg" 
+                alt="Dr. Sarah Smith Pediatric Care Banner"
+                class="digidr-banner-img single-image-banner-img"
+                id="digidrBannerImg"
+                loading="eager"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
     <div class="alt-hero-bg-pattern" aria-hidden="true"></div>
 
     <div class="container alt-hero-inner">
@@ -486,22 +529,22 @@
 
       <div class="alt-gallery-grid">
         <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80" alt="Modern clinic exterior" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Modern clinic exterior" loading="lazy" />
         </figure>
         <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80" alt="Clinic reception and waiting area" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Clinic reception and waiting area" loading="lazy" />
         </figure>
         <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Clinic consultation room" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" alt="Clinic consultation room" loading="lazy" />
         </figure>
         <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Clinic corridor and seating" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80" alt="Clinic corridor and seating" loading="lazy" />
         </figure>
         <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=900&q=80" alt="Diagnostic equipment area" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="Diagnostic equipment area" loading="lazy" />
         </figure>
         <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Treatment room" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=80" alt="Treatment room" loading="lazy" />
         </figure>
       </div>
     </div>
@@ -672,6 +715,7 @@
     </div>
   </footer>
 
+  <script src="./script/banner-module.js"></script>
   <script src="./script/index.js"></script>
 </body>
 </html>

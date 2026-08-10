@@ -14,7 +14,8 @@
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body data-micrositeid="cardiology-001">
   <header class="site-header">
@@ -52,6 +53,48 @@
   </header>
 
   <section class="hero-section">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+                   1. Server-Side Rendering (PHP/Node/Python):
+             - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+             - Set 'data-banner-active="false"' to hide banner if no active image.
+             - Set 'data-banner-href="URL"' to turn image into a clickable link.
+          2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div 
+      class="digidr-banner-module single-image-banner-section" 
+      id="digidrBannerModule"
+      data-banner-active="true"
+      data-banner-start=""
+      data-banner-end=""
+      aria-label="Main Clinic Banner"
+      data-banner-src=""
+      data-banner-src-mobile=""
+      data-banner-alt=""
+      data-banner-href="#"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="" />
+              <img
+                src="" 
+                alt=""
+                class="digidr-banner-img single-image-banner-img"
+                id="digidrBannerImg"
+                loading="eager"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
     <div class="container hero-layout">
         <div class="hero-content">
             <div class="expert-badge">
@@ -448,22 +491,22 @@
 
       <div class="gallery-grid">
           <figure class="gallery-item">
-              <img src="https://picsum.photos/seed/clinic-cath-lab/600/400" alt="Cardiac Catheterisation Lab" />
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Cardiac Catheterisation Lab" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://picsum.photos/seed/clinic-echo/600/400" alt="Echocardiography Suite" />
+              <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80" alt="Echocardiography Suite" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://picsum.photos/seed/clinic-icu/600/400" alt="Cardiac ICU" />
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Cardiac ICU" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://picsum.photos/seed/clinic-consult/600/400" alt="Consultation Room" />
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Consultation Room" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://picsum.photos/seed/clinic-reception/600/400" alt="Reception and Waiting Area" />
+              <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&q=80" alt="Reception and Waiting Area" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://picsum.photos/seed/clinic-monitor/600/400" alt="Cardiac Monitoring Station" />
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Cardiac Monitoring Station" />
           </figure>
       </div>
     </div>
@@ -615,6 +658,7 @@
     </div>
   </footer>
 
+  <script src="./script/banner-module.js"></script>
   <script src="script/index.js"></script>
   <script src="script/auto-open-modal.js"></script>
 </body>

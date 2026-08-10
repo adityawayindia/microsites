@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pediatrician Microsite</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link rel="stylesheet" href="../independence-day/independence-day.css" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="./styles/banner-module.css" />
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container navbar">
       <a href="#" class="brand" aria-label="Dr. Sarah Smith">
         <span class="avatar" aria-hidden="true">
-          <img
-            src="assets/dr-sarah-smith.png"
-            alt="Dr. Sarah Smith"
-          />
+          <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith" />
         </span>
         <span class="brand-text">
           <span class="brand-name">Dr. Sarah Smith</span>
@@ -37,13 +29,8 @@
         </span>
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="mainNav"
-      >
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="mainNav">
         <span></span>
         <span></span>
         <span></span>
@@ -78,25 +65,19 @@
             - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
             - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
-    <div 
-      class="digidr-banner-module single-image-banner-section" 
-      id="digidrBannerModule"
-      aria-label="Main Clinic Banner"
-      data-banner-active="false"
-      data-banner-src="assets/pedia_banner-1.png"
-      data-banner-alt="Dr. Sarah Smith Pediatric Care Banner"
-      data-banner-href="#"
-    >
+    <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule"
+      aria-label="Main Clinic Banner" data-banner-active="true" data-banner-start="2026-08-11T00:00:00+05:30"
+      data-banner-end="2026-08-15T23:59:59+05:30" data-banner-src="assets/pedia_banner-1.jpeg"
+      data-banner-src-mobile="assets/pedia_independence_mobile.png" data-banner-alt="Pediatric Care Banner"
+      data-banner-href="#">
       <div class="container digidr-banner-container single-image-banner-container">
         <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
           <div class="digidr-banner-wrap single-image-banner-wrap">
-            <img
-              src="assets/pedia_banner-1.png" 
-              alt="Dr. Sarah Smith Pediatric Care Banner"
-              class="digidr-banner-img single-image-banner-img"
-              id="digidrBannerImg"
-              loading="eager"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/pedia_independence_mobile.png" />
+              <img src="assets/pedia_banner-1.jpeg" alt="Dr. Sarah Smith Pediatric Care Banner"
+                class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
+            </picture>
           </div>
         </a>
       </div>
@@ -111,7 +92,8 @@
         </div>
         <h1 class="hero-title">Dr. Sarah Smith</h1>
         <p class="hero-subtitle">
-          MBBS, MD (Pediatrics), Fellowship in Neonatal & Child Health - personalized care plans for newborns, toddlers, school-age children, and teens.
+          MBBS, MD (Pediatrics), Fellowship in Neonatal & Child Health - personalized care plans for newborns, toddlers,
+          school-age children, and teens.
         </p>
         <p class="hero-credentials"><b>Language Proficiency:</b> English, Hindi, Odia</p>
         <!-- <div class="hero-action-row">
@@ -137,9 +119,11 @@
 
           <div class="social-links" aria-label="Social media links">
             <a href="#" class="social social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social social-instagram" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
             <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
             <a href="#" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
@@ -148,11 +132,7 @@
 
       <aside class="hero-side-rail hero-side-rail-right">
         <div class="hero-image-wrap">
-          <img
-            src="assets/dr-sarah-smith.png"
-            alt="Dr. Sarah Smith portrait"
-            class="hero-image"
-          />
+          <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith portrait" class="hero-image" />
         </div>
       </aside>
     </div>
@@ -213,7 +193,8 @@
               <i class="fa-solid fa-baby"></i>
             </div>
             <h3 class="service-card-title">Newborn & Infant Care</h3>
-            <p class="service-card-desc">Comprehensive Care For Newborns, Feeding Guidance, Early Development Support, And Infant Wellness.</p>
+            <p class="service-card-desc">Comprehensive Care For Newborns, Feeding Guidance, Early Development Support,
+              And Infant Wellness.</p>
           </article>
 
           <article class="service-card">
@@ -222,7 +203,8 @@
               <i class="fa-solid fa-syringe"></i>
             </div>
             <h3 class="service-card-title">Vaccination & Immunization</h3>
-            <p class="service-card-desc">Routine Vaccination Schedules, Catch-Up Plans, And Parent Education For Complete Protection.</p>
+            <p class="service-card-desc">Routine Vaccination Schedules, Catch-Up Plans, And Parent Education For
+              Complete Protection.</p>
           </article>
 
           <article class="service-card">
@@ -231,7 +213,8 @@
               <i class="fa-solid fa-thermometer"></i>
             </div>
             <h3 class="service-card-title">Fever & Infection Management</h3>
-            <p class="service-card-desc">Evidence-Based Treatment For Seasonal Infections, Viral Illnesses, And Recurring Fevers.</p>
+            <p class="service-card-desc">Evidence-Based Treatment For Seasonal Infections, Viral Illnesses, And
+              Recurring Fevers.</p>
           </article>
 
           <article class="service-card">
@@ -240,7 +223,8 @@
               <i class="fa-solid fa-lungs"></i>
             </div>
             <h3 class="service-card-title">Asthma & Allergy Care</h3>
-            <p class="service-card-desc">Long-Term Management Plans For Childhood Asthma, Allergies, And Breathing Concerns.</p>
+            <p class="service-card-desc">Long-Term Management Plans For Childhood Asthma, Allergies, And Breathing
+              Concerns.</p>
           </article>
 
           <article class="service-card">
@@ -249,7 +233,8 @@
               <i class="fa-solid fa-apple-whole"></i>
             </div>
             <h3 class="service-card-title">Growth & Nutrition Monitoring</h3>
-            <p class="service-card-desc">Regular Growth Tracking, Nutrition Counseling, And Early Intervention For Developmental Concerns.</p>
+            <p class="service-card-desc">Regular Growth Tracking, Nutrition Counseling, And Early Intervention For
+              Developmental Concerns.</p>
           </article>
 
           <article class="service-card">
@@ -258,20 +243,23 @@
               <i class="fa-solid fa-user-group"></i>
             </div>
             <h3 class="service-card-title">Adolescent Health Counseling</h3>
-            <p class="service-card-desc">Support For Teenage Health, Lifestyle, Emotional Wellbeing, And Preventive Checkups.</p>
+            <p class="service-card-desc">Support For Teenage Health, Lifestyle, Emotional Wellbeing, And Preventive
+              Checkups.</p>
           </article>
         </div>
       </div>
     </div>
   </section>
 
-  
+
   <section class="philosophy-section" id="philosophy">
     <div class="container philosophy-layout">
       <!-- Left: Visual Column -->
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/pediatric-philosophy-workspace.png" alt="Pediatric clinic workspace flat-lay with medical stethoscope, growth chart, and wooden toy blocks" class="philosophy-photo" loading="lazy" />
+          <img src="assets/pediatric-philosophy-workspace.png"
+            alt="Pediatric clinic workspace flat-lay with medical stethoscope, growth chart, and wooden toy blocks"
+            class="philosophy-photo" loading="lazy" />
         </div>
       </div>
       <!-- Right: Content Column -->
@@ -329,7 +317,8 @@
             <div class="step-visual-wrap">
               <div class="step-circle">
                 <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-dasharray="5 7" stroke-linecap="round" />
                 </svg>
                 <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
               </div>
@@ -345,7 +334,8 @@
             <div class="step-visual-wrap">
               <div class="step-circle">
                 <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-dasharray="5 7" stroke-linecap="round" />
                 </svg>
                 <i class="fa-solid fa-child-reaching" aria-hidden="true"></i>
               </div>
@@ -361,7 +351,8 @@
             <div class="step-visual-wrap">
               <div class="step-circle">
                 <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-dasharray="5 7" stroke-linecap="round" />
                 </svg>
                 <i class="fa-solid fa-clipboard-user" aria-hidden="true"></i>
               </div>
@@ -377,7 +368,8 @@
             <div class="step-visual-wrap">
               <div class="step-circle">
                 <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-dasharray="5 7" stroke-linecap="round" />
                 </svg>
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
               </div>
@@ -399,7 +391,8 @@
         <div class="contact-header">
           <h2>Contact Us</h2>
           <p>
-            Give Your Child The Best Start With Compassionate Pediatric Care. Schedule A Consultation With Our Specialist Today.
+            Give Your Child The Best Start With Compassionate Pediatric Care. Schedule A Consultation With Our
+            Specialist Today.
           </p>
         </div>
 
@@ -437,8 +430,8 @@
             </div>
             <h3>Contact Information</h3>
             <p>
-            <a href="tel:+919068935571">+91-9068935571</a><br />
-            <a href="mailto:dr.smith@minneasotahospitals.com">dr.smith@minneasotahospitals.com</a>
+              <a href="tel:+919068935571">+91-9068935571</a><br />
+              <a href="mailto:dr.smith@minneasotahospitals.com">dr.smith@minneasotahospitals.com</a>
             </p>
           </article>
         </div>
@@ -459,7 +452,8 @@
         </span>
         <h2 class="testimonials-title">What Our Patients Say</h2>
         <p class="testimonials-subtitle">
-          Read Testimonials From Families Who Have Experienced Compassionate Pediatric Care Under Our Specialist's Guidance.
+          Read Testimonials From Families Who Have Experienced Compassionate Pediatric Care Under Our Specialist's
+          Guidance.
         </p>
       </div>
 
@@ -474,7 +468,8 @@
         <div class="testimonials-carousel" id="testimonialsCarousel">
           <div class="testimonials-track" id="testimonialsTrack">
             <article class="testimonial-card">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="James Pattinson" class="testimonial-avatar" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop"
+                alt="James Pattinson" class="testimonial-avatar" />
               <h3 class="testimonial-name">James Pattinson</h3>
               <div class="testimonial-stars" aria-label="4 out of 5 stars">
                 <i class="fa-solid fa-star"></i>
@@ -483,10 +478,13 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
               </div>
-              <p class="testimonial-quote">"Dr. Sarah Smith provided exceptional care for my son during a difficult fever episode. Her expertise and compassionate approach made all the difference. I highly recommend her for pediatric care."</p>
+              <p class="testimonial-quote">"Dr. Sarah Smith provided exceptional care for my son during a difficult
+                fever episode. Her expertise and compassionate approach made all the difference. I highly recommend her
+                for pediatric care."</p>
             </article>
             <article class="testimonial-card">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop" alt="Greg Stuart" class="testimonial-avatar" />
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop"
+                alt="Greg Stuart" class="testimonial-avatar" />
               <h3 class="testimonial-name">Greg Stuart</h3>
               <div class="testimonial-stars" aria-label="5 out of 5 stars">
                 <i class="fa-solid fa-star"></i>
@@ -495,10 +493,13 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </div>
-              <p class="testimonial-quote">"Outstanding experience from start to finish. Dr. Smith explained everything clearly and took time to address all my concerns. The entire team was professional and caring. Five stars!"</p>
+              <p class="testimonial-quote">"Outstanding experience from start to finish. Dr. Smith explained everything
+                clearly and took time to address all my concerns. The entire team was professional and caring. Five
+                stars!"</p>
             </article>
             <article class="testimonial-card">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop" alt="Trevor Mitchell" class="testimonial-avatar" />
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop"
+                alt="Trevor Mitchell" class="testimonial-avatar" />
               <h3 class="testimonial-name">Trevor Mitchell</h3>
               <div class="testimonial-stars" aria-label="3 out of 5 stars">
                 <i class="fa-solid fa-star"></i>
@@ -507,10 +508,12 @@
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
               </div>
-              <p class="testimonial-quote">"Good care overall. Dr. Smith helped manage my migraine episodes effectively. The follow-up process was thorough. Would recommend for neurological consultations."</p>
+              <p class="testimonial-quote">"Good care overall. Dr. Smith helped manage my migraine episodes effectively.
+                The follow-up process was thorough. Would recommend for neurological consultations."</p>
             </article>
             <article class="testimonial-card">
-              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop" alt="Maria Rodriguez" class="testimonial-avatar" />
+              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop"
+                alt="Maria Rodriguez" class="testimonial-avatar" />
               <h3 class="testimonial-name">Maria Rodriguez</h3>
               <div class="testimonial-stars" aria-label="5 out of 5 stars">
                 <i class="fa-solid fa-star"></i>
@@ -519,10 +522,13 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </div>
-              <p class="testimonial-quote">"After my seizure diagnosis, Dr. Smith's rehabilitation guidance was invaluable. She genuinely cares about her patients' long-term health. I feel confident and well-supported."</p>
+              <p class="testimonial-quote">"After my seizure diagnosis, Dr. Smith's rehabilitation guidance was
+                invaluable. She genuinely cares about her patients' long-term health. I feel confident and
+                well-supported."</p>
             </article>
             <article class="testimonial-card">
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop" alt="David Chen" class="testimonial-avatar" />
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop"
+                alt="David Chen" class="testimonial-avatar" />
               <h3 class="testimonial-name">David Chen</h3>
               <div class="testimonial-stars" aria-label="5 out of 5 stars">
                 <i class="fa-solid fa-star"></i>
@@ -531,10 +537,13 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </div>
-              <p class="testimonial-quote">"The best pediatrician we've consulted. Dr. Smith's diagnostic skills are remarkable. She identified the issue quickly and guided us clearly. Forever grateful for her expertise."</p>
+              <p class="testimonial-quote">"The best pediatrician we've consulted. Dr. Smith's diagnostic skills are
+                remarkable. She identified the issue quickly and guided us clearly. Forever grateful for her expertise."
+              </p>
             </article>
             <article class="testimonial-card">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Emily Watson" class="testimonial-avatar" />
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop"
+                alt="Emily Watson" class="testimonial-avatar" />
               <h3 class="testimonial-name">Emily Watson</h3>
               <div class="testimonial-stars" aria-label="4 out of 5 stars">
                 <i class="fa-solid fa-star"></i>
@@ -543,10 +552,12 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
               </div>
-              <p class="testimonial-quote">"Professional, knowledgeable, and kind. Dr. Smith made my stress test and follow-up consultations stress-free. The clinic runs smoothly and appointments are always on time."</p>
+              <p class="testimonial-quote">"Professional, knowledgeable, and kind. Dr. Smith made my stress test and
+                follow-up consultations stress-free. The clinic runs smoothly and appointments are always on time."</p>
             </article>
             <article class="testimonial-card">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop" alt="Robert Williams" class="testimonial-avatar" />
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop"
+                alt="Robert Williams" class="testimonial-avatar" />
               <h3 class="testimonial-name">Robert Williams</h3>
               <div class="testimonial-stars" aria-label="5 out of 5 stars">
                 <i class="fa-solid fa-star"></i>
@@ -555,7 +566,9 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </div>
-              <p class="testimonial-quote">"From preventive care to post-treatment follow-up, Dr. Sarah Smith has been exceptional. Her holistic approach to neurological health has improved my quality of life significantly."</p>
+              <p class="testimonial-quote">"From preventive care to post-treatment follow-up, Dr. Sarah Smith has been
+                exceptional. Her holistic approach to neurological health has improved my quality of life
+                significantly."</p>
             </article>
           </div>
         </div>
@@ -700,22 +713,28 @@
 
       <div class="gallery-grid">
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80" alt="Modern clinic exterior" />
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80"
+            alt="Modern clinic exterior" />
         </figure>
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80" alt="Clinic reception and waiting area" />
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80"
+            alt="Clinic reception and waiting area" />
         </figure>
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Clinic consultation room" />
+          <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80"
+            alt="Clinic consultation room" />
         </figure>
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Clinic corridor and seating" />
+          <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80"
+            alt="Clinic corridor and seating" />
         </figure>
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=900&q=80" alt="Diagnostic equipment area" />
+          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80"
+            alt="Diagnostic equipment area" />
         </figure>
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Treatment room" />
+          <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=80"
+            alt="Treatment room" />
         </figure>
       </div>
     </div>
@@ -740,22 +759,10 @@
       </button>
 
       <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-        <button
-          type="button"
-          class="booking-tab is-active"
-          id="clinicVisitTab"
-          role="tab"
-          aria-selected="true"
-        >
+        <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
           Clinic Visit
         </button>
-        <button
-          type="button"
-          class="booking-tab"
-          id="onlineConsultTab"
-          role="tab"
-          aria-selected="false"
-        >
+        <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">
           Online Consultation
         </button>
       </div>
@@ -764,13 +771,7 @@
         <div class="booking-form-row">
           <div class="booking-field">
             <label for="fullName">Full Name</label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              placeholder="Enter Your Full Name"
-              required
-            />
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
             <p class="booking-error" data-error-for="fullName"></p>
           </div>
 
@@ -784,13 +785,7 @@
         <div class="booking-form-row">
           <div class="booking-field">
             <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="your@email.com"
-              required
-            />
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
             <p class="booking-error" data-error-for="email"></p>
           </div>
 
@@ -798,21 +793,17 @@
             <label for="preferredDateText">Preferred Date</label>
             <div class="booking-datepicker" id="preferredDateField">
               <div class="booking-input-with-icon">
-                <input
-                  type="text"
-                  id="preferredDateText"
-                  class="booking-date-display"
-                  placeholder="Select a date"
-                  readonly
-                  autocomplete="off"
-                />
+                <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date"
+                  readonly autocomplete="off" />
               </div>
               <input type="hidden" id="preferredDate" name="preferredDate" />
               <div class="booking-calendar" id="preferredDateCalendar" hidden>
                 <div class="booking-calendar-header">
-                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i
+                      class="fa-solid fa-chevron-left"></i></button>
                   <span class="booking-calendar-title" data-cal-title></span>
-                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i
+                      class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="booking-calendar-weekdays">
                   <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
@@ -845,13 +836,8 @@
 
         <div class="booking-field">
           <label for="reason">Reason For Visit</label>
-          <textarea
-            id="reason"
-            name="reason"
-            rows="3"
-            placeholder="Please describe your symptoms or reason for consultation..."
-            required
-          ></textarea>
+          <textarea id="reason" name="reason" rows="3"
+            placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
           <p class="booking-error" data-error-for="reason"></p>
         </div>
 
@@ -859,24 +845,19 @@
           <label for="report">Upload Report</label>
           <div class="booking-upload-row">
             <label class="booking-upload-btn" for="report">Upload</label>
-            <input
-              type="file"
-              id="report"
-              name="report"
-              accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf"
-            />
+            <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
             <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
           </div>
           <p class="booking-error" data-error-for="report"></p>
         </div>
 
-        
-          <div class="booking-field booking-consent-field">
-              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
-          </div>
 
-<button type="submit" id="submitBtn" class="booking-submit-btn" disabled>
+        <div class="booking-field booking-consent-field">
+          <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+        </div>
+
+        <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>
           Book Appointment
         </button>
       </form>
@@ -926,6 +907,7 @@
   <script src="./script/banner-module.js"></script>
   <script src="./script/index.js"></script>
   <script src="./script/auto-open-modal.js"></script>
-  <script src="../independence-day/independence-day.js"></script>
+
 </body>
+
 </html>
