@@ -1,0 +1,87 @@
+/* ==========================================================================
+   DigiDr Modular Banner System — Component Stylesheet
+   ========================================================================== */
+
+.digidr-banner-module {
+  width: 100%;
+  padding: 10px 0 24px;
+  background-color: transparent;
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1; /* Elevate banner above absolute background patterns */
+}
+
+.digidr-banner-module[data-banner-active="false"] {
+  display: none !important;
+}
+
+.digidr-banner-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.digidr-banner-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+.digidr-banner-link[href="#"],
+.digidr-banner-link:not([href]) {
+  cursor: default;
+}
+
+.digidr-banner-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(214, 51, 132, 0.14), 0 4px 15px rgba(0, 0, 0, 0.04);
+  border: 3px solid #ffffff;
+  background: #ffffff;
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+}
+
+.digidr-banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 220px; /* Cap height on desktop so it doesn't feel oversized */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease, filter 0.3s ease;
+  max-width: 100%;
+}
+
+.digidr-banner-link[href]:not([href="#"]):hover .digidr-banner-img,
+.digidr-banner-wrap:hover .digidr-banner-img {
+  transform: scale(1.012);
+}
+
+@media (max-width: 768px) {
+  .digidr-banner-section,
+  .digidr-banner-module {
+    padding: 10px 0 16px;
+  }
+  .digidr-banner-container {
+    padding: 0 12px;
+  }
+  .digidr-banner-wrap {
+    border-radius: 14px;
+    border-width: 2px;
+  }
+  .digidr-banner-img {
+    aspect-ratio: 16 / 5; /* Force 16:5 aspect ratio on mobile for readability */
+    max-height: none;
+  }
+}
