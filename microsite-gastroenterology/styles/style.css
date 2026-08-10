@@ -5996,3 +5996,185 @@ select {
   }
 }
 
+/* ==========================================================================
+   DigiDr Gastroenterology Clinical Theme Additions & Overrides (Final)
+   ========================================================================== */
+
+/* Digestive HUD Bar & Chips styling */
+.digestive-hud-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.hud-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(20, 69, 61, 0.12) !important;
+  border-radius: 999px !important;
+  padding: 6px 14px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--button) !important;
+  box-shadow: 0 4px 15px rgba(20, 69, 61, 0.05) !important;
+}
+
+.hud-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #2ec4b6 !important;
+  border-radius: 50% !important;
+  position: relative;
+  display: inline-block;
+}
+
+.hud-pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #2ec4b6 !important;
+  border-radius: 50% !important;
+  animation: pulseGlow 1.8s infinite ease-in-out;
+  opacity: 0;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Floating Gastroenterology SVG Animations */
+.hero-gastro-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-gastro-decorations span {
+  position: absolute;
+  color: var(--button) !important;
+  opacity: 0.14 !important;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.hero-gastro-decorations span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-gastro-decorations span:hover {
+  opacity: 0.45 !important;
+  color: var(--accent) !important;
+}
+
+/* Float positioning and animation rules */
+.hero-float-stomach {
+  width: 130px;
+  height: 130px;
+  left: 5%;
+  top: 15%;
+  animation: floatSlowly 12s ease-in-out infinite alternate;
+}
+
+.hero-float-microbiome {
+  width: 90px;
+  height: 90px;
+  right: 8%;
+  top: 12%;
+  animation: floatSlowly 14s ease-in-out infinite alternate-reverse;
+}
+
+.hero-float-nutrition {
+  width: 80px;
+  height: 80px;
+  left: 8%;
+  bottom: 20%;
+  animation: floatSlowly 10s ease-in-out infinite alternate;
+}
+
+.hero-float-dna {
+  width: 110px;
+  height: 110px;
+  right: 50%;
+  bottom: 8%;
+  animation: floatSlowly 16s ease-in-out infinite alternate-reverse;
+}
+
+.hero-float-intestine {
+  width: 100px;
+  height: 100px;
+  right: 12%;
+  bottom: 25%;
+  animation: floatSlowly 11s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlowly {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-gastro-decorations {
+    display: none !important;
+  }
+  .digestive-hud-bar {
+    justify-content: center !important;
+  }
+}
+
+/* Service Card SVG icon styling */
+.service-svg-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--button);
+  transition: transform 0.25s ease, color 0.25s ease;
+  display: block;
+}
+
+.service-card-new:hover .service-svg-icon {
+  color: var(--button-hover);
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Background Overrides */
+.hero-section {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.45) 0%, rgba(240, 250, 248, 0.6) 100%),
+    url('../assets/gastro-hero-bg.png') center / cover no-repeat !important;
+  padding-bottom: 110px !important;
+}
+
+.about-section {
+  background:
+    linear-gradient(rgba(243, 250, 248, 0.88), rgba(232, 245, 242, 0.90)),
+    url('../assets/about-bg.png') center / cover no-repeat fixed !important;
+}
+
+.contact-section {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.88), rgba(243, 250, 248, 0.90)),
+    url('../assets/contact-bg.png') center / cover no-repeat fixed !important;
+}
+

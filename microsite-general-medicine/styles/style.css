@@ -1,18 +1,18 @@
 :root {
-    --bg: #f8fafc;
+    --bg: #f4fbf7;
     --text: #0f172a;
     --muted: #334155;
-    --button: #0284c7;
-    --button-hover: #0369a1;
-    --button-light: #e0f2fe;
-    --accent: #0ea5e9;
-    --accent-soft: #f0f9ff;
+    --button: #0d9488;
+    --button-hover: #0f766e;
+    --button-light: #ccfbf1;
+    --accent: #14b8a6;
+    --accent-soft: #f0fdf4;
     --accent-warm: #f43f5e;
     --bone: #ffffff;
     --titanium: #1e293b;
     --deep: #0c1524;
     --white: #ffffff;
-    --shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    --shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.15), 0 8px 10px -6px rgba(13, 148, 136, 0.10);
 }
 
 
@@ -663,9 +663,9 @@ aside {
 
 /* About Section — open split with copper rail */
 .about-section {
-  background:
-    radial-gradient(ellipse 40% 60% at 0% 100%, rgba(46, 196, 182, 0.1), transparent 55%),
-    linear-gradient(180deg, #f3faf8 0%, #e8f5f2 100%);
+  background: 
+    linear-gradient(rgba(244, 251, 247, 0.85), rgba(244, 251, 247, 0.85)),
+    url('../assets/about-bg.png') center / cover no-repeat fixed !important;
   padding: 88px 0;
   position: relative;
   overflow: hidden;
@@ -1058,7 +1058,9 @@ aside {
 /* Contact Section — light split panel */
 .contact-section {
   padding: 72px 0 88px;
-  background: linear-gradient(180deg, #ffffff 0%, #f3faf8 100%);
+  background: 
+    linear-gradient(rgba(244, 251, 247, 0.85), rgba(244, 251, 247, 0.85)),
+    url('../assets/contact-bg.png') center / cover no-repeat fixed !important;
 }
 
 .contact-section::before {
@@ -3496,12 +3498,15 @@ aside {
 }
 
 .booking-field--file .booking-upload-row {
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .booking-upload-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -5069,11 +5074,10 @@ body {
 
 
 /* ==========================================================================
-   Hero V2 — Redesigned Split-Panel Layout
+   Hero V2 - Animated Background System
    ========================================================================== */
-
 .hero-section--v2 {
-  background: linear-gradient(135deg, #f0faf9 0%, #e6f7f5 55%, #f8fffe 100%) !important;
+  background: linear-gradient(160deg, #f0fdf9 0%, #e8f9f5 38%, #f4fffe 70%, #f9fffc 100%) !important;
   position: relative;
   overflow: hidden;
   padding-top: 0 !important;
@@ -5083,7 +5087,7 @@ body {
   justify-content: flex-end;
 }
 
-/* Decorative floating geometry */
+/* ---- Glow orbs ---- */
 .hero-bg-accent {
   position: absolute;
   inset: 0;
@@ -5091,44 +5095,185 @@ body {
   z-index: 0;
 }
 
-.hero-bg-circle {
+/* ---- ECG Heartbeat SVG Strip ---- */
+.hero-ecg-svg {
   position: absolute;
-  border-radius: 50%;
-  opacity: 0.45;
+  bottom: 18%;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.hero-bg-circle--1 {
-  width: 600px;
-  height: 600px;
-  top: -160px;
-  right: -120px;
-  background: radial-gradient(circle at 40% 40%, rgba(15, 118, 110, 0.12), transparent 65%);
+.ecg-line {
+  stroke-dasharray: 3800;
+  stroke-dashoffset: 3800;
+  animation: ecgDraw 6s linear infinite;
 }
 
-.hero-bg-circle--2 {
-  width: 340px;
-  height: 340px;
-  bottom: 60px;
-  left: -80px;
-  background: radial-gradient(circle at 60% 60%, rgba(5, 150, 105, 0.10), transparent 65%);
+.ecg-line--2 {
+  animation-delay: -3s;
+  animation-duration: 9s;
 }
 
-.hero-bg-cross {
-  position: absolute;
-  top: 38%;
-  left: 46%;
-  width: 24px;
-  height: 24px;
-  opacity: 0.18;
+@keyframes ecgDraw {
+  0%   { stroke-dashoffset: 3800; opacity: 0.4; }
+  20%  { opacity: 1; }
+  80%  { opacity: 0.9; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
 }
-.hero-bg-cross::before,
-.hero-bg-cross::after {
-  content: "";
+
+/* ---- Floating Medical Cross Particles ---- */
+.hero-float-cross {
   position: absolute;
-  background: #0f766e;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
 }
-.hero-bg-cross::before { width: 3px; height: 24px; left: 50%; top: 0; transform: translateX(-50%); }
-.hero-bg-cross::after { width: 24px; height: 3px; top: 50%; left: 0; transform: translateY(-50%); }
+
+.hero-float-cross svg {
+  display: block;
+}
+
+.hero-float-cross--1 {
+  width: 36px;
+  height: 36px;
+  top: 14%;
+  left: 6%;
+  animation: crossFloat1 12s ease-in-out infinite;
+}
+
+.hero-float-cross--2 {
+  width: 26px;
+  height: 26px;
+  top: 22%;
+  right: 8%;
+  animation: crossFloat2 16s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+.hero-float-cross--3 {
+  width: 44px;
+  height: 44px;
+  bottom: 28%;
+  left: 14%;
+  animation: crossFloat3 20s ease-in-out infinite;
+  animation-delay: -7s;
+}
+
+.hero-float-cross--4 {
+  width: 20px;
+  height: 20px;
+  bottom: 18%;
+  right: 20%;
+  animation: crossFloat1 14s ease-in-out infinite;
+  animation-delay: -11s;
+}
+
+@keyframes crossFloat1 {
+  0%   { transform: translateY(0px) rotate(0deg);  opacity: 0.7; }
+  25%  { transform: translateY(-18px) rotate(8deg); opacity: 0.9; }
+  50%  { transform: translateY(-8px) rotate(-4deg); opacity: 0.6; }
+  75%  { transform: translateY(-22px) rotate(12deg); opacity: 0.85; }
+  100% { transform: translateY(0px) rotate(0deg);   opacity: 0.7; }
+}
+
+@keyframes crossFloat2 {
+  0%   { transform: translateY(0px) translateX(0px) rotate(0deg);   opacity: 0.55; }
+  30%  { transform: translateY(-14px) translateX(8px) rotate(-10deg); opacity: 0.8; }
+  60%  { transform: translateY(-6px) translateX(-6px) rotate(5deg);  opacity: 0.5; }
+  100% { transform: translateY(0px) translateX(0px) rotate(0deg);   opacity: 0.55; }
+}
+
+@keyframes crossFloat3 {
+  0%   { transform: translateY(0px) scale(1) rotate(0deg);    opacity: 0.4; }
+  40%  { transform: translateY(-20px) scale(1.06) rotate(8deg); opacity: 0.65; }
+  80%  { transform: translateY(-10px) scale(0.96) rotate(-5deg); opacity: 0.45; }
+  100% { transform: translateY(0px) scale(1) rotate(0deg);    opacity: 0.4; }
+}
+
+/* ---- Floating Medicine Pill SVGs ---- */
+.hero-float-pill {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
+  filter: drop-shadow(0 4px 10px rgba(13, 148, 136, 0.08));
+}
+
+.hero-float-pill svg {
+  display: block;
+}
+
+.hero-float-pill--1 {
+  width: 32px;
+  height: 56px;
+  top: 15%;
+  left: 45%;
+  animation: pillFloat1 15s ease-in-out infinite;
+}
+
+.hero-float-pill--2 {
+  width: 40px;
+  height: 40px;
+  bottom: 25%;
+  left: 42%;
+  animation: pillFloat2 18s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+.hero-float-pill--3 {
+  width: 36px;
+  height: 60px;
+  top: 45%;
+  right: 48%;
+  animation: pillFloat1 22s ease-in-out infinite;
+  animation-delay: -10s;
+}
+
+.hero-float-pill--4 {
+  width: 48px;
+  height: 30px;
+  top: 65%;
+  left: 15%;
+  animation: pillFloat2 14s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+@keyframes pillFloat1 {
+  0%   { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+  33%  { transform: translateY(-24px) rotate(15deg); opacity: 0.95; }
+  66%  { transform: translateY(-10px) rotate(-10deg); opacity: 0.65; }
+  100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+}
+
+@keyframes pillFloat2 {
+  0%   { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.6; }
+  40%  { transform: translateY(-18px) translateX(-12px) rotate(-20deg); opacity: 0.9; }
+  80%  { transform: translateY(-8px) translateX(10px) rotate(10deg); opacity: 0.75; }
+  100% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.6; }
+}
+
+/* ---- Dot-Grid Pattern Overlay ---- */
+.hero-dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(13, 148, 136, 0.13) 1.5px, transparent 1.5px);
+  background-size: 36px 36px;
+  background-position: 0 0;
+  z-index: 0;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, black 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, black 35%, transparent 100%);
+  animation: dotGridShift 28s linear infinite;
+}
+
+@keyframes dotGridShift {
+  0%   { background-position: 0px 0px; }
+  100% { background-position: 36px 36px; }
+}
 
 /* Main two-column grid */
 .hero-v2-layout {
@@ -5940,6 +6085,237 @@ select {
 /* ==========================================================================
    Responsive 3x2 Gallery Grid in Mobile View
    ========================================================================== */
+/* Custom Service Pill & Header layout */
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.service-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(13, 148, 136, 0.08);
+  color: #0d9488;
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.service-card-new {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1.5px solid rgba(13, 148, 136, 0.12);
+  .step-circle {
+    width: 100px;
+    height: 100px !important;
+    font-size: 26px;
+  }
+  .step-circle-ring {
+    top: -6px;
+    left: -6px;
+    width: 112px;
+    height: 112px;
+  }
+}
+
+/* Gallery Lightbox Navigation Buttons */
+.gallery-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(15, 23, 42, 0.75);
+  color: #f9fafb;
+  font-size: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+.gallery-lightbox-prev {
+  left: 24px;
+}
+
+.gallery-lightbox-next {
+  right: 24px;
+}
+
+.gallery-lightbox-nav:hover {
+  background: rgba(248, 250, 252, 0.95);
+  color: #111827;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.gallery-lightbox-prev:hover {
+  transform: translateY(-50%) scale(1.1) translateX(-2px);
+}
+
+.gallery-lightbox-next:hover {
+  transform: translateY(-50%) scale(1.1) translateX(2px);
+}
+
+@media (max-width: 768px) {
+  .gallery-lightbox-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+  }
+  .gallery-lightbox-prev {
+    left: 12px;
+  }
+  .gallery-lightbox-next {
+    right: 12px;
+  }
+}
+
+/* Fix visibility of Philosophy & Process section headings on light backgrounds */
+.philosophy-section .about-title,
+.process-section .about-title {
+  color: var(--deep, var(--text, #0f172a)) !important;
+}
+.philosophy-section .about-subtitle,
+.process-section .about-subtitle {
+  color: var(--muted, #334155) !important;
+}
+
+/* Consent Checkbox Styling */
+.booking-consent-field {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-top: 8px !important;
+  margin-bottom: 6px !important;
+}
+.booking-consent-field input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  margin: 0 !important;
+  cursor: pointer;
+  flex-shrink: 0 !important;
+  accent-color: #0f766e;
+}
+.booking-consent-field label {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #374151;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+  margin: 0 !important;
+}
+/* Ensure disabled state has reduced opacity */
+.booking-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+/* Eliminate whitespace from empty elements above the checkbox */
+.booking-file-preview:empty,
+.booking-error:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Rule 4: Theme-Aware High Contrast Typography & Form Placeholders */
+p, li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: var(--text) !important;
+  opacity: 0.65 !important;
+}
+
+input, 
+textarea, 
+select {
+  font-size: 16px !important;
+  color: var(--text) !important;
+}
+
+/* ==========================================================================
+   Fluid scaling for large screens (viewport >= 1400px)
+   ========================================================================== */
+@media (min-width: 1400px) {
+  body, p, li, .hero-subtitle, .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .blog-card-title, .blog-detail-content p, .privacy-content p, .terms-content p, .alt-hero-subtext, .alt-about-body, .alt-services-sub, .alt-philosophy-sub, .alt-journey-sub, .alt-contact-sub, .alt-testi-sub, .alt-gallery-sub {
+    font-size: 18px !important;
+  }
+  .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
+    font-size: 20px !important;
+  }
+}
+@media (min-width: 1900px) {
+  body, p, li, .hero-subtitle, .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .blog-card-title, .blog-detail-content p, .privacy-content p, .terms-content p, .alt-hero-subtext, .alt-about-body, .alt-services-sub, .alt-philosophy-sub, .alt-journey-sub, .alt-contact-sub, .alt-testi-sub, .alt-gallery-sub {
+    font-size: 20px !important;
+  }
+  .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
+    font-size: 22px !important;
+  }
+}
+
+
+/* ==========================================================================
+   Responsive 3x2 Gallery Grid in Mobile View
+   ========================================================================== */
+/* Custom Service Pill & Header layout */
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.service-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(13, 148, 136, 0.08);
+  color: #0d9488;
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.service-card-new {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1.5px solid rgba(13, 148, 136, 0.12);
+}
+
+.service-card-new:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 148, 136, 0.4);
+  box-shadow: 0 16px 36px rgba(13, 148, 136, 0.12);
+}
+
 @media (max-width: 640px) {
   .gallery-grid, .alt-gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -5951,3 +6327,62 @@ select {
   }
 }
 
+/* ---- Services Section Background Decorations ---- */
+.services-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.services-bg-accent {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- ECG Heartbeat SVG Strip ---- */
+.hero-ecg-svg {
+  position: absolute;
+  top: 4%;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.services-ecg-svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+}
+
+.services-float-pill {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
+  filter: drop-shadow(0 4px 10px rgba(13, 148, 136, 0.08));
+}
+
+.services-float-pill--1 {
+  width: 32px;
+  height: 56px;
+  top: 45%;
+  left: 45%;
+  animation: pillFloat1 18s ease-in-out infinite;
+}
+
+.services-float-pill--2 {
+  width: 38px;
+  height: 38px;
+  top: 55%;
+  right: 42%;
+  animation: pillFloat2 20s ease-in-out infinite;
+  animation-delay: -6s;
+}

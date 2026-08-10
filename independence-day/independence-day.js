@@ -21,7 +21,6 @@
     activateFrom:     { month: 8, day: 10 },
     activateTo:       { month: 8, day: 15 },
     confettiCount:    80,
-    flagCount:        4,
     confettiDuration: 9000,
     headerSelector:   '.site-header',
   };
@@ -75,149 +74,83 @@
     const or = r * 0.88, ir = r * 0.14, sr = r * 0.80;
     const spokes = Array.from({ length: 24 }, (_, i) => {
       const a = (i / 24) * 2 * Math.PI;
-      return `<line x1="${r}" y1="${r}" x2="${(r + sr * Math.sin(a)).toFixed(2)}" y2="${(r - sr * Math.cos(a)).toFixed(2)}" stroke="#000080" stroke-width="${sw}" stroke-linecap="round"/>`;
+      return `<line x1="${r}" y1="${r}" x2="${(r + sr * Math.sin(a)).toFixed(2)}" y2="${(r - sr * Math.cos(a)).toFixed(2)}" stroke="#06038D" stroke-width="${sw}" stroke-linecap="round"/>`;
     }).join('');
     return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
       <circle cx="${r}" cy="${r}" r="${(r*0.92).toFixed(2)}" fill="#ffffff" />
-      <circle cx="${r}" cy="${r}" r="${or.toFixed(2)}" fill="none" stroke="#000080" stroke-width="${sw}"/>
+      <circle cx="${r}" cy="${r}" r="${or.toFixed(2)}" fill="none" stroke="#06038D" stroke-width="${sw}"/>
       ${spokes}
-      <circle cx="${r}" cy="${r}" r="${ir.toFixed(2)}" fill="#000080"/>
+      <circle cx="${r}" cy="${r}" r="${ir.toFixed(2)}" fill="#06038D"/>
     </svg>`;
   }
 
-  /* ── Flag Cloth SVG (Pole-Free) ── */
-  function flagSVG(w, h) {
-    const cx = w / 2, cy = h / 2, r = (h / 3) * 0.36;
-    const spokes = Array.from({ length: 24 }, (_, i) => {
-      const a = (i / 24) * 2 * Math.PI;
-      return `<line x1="${cx.toFixed(1)}" y1="${cy.toFixed(1)}" x2="${(cx + r * Math.sin(a)).toFixed(2)}" y2="${(cy - r * Math.cos(a)).toFixed(2)}" stroke="#000080" stroke-width="0.55"/>`;
-    }).join('');
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" style="display:block;border-radius:3px">
-      <rect width="${w}" height="${(h/3).toFixed(1)}" fill="#FF9933"/>
-      <rect y="${(h/3).toFixed(1)}" width="${w}" height="${(h/3).toFixed(1)}" fill="#ffffff"/>
-      <rect y="${(h*2/3).toFixed(1)}" width="${w}" height="${(h/3).toFixed(1)}" fill="#138808"/>
-      ${spokes}
-      <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${(r*.92).toFixed(2)}" fill="none" stroke="#000080" stroke-width="0.7"/>
-      <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${(r*.17).toFixed(2)}" fill="#000080"/>
-    </svg>`;
-  }
+
 
   /* ══════════════════════════════════════════
      1. EXECUTIVE TOP BANNER (Injected inside .site-header)
      ══════════════════════════════════════════ */
   function createBanner() {
-    const is15 = isDay15();
-    const pillText = is15 ? '79th Independence Day' : '15 August 2026';
-    const mainMsg = is15
-      ? 'Happy 79th Independence Day &nbsp;·&nbsp; <span class="id-jai-hind">Jai Hind! 🇮🇳</span>'
-      : 'Celebrating India\'s Independence Day &nbsp;·&nbsp; <span class="id-jai-hind">Jai Hind! 🇮🇳</span>';
-
     const banner = document.createElement('div');
     banner.id = 'id-banner';
-    banner.setAttribute('role', 'status');
+    banner.setAttribute('role', 'banner');
+    
+    const mandalaSVG = `
+      <svg class="id-banner-mandala" viewBox="0 0 120 120" fill="none" stroke="#06038D" stroke-width="1.8" aria-hidden="true">
+        ${Array.from({ length: 8 }, (_, i) => {
+          const rot = i * 45;
+          return `<path d="M60 60 C32 25, 88 25, 60 60 Z" fill="#06038D" fill-opacity="0.08" transform="rotate(${rot} 60 60)"/>`;
+        }).join('')}
+        <circle cx="60" cy="60" r="15" />
+        <circle cx="60" cy="60" r="7" fill="#06038D" />
+      </svg>
+    `;
+
+    const leafSVG = `
+      <svg class="id-banner-leaf" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M30 30 C20 12 40 12 30 30 Z" fill="#046A38" stroke="#ffffff" stroke-width="1.8" />
+        <path d="M30 30 C12 20 12 40 30 30 Z" fill="#046A38" stroke="#ffffff" stroke-width="1.8" />
+        <path d="M30 30 C20 48 40 48 30 30 Z" fill="#046A38" stroke="#ffffff" stroke-width="1.8" />
+        <path d="M30 30 C48 20 48 40 30 30 Z" fill="#046A38" stroke="#ffffff" stroke-width="1.8" />
+        <circle cx="30" cy="30" r="3.5" fill="#ffffff" />
+      </svg>
+    `;
+
     banner.innerHTML = `
-      <div id="id-banner-inner">
-        <div class="id-banner-chakra-icon" aria-hidden="true">
-          ${chakraSVG(22)}
+      <div class="id-banner-pattern left">${mandalaSVG}</div>
+      <div class="id-banner-leaf-wrap left">${leafSVG}</div>
+      <div class="id-banner-content">
+        <div class="id-banner-text-wrap">
+          <h2 class="id-banner-title">Freedom Celebration</h2>
+          <div class="id-banner-pills">
+            <span class="id-banner-pill-btn">Happy 79th Independence Day</span>
+            <span class="id-banner-pill-badge">Jai Hind! 🇮🇳</span>
+          </div>
         </div>
-        <span id="id-banner-text">
-          <span class="id-pill-badge"><span class="id-pill-dot"></span>${pillText}</span>
-          <span class="id-banner-sep"></span>
-          <span>${mainMsg}</span>
-        </span>
-        <div class="id-banner-chakra-icon" aria-hidden="true">
-          ${chakraSVG(22)}
-        </div>
-      </div>`;
+      </div>
+      <div class="id-banner-leaf-wrap right">${leafSVG}</div>
+      <div class="id-banner-pattern right">${mandalaSVG}</div>
+    `;
 
-    const header = document.querySelector(CONFIG.headerSelector);
-    if (header) {
-      header.insertBefore(banner, header.firstChild);
-    } else {
-      document.body.insertBefore(banner, document.body.firstChild);
-    }
+    // Always insert at the top of the body, outside the sticky header container
+    document.body.insertBefore(banner, document.body.firstChild);
   }
 
   /* ══════════════════════════════════════════
-     2. FLOATING FLAGS — POLE-FREE FLUTTERING FLAGS
-     (Anchored cleanly using left/right offsets to prevent clipping)
+     3. BOOKING MODAL CONTROL
+     - Booking modal OPEN -> Hide Ashoka Chakra button
      ══════════════════════════════════════════ */
-  function createFlags() {
-    const container = document.createElement('div');
-    container.id = 'id-flags-container';
-    container.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(container);
-
-    // Using exact left/right anchors to avoid any edge clipping
-    const defs = [
-      { top: '12%', left: '10px',  fw: 46, fh: 30, fc: 'id-float f1', wc: 'w1' },
-      { top: '12%', right: '10px', fw: 46, fh: 30, fc: 'id-float f2', wc: 'w2' },
-      { top: '68%', left: '10px',  fw: 40, fh: 26, fc: 'id-float f3', wc: 'w3' },
-      { top: '68%', right: '10px', fw: 40, fh: 26, fc: 'id-float f4', wc: 'w4' },
-    ];
-
-    defs.slice(0, CONFIG.flagCount).forEach(d => {
-      const wrap = document.createElement('div');
-      wrap.className = `id-flag ${d.fc}`;
-      const posStr = d.left ? `left:${d.left};` : `right:${d.right};`;
-      wrap.style.cssText = `top:${d.top};${posStr}width:${d.fw}px;height:${d.fh}px;`;
-
-      const cloth = document.createElement('div');
-      cloth.className = `id-flag-cloth ${d.wc}`;
-      cloth.style.cssText = `width:${d.fw}px;height:${d.fh}px;`;
-      cloth.innerHTML = flagSVG(d.fw, d.fh);
-
-      wrap.appendChild(cloth);
-      container.appendChild(wrap);
-    });
-  }
-
-  /* ══════════════════════════════════════════
-     3. DIRECTIONAL SCROLL & BOOKING MODAL CONTROL
-     - Scroll DOWN -> Hide flags
-     - Scroll UP -> Show flags
-     - At top of page -> Show flags
-     - Booking modal OPEN -> Hide flags AND Ashoka Chakra button
-     ══════════════════════════════════════════ */
-  let lastScrollY = window.scrollY;
-
   function updateVisibility() {
-    const container = document.getElementById('id-flags-container');
     const badge = document.getElementById('id-chakra-badge');
     const modalActive = isModalOpen();
 
-    // Check if Booking Modal is open
     if (modalActive) {
-      if (container) container.classList.add('id-scroll-hidden');
       if (badge) badge.classList.add('id-modal-hidden');
-      return;
     } else {
       if (badge) badge.classList.remove('id-modal-hidden');
     }
-
-    // Directional scroll check
-    const currentScrollY = window.scrollY;
-    const delta = currentScrollY - lastScrollY;
-
-    if (container) {
-      if (currentScrollY <= 20) {
-        // At top of page -> show flags
-        container.classList.remove('id-scroll-hidden');
-      } else if (delta > 4) {
-        // Scrolling DOWN -> hide flags
-        container.classList.add('id-scroll-hidden');
-      } else if (delta < -4) {
-        // Scrolling UP -> show flags
-        container.classList.remove('id-scroll-hidden');
-      }
-    }
-
-    lastScrollY = currentScrollY;
   }
 
   function setupScrollAndModalListeners() {
-    window.addEventListener('scroll', updateVisibility, { passive: true });
-
     // MutationObserver to instantly detect modal open/close
     const observer = new MutationObserver(updateVisibility);
     observer.observe(document.body, { attributes: true, attributeFilter: ['style', 'class'], subtree: false });
@@ -240,7 +173,7 @@
     canvas.height = window.innerHeight;
 
     const ctx = canvas.getContext('2d');
-    const COLORS = ['#FF9933', '#138808', '#ffffff', '#000080', '#FFD700'];
+    const COLORS = ['#FF671F', '#046A38', '#ffffff', '#06038D', '#FFD700'];
 
     const particles = Array.from({ length: CONFIG.confettiCount }, () => ({
       x: Math.random() * canvas.width,
@@ -284,7 +217,7 @@
      5. FIREWORKS
      ══════════════════════════════════════════ */
   function fireworkBurst(x, y) {
-    const colors = ['#FF9933', '#138808', '#000080', '#FFD700', '#ffffff'];
+    const colors = ['#FF671F', '#046A38', '#06038D', '#FFD700', '#ffffff'];
     const wrap = document.createElement('div');
     wrap.className = 'id-firework';
     wrap.style.cssText = `left:${x}px;top:${y}px;`;
@@ -315,7 +248,7 @@
     const SIZE = 48, r = 24;
     const spokes = Array.from({ length: 24 }, (_, i) => {
       const a = (i / 24) * 2 * Math.PI;
-      return `<line x1="${r}" y1="${r}" x2="${(r+r*.80*Math.sin(a)).toFixed(2)}" y2="${(r-r*.80*Math.cos(a)).toFixed(2)}" stroke="#000080" stroke-width="1.3" stroke-linecap="round"/>`;
+      return `<line x1="${r}" y1="${r}" x2="${(r+r*.80*Math.sin(a)).toFixed(2)}" y2="${(r-r*.80*Math.cos(a)).toFixed(2)}" stroke="#06038D" stroke-width="1.3" stroke-linecap="round"/>`;
     }).join('');
 
     const badge = document.createElement('div');
@@ -325,14 +258,14 @@
     badge.title = '🇮🇳 Click to celebrate!';
     badge.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" width="${SIZE}" height="${SIZE}" viewBox="0 0 ${SIZE} ${SIZE}">
-        <circle cx="${r}" cy="${r}" r="${r-1}" fill="none" stroke="#FF9933" stroke-width="2.5"/>
+        <circle cx="${r}" cy="${r}" r="${r-1}" fill="none" stroke="#FF671F" stroke-width="2.5"/>
         <circle cx="${r}" cy="${r}" r="${r-3.5}" fill="none" stroke="#fff" stroke-width="2.5"/>
-        <circle cx="${r}" cy="${r}" r="${r-6}" fill="none" stroke="#138808" stroke-width="2.5"/>
+        <circle cx="${r}" cy="${r}" r="${r-6}" fill="none" stroke="#046A38" stroke-width="2.5"/>
         <g class="id-chakra-spin-el">
           <circle cx="${r}" cy="${r}" r="${(r*.70).toFixed(1)}" fill="#fff"/>
-          <circle cx="${r}" cy="${r}" r="${(r*.70).toFixed(1)}" fill="none" stroke="#000080" stroke-width="1.3"/>
+          <circle cx="${r}" cy="${r}" r="${(r*.70).toFixed(1)}" fill="none" stroke="#06038D" stroke-width="1.3"/>
           ${spokes}
-          <circle cx="${r}" cy="${r}" r="${(r*.13).toFixed(1)}" fill="#000080"/>
+          <circle cx="${r}" cy="${r}" r="${(r*.13).toFixed(1)}" fill="#06038D"/>
         </g>
       </svg>`;
 
@@ -348,10 +281,9 @@
   function init() {
     if (!isActive()) return;
     createBanner();
-    createFlags();
-    createChakraBadge();
+    // createChakraBadge();
     setupScrollAndModalListeners();
-    setTimeout(() => launchConfetti(CONFIG.confettiDuration), 500);
+    // setTimeout(() => launchConfetti(CONFIG.confettiDuration), 500);
     if (isDay15()) setTimeout(() => launchFireworks(), 700);
   }
 

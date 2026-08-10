@@ -2739,12 +2739,15 @@ body {
 }
 
 .booking-field--file .booking-upload-row {
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .booking-upload-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   justify-content: center;

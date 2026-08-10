@@ -6,27 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Sarah Jenkins | General Medicine Physician</title>
   <meta name="description"
-    content="Dr. Sarah Jenkins is a board-certified general medicine physician offering comprehensive primary care, chronic disease management, and preventive health services in Bengaluru." />
+    content="Dr. Sarah Jenkins is a board-certified general medicine physician offering comprehensive primary care, chronic disease management, and preventive health services." />
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231a2744'/%3E%3Cpath d='M16 32h8l4-12 5 24 5-18 4 6h8' stroke='%23b8934e' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230d9488'/%3E%3Cpath d='M16 32h8l4-12 5 24 5-18 4 6h8' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles/style.css?v=10" />
+  <link rel="stylesheet" href="styles/style.css?v=12" />
 </head>
 
 <body>
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand" aria-label="Dr. Sarah Jenkins">
         <span class="avatar" aria-hidden="true">
-          <img src="assets/dr-sarah-jenkins.png"
-            alt="Dr. Sarah Jenkins" />
+          <img src="assets/dr-sarah-jenkins.png" alt="Dr. Sarah Jenkins" />
         </span>
         <span class="brand-text">
           <span class="brand-name">Dr. Sarah Jenkins</span>
@@ -50,75 +50,117 @@
         <a href="blog.html">Blog</a>
       </nav>
 
-      <a href="#" class="cta-btn">
+      <a href="#" class="cta-btn" id="headerBookBtn">
         <span class="cta-text-desktop">Book Appointment</span>
         <span class="cta-text-mobile">Book Now</span>
       </a>
     </div>
   </header>
 
+  <!-- ===== HERO SECTION (CENTERED EDITORIAL ALTERNATE) ===== -->
   <section class="hero-section hero-section--v2">
-    <!-- Decorative background geometry -->
-    <div class="hero-bg-accent" aria-hidden="true">
-      <div class="hero-bg-circle hero-bg-circle--1"></div>
-      <div class="hero-bg-circle hero-bg-circle--2"></div>
-      <div class="hero-bg-cross" aria-hidden="true"></div>
-    </div>
+    <!-- Floating Pill SVG Graphic Elements -->
+    <svg class="floating-pill-svg floating-pill-svg--1" viewBox="0 0 100 100" width="80" height="80" aria-hidden="true">
+      <defs>
+        <linearGradient id="capsuleGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="50%" stop-color="#0a192f" />
+          <stop offset="50%" stop-color="#c59b27" />
+        </linearGradient>
+        <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0a192f" flood-opacity="0.15" />
+        </filter>
+      </defs>
+      <rect x="30" y="15" width="40" height="70" rx="20" ry="20" fill="url(#capsuleGrad1)" filter="url(#glow1)" transform="rotate(45 50 50)" />
+    </svg>
+
+    <svg class="floating-pill-svg floating-pill-svg--2" viewBox="0 0 100 100" width="65" height="65" aria-hidden="true">
+      <defs>
+        <linearGradient id="tabletGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="50%" stop-color="#2dd4bf" />
+          <stop offset="50%" stop-color="#0a192f" />
+        </linearGradient>
+        <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#2dd4bf" flood-opacity="0.2" />
+        </filter>
+      </defs>
+      <circle cx="50" cy="50" r="30" fill="url(#tabletGrad1)" filter="url(#glow2)" transform="rotate(-30 50 50)" />
+      <line x1="20" y1="50" x2="80" y2="50" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" transform="rotate(-30 50 50)" />
+    </svg>
+
+    <svg class="floating-pill-svg floating-pill-svg--3" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true">
+      <defs>
+        <linearGradient id="capsuleGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="50%" stop-color="#0d9488" />
+          <stop offset="50%" stop-color="#ffffff" />
+        </linearGradient>
+        <filter id="glow3" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#0d9488" flood-opacity="0.15" />
+        </filter>
+      </defs>
+      <rect x="30" y="15" width="40" height="70" rx="20" ry="20" fill="url(#capsuleGrad2)" filter="url(#glow3)" transform="rotate(-30 50 50)" />
+    </svg>
+
+    <svg class="floating-pill-svg floating-pill-svg--4" viewBox="0 0 100 100" width="65" height="65" aria-hidden="true">
+      <defs>
+        <linearGradient id="tabletGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="50%" stop-color="#c59b27" />
+          <stop offset="50%" stop-color="#ffffff" />
+        </linearGradient>
+        <filter id="glow4" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#c59b27" flood-opacity="0.15" />
+        </filter>
+      </defs>
+      <circle cx="50" cy="50" r="30" fill="url(#tabletGrad2)" filter="url(#glow4)" transform="rotate(30 50 50)" />
+      <line x1="20" y1="50" x2="80" y2="50" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" transform="rotate(30 50 50)" />
+    </svg>
 
     <div class="container hero-v2-layout">
-
-      <!-- Left: Text Panel -->
       <div class="hero-v2-content">
-        <div class="hero-v2-topbar">
-          <span class="pill pill-dark">
-            <i class="fa-solid fa-kit-medical"></i>
-            General Medicine
-          </span>
-          <span class="pill pill-cyan">
-            <i class="fa-solid fa-id-card"></i>
-            MCI Reg: MCI-MED-2012-73892
-          </span>
+        
+        <div class="expert-badge-alt">
+          <i class="fa-solid fa-notes-medical"></i>
+          General Medicine & Primary Healthcare Specialist
         </div>
 
         <h1 class="hero-v2-title">Dr. Sarah <span class="hero-v2-title-accent">Jenkins</span></h1>
         <p class="hero-v2-subtitle">MD, DNB (General Medicine) · Board Certified Consultant Physician</p>
+        
+        <div class="hero-v2-reg">
+          <i class="fa-solid fa-id-card"></i> MCI Reg: MCI-MED-2012-73892
+        </div>
 
-        <p class="hero-v2-languages">
-          <i class="fa-solid fa-language" aria-hidden="true"></i>
-          <span class="pill pill-sm pill-teal">English</span>
-          <span class="pill pill-sm pill-blue">Hindi</span>
-          <span class="pill pill-sm pill-amber">Kannada</span>
-        </p>
-
-
-        <!-- Stats Row -->
         <div class="hero-v2-stats">
-          <div class="hero-v2-stat">
-            <strong>12+</strong>
-            <span>Years<br>Experience</span>
-          </div>
-          <div class="hero-v2-stat-divider" aria-hidden="true"></div>
-          <div class="hero-v2-stat">
+          <article class="hero-v2-stat">
+            <i class="fa-solid fa-user-doctor" style="font-size: 20px; color: var(--gold); margin-bottom: 2px;"></i>
+            <strong>12+ Years</strong>
+            <span>Clinical Experience</span>
+          </article>
+          <div class="hero-v2-stat-divider"></div>
+          <article class="hero-v2-stat">
+            <i class="fa-solid fa-hospital-user" style="font-size: 20px; color: var(--gold); margin-bottom: 2px;"></i>
             <strong>8,200+</strong>
-            <span>Patients<br>Treated</span>
-          </div>
-          <div class="hero-v2-stat-divider" aria-hidden="true"></div>
-          <div class="hero-v2-stat">
+            <span>Patients Treated</span>
+          </article>
+          <div class="hero-v2-stat-divider"></div>
+          <article class="hero-v2-stat">
+            <i class="fa-solid fa-circle-check" style="font-size: 20px; color: var(--gold); margin-bottom: 2px;"></i>
             <strong>98%</strong>
-            <span>Patient<br>Rating</span>
-          </div>
+            <span>Positive Outcome</span>
+          </article>
         </div>
 
-        <!-- CTA + Socials -->
+        <div class="hero-v2-languages">
+          <strong><i class="fa-solid fa-language"></i> Languages:</strong>
+          <span class="hero-v2-lang-tag">English</span>
+          <span class="hero-v2-lang-tag">Hindi</span>
+          <span class="hero-v2-lang-tag">Kannada</span>
+        </div>
+
         <div class="hero-v2-actions">
-          <!-- <a href="#contact-us" class="hero-v2-cta">
-            <i class="fa-solid fa-calendar-check"></i>
-            Book Appointment
-          </a> -->
-          <a href="#contact-us" class="hero-v2-cta-secondary">Contact Now</a>
+          <a href="#services" class="hero-v2-cta-secondary">View Clinical Services</a>
         </div>
-
-        <div class="social-links hero-v2-socials" aria-label="Social media links">
+        
+        <div class="social-links hero-socials-centered" aria-label="Social media links">
           <a href="#" class="social social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
@@ -126,47 +168,53 @@
           <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
+
       </div>
-
-      <!-- Right: Portrait Panel -->
-      <div class="hero-v2-visual">
-        <div class="hero-v2-portrait-frame">
-          <img src="assets/dr-sarah-jenkins.png"
-            alt="Dr. Sarah Jenkins" class="hero-v2-photo" />
-
-        </div>
-        <!-- Decorative dots pattern -->
-        <div class="hero-v2-dots" aria-hidden="true"></div>
-      </div>
-
     </div>
-
   </section>
+
+  <!-- ===== REMOVED ECG LINE DIVIDER ===== -->
 
 
   <section class="about-section" id="about">
     <div class="container">
-      <div class="about-intro">
-        <p class="about-kicker">About the Doctor</p>
-        <h2 class="about-title">Comprehensive care. Preventive healing. Wellness for life.</h2>
-        <p class="about-subtitle">
-          Personalized health management, chronic condition control, and diagnostic excellence for your long-term
-          wellness.
-        </p>
-      </div>
+      <div class="about-grid-split">
+        <!-- Profile Image Added to About Section -->
+        <div class="about-visual">
+          <div class="about-portrait-frame">
+            <img src="assets/dr-sarah-jenkins.png" alt="Dr. Sarah Jenkins Portrait" class="about-photo" />
+            <div class="about-float-badge">
+              <i class="fa-solid fa-shield-halved"></i>
+              <strong>12+ Years</strong>
+              <span>Clinical Excellence</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-intro">
+            <p class="about-kicker">About the Doctor</p>
+            <h2 class="about-title">Comprehensive care. Preventive healing. Wellness for life.</h2>
+            <p class="about-subtitle">
+              Personalized health management, chronic condition control, and diagnostic excellence for your long-term
+              wellness.
+            </p>
+          </div>
 
-      <div class="about-story-new">
-        <p>
-          Dr. Sarah Jenkins is a board-certified General Medicine Consultant with over 12 years of experience in
-          diagnosing complex health conditions, managing chronic illnesses like diabetes and hypertension, and treating
-          infectious diseases. She specializes in comprehensive health screenings, preventive care, and lifestyle
-          medicine.
-        </p>
-        <p>
-          Recognized for her thorough diagnostic approach and empathetic consultations, Dr. Jenkins works closely with
-          patients and families to build personalized treatment plans that foster recovery and promote long-term
-          well-being.
-        </p>
+          <div class="about-story-new">
+            <p>
+              Dr. Sarah Jenkins is a board-certified General Medicine Consultant with over 12 years of experience in
+              diagnosing complex health conditions, managing chronic illnesses like diabetes and hypertension, and treating
+              infectious diseases. She specializes in comprehensive health screenings, preventive care, and lifestyle
+              medicine.
+            </p>
+            <p>
+              Recognized for her thorough diagnostic approach and empathetic consultations, Dr. Jenkins works closely with
+              patients and families to build personalized treatment plans that foster recovery and promote long-term
+              well-being.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -259,16 +307,10 @@
     </div>
   </section>
 
+  <!-- Redesigned Philosophy & Journey Layout Sections -->
   <section class="philosophy-section" id="philosophy">
     <div class="container philosophy-layout">
-      <!-- Left: Visual Column -->
-      <div class="philosophy-visual">
-        <div class="philosophy-img-frame">
-          <img src="assets/philosophy-workspace.png" alt="Generic medical workspace with clipboard and stethoscope"
-            class="philosophy-photo" loading="lazy" />
-        </div>
-      </div>
-      <!-- Right: Content Column -->
+      <!-- Right: Content Column first for clean flex offset layout -->
       <div class="philosophy-content">
         <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Healthcare Philosophy</p>
         <h2 class="about-title">A Partnership for Long-Term Wellness</h2>
@@ -281,26 +323,30 @@
             <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <div class="pillar-text">
               <h3>Preventive &amp; Early Focus</h3>
-              <p>Detecting potential health issues before they impact your life, saving time and ensuring peace of mind.
-              </p>
+              <p>Detecting potential health issues before they impact your life, saving time and ensuring peace of mind.</p>
             </div>
           </div>
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-stethoscope"></i></div>
             <div class="pillar-text">
               <h3>Evidence-Based Diagnosis</h3>
-              <p>Applying state-of-the-art medical diagnostics and science-backed guidelines for accurate clinical
-                decisions.</p>
+              <p>Applying state-of-the-art medical diagnostics and science-backed guidelines for accurate clinical decisions.</p>
             </div>
           </div>
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-comments"></i></div>
             <div class="pillar-text">
               <h3>Shared Medical Decision-Making</h3>
-              <p>Providing transparent, jargon-free consultations so you can make informed, confident choices about your
-                health.</p>
+              <p>Providing transparent, jargon-free consultations so you can make informed, confident choices about your health.</p>
             </div>
           </div>
+        </div>
+      </div>
+      <!-- Left: Visual Column (Different medicine related flat lay workspace image) -->
+      <div class="philosophy-visual">
+        <div class="philosophy-img-frame">
+          <img src="assets/philosophy-workspace.png" alt="Clinical diagnostics workspace layout"
+            class="philosophy-photo" loading="lazy" />
         </div>
       </div>
     </div>
@@ -317,81 +363,40 @@
         </p>
       </div>
 
-      <div class="process-steps-wrap">
-        <!-- Connecting Line for Desktop -->
-        <div class="process-timeline-line" aria-hidden="true"></div>
-
-        <div class="process-grid">
-          <!-- Step 1 -->
-          <div class="process-step">
-            <div class="step-visual-wrap">
-              <div class="step-circle">
-                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-dasharray="5 7" stroke-linecap="round" />
-                </svg>
-                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="step-body">
-              <span class="step-number">01</span>
-              <h3>Appointment Booking</h3>
-              <p>Book online or via phone. Option to upload medical reports beforehand to prepare.</p>
-            </div>
+      <div class="process-list-vertical">
+        <!-- Step 1 -->
+        <div class="process-step-row">
+          <div class="step-badge-number">01</div>
+          <div class="step-card-content">
+            <h3>Appointment Booking</h3>
+            <p>Book online or via phone. Option to upload medical reports beforehand to prepare.</p>
           </div>
+        </div>
 
-          <!-- Step 2 -->
-          <div class="process-step">
-            <div class="step-visual-wrap">
-              <div class="step-circle">
-                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-dasharray="5 7" stroke-linecap="round" />
-                </svg>
-                <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="step-body">
-              <span class="step-number">02</span>
-              <h3>Clinical Evaluation</h3>
-              <p>Discuss your medical history, check key vitals, and evaluate active symptoms.</p>
-            </div>
+        <!-- Step 2 -->
+        <div class="process-step-row">
+          <div class="step-badge-number">02</div>
+          <div class="step-card-content">
+            <h3>Clinical Evaluation</h3>
+            <p>Discuss your medical history, check key vitals, and evaluate active symptoms.</p>
           </div>
+        </div>
 
-          <!-- Step 3 -->
-          <div class="process-step">
-            <div class="step-visual-wrap">
-              <div class="step-circle">
-                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-dasharray="5 7" stroke-linecap="round" />
-                </svg>
-                <i class="fa-solid fa-file-medical" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="step-body">
-              <span class="step-number">03</span>
-              <h3>Personalized Care</h3>
-              <p>Receive a custom plan covering prescriptions, diagnostics, and lifestyle advice.</p>
-            </div>
+        <!-- Step 3 -->
+        <div class="process-step-row">
+          <div class="step-badge-number">03</div>
+          <div class="step-card-content">
+            <h3>Personalized Care</h3>
+            <p>Receive a custom plan covering prescriptions, diagnostics, and lifestyle advice.</p>
           </div>
+        </div>
 
-          <!-- Step 4 -->
-          <div class="process-step">
-            <div class="step-visual-wrap">
-              <div class="step-circle">
-                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-dasharray="5 7" stroke-linecap="round" />
-                </svg>
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="step-body">
-              <span class="step-number">04</span>
-              <h3>Follow-up &amp; Support</h3>
-              <p>Track clinical progress, review diagnostics, and adjust dosage for recovery.</p>
-            </div>
+        <!-- Step 4 -->
+        <div class="process-step-row">
+          <div class="step-badge-number">04</div>
+          <div class="step-card-content">
+            <h3>Follow-up &amp; Support</h3>
+            <p>Track clinical progress, review diagnostics, and adjust dosage for recovery.</p>
           </div>
         </div>
       </div>

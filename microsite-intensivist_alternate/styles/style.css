@@ -1276,7 +1276,9 @@ p, li { font-size: 16px; line-height: 1.7; color: var(--text-2); }
 .booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 12px; }
 
 .booking-upload-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.booking-upload-btn { display: inline-flex; align-items: center; background: var(--teal-pale); color: var(--teal); border: 1.5px solid rgba(13,148,136,0.25); border-radius: 8px; padding: 9px 18px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+.booking-upload-btn {
+  flex-shrink: 0;
+  white-space: nowrap; display: inline-flex; align-items: center; background: var(--teal-pale); color: var(--teal); border: 1.5px solid rgba(13,148,136,0.25); border-radius: 8px; padding: 9px 18px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
 .booking-upload-btn:hover { background: var(--teal); color: #fff; }
 .booking-field--file input[type="file"] { display: none; }
 .booking-upload-help { font-size: 12px; color: var(--muted); }

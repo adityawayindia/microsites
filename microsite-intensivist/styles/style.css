@@ -3476,6 +3476,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .booking-upload-btn {
@@ -3490,6 +3491,8 @@ body {
   font-weight: 500;
   color: #111827;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .booking-field--file input[type="file"] {

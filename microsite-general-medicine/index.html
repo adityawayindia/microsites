@@ -61,11 +61,63 @@
   </header>
 
   <section class="hero-section hero-section--v2">
-    <!-- Decorative background geometry -->
+    <!-- Animated hero background layer -->
     <div class="hero-bg-accent" aria-hidden="true">
-      <div class="hero-bg-circle hero-bg-circle--1"></div>
-      <div class="hero-bg-circle hero-bg-circle--2"></div>
-      <div class="hero-bg-cross" aria-hidden="true"></div>
+
+
+      <!-- Floating medical cross icons (in theme color) -->
+      <span class="hero-float-cross hero-float-cross--1" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="12" y="2" width="8" height="28" rx="2" fill="var(--button)" opacity="0.2"/><rect x="2" y="12" width="28" height="8" rx="2" fill="var(--button)" opacity="0.2"/></svg>
+      </span>
+      <span class="hero-float-cross hero-float-cross--2" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="12" y="2" width="8" height="28" rx="2" fill="var(--accent)" opacity="0.15"/><rect x="2" y="12" width="28" height="8" rx="2" fill="var(--accent)" opacity="0.15"/></svg>
+      </span>
+      <span class="hero-float-cross hero-float-cross--3" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="12" y="2" width="8" height="28" rx="2" fill="var(--button)" opacity="0.15"/><rect x="2" y="12" width="28" height="8" rx="2" fill="var(--button)" opacity="0.15"/></svg>
+      </span>
+      <span class="hero-float-cross hero-float-cross--4" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="12" y="2" width="8" height="28" rx="2" fill="var(--accent)" opacity="0.15"/><rect x="2" y="12" width="28" height="8" rx="2" fill="var(--accent)" opacity="0.15"/></svg>
+      </span>
+
+      <!-- Floating Medicine Pills SVGs (Capsules & Tablets - Repositioned) -->
+      <span class="hero-float-pill hero-float-pill--1" aria-hidden="true">
+        <!-- Capsule Pill 1 (Vertical, Top Half Filled) -->
+        <svg viewBox="0 0 40 70" fill="none">
+          <path d="M5 20 C5 11.7 11.7 5 20 5 C28.3 5 35 11.7 35 20 V35 H5 Z" fill="var(--button)" opacity="0.35"/>
+          <rect x="5" y="5" width="30" height="60" rx="15" stroke="var(--button)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="5" y1="35" x2="35" y2="35" stroke="var(--button)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <span class="hero-float-pill hero-float-pill--2" aria-hidden="true">
+        <!-- Round Tablet Pill (Left Half Filled) -->
+        <svg viewBox="0 0 50 50" fill="none">
+          <path d="M25 5 A20 20 0 0 0 25 45 Z" fill="var(--button)" opacity="0.3"/>
+          <circle cx="25" cy="25" r="20" stroke="var(--button)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="25" y1="5" x2="25" y2="45" stroke="var(--button)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <span class="hero-float-pill hero-float-pill--3" aria-hidden="true">
+        <!-- Rotated Capsule Pill 2 (Top/Right Half Filled) -->
+        <svg viewBox="0 0 40 70" fill="none" style="transform: rotate(45deg);">
+          <path d="M5 20 C5 11.7 11.7 5 20 5 C28.3 5 35 11.7 35 20 V35 H5 Z" fill="var(--accent)" opacity="0.35"/>
+          <rect x="5" y="5" width="30" height="60" rx="15" stroke="var(--accent)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="5" y1="35" x2="35" y2="35" stroke="var(--accent)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <span class="hero-float-pill hero-float-pill--4" aria-hidden="true">
+        <!-- Oval Capsule Pill (Left Half Filled) -->
+        <svg viewBox="0 0 70 40" fill="none">
+          <path d="M20 5 C11.7 5 5 11.7 5 20 C5 28.3 11.7 35 20 35 H35 V5 Z" fill="var(--button)" opacity="0.35"/>
+          <rect x="5" y="5" width="60" height="30" rx="15" stroke="var(--button)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="35" y1="5" x2="35" y2="35" stroke="var(--button)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <!-- Animated dot-grid overlay -->
+      <div class="hero-dot-grid"></div>
     </div>
 
     <div class="container hero-v2-layout">
@@ -181,6 +233,39 @@
   </section>
 
   <section class="services-section" id="services">
+    <!-- Services Section Background Decorations -->
+    <div class="services-bg-accent" aria-hidden="true">
+      <!-- Single Heart Line (ECG) -->
+      <svg class="services-ecg-svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <polyline
+          class="ecg-line ecg-line--1"
+          points="0,60 120,60 140,60 160,15 175,100 190,60 215,60 270,60 290,60 310,20 325,95 340,60 370,60 480,60 500,60 520,15 535,100 550,60 580,60 690,60 710,60 730,20 745,95 760,60 790,60 900,60 920,60 940,15 955,100 970,60 1000,60 1110,60 1130,60 1150,20 1165,95 1180,60 1210,60 1320,60 1340,60 1360,15 1375,100 1390,60 1440,60"
+          fill="none"
+          stroke="var(--button)"
+          stroke-width="2"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          opacity="0.25"
+        />
+      </svg>
+      <!-- Floating Pill (Top Left) -->
+      <span class="services-float-pill services-float-pill--1">
+        <svg viewBox="0 0 40 70" fill="none">
+          <path d="M5 20 C5 11.7 11.7 5 20 5 C28.3 5 35 11.7 35 20 V35 H5 Z" fill="var(--button)" opacity="0.4"/>
+          <rect x="5" y="5" width="30" height="60" rx="15" stroke="var(--button)" stroke-width="3" fill="none"/>
+          <line x1="5" y1="35" x2="35" y2="35" stroke="var(--button)" stroke-width="2.5"/>
+        </svg>
+      </span>
+      <!-- Floating Pill (Bottom Right) -->
+      <span class="services-float-pill services-float-pill--2">
+        <svg viewBox="0 0 50 50" fill="none">
+          <path d="M25 5 A20 20 0 0 0 25 45 Z" fill="var(--accent)" opacity="0.35"/>
+          <circle cx="25" cy="25" r="20" stroke="var(--accent)" stroke-width="3" fill="none"/>
+          <line x1="25" y1="5" x2="25" y2="45" stroke="var(--accent)" stroke-width="2.5"/>
+        </svg>
+      </span>
+    </div>
+
     <div class="container">
       <div class="services-header">
         <p class="services-kicker"><i class="fa-solid fa-house-medical" aria-hidden="true"></i> General Medicine Services</p>
@@ -192,8 +277,11 @@
 
       <div class="services-grid-new">
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-heart-circle-check"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-heart-circle-check"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-heart-pulse"></i> Chronic Care</span>
               </div>
               <div class="service-body-new">
                 <h3>Chronic Care Management</h3>
@@ -201,8 +289,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-kit-medical"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-kit-medical"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-shield-halved"></i> Prevention</span>
               </div>
               <div class="service-body-new">
                 <h3>Preventive Health Checkups</h3>
@@ -210,8 +301,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-virus-slash"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-virus-slash"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-shield-virus"></i> Infectious Care</span>
               </div>
               <div class="service-body-new">
                 <h3>Infectious Disease Care</h3>
@@ -219,8 +313,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-people-roof"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-people-roof"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-users"></i> Family Health</span>
               </div>
               <div class="service-body-new">
                 <h3>Geriatric &amp; Family Care</h3>
@@ -228,8 +325,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-apple-whole"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-apple-whole"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-seedling"></i> Wellness</span>
               </div>
               <div class="service-body-new">
                 <h3>Lifestyle &amp; Diet Advice</h3>
@@ -237,8 +337,11 @@
               </div>
           </article>
           <article class="service-card-new">
-              <div class="service-icon-wrap" aria-hidden="true">
-                  <i class="fa-solid fa-vial"></i>
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-vial"></i>
+                </div>
+                <span class="service-tag-pill"><i class="fa-solid fa-microscope"></i> Diagnostics</span>
               </div>
               <div class="service-body-new">
                 <h3>Diagnostic Lab Analysis</h3>

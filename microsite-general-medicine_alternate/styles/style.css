@@ -424,15 +424,14 @@ body {
 .hero-section--v2 {
   position: relative;
   overflow: hidden;
-  padding: 0;
-  min-height: 92vh;
+  padding: 40px 0 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background:
-    radial-gradient(ellipse 80% 60% at 0% 20%, rgba(197, 155, 39, 0.08), transparent 50%),
-    radial-gradient(ellipse 60% 50% at 100% 80%, rgba(10, 25, 47, 0.05), transparent 50%),
-    linear-gradient(170deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  align-items: center;
+  background: 
+    linear-gradient(rgba(244, 251, 247, 0.85), rgba(244, 251, 247, 0.85)),
+    url('../assets/hero-bg.jpg') center / cover no-repeat fixed !important;
 }
 
 /* Decorative floating geometry */
@@ -485,23 +484,27 @@ body {
 .hero-bg-cross::before { width: 2px; height: 28px; left: 50%; top: 0; transform: translateX(-50%); }
 .hero-bg-cross::after { width: 28px; height: 2px; top: 50%; left: 0; transform: translateY(-50%); }
 
-/* Main two-column grid */
+/* Main two-column grid (Flex Layout centered override for alternate theme) */
 .hero-v2-layout {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0 72px;
   position: relative;
   z-index: 1;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
 }
 
 /* ---- Left: Text Panel ---- */
 .hero-v2-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 22px;
+  width: 100%;
+  max-width: 800px;
   animation: fadeUp 0.8s ease both;
 }
 
@@ -536,13 +539,13 @@ body {
 .hero-v2-reg {
   display: inline-flex;
   align-items: center;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
   font-weight: 500;
   letter-spacing: 0.04em;
   background: rgba(197, 155, 39, 0.1);
   border: 1px solid rgba(197, 155, 39, 0.2);
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: 4px;
   max-width: 100%;
   white-space: normal;
@@ -551,12 +554,13 @@ body {
 .hero-v2-title {
   font-family: var(--serif);
   font-size: clamp(36px, 4.5vw, 58px);
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.1;
   color: var(--navy);
   letter-spacing: -0.01em;
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 
 .hero-v2-title-accent {
@@ -570,10 +574,9 @@ body {
   line-height: 1.65;
   margin: 0;
   max-width: 100%;
-  border-left: 3px solid var(--gold);
-  padding-left: 16px;
+  text-align: center;
   overflow-wrap: break-word;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .hero-v2-languages {
@@ -605,16 +608,17 @@ body {
 .hero-v2-stats {
   display: flex;
   align-items: stretch;
+  justify-content: center;
   gap: 0;
   background: var(--white);
-  border: 1px solid rgba(10, 25, 47, 0.08);
-  border-radius: 10px;
-  box-shadow: 0 6px 24px rgba(10, 25, 47, 0.04);
-  padding: 20px 0;
-  max-width: 100%;
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(13, 148, 136, 0.04);
+  padding: 16px 0;
+  max-width: 680px;
   width: 100%;
   box-sizing: border-box;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .hero-v2-stat {
@@ -629,9 +633,9 @@ body {
 
 .hero-v2-stat strong {
   display: block;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(22px, 2.8vw, 32px);
-  font-weight: 400;
+  font-weight: 700;
   color: var(--navy);
   line-height: 1.1;
   margin-bottom: 4px;
@@ -658,8 +662,10 @@ body {
 .hero-v2-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .hero-v2-cta {
@@ -713,13 +719,9 @@ body {
   gap: 10px;
 }
 
-/* ---- Right: Portrait Panel ---- */
+/* ---- Right: Portrait Panel (Hidden in centered alternate layout) ---- */
 .hero-v2-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeUp 0.9s ease 0.1s both;
+  display: none !important;
 }
 
 .hero-v2-portrait-frame {
@@ -3633,6 +3635,231 @@ select {
   .gallery-item, .alt-gallery-item {
     aspect-ratio: 1 / 1 !important;
     height: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Alternate Layout & Styling Enhancements (General Medicine Alternate)
+   ========================================================================== */
+
+/* About Section Split Grid */
+.about-grid-split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-portrait-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 8px solid #ffffff;
+  box-shadow: 0 20px 40px rgba(13, 148, 136, 0.1);
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.about-float-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.about-float-badge i {
+  color: var(--button);
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.about-float-badge strong {
+  font-size: 16px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.about-float-badge span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Philosophy Layout (Flip Columns: Content Left, Visual Right) */
+.philosophy-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Vertical Process Journey Layout */
+.process-list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.process-step-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #ffffff;
+  padding: 24px 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(13, 148, 136, 0.1);
+  box-shadow: 0 4px 20px rgba(13, 148, 136, 0.03);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.process-step-row:hover {
+  transform: translateX(6px);
+  border-color: rgba(13, 148, 136, 0.3);
+}
+
+.step-badge-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  background: var(--button);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-card-content h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.step-card-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Background Images for Alternate Sections */
+.services-section {
+  background: 
+    linear-gradient(rgba(244, 251, 247, 0.55), rgba(244, 251, 247, 0.55)),
+    url('../assets/services-bg.jpg') center / cover no-repeat fixed !important;
+}
+
+.process-section {
+  background: 
+    linear-gradient(rgba(244, 251, 247, 0.55), rgba(244, 251, 247, 0.55)),
+    url('../assets/journey-bg-new.jpg') center / cover no-repeat fixed !important;
+  padding: 88px 0;
+}
+
+.testimonials-section {
+  background: 
+    linear-gradient(rgba(244, 251, 247, 0.55), rgba(244, 251, 247, 0.55)),
+    url('../assets/testimonials-bg.jpg') center / cover no-repeat fixed !important;
+}
+
+/* Floating Pills styles */
+.floating-pill-svg {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+/* Animations */
+@keyframes floatY1 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floatY2 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(-3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floatY3 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floatY4 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(-2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Positions */
+.floating-pill-svg--1 {
+  left: 6%;
+  top: 25%;
+  animation: floatY1 6s ease-in-out infinite;
+}
+
+.floating-pill-svg--2 {
+  left: 8%;
+  bottom: 25%;
+  animation: floatY2 8s ease-in-out infinite;
+}
+
+.floating-pill-svg--3 {
+  right: 6%;
+  top: 28%;
+  animation: floatY3 7s ease-in-out infinite;
+}
+
+.floating-pill-svg--4 {
+  right: 8%;
+  bottom: 22%;
+  animation: floatY4 9s ease-in-out infinite;
+}
+
+/* Responsive hiding */
+@media (max-width: 1024px) {
+  .floating-pill-svg {
+    display: none !important;
+  }
+}
+
+/* Responsiveness overrides */
+@media (max-width: 768px) {
+  .about-grid-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .philosophy-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .process-step-row {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+    gap: 16px;
   }
 }
 
