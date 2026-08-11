@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  font-size: 15px;
+  font-size: 16px;
   margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 450;
@@ -135,7 +135,7 @@ aside {
 .testimonials-section,
 .social-media-section,
 .gallery-section {
-  padding: 80px 0 96px;
+  padding: 46px 0 52px;
   background: #ffffff;
 }
 
@@ -263,7 +263,7 @@ aside {
 }
 
 .hero-section {
-  padding: 40px 0 78px;
+  padding: 40px 0 44px;
   position: relative;
 margin-bottom: 0;
   overflow: hidden;
@@ -839,8 +839,10 @@ margin-bottom: 0;
 .about-description p {
   margin: 0 0 16px;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
   color: #384852;
+  text-align: justify;
+  text-align: justify;
 }
 
 .about-description p:last-child {
@@ -874,7 +876,7 @@ margin-bottom: 0;
 .services-section {
   position: relative;
   overflow: hidden;
-  padding: 88px 0 96px;
+  padding: 52px 0 56px;
   background:
     radial-gradient(ellipse 60% 50% at 50% 0%, rgba(46, 196, 182, 0.14), transparent 60%),
     linear-gradient(180deg, #eaf7f4 0%, #f3faf8 45%, #ffffff 100%);
@@ -936,7 +938,7 @@ margin-bottom: 0;
 .services-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -1057,7 +1059,7 @@ margin-bottom: 0;
 
 /* Contact Section â€” light split panel */
 .contact-section {
-  padding: 72px 0 88px;
+  padding: 44px 0 52px;
   background: 
     linear-gradient(rgba(244, 251, 247, 0.85), rgba(244, 251, 247, 0.85)),
     url('../assets/contact-bg.png') center / cover no-repeat fixed !important;
@@ -1113,7 +1115,7 @@ margin-bottom: 0;
   margin: 0;
   font-size: 15px;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.5;
   max-width: 42ch;
 }
 
@@ -1181,7 +1183,7 @@ margin-bottom: 0;
 .contact-item p {
   margin: 0;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -1220,7 +1222,7 @@ margin-bottom: 0;
 .testimonials-section {
   background:
     linear-gradient(180deg, #f3faf8 0%, #ffffff 45%, #eaf7f4 100%);
-  padding: 88px 0 96px;
+  padding: 52px 0 56px;
 }
 
 .testimonials-header {
@@ -1246,7 +1248,7 @@ margin-bottom: 0;
 .testimonials-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -1352,7 +1354,7 @@ margin-bottom: 0;
 .testimonial-quote {
   margin: 0;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.5;
   color: #3d5a54;
   font-weight: 400;
   position: relative;
@@ -1439,7 +1441,7 @@ margin-bottom: 0;
 /* Social Media Section */
 .social-media-section {
   background: #ffffff;
-  padding: 60px 0 80px;
+  padding: 44px 0 48px;
 }
 
 .social-media-header {
@@ -1461,7 +1463,7 @@ margin-bottom: 0;
 .social-media-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #6d7076;
 }
 
@@ -1591,7 +1593,7 @@ margin-bottom: 0;
 
 .social-post-options {
   margin-left: auto;
-  color: #6b7280;
+  color: #475569;
   font-size: 15px;
 }
 
@@ -1660,7 +1662,7 @@ margin-bottom: 0;
   align-items: center;
   gap: 16px;
   font-size: 15px;
-  color: #6b7280;
+  color: #475569;
 }
 
 .social-post-actions i {
@@ -1729,7 +1731,7 @@ margin-bottom: 0;
 
 /* Gallery Section â€” uniform card grid */
 .gallery-section {
-  padding: 80px 0 96px;
+  padding: 46px 0 56px;
   background: #ffffff;
 }
 
@@ -1752,7 +1754,7 @@ margin-bottom: 0;
 .gallery-subtitle {
   margin: 0;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -1927,7 +1929,7 @@ margin-bottom: 0;
   margin: 0;
   color: #5c6068;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .blog-listing-section {
@@ -2127,13 +2129,13 @@ margin-bottom: 0;
 
 .blog-detail-author-role {
   font-size: 15px;
-  color: #6b7280;
+  color: #475569;
 }
 
 .blog-detail-date {
   margin: 0 0 0 auto;
   font-size: 15px;
-  color: #6b7280;
+  color: #475569;
 }
 
 .blog-detail-featured-media {
@@ -2157,7 +2159,7 @@ margin-bottom: 0;
   margin: 0 0 14px;
   color: #37424f;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .blog-detail-content h2 {
@@ -2175,7 +2177,7 @@ margin-bottom: 0;
   border-radius: 10px;
   color: #374151;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
   font-weight: 500;
 }
 
@@ -2335,13 +2337,13 @@ margin-bottom: 0;
 }
 
 .footer-divider {
-  color: #6b7280;
+  color: #475569;
 }
 
 .footer-copy {
   margin: 0;
   font-size: 12px;
-  color: #9ca3af;
+  color: #64748b;
 }
 
 .booking-file-preview {
@@ -2404,7 +2406,7 @@ margin-bottom: 0;
 .preview-size {
     margin: 0;
     font-size: 15px;
-    color: #6b7280;
+    color: #475569;
 }
 
 /* Booking Loader Styles - Fixed positioning */
@@ -3000,7 +3002,7 @@ margin-bottom: 0;
 
   .blog-detail-content p {
     font-size: 15px;
-    line-height: 1.75;
+    line-height: 1.55;
   }
 
   .blog-detail-content h2 {
@@ -3053,7 +3055,7 @@ margin-bottom: 0;
   .testimonial-quote {
   margin: 0;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.5;
   color: #3d5a54;
   font-weight: 400;
   position: relative;
@@ -3206,7 +3208,7 @@ margin-bottom: 0;
 
 .booking-field input::placeholder,
 .booking-field textarea::placeholder {
-  color: #9ca3af;
+  color: #64748b;
 }
 
 /* â”€â”€ Phone Input Group (Country Code + Number) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -3267,7 +3269,7 @@ margin-bottom: 0;
 }
 
 .phone-input-group input[type="tel"]::placeholder {
-  color: #9ca3af;
+  color: #64748b;
 }
 
 /* Override base booking-field input border when inside phone-input-group */
@@ -3407,7 +3409,7 @@ margin-bottom: 0;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
-  color: #9ca3af;
+  color: #64748b;
   margin-bottom: 4px;
   text-transform: uppercase;
 }
@@ -3662,7 +3664,7 @@ margin-bottom: 0;
 
 /* ===== Dentist about redesign ===== */
 .about-section {
-  padding: 88px 0 96px;
+  padding: 52px 0 56px;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 55%, #eaf7f4 100%);
   position: relative;
   overflow: hidden;
@@ -3700,7 +3702,7 @@ margin-bottom: 0;
   margin: 0;
   color: var(--muted);
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
   padding-bottom: 0;
   border-bottom: none;
   font-weight: 400;
@@ -3718,7 +3720,8 @@ margin-bottom: 0;
   margin: 0 0 14px;
   color: #3d4a44;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
+  text-align: justify;
 }
 .about-story p:last-child { margin-bottom: 0; }
 
@@ -4256,7 +4259,7 @@ margin-bottom: 0;
 
   .testimonial-quote {
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.5;
     word-break: normal;
     overflow-wrap: anywhere;
   }
@@ -4283,7 +4286,7 @@ margin-bottom: 0;
 
   .testimonial-quote {
     font-size: 17px;
-    line-height: 1.65;
+    line-height: 1.5;
   }
 }
 
@@ -4419,9 +4422,10 @@ margin-bottom: 0;
 
 .about-story-new p {
   font-size: 15px;
-  line-height: 1.85;
+  line-height: 1.55;
   color: var(--text);
   margin: 0 0 16px;
+  text-align: justify;
 }
 
 .about-story-new p:last-child {
@@ -4490,7 +4494,7 @@ margin-bottom: 0;
 .service-body-new p {
   font-size: 15px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -4606,7 +4610,7 @@ margin-bottom: 0;
 
 .testimonial-card-new .testimonial-quote {
   font-size: 15px;
-  line-height: 1.75;
+  line-height: 1.55;
   color: var(--text);
   margin: 0 0 20px;
   font-style: italic;
@@ -4705,7 +4709,7 @@ body {
 
 /* 1. Hero Layout Swap & Clinical Pulse Circle */
 .hero-section {
-  padding: 40px 0 78px;
+  padding: 38px 0 46px;
   background-color: #f8fafc;
   background-image: 
     linear-gradient(rgba(15, 118, 110, 0.02) 1px, transparent 1px),
@@ -4853,7 +4857,8 @@ body {
 .about-story-new p {
   color: var(--text);
   font-size: 15px;
-  line-height: 1.75;
+  line-height: 1.55;
+  text-align: justify;
 }
 
 /* 3. Wellness Clinic Cards for Services Section */
@@ -5354,7 +5359,7 @@ min-height: 100vh;
 .hero-v2-subtitle {
   font-size: clamp(14px, 1.8vw, 15.5px);
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
   max-width: 100%;
   border-left: 3px solid var(--button);
@@ -5671,7 +5676,7 @@ min-height: 100vh;
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 90px 0 100px;
+  padding: 52px 0 58px;
   background-color: var(--bg);
   position: relative;
   overflow: hidden;
@@ -5768,7 +5773,7 @@ min-height: 100vh;
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 90px 0 100px;
+  padding: 52px 0 58px;
   background-color: rgba(0, 0, 0, 0.02);
 }
 
@@ -6044,7 +6049,7 @@ min-height: 100vh;
 /* Rule 4: Theme-Aware High Contrast Typography & Form Placeholders */
 p, li {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--text);
 }
 
@@ -6239,7 +6244,7 @@ select {
 /* Rule 4: Theme-Aware High Contrast Typography & Form Placeholders */
 p, li {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--text);
 }
 

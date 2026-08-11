@@ -146,7 +146,7 @@ body {
   font-family: "Outfit", sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6, .brand-name, .logo {
@@ -341,7 +341,7 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
 }
 
 .hero-section {
-  padding: 40px 0 78px;
+  padding: 40px 0 44px;
   position: relative;
 margin-bottom: 0;
   overflow: hidden;
@@ -657,7 +657,7 @@ margin-bottom: 0;
 /* About Section */
 .about-section {
   background: linear-gradient(135deg, #fff0f5 0%, #fff8fa 50%, #fdecf2 100%);
-  padding: 88px 0 100px;
+  padding: 50px 0 56px;
   position: relative;
   border-top: 1px solid rgba(214, 51, 132, 0.08);
   border-bottom: 1px solid rgba(214, 51, 132, 0.08);
@@ -723,7 +723,7 @@ margin-bottom: 0;
 .about-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: #475569;
   max-width: none;
   margin-inline: 0;
@@ -733,11 +733,13 @@ margin-bottom: 0;
 .about-description p {
   margin: 0 0 18px;
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 1.5;
   color: #334155;
   max-width: none;
   margin-inline: 0;
   text-align: left;
+  text-align: justify;
+  text-align: justify;
 }
 
 .about-description p:last-child {
@@ -791,19 +793,21 @@ margin-bottom: 0;
 
   .about-subtitle {
     font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.5;
   }
 
   .about-description p {
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.5;
   }
+  text-align: justify;
+  text-align: justify;
 }
 
 /* Services Section */
 .services-section {
   background: linear-gradient(180deg, #eef5ff 0%, #f8fbff 100%);
-  padding: 88px 0 104px;
+  padding: 50px 0 56px;
 }
 
 .services-section .container {
@@ -865,7 +869,7 @@ margin-bottom: 0;
 .services-subtitle {
   margin: 0 0 22px;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #6d7076;
 }
 
@@ -961,13 +965,13 @@ margin-bottom: 0;
 .service-card-desc {
   margin: 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #6d7076;
 }
 
 /* Contact Section */
 .contact-section {
-  padding: 80px 0 96px;
+  padding: 46px 0 52px;
   background: linear-gradient(180deg, #f8fbff 0%, #ffffff 45%, #eff6ff 100%);
   position: relative;
 }
@@ -1013,7 +1017,7 @@ margin-bottom: 0;
 .contact-header p {
   margin: 0;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.5;
   color: #64748b;
   max-width: 58ch;
   margin-inline: auto;
@@ -1021,11 +1025,14 @@ margin-bottom: 0;
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   border: none;
   background: transparent;
   overflow: visible;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-item {
@@ -1083,7 +1090,7 @@ margin-bottom: 0;
 .contact-item p {
   margin: 0;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: #475569;
 }
 
@@ -1111,7 +1118,7 @@ margin-bottom: 0;
 /* Testimonials Section */
 .testimonials-section {
   background: var(--color-blue-light);
-  padding: 74px 0 92px;
+  padding: 44px 0 50px;
 }
 
 .testimonials-header {
@@ -1152,7 +1159,7 @@ margin-bottom: 0;
 .testimonials-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: #64748b;
 }
 
@@ -1301,7 +1308,7 @@ margin-bottom: 0;
 .testimonial-quote {
   margin: 0;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: #475569;
 }
 
@@ -1344,7 +1351,7 @@ margin-bottom: 0;
 }
 
 .carousel-dot:hover {
-  background: #9ca3af;
+  background: #64748b;
 }
 
 .carousel-dot.active {
@@ -1355,7 +1362,7 @@ margin-bottom: 0;
 /* Social Media Section */
 .social-media-section {
   background: #ffffff;
-  padding: 80px 0 96px;
+  padding: 46px 0 52px;
 }
 
 .social-media-header {
@@ -1376,7 +1383,7 @@ margin-bottom: 0;
 .social-media-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #6d7076;
 }
 
@@ -1516,7 +1523,7 @@ margin-bottom: 0;
 
 .social-post-options {
   margin-left: auto;
-  color: #6b7280;
+  color: #475569;
   font-size: 15px;
 }
 
@@ -1585,7 +1592,7 @@ margin-bottom: 0;
   align-items: center;
   gap: 16px;
   font-size: 15px;
-  color: #6b7280;
+  color: #475569;
 }
 
 .social-post-actions i {
@@ -1655,7 +1662,7 @@ margin-bottom: 0;
 /* Gallery Section */
 .gallery-section {
   background: var(--color-green-light);
-  padding: 80px 0 96px;
+  padding: 46px 0 52px;
 }
 
 .gallery-section .container {
@@ -1680,7 +1687,7 @@ margin-bottom: 0;
 .gallery-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: #64748b;
 }
 
@@ -1841,7 +1848,7 @@ margin-bottom: 0;
   margin: 0;
   color: #5c6068;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .blog-listing-section {
@@ -2039,13 +2046,13 @@ margin-bottom: 0;
 
 .blog-detail-author-role {
   font-size: 15px;
-  color: #6b7280;
+  color: #475569;
 }
 
 .blog-detail-date {
   margin: 0 0 0 auto;
   font-size: 15px;
-  color: #6b7280;
+  color: #475569;
 }
 
 .blog-detail-featured-media {
@@ -2069,7 +2076,7 @@ margin-bottom: 0;
   margin: 0 0 14px;
   color: #4b5563;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .blog-detail-content h2 {
@@ -2087,7 +2094,7 @@ margin-bottom: 0;
   border-radius: 10px;
   color: #374151;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
   font-weight: 500;
 }
 
@@ -2746,7 +2753,7 @@ margin-bottom: 0;
 
   .blog-detail-content p {
     font-size: 15px;
-    line-height: 1.75;
+    line-height: 1.55;
   }
 
   .blog-detail-content h2 {
@@ -2927,7 +2934,7 @@ margin-bottom: 0;
 
 .booking-field input::placeholder,
 .booking-field textarea::placeholder {
-  color: #9ca3af;
+  color: #64748b;
 }
 
 /* â”€â”€ Phone Input Group (Country Code + Number) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -2988,7 +2995,7 @@ margin-bottom: 0;
 }
 
 .phone-input-group input[type="tel"]::placeholder {
-  color: #9ca3af;
+  color: #64748b;
 }
 
 /* Override base booking-field input border when inside phone-input-group */
@@ -3135,7 +3142,7 @@ margin-bottom: 0;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
-  color: #9ca3af;
+  color: #64748b;
   margin-bottom: 4px;
   text-transform: uppercase;
 }
@@ -3254,7 +3261,7 @@ margin-bottom: 0;
 
 .booking-upload-help {
   font-size: 15px;
-  color: #9ca3af;
+  color: #64748b;
 }
 
 .booking-error {
@@ -3389,7 +3396,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 90px 0 100px;
+  padding: 50px 0 56px;
   background-color: var(--bg);
   position: relative;
   overflow: hidden;
@@ -3486,7 +3493,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 90px 0 100px;
+  padding: 50px 0 56px;
   background-color: rgba(0, 0, 0, 0.02);
 }
 
@@ -3762,7 +3769,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 /* Rule 4: Theme-Aware High Contrast Typography & Form Placeholders */
 p, li {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--text);
 }
 
@@ -3920,7 +3927,7 @@ select {
 /* Rule 4: Theme-Aware High Contrast Typography & Form Placeholders */
 p, li {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--text);
 }
 

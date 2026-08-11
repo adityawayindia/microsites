@@ -138,7 +138,7 @@ html {
 body {
   font-family: "Outfit", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.5;
   color: var(--text);
   background:
     radial-gradient(ellipse 80% 50% at 50% 0%, var(--teal-light), transparent 60%),
@@ -153,7 +153,7 @@ body {
 p, li {
   font-size: 16px;
   color: var(--text-body);
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 a {
@@ -221,7 +221,7 @@ img {
   font-size: 16px;
   color: var(--text-body);
   max-width: 680px;
-  line-height: 1.65;
+  line-height: 1.5;
   margin: 0 0 32px 0;
 }
 
@@ -378,7 +378,7 @@ img {
    ========================================================================== */
 
 .hero-section {
-  padding: 40px 0 78px;
+  padding: 38px 0 46px;
   position: relative;
 overflow: hidden;
 }
@@ -632,7 +632,7 @@ overflow: hidden;
    ========================================================================== */
 
 .about-section {
-  padding: 80px 0;
+  padding: 46px 0;
   background: var(--surface);
 }
 
@@ -670,9 +670,10 @@ overflow: hidden;
 
 .about-story-new p {
   font-size: 16.5px;
-  line-height: 1.75;
+  line-height: 1.55;
   color: var(--text-body);
   margin: 0;
+  text-align: justify;
 }
 
 /* ==========================================================================
@@ -680,7 +681,7 @@ overflow: hidden;
    ========================================================================== */
 
 .services-section {
-  padding: 90px 0;
+  padding: 52px 0;
   position: relative;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(240, 253, 244, 0.80) 100%),
               url('../assets/digestive-system.svg') center/contain no-repeat;
@@ -768,7 +769,7 @@ overflow: hidden;
   font-size: 15.5px;
   color: var(--text-body);
   margin: 0;
-  line-height: 1.65;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -776,7 +777,7 @@ overflow: hidden;
    ========================================================================== */
 
 .philosophy-section {
-  padding: 90px 0;
+  padding: 52px 0;
   background: var(--surface);
 }
 
@@ -856,7 +857,7 @@ overflow: hidden;
    ========================================================================== */
 
 .process-section {
-  padding: 90px 0;
+  padding: 52px 0;
   position: relative;
   background: linear-gradient(180deg, rgba(240, 253, 244, 0.80) 0%, rgba(255, 255, 255, 0.80) 100%),
               url('../assets/digestive-system.svg') center/contain no-repeat;
@@ -957,7 +958,7 @@ overflow: hidden;
   font-size: 14.5px;
   color: var(--text-body);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -965,7 +966,7 @@ overflow: hidden;
    ========================================================================== */
 
 .contact-section {
-  padding: 90px 0;
+  padding: 52px 0;
   background: var(--surface);
 }
 
@@ -1029,7 +1030,7 @@ overflow: hidden;
   font-size: 15px;
   color: var(--text-body);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .contact-cta-wrap {
@@ -1041,7 +1042,7 @@ overflow: hidden;
    ========================================================================== */
 
 .testimonials-section {
-  padding: 90px 0;
+  padding: 52px 0;
   background: var(--bg);
 }
 
@@ -1086,7 +1087,7 @@ overflow: hidden;
   font-size: 16px;
   font-style: italic;
   color: var(--text-body);
-  line-height: 1.7;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -1174,7 +1175,7 @@ overflow: hidden;
    ========================================================================== */
 
 .gallery-section {
-  padding: 90px 0;
+  padding: 52px 0;
   background: var(--surface);
 }
 
@@ -1642,7 +1643,7 @@ overflow: hidden;
   font-size: 16px;
   color: var(--text-body);
   margin: 0;
-  line-height: 1.65;
+  line-height: 1.5;
 }
 
 .blog-listing-section {
@@ -1823,13 +1824,13 @@ overflow: hidden;
 
 .blog-detail-content {
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.5;
   color: var(--text-body);
 }
 
 .blog-detail-content p {
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.5;
   color: var(--text-body);
   margin-bottom: 24px;
 }
@@ -1879,7 +1880,7 @@ overflow: hidden;
 
 .legal-card p {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: var(--text-body);
   margin-bottom: 18px;
 }
@@ -1891,7 +1892,7 @@ overflow: hidden;
 
 .legal-list li {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: var(--text-body);
   margin-bottom: 8px;
 }

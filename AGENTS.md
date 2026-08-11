@@ -116,6 +116,27 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   max-width: 100%;
 }
 
+/* Rule 1.5: Line Height & Body Text Readability */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+p, li, span, a, button, label {
+  line-height: 1.6;
+  color: #0f172a;
+}
+
+.about-section p,
+.about-intro p,
+.about-story p,
+.about-story-new p {
+  text-align: justify;
+  line-height: 1.8;
+  color: #0f172a;
+  hyphens: auto;
+}
+
 /* Rule 2: Flex & Grid Child Shrink Defense */
 .hero-content,
 .hero-visual,

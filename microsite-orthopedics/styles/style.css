@@ -94,7 +94,7 @@ aside {
 }
 
 body {
-  font-size: 15px;
+  font-size: 16px;
   margin: 0;
   font-family: "Sora", sans-serif;
   background:
@@ -247,7 +247,7 @@ body {
 }
 
 .hero-section {
-  padding: 40px 0 78px;
+  padding: 38px 0 46px;
   position: relative;
 margin-bottom: 0;
   overflow: hidden;
@@ -657,7 +657,7 @@ margin-bottom: 0;
   background:
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(42, 157, 143, 0.1), transparent 55%),
     linear-gradient(180deg, #f4f7f9 0%, #eef3f7 100%);
-  padding: 88px 0;
+  padding: 52px 0;
   position: relative;
   overflow: hidden;
 }
@@ -830,8 +830,10 @@ margin-bottom: 0;
 .about-description p {
   margin: 0 0 16px;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
   color: #4a5563;
+  text-align: justify;
+  text-align: justify;
 }
 
 .about-description p:last-child {
@@ -867,7 +869,7 @@ margin-bottom: 0;
     radial-gradient(ellipse 70% 55% at 8% 12%, rgba(42, 157, 143, 0.1), transparent 55%),
     radial-gradient(ellipse 55% 50% at 92% 88%, rgba(26, 82, 118, 0.08), transparent 50%),
     linear-gradient(165deg, #e8f0f5 0%, #eef4f7 42%, #e4edf3 100%);
-  padding: 88px 0 96px;
+  padding: 52px 0 56px;
   position: relative;
   overflow: hidden;
 }
@@ -926,7 +928,7 @@ margin-bottom: 0;
 .services-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -1055,7 +1057,7 @@ margin-bottom: 0;
 
 /* Contact Section â€” light split panel */
 .contact-section {
-  padding: 88px 0;
+  padding: 52px 0;
   background:
     radial-gradient(ellipse 50% 80% at 0% 50%, rgba(42, 157, 143, 0.1), transparent 50%),
     linear-gradient(135deg, #f4f7f9 0%, #eef3f7 45%, #e8e2d8 100%);
@@ -1131,7 +1133,7 @@ margin-bottom: 0;
   margin: 0;
   font-size: 15px;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.5;
   max-width: 42ch;
 }
 
@@ -1189,7 +1191,7 @@ margin-bottom: 0;
 .contact-item p {
   margin: 0;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -1228,7 +1230,7 @@ margin-bottom: 0;
 .testimonials-section {
   background:
     linear-gradient(180deg, #f4f7f9 0%, #ffffff 40%, #f7f5f1 100%);
-  padding: 88px 0 96px;
+  padding: 52px 0 56px;
 }
 
 .testimonials-header {
@@ -1254,7 +1256,7 @@ margin-bottom: 0;
 .testimonials-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -1359,7 +1361,7 @@ margin-bottom: 0;
 .testimonial-quote {
   margin: 0;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.5;
   color: #3d4f5f;
   font-weight: 400;
   position: relative;
@@ -1426,7 +1428,7 @@ margin-bottom: 0;
 }
 
 .carousel-dot:hover {
-  background: #9ca3af;
+  background: #64748b;
 }
 
 .carousel-dot.active {
@@ -1438,7 +1440,7 @@ margin-bottom: 0;
 /* Social Media Section */
 .social-media-section {
   background: #ffffff;
-  padding: 60px 0 80px;
+  padding: 44px 0 48px;
 }
 
 .social-media-header {
@@ -1460,7 +1462,7 @@ margin-bottom: 0;
 .social-media-subtitle {
   margin: 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #6d7076;
 }
 
@@ -1590,7 +1592,7 @@ margin-bottom: 0;
 
 .social-post-options {
   margin-left: auto;
-  color: #6b7280;
+  color: #475569;
   font-size: 15px;
 }
 
@@ -1659,7 +1661,7 @@ margin-bottom: 0;
   align-items: center;
   gap: 16px;
   font-size: 15px;
-  color: #6b7280;
+  color: #475569;
 }
 
 .social-post-actions i {
@@ -1729,7 +1731,7 @@ margin-bottom: 0;
 /* Gallery Section â€” uniform card grid */
 .gallery-section {
   background: #ffffff;
-  padding: 80px 0 88px;
+  padding: 46px 0 52px;
 }
 
 .gallery-header {
@@ -1751,7 +1753,7 @@ margin-bottom: 0;
 .gallery-subtitle {
   margin: 0;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -1886,7 +1888,7 @@ margin-bottom: 0;
   margin: 0;
   color: #5c6068;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .blog-listing-section {
@@ -2086,13 +2088,13 @@ margin-bottom: 0;
 
 .blog-detail-author-role {
   font-size: 15px;
-  color: #6b7280;
+  color: #475569;
 }
 
 .blog-detail-date {
   margin: 0 0 0 auto;
   font-size: 15px;
-  color: #6b7280;
+  color: #475569;
 }
 
 .blog-detail-featured-media {
@@ -2116,7 +2118,7 @@ margin-bottom: 0;
   margin: 0 0 14px;
   color: #4b5563;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .blog-detail-content h2 {
@@ -2134,7 +2136,7 @@ margin-bottom: 0;
   border-radius: 10px;
   color: #374151;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.5;
   font-weight: 500;
 }
 
@@ -2273,13 +2275,13 @@ margin-bottom: 0;
 }
 
 .footer-divider {
-  color: #6b7280;
+  color: #475569;
 }
 
 .footer-copy {
   margin: 0;
   font-size: 12px;
-  color: #9ca3af;
+  color: #64748b;
 }
 
 .booking-file-preview {
@@ -2342,7 +2344,7 @@ margin-bottom: 0;
 .preview-size {
     margin: 0;
     font-size: 15px;
-    color: #6b7280;
+    color: #475569;
 }
 
 /* Booking Loader Styles - Fixed positioning */
@@ -2885,7 +2887,7 @@ margin-bottom: 0;
 
   .blog-detail-content p {
     font-size: 15px;
-    line-height: 1.75;
+    line-height: 1.55;
   }
 
   .blog-detail-content h2 {
@@ -3066,7 +3068,7 @@ margin-bottom: 0;
 
 .booking-field input::placeholder,
 .booking-field textarea::placeholder {
-  color: #9ca3af;
+  color: #64748b;
 }
 
 /* â”€â”€ Phone Input Group (Country Code + Number) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -3127,7 +3129,7 @@ margin-bottom: 0;
 }
 
 .phone-input-group input[type="tel"]::placeholder {
-  color: #9ca3af;
+  color: #64748b;
 }
 
 /* Override base booking-field input border when inside phone-input-group */
@@ -3267,7 +3269,7 @@ margin-bottom: 0;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
-  color: #9ca3af;
+  color: #64748b;
   margin-bottom: 4px;
   text-transform: uppercase;
 }
@@ -3588,7 +3590,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 90px 0 100px;
+  padding: 52px 0 58px;
   background-color: var(--bg);
   position: relative;
   overflow: hidden;
@@ -3685,7 +3687,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 90px 0 100px;
+  padding: 52px 0 58px;
   background-color: rgba(0, 0, 0, 0.02);
 }
 
@@ -3961,7 +3963,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 /* Rule 4: Theme-Aware High Contrast Typography & Form Placeholders */
 p, li {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--text);
 }
 
