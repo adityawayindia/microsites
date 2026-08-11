@@ -4085,5 +4085,10 @@ select {
     font-size: 12px !important;
   }
 }
+/* DigiDr booking validation message sizing */
+.booking-error {
+  font-size: 13px !important;
+  line-height: 1.3;
+}
 
 
