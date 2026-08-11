@@ -1,9 +1,9 @@
-/* ==========================================================================
-   DigiDr Global — Responsive Text & Auto-Height Container Rules
+﻿/* ==========================================================================
+   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 :root {
-  /* Alternate Intensivist Theme — "Clinical Precision, Warm Authority" */
+  /* Alternate Intensivist Theme â€” "Clinical Precision, Warm Authority" */
   --navy: #0c1f3f;
   --navy-mid: #1a3a6b;
   --teal: #0d9488;
@@ -609,7 +609,7 @@ background:
   font-weight: 500;
 }
 
-/* About — accent story block */
+/* About â€” accent story block */
 .about-story-new {
   position: relative;
   padding: 36px 44px;
@@ -1456,3 +1456,50 @@ background:
   }
   .about-subtitle, .testimonials-subtitle, .services-subtitle { font-size: 22px !important; }
 }
+/* DigiDr booking modal font-size normalization (all microsites) */
+.booking-modal-dialog {
+  font-size: 14px;
+}
+
+.booking-tab {
+  font-size: 14px !important;
+  line-height: 1.35;
+}
+
+.booking-field label {
+  font-size: 13px !important;
+  line-height: 1.35;
+}
+
+.booking-field input,
+.booking-field textarea,
+.booking-select-wrap select,
+.booking-field input::placeholder,
+.booking-field textarea::placeholder,
+.booking-upload-btn,
+.booking-upload-help,
+.booking-submit-btn {
+  font-size: 14px !important;
+  line-height: 1.4;
+}
+
+.booking-calendar-title {
+  font-size: 14px;
+}
+
+.booking-calendar-weekdays {
+  font-size: 10px;
+}
+
+.booking-calendar-day {
+  font-size: 13px !important;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .booking-calendar-day {
+    font-size: 12px !important;
+  }
+}
+
+

@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #fff5f8; /* Soft warm rosy blush background — pediatric pink */
+  --bg: #fff5f8; /* Soft warm rosy blush background â€” pediatric pink */
   --text: #1e293b; /* Dark slate - WCAG AAA 14:1 contrast */
   --muted: #64748b;
   --button: #d63384; /* Vibrant professional rose pink - 4.7:1 contrast with white text */
@@ -26,7 +26,7 @@
   --color-pink-dark: #9d174d; /* Deep rose for text contrast */
   --color-pink-mid: #ec4899;  /* Bright vivid pink for accents */
 
-  /* Toy-pattern decorative background — used in hero section only */
+  /* Toy-pattern decorative background â€” used in hero section only */
   --toy-bg: url('../assets/toy-pattern-bg.png');
 }
 
@@ -61,7 +61,7 @@ body {
 
 
 /* ==========================================================================
-   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -2930,7 +2930,7 @@ margin-bottom: 0;
   color: #9ca3af;
 }
 
-/* ── Phone Input Group (Country Code + Number) ─────────────────────────────── */
+/* â”€â”€ Phone Input Group (Country Code + Number) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .phone-input-group {
   display: flex;
   align-items: stretch;
@@ -3352,7 +3352,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 
 /* ==========================================================================
-   DigiDr Global — Enhanced Service & Feature Card Heading Sizing
+   DigiDr Global â€” Enhanced Service & Feature Card Heading Sizing
    ========================================================================== */
 .service-card h3,
 .service-card-new h3,
@@ -4040,3 +4040,50 @@ select {
     max-height: none;
   }
 }
+/* DigiDr booking modal font-size normalization (all microsites) */
+.booking-modal-dialog {
+  font-size: 14px;
+}
+
+.booking-tab {
+  font-size: 14px !important;
+  line-height: 1.35;
+}
+
+.booking-field label {
+  font-size: 13px !important;
+  line-height: 1.35;
+}
+
+.booking-field input,
+.booking-field textarea,
+.booking-select-wrap select,
+.booking-field input::placeholder,
+.booking-field textarea::placeholder,
+.booking-upload-btn,
+.booking-upload-help,
+.booking-submit-btn {
+  font-size: 14px !important;
+  line-height: 1.4;
+}
+
+.booking-calendar-title {
+  font-size: 14px;
+}
+
+.booking-calendar-weekdays {
+  font-size: 10px;
+}
+
+.booking-calendar-day {
+  font-size: 13px !important;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .booking-calendar-day {
+    font-size: 12px !important;
+  }
+}
+
+

@@ -1,6 +1,6 @@
-:root {
+﻿:root {
   /* ==========================================================================
-     DigiDr Gastro Alternate Theme — "Clinical Precision & Gut Vitality"
+     DigiDr Gastro Alternate Theme â€” "Clinical Precision & Gut Vitality"
      ========================================================================== */
   --teal-primary: #0d9488;
   --teal-dark: #0f766e;
@@ -47,7 +47,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -1723,7 +1723,7 @@ overflow: hidden;
 }
 
 .blog-read-more::after {
-  content: "→";
+  content: "â†’";
   transition: transform var(--transition-fast);
 }
 
@@ -2026,3 +2026,50 @@ overflow: hidden;
     font-size: 22px;
   }
 }
+/* DigiDr booking modal font-size normalization (all microsites) */
+.booking-modal-dialog {
+  font-size: 14px;
+}
+
+.booking-tab {
+  font-size: 14px !important;
+  line-height: 1.35;
+}
+
+.booking-field label {
+  font-size: 13px !important;
+  line-height: 1.35;
+}
+
+.booking-field input,
+.booking-field textarea,
+.booking-select-wrap select,
+.booking-field input::placeholder,
+.booking-field textarea::placeholder,
+.booking-upload-btn,
+.booking-upload-help,
+.booking-submit-btn {
+  font-size: 14px !important;
+  line-height: 1.4;
+}
+
+.booking-calendar-title {
+  font-size: 14px;
+}
+
+.booking-calendar-weekdays {
+  font-size: 10px;
+}
+
+.booking-calendar-day {
+  font-size: 13px !important;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .booking-calendar-day {
+    font-size: 12px !important;
+  }
+}
+
+

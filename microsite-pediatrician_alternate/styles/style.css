@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@400;500;600;700&display=swap');
 
-/* Toy scatter layer — JS-placed pediatric emoji decorations */
+/* Toy scatter layer â€” JS-placed pediatric emoji decorations */
 .toys-scatter-layer {
   position: absolute;
   top: 0; left: 0;
@@ -19,7 +19,7 @@ body { position: relative; }
 }
 
 /* ============================================================
-   TOKEN LAYER — Warm Citrus + Mint Pediatric Palette
+   TOKEN LAYER â€” Warm Citrus + Mint Pediatric Palette
    ============================================================ */
 :root {
   /* Brand palette */
@@ -68,7 +68,7 @@ body { position: relative; }
 }
 
 /* ============================================================
-   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -608,7 +608,7 @@ background: var(--bg-2);
 .alt-highlight-pill i { font-size: 12px; }
 
 /* ============================================================
-   SERVICES — BENTO GRID
+   SERVICES â€” BENTO GRID
    ============================================================ */
 .alt-services {
   padding: 100px 0;
@@ -1249,7 +1249,7 @@ background: var(--bg-2);
 .booking-submit-btn[disabled] { background: #f4c5b4; cursor: not-allowed; box-shadow: none; }
 
 /* ============================================================
-   FOOTER — MULTI-COLUMN, WARM LIGHT
+   FOOTER â€” MULTI-COLUMN, WARM LIGHT
    ============================================================ */
 .alt-footer {
   background: linear-gradient(135deg, #1a0d04 0%, #2d1508 100%);
@@ -1513,4 +1513,50 @@ background: var(--bg-2);
     height: auto !important;
   }
 }
+/* DigiDr booking modal font-size normalization (all microsites) */
+.booking-modal-dialog {
+  font-size: 14px;
+}
+
+.booking-tab {
+  font-size: 14px !important;
+  line-height: 1.35;
+}
+
+.booking-field label {
+  font-size: 13px !important;
+  line-height: 1.35;
+}
+
+.booking-field input,
+.booking-field textarea,
+.booking-select-wrap select,
+.booking-field input::placeholder,
+.booking-field textarea::placeholder,
+.booking-upload-btn,
+.booking-upload-help,
+.booking-submit-btn {
+  font-size: 14px !important;
+  line-height: 1.4;
+}
+
+.booking-calendar-title {
+  font-size: 14px;
+}
+
+.booking-calendar-weekdays {
+  font-size: 10px;
+}
+
+.booking-calendar-day {
+  font-size: 13px !important;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .booking-calendar-day {
+    font-size: 12px !important;
+  }
+}
+
 

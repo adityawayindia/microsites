@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --bg: #f8fafc;
     --text: #0f172a;
     --muted: #334155;
@@ -17,7 +17,7 @@
 
 
 /* ==========================================================================
-   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -643,7 +643,7 @@ margin-bottom: 0;
   }
 }
 
-/* About Section — open split with copper rail */
+/* About Section â€” open split with copper rail */
 .about-section {
   background:
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(46, 196, 182, 0.1), transparent 55%),
@@ -852,7 +852,7 @@ margin-bottom: 0;
   }
 }
 
-/* Services Section — soft slate wash */
+/* Services Section â€” soft slate wash */
 .services-section {
   position: relative;
   overflow: hidden;
@@ -1037,7 +1037,7 @@ margin-bottom: 0;
   color: var(--muted);
 }
 
-/* Contact Section — light split panel */
+/* Contact Section â€” light split panel */
 .contact-section {
   padding: 72px 0 88px;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 100%);
@@ -1196,7 +1196,7 @@ margin-bottom: 0;
   background: var(--button-hover);
 }
 
-/* Testimonials Section — dark slate quote panels */
+/* Testimonials Section â€” dark slate quote panels */
 .testimonials-section {
   background:
     linear-gradient(180deg, #f3faf8 0%, #ffffff 45%, #eaf7f4 100%);
@@ -1707,7 +1707,7 @@ margin-bottom: 0;
   justify-content: space-between;
 }
 
-/* Gallery Section — uniform card grid */
+/* Gallery Section â€” uniform card grid */
 .gallery-section {
   padding: 80px 0 96px;
   background: #ffffff;
@@ -3184,7 +3184,7 @@ margin-bottom: 0;
   color: #9ca3af;
 }
 
-/* ── Phone Input Group (Country Code + Number) ─────────────────────────────── */
+/* â”€â”€ Phone Input Group (Country Code + Number) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .phone-input-group {
   display: flex;
   align-items: stretch;
@@ -4568,7 +4568,7 @@ margin-bottom: 0;
 }
 
 .testimonial-card-new::before {
-  content: "“";
+  content: "â€œ";
   position: absolute;
   top: -10px;
   right: 15px;
@@ -5017,7 +5017,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 
 /* ==========================================================================
-   DigiDr Global — Enhanced Service & Feature Card Heading Sizing
+   DigiDr Global â€” Enhanced Service & Feature Card Heading Sizing
    ========================================================================== */
 .service-card h3,
 .service-card-new h3,
@@ -5642,6 +5642,50 @@ select {
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
+/* DigiDr booking modal font-size normalization (all microsites) */
+.booking-modal-dialog {
+  font-size: 14px;
+}
 
+.booking-tab {
+  font-size: 14px !important;
+  line-height: 1.35;
+}
+
+.booking-field label {
+  font-size: 13px !important;
+  line-height: 1.35;
+}
+
+.booking-field input,
+.booking-field textarea,
+.booking-select-wrap select,
+.booking-field input::placeholder,
+.booking-field textarea::placeholder,
+.booking-upload-btn,
+.booking-upload-help,
+.booking-submit-btn {
+  font-size: 14px !important;
+  line-height: 1.4;
+}
+
+.booking-calendar-title {
+  font-size: 14px;
+}
+
+.booking-calendar-weekdays {
+  font-size: 10px;
+}
+
+.booking-calendar-day {
+  font-size: 13px !important;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .booking-calendar-day {
+    font-size: 12px !important;
+  }
+}
 
 

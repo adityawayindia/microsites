@@ -1,5 +1,5 @@
-/* ==========================================================================
-   DigiDr Alternate — General Medicine "Private Clinic" Editorial Theme
+﻿/* ==========================================================================
+   DigiDr Alternate â€” General Medicine "Private Clinic" Editorial Theme
    Midnight Navy / Crisp Snow / Luxe Champagne Gold palette
    DM Serif Display (headings) + Inter (body)
    ========================================================================== */
@@ -29,7 +29,7 @@
 }
 
 /* ==========================================================================
-   DigiDr — Multi-Colored Pill & Tag System
+   DigiDr â€” Multi-Colored Pill & Tag System
    ========================================================================== */
 
 .pill,
@@ -144,7 +144,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -418,7 +418,7 @@ body {
 
 
 /* ==========================================================================
-   Hero Section — V2 Split Panel (used in index.html)
+   Hero Section â€” V2 Split Panel (used in index.html)
    ========================================================================== */
 
 .hero-section--v2 {
@@ -2262,7 +2262,7 @@ display: flex;
   color: #b0a99e;
 }
 
-/* ── Phone Input Group (Country Code + Number) ─────────────────────────────── */
+/* â”€â”€ Phone Input Group (Country Code + Number) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .phone-input-group {
   display: flex;
   align-items: stretch;
@@ -2704,7 +2704,7 @@ display: flex;
 
 
 /* ==========================================================================
-   Responsive — 900px
+   Responsive â€” 900px
    ========================================================================== */
 
 @media (max-width: 900px) {
@@ -2845,7 +2845,7 @@ display: flex;
 
 
 /* ==========================================================================
-   Responsive — 640px
+   Responsive â€” 640px
    ========================================================================== */
 
 @media (max-width: 640px) {
@@ -3443,7 +3443,7 @@ display: flex;
 
 
 /* ==========================================================================
-   DigiDr Global — Enhanced Service & Feature Card Heading Sizing
+   DigiDr Global â€” Enhanced Service & Feature Card Heading Sizing
    ========================================================================== */
 .service-card h3,
 .service-card-new h3,
@@ -3862,4 +3862,50 @@ select {
     gap: 16px;
   }
 }
+/* DigiDr booking modal font-size normalization (all microsites) */
+.booking-modal-dialog {
+  font-size: 14px;
+}
+
+.booking-tab {
+  font-size: 14px !important;
+  line-height: 1.35;
+}
+
+.booking-field label {
+  font-size: 13px !important;
+  line-height: 1.35;
+}
+
+.booking-field input,
+.booking-field textarea,
+.booking-select-wrap select,
+.booking-field input::placeholder,
+.booking-field textarea::placeholder,
+.booking-upload-btn,
+.booking-upload-help,
+.booking-submit-btn {
+  font-size: 14px !important;
+  line-height: 1.4;
+}
+
+.booking-calendar-title {
+  font-size: 14px;
+}
+
+.booking-calendar-weekdays {
+  font-size: 10px;
+}
+
+.booking-calendar-day {
+  font-size: 13px !important;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .booking-calendar-day {
+    font-size: 12px !important;
+  }
+}
+
 
