@@ -243,9 +243,9 @@ body {
 }
 
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 56px 0 64px;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   background:
     radial-gradient(ellipse 80% 60% at 18% 40%, rgba(107, 70, 193, 0.18) 0%, transparent 55%),
@@ -2349,7 +2349,7 @@ body {
   }
 
   .hero-section {
-    padding: 28px 0 34px;
+    padding: 40px 0 78px;
     margin-bottom: 48px;
   }
 

@@ -259,9 +259,9 @@ body {
 }
 
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 64px 0 80px;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   background:
     linear-gradient(135deg, rgba(238, 248, 246, 0.40) 0%, rgba(220, 242, 240, 0.30) 45%, rgba(205, 235, 245, 0.45) 100%),
@@ -2732,7 +2732,7 @@ body {
   }
 
   .hero-section {
-    padding: 28px 0 34px;
+    padding: 40px 0 78px;
     margin-bottom: 48px;
     background-image: 
       linear-gradient(180deg, rgba(248, 250, 252, 0.40) 0%, rgba(248, 250, 252, 0.90) 50%, rgba(248, 250, 252, 0.40) 100%),
@@ -3792,6 +3792,7 @@ body {
 
 /* ===== Visual variation pass ===== */
 .hero-section {
+  padding: 40px 0 78px;
   background:
     linear-gradient(160deg, #f4f9f4 0%, #ebf4ea 45%, #faedd8 100%);
 }
@@ -3876,9 +3877,9 @@ body {
 
 /* ===== Hero redesign (final) ===== */
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 72px 0 0;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   background: linear-gradient(160deg, #f4f9f4 0%, #ebf4ea 45%, #faedd8 100%);
 }
@@ -4167,7 +4168,7 @@ body {
 
 @media (max-width: 640px) {
   .hero-section {
-    padding-top: 40px;
+    padding: 40px 0 78px;
   }
 
   .hero-title {
@@ -4661,6 +4662,7 @@ body {
 
 /* 1. Hero Layout Swap & Telemetry Ring (Light Theme) */
 .hero-section {
+  padding: 40px 0 78px;
   background-color: #f8fafc;
   background-image: 
     linear-gradient(90deg, rgba(248, 250, 252, 0) 0%, rgba(248, 250, 252, 0.95) 25%, rgba(248, 250, 252, 0.95) 75%, rgba(248, 250, 252, 0) 100%),
@@ -4669,7 +4671,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   border-bottom: 1px solid rgba(2, 132, 199, 0.12);
-  padding: 80px 0 96px;
 }
 
 .hero-wave {

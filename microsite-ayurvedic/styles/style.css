@@ -258,9 +258,9 @@ body {
 }
 
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 64px 0 80px;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   background:
     linear-gradient(145deg, #e8f8f5 0%, #d8f3f0 38%, #cfeef8 72%, #d4f1ea 100%);
@@ -2753,7 +2753,7 @@ body {
   }
 
   .hero-section {
-    padding: 28px 0 34px;
+    padding: 40px 0 78px;
     margin-bottom: 48px;
   }
 
@@ -3810,6 +3810,7 @@ body {
 
 /* ===== Visual variation pass ===== */
 .hero-section {
+  padding: 40px 0 78px;
   background:
     linear-gradient(160deg, #f4f9f4 0%, #ebf4ea 45%, #faedd8 100%);
 }
@@ -3894,9 +3895,9 @@ body {
 
 /* ===== Hero redesign (final) ===== */
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 72px 0 0;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   background: linear-gradient(160deg, #f4f9f4 0%, #ebf4ea 45%, #faedd8 100%);
 }
@@ -4185,7 +4186,7 @@ body {
 
 @media (max-width: 640px) {
   .hero-section {
-    padding-top: 40px;
+    padding: 40px 0 78px;
   }
 
   .hero-title {

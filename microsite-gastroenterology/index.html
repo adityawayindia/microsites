@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles/banner-module.css" />
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 
@@ -55,6 +56,48 @@
   </header>
 
   <section class="hero-section">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+         1. Server-Side Rendering (PHP/Node/Python):
+            - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+            - Set 'data-banner-active="false"' to hide banner if no active image.
+            - Set 'data-banner-href="URL"' to turn image into a clickable link.
+         2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div
+      class="digidr-banner-module single-image-banner-section"
+      id="digidrBannerModule"
+      data-banner-active="true"
+      data-banner-start=""
+      data-banner-end=""
+      aria-label="Main Clinic Banner"
+      data-banner-src=""
+      data-banner-src-mobile=""
+      data-banner-alt=""
+      data-banner-href="#"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="" />
+              <img
+                src=""
+                alt=""
+                class="digidr-banner-img single-image-banner-img"
+                id="digidrBannerImg"
+                loading="eager"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
     <div class="hero-mesh" aria-hidden="true"></div>
     <!-- Floating Gastroenterology Theme SVGs -->
     <div class="hero-gastro-decorations" aria-hidden="true">
@@ -791,6 +834,7 @@
 
   <script src="script/index.js"></script>
   <script src="script/auto-open-modal.js"></script>
+  <script src="./script/banner-module.js"></script>
 </body>
 
 </html>

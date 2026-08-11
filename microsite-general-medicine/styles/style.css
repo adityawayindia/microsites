@@ -263,9 +263,9 @@ aside {
 }
 
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 64px 0 80px;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   background:
     linear-gradient(145deg, #e8f8f5 0%, #d8f3f0 38%, #cfeef8 72%, #d4f1ea 100%);
@@ -2760,7 +2760,7 @@ aside {
   }
 
   .hero-section {
-    padding: 28px 0 34px;
+    padding: 40px 0 78px;
     margin-bottom: 48px;
   }
 
@@ -3817,6 +3817,7 @@ aside {
 
 /* ===== Visual variation pass ===== */
 .hero-section {
+  padding: 40px 0 78px;
   background:
     linear-gradient(160deg, #f4f9f4 0%, #ebf4ea 45%, #faedd8 100%);
 }
@@ -3901,9 +3902,9 @@ aside {
 
 /* ===== Hero redesign (final) ===== */
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 72px 0 0;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   background: linear-gradient(160deg, #f4f9f4 0%, #ebf4ea 45%, #faedd8 100%);
 }
@@ -4192,7 +4193,7 @@ aside {
 
 @media (max-width: 640px) {
   .hero-section {
-    padding-top: 40px;
+    padding: 40px 0 78px;
   }
 
   .hero-title {
@@ -4704,13 +4705,13 @@ body {
 
 /* 1. Hero Layout Swap & Clinical Pulse Circle */
 .hero-section {
+  padding: 40px 0 78px;
   background-color: #f8fafc;
   background-image: 
     linear-gradient(rgba(15, 118, 110, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(15, 118, 110, 0.02) 1px, transparent 1px);
   background-size: 24px 24px;
   border-bottom: 1px solid rgba(15, 118, 110, 0.08);
-  padding: 80px 0 96px;
 }
 
 .hero-wave {
@@ -5077,11 +5078,11 @@ body {
    Hero V2 - Animated Background System
    ========================================================================== */
 .hero-section--v2 {
+  padding: 40px 0 78px !important;
   background: linear-gradient(160deg, #f0fdf9 0%, #e8f9f5 38%, #f4fffe 70%, #f9fffc 100%) !important;
   position: relative;
   overflow: hidden;
-  padding-top: 0 !important;
-  min-height: 100vh;
+min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

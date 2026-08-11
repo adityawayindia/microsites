@@ -235,9 +235,9 @@ body {
 }
 
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 44px 0 42px;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   background: #ffffff url("../assets/Lifeline BG.png") center / cover no-repeat;
 }
@@ -2066,7 +2066,7 @@ body {
   }
 
   .hero-section {
-    padding: 28px 0 34px;
+    padding: 40px 0 78px;
     margin-bottom: 48px;
   }
 

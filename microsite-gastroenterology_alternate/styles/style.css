@@ -378,9 +378,9 @@ img {
    ========================================================================== */
 
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 60px 0 80px;
-  overflow: hidden;
+overflow: hidden;
 }
 
 .hero-mesh {

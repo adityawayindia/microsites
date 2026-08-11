@@ -247,9 +247,9 @@ body {
 }
 
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 56px 0 72px;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   background:
     linear-gradient(115deg, #0d141c 0%, #152433 36%, #1a5276 78%, #256d8a 100%);
@@ -2659,7 +2659,7 @@ body {
   }
 
   .hero-section {
-    padding: 28px 0 34px;
+    padding: 40px 0 78px;
     margin-bottom: 48px;
   }
 

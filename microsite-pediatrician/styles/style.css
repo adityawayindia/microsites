@@ -341,13 +341,14 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
 }
 
 .hero-section {
+  padding: 40px 0 78px;
   position: relative;
-  padding: 72px 0 78px;
-  margin-bottom: 0;
+margin-bottom: 0;
   overflow: hidden;
   /* Reduced linear-gradient overlay opacity to make toy pattern significantly more visible */
   background:
     linear-gradient(135deg, rgba(255, 240, 246, 0.60) 0%, rgba(254, 226, 236, 0.50) 50%, rgba(255, 245, 248, 0.60) 100%),
+    linear-gradient(rgba(255, 240, 246, 0.45), rgba(255, 240, 246, 0.45)),
     var(--toy-bg) center / 420px repeat;
 }
 
@@ -2508,7 +2509,7 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
   }
 
   .hero-section {
-    padding: 36px 0 42px;
+    padding: 40px 0 78px;
     margin-bottom: 34px;
   }
 
@@ -3993,11 +3994,9 @@ select {
 }
 
 .single-image-banner-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  /* Width comes from shared .container so banner aligns with hero cards */
   min-width: 0;
+  padding: 0;
 }
 
 .single-image-banner-wrap {
@@ -4016,8 +4015,9 @@ select {
 .single-image-banner-img {
   width: 100%;
   height: auto;
-  max-height: 220px; /* Cap height on desktop so it doesn't feel oversized */
+  max-height: 220px; /* Cap height on desktop so it doesn't feel oversized (~16:3) */
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform 0.4s ease, filter 0.3s ease;
   max-width: 100%;
@@ -4030,9 +4030,6 @@ select {
 @media (max-width: 768px) {
   .single-image-banner-section {
     padding: 10px 0 16px;
-  }
-  .single-image-banner-container {
-    padding: 0 12px;
   }
   .single-image-banner-wrap {
     border-radius: 14px;

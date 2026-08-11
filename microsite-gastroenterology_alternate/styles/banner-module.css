@@ -17,12 +17,10 @@
 }
 
 .digidr-banner-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  /* Width comes from shared .container so banner aligns with hero cards */
   min-width: 0;
   box-sizing: border-box;
+  padding: 0;
 }
 
 .digidr-banner-link {
@@ -55,7 +53,7 @@
 .digidr-banner-img {
   width: 100%;
   height: auto;
-  max-height: 220px; /* Cap height on desktop so it doesn't feel oversized */
+  max-height: 220px; /* Cap height on desktop so it doesn't feel oversized (~16:3) */
   object-fit: cover;
   object-position: center;
   display: block;
@@ -72,9 +70,6 @@
   .digidr-banner-section,
   .digidr-banner-module {
     padding: 10px 0 16px;
-  }
-  .digidr-banner-container {
-    padding: 0 12px;
   }
   .digidr-banner-wrap {
     border-radius: 14px;
