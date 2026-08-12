@@ -593,6 +593,7 @@ background: var(--bg-2);
   line-height: 1.55;
   color: var(--muted);
   margin: 0 0 16px;
+  text-align: justify;
 }
 
 .alt-about-highlights {

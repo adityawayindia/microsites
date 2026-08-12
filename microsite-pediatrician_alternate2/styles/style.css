@@ -82,7 +82,7 @@ p, li, span, a, button, label {
   text-align: justify;
   line-height: 1.8;
   color: #0f172a;
-  hyphens: auto;
+  hyphens: none;
 }
 
 /* Rule 2: Flex & Grid Child Shrink Defense */
@@ -638,7 +638,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .peds2-about-content { min-width: 0; }
 .peds2-about-lead { font-size: 18px; font-weight: 700; color: var(--sage-dark); margin: 0 0 14px; }
-.peds2-about-content p { color: var(--muted); margin: 0 0 14px; text-align: justify; hyphens: auto; }
+.peds2-about-content p { color: var(--muted); margin: 0 0 14px; text-align: justify; hyphens: none; }
 
 .peds2-about-tags {
   display: flex;

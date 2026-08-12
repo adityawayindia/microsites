@@ -39,7 +39,6 @@
       <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#technology">Technology</a>
         <a href="#contact-us">Contact</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#gallery">Gallery</a>
@@ -96,7 +95,7 @@
     <div class="hero-grid-lines" aria-hidden="true"></div>
 
     <svg class="hero-ecg-line" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
-      <path class="hero-ecg-path" d="M0,40 L240,40 L262,40 L276,14 L290,68 L304,26 L318,40 L560,40 L742,40 L764,40 L778,14 L792,68 L806,26 L820,40 L1200,40" />
+      <path class="hero-ecg-path" d="M0,40 L100,40 L122,40 L136,14 L150,68 L164,26 L178,40 L400,40 L422,40 L436,14 L450,68 L464,26 L478,40 L700,40 L722,40 L736,14 L750,68 L764,26 L778,40 L1000,40 L1022,40 L1036,14 L1050,68 L1064,26 L1078,40 L1200,40" />
     </svg>
 
     <div class="container hero-layout">
@@ -131,10 +130,6 @@
         <p class="languages"><strong>Language Proficiency:</strong> English, Hindi, Kannada</p>
 
         <div class="hero-actions">
-          <a href="#" class="cta-btn hero-cta-primary">
-            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-            <span>Book Appointment</span>
-          </a>
           <a href="#contact-us" class="hero-cta-secondary">
             <i class="fa-solid fa-phone" aria-hidden="true"></i>
             <span>Contact ICU Desk</span>
@@ -190,6 +185,9 @@
   </section>
 
   <section class="services-section" id="services">
+    <svg class="section-ecg-line section-ecg-line--top" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+      <path class="hero-ecg-path" d="M0,40 L150,40 L172,40 L186,14 L200,68 L214,26 L228,40 L550,40 L572,40 L586,14 L600,68 L614,26 L628,40 L950,40 L972,40 L986,14 L1000,68 L1014,26 L1028,40 L1200,40" />
+    </svg>
     <div class="container">
       <div class="services-header">
         <p class="services-kicker"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Intensivist Services</p>
@@ -296,6 +294,9 @@
   </section>
 
   <section class="tech-ledger-section" id="technology">
+    <svg class="section-ecg-line section-ecg-line--bottom" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+      <path class="hero-ecg-path" d="M0,40 L150,40 L172,40 L186,14 L200,68 L214,26 L228,40 L550,40 L572,40 L586,14 L600,68 L614,26 L628,40 L950,40 L972,40 L986,14 L1000,68 L1014,26 L1028,40 L1200,40" />
+    </svg>
     <div class="container">
       <div class="tech-ledger-header">
         <p class="services-kicker"><i class="fa-solid fa-microchip" aria-hidden="true"></i> ICU Technology</p>
@@ -470,13 +471,13 @@
                 </p>
               </div>
             </div>
-            <div class="contact-item-new">
+            <!-- <div class="contact-item-new">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
               <div>
                 <h4>ICU Availability</h4>
                 <p>Round-the-clock critical care cover, including weekends and public holidays.</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </aside>
 
@@ -493,13 +494,13 @@
                 </p>
               </div>
             </div>
-            <div class="contact-item-new">
+            <!-- <div class="contact-item-new">
               <i class="fa-solid fa-comments" aria-hidden="true"></i>
               <div>
                 <h4>Family Briefings</h4>
                 <p>Scheduled daily updates for families of admitted critical care patients.</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </aside>
       </div>
@@ -633,6 +634,7 @@
     <div class="booking-modal-dialog" role="document">
       <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
 
+      <div class="booking-modal-scroll">
       <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
         <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
         <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
@@ -708,7 +710,7 @@
         <div class="booking-field booking-field--file">
           <label for="report">Upload Report</label>
           <div class="booking-upload-row">
-            <label class="booking-upload-btn" for="report">Upload</label>
+            <label class="booking-upload-btn" for="report" style="color:white;">Upload</label>
             <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
             <span class="booking-upload-help">(JPEG, PNG file formats supported)</span>
           </div>
@@ -728,6 +730,7 @@
           <p>Booking your appointment...</p>
         </div>
       </form>
+      </div>
     </div>
   </div>
 
@@ -762,6 +765,5 @@
 
   <script src="./script/banner-module.js"></script>
   <script src="script/index.js"></script>
-  <script src="script/auto-open-modal.js"></script>
 </body>
 </html>
