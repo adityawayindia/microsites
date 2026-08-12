@@ -2203,7 +2203,7 @@ display: flex;
   border: none;
   background: transparent;
   padding: 8px 22px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   border-radius: 4px;
   color: var(--muted);
@@ -2237,7 +2237,7 @@ display: flex;
 }
 
 .booking-field label {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--navy);
   letter-spacing: 0.02em;
@@ -2251,7 +2251,7 @@ display: flex;
   border: 1px solid rgba(10, 25, 47, 0.1);
   background: var(--white);
   padding: 10px 12px;
-  font-size: 15px;
+  font-size: 16px;
   font-family: var(--sans);
   color: var(--text);
   outline: none;
@@ -2365,7 +2365,7 @@ display: flex;
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--navy);
   pointer-events: none;
 }
@@ -2388,7 +2388,7 @@ display: flex;
   right: 14px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--gold);
   pointer-events: none;
   transition: transform 0.2s ease;
@@ -2425,7 +2425,7 @@ display: flex;
 }
 
 .booking-calendar-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--navy);
 }
@@ -2440,7 +2440,7 @@ display: flex;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
   transition: background 0.15s ease;
 }
@@ -2453,7 +2453,7 @@ display: flex;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--muted);
   margin-bottom: 4px;
@@ -2472,7 +2472,7 @@ display: flex;
   border: none;
   background: transparent;
   border-radius: 50%;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text);
   cursor: pointer;
   display: inline-flex;
@@ -2525,7 +2525,7 @@ display: flex;
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--navy);
   pointer-events: none;
 }
@@ -2549,7 +2549,7 @@ display: flex;
   border-radius: 6px;
   border: 1px solid rgba(10, 25, 47, 0.12);
   background: var(--white);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--navy);
   cursor: pointer;
@@ -2565,14 +2565,14 @@ display: flex;
 }
 
 .booking-upload-help {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
 .booking-error {
   margin: 0;
   min-height: 16px;
-  font-size: 11px;
+  font-size: 16px;
   color: #b91c1c;
 }
 
@@ -2584,7 +2584,7 @@ display: flex;
   padding: 13px 16px;
   background: var(--navy);
   color: var(--white);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -2693,7 +2693,7 @@ display: flex;
 
 .booking-loader p {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--navy);
   font-weight: 500;
 }
@@ -3027,7 +3027,7 @@ display: flex;
   }
 
   .booking-calendar { padding: 12px; }
-  .booking-calendar-day { font-size: 15px; }
+  .booking-calendar-day { font-size: 16px; }
 
   .preview-container {
     flex-direction: column;
@@ -3045,7 +3045,7 @@ display: flex;
     height: 40px;
     border-width: 3px;
   }
-  .booking-loader p { font-size: 15px; }
+  .booking-loader p { font-size: 16px; }
 }
 
 
@@ -3562,7 +3562,7 @@ display: flex;
   accent-color: #0f766e;
 }
 .booking-consent-field label {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
   color: #374151;
   cursor: pointer;
@@ -3865,16 +3865,16 @@ select {
 }
 /* DigiDr booking modal font-size normalization (all microsites) */
 .booking-modal-dialog {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .booking-tab {
-  font-size: 14px !important;
+  font-size: 16px !important;
   line-height: 1.35;
 }
 
 .booking-field label {
-  font-size: 13px !important;
+  font-size: 16px !important;
   line-height: 1.35;
 }
 
@@ -3886,31 +3886,31 @@ select {
 .booking-upload-btn,
 .booking-upload-help,
 .booking-submit-btn {
-  font-size: 14px !important;
+  font-size: 16px !important;
   line-height: 1.4;
 }
 
 .booking-calendar-title {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .booking-calendar-weekdays {
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .booking-calendar-day {
-  font-size: 13px !important;
+  font-size: 16px !important;
   line-height: 1;
 }
 
 @media (max-width: 640px) {
   .booking-calendar-day {
-    font-size: 12px !important;
+    font-size: 16px !important;
   }
 }
 /* DigiDr booking validation message sizing */
 .booking-error {
-  font-size: 13px !important;
+  font-size: 16px !important;
   line-height: 1.3;
 }
 

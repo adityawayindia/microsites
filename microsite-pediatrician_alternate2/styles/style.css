@@ -1104,11 +1104,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   border-color: var(--peach); box-shadow: 0 0 0 3px hsla(18, 88%, 64%, 0.18);
 }
 .booking-field textarea { resize: vertical; }
-.booking-error { margin: 4px 0 0; font-size: 12px; color: #dc2626; min-height: 16px; }
+.booking-error { margin: 4px 0 0; font-size: 16px; color: #dc2626; min-height: 16px; }
 
 .booking-select-wrap { position: relative; }
 .booking-select-wrap select { appearance: none; padding-right: 36px; }
-.booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 13px; }
+.booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
 
 .booking-datepicker { position: relative; }
 .booking-input-with-icon { position: relative; }
@@ -1120,17 +1120,17 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   z-index: 50; min-width: 280px;
 }
 .booking-calendar-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.booking-calendar-title { font-size: 15px; font-weight: 600; color: var(--text); }
+.booking-calendar-title { font-size: 16px; font-weight: 600; color: var(--text); }
 .booking-calendar-nav {
   background: none; border: none; padding: 6px 10px; cursor: pointer;
-  color: var(--muted); border-radius: 8px; transition: background 0.2s ease; font-size: 13px;
+  color: var(--muted); border-radius: 8px; transition: background 0.2s ease; font-size: 16px;
 }
 .booking-calendar-nav:hover { background: var(--peach-light); color: var(--peach-dark); }
 .booking-calendar-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-bottom: 6px; }
-.booking-calendar-weekdays span { font-size: 11px; font-weight: 600; text-align: center; color: var(--muted); padding: 4px 0; }
+.booking-calendar-weekdays span { font-size: 16px; font-weight: 600; text-align: center; color: var(--muted); padding: 4px 0; }
 .booking-calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
 .booking-calendar-grid button {
-  padding: 7px 4px; font-size: 13px; border: none; background: none; cursor: pointer;
+  padding: 7px 4px; font-size: 16px; border: none; background: none; cursor: pointer;
   border-radius: 8px; text-align: center; color: var(--text); transition: background 0.2s ease, color 0.2s ease;
 }
 .booking-calendar-grid button:hover { background: var(--peach-light); color: var(--peach-dark); }
@@ -1142,11 +1142,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .booking-upload-btn {
   flex-shrink: 0; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;
   padding: 9px 18px; border-radius: 8px; background: var(--peach); color: #ffffff;
-  font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s ease;
+  font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s ease;
 }
 .booking-upload-btn:hover { background: var(--peach-dark); }
 .booking-field--file input[type="file"] { display: none; }
-.booking-upload-help { font-size: 12px; color: var(--muted); }
+.booking-upload-help { font-size: 16px; color: var(--muted); }
 
 .booking-consent-field { display: flex !important; flex-direction: row !important; align-items: center; gap: 10px; }
 .booking-consent-field input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--peach); cursor: pointer; }
