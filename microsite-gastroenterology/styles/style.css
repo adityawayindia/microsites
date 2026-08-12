@@ -6382,3 +6382,13 @@ select {
 }
 
 
+
+/* Fixed floating header compensation: keep hero/banner clear of the header */
+.hero-section {
+  padding-top: 104px !important;
+}
+@media (min-width: 901px) {
+  .hero-section {
+    padding-top: 136px !important;
+  }
+}

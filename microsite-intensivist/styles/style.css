@@ -415,7 +415,7 @@ a {
 .hero-section {
   position: relative;
   isolation: isolate;
-  padding: 0 0 120px;
+  padding: 28px 0 120px;
   background:
     radial-gradient(ellipse 70% 60% at 78% 20%, hsl(178 60% 30% / 0.35), transparent 62%),
     radial-gradient(ellipse 60% 50% at 12% 78%, hsl(196 62% 28% / 0.28), transparent 60%),
@@ -451,7 +451,7 @@ a {
   position: absolute;
   left: 0;
   right: 0;
-  top: 32%;
+  top: 48%;
   width: 100%;
   height: 80px;
   z-index: 1;
@@ -2552,20 +2552,37 @@ a {
 
   .navbar {
     position: relative;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    gap: 10px;
   }
 
   .navbar .cta-btn {
     order: 3;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .menu-toggle {
     order: 2;
     margin-left: 0;
+    flex-shrink: 0;
   }
 
   .brand {
     margin-right: auto;
+    min-width: 0;
+  }
+
+  .brand-text {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .brand-name,
+  .brand-role {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Hero stacks */
@@ -2599,7 +2616,7 @@ a {
   }
 
   .hero-ecg-line {
-    top: 14%;
+    top: 24%;
     opacity: 0.5;
   }
 

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 260">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dbe6fb"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1e3a8a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#1e3a8a" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="260" fill="url(#bg)"/>
+  <rect x="960" width="440" height="260" fill="url(#panel)"/>
+
+  <path d="M470,-10 C560,55 600,15 690,85 C735,120 715,175 795,215" stroke="#FF9933" stroke-width="12" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <path d="M470,10 C560,75 600,35 690,105 C735,140 715,195 795,235" stroke="#FFFFFF" stroke-width="12" fill="none" opacity="0.9" stroke-linecap="round"/>
+  <path d="M470,30 C560,95 600,55 690,125 C735,160 715,215 795,255" stroke="#128807" stroke-width="12" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <g transform="translate(742,130)">
+    <circle r="44" fill="#fff" stroke="#0b2a6b" stroke-width="3"/>
+    <circle r="34" fill="none" stroke="#0b2a6b" stroke-width="2.5" stroke-dasharray="1.6 4.3"/>
+    <circle r="6" fill="#0b2a6b"/>
+  </g>
+
+  <g transform="translate(48,50) scale(0.42)" fill="#16296b">
+    <path d="M35 20 C20 20 15 35 20 45 C10 50 10 65 20 70 C18 82 30 90 42 85 C46 90 58 90 62 85 C74 90 86 82 84 70 C94 65 94 50 84 45 C89 35 84 20 69 20 C64 12 56 12 52 18 C48 12 40 12 35 20 Z"/>
+  </g>
+  <path d="M62,72 q6,-10 0,-18 q-6,-8 2,-16" stroke="#e8edff" stroke-width="2.6" fill="none" opacity="0.85"/>
+  <path d="M74,78 q6,-12 0,-22" stroke="#e8edff" stroke-width="2.2" fill="none" opacity="0.7"/>
+
+  <text x="98" y="98" font-family="'Outfit','Inter',sans-serif" font-weight="700" font-size="30" fill="#12225c">Sharper Minds.</text>
+  <text x="98" y="136" font-family="'Outfit','Inter',sans-serif" font-weight="700" font-size="30" fill="#1e3a8a">Stronger Nation.</text>
+  <text x="46" y="232" font-family="'Inter',sans-serif" font-size="15" fill="#38446b">Celebrating 79 years of Independence &#8226; Special neurology consultations this August</text>
+
+  <g transform="translate(1092,50) scale(1.9)" fill="#1e3a8a" opacity="0.2">
+    <path d="M35 20 C20 20 15 35 20 45 C10 50 10 65 20 70 C18 82 30 90 42 85 C46 90 58 90 62 85 C74 90 86 82 84 70 C94 65 94 50 84 45 C89 35 84 20 69 20 C64 12 56 12 52 18 C48 12 40 12 35 20 Z"/>
+  </g>
+</svg>
