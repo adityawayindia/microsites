@@ -2146,11 +2146,12 @@ min-height: 92vh;
   width: min(560px, 92vw);
   background: var(--bg);
   border-radius: 12px;
-  padding: 28px 28px 30px;
+  padding: 0;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(10, 25, 47, 0.06);
   max-height: calc(100vh - 32px);
   overflow-y: auto;
+  overflow-x: hidden;
   opacity: 0;
   transform: translateY(16px) scale(0.98);
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -2163,6 +2164,26 @@ min-height: 92vh;
 .booking-modal.is-open .booking-modal-dialog {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+/* Sticky header: close button + tabs stay pinned while the form scrolls */
+.booking-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  /* inherits the dialog's own background so scrolled content passes behind it */
+  background: inherit;
+  /* flex so the inline-flex pill row does not pick up baseline descender space */
+  display: flex;
+  align-items: flex-start;
+  padding: 28px 28px 16px;
+  margin-bottom: 16px;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.booking-error:empty {
+  display: none;
 }
 
 .booking-modal-close {
@@ -2194,7 +2215,7 @@ min-height: 92vh;
   border: 1px solid rgba(10, 25, 47, 0.12);
   padding: 3px;
   background: var(--white);
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .booking-tab {
@@ -2218,6 +2239,7 @@ min-height: 92vh;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding: 0 28px 30px;
 }
 
 .booking-form-row {
@@ -2230,7 +2252,7 @@ min-height: 92vh;
 .booking-field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   min-width: 0;
 }
 
@@ -2572,7 +2594,7 @@ min-height: 92vh;
 
 .booking-error {
   margin: 0;
-  min-height: 16px;
+  min-height: 0;
   font-size: 16px;
   color: #b91c1c;
 }
@@ -2709,7 +2731,7 @@ min-height: 92vh;
    Responsive â€” 900px
    ========================================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1030px) {
   .navbar {
     min-height: 68px;
     position: relative;
@@ -2768,7 +2790,10 @@ min-height: 92vh;
     transform: translateY(0);
     pointer-events: auto;
   }
+}
 
+
+@media (max-width: 900px) {
   /* Hero V2 */
   .hero-v2-layout {
     grid-template-columns: 1fr;
@@ -2998,10 +3023,20 @@ min-height: 92vh;
 
   .booking-modal-dialog {
     width: 94vw;
-    padding: 40px 18px 22px;
+    padding: 0;
     max-height: calc(100vh - 24px);
     overflow-y: auto;
     margin: 0 auto;
+  }
+
+  /* Keep the tab row clear of the close button, which sits at top: 10px */
+  .booking-modal-header {
+    padding: 40px 18px 14px;
+    margin-bottom: 14px;
+  }
+
+  .booking-form {
+    padding: 0 18px 22px;
   }
 
   .booking-form-row {

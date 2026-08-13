@@ -124,10 +124,12 @@
   <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
     <div class="booking-modal-dialog" role="document">
-      <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
-      <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-        <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-        <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+        </div>
       </div>
       <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
           <div class="booking-form-row">

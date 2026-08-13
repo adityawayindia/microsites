@@ -1740,21 +1740,31 @@ a {
   z-index: 1;
   width: min(560px, 92vw);
   margin: auto;
-  padding: 24px 0 0;
+  padding: 0;
   border-radius: 20px;
   background: var(--bone);
   box-shadow: var(--shadow-lg);
   max-height: calc(100vh - 32px);
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   border-top: 4px solid var(--accent);
-  display: flex;
-  flex-direction: column;
 }
 
-.booking-modal-scroll {
-  overflow-y: auto;
-  padding: 0 26px 26px;
-  min-height: 0;
+/* Sticky header: close button + tabs stay pinned while the form scrolls */
+.booking-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  /* inherits the dialog's own background so scrolled content passes behind it */
+  background: inherit;
+  padding: 24px 26px 0;
+  margin-bottom: 18px;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 2px solid hsl(205 22% 88%);
+}
+
+.booking-error:empty {
+  display: none;
 }
 
 .booking-modal-close {
@@ -1780,9 +1790,7 @@ a {
 .booking-modal-tabs {
   display: flex;
   gap: 8px;
-  margin-bottom: 18px;
-  border-bottom: 2px solid hsl(205 22% 88%);
-  padding-bottom: 0;
+  margin-bottom: -2px;
 }
 
 .booking-tab {
@@ -1812,6 +1820,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding: 0 26px 26px;
 }
 
 .booking-form-row {
@@ -2509,16 +2518,12 @@ a {
   }
 }
 
-@media (max-width: 980px) {
-  /* background-attachment: fixed is unreliable/janky on mobile browsers */
-  .services-section,
-  .tech-ledger-section,
-  .contact-section {
-    background-attachment: scroll;
-  }
-
+@media (max-width: 1030px) {
   .menu-toggle {
     display: flex;
+    order: 2;
+    margin-left: 0;
+    flex-shrink: 0;
   }
 
   .nav-links {
@@ -2562,12 +2567,6 @@ a {
     white-space: nowrap;
   }
 
-  .menu-toggle {
-    order: 2;
-    margin-left: 0;
-    flex-shrink: 0;
-  }
-
   .brand {
     margin-right: auto;
     min-width: 0;
@@ -2583,6 +2582,16 @@ a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+}
+
+
+@media (max-width: 980px) {
+  /* background-attachment: fixed is unreliable/janky on mobile browsers */
+  .services-section,
+  .tech-ledger-section,
+  .contact-section {
+    background-attachment: scroll;
   }
 
   /* Hero stacks */
@@ -2755,9 +2764,18 @@ a {
 
   .booking-modal-dialog {
     width: 94vw;
-    padding: 42px 18px 20px;
+    padding: 0;
     max-height: calc(100vh - 24px);
     margin: 0 auto;
+  }
+
+  .booking-modal-header {
+    padding: 20px 18px 0;
+    margin-bottom: 16px;
+  }
+
+  .booking-form {
+    padding: 0 18px 20px;
   }
 
   .booking-modal {

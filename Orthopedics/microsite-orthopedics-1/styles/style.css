@@ -2449,7 +2449,7 @@ margin-bottom: 0;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1030px) {
   .navbar {
     min-height: 72px;
     position: relative;
@@ -2504,7 +2504,9 @@ margin-bottom: 0;
     transform: translateY(0);
     pointer-events: auto;
   }
+}
 
+@media (max-width: 900px) {
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -2960,11 +2962,12 @@ margin-bottom: 0;
   width: min(560px, 92vw);
   background: var(--button-light);
   border-radius: 20px;
-  padding: 24px 26px 26px;
+  padding: 0;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(0, 0, 0, 0.05);
   max-height: calc(100vh - 32px);
   overflow-y: auto;
+  overflow-x: hidden;
   opacity: 0;
   transform: translateY(16px) scale(0.98);
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -2977,6 +2980,26 @@ margin-bottom: 0;
 .booking-modal.is-open .booking-modal-dialog {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+/* Sticky header: close button + tabs stay pinned while the form scrolls */
+.booking-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  /* inherits the dialog's own background so scrolled content passes behind it */
+  background: inherit;
+  /* flex so the inline-flex pill row does not pick up baseline descender space */
+  display: flex;
+  align-items: flex-start;
+  padding: 24px 26px 16px;
+  margin-bottom: 16px;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.booking-error:empty {
+  display: none;
 }
 
 .booking-modal-close {
@@ -3007,7 +3030,7 @@ margin-bottom: 0;
   border: 1px solid var(--button);
   padding: 4px;
   background: var(--button-light);
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .booking-tab {
@@ -3030,6 +3053,7 @@ margin-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding: 0 26px 26px;
 }
 
 .booking-form-row {
@@ -3042,7 +3066,7 @@ margin-bottom: 0;
 .booking-field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   min-width: 0;
 }
 
@@ -3393,7 +3417,7 @@ margin-bottom: 0;
 
 .booking-error {
   margin: 0;
-  min-height: 16px;
+  min-height: 0;
   font-size: 16px;
   color: #b91c1c;
 }
@@ -3424,10 +3448,20 @@ margin-bottom: 0;
 
   .booking-modal-dialog {
     width: 94vw;
-    padding: 42px 18px 20px;
+    padding: 0;
     max-height: calc(100vh - 24px);
     overflow-y: auto;
     margin: 0 auto;
+  }
+
+  /* Keep the tab row clear of the close button, which sits at top: 10px */
+  .booking-modal-header {
+    padding: 42px 18px 14px;
+    margin-bottom: 14px;
+  }
+
+  .booking-form {
+    padding: 0 18px 20px;
   }
 
   .booking-form-row {

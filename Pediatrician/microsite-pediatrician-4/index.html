@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Sarah Smith | Pediatrician — Navy & Sage Child Care Clinic</title>
-  <meta name="description" content="Board-certified pediatric care from Dr. Sarah Smith — newborn checkups, immunizations, growth monitoring, and gentle family-first treatment plans." />
+  <title>Dr. Sarah Smith | Pediatrician — Sky & Amber Child Health Clinic</title>
+  <meta name="description" content="Board-certified pediatric care from Dr. Sarah Smith — newborn checkups, immunizations, growth monitoring, and evidence-based treatment plans for growing families." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,23 +17,19 @@
 <body>
 
   <!-- ====== HEADER ====== -->
-  <header class="peds2-header">
-    <div class="container peds2-navbar">
-      <a href="#" class="peds2-brand" aria-label="Dr. Sarah Smith">
-        <span class="peds2-avatar">
+  <header class="peds4-header">
+    <div class="container peds4-navbar">
+      <a href="#" class="peds4-brand" aria-label="Dr. Sarah Smith">
+        <span class="peds4-avatar">
           <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith" />
         </span>
-        <span class="peds2-brand-text">
-          <span class="peds2-brand-name">Dr. Sarah Smith</span>
-          <span class="peds2-brand-role">Pediatrician</span>
+        <span class="peds4-brand-text">
+          <span class="peds4-brand-name">Dr. Sarah Smith</span>
+          <span class="peds4-brand-role">Pediatrician</span>
         </span>
       </a>
 
-      <button class="peds2-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="peds2-nav-links" id="mainNav" aria-label="Main Navigation">
+      <nav class="peds4-nav-links" id="mainNav" aria-label="Main Navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact-us">Contact</a>
@@ -42,16 +38,21 @@
         <a href="blog.html">Blog</a>
       </nav>
 
-      <a href="#" class="peds2-cta-btn cta-btn" id="openBookingBtn">
-        <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
-        <span class="cta-text-desktop">Book Appointment</span>
-        <span class="cta-text-mobile">Book</span>
-      </a>
+      <div class="peds4-nav-actions">
+        <a href="#" class="peds4-cta-btn cta-btn" id="openBookingBtn">
+          <span class="cta-text-desktop">Book Appointment</span>
+          <span class="cta-text-mobile">Book</span>
+        </a>
+
+        <button class="peds4-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- ====== HERO — asymmetric portrait-blob layout ====== -->
-  <section class="peds2-hero" id="home">
+  <!-- ====== HERO — mirrored card-portrait layout with EKG motif ====== -->
+  <section class="peds4-hero" id="home">
     <!-- ==========================================================================
          DIGIDR MODULAR BANNER MODULE (Hero Banner)
          ==========================================================================
@@ -95,109 +96,90 @@
     </div>
     <!-- END OF MODULAR BANNER MODULE -->
 
-    <div class="peds2-hero-blob-bg" aria-hidden="true"></div>
+    <div class="peds4-hero-bg" aria-hidden="true"></div>
 
-    <div class="container peds2-hero-grid">
-      <div class="peds2-hero-copy">
-        <span class="peds2-hero-kicker">
-          <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
-          Child Health Care Hub
-        </span>
-
-        <h1 class="peds2-hero-title">Dr. Sarah Smith</h1>
-        <p class="peds2-hero-role">MBBS, MD (Pediatrics) &middot; Fellowship in Neonatal &amp; Child Health</p>
-
-        <p class="peds2-hero-subtitle">
-          Personalized, gentle care plans for newborns, toddlers, school-age children, and teens — built on
-          preventive medicine and clear communication with parents.
-        </p>
-
-        <ul class="peds2-hero-badgelist" aria-label="Practice highlights">
-          <li><i class="fa-solid fa-award" aria-hidden="true"></i> Board Certified Pediatrician</li>
-          <li><i class="fa-solid fa-language" aria-hidden="true"></i> English &bull; Hindi &bull; Odia</li>
-        </ul>
-
-        <div class="peds2-hero-actions">
-          <a href="#services" class="peds2-btn-outline">Explore Services</a>
-        </div>
-
-        <div class="peds2-hero-social" aria-label="Social media links">
-          <a href="#" class="peds2-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="peds2-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="peds2-social" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="peds2-social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="peds2-social" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" class="peds2-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-      </div>
-
-      <div class="peds2-hero-portrait">
-        <div class="peds2-portrait-blob">
+    <div class="container peds4-hero-grid">
+      <div class="peds4-hero-visual">
+        <div class="peds4-portrait-offset" aria-hidden="true"></div>
+        <div class="peds4-portrait-card">
           <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith, board-certified pediatrician, portrait" />
         </div>
-        <div class="peds2-ring-deco" aria-hidden="true"></div>
-
-        <div class="peds2-float-badge peds2-float-badge--top">
-          <i class="fa-solid fa-star" aria-hidden="true"></i>
-          <span>95% Parent Satisfaction</span>
-        </div>
-        <div class="peds2-float-badge peds2-float-badge--bottom">
-          <i class="fa-solid fa-user-group" aria-hidden="true"></i>
-          <span>8k+ Children Treated</span>
-        </div>
       </div>
-    </div>
 
-    <!-- Stat ribbon strip beneath the split hero -->
-    <div class="peds2-stat-ribbon" aria-label="Practice statistics">
-      <div class="container peds2-stat-ribbon-inner">
-        <div class="peds2-stat-item">
-          <span class="peds2-stat-num">20+</span>
-          <span class="peds2-stat-lbl">Years of Experience</span>
-        </div>
-        <div class="peds2-stat-divider" aria-hidden="true"></div>
-        <div class="peds2-stat-item">
-          <span class="peds2-stat-num">8k+</span>
-          <span class="peds2-stat-lbl">Patients Treated</span>
-        </div>
-        <div class="peds2-stat-divider" aria-hidden="true"></div>
-        <div class="peds2-stat-item">
-          <span class="peds2-stat-num">95%</span>
-          <span class="peds2-stat-lbl">Patient Rating</span>
-        </div>
-        <div class="peds2-stat-divider" aria-hidden="true"></div>
-        <div class="peds2-stat-item">
-          <span class="peds2-stat-num">4.9<i class="fa-solid fa-star" aria-hidden="true"></i></span>
-          <span class="peds2-stat-lbl">Average Review Score</span>
+      <div class="peds4-hero-content">
+        <span class="peds4-hero-kicker">
+          <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+          Child Health Care Clinic
+        </span>
+
+        <h1 class="peds4-hero-title">Dr. Sarah Smith</h1>
+        <p class="peds4-hero-role">MBBS, MD (Pediatrics) &middot; Fellowship in Neonatal &amp; Child Health</p>
+        <p class="peds4-hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. 48213</p>
+
+        <p class="peds4-hero-subtitle">
+          Evidence-based, gentle care plans for newborns, toddlers, school-age children, and teens — built on
+          preventive medicine and clear, ongoing communication with parents.
+        </p>
+
+        <ul class="peds4-hero-facts" aria-label="Practice highlights">
+          <li><span class="peds4-fact-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span> Board Certified Pediatrician</li>
+          <li><span class="peds4-fact-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></span> English &bull; Hindi &bull; Odia</li>
+        </ul>
+
+        <div class="peds4-hero-social" aria-label="Social media links">
+          <a href="#" class="peds4-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="peds4-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="peds4-social" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="peds4-social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="peds4-social" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="peds4-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== ABOUT ====== -->
-  <section class="peds2-about" id="about">
-    <div class="container peds2-about-grid">
-      <div class="peds2-about-visual">
-        <div class="peds2-placeholder-card" role="img" aria-label="Clinic waiting room placeholder photo">
-          <i class="fa-solid fa-house-chimney-medical" aria-hidden="true"></i>
-          <span>Clinic Waiting Room Photo</span>
-        </div>
-        <div class="peds2-about-badge-card">
-          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
-          <div>
-            <strong>Family-First Care</strong>
-            <span>Every visit, every time</span>
-          </div>
+  <!-- Floating stat card cluster bridging hero and about -->
+  <div class="container peds4-stat-cluster" aria-label="Practice statistics">
+    <div class="peds4-stat-cluster-inner">
+      <div class="peds4-stat-card">
+        <span class="peds4-stat-icon"><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i></span>
+        <span>
+          <span class="peds4-stat-num">20+</span>
+          <span class="peds4-stat-lbl">Years of Experience</span>
+        </span>
+      </div>
+      <div class="peds4-stat-card">
+        <span class="peds4-stat-icon"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></span>
+        <span>
+          <span class="peds4-stat-num">8k+</span>
+          <span class="peds4-stat-lbl">Children Treated</span>
+        </span>
+      </div>
+      <div class="peds4-stat-card">
+        <span class="peds4-stat-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+        <span>
+          <span class="peds4-stat-num">95%</span>
+          <span class="peds4-stat-lbl">Parent Satisfaction</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== ABOUT — executive, icon-free typography ====== -->
+  <section class="peds4-about" id="about">
+    <div class="container peds4-about-grid">
+      <div class="peds4-about-visual">
+        <div class="peds4-about-photo-offset" aria-hidden="true"></div>
+        <div class="peds4-about-photo">
+          <img src="assets/philosophy-workspace.png" alt="Clinical desk with stethoscope and patient records at Dr. Sarah Smith's pediatric clinic" loading="lazy" />
         </div>
       </div>
 
-      <div class="peds2-about-content">
-        <span class="peds2-chip peds2-chip--navy">
-          <i class="fa-solid fa-user-doctor" aria-hidden="true"></i> About Our Practice
-        </span>
-        <h2 class="peds2-section-title">Trusted Pediatric Care For Growing Families</h2>
-        <p class="peds2-about-lead">
-          Combining extensive pediatric clinical experience with compassionate, family-first care.
+      <div class="peds4-about-content">
+        <span class="peds4-chip peds4-chip--teal">About the Practice</span>
+        <h2 class="peds4-section-title">Dedicated, Evidence-Based Pediatric Care</h2>
+        <p class="peds4-about-lead">
+          Combining rigorous clinical training with an unhurried, family-first approach to every consultation.
         </p>
         <p>
           Dr. Sarah Smith is a board-certified pediatrician specializing in newborn, infant, child, and
@@ -212,69 +194,62 @@
           vaccinations are on schedule, monitoring milestones, guiding healthy habits, and helping children
           thrive physically and emotionally.
         </p>
-
-        <div class="peds2-about-tags">
-          <span class="peds2-tag"><i class="fa-solid fa-syringe" aria-hidden="true"></i> Immunization Expert</span>
-          <span class="peds2-tag"><i class="fa-solid fa-baby" aria-hidden="true"></i> Neonatal Care</span>
-          <span class="peds2-tag"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Growth Monitoring</span>
-          <span class="peds2-tag"><i class="fa-solid fa-lungs" aria-hidden="true"></i> Asthma &amp; Allergy</span>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- ====== SERVICES ====== -->
-  <section class="peds2-services" id="services">
+  <section class="peds4-services" id="services">
     <div class="container">
-      <div class="peds2-section-header">
-        <span class="peds2-chip peds2-chip--sage">
+      <div class="peds4-section-header">
+        <span class="peds4-chip peds4-chip--sky">
           <i class="fa-solid fa-heart" aria-hidden="true"></i> Specialized Services
         </span>
-        <h2 class="peds2-section-title">Comprehensive Pediatric Care</h2>
-        <p class="peds2-section-subtitle">
+        <h2 class="peds4-section-title">Comprehensive Pediatric Care</h2>
+        <p class="peds4-section-subtitle">
           Offering a complete range of child healthcare services with personalized treatment and preventive guidance.
         </p>
       </div>
 
-      <div class="peds2-services-grid">
-        <article class="peds2-service-card">
-          <span class="peds2-service-index">01</span>
-          <div class="peds2-service-icon"><i class="fa-solid fa-baby" aria-hidden="true"></i></div>
+      <div class="peds4-services-grid">
+        <article class="peds4-service-card">
+          <span class="peds4-service-index">01</span>
+          <div class="peds4-service-icon"><i class="fa-solid fa-baby" aria-hidden="true"></i></div>
           <h3>Newborn &amp; Infant Care</h3>
           <p>Comprehensive care for newborns, feeding guidance, early development support, and infant wellness.</p>
         </article>
 
-        <article class="peds2-service-card">
-          <span class="peds2-service-index">02</span>
-          <div class="peds2-service-icon"><i class="fa-solid fa-syringe" aria-hidden="true"></i></div>
+        <article class="peds4-service-card">
+          <span class="peds4-service-index">02</span>
+          <div class="peds4-service-icon"><i class="fa-solid fa-syringe" aria-hidden="true"></i></div>
           <h3>Vaccination &amp; Immunization</h3>
           <p>Routine vaccination schedules, catch-up plans, and parent education for complete protection.</p>
         </article>
 
-        <article class="peds2-service-card">
-          <span class="peds2-service-index">03</span>
-          <div class="peds2-service-icon"><i class="fa-solid fa-thermometer" aria-hidden="true"></i></div>
+        <article class="peds4-service-card">
+          <span class="peds4-service-index">03</span>
+          <div class="peds4-service-icon"><i class="fa-solid fa-thermometer" aria-hidden="true"></i></div>
           <h3>Fever &amp; Infection Management</h3>
           <p>Evidence-based treatment for seasonal infections, viral illnesses, and recurring fevers.</p>
         </article>
 
-        <article class="peds2-service-card">
-          <span class="peds2-service-index">04</span>
-          <div class="peds2-service-icon"><i class="fa-solid fa-lungs" aria-hidden="true"></i></div>
+        <article class="peds4-service-card">
+          <span class="peds4-service-index">04</span>
+          <div class="peds4-service-icon"><i class="fa-solid fa-lungs" aria-hidden="true"></i></div>
           <h3>Asthma &amp; Allergy Care</h3>
           <p>Long-term management plans for childhood asthma, allergies, and breathing concerns.</p>
         </article>
 
-        <article class="peds2-service-card">
-          <span class="peds2-service-index">05</span>
-          <div class="peds2-service-icon"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i></div>
+        <article class="peds4-service-card">
+          <span class="peds4-service-index">05</span>
+          <div class="peds4-service-icon"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i></div>
           <h3>Growth &amp; Nutrition Monitoring</h3>
           <p>Regular growth tracking, nutrition counseling, and early intervention for developmental concerns.</p>
         </article>
 
-        <article class="peds2-service-card">
-          <span class="peds2-service-index">06</span>
-          <div class="peds2-service-icon"><i class="fa-solid fa-user-group" aria-hidden="true"></i></div>
+        <article class="peds4-service-card">
+          <span class="peds4-service-index">06</span>
+          <div class="peds4-service-icon"><i class="fa-solid fa-user-group" aria-hidden="true"></i></div>
           <h3>Adolescent Health Counseling</h3>
           <p>Support for teenage health, lifestyle, emotional wellbeing, and preventive checkups.</p>
         </article>
@@ -282,143 +257,129 @@
     </div>
   </section>
 
-  <!-- ====== CARE PHILOSOPHY (image right, diagonal panel) ====== -->
-  <section class="peds2-philosophy" id="philosophy">
-    <div class="container peds2-philosophy-grid">
-      <div class="peds2-philosophy-content">
-        <span class="peds2-chip peds2-chip--peach">
-          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Pediatric Philosophy
+  <!-- ====== CARE PHILOSOPHY (light split panel, image right) ====== -->
+  <section class="peds4-philosophy" id="philosophy">
+    <div class="container peds4-philosophy-grid">
+      <div class="peds4-philosophy-content">
+        <span class="peds4-chip peds4-chip--amber">
+          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Care Philosophy
         </span>
-        <h2 class="peds2-section-title peds2-title-light">Nurturing Care for Healthy Growing Children</h2>
-        <p class="peds2-section-subtitle peds2-subtitle-light">
+        <h2 class="peds4-section-title">A Thoughtful Approach to Every Child's Health</h2>
+        <p class="peds4-section-subtitle">
           Dedicated to comprehensive child health, growth tracking, and compassionate pediatric care.
         </p>
 
-        <div class="peds2-pillars">
-          <div class="peds2-pillar">
-            <div class="peds2-pillar-icon"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></div>
+        <div class="peds4-pillars">
+          <div class="peds4-pillar">
+            <div class="peds4-pillar-icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></div>
             <div>
-              <h3>Growth &amp; Milestone Tracking</h3>
-              <p>Monitoring developmental stages, nutrition, and child wellness at every step.</p>
-            </div>
-          </div>
-          <div class="peds2-pillar">
-            <div class="peds2-pillar-icon"><i class="fa-solid fa-syringe" aria-hidden="true"></i></div>
-            <div>
-              <h3>Gentle &amp; Preventive Care</h3>
+              <h3>Preventive Care</h3>
               <p>Timely immunizations, routine checkups, and early management of childhood illnesses.</p>
             </div>
           </div>
-          <div class="peds2-pillar">
-            <div class="peds2-pillar-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></div>
+          <div class="peds4-pillar">
+            <div class="peds4-pillar-icon"><i class="fa-solid fa-book-medical" aria-hidden="true"></i></div>
             <div>
-              <h3>Parent Guidance &amp; Partnership</h3>
-              <p>Empowering parents with clear advice on child nutrition, sleep, and immunity.</p>
+              <h3>Evidence-Based Medicine</h3>
+              <p>Treatment plans grounded in current pediatric research and clinical best practice.</p>
+            </div>
+          </div>
+          <div class="peds4-pillar">
+            <div class="peds4-pillar-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+            <div>
+              <h3>Shared Decisions</h3>
+              <p>Empowering parents with clear guidance so every care decision is made together.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="peds2-philosophy-visual">
-        <div class="peds2-placeholder-card peds2-placeholder-card--tall" role="img" aria-label="Pediatric clinic workspace flat-lay placeholder photo">
-          <i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i>
-          <span>Clinic Workspace Flat-Lay Photo</span>
+      <div class="peds4-philosophy-visual">
+        <div class="peds4-philosophy-photo-offset" aria-hidden="true"></div>
+        <div class="peds4-philosophy-photo">
+          <img src="assets/pediatric-philosophy-workspace.png" alt="Pediatric clinic desk flat-lay with stethoscope, growth chart, and children's toys" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== CONSULTATION JOURNEY — vertical alternating timeline ====== -->
-  <section class="peds2-journey" id="process">
+  <!-- ====== CONSULTATION JOURNEY — staggered ghost-numeral cascade ====== -->
+  <section class="peds4-journey" id="process">
     <div class="container">
-      <div class="peds2-section-header">
-        <span class="peds2-chip peds2-chip--navy">
+      <div class="peds4-section-header">
+        <span class="peds4-chip peds4-chip--sky">
           <i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey
         </span>
-        <h2 class="peds2-section-title" style="text-align:center;">Your Child's Healthcare Journey</h2>
-        <p class="peds2-section-subtitle" style="text-align:center; max-width:700px; margin:0 auto;">
-          A warm, child-friendly 4-step process for complete pediatric care.
+        <h2 class="peds4-section-title" style="text-align:center;">Your Child's Care Journey</h2>
+        <p class="peds4-section-subtitle" style="text-align:center; max-width:700px; margin:0 auto;">
+          A clear, reassuring 4-step process for complete pediatric care.
         </p>
       </div>
 
-      <div class="peds2-timeline">
-        <div class="peds2-timeline-spine" aria-hidden="true"></div>
-
-        <div class="peds2-timeline-step">
-          <div class="peds2-timeline-card">
-            <span class="peds2-step-number">01</span>
-            <h3>Appointment Booking</h3>
-            <p>Book a visit online or by phone for checkups, vaccinations, or illness care.</p>
-          </div>
-          <div class="peds2-timeline-node">
+      <div class="peds4-steps">
+        <div class="peds4-step-card">
+          <span class="peds4-step-bignum" aria-hidden="true">01</span>
+          <div class="peds4-step-node">
             <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
               <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
             </svg>
             <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
           </div>
-          <div class="peds2-timeline-spacer" aria-hidden="true"></div>
+          <h3>Appointment Booking</h3>
+          <p>Book online or by phone for checkups and vaccinations.</p>
         </div>
 
-        <div class="peds2-timeline-step peds2-timeline-step--reverse">
-          <div class="peds2-timeline-spacer" aria-hidden="true"></div>
-          <div class="peds2-timeline-node">
+        <div class="peds4-step-card">
+          <span class="peds4-step-bignum" aria-hidden="true">02</span>
+          <div class="peds4-step-node">
             <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
               <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
             </svg>
             <i class="fa-solid fa-child-reaching" aria-hidden="true"></i>
           </div>
-          <div class="peds2-timeline-card">
-            <span class="peds2-step-number">02</span>
-            <h3>Friendly Child Examination</h3>
-            <p>Gentle check of vitals, growth metrics, and physical development.</p>
-          </div>
+          <h3>Friendly Examination</h3>
+          <p>Gentle check of vitals, growth metrics, and physical development.</p>
         </div>
 
-        <div class="peds2-timeline-step">
-          <div class="peds2-timeline-card">
-            <span class="peds2-step-number">03</span>
-            <h3>Personalized Care Plan</h3>
-            <p>Clear guidance on treatments, prescriptions, diet, and vaccination schedule.</p>
-          </div>
-          <div class="peds2-timeline-node">
+        <div class="peds4-step-card">
+          <span class="peds4-step-bignum" aria-hidden="true">03</span>
+          <div class="peds4-step-node">
             <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
               <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
             </svg>
             <i class="fa-solid fa-clipboard-user" aria-hidden="true"></i>
           </div>
-          <div class="peds2-timeline-spacer" aria-hidden="true"></div>
+          <h3>Personalized Care Plan</h3>
+          <p>Clear guidance on treatments and vaccination schedules.</p>
         </div>
 
-        <div class="peds2-timeline-step peds2-timeline-step--reverse">
-          <div class="peds2-timeline-spacer" aria-hidden="true"></div>
-          <div class="peds2-timeline-node">
+        <div class="peds4-step-card">
+          <span class="peds4-step-bignum" aria-hidden="true">04</span>
+          <div class="peds4-step-node">
             <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
               <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
             </svg>
             <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
           </div>
-          <div class="peds2-timeline-card">
-            <span class="peds2-step-number">04</span>
-            <h3>Growth Tracking &amp; Support</h3>
-            <p>Regular milestone checks, routine follow-ups, and ongoing wellness support.</p>
-          </div>
+          <h3>Growth Tracking &amp; Support</h3>
+          <p>Regular milestone checks, routine follow-ups, and ongoing wellness support.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ====== CONTACT ====== -->
-  <section class="peds2-contact" id="contact-us">
+  <section class="peds4-contact" id="contact-us">
     <div class="container">
-      <div class="peds2-contact-card">
-        <div class="peds2-contact-header">
+      <div class="peds4-contact-card">
+        <div class="peds4-contact-header">
           <h2>Contact Us</h2>
           <p>Give your child the best start with compassionate pediatric care. Schedule a consultation with our specialist today.</p>
         </div>
 
-        <div class="peds2-contact-grid">
-          <article class="peds2-contact-item">
-            <div class="peds2-contact-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+        <div class="peds4-contact-grid">
+          <article class="peds4-contact-item">
+            <div class="peds4-contact-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
             <h3>Address</h3>
             <p>
               <strong>Building Number: 1800</strong><br />
@@ -428,8 +389,8 @@
             </p>
           </article>
 
-          <article class="peds2-contact-item">
-            <div class="peds2-contact-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+          <article class="peds4-contact-item">
+            <div class="peds4-contact-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
             <h3>Contact Information</h3>
             <p>
               <a href="tel:+919068935571">+91-9068935571</a><br />
@@ -437,77 +398,83 @@
             </p>
           </article>
         </div>
+
+        <div class="peds4-contact-cta">
+          <a href="tel:+919068935571" class="peds4-btn-outline">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Clinic
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ====== TESTIMONIALS ====== -->
-  <section class="peds2-testimonials" id="testimonials">
+  <section class="peds4-testimonials" id="testimonials">
     <div class="container">
-      <div class="peds2-section-header">
-        <span class="peds2-chip peds2-chip--peach">
+      <div class="peds4-section-header">
+        <span class="peds4-chip peds4-chip--amber">
           <i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Testimonials
         </span>
-        <h2 class="peds2-section-title">What Our Patients Say</h2>
-        <p class="peds2-section-subtitle">
+        <h2 class="peds4-section-title">What Our Patients Say</h2>
+        <p class="peds4-section-subtitle">
           Read testimonials from families who have experienced compassionate pediatric care under our specialist's guidance.
         </p>
       </div>
 
-      <div class="peds2-testi-carousel-wrap testimonials-carousel-wrap">
-        <button class="carousel-btn carousel-btn--prev peds2-carousel-btn" aria-label="Previous testimonials">
+      <div class="peds4-testi-carousel-wrap testimonials-carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev peds4-carousel-btn" aria-label="Previous testimonials">
           <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
         </button>
-        <button class="carousel-btn carousel-btn--next peds2-carousel-btn" aria-label="Next testimonials">
+        <button class="carousel-btn carousel-btn--next peds4-carousel-btn" aria-label="Next testimonials">
           <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
         </button>
 
         <div class="testimonials-carousel" id="testimonialsCarousel">
-          <div class="testimonials-track peds2-testi-track" id="testimonialsTrack">
-            <article class="testimonial-card peds2-testi-card">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="James Pattinson" class="peds2-testi-avatar" />
+          <div class="testimonials-track peds4-testi-track" id="testimonialsTrack">
+            <article class="testimonial-card peds4-testi-card">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="James Pattinson" class="peds4-testi-avatar" />
               <h3>James Pattinson</h3>
-              <div class="peds2-testi-stars" aria-label="4 out of 5 stars">
+              <div class="peds4-testi-stars" aria-label="4 out of 5 stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
               </div>
               <p>"Dr. Sarah Smith provided exceptional care for my son during a difficult fever episode. Her expertise and compassionate approach made all the difference. I highly recommend her for pediatric care."</p>
             </article>
-            <article class="testimonial-card peds2-testi-card">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop" alt="Greg Stuart" class="peds2-testi-avatar" />
+            <article class="testimonial-card peds4-testi-card">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop" alt="Greg Stuart" class="peds4-testi-avatar" />
               <h3>Greg Stuart</h3>
-              <div class="peds2-testi-stars" aria-label="5 out of 5 stars">
+              <div class="peds4-testi-stars" aria-label="5 out of 5 stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
               <p>"Outstanding experience from start to finish. Dr. Smith explained everything clearly and took time to address all my concerns. The entire team was professional and caring. Five stars!"</p>
             </article>
-            <article class="testimonial-card peds2-testi-card">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop" alt="Trevor Mitchell" class="peds2-testi-avatar" />
+            <article class="testimonial-card peds4-testi-card">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop" alt="Trevor Mitchell" class="peds4-testi-avatar" />
               <h3>Trevor Mitchell</h3>
-              <div class="peds2-testi-stars" aria-label="3 out of 5 stars">
+              <div class="peds4-testi-stars" aria-label="3 out of 5 stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
               </div>
               <p>"Good care overall. Dr. Smith helped manage my child's recurring infections effectively. The follow-up process was thorough. Would recommend for pediatric consultations."</p>
             </article>
-            <article class="testimonial-card peds2-testi-card">
-              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop" alt="Maria Rodriguez" class="peds2-testi-avatar" />
+            <article class="testimonial-card peds4-testi-card">
+              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop" alt="Maria Rodriguez" class="peds4-testi-avatar" />
               <h3>Maria Rodriguez</h3>
-              <div class="peds2-testi-stars" aria-label="5 out of 5 stars">
+              <div class="peds4-testi-stars" aria-label="5 out of 5 stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
               <p>"After my daughter's diagnosis, Dr. Smith's guidance was invaluable. She genuinely cares about her patients' long-term health. I feel confident and well-supported."</p>
             </article>
-            <article class="testimonial-card peds2-testi-card">
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop" alt="David Chen" class="peds2-testi-avatar" />
+            <article class="testimonial-card peds4-testi-card">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop" alt="David Chen" class="peds4-testi-avatar" />
               <h3>David Chen</h3>
-              <div class="peds2-testi-stars" aria-label="5 out of 5 stars">
+              <div class="peds4-testi-stars" aria-label="5 out of 5 stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
               <p>"The best pediatrician we've consulted. Dr. Smith's diagnostic skills are remarkable. She identified the issue quickly and guided us clearly. Forever grateful for her expertise."</p>
             </article>
-            <article class="testimonial-card peds2-testi-card">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Emily Watson" class="peds2-testi-avatar" />
+            <article class="testimonial-card peds4-testi-card">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Emily Watson" class="peds4-testi-avatar" />
               <h3>Emily Watson</h3>
-              <div class="peds2-testi-stars" aria-label="4 out of 5 stars">
+              <div class="peds4-testi-stars" aria-label="4 out of 5 stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
               </div>
               <p>"Professional, knowledgeable, and kind. Dr. Smith made every appointment stress-free. The clinic runs smoothly and appointments are always on time."</p>
@@ -521,33 +488,33 @@
   </section>
 
   <!-- ====== GALLERY ====== -->
-  <section class="peds2-gallery" id="gallery">
+  <section class="peds4-gallery" id="gallery">
     <div class="container">
-      <div class="peds2-section-header">
-        <h2 class="peds2-section-title">Clinic Photo Gallery</h2>
-        <p class="peds2-section-subtitle">
+      <div class="peds4-section-header">
+        <h2 class="peds4-section-title">Clinic Photo Gallery</h2>
+        <p class="peds4-section-subtitle">
           A glimpse into our child-friendly pediatric clinic, consultation rooms, and wellness facilities.
         </p>
       </div>
 
-      <div class="peds2-gallery-grid">
-        <figure class="gallery-item peds2-gallery-item">
-          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Modern clinic exterior" loading="lazy" />
+      <div class="peds4-gallery-grid">
+        <figure class="gallery-item peds4-gallery-item">
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Modern clinic exterior" loading="lazy" />
         </figure>
-        <figure class="gallery-item peds2-gallery-item">
-          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Clinic reception and waiting area" loading="lazy" />
+        <figure class="gallery-item peds4-gallery-item">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Clinic reception and waiting area" loading="lazy" />
         </figure>
-        <figure class="gallery-item peds2-gallery-item">
-          <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" alt="Clinic consultation room" loading="lazy" />
+        <figure class="gallery-item peds4-gallery-item">
+          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&q=80" alt="Clinic consultation room" loading="lazy" />
         </figure>
-        <figure class="gallery-item peds2-gallery-item">
-          <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80" alt="Clinic corridor and seating" loading="lazy" />
+        <figure class="gallery-item peds4-gallery-item">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Clinic corridor and seating" loading="lazy" />
         </figure>
-        <figure class="gallery-item peds2-gallery-item">
-          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="Diagnostic equipment area" loading="lazy" />
+        <figure class="gallery-item peds4-gallery-item">
+          <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80" alt="Diagnostic equipment area" loading="lazy" />
         </figure>
-        <figure class="gallery-item peds2-gallery-item">
-          <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=80" alt="Treatment room" loading="lazy" />
+        <figure class="gallery-item peds4-gallery-item">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=600&q=80" alt="Treatment room" loading="lazy" />
         </figure>
       </div>
     </div>
@@ -566,11 +533,13 @@
   <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
     <div class="booking-modal-dialog" role="document">
-      <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
 
-      <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-        <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-        <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+        </div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate>
@@ -662,20 +631,20 @@
   </div>
 
   <!-- ====== FOOTER ====== -->
-  <footer class="peds2-footer">
-    <div class="peds2-footer-inner">
-      <div class="peds2-footer-brand-col">
-        <a href="#" class="peds2-footer-brand">
-          <span class="peds2-avatar">
+  <footer class="peds4-footer">
+    <div class="peds4-footer-inner">
+      <div class="peds4-footer-brand-col">
+        <a href="#" class="peds4-footer-brand">
+          <span class="peds4-avatar">
             <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith" />
           </span>
-          <span class="peds2-brand-text">
-            <span class="peds2-brand-name">Dr. Sarah Smith</span>
-            <span class="peds2-brand-role">Board-Certified Pediatrician</span>
+          <span class="peds4-brand-text">
+            <span class="peds4-brand-name">Dr. Sarah Smith</span>
+            <span class="peds4-brand-role">Board-Certified Pediatrician</span>
           </span>
         </a>
-        <p class="peds2-footer-tagline">Compassionate pediatric care for growing families.</p>
-        <div class="peds2-footer-social">
+        <p class="peds4-footer-tagline">Evidence-based pediatric care for growing families.</p>
+        <div class="peds4-footer-social">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
@@ -685,7 +654,7 @@
         </div>
       </div>
 
-      <div class="peds2-footer-col">
+      <div class="peds4-footer-col">
         <h4>Quick Links</h4>
         <nav>
           <a href="#about">About</a>
@@ -697,7 +666,7 @@
         </nav>
       </div>
 
-      <div class="peds2-footer-col">
+      <div class="peds4-footer-col">
         <h4>Legal</h4>
         <nav>
           <a href="privacy-policy.html">Privacy Policy</a>
@@ -705,7 +674,7 @@
         </nav>
       </div>
 
-      <div class="peds2-footer-col peds2-footer-contact-col">
+      <div class="peds4-footer-col peds4-footer-contact-col">
         <h4>Reach Us</h4>
         <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 1800 Orchids Lane, Orlando, FL 32805</p>
         <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+919068935571">+91-9068935571</a></p>
@@ -713,7 +682,7 @@
       </div>
     </div>
 
-    <div class="peds2-footer-bottom">
+    <div class="peds4-footer-bottom">
       <p>&copy; 2026 Dr. Sarah Smith. All rights reserved.</p>
     </div>
   </footer>

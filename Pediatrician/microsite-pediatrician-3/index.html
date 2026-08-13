@@ -29,10 +29,6 @@
         </span>
       </a>
 
-      <button class="peds2-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
-        <span></span><span></span><span></span>
-      </button>
-
       <nav class="peds2-nav-links" id="mainNav" aria-label="Main Navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -42,11 +38,16 @@
         <a href="blog.html">Blog</a>
       </nav>
 
-      <a href="#" class="peds2-cta-btn cta-btn" id="openBookingBtn">
-        <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
-        <span class="cta-text-desktop">Book Appointment</span>
-        <span class="cta-text-mobile">Book</span>
-      </a>
+      <div class="peds2-nav-actions">
+        <a href="#" class="peds2-cta-btn cta-btn" id="openBookingBtn">
+          <span class="cta-text-desktop">Book Appointment</span>
+          <span class="cta-text-mobile">Book</span>
+        </a>
+
+        <button class="peds2-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -559,11 +560,13 @@
   <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
     <div class="booking-modal-dialog" role="document">
-      <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
 
-      <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-        <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-        <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+        </div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate>
