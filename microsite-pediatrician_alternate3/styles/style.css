@@ -302,25 +302,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .peds2-placeholder-card span { font-size: 14px; font-weight: 700; color: var(--muted); }
 .peds2-placeholder-card--tall { min-height: 420px; }
 
-/* Photo blocks replacing placeholder imagery */
-.peds2-about-photo,
-.peds2-philosophy-photo {
-  width: 100%;
-  min-height: 320px;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-}
-.peds2-about-photo img,
-.peds2-philosophy-photo img {
-  width: 100%;
-  height: 100%;
-  min-height: 320px;
-  object-fit: cover;
-  display: block;
-}
-.peds2-philosophy-photo { min-height: 420px; }
-.peds2-philosophy-photo img { min-height: 420px; }
-
 /* ============================================================
    HEADER
    ============================================================ */
@@ -399,17 +380,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   box-shadow: var(--shadow-peach);
   transition: transform 0.25s ease, background 0.25s ease;
   white-space: nowrap;
-  flex-shrink: 0;
-  max-width: none;
-}
-.peds2-cta-btn i {
-  color: #000000;
-}
-.peds2-cta-btn span {
-  white-space: nowrap;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  max-width: none;
 }
 .peds2-cta-btn:hover { background: var(--peach-dark); transform: translateY(-2px); }
 .cta-text-mobile { display: none; }
@@ -533,13 +503,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   gap: 12px;
 }
 .peds2-social {
-  width: 46px; height: 46px;
+  width: 38px; height: 38px;
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%;
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--navy);
-  font-size: 18px;
   transition: all 0.25s ease;
 }
 .peds2-social:hover { background: var(--navy); color: #fff; transform: translateY(-3px); }
@@ -797,6 +766,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .peds2-pillar p { font-size: 16px; color: hsl(218, 25%, 82%); margin: 0; }
 
 .peds2-philosophy-visual { min-width: 0; }
+.peds2-philosophy-visual .peds2-placeholder-card {
+  background: linear-gradient(145deg, hsla(0,0%,100%,0.10), hsla(0,0%,100%,0.03));
+  border-color: hsla(0,0%,100%,0.25);
+  color: #fff;
+}
+.peds2-philosophy-visual .peds2-placeholder-card i,
+.peds2-philosophy-visual .peds2-placeholder-card span { color: hsl(218, 25%, 88%); }
 
 /* ============================================================
    CONSULTATION JOURNEY — vertical alternating timeline
