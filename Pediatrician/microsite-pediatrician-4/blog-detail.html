@@ -18,37 +18,23 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container navbar">
-      <a href="index.html" class="brand" aria-label="Dr. Sarah Smith">
-        <span class="avatar" aria-hidden="true">
-          <img
-            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
-            alt="Dr. Sarah Smith"
-          />
+  <header class="peds4-header">
+    <div class="container peds4-navbar">
+      <a href="index.html" class="peds4-brand" aria-label="Dr. Sarah Smith">
+        <span class="peds4-avatar">
+          <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith" />
         </span>
-        <span class="brand-text">
-          <span class="brand-name">Dr. Sarah Smith</span>
-          <span class="brand-role">Pediatrician</span>
+        <span class="peds4-brand-text">
+          <span class="peds4-brand-name">Dr. Sarah Smith</span>
+          <span class="peds4-brand-role">Pediatrician</span>
         </span>
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="mainNav"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+      <nav class="peds4-nav-links" id="mainNav" aria-label="Main Navigation">
         <a href="index.html#about">About</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#contact-us">Contact</a>
@@ -57,10 +43,16 @@
         <a href="blog.html">Blog</a>
       </nav>
 
-      <a href="#" class="cta-btn">
-        <span class="cta-text-desktop">Book Appointment</span>
-        <span class="cta-text-mobile">Book Now</span>
-      </a>
+      <div class="peds4-nav-actions">
+        <a href="#" class="peds4-cta-btn cta-btn" id="openBookingBtn">
+          <span class="cta-text-desktop">Book Appointment</span>
+          <span class="cta-text-mobile">Book Now</span>
+        </a>
+
+        <button class="peds4-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -297,46 +289,63 @@
     </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#contact-us">Contact</a>
-        <a href="index.html#testimonials">Testimonials</a>
-      </nav>
-
-      <div class="footer-social" aria-label="Footer social links">
-        <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
-          <i class="fa-brands fa-facebook-f"></i>
+  <footer class="peds4-footer">
+    <div class="peds4-footer-inner">
+      <div class="peds4-footer-brand-col">
+        <a href="index.html" class="peds4-footer-brand">
+          <span class="peds4-avatar">
+            <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith" />
+          </span>
+          <span class="peds4-brand-text">
+            <span class="peds4-brand-name">Dr. Sarah Smith</span>
+            <span class="peds4-brand-role">Board-Certified Pediatrician</span>
+          </span>
         </a>
-        <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="#" class="footer-social-icon footer-social-x" aria-label="X">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
+        <p class="peds4-footer-tagline">Evidence-based pediatric care for growing families.</p>
+        <div class="peds4-footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
       </div>
 
-      <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms-of-service.html">Terms of Service</a>
+      <div class="peds4-footer-col">
+        <h4>Quick Links</h4>
+        <nav>
+          <a href="index.html#about">About</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#contact-us">Contact</a>
+          <a href="index.html#testimonials">Testimonials</a>
+          <a href="index.html#gallery">Gallery</a>
+          <a href="blog.html">Blog</a>
+        </nav>
       </div>
 
-      <p class="footer-copy">Dr. Sarah Smith. All rights reserved</p>
+      <div class="peds4-footer-col">
+        <h4>Legal</h4>
+        <nav>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+        </nav>
+      </div>
+
+      <div class="peds4-footer-col peds4-footer-contact-col">
+        <h4>Reach Us</h4>
+        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 1800 Orchids Lane, Orlando, FL 32805</p>
+        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+919068935571">+91-9068935571</a></p>
+        <p><i class="fa-regular fa-envelope" aria-hidden="true"></i> <a href="mailto:dr.smith@minneasotahospitals.com">dr.smith@minneasotahospitals.com</a></p>
+      </div>
+    </div>
+
+    <div class="peds4-footer-bottom">
+      <p>&copy; 2026 Dr. Sarah Smith. All rights reserved.</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="./script/index.js"></script>
 </body>
 </html>
