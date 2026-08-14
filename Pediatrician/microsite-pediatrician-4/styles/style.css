@@ -327,17 +327,18 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   gap: 7px;
   padding: 9px 18px;
   border-radius: var(--radius-pill);
-  background: var(--amber);
+  background: var(--amber-dark);
   color: #ffffff;
   font-weight: 700;
   font-size: 16px;
   box-shadow: var(--shadow-amber);
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition: transform 0.25s ease, filter 0.25s ease;
   white-space: nowrap;
   flex-shrink: 0;
 }
-.peds4-cta-btn:hover { background: var(--amber-dark); transform: translateY(-2px); }
+.peds4-cta-btn:hover { filter: brightness(0.9); transform: translateY(-2px); }
 .peds4-cta-btn i { color: #000000; font-size: 14px; }
+.peds4-cta-btn span { color: #ffffff; }
 .cta-text-mobile { display: none; }
 
 .peds4-menu-toggle {
@@ -1119,6 +1120,22 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-select-wrap select { appearance: none; padding-right: 36px; }
 .booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
 
+/* Phone field — intl-tel-input country code dropdown */
+.iti {
+  display: block; width: 100%;
+  --iti-border-color: var(--border);
+  --iti-country-selector-bg: var(--surface);
+}
+.iti__country-selector { border-radius: 12px; max-width: none; }
+.iti__dial-code { font-size: 15px; }
+.booking-field .iti__search-input {
+  padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal));
+  padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal));
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.booking-field .iti__tel-input.is-invalid { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15); }
+
 .booking-datepicker { position: relative; }
 .booking-input-with-icon { position: relative; }
 .booking-date-display { cursor: pointer; }
@@ -1150,10 +1167,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-field--file .booking-upload-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .booking-upload-btn {
   flex-shrink: 0; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;
-  padding: 9px 18px; border-radius: 8px; background: var(--amber); color: #ffffff !important;
-  font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s ease;
+  padding: 9px 18px; border-radius: 8px; background: var(--amber-dark); color: #ffffff !important;
+  font-size: 16px; font-weight: 600; cursor: pointer; transition: filter 0.2s ease;
 }
-.booking-upload-btn:hover { background: var(--amber-dark); }
+.booking-upload-btn:hover { filter: brightness(0.9); }
 .booking-field--file input[type="file"] { display: none; }
 .booking-upload-help { font-size: 16px; color: var(--muted); }
 
@@ -1163,7 +1180,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
 .booking-submit-btn {
   width: 100%; padding: 14px; border: none; border-radius: 12px;
-  background: linear-gradient(135deg, var(--amber) 0%, var(--amber-dark) 100%);
+  background: var(--amber-dark);
   color: #ffffff; font-size: 16px; font-weight: 700;
   cursor: pointer; transition: opacity 0.2s ease, transform 0.2s ease;
   box-shadow: var(--shadow-amber);

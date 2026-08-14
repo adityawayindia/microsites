@@ -485,14 +485,18 @@ background: var(--bg-2);
   box-shadow: var(--shadow-coral);
 }
 
-/* Social strip */
+/* Social container — sizes itself to whichever icons are present */
 .alt-hero-social-strip {
   position: relative;
   z-index: 1;
-  margin-top: 36px;
-  background: rgba(255,255,255,0.75);
-  border-top: 1.5px solid var(--border);
-  padding: 14px 0;
+  margin: 36px auto 0;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  background: rgba(255,255,255,0.85);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  padding: 14px 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -515,7 +519,7 @@ background: var(--bg-2);
 }
 .alt-social-pill:hover { transform: translateY(-2px); opacity: 0.88; }
 .sp-fb { background: #1877f2; }
-.sp-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+.sp-ig { background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); }
 .sp-yt { background: #ff0000; }
 .sp-wa { background: #1bd741; }
 
@@ -1233,6 +1237,22 @@ background: var(--bg-2);
 .booking-select-wrap { position: relative; }
 .booking-select-wrap select { appearance: none; padding-right: 36px; }
 .booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 13px; }
+
+/* Phone field — intl-tel-input country code dropdown */
+.iti {
+  display: block; width: 100%;
+  --iti-border-color: var(--border);
+  --iti-country-selector-bg: var(--white);
+}
+.iti__country-selector { border-radius: 12px; max-width: none; }
+.iti__dial-code { font-size: 15px; }
+.booking-field .iti__search-input {
+  padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal));
+  padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal));
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.booking-field .iti__tel-input.is-invalid { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15); }
 
 .booking-datepicker { position: relative; }
 .booking-input-with-icon { position: relative; }

@@ -428,6 +428,7 @@ if (menuToggle && mainNav) {
     fullName(value) {
       if (!value) return "Please enter your full name.";
       if (value.length < 3) return "Name should be at least 3 characters.";
+      if (!/^[A-Za-z\s.'-]+$/.test(value)) return "Name should contain only letters.";
       return "";
     },
     email(value) {
@@ -437,7 +438,8 @@ if (menuToggle && mainNav) {
     },
     phone(value) {
       if (!value) return "Please enter your phone number.";
-      if (!validatePhone(value)) return "Please enter a valid phone number.";
+      if (!iti || !phoneUtilsReady) return "";
+      if (!iti.isValidNumber()) return getPhoneErrorMessage(iti.getValidationError());
       return "";
     },
     preferredDate(value) {
@@ -506,10 +508,41 @@ if (menuToggle && mainNav) {
     return emailRegex.test(value);
   }
 
-  function validatePhone(value) {
-    const sanitizedValue = value.replace(/[()\s-]/g, "");
-    const phoneRegex = /^\+?[0-9]{7,15}$/;
-    return phoneRegex.test(sanitizedValue);
+  let iti = null;
+  let phoneUtilsReady = false;
+
+  function getPhoneErrorMessage(errorCode) {
+    if (!window.intlTelInput) return "Please enter a valid phone number.";
+    const { VALIDATION_ERROR } = window.intlTelInput;
+    switch (errorCode) {
+      case VALIDATION_ERROR.INVALID_COUNTRY_CODE: return "Invalid country code.";
+      case VALIDATION_ERROR.TOO_SHORT: return "Phone number is too short.";
+      case VALIDATION_ERROR.TOO_LONG: return "Phone number is too long.";
+      default: return "Please enter a valid phone number.";
+    }
+  }
+
+  function initPhonePlugin() {
+    const phoneInputEl = form.phone;
+    if (!phoneInputEl || !window.intlTelInput) return;
+
+    iti = window.intlTelInput(phoneInputEl, {
+      initialCountry: "in",
+      countryOrder: ["in"],
+      separateDialCode: true,
+      loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
+    });
+
+    iti.promise.then(() => { phoneUtilsReady = true; }).catch(() => {});
+
+    phoneInputEl.addEventListener("countrychange", () => {
+      if (phoneInputEl.value.trim()) validateField("phone");
+    });
+
+    form.addEventListener("reset", () => {
+      iti?.setNumber("");
+      iti?.setSelectedCountry("in");
+    });
   }
 
   function setDateConstraints() {
@@ -562,6 +595,13 @@ if (menuToggle && mainNav) {
     });
   }
 
+  form.fullName?.addEventListener("input", () => {
+    const el = form.fullName;
+    const sanitized = el.value.replace(/[^A-Za-z\s.'-]/g, "");
+    if (sanitized !== el.value) el.value = sanitized;
+  });
+
+  initPhonePlugin();
   setDateConstraints();
   bindRealtimeValidation();
   setA11yAttributes();
@@ -686,9 +726,13 @@ if (menuToggle && mainNav) {
     setDateConstraints();
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     clearErrors();
+
+    if (iti) {
+      try { await iti.promise; } catch (e) {}
+    }
 
     const fieldsToValidate = ["fullName", "email", "phone", "preferredDate", "preferredTime", "reason", "report"];
     const invalidFields = fieldsToValidate.filter((name) => !validateField(name));

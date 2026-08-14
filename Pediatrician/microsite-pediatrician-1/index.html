@@ -13,6 +13,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
 
@@ -767,7 +768,7 @@
 
           <div class="booking-field">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
             <p class="booking-error" data-error-for="phone"></p>
           </div>
         </div>
@@ -895,6 +896,7 @@
   </footer>
 
   <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="./script/index.js"></script>
 
 </body>
