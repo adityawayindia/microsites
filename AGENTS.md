@@ -243,9 +243,9 @@ All microsites must follow these design principles:
 - **Typography:** Use Google Fonts (Inter, Roboto, or Outfit preferred). Never use browser-default fonts. Adhere to the following exact type scale to maintain clean hierarchy:
   - **Section Titles (h2):** `32px` to `38px` for clear heading prominence.
   - **Card/Feature Headings (h3):** `22px` on desktop, scaled down to `20px` on mobile (`<= 480px`).
-  - **Body/Paragraph Text (p, li):** Minimum `16px` everywhere, styled in a very dark contrast color (e.g., `#0f172a`, `#2c3531`) for optimal legibility.
-  - **Metadata, Badges, and Pills (.pill, .step-number, tag labels):** `12px` to `13px` for secondary details.
-- **Large Screen Typography Scaling:** To prevent body text and subheadings from looking too small on wider viewports, all stylesheets must append media queries scaling up text sizing starting at viewport widths of `1400px` (body/paragraphs to 18px, subtitles to 20px) and `1900px` (body/paragraphs to 20px, subtitles to 22px).
+  - **Body/Paragraph Text (p, li, a):** Mandatory `18px` on every `<p>`, `<li>`, and `<a>` tag everywhere in the site (no exceptions, no smaller sizes) — this includes header nav links, footer quick links, footer legal links, and inline body/content links, not just paragraph and list text. Styled in a very dark contrast color (e.g., `#0f172a`, `#2c3531`) for optimal legibility, except where a link's own styling requires a different (still accessible) color per the CTA/accent rules below. CTA buttons styled as `<a>` tags (e.g. "Book Appointment") are exempt — they follow button sizing, not body-copy sizing.
+  - **Metadata, Badges, and Pills (.pill, .step-number, tag labels):** `16px` for secondary details.
+- **Large Screen Typography Scaling:** To prevent body text and subheadings from looking too small on wider viewports, all stylesheets must append a media query starting at a viewport width of `1400px` that scales body/paragraphs and subtitles up to `18px`. This is the industry-standard ceiling for body copy (16px baseline per WCAG/Material/Tailwind conventions, ~18px as the typical upper bound) — do not scale further at `1900px` or above. The real fix for wide viewports is constraining line length (`max-width`/measure, ~45-75 characters per line), not inflating font size past 18px.
 - **Generic Sub-headings:** Section subheadings, subtitle paragraphs, badges, and introductory kickers must remain generic. They must *never* contain specific doctor names (e.g. "Dr. Sarah Smith") or explicit years of experience (e.g. "20+ years"). Keep names and years of experience restricted to main section headings (`h1`), detailed paragraphs, list items, or footer elements.
 - **Section Vertical Spacing:** Top-level page sections (About, Services, Philosophy, Journey, Testimonials, Gallery, Contact, etc.) must use `padding: 64px 0;`, not `100px 0;` or larger. Two adjacent sections with `100px` padding each stack into a ~200px dead-space gap, which reads as a layout bug (especially on mobile, where no separate media-query override typically reduces it). If a section needs more breathing room for a genuinely large visual (e.g. a full-bleed hero), scale it deliberately rather than reusing the generic `100px` value out of habit.
 - **Colour Palette:** Use curated, specialty-appropriate colours (HSL preferred). Avoid plain red/blue/green.
@@ -253,6 +253,31 @@ All microsites must follow these design principles:
 - **Responsiveness:** All layouts must be fully responsive from 320px mobile up to 1440px desktop.
 - **No Placeholders:** If an image is needed, generate one using the image generation tool rather than leaving a placeholder URL.
 - **SEO:** Every page must have a unique `<title>`, `<meta name="description">`, a single `<h1>`, and semantic HTML5 elements.
+
+---
+
+## 7.1 Colour Proportion & Text Contrast Rule (Hard-Bound, Mandatory)
+
+> **This rule is hard-bound and non-negotiable.** It applies to every microsite, every page, and every future edit. Do not override it based on visual preference or a specific brand ask — reconcile the brand palette to fit these constraints instead.
+
+### The 60-30-10 Rule
+Every page's colour usage must break down as:
+- **60% — Neutral base:** White, off-white, or light gray for main backgrounds. Keeps the page clean and spacious.
+- **30% — Brand colour:** The specialty's primary brand colour, used for headers, cards, and sub-elements.
+- **10% — Accent colour:** A bold, contrasting colour used **strictly** for interactive elements — CTA buttons and important links. Do not spread the accent colour into decorative or non-interactive areas; it loses meaning if overused.
+
+**Semantic colours stay consistent** regardless of brand palette: green = success, red = error, blue = clickable link (unless the link is already styled as a CTA button).
+
+### Text Colour & Readability
+- Use dark charcoal (`#333333` or `#222222`) instead of pure black (`#000000`) on light backgrounds, to reduce eye strain. (This workspace's existing `#0f172a` token already satisfies this — do not swap it for pure black.)
+- Body text must be **at least 16px**.
+- Line height must be **1.5–1.6×** the font size for body copy.
+- Every text/background pairing must meet **WCAG AA contrast — 4.5:1 minimum** for normal text. Verify with the WebAIM Contrast Checker logic (or equivalent calculation) before finalizing a colour choice, especially for text on brand-coloured or accent-coloured surfaces.
+
+### How to Apply
+- When picking or reviewing a specialty's colour palette (Section 7's "curated, specialty-appropriate colours"), assign roles first (60/30/10), then pick HSL values that satisfy the contrast requirement — not the other way around.
+- When adding a new CTA, badge, or link colour, check it isn't silently expanding the 10% accent share into a background or card fill.
+- If an existing microsite's palette drifts from this ratio or fails contrast, flag it and fix it as part of any styling work touching that area — don't leave a known contrast failure in place.
 
 ---
 
