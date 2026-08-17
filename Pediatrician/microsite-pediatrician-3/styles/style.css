@@ -368,7 +368,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .peds2-brand-text { display: flex; flex-direction: column; line-height: 1.25; }
 .peds2-brand-name { font-weight: 800; font-size: 16px; color: var(--navy-dark); white-space: nowrap; }
-.peds2-brand-role { font-size: 12px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+.peds2-brand-role { font-size: 15px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 
 .peds2-nav-links {
   display: flex;
@@ -479,7 +479,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   border-radius: var(--radius-pill);
   background: var(--peach-light);
   color: var(--peach-dark);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -659,8 +659,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .peds2-about-badge-card {
   position: absolute;
-  bottom: -24px;
-  right: -20px;
+  bottom: 20px;
+  right: 0;
   display: flex;
   align-items: center;
   gap: 12px;

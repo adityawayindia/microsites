@@ -424,8 +424,8 @@ background: var(--bg-2);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 128px; height: 128px;
-  border-radius: 50%;
+  width: 168px; height: 128px;
+  border-radius: 24px;
   padding: 16px;
   text-align: center;
   transition: transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
@@ -602,16 +602,30 @@ background: var(--bg-2);
 .alt-about-stats {
   display: flex;
   gap: 18px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  margin-top: 36px;
+  margin-top: 28px;
 }
 
+.alt-about-qualification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-2);
+  margin: 6px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.alt-about-qualification i {
+  color: var(--mint-dark);
+}
 .alt-about-lead {
   font-size: 18px;
   font-weight: 700;
   color: var(--mint-dark);
-  margin: 0 0 16px;
+  margin: 8px 0 16px;
   line-height: 1.5;
 }
 .alt-about-body {
@@ -1520,7 +1534,7 @@ background: var(--bg-2);
   .alt-hero { padding: 60px 0 0; }
   .alt-hero-heading { font-size: clamp(34px, 9vw, 54px); }
   .alt-hero-stats { gap: 12px; }
-  .alt-stat-orb { width: 108px; height: 108px; }
+  .alt-stat-orb { width: 140px; height: 108px; }
   .alt-stat-num { font-size: 26px; }
 
   .alt-hero-social-strip { flex-direction: column; gap: 10px; text-align: center; }
