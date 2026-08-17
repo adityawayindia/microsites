@@ -454,6 +454,7 @@ margin-bottom: 0;
 .social-links {
   margin-top: 4px;
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
@@ -2231,6 +2232,7 @@ margin-bottom: 0;
 
 .footer-social {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 14px;
@@ -4054,6 +4056,7 @@ margin-bottom: 0;
 
 .social-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -5212,6 +5215,7 @@ body {
 
 .social-links {
   display: flex !important;
+  flex-wrap: wrap !important;
   align-items: center !important;
   gap: 10px !important;
 }

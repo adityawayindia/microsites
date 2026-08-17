@@ -458,6 +458,7 @@ margin-bottom: 0;
 .social-links {
   margin-top: 4px;
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
@@ -2239,6 +2240,7 @@ margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 14px;
 }
 
@@ -4063,6 +4065,7 @@ margin-bottom: 0;
 
 .social-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 

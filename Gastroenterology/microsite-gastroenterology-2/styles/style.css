@@ -555,6 +555,7 @@ overflow: hidden;
 .social-links {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -1581,6 +1582,7 @@ overflow: hidden;
 
 .footer-social {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
 }
 
