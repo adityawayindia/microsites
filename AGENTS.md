@@ -366,3 +366,39 @@ form.fullName?.addEventListener("input", () => {
 });
 ```
 paired with a matching validator: `if (!/^[A-Za-z\s.'-]+$/.test(value)) return "Name should contain only letters.";`
+
+---
+
+## 11. Layout, Branding & Interaction Additions
+
+- **Main container width:** Do not cap the site's main container at `1280px`. Use a
+  modern wider measure — `1440px`–`1600px` — for the outer `.container`/wrapper, so the
+  layout doesn't look cramped on large monitors. Keep inner text blocks constrained to
+  a readable measure (~65–75ch) even when the outer container is wider.
+- **Alternating section backgrounds:** Give top-level sections alternating background
+  treatments (e.g. white/off-white ↔ a light tint of the brand colour) so the page
+  reads as distinct branded bands rather than one flat surface. This is part of how the
+  60% neutral / 30% brand split (Section 7.1) should actually show up on the page —
+  don't leave the brand colour confined to small UI elements only.
+- **Section headings stay bold and large.** `h2` section titles must use a bold weight
+  (600–700+) at the 32–38px scale from Section 7 — never regular/light weight regardless
+  of design trend.
+- **Card headings vs. card body:** Inside any card component, the heading (`h3`/`h4`)
+  must be visually bold and clearly larger than the paragraph/body text inside that same
+  card — never the same size/weight as the body copy.
+- **Never nest a card inside a bigger card.** If a card needs to present multiple
+  sub-items, do not wrap each sub-item in its own bordered/shadowed "card" inside the
+  outer card — that produces a card-in-card look. Instead, separate sub-items with a
+  simple divider (`border-top`/`hr`-style rule), spacing, or an icon/label row inside the
+  single outer card.
+- **Push the 60-30-10 rule further into the visible design**, not just CTAs: use the 60%
+  neutral and 30% brand colours generously across section backgrounds, card surfaces,
+  headings, and dividers, reserving the 10% accent strictly for interactive elements as
+  already specified in Section 7.1. Don't let the palette read as "mostly white with a
+  couple of coloured buttons."
+- **Stats must animate as live counters.** Any numeric stat (e.g. "100 patients", "15
+  years") must count up from 0/1 to its target value when it scrolls into view, not
+  render as static text. Implement with a small IntersectionObserver-triggered
+  requestAnimationFrame (or `setInterval`) counter in `script/index.js` — trigger once
+  per element, respect `prefers-reduced-motion` by skipping straight to the final value,
+  and preserve any suffix (`+`, `%`, `k`) that was in the original static number.

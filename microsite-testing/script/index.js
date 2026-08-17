@@ -693,7 +693,7 @@ if (menuToggle && mainNav) {
             <p style="margin:0 0 25px; color:#5a6f6a; line-height:1.5;">${message}</p>
             <button id="popupOkBtn" style="
                 background:${success ? "#0f766e" : "#dc3545"}; color:#fff; border:none;
-                padding:10px 35px; border-radius:999px; cursor:pointer; font-size:15px;">
+                padding:10px 35px; border-radius:999px; cursor:pointer; font-size:16px;">
                 OK
             </button>
         </div>

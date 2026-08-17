@@ -25,7 +25,7 @@
   border: 1px solid var(--navy);
   background: var(--white);
   color: var(--navy);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -33,7 +33,7 @@
 }
 
 .legal-page .blog-detail-back-link i {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .legal-page .blog-detail-back-link:hover {
@@ -69,7 +69,7 @@
   border: 1px solid rgba(184, 147, 78, 0.3);
   background: var(--accent-soft);
   color: var(--gold);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -95,7 +95,7 @@
 .legal-page .blog-detail-content p {
   margin: 0;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.85;
 }
 
@@ -133,7 +133,7 @@
   .legal-page .blog-detail-back-link {
     margin-bottom: 18px;
     padding: 8px 12px;
-    font-size: 11px;
+    font-size: 16px;
   }
 
   .legal-section {
@@ -141,12 +141,12 @@
   }
 
   .legal-lead {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.72;
   }
 
   .legal-effective-date {
-    font-size: 11px;
+    font-size: 16px;
     padding: 7px 11px;
   }
 

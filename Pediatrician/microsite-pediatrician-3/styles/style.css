@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
 
 /* ============================================================
-   TOKEN LAYER — Navy / Peach / Sage Pediatric Palette
+   TOKEN LAYER â€” Navy / Peach / Sage Pediatric Palette
    ============================================================ */
 :root {
   /* Base surfaces */
@@ -49,7 +49,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -80,7 +80,7 @@ p, li, span, a, button, label {
 .about-story p,
 .about-story-new p {
   text-align: justify;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #0f172a;
   hyphens: none;
 }
@@ -234,7 +234,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   gap: 8px;
   padding: 7px 16px;
   border-radius: var(--radius-pill);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -443,7 +443,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 /* ============================================================
-   HERO — asymmetric portrait-blob layout
+   HERO â€” asymmetric portrait-blob layout
    ============================================================ */
 .peds2-hero {
   position: relative;
@@ -528,7 +528,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-card);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--navy-dark);
 }
@@ -601,7 +601,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   border-radius: var(--radius-lg);
   background: var(--surface);
   box-shadow: var(--shadow-card);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--navy-dark);
   z-index: 2;
@@ -634,14 +634,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   flex: 1 1 140px;
 }
 .peds2-stat-num {
-  font-size: 28px;
+  font-size: clamp(38px, 3.6vw, 48px);
   font-weight: 900;
   color: #ffffff;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
-.peds2-stat-num i { color: var(--gold); font-size: 20px; }
+.peds2-stat-num i { color: var(--gold); font-size: 26px; }
 .peds2-stat-lbl { font-size: 16px; color: hsl(218, 30%, 78%); font-weight: 600; }
 .peds2-stat-divider {
   width: 1px;
@@ -699,7 +699,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   border-radius: var(--radius-pill);
   background: hsl(152, 40%, 82%);
   color: hsl(152, 55%, 16%);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
 }
 .peds2-tag i { color: hsl(152, 55%, 16%); }
@@ -804,7 +804,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .peds2-philosophy-visual { min-width: 0; }
 
 /* ============================================================
-   CONSULTATION JOURNEY — vertical alternating timeline
+   CONSULTATION JOURNEY â€” vertical alternating timeline
    ============================================================ */
 .peds2-journey { padding: 64px 0; background: var(--bg-3); }
 .peds2-journey .peds2-section-header { text-align: center; margin-bottom: 56px; }
@@ -881,14 +881,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.peds2-contact { padding: 64px 0; background: var(--bg); }
+.peds2-contact { padding: 24px 0; background: var(--bg); }
 
 .peds2-contact-card {
-  background: var(--surface);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-  padding: 56px;
+  padding: 16px 0;
 }
 
 .peds2-contact-header { text-align: center; max-width: 640px; margin: 0 auto 40px; }
@@ -909,8 +905,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   text-align: center;
   padding: 26px 20px;
   border-radius: var(--radius-lg);
-  background: var(--bg-2);
-  border: 1px solid var(--border-light);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-card);
   min-width: 0;
 }
 .peds2-contact-icon {
@@ -1151,7 +1148,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .booking-select-wrap select { appearance: none; padding-right: 36px; }
 .booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
 
-/* Phone field — intl-tel-input country code dropdown */
+/* Phone field â€” intl-tel-input country code dropdown */
 .iti {
   display: block; width: 100%;
   --iti-border-color: var(--border);
@@ -1231,15 +1228,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 /* ============================================================
    FOOTER
    ============================================================ */
-.peds2-footer { background: var(--navy-dark); color: hsl(218, 25%, 85%); padding: 64px 0 0; }
+.peds2-footer { background: var(--navy-dark); color: hsl(218, 25%, 85%); padding: 32px 0 0; }
 
 .peds2-footer-inner {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 24px 48px;
+  padding: 0 24px 24px;
   display: grid;
-  grid-template-columns: 1.4fr repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: 1.4fr repeat(2, 1fr);
+  gap: 32px;
 }
 
 .peds2-footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
@@ -1248,7 +1245,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .peds2-footer-brand .peds2-avatar { border-color: var(--peach); }
 .peds2-footer-tagline { font-size: 18px; color: hsl(218, 25%, 82%); margin: 0 0 20px; max-width: 320px; }
 
-.peds2-footer-social { display: flex; flex-wrap: wrap; gap: 10px; }
+.peds2-footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
+.peds2-footer-social-label { font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
+/* Capped to exactly 6 icons per row (6 * 38px icon + 5 * 10px gap = 278px) so a 7th+ icon added later wraps to a new row instead of growing the row indefinitely, even when the container has room. */
+.peds2-footer-social { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px; max-width: 278px; min-width: 0; }
 .peds2-footer-social a {
   width: 38px; height: 38px;
   display: flex; align-items: center; justify-content: center;
@@ -1260,9 +1260,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .peds2-footer-social a:hover { background: var(--peach); transform: translateY(-3px); }
 
 .peds2-footer-col { min-width: 0; }
-.peds2-footer-col h4 { font-size: 15px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; color: #ffffff; margin: 0 0 18px; }
-.peds2-footer-col nav { display: flex; flex-direction: column; gap: 12px; }
-.peds2-footer-col a, .peds2-footer-col p { font-size: 18px; color: hsl(218, 25%, 82%); margin: 0 0 12px; }
+.peds2-footer-col h4 { font-size: 15px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; color: #ffffff; margin: 0 0 14px; }
+.peds2-footer-col nav { display: flex; flex-direction: column; gap: 10px; }
+.peds2-footer-col a, .peds2-footer-col p { font-size: 18px; color: hsl(218, 25%, 82%); margin: 0; }
 .peds2-footer-col a { transition: color 0.2s ease; }
 .peds2-footer-col a:hover { color: var(--peach); }
 .peds2-footer-contact-col p { display: flex; align-items: flex-start; gap: 10px; }
@@ -1273,7 +1273,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .peds2-footer-bottom {
   border-top: 1px solid hsla(0,0%,100%,0.12);
   text-align: center;
-  padding: 22px 24px;
+  padding: 16px 24px;
 }
 .peds2-footer-bottom p {
   font-size: 18px;
@@ -1282,7 +1282,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 /* ============================================================
-   Toy scatter layer — JS-placed pediatric emoji decorations
+   Toy scatter layer â€” JS-placed pediatric emoji decorations
    ============================================================ */
 .toys-scatter-layer {
   position: absolute;
@@ -1317,7 +1317,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   .peds2-hero-title { font-size: 60px; }
 }
 @media (min-width: 1900px) {
-  /* Body copy stays capped at 18px — do not scale further at >=1900px. */
+  /* Body copy stays capped at 18px â€” do not scale further at >=1900px. */
   .peds2-hero-title { font-size: 68px; }
   .container { max-width: 1440px; }
 }
@@ -1327,7 +1327,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
    ============================================================ */
 .blog-hero-section { padding: 44px 0 24px; }
 .blog-hero-content { max-width: 760px; padding: 10px 0; display: flex; flex-direction: column; justify-content: center; }
-.blog-hero-badge { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; color: var(--button); background: var(--peach-light); border-radius: 999px; padding: 7px 14px; width: fit-content; margin-bottom: 14px; }
+.blog-hero-badge { display: inline-flex; align-items: center; gap: 7px; font-size: 16px; font-weight: 600; color: var(--button); background: var(--peach-light); border-radius: 999px; padding: 7px 14px; width: fit-content; margin-bottom: 14px; }
 .blog-hero-content h1 { margin: 0 0 10px; font-size: clamp(30px, 3vw, 42px); line-height: 1.2; letter-spacing: -0.4px; color: var(--text); }
 .blog-hero-content p { margin: 0; color: #0f172a; font-size: 18px; line-height: 1.5; }
 .blog-listing-section { padding: 10px 0 72px; }
@@ -1432,7 +1432,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   .peds2-services-grid { grid-template-columns: 1fr; }
   .peds2-gallery-grid { grid-template-columns: 1fr; }
   .peds2-footer-inner { grid-template-columns: 1fr; }
-  .peds2-contact-card { padding: 32px 20px; }
+  .peds2-contact-card { padding: 12px 0; }
   .peds2-hero-title { font-size: 38px; }
   .peds2-stat-ribbon-inner { justify-content: center; }
   .peds2-testi-card { flex: 0 0 100%; }
@@ -1445,4 +1445,194 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   .peds2-timeline-card h3 { font-size: 20px; }
   .peds2-service-card h3 { font-size: 20px; }
   .peds2-section-title { font-size: 30px; }
+}
+
+/* ============================================================
+   LEGAL PAGE FOOTER (site-footer) â€” privacy-policy / terms-of-service
+   ============================================================ */
+.site-footer {
+  background: var(--navy-dark);
+  padding: 30px 0 22px;
+  color: hsl(218, 25%, 85%);
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-inner {
+  width: min(1240px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 32px;
+  row-gap: 0;
+  min-width: 0;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  justify-self: start;
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.footer-nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--peach);
+}
+
+.footer-social-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+}
+
+.footer-social-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.01em;
+}
+
+.footer-social {
+  /* Capped to exactly 6 icons per row (6 * 42px icon + 5 * 14px gap =
+     322px) so a 7th+ icon added later wraps to a new row instead of
+     growing the row indefinitely, even when the container has room. */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+  max-width: 322px;
+  min-width: 0;
+}
+
+.footer-social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  background: hsla(0,0%,100%,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+.footer-social-facebook { background: #1877f2; }
+.footer-social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+.footer-social-x { background: #000000; }
+.footer-social-linkedin { background: #0a66c2; }
+.footer-social-whatsapp { background: #1bd741; }
+.footer-social-youtube { background: #ff0000; }
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 18px;
+  color: hsl(218, 25%, 82%);
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  min-width: 0;
+}
+
+.footer-links a {
+  color: #dbe3f3;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--peach);
+}
+
+.footer-divider {
+  color: #64748b;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 18px;
+  color: hsl(218, 25%, 70%);
+  letter-spacing: 0.01em;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  text-align: center;
+  padding-top: 24px;
+  margin-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 20px;
+  }
+
+  .footer-nav {
+    justify-self: center;
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .footer-social-wrap {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .footer-links {
+    justify-self: center;
+    justify-content: center;
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .footer-copy {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-nav {
+    gap: 16px;
+    font-size: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-links {
+    font-size: 18px;
+  }
 }

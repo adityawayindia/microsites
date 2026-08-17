@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    DigiDr Alternate â€” General Medicine "Private Clinic" Editorial Theme
    Midnight Navy / Crisp Snow / Luxe Champagne Gold palette
    DM Serif Display (headings) + Inter (body)
@@ -39,7 +39,7 @@
   gap: 6px;
   padding: 6px 14px;
   border-radius: 50px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.03em;
   line-height: 1.2;
@@ -55,12 +55,12 @@
 
 .pill-sm {
   padding: 4px 12px;
-  font-size: 11px;
+  font-size: 16px;
 }
 
 .pill-lg {
   padding: 8px 18px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 /* Variant 1: Petrol Teal (Primary Clinical) */
@@ -198,7 +198,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 .step-visual-wrap,
 .step-body {
   color: #0f172a;
-  font-size: 15px;
+  font-size: 16px;
   min-width: 0;
 }
 
@@ -319,13 +319,13 @@ body {
 
 .brand-name {
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--navy);
 }
 
 .brand-role {
-  font-size: 11.5px;
+  font-size: 16px;
   color: var(--muted);
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -343,7 +343,7 @@ body {
 .nav-links a {
   text-decoration: none;
   color: var(--navy);
-  font-size: 13.5px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.01em;
   transition: color 0.2s ease;
@@ -375,7 +375,7 @@ body {
   color: var(--white);
   padding: 11px 24px;
   border-radius: 6px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -523,7 +523,7 @@ min-height: 92vh;
   gap: 8px;
   background: var(--navy);
   color: var(--white);
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -536,7 +536,7 @@ min-height: 92vh;
 .hero-v2-reg {
   display: inline-flex;
   align-items: center;
-  font-size: 11px;
+  font-size: 16px;
   color: var(--muted);
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -565,7 +565,7 @@ min-height: 92vh;
 }
 
 .hero-v2-subtitle {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   line-height: 1.5;
   margin: 0;
@@ -596,7 +596,7 @@ min-height: 92vh;
   font-weight: 600;
   padding: 4px 12px;
   border-radius: 4px;
-  font-size: 15px;
+  font-size: 16px;
   border: 1px solid rgba(10, 25, 47, 0.1);
   display: inline-block;
   letter-spacing: 0.02em;
@@ -639,7 +639,7 @@ min-height: 92vh;
 }
 
 .hero-v2-stat span {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   font-weight: 500;
   line-height: 1.3;
@@ -668,7 +668,7 @@ min-height: 92vh;
   gap: 10px;
   background: var(--navy);
   color: var(--white);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   padding: 14px 28px;
   border-radius: 6px;
@@ -691,7 +691,7 @@ min-height: 92vh;
   gap: 8px;
   background: var(--button);
   color: var(--white);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   padding: 13px 24px;
   border-radius: 6px;
@@ -758,7 +758,7 @@ min-height: 92vh;
   background: var(--white);
   border-radius: 8px;
   padding: 10px 16px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--navy);
   box-shadow: 0 8px 24px rgba(10, 25, 47, 0.1);
@@ -771,7 +771,7 @@ min-height: 92vh;
 
 .hero-v2-chip i {
   color: var(--gold);
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .hero-v2-chip--top {
@@ -824,6 +824,7 @@ min-height: 92vh;
 .social-links {
   margin-top: 4px;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -834,7 +835,7 @@ min-height: 92vh;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--white);
   text-decoration: none;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -916,7 +917,7 @@ min-height: 92vh;
 .testimonials-kicker,
 .gallery-kicker {
   margin: 0 0 12px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -928,7 +929,7 @@ min-height: 92vh;
 
 .about-kicker {
   margin: 0 auto 16px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -945,7 +946,7 @@ min-height: 92vh;
 .contact-kicker i,
 .testimonials-kicker i,
 .gallery-kicker i {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .about-title {
@@ -1059,7 +1060,7 @@ min-height: 92vh;
 
 .services-subtitle {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -1125,7 +1126,7 @@ min-height: 92vh;
 }
 
 .service-body-new p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   line-height: 1.5;
   margin: 0;
@@ -1193,20 +1194,20 @@ min-height: 92vh;
 }
 
 .contact-item-new i {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--gold);
   margin-top: 4px;
 }
 
 .contact-item-new h4 {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--navy);
   margin: 0 0 4px;
   font-weight: 600;
 }
 
 .contact-item-new p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   margin: 0;
   line-height: 1.5;
@@ -1282,7 +1283,7 @@ min-height: 92vh;
 
 .testimonials-subtitle {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -1307,7 +1308,7 @@ min-height: 92vh;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 15px;
+  font-size: 16px;
   box-shadow: none;
 }
 
@@ -1339,7 +1340,7 @@ min-height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 16px;
   box-shadow: none;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
   z-index: 10;
@@ -1420,7 +1421,7 @@ min-height: 92vh;
 
 .testimonial-quote {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
   color: var(--text);
   font-weight: 400;
@@ -1449,7 +1450,7 @@ min-height: 92vh;
 
 .testimonial-name {
   margin: 0 0 4px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--navy);
 }
@@ -1523,7 +1524,7 @@ min-height: 92vh;
 
 .gallery-subtitle {
   margin: 0;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -1583,7 +1584,7 @@ min-height: 92vh;
   place-items: center;
   background: rgba(255, 255, 255, 0.92);
   color: var(--navy);
-  font-size: 12px;
+  font-size: 16px;
   transform: translateY(8px);
   transition: transform 0.25s ease;
 }
@@ -1694,7 +1695,7 @@ min-height: 92vh;
 .footer-nav {
   display: flex;
   gap: 36px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -1708,11 +1709,32 @@ min-height: 92vh;
   color: var(--gold-light);
 }
 
-.footer-social {
+.footer-social-wrap {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.footer-social-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.01em;
+}
+
+.footer-social {
+  /* Capped to exactly 6 icons per row (6 * 40px icon + 5 * 12px gap =
+     300px) so a 7th+ icon added later wraps to a new row instead of
+     growing the row indefinitely, even when the container has room. */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
   gap: 12px;
+  max-width: 300px;
+  min-width: 0;
 }
 
 .footer-social-icon {
@@ -1722,7 +1744,7 @@ min-height: 92vh;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--white);
   text-decoration: none;
   transition: transform 0.2s ease;
@@ -1759,7 +1781,7 @@ min-height: 92vh;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .footer-links a {
@@ -1778,8 +1800,8 @@ min-height: 92vh;
 
 .footer-copy {
   margin: 0;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.55);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1787,7 +1809,7 @@ min-height: 92vh;
 
 .footer-copy i {
   color: var(--gold);
-  font-size: 12px;
+  font-size: 16px;
 }
 
 
@@ -1811,7 +1833,7 @@ min-height: 92vh;
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--gold);
   background: var(--accent-soft);
@@ -1835,7 +1857,7 @@ min-height: 92vh;
 .blog-hero-content p {
   margin: 0;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -1888,7 +1910,7 @@ min-height: 92vh;
 .blog-card-meta {
   margin: 0;
   color: var(--gold);
-  font-size: 10px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 700;
@@ -1920,7 +1942,7 @@ min-height: 92vh;
   color: var(--white);
   border-radius: 4px;
   padding: 8px 16px;
-  font-size: 11px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
@@ -1946,7 +1968,7 @@ min-height: 92vh;
   border: 1px solid rgba(10, 25, 47, 0.12);
   color: var(--navy);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1988,7 +2010,7 @@ min-height: 92vh;
   gap: 8px;
   text-decoration: none;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   margin-bottom: 18px;
   transition: color 0.2s ease;
@@ -2001,7 +2023,7 @@ min-height: 92vh;
 .blog-detail-meta {
   margin: 0 0 8px;
   color: var(--gold);
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 700;
@@ -2043,19 +2065,19 @@ min-height: 92vh;
 }
 
 .blog-detail-author-name {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--navy);
 }
 
 .blog-detail-author-role {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
 .blog-detail-date {
   margin: 0 0 0 auto;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -2079,7 +2101,7 @@ min-height: 92vh;
 .blog-detail-content p {
   margin: 0 0 16px;
   color: var(--text);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -2099,7 +2121,7 @@ min-height: 92vh;
   background: var(--accent-soft);
   border-radius: 8px;
   color: var(--text);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   font-style: italic;
   font-weight: 400;
@@ -2307,7 +2329,7 @@ min-height: 92vh;
   border-right: 1px solid #e5e7eb;
   background: #f9fafb;
   padding: 10px 8px 10px 10px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Outfit", sans-serif;
   color: #374151;
   outline: none;
@@ -2332,7 +2354,7 @@ min-height: 92vh;
   border: none;
   background: transparent;
   padding: 10px 12px;
-  font-size: 15px;
+  font-size: 16px;
   font-family: "Outfit", sans-serif;
   color: #111827;
   outline: none;
@@ -2356,11 +2378,11 @@ min-height: 92vh;
 @media (max-width: 480px) {
   .country-code-select {
     min-width: 80px;
-    font-size: 13px;
+    font-size: 16px;
     padding: 8px 20px 8px 8px;
   }
   .phone-input-group input[type="tel"] {
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px 10px;
   }
 }
@@ -2674,7 +2696,7 @@ min-height: 92vh;
 
 .preview-name {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--navy);
   word-break: break-word;
@@ -2683,7 +2705,7 @@ min-height: 92vh;
 
 .preview-size {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -2748,7 +2770,7 @@ min-height: 92vh;
     order: 1;
     margin-left: auto;
     padding: 10px 14px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .nav-links {
@@ -2866,7 +2888,7 @@ min-height: 92vh;
   .carousel-btn {
     width: 38px;
     height: 38px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -2880,14 +2902,14 @@ min-height: 92vh;
     width: 94%;
   }
 
-  .brand-name { font-size: 15px; }
-  .brand-role { font-size: 10px; }
+  .brand-name { font-size: 16px; }
+  .brand-role { font-size: 16px; }
   .avatar { width: 38px; height: 38px; }
 
   .cta-btn {
     display: inline-block;
     padding: 9px 16px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .cta-text-desktop { display: none; }
@@ -2909,7 +2931,7 @@ min-height: 92vh;
   }
 
   .hero-v2-chip {
-    font-size: 11px;
+    font-size: 16px;
     padding: 8px 12px;
   }
   .hero-v2-chip--top { left: 0; top: 12px; }
@@ -2923,7 +2945,7 @@ min-height: 92vh;
 
   .hero-v2-cta,
   .hero-v2-cta-secondary {
-    font-size: 15px;
+    font-size: 16px;
     padding: 12px 20px;
   }
 
@@ -2968,13 +2990,13 @@ min-height: 92vh;
   }
 
   .testimonial-quote {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .carousel-btn {
     width: 34px;
     height: 34px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   /* Blog */
@@ -2984,10 +3006,10 @@ min-height: 92vh;
   }
 
   .blog-hero-content h1 { font-size: 26px; }
-  .blog-hero-content p { font-size: 15px; }
+  .blog-hero-content p { font-size: 16px; }
 
   .blog-card-title {
-    font-size: 15px;
+    font-size: 16px;
     min-height: auto;
   }
 
@@ -3004,15 +3026,15 @@ min-height: 92vh;
     width: 100%;
   }
 
-  .blog-detail-content p { font-size: 15px; line-height: 1.55; }
+  .blog-detail-content p { font-size: 16px; line-height: 1.55; }
   .blog-detail-content h2 { font-size: 20px; }
 
   /* Footer */
   .footer-inner { gap: 18px; }
-  .footer-nav { gap: 18px; font-size: 15px; flex-wrap: wrap; justify-content: center; }
-  .footer-social-icon { width: 36px; height: 36px; font-size: 15px; }
-  .footer-links { font-size: 11px; }
-  .footer-copy { font-size: 11px; }
+  .footer-nav { gap: 18px; font-size: 16px; flex-wrap: wrap; justify-content: center; }
+  .footer-social-icon { width: 36px; height: 36px; font-size: 16px; }
+  .footer-links { font-size: 16px; }
+  .footer-copy { font-size: 16px; }
 
   /* Booking */
   .booking-modal {
@@ -3166,7 +3188,7 @@ min-height: 92vh;
 
 .philosophy-content .about-subtitle {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   margin-bottom: 40px;
 }
@@ -3215,7 +3237,7 @@ min-height: 92vh;
 }
 
 .pillar-text p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   line-height: 1.5;
   margin-top: 0;
@@ -3353,7 +3375,7 @@ min-height: 92vh;
   display: inline-block;
   font-family: var(--sans);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--accent);
   background-color: rgba(197, 155, 39, 0.1);
   padding: 3px 10px;
@@ -3372,7 +3394,7 @@ min-height: 92vh;
 }
 
 .step-body p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   line-height: 1.5;
 }
@@ -3530,7 +3552,7 @@ min-height: 92vh;
   border: 1px solid rgba(197, 155, 39, 0.35);
   padding: 10px 18px;
   border-radius: 50px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(10, 25, 47, 0.22);
@@ -3546,11 +3568,11 @@ min-height: 92vh;
 
 .lang-switcher-btn .fa-globe {
   color: var(--gold);
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .lang-chevron {
-  font-size: 11px;
+  font-size: 16px;
   transition: transform 0.25s ease;
   margin-left: 2px;
   opacity: 0.85;
@@ -3600,7 +3622,7 @@ min-height: 92vh;
   background: transparent;
   border: none;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--navy);
   cursor: pointer;
@@ -3619,7 +3641,7 @@ min-height: 92vh;
 }
 
 .lang-check {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--gold);
 }
 
@@ -3630,7 +3652,7 @@ min-height: 92vh;
   }
   .lang-switcher-btn {
     padding: 8px 14px;
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 

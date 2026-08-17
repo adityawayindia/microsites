@@ -1078,7 +1078,7 @@ if (menuToggle && mainNav) {
                     padding:10px 35px;
                     border-radius:6px;
                     cursor:pointer;
-                    font-size:15px;
+                    font-size:16px;
                 ">
                 OK
             </button>

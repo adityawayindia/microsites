@@ -1,8 +1,8 @@
-﻿:root {
+:root {
   /* ==========================================================================
      DigiDr Gastro Alternate Theme â€” "Clinical Precision & Gut Vitality"
      ========================================================================== */
-  --teal-primary: #0d9488;
+  --teal-primary: #0b7d72;
   --teal-dark: #0f766e;
   --teal-deep: #0a5c5a;
   --teal-light: #e0faf7;
@@ -10,6 +10,7 @@
   --teal-glow: rgba(13, 148, 136, 0.25);
 
   --amber-accent: #d97706;
+  --amber-text: #9f5704;
   --amber-soft: #fffbeb;
   --amber-border: #fde68a;
 
@@ -60,6 +61,27 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   overflow-wrap: break-word;
   word-break: break-word;
   max-width: 100%;
+}
+
+/* Rule 1.5: Line Height & Body Text Readability */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+p, li, span, a, button, label {
+  line-height: 1.6;
+  color: #0f172a;
+}
+
+.about-section p,
+.about-intro p,
+.about-story p,
+.about-story-new p {
+  text-align: justify;
+  line-height: 1.8;
+  color: #0f172a;
+  hyphens: auto;
 }
 
 /* Rule 2: Flex & Grid Child Shrink Defense */
@@ -185,7 +207,7 @@ img {
 .testimonials-kicker,
 .gallery-kicker,
 .contact-kicker {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -235,7 +257,7 @@ img {
   background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-dark) 100%);
   color: var(--white) !important;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   padding: 13px 26px;
   border-radius: var(--radius-full);
   box-shadow: 0 4px 16px var(--teal-glow);
@@ -314,7 +336,7 @@ img {
 }
 
 .brand-role {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--teal-primary);
 }
@@ -327,7 +349,7 @@ img {
 
 .nav-links a {
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-body);
   position: relative;
   padding: 6px 0;
@@ -435,7 +457,7 @@ overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--teal-dark);
   background: var(--surface);
@@ -464,9 +486,9 @@ overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--amber-accent);
+  color: var(--amber-text);
   background: var(--amber-soft);
   padding: 8px 18px;
   border-radius: var(--radius-full);
@@ -491,7 +513,7 @@ overflow: hidden;
 }
 
 .mic {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-muted);
   margin: 0 0 28px 0;
 }
@@ -535,12 +557,12 @@ overflow: hidden;
 }
 
 .hero-stat-box span {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-body);
 }
 
 .languages {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-body);
   margin: 0 0 28px 0;
 }
@@ -767,7 +789,7 @@ overflow: hidden;
 }
 
 .service-body-new p {
-  font-size: 15.5px;
+  font-size: 16px;
   color: var(--text-body);
   margin: 0;
   line-height: 1.5;
@@ -848,7 +870,7 @@ overflow: hidden;
 }
 
 .pillar-text p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-body);
   margin: 0;
 }
@@ -938,9 +960,9 @@ overflow: hidden;
 
 .step-number {
   display: inline-block;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 800;
-  color: var(--amber-accent);
+  color: var(--amber-text);
   background: var(--amber-soft);
   padding: 4px 12px;
   border-radius: var(--radius-full);
@@ -956,7 +978,7 @@ overflow: hidden;
 }
 
 .step-body p {
-  font-size: 14.5px;
+  font-size: 16px;
   color: var(--text-body);
   margin: 0;
   line-height: 1.5;
@@ -1028,7 +1050,7 @@ overflow: hidden;
 }
 
 .contact-item-new p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-body);
   margin: 0;
   line-height: 1.5;
@@ -1115,7 +1137,7 @@ overflow: hidden;
 
 .testimonial-stars {
   color: var(--amber-accent);
-  font-size: 13px;
+  font-size: 16px;
   display: flex;
   gap: 3px;
 }
@@ -1462,7 +1484,7 @@ overflow: hidden;
 }
 
 .booking-upload-help {
-  font-size: 12.5px;
+  font-size: 16px;
   color: var(--text-muted);
 }
 
@@ -1483,14 +1505,14 @@ overflow: hidden;
 }
 
 .booking-consent-field label {
-  font-size: 13.5px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--text-body);
 }
 
 .booking-submit-btn {
   width: 100%;
-  background: var(--teal-primary);
+  background: var(--teal-dark);
   color: var(--white);
   font-weight: 700;
   font-size: 16px;
@@ -1508,11 +1530,11 @@ overflow: hidden;
 }
 
 .booking-submit-btn:not(:disabled):hover {
-  background: var(--teal-dark);
+  background: var(--teal-deep);
 }
 
 .booking-error {
-  font-size: 12.5px;
+  font-size: 16px;
   color: #dc2626;
   margin: 0;
   min-height: 0;
@@ -1549,7 +1571,7 @@ overflow: hidden;
 .site-footer {
   background: var(--teal-dark);
   color: var(--white);
-  padding: 60px 0 40px;
+  padding: 36px 0 26px;
 }
 
 .footer-inner {
@@ -1559,20 +1581,20 @@ overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 18px;
   text-align: center;
 }
 
 .footer-nav {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .footer-nav a {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -1580,10 +1602,32 @@ overflow: hidden;
   color: var(--white);
 }
 
+.footer-social-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.footer-social-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.01em;
+}
+
 .footer-social {
+  /* Capped to exactly 6 icons per row (6 * 40px icon + 5 * 14px gap =
+     310px) so a 7th+ icon added later wraps to a new row instead of
+     growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
   gap: 14px;
+  max-width: 310px;
+  min-width: 0;
 }
 
 .footer-social-icon {
@@ -1607,17 +1651,17 @@ overflow: hidden;
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-copy {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
 }
 
@@ -1643,7 +1687,7 @@ overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--teal-primary);
   background: var(--teal-light);
@@ -1720,7 +1764,7 @@ overflow: hidden;
 }
 
 .blog-card-meta {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--teal-primary);
   margin: 0 0 10px 0;
@@ -1737,7 +1781,7 @@ overflow: hidden;
 
 .blog-read-more {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--teal-primary);
   display: inline-flex;
   align-items: center;
@@ -1769,15 +1813,15 @@ overflow: hidden;
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--teal-primary);
   margin-bottom: 24px;
 }
 
 .blog-detail-meta {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
-  color: var(--amber-accent);
+  color: var(--amber-text);
   margin: 0 0 10px 0;
 }
 
@@ -1813,20 +1857,20 @@ overflow: hidden;
 
 .blog-detail-author-name {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text);
   margin: 0;
 }
 
 .blog-detail-author-role {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--teal-primary);
   margin: 0;
 }
 
 .blog-detail-date {
   margin-left: auto;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-muted);
 }
 
@@ -1875,7 +1919,7 @@ overflow: hidden;
 }
 
 .legal-date {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
   margin: 0 0 30px 0;
 }

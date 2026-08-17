@@ -237,7 +237,7 @@ h1, h2, h3, h4 {
   gap: 9px;
   padding: 7px 16px 7px 12px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -247,7 +247,7 @@ h1, h2, h3, h4 {
   margin-bottom: 16px;
 }
 
-.iv-chip i { font-size: 12px; }
+.iv-chip i { font-size: 16px; }
 .iv-chip--saline { background: var(--saline-soft); color: hsl(190 90% 26%); border-color: var(--saline-line); }
 .iv-chip--vital { background: var(--vital-soft); color: hsl(340 70% 38%); border-color: hsl(340 60% 90%); }
 
@@ -336,7 +336,7 @@ h1, h2, h3, h4 {
 }
 
 .brand-role {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--iv-deep);
   letter-spacing: 0.08em;
@@ -348,7 +348,7 @@ h1, h2, h3, h4 {
 .nav-links a {
   position: relative;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--text-2);
   padding: 4px 0;
@@ -379,7 +379,7 @@ h1, h2, h3, h4 {
   color: #fff;
   padding: 12px 24px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.01em;
   box-shadow: var(--shadow-iv);
@@ -387,7 +387,7 @@ h1, h2, h3, h4 {
 }
 
 .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 36px hsl(268 64% 44% / 0.36); }
-.cta-btn i { font-size: 13px; color: #fff; }
+.cta-btn i { font-size: 16px; color: #fff; }
 
 .cta-text-mobile { display: none; }
 .cta-text-desktop { display: inline; }
@@ -469,7 +469,7 @@ h1, h2, h3, h4 {
   background: hsl(258 40% 100% / 0.08);
   border: 1px solid hsl(190 70% 76% / 0.28);
   color: hsl(190 84% 84%);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -547,7 +547,7 @@ h1, h2, h3, h4 {
   padding: 12px 24px;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: hsl(190 84% 84%);
   border: 1.5px solid hsl(190 70% 74% / 0.4);
@@ -585,7 +585,7 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   color: hsl(258 20% 88%);
-  font-size: 15px;
+  font-size: 16px;
   text-decoration: none;
   background: hsl(0 0% 100% / 0.07);
   border: 1px solid hsl(0 0% 100% / 0.12);
@@ -652,7 +652,7 @@ h1, h2, h3, h4 {
   z-index: 2;
   text-align: center;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.14em;
   color: hsl(190 90% 92%);
@@ -747,6 +747,9 @@ h1, h2, h3, h4 {
 
 /* Live monitor ------------------------------------------------------------*/
 .iv-monitor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border-radius: 22px;
   background: linear-gradient(180deg, hsl(258 40% 17% / 0.94), hsl(258 44% 12% / 0.96));
   border: 1px solid hsl(190 60% 76% / 0.22);
@@ -767,7 +770,7 @@ h1, h2, h3, h4 {
 
 .iv-monitor-bed {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -778,7 +781,7 @@ h1, h2, h3, h4 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -787,7 +790,8 @@ h1, h2, h3, h4 {
 
 .iv-monitor-screen {
   position: relative;
-  aspect-ratio: 4 / 3.15;
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
   background: linear-gradient(180deg, hsl(258 42% 14%), hsl(258 46% 10%));
 }
@@ -851,7 +855,7 @@ h1, h2, h3, h4 {
 
 .iv-vital-label {
   display: block;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -871,7 +875,7 @@ h1, h2, h3, h4 {
 .iv-vital:nth-child(2) .iv-vital-value { color: hsl(272 84% 80%); }
 .iv-vital:nth-child(3) .iv-vital-value { color: hsl(340 82% 76%); }
 
-.iv-vital-unit { font-size: 12px; font-weight: 600; color: hsl(258 16% 66%); }
+.iv-vital-unit { font-size: 16px; font-weight: 600; color: hsl(258 16% 66%); }
 
 /* Hero HUD stat strip -----------------------------------------------------*/
 .iv-hud {
@@ -923,7 +927,7 @@ h1, h2, h3, h4 {
 
 .iv-hud-lbl {
   display: block;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1045,7 +1049,7 @@ h1, h2, h3, h4 {
   line-height: 1.35;
 }
 
-.iv-cred span { display: block; font-size: 13px; color: var(--muted); }
+.iv-cred span { display: block; font-size: 16px; color: var(--muted); }
 
 /* Portrait — "fluid chamber" frame */
 .iv-about-visual { position: relative; }
@@ -1100,12 +1104,12 @@ h1, h2, h3, h4 {
   justify-content: center;
   background: var(--vital-soft);
   color: var(--vital);
-  font-size: 15px;
+  font-size: 16px;
   flex-shrink: 0;
 }
 
 .iv-portrait-badge strong { display: block; font-size: 16px; font-weight: 700; color: var(--text); }
-.iv-portrait-badge span { display: block; font-size: 13px; color: var(--muted); }
+.iv-portrait-badge span { display: block; font-size: 16px; color: var(--muted); }
 
 /* ==========================================================================
    SERVICES — infusion line cards
@@ -1196,7 +1200,7 @@ h1, h2, h3, h4 {
 
 .iv-svc-code {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.16em;
   color: var(--muted);
@@ -1225,7 +1229,7 @@ h1, h2, h3, h4 {
   gap: 7px;
   padding: 5px 12px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.04em;
   background: var(--saline-soft);
@@ -1233,7 +1237,7 @@ h1, h2, h3, h4 {
   border: 1px solid var(--saline-line);
 }
 
-.iv-tag i { font-size: 11px; color: inherit; }
+.iv-tag i { font-size: 16px; color: inherit; }
 
 /* ==========================================================================
    PHILOSOPHY
@@ -1344,7 +1348,7 @@ h1, h2, h3, h4 {
 }
 
 .iv-phil-badge strong { display: block; font-size: 16px; font-weight: 700; color: var(--text); }
-.iv-phil-badge span { display: block; font-size: 13px; color: var(--muted); }
+.iv-phil-badge span { display: block; font-size: 16px; color: var(--muted); }
 
 /* ==========================================================================
    JOURNEY — vertical infusion line timeline
@@ -1414,7 +1418,7 @@ h1, h2, h3, h4 {
 .iv-step-num {
   display: inline-block;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.18em;
   color: var(--iv-deep);
@@ -1609,7 +1613,7 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   color: var(--iv-deep);
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .testimonial-quote {
@@ -1644,7 +1648,7 @@ h1, h2, h3, h4 {
   margin: 0 0 3px;
 }
 
-.testimonial-stars { display: flex; gap: 3px; color: var(--amber); font-size: 13px; }
+.testimonial-stars { display: flex; gap: 3px; color: var(--amber); font-size: 16px; }
 
 .carousel-btn {
   position: absolute;
@@ -1809,7 +1813,7 @@ h1, h2, h3, h4 {
 .booking-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
 .booking-field { display: flex; flex-direction: column; gap: 4px; }
-.booking-field label { font-size: 13px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em; }
+.booking-field label { font-size: 16px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em; }
 
 .booking-field input, .booking-field select, .booking-field textarea {
   border: 1.5px solid var(--border);
@@ -1835,18 +1839,18 @@ h1, h2, h3, h4 {
 
 .booking-select-wrap { position: relative; }
 .booking-select-wrap select { appearance: none; width: 100%; padding-right: 36px; }
-.booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 12px; }
+.booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
 
 .booking-upload-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .booking-upload-btn { flex-shrink: 0; display: inline-flex; align-items: center; background: var(--iv-soft); color: var(--iv-deep); border: 1.5px solid var(--iv-line); border-radius: 10px; padding: 9px 18px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s, color 0.2s; }
 .booking-upload-btn:hover { background: var(--iv-deep); color: #fff; }
 .booking-field--file input[type="file"] { display: none; }
-.booking-upload-help { font-size: 12px; color: var(--muted); }
-.booking-file-preview { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.booking-upload-help { font-size: 16px; color: var(--muted); }
+.booking-file-preview { font-size: 16px; color: var(--muted); margin-top: 4px; }
 
 .booking-consent-field { display: flex; align-items: flex-start; gap: 10px; flex-direction: row; }
 .booking-consent-field input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--iv); flex-shrink: 0; margin-top: 2px; }
-.booking-consent-field label { font-size: 13px; color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: 0; }
+.booking-consent-field label { font-size: 16px; color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: 0; }
 
 .booking-submit-btn {
   background: linear-gradient(135deg, var(--iv-deep) 0%, var(--iv) 55%, var(--saline) 130%);
@@ -1889,12 +1893,12 @@ h1, h2, h3, h4 {
 
 .booking-calendar-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .booking-calendar-title { font-size: 16px; font-weight: 700; color: var(--text); }
-.booking-calendar-nav { background: none; border: 1.5px solid var(--border); color: var(--text); width: 32px; height: 32px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: background 0.2s, color 0.2s; }
+.booking-calendar-nav { background: none; border: 1.5px solid var(--border); color: var(--text); width: 32px; height: 32px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: background 0.2s, color 0.2s; }
 .booking-calendar-nav:hover { background: var(--iv-deep); color: #fff; border-color: var(--iv-deep); }
 .booking-calendar-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-bottom: 4px; }
-.booking-calendar-weekdays span { font-size: 11px; font-weight: 700; color: var(--muted); text-align: center; padding: 4px 0; }
+.booking-calendar-weekdays span { font-size: 16px; font-weight: 700; color: var(--muted); text-align: center; padding: 4px 0; }
 .booking-calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
-.booking-calendar-day { font-size: 13px; font-weight: 500; color: var(--text); text-align: center; padding: 7px 4px; border-radius: 10px; cursor: pointer; transition: background 0.2s, color 0.2s; background: none; border: none; font-family: inherit; }
+.booking-calendar-day { font-size: 16px; font-weight: 500; color: var(--text); text-align: center; padding: 7px 4px; border-radius: 10px; cursor: pointer; transition: background 0.2s, color 0.2s; background: none; border: none; font-family: inherit; }
 .booking-calendar-day:hover { background: var(--iv-soft); color: var(--iv-deep); }
 .booking-calendar-day.is-selected { background: var(--iv-deep); color: #fff; }
 .booking-calendar-day.is-today { font-weight: 800; border: 1.5px solid var(--iv); color: var(--iv-deep); }
@@ -1907,7 +1911,7 @@ h1, h2, h3, h4 {
 .site-footer {
   position: relative;
   background: linear-gradient(180deg, var(--ink-2), var(--ink));
-  padding: 46px 0 38px;
+  padding: 30px 0 24px;
   overflow: hidden;
 }
 
@@ -1936,11 +1940,14 @@ h1, h2, h3, h4 {
 }
 
 .footer-nav { display: flex; gap: 26px; flex-wrap: wrap; justify-content: center; }
-.footer-nav a { text-decoration: none; font-size: 14px; color: hsl(258 20% 82%); font-weight: 500; transition: color 0.2s; }
+.footer-nav a { text-decoration: none; font-size: 16px; color: hsl(258 20% 82%); font-weight: 500; transition: color 0.2s; }
 .footer-nav a:hover { color: hsl(186 92% 72%); }
 
-.footer-social { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-.footer-social-icon { width: 38px; height: 38px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; color: #fff; text-decoration: none; transition: transform 0.2s var(--ease); }
+.footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
+.footer-social-label { font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
+/* Capped to exactly 6 icons per row (6 * 38px icon + 5 * 12px gap = 288px) so a 7th+ icon added later wraps to a new row instead of growing the row indefinitely, even when the container has room. */
+.footer-social { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: flex-start; max-width: 288px; min-width: 0; }
+.footer-social-icon { width: 38px; height: 38px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; color: #fff; text-decoration: none; transition: transform 0.2s var(--ease); }
 .footer-social-icon:hover { transform: translateY(-3px); }
 .footer-social-facebook { background: #1877f2; }
 .footer-social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
@@ -1950,11 +1957,11 @@ h1, h2, h3, h4 {
 .footer-social-linkedin { background: #0077b5; }
 
 .footer-links { display: flex; gap: 12px; align-items: center; }
-.footer-links a { font-size: 13px; color: hsl(258 16% 70%); text-decoration: none; transition: color 0.2s; }
+.footer-links a { font-size: 16px; color: hsl(258 16% 70%); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: hsl(186 92% 72%); }
 .footer-divider { color: hsl(258 16% 46%); }
 
-.footer-copy { font-size: 13px; color: hsl(258 14% 66%); margin: 0; display: flex; align-items: center; gap: 8px; }
+.footer-copy { font-size: 16px; color: hsl(258 14% 66%); margin: 0; display: flex; align-items: center; gap: 8px; }
 .footer-copy i { color: var(--vital); }
 
 /* ==========================================================================
@@ -1975,7 +1982,7 @@ h1, h2, h3, h4 {
   gap: 9px;
   padding: 7px 16px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2004,22 +2011,22 @@ h1, h2, h3, h4 {
 .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .blog-card-image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 .blog-card-content { padding: 22px 22px 24px; }
-.blog-card-meta { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.blog-card-meta { font-size: 16px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
 .blog-card-title { font-size: 22px; font-weight: 700; margin: 0 0 10px; color: var(--text); }
 .blog-card-title a { color: inherit; text-decoration: none; }
 .blog-card-title a:hover { color: var(--iv-deep); }
-.blog-read-more { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--iv-deep); text-decoration: none; }
+.blog-read-more { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: var(--iv-deep); text-decoration: none; }
 .blog-read-more:hover { gap: 12px; }
 
 .blog-pagination { display: flex; justify-content: center; gap: 8px; margin-top: 36px; }
-.blog-page-link { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--white); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600; }
+.blog-page-link { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--white); color: var(--text); text-decoration: none; font-size: 16px; font-weight: 600; }
 .blog-page-link.is-active, .blog-page-link:hover { background: var(--iv-deep); color: #fff; border-color: var(--iv-deep); }
 
 .blog-detail-content { padding: 54px 0; background: var(--white); }
 .blog-detail-title { font-size: clamp(28px, 3.4vw, 38px); margin: 0 0 12px; }
-.blog-detail-meta { font-size: 14px; color: var(--muted); margin-bottom: 26px; }
+.blog-detail-meta { font-size: 16px; color: var(--muted); margin-bottom: 26px; }
 .blog-detail-section { margin-bottom: 26px; }
-.blog-detail-back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--iv-deep); text-decoration: none; font-weight: 700; font-size: 14px; }
+.blog-detail-back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--iv-deep); text-decoration: none; font-weight: 700; font-size: 16px; }
 
 /* ==========================================================================
    RESPONSIVE
@@ -2074,12 +2081,12 @@ h1, h2, h3, h4 {
   .menu-toggle { display: flex; flex-direction: column; justify-content: center; order: 2; flex-shrink: 0; }
   .cta-text-desktop { display: none; }
   .cta-text-mobile { display: inline; }
-  .cta-btn { padding: 10px 16px; font-size: 13px; gap: 6px; order: 3; flex-shrink: 0; white-space: nowrap; }
+  .cta-btn { padding: 10px 16px; font-size: 16px; gap: 6px; order: 3; flex-shrink: 0; white-space: nowrap; }
   .navbar { justify-content: flex-start; gap: 10px; }
   .brand { margin-right: auto; min-width: 0; }
   .brand-text { min-width: 0; overflow: hidden; }
-  .brand-name { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .brand-role { font-size: 10px; }
+  .brand-name { font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand-role { font-size: 16px; }
   .avatar { width: 38px; height: 38px; }
 }
 

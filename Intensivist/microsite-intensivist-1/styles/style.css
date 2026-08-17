@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dr. Sarah Jenkins — Intensivist / Critical Care Microsite
+   Dr. Sarah Jenkins â€” Intensivist / Critical Care Microsite
    Design language: clinical monitor. Deep navy command surface, medical teal
    signal accent, coral vitals indicator. Light, calm content surfaces.
    ========================================================================== */
@@ -17,7 +17,7 @@
   --muted: hsl(205 20% 26%);
   --titanium: hsl(205 24% 26%);
 
-  /* Brand — medical teal */
+  /* Brand â€” medical teal */
   --accent: hsl(178 64% 34%);
   --accent-bright: hsl(174 70% 44%);
   --accent-soft: hsl(178 52% 96%);
@@ -28,7 +28,7 @@
   --navy-2: hsl(205 40% 16%);
   --navy-line: hsl(196 40% 30%);
 
-  /* Signal — vitals / alerts */
+  /* Signal â€” vitals / alerts */
   --signal: hsl(6 76% 60%);
   --signal-soft: hsl(6 80% 96%);
 
@@ -49,7 +49,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -72,6 +72,11 @@ h1, h2, h3, h4, h5, h6 {
 
 p, li, span, a, button, label {
   line-height: 1.6;
+  color: var(--text);
+}
+
+p, li, a {
+  font-size: 18px;
 }
 
 .about-section p,
@@ -79,7 +84,7 @@ p, li, span, a, button, label {
 .about-story p,
 .about-story-new p {
   text-align: justify;
-  line-height: 1.8;
+  line-height: 1.6;
   color: var(--text);
   hyphens: none;
 }
@@ -189,7 +194,7 @@ a {
   padding: 0 24px;
 }
 
-/* Shared section heading rhythm — AGENTS.md type scale */
+/* Shared section heading rhythm â€” AGENTS.md type scale */
 .about-kicker,
 .services-kicker,
 .testimonials-kicker,
@@ -199,7 +204,7 @@ a {
   align-items: center;
   gap: 8px;
   margin: 0 0 12px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -225,7 +230,7 @@ a {
 .gallery-subtitle,
 .contact-subtitle {
   margin: 0;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.65;
   color: var(--muted);
 }
@@ -314,7 +319,7 @@ a {
 
 .nav-links a {
   position: relative;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--titanium);
   padding: 6px 0;
@@ -409,7 +414,7 @@ a {
 }
 
 /* ==========================================================================
-   Hero — clinical command surface
+   Hero â€” clinical command surface
    ========================================================================== */
 
 .hero-section {
@@ -525,7 +530,7 @@ a {
   background: hsl(178 60% 50% / 0.12);
   border: 1px solid hsl(178 60% 55% / 0.35);
   color: hsl(174 60% 82%);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.04em;
 }
@@ -572,7 +577,7 @@ a {
   border-radius: 8px;
   background: hsl(205 40% 22% / 0.85);
   border: 1px solid var(--navy-line);
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.03em;
   color: hsl(196 28% 76%);
@@ -624,14 +629,14 @@ a {
 .hero-stat-box span {
   display: block;
   margin-top: 3px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: hsl(196 24% 70%);
 }
 
 .languages {
   margin: 0 0 26px;
-  font-size: 16px;
+  font-size: 18px;
   color: hsl(196 26% 74%);
 }
 
@@ -667,6 +672,10 @@ a {
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease);
 }
 
+.hero-cta-secondary span {
+  color: #ffffff;
+}
+
 .hero-cta-secondary:hover {
   background: hsl(205 40% 26% / 0.9);
   border-color: hsl(178 60% 55% / 0.6);
@@ -683,13 +692,13 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: hsl(205 40% 22% / 0.75);
   border: 1px solid var(--navy-line);
   color: hsl(196 28% 78%);
-  font-size: 15px;
+  font-size: 20px;
   transition: transform 0.22s var(--ease), background 0.22s ease, color 0.22s ease;
 }
 
@@ -887,7 +896,7 @@ a {
 
 .about-story-new p {
   margin: 0 0 16px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .about-story-new p:last-child {
@@ -902,13 +911,25 @@ a {
   position: relative;
   padding: 88px 0;
   background:
-    linear-gradient(160deg, hsl(198 34% 95% / 0.94) 0%, hsl(198 34% 95% / 0.89) 55%, hsl(198 34% 95% / 0.95) 100%),
+    linear-gradient(160deg, hsl(205 47% 8% / 0.72) 0%, hsl(205 47% 10% / 0.6) 55%, hsl(205 47% 8% / 0.74) 100%),
     url('../assets/services-bg.jpg') center / cover no-repeat fixed;
 }
 
 .services-section > .container {
   position: relative;
   z-index: 1;
+}
+
+.services-section .services-kicker {
+  color: hsl(174 70% 68%);
+}
+
+.services-section .services-title {
+  color: hsl(0 0% 100%);
+}
+
+.services-section .services-subtitle {
+  color: hsl(198 30% 88%);
 }
 
 .services-grid-new {
@@ -989,7 +1010,7 @@ a {
 
 .service-body-new p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
 }
 
@@ -1116,12 +1137,12 @@ a {
 
 .pillar-text p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
 }
 
 /* ==========================================================================
-   ICU Technology — ledger rows
+   ICU Technology â€” ledger rows
    ========================================================================== */
 
 .tech-ledger-section {
@@ -1215,7 +1236,7 @@ a {
 
 .tech-ledger-body p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
   max-width: 620px;
 }
@@ -1270,7 +1291,7 @@ a {
 }
 
 /* ==========================================================================
-   Consultation Journey — process timeline
+   Consultation Journey â€” process timeline
    ========================================================================== */
 
 .process-section {
@@ -1362,7 +1383,7 @@ a {
 
 .step-body p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
 }
 
@@ -1455,7 +1476,7 @@ a {
 
 .contact-item-new p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
 }
 
@@ -1471,7 +1492,7 @@ a {
 }
 
 /* ==========================================================================
-   Testimonials — carousel
+   Testimonials â€” carousel
    ========================================================================== */
 
 .testimonials-section {
@@ -1509,7 +1530,7 @@ a {
 
 .testimonial-quote {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.75;
   color: var(--text);
 }
@@ -1893,9 +1914,9 @@ a {
 
 .booking-error {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.3;
-  color: var(--signal);
+  color: hsl(6 76% 46%); /* darker than --signal for AA text contrast on white */
 }
 
 /* Datepicker */
@@ -2124,7 +2145,7 @@ a {
    ========================================================================== */
 
 .site-footer {
-  padding: 56px 0 40px;
+  padding: 32px 0 24px;
   background: linear-gradient(180deg, var(--navy) 0%, hsl(205 44% 8%) 100%);
   color: hsl(196 24% 74%);
 }
@@ -2137,7 +2158,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
   text-align: center;
 }
 
@@ -2147,12 +2168,12 @@ a {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 18px;
 }
 
 .footer-nav a,
 .footer-links a {
-  font-size: 16px;
+  font-size: 18px;
   color: hsl(196 24% 78%);
   transition: color 0.2s ease;
 }
@@ -2162,11 +2183,32 @@ a {
   color: var(--accent-bright);
 }
 
+.footer-social-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.footer-social-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.01em;
+}
+
 .footer-social {
+  /* Capped to exactly 6 icons per row (6 * 40px icon + 5 * 11px gap =
+     295px) so a 7th+ icon added later wraps to a new row instead of
+     growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   gap: 11px;
+  max-width: 295px;
+  min-width: 0;
 }
 
 .footer-social-icon {
@@ -2197,7 +2239,7 @@ a {
   align-items: center;
   gap: 8px;
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: hsl(196 18% 62%);
 }
 
@@ -2250,7 +2292,7 @@ a {
 
 .blog-hero-content p {
   margin: 0;
-  font-size: 17px;
+  font-size: 18px;
   color: hsl(196 28% 78%);
 }
 
@@ -2326,7 +2368,7 @@ a {
 
 .blog-card-content p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
 }
 
@@ -2335,7 +2377,7 @@ a {
   align-items: center;
   gap: 7px;
   margin-top: 4px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--accent);
   transition: gap 0.2s var(--ease);
@@ -2393,7 +2435,7 @@ a {
   align-items: center;
   gap: 8px;
   margin-bottom: 26px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--accent);
 }
@@ -2460,14 +2502,14 @@ a {
 
 .blog-detail-author-name {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--deep);
 }
 
 .blog-detail-author-role {
   margin: 0;
-  font-size: 13px;
+  font-size: 18px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--accent);
@@ -2475,7 +2517,7 @@ a {
 
 .blog-detail-content p,
 .blog-detail-content li {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.85;
   color: var(--text);
 }
@@ -2500,7 +2542,7 @@ a {
 }
 
 /* ==========================================================================
-   Responsive — 1440px down to 320px
+   Responsive â€” 1440px down to 320px
    ========================================================================== */
 
 @media (max-width: 1080px) {
@@ -2878,7 +2920,7 @@ a {
   }
 
   .expert-badge {
-    font-size: 16px;
+    font-size: 18px;
     padding: 8px 14px 8px 12px;
   }
 
@@ -2890,12 +2932,12 @@ a {
 }
 
 /* ==========================================================================
-   Large screen typography scaling — AGENTS.md Section 7
+   Large screen typography scaling â€” AGENTS.md Section 7
    ========================================================================== */
 
 @media (min-width: 1400px) {
   body,
-  p, li,
+  p, li, a,
   .about-story-new p,
   .service-body-new p,
   .tech-ledger-body p,
@@ -2915,33 +2957,7 @@ a {
   .testimonials-subtitle,
   .gallery-subtitle,
   .contact-subtitle {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1900px) {
-  body,
-  p, li,
-  .about-story-new p,
-  .service-body-new p,
-  .tech-ledger-body p,
-  .pillar-text p,
-  .step-body p,
-  .contact-item-new p,
-  .testimonial-quote,
-  .blog-card-content p,
-  .blog-detail-content p,
-  .blog-detail-content li {
-    font-size: 20px;
-  }
-
-  .hero-subtitle,
-  .about-subtitle,
-  .services-subtitle,
-  .testimonials-subtitle,
-  .gallery-subtitle,
-  .contact-subtitle {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 

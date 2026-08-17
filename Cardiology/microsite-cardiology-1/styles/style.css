@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg: #f6f6f6;
     --text: #0f172a;
     --muted: #334155;
@@ -162,12 +162,12 @@ body {
 }
 
 .brand-name {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .brand-role {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -182,7 +182,7 @@ body {
 .nav-links a {
   text-decoration: none;
   color: #32343a;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -197,7 +197,7 @@ body {
   color: var(--white);
   padding: 12px 20px;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   white-space: nowrap;
   transition: background 0.2s ease;
@@ -271,7 +271,7 @@ margin-bottom: 0;
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--button-hover);
     background: var(--button-light);
@@ -280,7 +280,7 @@ margin-bottom: 0;
 }
 
 .expert-badge i {
-  font-size: 11px;
+  font-size: 16px;
 }
 
 .hero-title {
@@ -335,7 +335,7 @@ margin-bottom: 0;
 
 .stat-card p {
   margin: 6px 0 0;
-  font-size: 15px;
+  font-size: 16px;
   color: #4e5159;
   min-height: 34px;
   display: flex;
@@ -346,7 +346,7 @@ margin-bottom: 0;
 
 .languages {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   color: #4a4d55;
 }
 
@@ -449,7 +449,7 @@ margin-bottom: 0;
   border: 1.8px solid #bcbcbc;
   border-radius: 11px;
   padding: 10px 18px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   background: var(--button);
 }
@@ -493,7 +493,7 @@ margin-bottom: 0;
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--button-hover);
     background: var(--button-light);
@@ -503,7 +503,7 @@ margin-bottom: 0;
 }
 
 .about-badge i {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .about-title {
@@ -517,14 +517,14 @@ margin-bottom: 0;
 
 .about-subtitle {
   margin: 0 0 18px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #6d7076;
 }
 
 .about-description p {
   margin: 0 0 12px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #4a4d55;
   text-align: justify;
@@ -557,7 +557,7 @@ margin-bottom: 0;
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--button-hover);
     background: var(--button-light);
@@ -567,7 +567,7 @@ margin-bottom: 0;
 }
 
 .services-badge i {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .services-title {
@@ -581,7 +581,7 @@ margin-bottom: 0;
 
 .services-subtitle {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #6d7076;
 }
@@ -625,7 +625,7 @@ margin-bottom: 0;
 
 .service-card-desc {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #6d7076;
 }
@@ -673,7 +673,7 @@ margin-bottom: 0;
 
 .contact-header p {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   color: #6d7076;
 }
 
@@ -721,7 +721,7 @@ margin-bottom: 0;
 
 .contact-item p {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #4c4f55;
 }
@@ -756,7 +756,7 @@ margin-bottom: 0;
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--button-hover);
     background: var(--button-light);
@@ -766,7 +766,7 @@ margin-bottom: 0;
 }
 
 .testimonials-badge i {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .testimonials-title {
@@ -780,7 +780,7 @@ margin-bottom: 0;
 
 .testimonials-subtitle {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #6d7076;
 }
@@ -806,7 +806,7 @@ margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: background 0.2s, color 0.2s, border-color 0.2s;
   z-index: 10;
@@ -888,7 +888,7 @@ margin-bottom: 0;
 
 .testimonial-quote {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #6d7076;
 }
@@ -943,7 +943,7 @@ margin-bottom: 0;
 
 .social-media-subtitle {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #6d7076;
 }
@@ -1022,7 +1022,7 @@ margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 16px;
   flex-shrink: 0;
 }
 
@@ -1043,7 +1043,7 @@ margin-bottom: 0;
 }
 
 .social-post-username {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #1f2937;
 }
@@ -1054,13 +1054,13 @@ margin-bottom: 0;
 }
 
 .social-post-meta-text {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
 .social-post-username .fa-circle-check {
   color: #3b82f6;
-  font-size: 15px;
+  font-size: 16px;
   margin-left: 2px;
 }
 
@@ -1075,7 +1075,7 @@ margin-bottom: 0;
 .social-post-options {
   margin-left: auto;
   color: #475569;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .social-post-subscribe {
@@ -1084,7 +1084,7 @@ margin-bottom: 0;
   border: none;
   padding: 6px 14px;
   border-radius: 999px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -1096,7 +1096,7 @@ margin-bottom: 0;
 
 .social-post-time--inline {
   margin-left: auto;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -1116,25 +1116,25 @@ margin-bottom: 0;
 
 .social-post-text {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #4b5563;
 }
 
 .social-post-text .more {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .social-post-hashtags {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   color: #3b82f6;
   line-height: 1.4;
 }
 
 .social-post-time {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -1142,7 +1142,7 @@ margin-bottom: 0;
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 15px;
+  font-size: 16px;
   color: #475569;
 }
 
@@ -1187,7 +1187,7 @@ margin-bottom: 0;
 }
 
 .social-post-link-domain {
-  font-size: 11px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -1195,14 +1195,14 @@ margin-bottom: 0;
 
 .social-post-link-title {
   margin: 4px 0;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #111827;
 }
 
 .social-post-link-desc {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   color: #4b5563;
 }
 
@@ -1233,7 +1233,7 @@ margin-bottom: 0;
 
 .gallery-subtitle {
   margin: 0;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.5;
   color: #6d7076;
 }
@@ -1339,7 +1339,7 @@ margin-bottom: 0;
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--button-hover);
     background: var(--button-light);
@@ -1359,7 +1359,7 @@ margin-bottom: 0;
 .blog-hero-content p {
   margin: 0;
   color: #5c6068;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -1406,7 +1406,7 @@ margin-bottom: 0;
 .blog-card-meta {
   margin: 0;
   color: #9aa0aa;
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
@@ -1436,7 +1436,7 @@ margin-bottom: 0;
   color: #ffffff;
   border-radius: 8px;
   padding: 8px 14px;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   font-weight: 600;
@@ -1462,7 +1462,7 @@ margin-bottom: 0;
   border: 1px solid #d4d7dc;
   color: #4a4d55;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1499,7 +1499,7 @@ margin-bottom: 0;
   gap: 8px;
   text-decoration: none;
   color: #4b5563;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   margin-bottom: 18px;
 }
@@ -1511,7 +1511,7 @@ margin-bottom: 0;
 .blog-detail-meta {
   margin: 0 0 8px;
   color: #9aa0aa;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
@@ -1551,19 +1551,19 @@ margin-bottom: 0;
 }
 
 .blog-detail-author-name {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #111827;
 }
 
 .blog-detail-author-role {
-  font-size: 15px;
+  font-size: 16px;
   color: #475569;
 }
 
 .blog-detail-date {
   margin: 0 0 0 auto;
-  font-size: 15px;
+  font-size: 16px;
   color: #475569;
 }
 
@@ -1587,7 +1587,7 @@ margin-bottom: 0;
 .blog-detail-content p {
   margin: 0 0 14px;
   color: #4b5563;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -1605,14 +1605,14 @@ margin-bottom: 0;
   background: #fff3f3;
   border-radius: 10px;
   color: #374151;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
 }
 
 .site-footer {
   background: #1f2933;
-  padding: 40px 0 32px;
+  padding: 26px 0 20px;
   color: #e5e7eb;
   text-align: center;
 }
@@ -1623,13 +1623,13 @@ margin-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
 }
 
 .footer-nav {
   display: flex;
-  gap: 36px;
-  font-size: 15px;
+  gap: 24px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -1642,12 +1642,32 @@ margin-bottom: 0;
   text-decoration: underline;
 }
 
+.footer-social-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.footer-social-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.01em;
+}
+
 .footer-social {
+  /* Capped to exactly 6 icons per row (6 * 42px icon + 5 * 18px gap =
+     342px) so a 7th+ icon added later wraps to a new row instead of
+     growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
   gap: 18px;
+  max-width: 342px;
+  min-width: 0;
 }
 
 .footer-social-icon {
@@ -1727,7 +1747,7 @@ margin-bottom: 0;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 15px;
+  font-size: 16px;
   color: #cbd5f5;
 }
 
@@ -1746,8 +1766,8 @@ margin-bottom: 0;
 
 .footer-copy {
   margin: 0;
-  font-size: 12px;
-  color: #64748b;
+  font-size: 16px;
+  color: #94a3b8;
 }
 
 .booking-file-preview {
@@ -1800,7 +1820,7 @@ margin-bottom: 0;
 
 .preview-name {
     margin: 0;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: #111827;
     word-break: break-word;
@@ -1809,7 +1829,7 @@ margin-bottom: 0;
 
 .preview-size {
     margin: 0;
-    font-size: 15px;
+    font-size: 16px;
     color: #475569;
 }
 
@@ -1842,12 +1862,12 @@ margin-bottom: 0;
 
 @media (max-width: 640px) {
   .footer-inner {
-    gap: 18px;
+    gap: 14px;
   }
 
   .footer-nav {
-    gap: 20px;
-    font-size: 15px;
+    gap: 18px;
+    font-size: 16px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -1855,15 +1875,15 @@ margin-bottom: 0;
   .footer-social-icon {
     width: 38px;
     height: 38px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .footer-links {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .footer-copy {
-    font-size: 11px;
+    font-size: 16px;
   }
 }
 
@@ -1892,7 +1912,7 @@ margin-bottom: 0;
   }
 
   .contact-header p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .contact-item {
@@ -1918,7 +1938,7 @@ margin-bottom: 0;
     order: 1;
     margin-left: auto;
     padding: 10px 14px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .nav-links {
@@ -2014,7 +2034,7 @@ margin-bottom: 0;
   .carousel-btn {
     width: 38px;
     height: 38px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -2038,11 +2058,11 @@ margin-bottom: 0;
   }
 
   .brand-name {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .brand-role {
-    font-size: 11px;
+    font-size: 16px;
   }
 
   .avatar {
@@ -2054,7 +2074,7 @@ margin-bottom: 0;
   .cta-btn {
     display: inline-block;
     padding: 10px 18px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .cta-text-desktop {
@@ -2083,7 +2103,7 @@ margin-bottom: 0;
   }
 
   .hero-subtitle {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero-stats {
@@ -2102,11 +2122,11 @@ margin-bottom: 0;
   }
 
   .stat-card p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .languages {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.45;
   }
 
@@ -2119,13 +2139,13 @@ margin-bottom: 0;
   .social {
     width: 34px;
     height: 34px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .contact-btn {
     margin-top: 8px;
     padding: 9px 16px;
-    font-size: 15px;
+    font-size: 16px;
     border-radius: 10px;
   }
 
@@ -2147,7 +2167,7 @@ margin-bottom: 0;
   }
 
   .services-subtitle {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .service-card {
@@ -2155,11 +2175,11 @@ margin-bottom: 0;
   }
 
   .service-card-title {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .service-card-desc {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .testimonials-section {
@@ -2175,7 +2195,7 @@ margin-bottom: 0;
   }
 
   .testimonials-subtitle {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .testimonial-card {
@@ -2204,7 +2224,7 @@ margin-bottom: 0;
   }
 
   .social-media-subtitle {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .gallery-section {
@@ -2220,7 +2240,7 @@ margin-bottom: 0;
   }
 
   .gallery-subtitle {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .gallery-grid {
@@ -2241,7 +2261,7 @@ margin-bottom: 0;
   }
 
   .blog-hero-content p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .blog-listing-section {
@@ -2271,7 +2291,7 @@ margin-bottom: 0;
   }
 
   .blog-detail-content p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.55;
   }
 
@@ -2292,7 +2312,7 @@ margin-bottom: 0;
   .carousel-btn {
     width: 34px;
     height: 34px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .testimonial-card {
@@ -2300,11 +2320,11 @@ margin-bottom: 0;
   }
 
   .testimonial-name {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .testimonial-quote {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -2502,7 +2522,7 @@ margin-bottom: 0;
   border-right: 1px solid #e5e7eb;
   background: #f9fafb;
   padding: 10px 8px 10px 10px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Outfit", sans-serif;
   color: #374151;
   outline: none;
@@ -2527,7 +2547,7 @@ margin-bottom: 0;
   border: none;
   background: transparent;
   padding: 10px 12px;
-  font-size: 15px;
+  font-size: 16px;
   font-family: "Outfit", sans-serif;
   color: #111827;
   outline: none;
@@ -2551,11 +2571,11 @@ margin-bottom: 0;
 @media (max-width: 480px) {
   .country-code-select {
     min-width: 80px;
-    font-size: 13px;
+    font-size: 16px;
     padding: 8px 20px 8px 8px;
   }
   .phone-input-group input[type="tel"] {
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px 10px;
   }
 }
@@ -2914,7 +2934,7 @@ margin-bottom: 0;
     }
 
     .preview-name {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .loader-spinner {
@@ -3085,7 +3105,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 }
 
 .pillar-text p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted, #334155);
   line-height: 1.5;
   margin-top: 0;
@@ -3196,7 +3216,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   display: inline-block;
   font-family: inherit;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--button);
   background-color: var(--button-light);
   padding: 3px 12px;
@@ -3214,7 +3234,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 }
 
 .step-body p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted, #334155);
   line-height: 1.5;
   margin: 0;

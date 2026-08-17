@@ -137,7 +137,9 @@
         <a href="/{{slug}}/#testimonials">Testimonials</a>
       </nav>
 
-      <div class="footer-social" aria-label="Footer social links">
+      <div class="footer-social-wrap">
+        <span class="footer-social-label">Follow me on:</span>
+        <div class="footer-social" aria-label="Footer social links">
           {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
               <i class="fa-brands fa-facebook-f"></i>
           </a>{{/hasFacebook}}
@@ -156,6 +158,7 @@
           {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="Linkedin">
               <i class="fa-brands fa-linkedin-in"></i>
           </a>{{/hasLinkedin}}
+        </div>
       </div>
 
       <div class="footer-links">

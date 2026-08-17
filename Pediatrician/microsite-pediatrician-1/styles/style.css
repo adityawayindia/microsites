@@ -1,4 +1,9 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+﻿/* AGENTS.md item 7: Quicksand (used for all headings) tops out at 700 on
+   Google Fonts — there is no 800/900 cut. Outfit is a variable font that
+   goes up to 900, so it's loaded with 800/900 here and used specifically
+   for h2 section titles so they can render genuinely bolder than the
+   700-weight ceiling the rest of the heading system is capped at. */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #fff5f8; /* Soft warm rosy blush background â€” pediatric pink */
@@ -100,9 +105,12 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 .contact-card-new,
 .contact-item,
 .contact-item-new,
+.contact-item-body,
 .testimonial-card,
 .testimonial-card-new,
 .testimonial-footer,
+.hero-stat-card,
+.hero-stats-card,
 .brand-text,
 .navbar,
 .container {
@@ -130,6 +138,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 .testimonial-card-new,
 .contact-card,
 .contact-card-new,
+.contact-item,
+.hero-stat-card,
+.hero-stats-card,
 .about-story,
 .about-story-new,
 .card,
@@ -138,6 +149,13 @@ aside {
   height: auto !important;
   min-height: fit-content;
   max-width: 100%;
+}
+
+/* Hero photo column must stretch to match the combined height of the two
+   left-column cards (main card + stats card), overriding the generic
+   `aside { height: auto !important }` rule above for this one case. */
+.hero-side-rail-right {
+  height: 100% !important;
 }
 
 body {
@@ -163,44 +181,41 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
   z-index: 50;
 }
 
+/* Hero practice stats — a divider row inside the single .hero-main-card,
+   not a set of nested mini-cards (AGENTS.md §11: never nest a card inside
+   a bigger card). Each stat number counts up via IntersectionObserver +
+   requestAnimationFrame in script/index.js. */
 .hero-stat-card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 4px 14px;
   text-align: center;
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.04);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.hero-stat-card:nth-child(1) {
-  border: 3px solid var(--color-yellow);
-  box-shadow: 0 10px 20px rgba(217, 119, 6, 0.15);
+
+.hero-stat-card + .hero-stat-card {
+  border-left: 1px solid rgba(15, 23, 42, 0.12);
 }
-.hero-stat-card:nth-child(1) .hero-stat-value {
-  color: var(--color-yellow);
-}
-.hero-stat-card:nth-child(2) {
-  border: 3px solid var(--color-green);
-  box-shadow: 0 10px 20px rgba(5, 150, 105, 0.15);
-}
-.hero-stat-card:nth-child(2) .hero-stat-value {
-  color: var(--color-green);
-}
-.hero-stat-card:nth-child(3) {
-  border: 3px solid var(--color-pink);
-  box-shadow: 0 10px 20px rgba(219, 39, 119, 0.15);
-}
+
+.hero-stat-card:nth-child(1) .hero-stat-value,
+.hero-stat-card:nth-child(2) .hero-stat-value,
 .hero-stat-card:nth-child(3) .hero-stat-value {
-  color: var(--color-pink);
-}
-.hero-stat-card:hover {
-  transform: translateY(-6px) scale(1.06);
+  color: var(--color-pink-dark);
 }
 
 .hero-stat-value {
   margin: 0;
-  font-size: clamp(28px, 2.3vw, 42px);
+  font-size: clamp(42px, 3.8vw, 52px);
   line-height: 1;
-  font-weight: 700;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 480px) {
+  .hero-stat-value {
+    font-size: 34px;
+  }
 }
 
 .hero-stat-label {
@@ -222,7 +237,11 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
 }
 
 .container {
-  width: min(1200px, 92%);
+  /* AGENTS.md §11: widen the main container from the old 1280px cap to a
+     modern 1440-1600px measure so the layout doesn't look cramped on large
+     monitors. Inner text blocks get their own ~65-75ch measure below so
+     long paragraphs don't stretch unreadably wide. */
+  width: min(1520px, 94%);
   margin: 0 auto;
 }
 
@@ -369,7 +388,15 @@ margin-bottom: 0;
   z-index: 1;
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
+  /* Left column stretches full height so the right column (image) can be
+     told to match it via height: 100% on .hero-image-wrap. */
   align-items: stretch;
+  gap: clamp(14px, 2.2vw, 28px);
+}
+
+.hero-side-rail-left {
+  display: flex;
+  flex-direction: column;
   gap: clamp(14px, 2.2vw, 28px);
 }
 
@@ -494,14 +521,14 @@ margin-bottom: 0;
 
 .hero-secondary-btn {
   background: #ffffff;
-  color: var(--color-blue);
-  border: 2px solid var(--color-blue);
+  color: var(--color-pink-dark);
+  border: 2px solid var(--color-pink-dark);
 }
 
 .hero-secondary-btn:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 16px rgba(75, 163, 227, 0.15);
-  background: var(--color-blue-light);
+  box-shadow: 0 8px 16px rgba(214, 51, 132, 0.15);
+  background: var(--color-pink-light);
 }
 
 .hero-rail-card {
@@ -512,47 +539,18 @@ margin-bottom: 0;
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
 }
 
-.hero-rail-inline {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 30px;
-}
-
-.hero-rail-inline .hero-rail-card {
-  flex: 1 1 auto;
+.hero-stats-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #d5e5fb;
+  border-radius: 26px;
+  padding: clamp(18px, 2.4vw, 28px) clamp(22px, 3vw, 38px);
+  box-shadow: 0 20px 46px rgba(30, 58, 138, 0.12);
 }
 
 .hero-stats-grid {
-  flex: 1 1 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-}
-
-.hero-stat-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #d7e7fb;
-  border-radius: 18px;
-  padding: 14px 16px;
-  text-align: center;
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
-}
-
-.hero-stat-value {
-  margin: 0;
-  color: #1e4894;
-  font-size: clamp(28px, 2.3vw, 42px);
-  line-height: 1;
-  font-weight: 700;
-}
-
-.hero-stat-label {
-  display: block;
-  margin-top: 10px;
-  font-size: 16px;
-  line-height: 1.35;
-  color: #425166;
 }
 
 .hero-rail-label {
@@ -582,10 +580,12 @@ margin-bottom: 0;
 
 .hero-side-rail-right {
   justify-content: flex-start;
+  height: 100%;
 }
 
 .hero-image-wrap {
   width: 100%;
+  height: 100%;
   border-radius: 24px;
   overflow: hidden;
   border: 7px solid #ffffff;
@@ -594,8 +594,8 @@ margin-bottom: 0;
 
 .hero-image {
   width: 100%;
+  height: 100%;
   display: block;
-  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
 }
@@ -656,15 +656,17 @@ margin-bottom: 0;
 
 /* About Section */
 .about-section {
-  background: linear-gradient(135deg, #fff0f5 0%, #fff8fa 50%, #fdecf2 100%);
+  /* White band — alternates with the orangish Services section below
+     (AGENTS.md §11: alternating section backgrounds). */
+  background: #ffffff;
   padding: 50px 0 56px;
   position: relative;
-  border-top: 1px solid rgba(214, 51, 132, 0.08);
-  border-bottom: 1px solid rgba(214, 51, 132, 0.08);
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .about-section .container {
-  width: min(1280px, 94%);
+  width: min(1520px, 94%);
 }
 
 .about-layout {
@@ -683,7 +685,7 @@ margin-bottom: 0;
 }
 
 .about-body {
-  border-left: 4px dashed var(--color-yellow);
+  border-left: 4px dashed var(--color-pink-dark);
   padding-left: 44px;
   padding-top: 6px;
 }
@@ -696,9 +698,9 @@ margin-bottom: 0;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #c48c14;
+  color: var(--color-pink-dark);
   background: #ffffff;
-  border: 2px solid var(--color-yellow);
+  border: 2px solid var(--color-pink);
   border-radius: 999px;
   padding: 8px 16px;
   margin-bottom: 18px;
@@ -710,8 +712,11 @@ margin-bottom: 0;
 
 .about-title {
   margin: 0 0 14px;
-  font-size: clamp(26px, 3vw, 40px);
-  font-weight: 700;
+  font-size: clamp(28px, 3vw, 38px);
+  /* AGENTS.md item 7: section h2 titles bumped to a genuinely bolder weight
+     via Outfit (variable, supports 800/900) since Quicksand tops out at 700. */
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.6px;
   line-height: 1.18;
@@ -735,10 +740,10 @@ margin-bottom: 0;
   font-size: 18px;
   line-height: 1.5;
   color: #0f172a;
-  max-width: none;
+  /* Keep the readable measure (~65-75ch) even though the outer .container
+     widened to 1520px (AGENTS.md §11) — otherwise lines run too long. */
+  max-width: 75ch;
   margin-inline: 0;
-  text-align: left;
-  text-align: justify;
   text-align: justify;
 }
 
@@ -800,23 +805,26 @@ margin-bottom: 0;
     font-size: 18px;
     line-height: 1.5;
   }
-  text-align: justify;
-  text-align: justify;
 }
 
-/* Services Section */
+/* Services Section — neutral off-white band, alternating with the
+   branded pink tint used by About/Philosophy/Contact/Gallery below
+   (AGENTS.md §7.1 + §11: push the 60% neutral / 30% brand split into
+   visible section bands, not just small UI elements). */
 .services-section {
-  background: linear-gradient(180deg, #eef5ff 0%, #f8fbff 100%);
+  /* Orangish tint band, alternating with the white About section above and
+     white Philosophy section below (AGENTS.md §11). */
+  background: linear-gradient(135deg, #fff4ec 0%, #fffaf6 50%, #fef0e2 100%);
   padding: 50px 0 56px;
 }
 
 .services-section .container {
-  width: min(1240px, 94%);
+  width: min(1520px, 94%);
 }
 
 .services-shell {
   display: grid;
-  grid-template-columns: minmax(300px, 420px) 1fr;
+  grid-template-columns: minmax(340px, 480px) 1fr;
   gap: 34px;
   align-items: start;
 }
@@ -857,8 +865,9 @@ margin-bottom: 0;
 
 .services-title {
   margin: 0 0 16px;
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 700;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
   color: #1f2937;
   letter-spacing: -0.5px;
   line-height: 1.2;
@@ -892,6 +901,24 @@ margin-bottom: 0;
   transform: translateY(-3px) scale(1.03);
 }
 
+.services-header-image {
+  margin: 22px 0 0;
+  min-width: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+}
+
+.services-header-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -911,23 +938,15 @@ margin-bottom: 0;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.service-card:nth-child(1) { border: 3px solid var(--color-pink); }
-.service-card:nth-child(1) .service-icon { background: var(--color-pink-light); color: var(--color-pink); }
+/* AGENTS.md §7.1/§11: pink is the single 30% brand colour — service card
+   borders/icons no longer scatter blue/green/yellow/purple hues. Alternate
+   between the deep structural pink and the vibrant brand pink for subtle
+   rhythm across the grid, never introducing a second hue family. */
+.service-card:nth-child(odd) { border: 3px solid var(--color-pink-dark); }
+.service-card:nth-child(odd) .service-icon { background: var(--color-pink-light); color: var(--color-pink-dark); }
 
-.service-card:nth-child(2) { border: 3px solid var(--color-blue); }
-.service-card:nth-child(2) .service-icon { background: var(--color-blue-light); color: var(--color-blue); }
-
-.service-card:nth-child(3) { border: 3px solid var(--color-green); }
-.service-card:nth-child(3) .service-icon { background: var(--color-green-light); color: var(--color-green); }
-
-.service-card:nth-child(4) { border: 3px solid var(--color-yellow); }
-.service-card:nth-child(4) .service-icon { background: var(--color-yellow-light); color: var(--color-yellow); }
-
-.service-card:nth-child(5) { border: 3px solid var(--color-purple); }
-.service-card:nth-child(5) .service-icon { background: var(--color-purple-light); color: var(--color-purple); }
-
-.service-card:nth-child(6) { border: 3px solid var(--color-pink); }
-.service-card:nth-child(6) .service-icon { background: var(--color-pink-light); color: var(--color-pink); }
+.service-card:nth-child(even) { border: 3px solid var(--color-pink); }
+.service-card:nth-child(even) .service-icon { background: var(--color-pink-light); color: var(--color-pink); }
 
 .service-card:hover {
   transform: translateY(-8px) scale(1.03);
@@ -972,7 +991,9 @@ margin-bottom: 0;
 /* Contact Section */
 .contact-section {
   padding: 46px 0 52px;
-  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 45%, #eff6ff 100%);
+  /* White band, alternating with the orangish Process (Journey) section
+     above (AGENTS.md §11). */
+  background: #ffffff;
   position: relative;
 }
 
@@ -987,7 +1008,7 @@ margin-bottom: 0;
 .contact-section .container {
   position: relative;
   z-index: 1;
-  width: min(1240px, 94%);
+  width: min(1520px, 94%);
 }
 
 .contact-card {
@@ -1008,7 +1029,9 @@ margin-bottom: 0;
 
 .contact-header h2 {
   margin: 0 0 12px;
-  font-size: clamp(26px, 2.8vw, 36px);
+  font-size: clamp(28px, 2.8vw, 38px);
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
   letter-spacing: -0.5px;
   color: #0f172a;
   line-height: 1.2;
@@ -1035,35 +1058,31 @@ margin-bottom: 0;
   margin-right: auto;
 }
 
+/* Simple divider between the two contact items instead of each one being
+   its own bordered/shadowed mini-card (AGENTS.md §11). */
+.contact-grid .contact-item + .contact-item {
+  border-left: 1px solid #dbe7ff;
+  padding-left: 30px;
+}
+
+/* .contact-item sits inside the already-bordered/shadowed .contact-card,
+   so it must NOT be its own bordered/shadowed mini-card (AGENTS.md §11:
+   never nest a card inside a bigger card). A vertical divider between the
+   two items stands in for the old per-item border/shadow treatment. */
 .contact-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  gap: 14px;
-  border-radius: 16px;
-  padding: 26px 22px;
-  background: #ffffff;
-  border: 1px solid #dbe7ff;
-  border-bottom: 1px solid #dbe7ff;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 16px;
+  padding: 6px 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
-.contact-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
-}
-
-.contact-item:last-child {
-  border-bottom: 1px solid #dbe7ff;
-}
-
-.contact-item--blue {
-  background: #ffffff;
-}
-
+.contact-item--blue,
 .contact-item--pink {
-  background: #ffffff;
+  background: transparent;
 }
 
 .contact-item-icon {
@@ -1071,7 +1090,7 @@ margin-bottom: 0;
   height: 48px;
   flex-shrink: 0;
   border-radius: 12px;
-  background: #6FA8DC;
+  background: var(--color-pink-dark);
   color: #ffffff;
   display: inline-flex;
   align-items: center;
@@ -1079,11 +1098,20 @@ margin-bottom: 0;
   font-size: 20px;
 }
 
+.contact-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
 .contact-item h3 {
   margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  /* Card heading must be bold and clearly larger than the card's body
+     text (the 18px address/phone copy below it) — AGENTS.md §11. */
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   color: #0f172a;
 }
 
@@ -1117,7 +1145,9 @@ margin-bottom: 0;
 
 /* Testimonials Section */
 .testimonials-section {
-  background: var(--color-blue-light);
+  /* Neutral off-white band, alternating with the branded pink Contact
+     section above and branded pink Gallery section below (AGENTS.md §11). */
+  background: #f8fafc;
   padding: 44px 0 50px;
 }
 
@@ -1135,9 +1165,9 @@ margin-bottom: 0;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-blue);
+  color: var(--color-pink-dark);
   background: #ffffff;
-  border: 2px solid var(--color-blue);
+  border: 2px solid var(--color-pink-dark);
   border-radius: 999px;
   padding: 8px 16px;
   margin-bottom: 16px;
@@ -1149,8 +1179,9 @@ margin-bottom: 0;
 
 .testimonials-title {
   margin: 0 0 12px;
-  font-size: clamp(30px, 3.8vw, 46px);
-  font-weight: 700;
+  font-size: clamp(30px, 3.2vw, 38px);
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.7px;
   line-height: 1.15;
@@ -1165,7 +1196,9 @@ margin-bottom: 0;
 
 .testimonials-carousel-wrap {
   position: relative;
-  max-width: 1180px;
+  /* AGENTS.md item 8: use the section's full available width (matches the
+     1520px global container) instead of capping at 1180px. */
+  max-width: 1520px;
   margin: 0 auto;
   padding: 0 54px;
 }
@@ -1174,17 +1207,17 @@ margin-bottom: 0;
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  border: 1px solid #cfe0ff;
+  border: 1px solid var(--button-light);
   background: #ffffff;
-  color: #2F6FA6;
+  color: var(--color-pink-dark);
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
   top: 44%;
 }
 
 .testimonials-carousel-wrap .carousel-btn:hover {
-  background: #6FA8DC;
+  background: var(--button);
   color: #ffffff;
-  border-color: #6FA8DC;
+  border-color: var(--button);
 }
 
 .carousel-btn {
@@ -1242,8 +1275,8 @@ margin-bottom: 0;
   background: #ffffff;
   border-radius: 24px;
   padding: 26px 22px 22px;
-  border: 3px solid var(--color-blue);
-  box-shadow: 0 10px 24px rgba(75, 163, 227, 0.06);
+  border: 3px solid var(--color-pink-dark);
+  box-shadow: 0 10px 24px rgba(157, 23, 77, 0.06);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1254,7 +1287,7 @@ margin-bottom: 0;
 
 .testimonial-card:nth-child(even) {
   border: 3px solid var(--color-pink);
-  box-shadow: 0 10px 24px rgba(241, 91, 181, 0.06);
+  box-shadow: 0 10px 24px rgba(214, 51, 132, 0.06);
 }
 
 .testimonial-card::before {
@@ -1264,7 +1297,7 @@ margin-bottom: 0;
   left: 16px;
   font-size: 32px;
   line-height: 1;
-  color: var(--color-blue-light);
+  color: var(--color-pink-light);
   font-weight: 700;
 }
 
@@ -1285,8 +1318,10 @@ margin-bottom: 0;
 
 .testimonial-name {
   margin: 0 0 6px;
-  font-size: 18px;
-  font-weight: 600;
+  /* Card heading must be bold and clearly larger than the card's body
+     text (the 18px quote below it) — AGENTS.md §11. */
+  font-size: 20px;
+  font-weight: 700;
   color: #0f172a;
 }
 
@@ -1661,12 +1696,14 @@ margin-bottom: 0;
 
 /* Gallery Section */
 .gallery-section {
-  background: var(--color-green-light);
+  /* Branded pink tint band, closing out the alternating pattern before
+     the dark footer (AGENTS.md §11). */
+  background: #fdf2f7;
   padding: 46px 0 52px;
 }
 
 .gallery-section .container {
-  width: min(1240px, 94%);
+  width: min(1520px, 94%);
 }
 
 .gallery-header {
@@ -1677,8 +1714,9 @@ margin-bottom: 0;
 
 .gallery-title {
   margin: 0 0 10px;
-  font-size: clamp(28px, 3.5vw, 44px);
-  font-weight: 700;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.7px;
   line-height: 1.15;
@@ -1693,9 +1731,13 @@ margin-bottom: 0;
 
 .gallery-grid {
   display: grid;
+  /* 3x2 grid for the 6 gallery photos. Capped narrower than the section so
+     each tile stays close to its original smaller size instead of
+     stretching to fill the full 1520px container. */
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  width: min(1080px, 100%);
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1704,17 +1746,20 @@ margin-bottom: 0;
   border-radius: 24px;
   overflow: hidden;
   background: #ffffff;
-  border: 3px solid var(--color-green);
-  box-shadow: 0 10px 24px rgba(104, 195, 163, 0.06);
+  border: 3px solid var(--color-pink-dark);
+  box-shadow: 0 10px 24px rgba(157, 23, 77, 0.06);
   position: relative;
   cursor: zoom-in;
-  aspect-ratio: 5 / 4;
+  /* AGENTS.md item 9: thumbnails must stay a fixed 4:3 ratio regardless of
+     how wide the gallery grid/container gets — widening the section should
+     only show more/larger 4:3 tiles per row, never distort the crop. */
+  aspect-ratio: 4 / 3;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .gallery-item:nth-child(even) {
-  border: 3px solid var(--color-yellow);
-  box-shadow: 0 10px 24px rgba(255, 203, 101, 0.06);
+  border: 3px solid var(--color-pink);
+  box-shadow: 0 10px 24px rgba(214, 51, 132, 0.06);
 }
 
 .gallery-item::after {
@@ -2100,31 +2145,35 @@ margin-bottom: 0;
 
 .site-footer {
   background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
-  padding: 48px 0 36px;
+  padding: 30px 0 22px;
   color: #dbe3f3;
   border-top: 1px solid rgba(148, 163, 184, 0.22);
 }
 
 .footer-inner {
-  width: min(1240px, 92%);
+  width: min(880px, 92%);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto auto;
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
   column-gap: 32px;
-  row-gap: 0;
+  row-gap: 18px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .footer-nav {
   display: flex;
-  gap: 28px;
+  gap: 24px;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.01em;
-  justify-self: start;
-  grid-column: 1;
-  grid-row: 1;
+  flex-wrap: wrap;
 }
 
 .footer-nav a {
@@ -2137,15 +2186,32 @@ margin-bottom: 0;
   color: #93c5fd;
 }
 
+.footer-social-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.footer-social-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.01em;
+}
+
 .footer-social {
+  /* Capped to exactly 6 icons per row (6 * 42px icon + 5 * 14px gap =
+     322px) so a 7th+ icon added later wraps to a new row instead of
+     growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
   gap: 14px;
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: center;
+  max-width: 322px;
+  min-width: 0;
 }
 
 .footer-social-icon {
@@ -2195,13 +2261,10 @@ margin-bottom: 0;
 .footer-links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 10px;
   font-size: 18px;
   color: #a8b4cb;
-  grid-column: 3;
-  grid-row: 1;
-  justify-self: end;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -2223,48 +2286,34 @@ margin-bottom: 0;
   font-size: 18px;
   color: #94a3b8;
   letter-spacing: 0.01em;
-  grid-column: 1 / -1;
-  grid-row: 2;
+  width: 100%;
   text-align: center;
   padding-top: 24px;
   margin-top: 12px;
   border-top: 1px solid rgba(148, 163, 184, 0.15);
 }
 
-.site-footer .footer-visitor-badge {
-  grid-column: 1 / -1;
-  justify-self: center;
-}
-
 @media (max-width: 900px) {
   .footer-inner {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
   }
 
-  .footer-nav {
-    justify-self: center;
-    grid-column: 1;
-    grid-row: auto;
+  .footer-col {
+    align-items: center;
   }
 
-  .footer-social {
-    grid-column: 1;
-    grid-row: auto;
+  .footer-social-wrap {
+    align-items: center;
   }
 
   .footer-links {
-    justify-self: center;
     justify-content: center;
-    grid-column: 1;
-    grid-row: auto;
   }
 
   .footer-copy {
-    grid-column: 1;
-    grid-row: auto;
     margin-top: 0;
   }
 }
@@ -2302,6 +2351,13 @@ margin-bottom: 0;
     grid-template-columns: 1fr;
     gap: 16px;
   }
+
+  .contact-grid .contact-item + .contact-item {
+    border-left: none;
+    border-top: 1px solid #dbe7ff;
+    padding-left: 0;
+    padding-top: 20px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -2324,7 +2380,6 @@ margin-bottom: 0;
   }
 
   .contact-item {
-    padding: 20px 16px;
     gap: 12px;
   }
 
@@ -2392,18 +2447,29 @@ margin-bottom: 0;
   }
 }
 
+@media (max-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  .hero-main-card {
+  .hero-side-rail-left {
     max-width: 100%;
     order: 1;
   }
 
+  .hero-main-card {
+    max-width: 100%;
+  }
+
   .hero-side-rail-right {
+    height: auto !important;
     order: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2414,6 +2480,12 @@ margin-bottom: 0;
   .hero-image-wrap {
     grid-column: 1 / -1;
     max-width: 360px;
+    height: auto;
+  }
+
+  .hero-image {
+    height: auto;
+    aspect-ratio: 4 / 5;
   }
 
   .social-links {
@@ -2555,7 +2627,8 @@ margin-bottom: 0;
     max-width: 280px;
   }
 
-  .hero-main-card {
+  .hero-main-card,
+  .hero-stats-card {
     border-radius: 18px;
     padding: 18px 16px;
   }
@@ -2570,13 +2643,14 @@ margin-bottom: 0;
     flex-direction: column;
   }
 
-  .hero-rail-inline {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .hero-stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-stat-card + .hero-stat-card {
+    border-left: none;
+    border-top: 1px solid rgba(15, 23, 42, 0.12);
+    padding-top: 12px;
   }
 
   .hero-rail-card {
@@ -2714,7 +2788,9 @@ margin-bottom: 0;
   }
 
   .gallery-item {
-    aspect-ratio: 16 / 10;
+    /* Keep the mandatory 4:3 thumbnail ratio at every breakpoint (AGENTS.md
+       item 9) — a single column on mobile should not change the crop. */
+    aspect-ratio: 4 / 3;
   }
 
   .blog-hero-section {
@@ -2786,10 +2862,6 @@ margin-bottom: 0;
 
   .testimonial-card {
     padding: 22px 20px;
-  }
-
-  .testimonial-name {
-    font-size: 16px;
   }
 
   .testimonial-quote {
@@ -3301,37 +3373,6 @@ margin-bottom: 0;
 }
 
 /* ==========================================================================
-   Global Responsive Text & Auto-Height Parent Container Rule
-   ========================================================================== */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
-  overflow-wrap: break-word;
-  word-break: break-word;
-  max-width: 100%;
-}
-
-.hero-content, .hero-visual, .hero-topbar, .hero-stats, .hero-stat, .hero-actions,
-.hero-v2-content, .hero-v2-visual, .hero-v2-topbar, .hero-v2-stats, .hero-v2-stat, .hero-v2-actions,
-.about-intro, .about-story, .about-story-new, .service-card, .service-card-new, .service-body, .service-body-new,
-.contact-card, .contact-card-new, .contact-item, .contact-item-new, .testimonial-card, .testimonial-card-new,
-.testimonial-footer, .brand-text, .navbar, .container {
-  min-width: 0;
-}
-
-.hero-badge, .hero-reg, .hero-title, .hero-subtitle, .hero-stats, .hero-stat, .hero-chip,
-.hero-v2-badge, .hero-v2-reg, .hero-v2-title, .hero-v2-subtitle, .hero-v2-stats, .hero-v2-stat, .hero-v2-chip,
-.service-card, .service-card-new, .testimonial-card, .testimonial-card-new, .contact-card, .contact-card-new,
-.about-story, .about-story-new, .card, article, aside {
-  height: auto !important;
-  min-height: fit-content;
-  max-width: 100%;
-}
-
-
-/* ==========================================================================
    DigiDr Global â€” Enhanced Service & Feature Card Heading Sizing
    ========================================================================== */
 .service-card h3,
@@ -3343,7 +3384,12 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 .pillar-text h3,
 .step-body h3 {
   font-size: 22px !important;
-  font-weight: 600 !important;
+  /* AGENTS.md item 6: card headings must be clearly bolder than the card
+     body text — 700 is the boldest weight the loaded Quicksand family
+     supports, so that's the effective ceiling (requesting 800+ would just
+     resolve back to 700 with this font). Was erroneously 600, i.e. lighter
+     than the 18px body copy's surrounding weight in places. */
+  font-weight: 700 !important;
   line-height: 1.3 !important;
   margin-top: 0 !important;
   margin-bottom: 10px !important;
@@ -3370,7 +3416,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 /* Section: Care Philosophy */
 .philosophy-section {
   padding: 50px 0 56px;
-  background-color: var(--bg);
+  /* White band, alternating with the orangish Services section above and
+     orangish Process (Journey) section below (AGENTS.md §11). */
+  background-color: #ffffff;
   position: relative;
   overflow: hidden;
 }
@@ -3450,7 +3498,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 .pillar-text h3 {
   font-size: 22px !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   line-height: 1.3 !important;
   margin-top: 0 !important;
   margin-bottom: 6px !important;
@@ -3467,7 +3515,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 /* Section: Consultation Journey */
 .process-section {
   padding: 50px 0 56px;
-  background-color: rgba(0, 0, 0, 0.02);
+  /* Orangish tint band, alternating with the white Philosophy section
+     above and white Contact section below (AGENTS.md §11). */
+  background: linear-gradient(135deg, #fff4ec 0%, #fffaf6 50%, #fef0e2 100%);
 }
 
 .process-header {
@@ -3579,7 +3629,12 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 .step-body h3 {
   font-size: 22px !important;
-  font-weight: 600 !important;
+  /* AGENTS.md item 6: card headings must be clearly bolder than the card
+     body text — 700 is the boldest weight the loaded Quicksand family
+     supports, so that's the effective ceiling (requesting 800+ would just
+     resolve back to 700 with this font). Was erroneously 600, i.e. lighter
+     than the 18px body copy's surrounding weight in places. */
+  font-weight: 700 !important;
   line-height: 1.3 !important;
   margin-top: 0 !important;
   margin-bottom: 10px !important;
@@ -3770,155 +3825,11 @@ select {
   .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
     font-size: 18px !important;
   }
-}
 
-/* Hide scattered floating toy emojis on mobile/tablets */
-@media (max-width: 1240px) {
-  .toy-scatter-item, .toys-scatter-layer {
-    display: none !important;
-  }
-}
-
-
-/* Gallery Lightbox Navigation Buttons */
-.gallery-lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(15, 23, 42, 0.75);
-  color: #f9fafb;
-  font-size: 36px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  user-select: none;
-}
-
-.gallery-lightbox-prev {
-  left: 24px;
-}
-
-.gallery-lightbox-next {
-  right: 24px;
-}
-
-.gallery-lightbox-nav:hover {
-  background: rgba(248, 250, 252, 0.95);
-  color: #111827;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-}
-
-.gallery-lightbox-prev:hover {
-  transform: translateY(-50%) scale(1.1) translateX(-2px);
-}
-
-.gallery-lightbox-next:hover {
-  transform: translateY(-50%) scale(1.1) translateX(2px);
-}
-
-@media (max-width: 768px) {
-  .gallery-lightbox-nav {
-    width: 44px;
-    height: 44px;
-    font-size: 28px;
-  }
-  .gallery-lightbox-prev {
-    left: 12px;
-  }
-  .gallery-lightbox-next {
-    right: 12px;
-  }
-}
-
-/* Fix visibility of Philosophy & Process section headings on light backgrounds */
-.philosophy-section .about-title,
-.process-section .about-title {
-  color: var(--deep, var(--text, #0f172a)) !important;
-}
-.philosophy-section .about-subtitle,
-.process-section .about-subtitle {
-  color: #0f172a !important;
-}
-
-/* Consent Checkbox Styling */
-.booking-consent-field {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 10px !important;
-  margin-top: 8px !important;
-  margin-bottom: 6px !important;
-}
-.booking-consent-field input[type="checkbox"] {
-  width: 18px !important;
-  height: 18px !important;
-  min-width: 18px !important;
-  margin: 0 !important;
-  cursor: pointer;
-  flex-shrink: 0 !important;
-  accent-color: #0f766e;
-}
-.booking-consent-field label {
-  font-size: 16px;
-  line-height: 1.4;
-  color: #374151;
-  cursor: pointer;
-  font-weight: 500;
-  user-select: none;
-  margin: 0 !important;
-}
-/* Ensure disabled state has reduced opacity */
-.booking-submit-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-/* Eliminate whitespace from empty elements above the checkbox */
-.booking-file-preview:empty,
-.booking-error:empty {
-  display: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Rule 4: Theme-Aware High Contrast Typography & Form Placeholders */
-p, li {
-  font-size: 18px;
-  line-height: 1.5;
-  color: var(--text);
-}
-
-input::placeholder,
-textarea::placeholder,
-select::placeholder {
-  color: var(--text) !important;
-  opacity: 0.65 !important;
-}
-
-input, 
-textarea, 
-select {
-  font-size: 16px !important;
-  color: var(--text) !important;
-}
-
-/* ==========================================================================
-   Fluid scaling for large screens (viewport >= 1400px)
-   ========================================================================== */
-@media (min-width: 1400px) {
-  body, p, li, .hero-subtitle, .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .blog-card-title, .blog-detail-content p, .privacy-content p, .terms-content p, .alt-hero-subtext, .alt-about-body, .alt-services-sub, .alt-philosophy-sub, .alt-journey-sub, .alt-contact-sub, .alt-testi-sub, .alt-gallery-sub {
-    font-size: 18px !important;
-  }
-  .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
-    font-size: 18px !important;
+  /* The bare `p` rule above catches <p class="hero-stat-value"> too — restore
+     the intentionally large stat number size at this breakpoint. */
+  .hero-stat-value {
+    font-size: clamp(42px, 3.8vw, 52px) !important;
   }
 }
 
@@ -3928,8 +3839,6 @@ select {
     display: none !important;
   }
 }
-
-
 
 /* ==========================================================================
    Responsive 3x2 Gallery Grid in Mobile View
