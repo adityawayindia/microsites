@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Chat assistant">
+  <defs>
+    <style>
+      .cb-eye {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: cb-blink 5.5s ease-in-out infinite;
+      }
+      @keyframes cb-blink {
+        0%, 90%, 100% { transform: scaleY(1); }
+        94%           { transform: scaleY(0.12); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cb-eye { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <!-- White disc so the mark reads on both the FAB and white surfaces -->
+  <circle cx="24" cy="24" r="24" fill="#ffffff"/>
+
+  <!-- Antenna -->
+  <path d="M24 8.6V14" stroke="#d63384" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <circle cx="24" cy="6.9" r="2.6" fill="#d63384"/>
+
+  <!-- Ears -->
+  <rect x="6.4" y="21" width="3.6" height="8" rx="1.8" fill="#d63384"/>
+  <rect x="38" y="21" width="3.6" height="8" rx="1.8" fill="#d63384"/>
+
+  <!-- Head -->
+  <rect x="10" y="13.5" width="28" height="23" rx="9" fill="#d63384"/>
+
+  <!-- Face -->
+  <circle class="cb-eye" cx="18.5" cy="23" r="3" fill="#ffffff"/>
+  <circle class="cb-eye" cx="29.5" cy="23" r="3" fill="#ffffff"/>
+  <path d="M18.6 29.4c1.5 1.9 3.3 2.9 5.4 2.9s3.9-1 5.4-2.9"
+        stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+</svg>
