@@ -238,10 +238,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  background: #ffffff;
+  color: var(--navy);
 }
-.peds2-chip--navy  { background: var(--navy-light); color: var(--navy); }
-.peds2-chip--peach { background: var(--peach-light); color: var(--peach-dark); }
-.peds2-chip--sage  { background: var(--sage-light); color: var(--sage-dark); }
+.peds2-chip--navy,
+.peds2-chip--peach,
+.peds2-chip--sage {
+  background: #ffffff;
+  color: var(--navy);
+}
 
 .peds2-btn-primary {
   display: inline-flex;
@@ -659,21 +664,21 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .peds2-about-badge-card {
   position: absolute;
-  bottom: 20px;
+  bottom: -20px;
   right: 0;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 16px 20px;
   border-radius: var(--radius-lg);
-  background: var(--peach);
+  background: hsl(18, 88%, 38%);
   color: #ffffff;
   box-shadow: var(--shadow-peach);
   max-width: 240px;
 }
-.peds2-about-badge-card i { font-size: 26px; }
-.peds2-about-badge-card strong { display: block; font-size: 14px; }
-.peds2-about-badge-card span { font-size: 12px; opacity: 0.9; }
+.peds2-about-badge-card i { font-size: 26px; color: #ffffff; }
+.peds2-about-badge-card strong { display: block; font-size: 14px; color: #ffffff; }
+.peds2-about-badge-card span { font-size: 12px; color: #ffffff; }
 
 .peds2-about-content { min-width: 0; }
 .peds2-about-lead { font-size: 18px; font-weight: 700; color: var(--sage-dark); margin: 0 0 14px; }
@@ -691,12 +696,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   gap: 8px;
   padding: 9px 16px;
   border-radius: var(--radius-pill);
-  background: var(--sage-light);
-  color: var(--sage-dark);
+  background: hsl(152, 40%, 82%);
+  color: hsl(152, 55%, 16%);
   font-size: 13px;
   font-weight: 700;
 }
-.peds2-tag i { color: var(--sage); }
+.peds2-tag i { color: hsl(152, 55%, 16%); }
 
 /* ============================================================
    SERVICES
@@ -726,15 +731,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   transform: translateY(-8px);
   box-shadow: var(--shadow-hover);
   border-color: var(--peach);
-}
-
-.peds2-service-index {
-  position: absolute;
-  top: 22px;
-  right: 26px;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--border);
 }
 
 .peds2-service-icon {
@@ -1247,11 +1243,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .peds2-footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .peds2-footer-brand .peds2-brand-name { color: #ffffff; }
-.peds2-footer-brand .peds2-brand-role { color: var(--peach); }
+.peds2-footer-brand .peds2-brand-role { color: #ffffff; }
 .peds2-footer-brand .peds2-avatar { border-color: var(--peach); }
 .peds2-footer-tagline { font-size: 18px; color: hsl(218, 25%, 82%); margin: 0 0 20px; max-width: 320px; }
 
-.peds2-footer-social { display: flex; gap: 10px; }
+.peds2-footer-social { display: flex; flex-wrap: wrap; gap: 10px; }
 .peds2-footer-social a {
   width: 38px; height: 38px;
   display: flex; align-items: center; justify-content: center;

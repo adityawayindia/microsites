@@ -1,3 +1,31 @@
+// Always start fresh on load/refresh: reset scroll position and strip any
+// URL hash left over from in-page nav so a reload never resumes mid-page.
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+if (window.location.hash) {
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+
+window.scrollTo(0, 0);
+
+// Intercept in-page anchor links so clicking them scrolls smoothly without
+// writing a hash into the URL (which would otherwise persist across refresh).
+document.addEventListener("click", (event) => {
+  const link = event.target.closest('a[href^="#"]');
+  if (!link) return;
+
+  const hash = link.getAttribute("href");
+  if (!hash || hash === "#") return;
+
+  const targetEl = document.querySelector(hash);
+  if (!targetEl) return;
+
+  event.preventDefault();
+  targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 const API_BASE = "https://digidrapi.digidr.app";
 //const API_BASE = "https://localhost:7088";
 async function compressImage(file) {

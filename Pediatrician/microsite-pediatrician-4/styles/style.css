@@ -1217,7 +1217,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .peds4-footer-brand .peds4-avatar { border-color: var(--amber); }
 .peds4-footer-tagline { font-size: 16px; color: hsl(204, 30%, 85%); margin: 0 0 20px; max-width: 320px; }
 
-.peds4-footer-social { display: flex; gap: 10px; }
+.peds4-footer-social { display: flex; flex-wrap: wrap; gap: 10px; }
 .peds4-footer-social a {
   width: 38px; height: 38px;
   display: flex; align-items: center; justify-content: center;

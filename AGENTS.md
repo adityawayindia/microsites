@@ -93,6 +93,22 @@ min-height: fit-content;
 max-width: 100%;
 ```
 
+### Rule 4 — Social Icon Rows Must Wrap
+
+Any row of social media icons (header, hero, or footer) is a flex container and must include `flex-wrap: wrap`. Without it, the icon row silently overflows its pill/card container on narrow viewports instead of dropping extra icons to a second line.
+
+```css
+.footer-social,
+.social-links,
+.hero-social {
+  display: flex;
+  flex-wrap: wrap; /* required — prevents overflow at narrow widths */
+  gap: 10px;
+}
+```
+
+This applies to every such container regardless of its class name (e.g. `.footer-social`, `.peds2-footer-social`, `.peds4-footer-social`, `.alt-footer-social`) — check for `display: flex` on any social-icon wrapper and confirm `flex-wrap: wrap` is present.
+
 ---
 
 ## 3. Standard CSS Block to Include in Every `styles/style.css`
