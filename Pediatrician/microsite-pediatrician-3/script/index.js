@@ -994,14 +994,23 @@ if (menuToggle && mainNav) {
 
   function renderVisitorCounter() {
     var footer = document.querySelector("footer");
-    if (!footer || footer.querySelector(".footer-visitor-badge")) return;
+    if (!footer) return;
+
+    var count = getVisitorCount();
+    var existingBadge = footer.querySelector(".footer-visitor-badge");
+    if (existingBadge) {
+      existingBadge.setAttribute("aria-label", "No. of Visitor: " + count.toLocaleString("en-US"));
+      var existingCountEl = existingBadge.querySelector(".footer-visitor-badge-count");
+      if (existingCountEl) {
+        existingCountEl.textContent = count.toLocaleString("en-US");
+      }
+      return;
+    }
 
     var social = findSocialContainer(footer);
     if (!social || !social.parentNode) return;
 
     injectStyles();
-
-    var count = getVisitorCount();
 
     var badge = document.createElement("div");
     badge.className = "footer-visitor-badge";

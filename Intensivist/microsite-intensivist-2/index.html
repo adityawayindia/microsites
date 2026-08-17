@@ -409,6 +409,44 @@
 
   <!-- ===== CONSULTATION JOURNEY ===== -->
   <section class="iv-journey" id="process">
+    <!-- SVG Background Pattern for ICU Hexagonal Medical Matrix -->
+    <div class="iv-journey-bg-pattern" aria-hidden="true">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Hexagonal Matrix Pattern -->
+          <pattern id="ivHexGrid" width="60" height="104" patternUnits="userSpaceOnUse">
+            <!-- Hex Outlines -->
+            <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" 
+                  fill="none" stroke="var(--iv)" stroke-width="1" opacity="0.09" />
+            <path d="M 30 52 L 60 69.32 L 60 103.96 L 30 121.28 L 0 103.96 L 0 69.32 Z" 
+                  fill="none" stroke="var(--saline)" stroke-width="1" opacity="0.07" />
+            <path d="M -30 52 L 0 69.32 L 0 103.96 L -30 121.28 L -60 103.96 L -60 69.32 Z" 
+                  fill="none" stroke="var(--iv-deep)" stroke-width="1" opacity="0.06" />
+
+            <!-- Glowing Highlight Dots at Vertices/Centers -->
+            <circle cx="30" cy="34.64" r="2.5" fill="var(--saline)" opacity="0.3" class="iv-hex-dot iv-hex-dot--pulse" />
+            <circle cx="0" cy="17.32" r="1.8" fill="var(--iv-bright)" opacity="0.22" />
+            <circle cx="60" cy="17.32" r="1.8" fill="var(--vital)" opacity="0.2" />
+            <circle cx="30" cy="86.64" r="2.2" fill="var(--iv)" opacity="0.25" class="iv-hex-dot iv-hex-dot--pulse2" />
+            <circle cx="0" cy="69.32" r="1.5" fill="var(--saline-bright)" opacity="0.2" />
+            <circle cx="60" cy="69.32" r="1.5" fill="var(--iv-deep)" opacity="0.2" />
+          </pattern>
+          
+          <radialGradient id="ivHexGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--iv)" stop-opacity="0.12" />
+            <stop offset="60%" stop-color="var(--saline)" stop-opacity="0.05" />
+            <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- Ambient Glow Base -->
+        <rect width="100%" height="100%" fill="url(#ivHexGlow)" />
+        
+        <!-- Hex Grid Fill -->
+        <rect width="100%" height="100%" fill="url(#ivHexGrid)" />
+      </svg>
+    </div>
+
     <div class="container">
       <div class="iv-section-head">
         <span class="iv-chip"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</span>
@@ -537,6 +575,44 @@
 
   <!-- ===== TESTIMONIALS ===== -->
   <section class="iv-testimonials" id="testimonials">
+    <!-- SVG Background Pattern for ICU Hexagonal Medical Matrix -->
+    <div class="iv-testimonials-bg-pattern" aria-hidden="true">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Hexagonal Matrix Pattern -->
+          <pattern id="ivTestiHexGrid" width="60" height="104" patternUnits="userSpaceOnUse">
+            <!-- Hex Outlines -->
+            <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" 
+                  fill="none" stroke="var(--iv)" stroke-width="1" opacity="0.09" />
+            <path d="M 30 52 L 60 69.32 L 60 103.96 L 30 121.28 L 0 103.96 L 0 69.32 Z" 
+                  fill="none" stroke="var(--saline)" stroke-width="1" opacity="0.07" />
+            <path d="M -30 52 L 0 69.32 L 0 103.96 L -30 121.28 L -60 103.96 L -60 69.32 Z" 
+                  fill="none" stroke="var(--iv-deep)" stroke-width="1" opacity="0.06" />
+
+            <!-- Glowing Highlight Dots at Vertices/Centers -->
+            <circle cx="30" cy="34.64" r="2.5" fill="var(--saline)" opacity="0.3" class="iv-hex-dot iv-hex-dot--pulse" />
+            <circle cx="0" cy="17.32" r="1.8" fill="var(--iv-bright)" opacity="0.22" />
+            <circle cx="60" cy="17.32" r="1.8" fill="var(--vital)" opacity="0.2" />
+            <circle cx="30" cy="86.64" r="2.2" fill="var(--iv)" opacity="0.25" class="iv-hex-dot iv-hex-dot--pulse2" />
+            <circle cx="0" cy="69.32" r="1.5" fill="var(--saline-bright)" opacity="0.2" />
+            <circle cx="60" cy="69.32" r="1.5" fill="var(--iv-deep)" opacity="0.2" />
+          </pattern>
+          
+          <radialGradient id="ivTestiHexGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--saline)" stop-opacity="0.1" />
+            <stop offset="60%" stop-color="var(--iv)" stop-opacity="0.05" />
+            <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- Ambient Glow Base -->
+        <rect width="100%" height="100%" fill="url(#ivTestiHexGlow)" />
+        
+        <!-- Hex Grid Fill -->
+        <rect width="100%" height="100%" fill="url(#ivTestiHexGrid)" />
+      </svg>
+    </div>
+
     <div class="container">
       <div class="iv-section-head iv-testi-head">
         <span class="iv-chip iv-chip--vital"><i class="fa-solid fa-comment-medical" aria-hidden="true"></i> Patient
@@ -807,38 +883,61 @@
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact-us">Contact</a>
-        <a href="#testimonials">Testimonials</a>
-      </nav>
-
-      <div class="footer-social-wrap">
-        <span class="footer-social-label">Follow me on:</span>
-        <div class="footer-social" aria-label="Footer social links">
-          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook"><i
-              class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i
-              class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i
-              class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i
-              class="fa-brands fa-youtube"></i></a>
-          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i
-              class="fa-brands fa-linkedin-in"></i></a>
+      <div class="footer-brand-col">
+        <a href="#" class="footer-brand">
+          <span class="footer-avatar">
+            <img src="assets/dr-sarah-jenkins.png" alt="Dr. Sarah Jenkins" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Dr. Sarah Jenkins</span>
+            <span class="brand-role">Intensivist</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Advanced Critical Care &amp; ICU Management for Critical Moments.</p>
+        <div class="footer-social-wrap">
+          <span class="footer-social-label">Follow me on:</span>
+          <div class="footer-social" aria-label="Footer social links">
+            <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
         </div>
       </div>
 
-      <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms-of-service.html">Terms of Service</a>
-      </div>
+      <div class="footer-right-col">
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <nav class="footer-nav-horizontal" aria-label="Quick Links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact-us">Contact</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#gallery">Gallery</a>
+            <a href="blog.html">Blog</a>
+          </nav>
+        </div>
 
-      <p class="footer-copy"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Dr. Sarah Jenkins. All rights
-        reserved</p>
+        <div class="footer-links-group">
+          <h4>Legal</h4>
+          <nav class="footer-nav-horizontal" aria-label="Legal Links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </nav>
+        </div>
+
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
+          <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+          <span class="footer-visitor-badge-label">No. of Visitor:</span>
+          <span class="footer-visitor-badge-count">500</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> &copy; 2026 Dr. Sarah Jenkins. All rights reserved.</p>
     </div>
   </footer>
 

@@ -1223,29 +1223,30 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    FOOTER
    ============================================================ */
-.peds4-footer { background: var(--sky-dark); color: hsl(204, 30%, 88%); padding: 32px 0 0; }
+.peds4-footer { background: var(--sky-dark); color: hsl(204, 30%, 88%); padding: 36px 0 0; }
 
 .peds4-footer-inner {
-  max-width: 1240px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 24px 24px;
+  padding: 0 24px 28px;
   display: grid;
-  grid-template-columns: 1.4fr repeat(2, 1fr);
-  gap: 32px;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 36px;
+  align-items: start;
 }
 
-.peds4-footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.peds4-footer-brand-col { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 14px; }
+.peds4-footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 0; }
 .peds4-footer-brand .peds4-brand-name { color: #ffffff; }
 .peds4-footer-brand .peds4-brand-role { color: var(--amber); }
 .peds4-footer-brand .peds4-avatar { border-color: var(--amber); }
-.peds4-footer-tagline { font-size: 18px; color: hsl(204, 30%, 85%); margin: 0 0 20px; max-width: 320px; }
+.peds4-footer-tagline { font-size: 18px; color: hsl(204, 30%, 85%); margin: 0; max-width: 340px; text-align: left; line-height: 1.4; }
 
-.peds4-footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
+.peds4-footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
 .peds4-footer-social-label { font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
-/* Capped to exactly 6 icons per row (6 * 38px icon + 5 * 10px gap = 278px) so a 7th+ icon added later wraps to a new row instead of growing the row indefinitely, even when the container has room. */
-.peds4-footer-social { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px; max-width: 278px; min-width: 0; }
+.peds4-footer-social { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; max-width: 278px; min-width: 0; }
 .peds4-footer-social a {
-  width: 38px; height: 38px;
+  width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
   border-radius: var(--radius-sm);
   background: hsla(0,0%,100%,0.10);
@@ -1254,21 +1255,106 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .peds4-footer-social a:hover { background: var(--amber); transform: translateY(-3px); }
 
-.peds4-footer-col { min-width: 0; }
-.peds4-footer-col h4 { font-size: 16px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; color: #ffffff; margin: 0 0 14px; }
-.peds4-footer-col nav { display: flex; flex-direction: column; gap: 10px; }
-.peds4-footer-col a, .peds4-footer-col p { font-size: 18px; color: hsl(204, 30%, 85%); margin: 0; }
-.peds4-footer-col a { transition: color 0.2s ease; }
-.peds4-footer-col a:hover { color: var(--amber); }
-.peds4-footer-contact-col p { display: flex; align-items: flex-start; gap: 10px; }
-.peds4-footer-contact-col p i { color: var(--amber); margin-top: 3px; flex-shrink: 0; }
-.peds4-footer-contact-col p a { color: hsl(204, 30%, 85%); margin: 0; }
-.peds4-footer-contact-col p a:hover { color: var(--amber); }
+/* Right Column: Links & Visitor Counter */
+.peds4-footer-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 16px;
+  width: 100%;
+}
+
+.peds4-footer-links-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.peds4-footer-links-group h4 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+}
+
+.peds4-footer-nav-horizontal {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.peds4-footer-nav-horizontal a {
+  text-decoration: none;
+  font-size: 18px;
+  color: hsl(204, 30%, 85%);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.peds4-footer-nav-horizontal a:hover {
+  color: var(--amber);
+}
+
+/* Visitor Badge High-Contrast Visibility Styles */
+.footer-visitor-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-size: 16px;
+  line-height: 1.4;
+  max-width: 100%;
+  color: #ffffff !important;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.footer-visitor-badge:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.44);
+  transform: translateY(-1px);
+}
+
+.footer-visitor-badge i,
+.footer-visitor-badge .footer-visitor-badge-icon {
+  font-size: 16px;
+  color: #ffffff !important;
+}
+
+.footer-visitor-badge span,
+.footer-visitor-badge .footer-visitor-badge-label {
+  white-space: nowrap;
+  color: #f1f5f9 !important;
+  font-weight: 500;
+}
+
+.footer-visitor-badge .footer-visitor-badge-count {
+  font-weight: 700;
+  color: #ffffff !important;
+  font-variant-numeric: tabular-nums;
+}
 
 .peds4-footer-bottom {
   border-top: 1px solid hsla(0,0%,100%,0.14);
   text-align: center;
-  padding: 16px 24px;
+  padding: 14px 24px;
 }
 .peds4-footer-bottom p {
   font-size: 18px;

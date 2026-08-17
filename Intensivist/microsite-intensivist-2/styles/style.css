@@ -1351,11 +1351,44 @@ h1, h2, h3, h4 {
 .iv-phil-badge span { display: block; font-size: 16px; color: var(--muted); }
 
 /* ==========================================================================
-   JOURNEY — vertical infusion line timeline
+   JOURNEY — vertical infusion line timeline with SVG telemetry pattern
    ========================================================================== */
 .iv-journey {
+  position: relative;
   padding: 66px 0 76px;
-  background: var(--surface-2);
+  background-color: var(--surface-2);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, hsl(268 70% 58% / 0.07), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, hsl(190 88% 45% / 0.06), transparent 70%);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.iv-journey-bg-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.iv-hex-dot--pulse {
+  animation: iv-hex-pulse 3s ease-in-out infinite alternate;
+}
+
+.iv-hex-dot--pulse2 {
+  animation: iv-hex-pulse 4s ease-in-out infinite alternate-reverse;
+  animation-delay: 1.5s;
+}
+
+@keyframes iv-hex-pulse {
+  0% { opacity: 0.15; transform: scale(0.9); }
+  100% { opacity: 0.55; transform: scale(1.3); }
+}
+
+.iv-journey .container {
+  position: relative;
+  z-index: 1;
 }
 
 .iv-timeline {
@@ -1559,8 +1592,27 @@ h1, h2, h3, h4 {
    TESTIMONIALS
    ========================================================================== */
 .iv-testimonials {
+  position: relative;
   padding: 66px 0;
-  background: var(--surface-2);
+  background-color: var(--surface-2);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, hsl(190 88% 45% / 0.07), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, hsl(268 70% 58% / 0.06), transparent 70%);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.iv-testimonials-bg-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.iv-testimonials .container {
+  position: relative;
+  z-index: 1;
 }
 
 .testimonials-carousel-wrap {
@@ -1911,7 +1963,7 @@ h1, h2, h3, h4 {
 .site-footer {
   position: relative;
   background: linear-gradient(180deg, var(--ink-2), var(--ink));
-  padding: 30px 0 24px;
+  padding: 36px 0 0;
   overflow: hidden;
 }
 
@@ -1930,24 +1982,30 @@ h1, h2, h3, h4 {
 
 .footer-inner {
   position: relative;
-  width: 90%;
-  max-width: var(--container);
+  width: min(1000px, 92%);
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  padding: 0 24px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 36px;
+  align-items: start;
 }
 
-.footer-nav { display: flex; gap: 26px; flex-wrap: wrap; justify-content: center; }
-.footer-nav a { text-decoration: none; font-size: 16px; color: hsl(258 20% 82%); font-weight: 500; transition: color 0.2s; }
-.footer-nav a:hover { color: hsl(186 92% 72%); }
+/* Left Column: Brand & Social */
+.footer-brand-col { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 14px; }
+.footer-brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.footer-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 2px solid var(--iv); flex-shrink: 0; }
+.footer-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.footer-brand-col .brand-text { display: flex; flex-direction: column; }
+.footer-brand-col .brand-name { font-size: 18px; font-weight: 700; color: #ffffff !important; }
+.footer-brand-col .brand-role { font-size: 16px; color: hsl(186 92% 72%); font-weight: 500; }
+.footer-tagline { font-size: 18px; color: hsl(258 20% 82%); margin: 0; max-width: 340px; text-align: left; line-height: 1.4; }
 
-.footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
+.footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
 .footer-social-label { font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
-/* Capped to exactly 6 icons per row (6 * 38px icon + 5 * 12px gap = 288px) so a 7th+ icon added later wraps to a new row instead of growing the row indefinitely, even when the container has room. */
-.footer-social { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: flex-start; max-width: 288px; min-width: 0; }
-.footer-social-icon { width: 38px; height: 38px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; color: #fff; text-decoration: none; transition: transform 0.2s var(--ease); }
+.footer-social { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: flex-start; max-width: 288px; min-width: 0; }
+
+.footer-social-icon { width: 36px; height: 36px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; color: #fff; text-decoration: none; transition: transform 0.2s var(--ease); }
 .footer-social-icon:hover { transform: translateY(-3px); }
 .footer-social-facebook { background: #1877f2; }
 .footer-social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
@@ -1956,12 +2014,118 @@ h1, h2, h3, h4 {
 .footer-social-youtube { background: #ff0000; }
 .footer-social-linkedin { background: #0077b5; }
 
-.footer-links { display: flex; gap: 12px; align-items: center; }
-.footer-links a { font-size: 16px; color: hsl(258 16% 70%); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: hsl(186 92% 72%); }
-.footer-divider { color: hsl(258 16% 46%); }
+/* Right Column: Links & Visitor Counter */
+.footer-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 16px;
+  width: 100%;
+}
 
-.footer-copy { font-size: 16px; color: hsl(258 14% 66%); margin: 0; display: flex; align-items: center; gap: 8px; }
+.footer-links-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.footer-links-group h4 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+}
+
+.footer-nav-horizontal {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.footer-nav-horizontal a {
+  text-decoration: none;
+  font-size: 18px;
+  color: hsl(258 20% 82%);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.footer-nav-horizontal a:hover {
+  color: hsl(186 92% 72%);
+}
+
+/* Visitor Badge Styles */
+.footer-visitor-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-size: 16px;
+  line-height: 1.4;
+  max-width: 100%;
+  color: #ffffff !important;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.footer-visitor-badge:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.44);
+  transform: translateY(-1px);
+}
+
+.footer-visitor-badge i,
+.footer-visitor-badge .footer-visitor-badge-icon {
+  font-size: 16px;
+  color: #ffffff !important;
+}
+
+.footer-visitor-badge span,
+.footer-visitor-badge .footer-visitor-badge-label {
+  white-space: nowrap;
+  color: #f1f5f9 !important;
+  font-weight: 500;
+}
+
+.footer-visitor-badge .footer-visitor-badge-count {
+  font-weight: 700;
+  color: #ffffff !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.footer-bottom {
+  border-top: 1px solid hsla(0,0%,100%,0.12);
+  text-align: center;
+  padding: 14px 24px;
+}
+
+.footer-copy {
+  font-size: 18px;
+  color: hsl(258 14% 66%);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 .footer-copy i { color: var(--vital); }
 
 /* ==========================================================================
