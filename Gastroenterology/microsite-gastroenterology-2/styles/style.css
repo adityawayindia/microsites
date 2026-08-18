@@ -1618,15 +1618,15 @@ overflow: hidden;
 }
 
 .footer-social {
-  /* Capped to exactly 6 icons per row (6 * 40px icon + 5 * 14px gap =
-     310px) so a 7th+ icon added later wraps to a new row instead of
+  /* Capped to exactly 8 icons per row (8 * 40px icon + 7 * 14px gap =
+     418px) so a 9th+ icon added later wraps to a new row instead of
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 14px;
-  max-width: 310px;
+  max-width: 418px;
   min-width: 0;
 }
 

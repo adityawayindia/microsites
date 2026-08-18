@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Sarah Smith | Child Wellness & Pediatric Care Specialist</title>
   <meta name="description" content="Compassionate pediatric care by Dr. Sarah Smith focused on your child's health, growth, development, nutrition, and overall well-being." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/pediatrician-2/" /><!-- TODO: replace with live production domain before launch -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr. Sarah Smith Pediatric Care" />
+  <meta property="og:title" content="Dr. Sarah Smith | Child Wellness & Pediatric Care Specialist" />
+  <meta property="og:description" content="Compassionate pediatric care by Dr. Sarah Smith focused on your child's health, growth, development, nutrition, and overall well-being." />
+  <meta property="og:url" content="https://www.example.com/pediatrician-2/" />
+  <meta property="og:image" content="https://www.example.com/pediatrician-2/assets/dr-sarah-smith.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Sarah Smith | Child Wellness & Pediatric Care Specialist" />
+  <meta name="twitter:description" content="Compassionate pediatric care by Dr. Sarah Smith focused on your child's health, growth, development, nutrition, and overall well-being." />
+  <meta name="twitter:image" content="https://www.example.com/pediatrician-2/assets/dr-sarah-smith.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -21,6 +39,28 @@
   <link rel="stylesheet" href="./styles/banner-module.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Sarah Smith",
+    "medicalSpecialty": "Pediatric",
+    "image": "https://www.example.com/pediatrician-2/assets/dr-sarah-smith.png",
+    "url": "https://www.example.com/pediatrician-2/",
+    "telephone": "+91-9068935571",
+    "email": "dr.smith@minneasotahospitals.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1800 Orchids Lane, Walt Disney World, Bay Lake",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32805",
+      "addressCountry": "US"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -32,7 +72,7 @@
           <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith" />
         </span>
         <span class="alt-brand-text">
-          <span class="alt-brand-name">Dr. Sarah Smith</span>
+          <span class="alt-brand-name" title="Dr. Sarah Smith">Dr. Sarah Smith</span>
           <span class="alt-brand-role">Pediatrician</span>
         </span>
       </a>
@@ -142,10 +182,14 @@
     <div class="alt-hero-social-strip">
       <span class="alt-social-label">Follow for child health tips:</span>
       <div class="alt-social-pills">
-        <a href="#" class="alt-social-pill sp-fb" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-        <a href="#" class="alt-social-pill sp-ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
-        <a href="#" class="alt-social-pill sp-yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i> YouTube</a>
-        <a href="#" class="alt-social-pill sp-wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="#" class="alt-social-pill sp-fb" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="alt-social-pill sp-fb-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="alt-social-pill sp-ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="alt-social-pill sp-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="alt-social-pill sp-li" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="alt-social-pill sp-web" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+        <a href="#" class="alt-social-pill sp-yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="alt-social-pill sp-wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
     </div>
   </section>
@@ -165,6 +209,7 @@
         </span>
         <h2 class="alt-section-title">Dedicated to Your Child's Health &amp; Well-Being</h2>
         <p class="alt-about-qualification"><i class="fa-solid fa-graduation-cap"></i> MBBS, MD (Pediatrics) &middot; Fellowship in Neonatal &amp; Child Health</p>
+        <p class="alt-about-reg"><i class="fa-solid fa-id-card"></i> MCI Regd. No. 48213</p>
         <br>
         <p class="alt-about-lead">
           Providing thoughtful, evidence-based pediatric care with a child-friendly and family-first approach.
@@ -232,7 +277,7 @@
       </div>
 
       <div class="alt-bento-grid">
-        <article class="alt-bento-card bento-span-2 bento-c1">
+        <article class="alt-bento-card bento-c1">
           <div class="bento-header">
             <div class="bento-icon-band"><i class="fa-solid fa-baby"></i></div>
             <h3>Newborn &amp; Infant Care</h3>
@@ -264,7 +309,7 @@
           <p>Consultations for common childhood concerns, preventive health, growth, development, and overall well-being.</p>
         </article>
 
-        <article class="alt-bento-card bento-span-2 bento-c5">
+        <article class="alt-bento-card bento-c5">
           <div class="bento-header">
             <div class="bento-icon-band"><i class="fa-solid fa-apple-whole"></i></div>
             <h3>Growth &amp; Development Monitoring</h3>
@@ -678,10 +723,12 @@
         <div class="alt-footer-social-wrap">
           <span class="alt-footer-social-label">Follow me on:</span>
           <div class="alt-footer-social">
-            <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
             <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
             <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
@@ -697,7 +744,6 @@
             <a href="#contact-us">Contact</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#gallery">Gallery</a>
-            <a href="blog.html">Blog</a>
           </nav>
         </div>
 
@@ -725,5 +771,6 @@
   <script src="./script/banner-module.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="./script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
 </body>
 </html>

@@ -402,3 +402,120 @@ paired with a matching validator: `if (!/^[A-Za-z\s.'-]+$/.test(value)) return "
   requestAnimationFrame (or `setInterval`) counter in `script/index.js` — trigger once
   per element, respect `prefers-reduced-motion` by skipping straight to the final value,
   and preserve any suffix (`+`, `%`, `k`) that was in the original static number.
+
+---
+
+## 12. Card & Grid Centering Rules (Services & Features)
+
+To ensure clean visual balance across desktop and mobile grid layouts:
+
+### 1. Grid Balancing & Centering Trailing/Single Cards
+
+The services grid is **3 cards per row** (a 3x2 block for the usual six services),
+dropping to 2 per row at `1200px` and 1 per row at `640px`. An incomplete final row
+must be **centered on the row**, never left-aligned against an empty slot.
+
+**Declare 12 tracks, not 3.** A card spans 4 tracks, which is exactly the same width
+as `repeat(3, 1fr)` at the same gap — `4 tracks + 3 gaps == (W - 2*gap) / 3` — but the
+extra grid lines are what make centering possible. With only 3 tracks there is no line
+at the half-card offset, so a leftover row physically cannot be centered; that is why
+the old `grid-column: 1 / -1` + `max-width` hack existed, and it is no longer used.
+
+```css
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.service-card {
+  grid-column: span 4;
+  min-width: 0;
+}
+
+/* Final row holds ONE leftover card (total ≡ 1 mod 3): widen it to two
+   card-widths (span 8 = 2x4 tracks + the gap between) and centre it. */
+.service-card:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+
+/* Final row holds TWO leftover cards (total ≡ 2 mod 3): keep both at normal
+   card width and shift the pair inward so it centres on the row. */
+.service-card:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+
+.service-card:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
+}
+```
+
+Breakpoints re-map the spans. At 2-per-row a lone final card keeps its **normal
+width** and is centered by starting on track 4 — do not make it full-row-wide there,
+a banner-width card breaks the card rhythm:
+
+```css
+@media (max-width: 1200px) {
+  /* 2 per row — reset the desktop leftover rules back to a plain half-row span. */
+  .service-card,
+  .service-card:last-child:nth-child(3n + 1),
+  .service-card:nth-last-child(2):nth-child(3n + 1),
+  .service-card:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+
+  /* 2 per row means a lone last card happens exactly when the total is odd. */
+  .service-card:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  /* 1 per row — every card, leftover or not, spans the full 12 tracks. */
+  .service-card,
+  .service-card:last-child:nth-child(odd),
+  .service-card:last-child:nth-child(3n + 1),
+  .service-card:nth-last-child(2):nth-child(3n + 1),
+  .service-card:last-child:nth-child(3n + 2) {
+    grid-column: 1 / -1;
+  }
+}
+```
+
+**Do not reorder these rules.** Inside each media query the grouped reset and the
+centering rule are both specificity `(0,3,0)` and they overlap — an odd-total last
+card matches `:nth-child(3n + 1)` *and* `:nth-child(odd)`. Correctness depends on the
+centering rule coming **after** the reset in source order. Likewise the `640px` block
+must stay after the `1200px` block, since both apply on a narrow viewport.
+
+Verify changes against totals of **4, 5, 6 and 7** cards, not just the six that ship —
+the leftover rules are dormant at 6 and a regression will not be visible.
+
+### 2. Internal Card Content Centering
+Card content (icons, headings, descriptions) in centered presentation variants must be
+aligned to the center. Because `align-items: stretch` on the grid gives every card in a
+row a shared height, also center the content block **vertically** (`justify-content`)
+so short and long descriptions stay optically aligned:
+
+```css
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.service-card .service-icon {
+  margin: 0 auto;
+}
+
+.service-card-title,
+.service-card-desc {
+  text-align: center;
+}
+```
+

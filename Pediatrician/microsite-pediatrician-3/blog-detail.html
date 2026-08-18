@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pediatric Article Details | Dr. Sarah Smith</title>
   <meta name="description" content="Detailed medical guidance and child development insights from Dr. Sarah Smith." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/pediatrician-3/blog-detail.html" /><!-- TODO: replace with live production domain before launch -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr. Sarah Smith Pediatric Care" />
+  <meta property="og:title" content="Pediatric Article Details | Dr. Sarah Smith" />
+  <meta property="og:description" content="Detailed medical guidance and child development insights from Dr. Sarah Smith." />
+  <meta property="og:url" content="https://www.example.com/pediatrician-3/blog-detail.html" />
+  <meta property="og:image" content="https://www.example.com/pediatrician-3/assets/dr-sarah-smith.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pediatric Article Details | Dr. Sarah Smith" />
+  <meta name="twitter:description" content="Detailed medical guidance and child development insights from Dr. Sarah Smith." />
+  <meta name="twitter:image" content="https://www.example.com/pediatrician-3/assets/dr-sarah-smith.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -20,6 +37,7 @@
   />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
 </head>
 <body>
   <header class="peds2-header">
@@ -29,7 +47,7 @@
           <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith" />
         </span>
         <span class="peds2-brand-text">
-          <span class="peds2-brand-name">Dr. Sarah Smith</span>
+          <span class="peds2-brand-name" title="Dr. Sarah Smith">Dr. Sarah Smith</span>
           <span class="peds2-brand-role">Pediatrician</span>
         </span>
       </a>
@@ -305,10 +323,12 @@
         <div class="peds2-footer-social-wrap">
           <span class="peds2-footer-social-label">Follow me on:</span>
           <div class="peds2-footer-social">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
             <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
@@ -351,5 +371,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="./script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
 </body>
 </html>

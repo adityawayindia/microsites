@@ -594,11 +594,13 @@ h1, h2, h3, h4 {
 
 .iv-social-pill:hover { transform: translateY(-3px); color: #fff; }
 .iv-social-pill.sp-fb:hover { background: #1877f2; }
+.iv-social-pill.sp-fb2:hover { background: #0d5cd7; }
 .iv-social-pill.sp-ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
 .iv-social-pill.sp-x:hover { background: #111; }
 .iv-social-pill.sp-wa:hover { background: #25d366; }
 .iv-social-pill.sp-yt:hover { background: #ff0000; }
 .iv-social-pill.sp-li:hover { background: #0077b5; }
+.iv-social-pill.sp-web:hover { background: #64748b; }
 
 /* Hero rig — IV pole + live monitor ---------------------------------------*/
 .iv-hero-rig {
@@ -1119,10 +1121,35 @@ h1, h2, h3, h4 {
   background: var(--surface-2);
 }
 
+/* Services grid — 3 cards per row (see AGENTS.md §12.1). 12 tracks rather than
+   3 so an incomplete final row can be centred on exact grid lines: a card
+   spans 4 tracks, identical in width to `repeat(3, 1fr)` at the same gap. */
 .iv-svc-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 20px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.iv-svc-card {
+  grid-column: span 4;
+}
+
+/* Final row holds ONE leftover card (total ≡ 1 mod 3): widen it to two
+   card-widths (span 8 = 2x4 tracks + the gap between) and centre it. */
+.iv-svc-card:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+
+/* Final row holds TWO leftover cards (total ≡ 2 mod 3): keep both at normal
+   card width and shift the pair inward so it centres on the row. */
+.iv-svc-card:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+
+.iv-svc-card:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
 }
 
 .iv-svc-card {
@@ -2003,11 +2030,13 @@ h1, h2, h3, h4 {
 
 .footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
 .footer-social-label { font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
-.footer-social { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: flex-start; max-width: 288px; min-width: 0; }
+.footer-social { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: flex-start; max-width: 344px; min-width: 0; }
 
 .footer-social-icon { width: 36px; height: 36px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; color: #fff; text-decoration: none; transition: transform 0.2s var(--ease); }
 .footer-social-icon:hover { transform: translateY(-3px); }
 .footer-social-facebook { background: #1877f2; }
+.footer-social-facebook-alt { background: #0d5cd7; }
+.footer-social-website { background: #64748b; }
 .footer-social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
 .footer-social-x { background: #111; }
 .footer-social-whatsapp { background: #25d366; }
@@ -2198,7 +2227,18 @@ h1, h2, h3, h4 {
 @media (max-width: 1080px) {
   .iv-hero-grid { grid-template-columns: 1fr; gap: 42px; }
   .iv-hero-rig { max-width: 520px; }
-  .iv-svc-grid { grid-template-columns: repeat(2, 1fr); }
+  /* 2 per row — each card takes 6 of the 12 tracks. A lone final card keeps
+     its normal width and is centred by starting on track 4. */
+  .iv-svc-card,
+  .iv-svc-card:last-child:nth-child(3n + 1),
+  .iv-svc-card:nth-last-child(2):nth-child(3n + 1),
+  .iv-svc-card:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+
+  .iv-svc-card:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
 }
 
 @media (max-width: 900px) {
@@ -2270,7 +2310,14 @@ h1, h2, h3, h4 {
 
   .iv-cred-grid,
   .iv-about-grid--full .iv-cred-grid { grid-template-columns: 1fr; }
-  .iv-svc-grid { grid-template-columns: 1fr; }
+  /* 1 per row — every card, leftover or not, spans the full 12 tracks. */
+  .iv-svc-card,
+  .iv-svc-card:last-child:nth-child(odd),
+  .iv-svc-card:last-child:nth-child(3n + 1),
+  .iv-svc-card:nth-last-child(2):nth-child(3n + 1),
+  .iv-svc-card:last-child:nth-child(3n + 2) {
+    grid-column: 1 / -1;
+  }
 
   .iv-svc-body h3, .iv-pillar-text h3, .iv-step-card h3,
   .iv-contact-card h3, .blog-card-title { font-size: 20px; }

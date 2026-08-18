@@ -383,6 +383,14 @@ margin-bottom: 0;
   background: #1877f2;
 }
 
+.social-facebook-alt {
+  background: #0d5cd7;
+}
+
+.social-website {
+  background: #64748b;
+}
+
 .social-instagram {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
@@ -1858,15 +1866,15 @@ margin-bottom: 0;
 }
 
 .footer-social {
-  /* Capped to exactly 6 icons per row (6 * 42px icon + 5 * 18px gap =
-     342px) so a 7th+ icon added later wraps to a new row instead of
+  /* Capped to exactly 8 icons per row (8 * 42px icon + 7 * 18px gap =
+     462px) so a 9th+ icon added later wraps to a new row instead of
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 18px;
-  max-width: 342px;
+  max-width: 462px;
   min-width: 0;
 }
 
@@ -1892,6 +1900,14 @@ margin-bottom: 0;
 
 .footer-social-facebook {
   background: #1877f2;
+}
+
+.footer-social-facebook-alt {
+  background: #0d5cd7;
+}
+
+.footer-social-website {
+  background: #64748b;
 }
 
 .footer-social-instagram {

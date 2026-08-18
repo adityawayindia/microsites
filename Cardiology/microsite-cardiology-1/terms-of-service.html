@@ -141,24 +141,30 @@
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
+          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page">
               <i class="fa-brands fa-facebook-f"></i>
           </a>{{/hasFacebook}}
+          {{#hasFacebookAlt}}<a href="{{facebookAlt}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile">
+              <i class="fa-brands fa-facebook"></i>
+          </a>{{/hasFacebookAlt}}
           {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
               <i class="fa-brands fa-instagram"></i>
           </a>{{/hasInstagram}}
           {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X">
               <i class="fa-brands fa-x-twitter"></i>
           </a>{{/hasTwitter}}
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="Linkedin">
+              <i class="fa-brands fa-linkedin-in"></i>
+          </a>{{/hasLinkedin}}
+          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website">
+              <i class="fa-solid fa-globe"></i>
+          </a>{{/hasWebsite}}
           {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp">
               <i class="fa-brands fa-whatsapp"></i>
           </a>{{/hasWhatsapp}}
           {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube">
               <i class="fa-brands fa-youtube"></i>
           </a>{{/hasYoutube}}
-          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="Linkedin">
-              <i class="fa-brands fa-linkedin-in"></i>
-          </a>{{/hasLinkedin}}
         </div>
       </div>
 

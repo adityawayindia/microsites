@@ -82,6 +82,12 @@ Practice Gallery → Booking Modal → Footer.
   when scrolled into view (IntersectionObserver + rAF/`setInterval` in
   `script/index.js`), triggers once, respects `prefers-reduced-motion` (jump straight to
   final value), and preserves suffixes (`+`, `%`, `k`).
+- **Services grid is 3-per-row on 12 tracks** (`repeat(12, minmax(0, 1fr))`, cards
+  `span 4`) — 2 per row at 1200px, 1 per row at 640px. An incomplete final row must be
+  centered, which is *only* possible with the 12-track system; never go back to
+  `repeat(3, 1fr)` + `grid-column: 1 / -1`. Copy the block from **AGENTS.md §12.1**
+  verbatim, keep its rule order, and test with 4/5/6/7 cards — the leftover rules are
+  dormant at 6 cards, so regressions are invisible there.
 
 ## Other standards
 

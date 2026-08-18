@@ -713,6 +713,12 @@ a {
 .social-facebook:hover,
 .footer-social-facebook:hover { background: #1877f2; border-color: #1877f2; }
 
+.social-facebook-alt:hover,
+.footer-social-facebook-alt:hover { background: #0d5cd7; border-color: #0d5cd7; }
+
+.social-website:hover,
+.footer-social-website:hover { background: #64748b; border-color: #64748b; }
+
 .social-instagram:hover,
 .footer-social-instagram:hover {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
@@ -865,7 +871,7 @@ a {
    ========================================================================== */
 
 .about-section {
-  padding: 88px 0;
+  padding: 48px 0;
   background: var(--bg);
 }
 
@@ -932,11 +938,36 @@ a {
   color: hsl(198 30% 88%);
 }
 
+/* Services grid — 3 cards per row (see AGENTS.md §12.1). 12 tracks rather than
+   3 so an incomplete final row can be centred on exact grid lines: a card
+   spans 4 tracks, identical in width to `repeat(3, 1fr)` at the same gap. */
 .services-grid-new {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 22px;
+  align-items: stretch;
+  justify-content: center;
   counter-reset: icu-sec;
+}
+
+.service-card-new {
+  grid-column: span 4;
+}
+
+/* Final row holds ONE leftover card (total ≡ 1 mod 3): widen it to two
+   card-widths (span 8 = 2x4 tracks + the gap between) and centre it. */
+.service-card-new:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+
+/* Final row holds TWO leftover cards (total ≡ 2 mod 3): keep both at normal
+   card width and shift the pair inward so it centres on the row. */
+.service-card-new:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+
+.service-card-new:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
 }
 
 .service-card-new {
@@ -2172,7 +2203,7 @@ a {
 
 .footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
 .footer-social-label { font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
-.footer-social { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; max-width: 295px; min-width: 0; }
+.footer-social { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; max-width: 344px; min-width: 0; }
 
 .footer-social-icon {
   display: inline-flex;
@@ -2621,6 +2652,19 @@ a {
     grid-template-columns: 68px 50px minmax(0, 1fr) auto;
     gap: 20px;
   }
+
+  /* 2 per row — each card takes 6 of the 12 tracks. A lone final card keeps
+     its normal width and is centred by starting on track 4. */
+  .service-card-new,
+  .service-card-new:last-child:nth-child(3n + 1),
+  .service-card-new:nth-last-child(2):nth-child(3n + 1),
+  .service-card-new:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+
+  .service-card-new:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
 }
 
 @media (max-width: 1030px) {
@@ -2781,7 +2825,19 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .about-section,
+  /* 1 per row — every card, leftover or not, spans the full 12 tracks. */
+  .service-card-new,
+  .service-card-new:last-child:nth-child(odd),
+  .service-card-new:last-child:nth-child(3n + 1),
+  .service-card-new:nth-last-child(2):nth-child(3n + 1),
+  .service-card-new:last-child:nth-child(3n + 2) {
+    grid-column: 1 / -1;
+  }
+
+  .about-section {
+    padding: 48px 0;
+  }
+
   .services-section,
   .philosophy-section,
   .tech-ledger-section,

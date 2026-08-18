@@ -483,6 +483,14 @@ margin-bottom: 0;
   background: #1877f2;
 }
 
+.social-facebook-alt {
+  background: #0d5cd7;
+}
+
+.social-website {
+  background: #64748b;
+}
+
 .social-linkedin {
     background: #0a66c2;
 }
@@ -2252,15 +2260,15 @@ margin-bottom: 0;
 }
 
 .footer-social {
-  /* Capped to exactly 6 icons per row (6 * 42px icon + 5 * 14px gap =
-     322px) so a 7th+ icon added later wraps to a new row instead of
+  /* Capped to exactly 8 icons per row (8 * 42px icon + 7 * 14px gap =
+     434px) so a 9th+ icon added later wraps to a new row instead of
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   gap: 14px;
-  max-width: 322px;
+  max-width: 434px;
   min-width: 0;
 }
 
@@ -2279,6 +2287,14 @@ margin-bottom: 0;
 
 .footer-social-facebook {
   background: #1877f2;
+}
+
+.footer-social-facebook-alt {
+  background: #0d5cd7;
+}
+
+.footer-social-website {
+  background: #64748b;
 }
 
 .footer-social-instagram {

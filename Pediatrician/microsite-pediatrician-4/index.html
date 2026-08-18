@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Sarah Smith | Pediatrician — Sky & Amber Child Health Clinic</title>
   <meta name="description" content="Board-certified pediatric care from Dr. Sarah Smith — newborn checkups, immunizations, growth monitoring, and evidence-based treatment plans for growing families." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/pediatrician-4/" /><!-- TODO: replace with live production domain before launch -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr. Sarah Smith Pediatric Care" />
+  <meta property="og:title" content="Dr. Sarah Smith | Pediatrician — Sky & Amber Child Health Clinic" />
+  <meta property="og:description" content="Board-certified pediatric care from Dr. Sarah Smith — newborn checkups, immunizations, growth monitoring, and evidence-based treatment plans for growing families." />
+  <meta property="og:url" content="https://www.example.com/pediatrician-4/" />
+  <meta property="og:image" content="https://www.example.com/pediatrician-4/assets/dr-sarah-smith.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Sarah Smith | Pediatrician — Sky & Amber Child Health Clinic" />
+  <meta name="twitter:description" content="Board-certified pediatric care from Dr. Sarah Smith — newborn checkups, immunizations, growth monitoring, and evidence-based treatment plans for growing families." />
+  <meta name="twitter:image" content="https://www.example.com/pediatrician-4/assets/dr-sarah-smith.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
@@ -14,6 +32,28 @@
   <link rel="stylesheet" href="./styles/banner-module.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Sarah Smith",
+    "medicalSpecialty": "Pediatric",
+    "image": "https://www.example.com/pediatrician-4/assets/dr-sarah-smith.png",
+    "url": "https://www.example.com/pediatrician-4/",
+    "telephone": "+91-9068935571",
+    "email": "dr.smith@minneasotahospitals.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1800 Orchids Lane, Walt Disney World, Bay Lake",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32805",
+      "addressCountry": "US"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -25,7 +65,7 @@
           <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith" />
         </span>
         <span class="peds4-brand-text">
-          <span class="peds4-brand-name">Dr. Sarah Smith</span>
+          <span class="peds4-brand-name" title="Dr. Sarah Smith">Dr. Sarah Smith</span>
           <span class="peds4-brand-role">Pediatrician</span>
         </span>
       </a>
@@ -114,7 +154,7 @@
         </span>
 
         <h1 class="peds4-hero-title">Dr. Sarah Smith</h1>
-        <p class="peds4-hero-role">MBBS, MD (Pediatrics) &middot; Fellowship in Neonatal &amp; Child Health</p>
+        <p class="peds4-hero-role"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MD (Pediatrics) &middot; Fellowship in Neonatal &amp; Child Health</p>
         <p class="peds4-hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. 48213</p>
 
         <p class="peds4-hero-subtitle">
@@ -123,15 +163,17 @@
         </p>
 
         <ul class="peds4-hero-facts" aria-label="Practice highlights">
-          <li><span class="peds4-fact-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span> Board Certified Pediatrician</li>
-          <li><span class="peds4-fact-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></span> English &bull; Hindi &bull; Odia</li>
+          <!-- <li><span class="peds4-fact-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span> Board Certified Pediatrician</li> -->
+          <li><span class="peds4-fact-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></span>Languages Known: English &bull; Hindi &bull; Odia</li>
         </ul>
 
         <div class="peds4-hero-social" aria-label="Social media links">
-          <a href="#" class="peds4-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="peds4-social" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="peds4-social" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
           <a href="#" class="peds4-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" class="peds4-social" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
           <a href="#" class="peds4-social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="peds4-social" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
           <a href="#" class="peds4-social" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="#" class="peds4-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
@@ -172,7 +214,7 @@
       <div class="peds4-about-visual">
         <div class="peds4-about-photo-offset" aria-hidden="true"></div>
         <div class="peds4-about-photo">
-          <img src="assets/about-photo.jpg" alt="Clinical desk with stethoscope and patient records at Dr. Sarah Smith's pediatric clinic" loading="lazy" />
+          <img src="assets/about-photo.jpg" alt="Doctor examining a young child during a pediatric consultation at Dr. Sarah Smith's clinic" loading="lazy" />
         </div>
       </div>
 
@@ -215,42 +257,36 @@
 
       <div class="peds4-services-grid">
         <article class="peds4-service-card">
-          <span class="peds4-service-index">01</span>
           <div class="peds4-service-icon"><i class="fa-solid fa-baby" aria-hidden="true"></i></div>
           <h3>Newborn &amp; Infant Care</h3>
           <p>Comprehensive care for newborns, feeding guidance, early development support, and infant wellness.</p>
         </article>
 
         <article class="peds4-service-card">
-          <span class="peds4-service-index">02</span>
           <div class="peds4-service-icon"><i class="fa-solid fa-syringe" aria-hidden="true"></i></div>
           <h3>Vaccination &amp; Immunization</h3>
           <p>Routine vaccination schedules, catch-up plans, and parent education for complete protection.</p>
         </article>
 
         <article class="peds4-service-card">
-          <span class="peds4-service-index">03</span>
           <div class="peds4-service-icon"><i class="fa-solid fa-thermometer" aria-hidden="true"></i></div>
           <h3>Fever &amp; Infection Management</h3>
           <p>Evidence-based treatment for seasonal infections, viral illnesses, and recurring fevers.</p>
         </article>
 
         <article class="peds4-service-card">
-          <span class="peds4-service-index">04</span>
           <div class="peds4-service-icon"><i class="fa-solid fa-lungs" aria-hidden="true"></i></div>
           <h3>Asthma &amp; Allergy Care</h3>
           <p>Long-term management plans for childhood asthma, allergies, and breathing concerns.</p>
         </article>
 
         <article class="peds4-service-card">
-          <span class="peds4-service-index">05</span>
           <div class="peds4-service-icon"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i></div>
           <h3>Growth &amp; Nutrition Monitoring</h3>
           <p>Regular growth tracking, nutrition counseling, and early intervention for developmental concerns.</p>
         </article>
 
         <article class="peds4-service-card">
-          <span class="peds4-service-index">06</span>
           <div class="peds4-service-icon"><i class="fa-solid fa-user-group" aria-hidden="true"></i></div>
           <h3>Adolescent Health Counseling</h3>
           <p>Support for teenage health, lifestyle, emotional wellbeing, and preventive checkups.</p>
@@ -653,10 +689,12 @@
         <div class="peds4-footer-social-wrap">
           <span class="peds4-footer-social-label">Follow me on:</span>
           <div class="peds4-footer-social">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
             <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
@@ -672,7 +710,6 @@
             <a href="#contact-us">Contact</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#gallery">Gallery</a>
-            <a href="blog.html">Blog</a>
           </nav>
         </div>
 
@@ -700,5 +737,6 @@
   <script src="./script/banner-module.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="./script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
 </body>
 </html>

@@ -816,12 +816,12 @@ if (menuToggle && mainNav) {
     var style = document.createElement("style");
     style.id = STYLE_ID;
     style.textContent = [
-      ".footer-visitor-badge{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.32);box-shadow:0 2px 10px rgba(0,0,0,0.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:16px;line-height:1.4;max-width:100%;transition:background .25s ease,border-color .25s ease,transform .25s ease;}",
+      ".footer-visitor-badge{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.32);box-shadow:0 2px 10px rgba(0,0,0,0.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:18px;line-height:1.4;max-width:100%;transition:background .25s ease,border-color .25s ease,transform .25s ease;}",
       ".footer-visitor-badge:hover{background:rgba(255,255,255,0.24);border-color:rgba(255,255,255,0.44);transform:translateY(-1px);}",
       ".footer-visitor-badge .footer-visitor-badge-icon{font-size:16px;color:#ffffff;}",
       ".footer-visitor-badge .footer-visitor-badge-label{white-space:nowrap;color:#f1f5f9;font-weight:500;}",
       ".footer-visitor-badge .footer-visitor-badge-count{font-weight:700;color:#ffffff;font-variant-numeric:tabular-nums;}",
-      "@media (max-width:480px){.footer-visitor-badge{font-size:16px;padding:9px 14px;gap:6px;margin-top:12px;}}"
+      "@media (max-width:480px){.footer-visitor-badge{font-size:18px;padding:9px 14px;gap:6px;margin-top:12px;}}"
     ].join("");
     document.head.appendChild(style);
   }

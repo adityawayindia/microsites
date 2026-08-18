@@ -4,7 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pediatrician Microsite</title>
+  <title>Dr. Sarah Smith | Pediatrician in Orlando, FL | Child Wellness Clinic</title>
+  <meta name="description" content="Trusted pediatric care from Dr. Sarah Smith in Orlando, FL — newborn checkups, immunizations, growth monitoring, and compassionate treatment for your child's health and development." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/pediatrician-1/" /><!-- TODO: replace with live production domain before launch -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr. Sarah Smith Pediatric Care" />
+  <meta property="og:title" content="Dr. Sarah Smith | Pediatrician in Orlando, FL | Child Wellness Clinic" />
+  <meta property="og:description" content="Trusted pediatric care from Dr. Sarah Smith in Orlando, FL — newborn checkups, immunizations, growth monitoring, and compassionate treatment for your child's health and development." />
+  <meta property="og:url" content="https://www.example.com/pediatrician-1/" />
+  <meta property="og:image" content="https://www.example.com/pediatrician-1/assets/pediatric-hero-banner.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Sarah Smith | Pediatrician in Orlando, FL | Child Wellness Clinic" />
+  <meta name="twitter:description" content="Trusted pediatric care from Dr. Sarah Smith in Orlando, FL — newborn checkups, immunizations, growth monitoring, and compassionate treatment for your child's health and development." />
+  <meta name="twitter:image" content="https://www.example.com/pediatrician-1/assets/pediatric-hero-banner.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -16,6 +35,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Sarah Smith",
+    "medicalSpecialty": "Pediatric",
+    "image": "https://www.example.com/pediatrician-1/assets/dr-sarah-smith.png",
+    "url": "https://www.example.com/pediatrician-1/",
+    "telephone": "+91-9068935571",
+    "email": "dr.smith@minneasotahospitals.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1800 Orchids Lane, Walt Disney World, Bay Lake",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32805",
+      "addressCountry": "US"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -26,7 +66,7 @@
           <img src="assets/dr-sarah-smith.png" alt="Dr. Sarah Smith" />
         </span>
         <span class="brand-text">
-          <span class="brand-name">Dr. Sarah Smith</span>
+          <span class="brand-name" title="Dr. Sarah Smith">Dr. Sarah Smith</span>
           <span class="brand-role">Pediatrician</span>
         </span>
       </a>
@@ -91,13 +131,14 @@
         <div class="hero-main-card">
           <div class="expert-badge">
             <i class="fa-solid fa-child-reaching"></i>
-            Child Health Care Hub
+            Pediatrician
           </div>
           <h1 class="hero-title">Dr. Sarah Smith</h1>
           <p class="hero-subtitle">
-            MBBS, MD (Pediatrics), Fellowship in Neonatal & Child Health - personalized care plans for newborns, toddlers,
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MD (Pediatrics), Fellowship in Neonatal & Child Health - personalized care plans for newborns, toddlers,
             school-age children, and teens.
           </p>
+          <p class="hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. 48213</p>
           <p class="hero-credentials"><b>Language Proficiency:</b> English, Hindi, Odia</p>
           <!-- <div class="hero-action-row">
             <a href="#" class="hero-primary-btn">Book Appointment</a>
@@ -105,12 +146,14 @@
           </div> -->
 
           <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social social-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
             <a href="#" class="social social-instagram" aria-label="Instagram"><i
                 class="fa-brands fa-instagram"></i></a>
             <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i
                 class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
             <a href="#" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
@@ -148,7 +191,7 @@
         <div class="about-lead">
           <span class="about-badge">
             <i class="fa-solid fa-face-smile"></i>
-            About Our Practice
+            About My Practice
           </span>
           <h2 class="about-title">Trusted Pediatric Care For Growing Families</h2>
           <p class="about-subtitle">
@@ -177,27 +220,19 @@
 
   <section class="services-section" id="services">
     <div class="container">
-      <div class="services-shell">
-        <div class="services-header">
-          <span class="services-badge">
-            <i class="fa-solid fa-heart"></i>
-            Specialized Services
-          </span>
-          <h2 class="services-title">Comprehensive Pediatric Care</h2>
-          <p class="services-subtitle">
-            Offering A Complete Range Of Child Healthcare Services With Personalized Treatment And Preventive Guidance.
-          </p>
-          <!-- <a href="#contact-us" class="services-main-cta">Book A Consultation</a> -->
+      <div class="services-header">
+        <span class="services-badge">
+          <i class="fa-solid fa-heart"></i>
+          Specialized Services
+        </span>
+        <h2 class="services-title">Comprehensive Pediatric Care</h2>
+        <p class="services-subtitle">
+          Offering A Complete Range Of Child Healthcare Services With Personalized Treatment And Preventive Guidance.
+        </p>
+      </div>
 
-          <figure class="services-header-image">
-            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80"
-              alt="Pediatrician examining a young child during a checkup" loading="lazy" />
-          </figure>
-        </div>
-
-        <div class="services-grid">
+      <div class="services-grid">
           <article class="service-card">
-            <span class="service-step">01</span>
             <div class="service-icon">
               <i class="fa-solid fa-baby"></i>
             </div>
@@ -207,7 +242,6 @@
           </article>
 
           <article class="service-card">
-            <span class="service-step">02</span>
             <div class="service-icon">
               <i class="fa-solid fa-syringe"></i>
             </div>
@@ -217,7 +251,6 @@
           </article>
 
           <article class="service-card">
-            <span class="service-step">03</span>
             <div class="service-icon">
               <i class="fa-solid fa-thermometer"></i>
             </div>
@@ -227,7 +260,6 @@
           </article>
 
           <article class="service-card">
-            <span class="service-step">04</span>
             <div class="service-icon">
               <i class="fa-solid fa-lungs"></i>
             </div>
@@ -237,7 +269,6 @@
           </article>
 
           <article class="service-card">
-            <span class="service-step">05</span>
             <div class="service-icon">
               <i class="fa-solid fa-apple-whole"></i>
             </div>
@@ -247,7 +278,6 @@
           </article>
 
           <article class="service-card">
-            <span class="service-step">06</span>
             <div class="service-icon">
               <i class="fa-solid fa-user-group"></i>
             </div>
@@ -255,7 +285,6 @@
             <p class="service-card-desc">Support For Teenage Health, Lifestyle, Emotional Wellbeing, And Preventive
               Checkups.</p>
           </article>
-        </div>
       </div>
     </div>
   </section>
@@ -872,8 +901,11 @@
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook">
+          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page">
             <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile">
+            <i class="fa-brands fa-facebook"></i>
           </a>
           <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
@@ -883,6 +915,9 @@
           </a>
           <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website">
+            <i class="fa-solid fa-globe"></i>
           </a>
           <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>

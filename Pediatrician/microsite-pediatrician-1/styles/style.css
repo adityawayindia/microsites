@@ -1,4 +1,4 @@
-﻿/* AGENTS.md item 7: Quicksand (used for all headings) tops out at 700 on
+/* AGENTS.md item 7: Quicksand (used for all headings) tops out at 700 on
    Google Fonts — there is no 800/900 cut. Outfit is a variable font that
    goes up to 900, so it's loaded with 800/900 here and used specifically
    for h2 section titles so they can render genuinely bolder than the
@@ -237,11 +237,8 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
 }
 
 .container {
-  /* AGENTS.md §11: widen the main container from the old 1280px cap to a
-     modern 1440-1600px measure so the layout doesn't look cramped on large
-     monitors. Inner text blocks get their own ~65-75ch measure below so
-     long paragraphs don't stretch unreadably wide. */
-  width: min(1520px, 94%);
+  /* Matches the min(1200px, 92%) container width used across other microsites. */
+  width: min(1200px, 92%);
   margin: 0 auto;
 }
 
@@ -288,6 +285,15 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
 .brand-name {
   font-size: 16px;
   font-weight: 600;
+}
+
+.site-header .brand-name {
+  display: inline-block;
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
 }
 
 .brand-role {
@@ -364,10 +370,9 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
   position: relative;
 margin-bottom: 0;
   overflow: hidden;
-  /* Reduced linear-gradient overlay opacity to make toy pattern significantly more visible */
   background:
-    linear-gradient(135deg, rgba(255, 240, 246, 0.60) 0%, rgba(254, 226, 236, 0.50) 50%, rgba(255, 245, 248, 0.60) 100%),
-    linear-gradient(rgba(255, 240, 246, 0.45), rgba(255, 240, 246, 0.45)),
+    linear-gradient(135deg, rgba(255, 240, 246, 0.68) 0%, rgba(254, 226, 236, 0.58) 50%, rgba(255, 245, 248, 0.68) 100%),
+    linear-gradient(rgba(255, 240, 246, 0.58), rgba(255, 240, 246, 0.58)),
     var(--toy-bg) center / 420px repeat;
 }
 
@@ -462,6 +467,17 @@ margin-bottom: 0;
   max-width: 95%;
 }
 
+.hero-reg {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #0f172a;
+}
+
 .hero-timeline {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -510,7 +526,6 @@ margin-bottom: 0;
   background: var(--button);
   color: #ffffff;
   border: 2px solid var(--button);
-  box-shadow: 0 10px 24px rgba(255, 138, 101, 0.25);
 }
 
 .hero-primary-btn:hover {
@@ -634,6 +649,14 @@ margin-bottom: 0;
   background: #1877f2;
 }
 
+.social-facebook-alt {
+  background: #0d5cd7;
+}
+
+.social-website {
+  background: #64748b;
+}
+
 .social-instagram {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
@@ -666,7 +689,7 @@ margin-bottom: 0;
 }
 
 .about-section .container {
-  width: min(1520px, 94%);
+  width: min(1200px, 92%);
 }
 
 .about-layout {
@@ -690,9 +713,12 @@ margin-bottom: 0;
   padding-top: 6px;
 }
 
-.about-badge {
+.about-badge,
+.about-kicker {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
+  width: fit-content;
   gap: 7px;
   font-size: 16px;
   font-weight: 700;
@@ -700,10 +726,14 @@ margin-bottom: 0;
   text-transform: uppercase;
   color: var(--color-pink-dark);
   background: #ffffff;
-  border: 2px solid var(--color-pink);
+  border: 2px solid var(--color-pink-dark);
   border-radius: 999px;
   padding: 8px 16px;
   margin-bottom: 18px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
 }
 
 .about-badge i {
@@ -786,7 +816,8 @@ margin-bottom: 0;
     padding-top: 22px;
   }
 
-  .about-badge {
+  .about-badge,
+  .about-kicker {
     font-size: 16px;
     padding: 7px 12px;
   }
@@ -819,44 +850,36 @@ margin-bottom: 0;
 }
 
 .services-section .container {
-  width: min(1520px, 94%);
+  width: min(1200px, 92%);
 }
 
-.services-shell {
-  display: grid;
-  grid-template-columns: minmax(340px, 480px) 1fr;
-  gap: 34px;
-  align-items: start;
-}
 
 .services-header {
-  text-align: left;
-  max-width: none;
+  text-align: center;
+  max-width: 700px;
   min-width: 0;
-  margin: 0;
-  background: #ffffff;
-  border: 1px solid #dbe7ff;
-  border-radius: 20px;
-  padding: 26px 22px 22px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  position: sticky;
-  top: 108px;
+  margin: 0 auto 40px;
 }
 
 .services-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
   font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #1b4e7e;
-  background: #f4f8ff;
-  border: 1px solid #bfdbfe;
+  color: var(--color-pink-dark);
+  background: #ffffff;
+  border: 2px solid var(--color-pink-dark);
   border-radius: 999px;
   padding: 8px 16px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
 }
 
 .services-badge i {
@@ -876,65 +899,58 @@ margin-bottom: 0;
 }
 
 .services-subtitle {
-  margin: 0 0 22px;
+  margin: 0 auto;
   font-size: 18px;
   line-height: 1.5;
   color: #0f172a;
 }
 
-.services-main-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  background: var(--button);
-  color: var(--white);
-  padding: 12px 24px;
-  border-radius: 99px;
-  font-size: 16px;
-  font-weight: 700;
-  transition: background 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.services-main-cta:hover {
-  background: var(--button-hover);
-  transform: translateY(-3px) scale(1.03);
-}
-
-.services-header-image {
-  margin: 22px 0 0;
-  min-width: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  height: auto !important;
-  min-height: fit-content;
-  max-width: 100%;
-}
-
-.services-header-image img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center;
-}
-
+/* Services grid — 3 cards per row (3x2 for the current six services).
+   The track count is 12 rather than 3 so that an incomplete final row can be
+   centred on exact grid lines instead of being left-aligned: a card spans 4
+   tracks, which is identical in width to `repeat(3, 1fr)` at the same gap,
+   but the extra lines give us half-card offsets to centre against. */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.service-card {
+  grid-column: span 4;
+  min-width: 0;
+}
+
+/* Final row holds ONE leftover card (total ≡ 1 mod 3): widen it to two
+   card-widths (span 8 = 2x4 tracks + the gap between) and centre it. */
+.service-card:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+
+/* Final row holds TWO leftover cards (total ≡ 2 mod 3): keep both at normal
+   card width and shift the pair inward so it centres on the row. */
+.service-card:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+
+.service-card:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
 }
 
 .service-card {
   position: relative;
   background: var(--white);
   border-radius: 24px;
-  padding: 24px 22px 22px;
+  padding: 28px 26px 26px;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: flex-start;
+  text-align: left;
+  gap: 12px 16px;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -961,24 +977,18 @@ margin-bottom: 0;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-}
-
-.service-step {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #9caec8;
+  flex-shrink: 0;
 }
 
 .service-card-title {
   margin: 0;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   color: #1f2937;
   line-height: 1.35;
+  text-align: left;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .service-card-desc {
@@ -986,6 +996,8 @@ margin-bottom: 0;
   font-size: 18px;
   line-height: 1.5;
   color: #0f172a;
+  text-align: left;
+  flex: 1 1 100%;
 }
 
 /* Contact Section */
@@ -1008,7 +1020,7 @@ margin-bottom: 0;
 .contact-section .container {
   position: relative;
   z-index: 1;
-  width: min(1520px, 94%);
+  width: min(1200px, 92%);
 }
 
 .contact-card {
@@ -1145,9 +1157,9 @@ margin-bottom: 0;
 
 /* Testimonials Section */
 .testimonials-section {
-  /* Neutral off-white band, alternating with the branded pink Contact
+  /* Warm orange-tinted band, alternating with the branded pink Contact
      section above and branded pink Gallery section below (AGENTS.md §11). */
-  background: #f8fafc;
+  background: #fff1e6;
   padding: 44px 0 50px;
 }
 
@@ -1171,6 +1183,10 @@ margin-bottom: 0;
   border-radius: 999px;
   padding: 8px 16px;
   margin-bottom: 16px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
 }
 
 .testimonials-badge i {
@@ -1703,7 +1719,7 @@ margin-bottom: 0;
 }
 
 .gallery-section .container {
-  width: min(1520px, 94%);
+  width: min(1200px, 92%);
 }
 
 .gallery-header {
@@ -2155,7 +2171,7 @@ margin-bottom: 0;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   column-gap: 32px;
   row-gap: 18px;
@@ -2202,15 +2218,15 @@ margin-bottom: 0;
 }
 
 .footer-social {
-  /* Capped to exactly 6 icons per row (6 * 42px icon + 5 * 14px gap =
-     322px) so a 7th+ icon added later wraps to a new row instead of
+  /* Capped to exactly 8 icons per row (8 * 42px icon + 7 * 14px gap =
+     434px) so a 9th+ icon added later wraps to a new row instead of
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 14px;
-  max-width: 322px;
+  max-width: 434px;
   min-width: 0;
 }
 
@@ -2236,6 +2252,14 @@ margin-bottom: 0;
 
 .footer-social-facebook {
   background: #1877f2;
+}
+
+.footer-social-facebook-alt {
+  background: #0d5cd7;
+}
+
+.footer-social-website {
+  background: #64748b;
 }
 
 .footer-social-instagram {
@@ -2451,6 +2475,19 @@ margin-bottom: 0;
   .gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  /* 2 cards per row — each card takes 6 of the 12 tracks. A lone final card
+     keeps its normal width and is centred by starting on track 4. */
+  .service-card,
+  .service-card:last-child:nth-child(3n + 1),
+  .service-card:nth-last-child(2):nth-child(3n + 1),
+  .service-card:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+
+  .service-card:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
 }
 
 @media (max-width: 900px) {
@@ -2497,22 +2534,11 @@ margin-bottom: 0;
   }
 
   .services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
 
   .services-section {
     padding: 64px 0 76px;
-  }
-
-  .services-shell {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .services-header {
-    position: static;
-    padding: 24px 20px 20px;
   }
 
   .testimonial-card {
@@ -2667,9 +2693,17 @@ margin-bottom: 0;
     font-size: 16px;
   }
 
+  /* Single column — every card, leftover or not, spans the full 12 tracks. */
   .services-grid {
-    grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .service-card,
+  .service-card:last-child:nth-child(odd),
+  .service-card:last-child:nth-child(3n + 1),
+  .service-card:nth-last-child(2):nth-child(3n + 1),
+  .service-card:last-child:nth-child(3n + 2) {
+    grid-column: 1 / -1;
   }
 
   .services-section {
@@ -2677,9 +2711,7 @@ margin-bottom: 0;
   }
 
   .services-header {
-    margin-bottom: 0;
-    padding: 20px 16px 18px;
-    border-radius: 16px;
+    margin-bottom: 24px;
   }
 
   .services-title {
@@ -2691,27 +2723,17 @@ margin-bottom: 0;
     margin-bottom: 16px;
   }
 
-  .services-main-cta {
-    width: 100%;
-    text-align: center;
-  }
-
   .service-card {
     padding: 18px 16px 16px;
     border-radius: 16px;
   }
 
   .service-card-title {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .service-card-desc {
     font-size: 18px;
-  }
-
-  .service-step {
-    top: 12px;
-    right: 12px;
   }
 
   .testimonials-section {

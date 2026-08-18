@@ -240,6 +240,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   text-transform: uppercase;
   background: #ffffff;
   color: var(--navy);
+  border: 1.5px solid currentColor;
 }
 .peds2-chip--navy,
 .peds2-chip--peach,
@@ -373,6 +374,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .peds2-brand-text { display: flex; flex-direction: column; line-height: 1.25; }
 .peds2-brand-name { font-weight: 800; font-size: 16px; color: var(--navy-dark); white-space: nowrap; }
+.peds2-header .peds2-brand-name { display: inline-block; max-width: 15ch; overflow: hidden; text-overflow: ellipsis; vertical-align: bottom; }
 .peds2-brand-role { font-size: 15px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 
 .peds2-nav-links {
@@ -408,7 +410,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   color: #ffffff;
   font-weight: 700;
   font-size: 15px;
-  box-shadow: var(--shadow-peach);
   transition: transform 0.25s ease, filter 0.25s ease;
   white-space: nowrap;
   flex-shrink: 0;
@@ -489,6 +490,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: 20px;
+  border: 1.5px solid currentColor;
 }
 
 .peds2-hero-title {
@@ -500,10 +502,32 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 .peds2-hero-role {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   font-size: 18px;
   font-weight: 700;
   color: var(--sage-dark);
+  margin: 0 0 10px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.peds2-hero-role i {
+  margin-top: 3px;
+}
+
+.peds2-hero-reg {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
   margin: 0 0 18px;
+}
+.peds2-hero-reg i {
+  color: var(--sage-dark);
 }
 
 .peds2-hero-subtitle {
@@ -652,7 +676,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 /* ============================================================
    ABOUT
    ============================================================ */
-.peds2-about { padding: 64px 0; background: var(--bg); }
+.peds2-about { padding: 44px 0; background: var(--bg); }
 
 .peds2-about-grid {
   display: grid;
@@ -707,15 +731,40 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 /* ============================================================
    SERVICES
    ============================================================ */
-.peds2-services { padding: 64px 0; background: var(--bg-2); }
+.peds2-services { padding: 44px 0; background: var(--bg-2); }
 
 .peds2-services .peds2-section-header { text-align: center; margin: 0 auto 48px; max-width: 700px; }
 .peds2-services .peds2-section-subtitle { margin-left: auto; margin-right: auto; }
 
+/* Services grid — 3 cards per row (see AGENTS.md §12.1). 12 tracks rather than
+   3 so an incomplete final row can be centred on exact grid lines: a card
+   spans 4 tracks, identical in width to `repeat(3, 1fr)` at the same gap. */
 .peds2-services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 26px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.peds2-service-card {
+  grid-column: span 4;
+}
+
+/* Final row holds ONE leftover card (total ≡ 1 mod 3): widen it to two
+   card-widths (span 8 = 2x4 tracks + the gap between) and centre it. */
+.peds2-service-card:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+
+/* Final row holds TWO leftover cards (total ≡ 2 mod 3): keep both at normal
+   card width and shift the pair inward so it centres on the row. */
+.peds2-service-card:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+
+.peds2-service-card:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
 }
 
 .peds2-service-card {
@@ -727,6 +776,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   box-shadow: var(--shadow-card);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   min-width: 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: flex-start;
+  gap: 10px 16px;
 }
 .peds2-service-card:hover {
   transform: translateY(-8px);
@@ -741,19 +795,22 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   background: var(--navy-light);
   color: var(--navy);
   font-size: 22px;
-  margin-bottom: 18px;
+  flex-shrink: 0;
 }
 
 .peds2-service-card h3 {
   font-size: 22px;
-  margin: 0 0 10px;
+  margin: 0;
   color: var(--navy-dark);
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .peds2-service-card p {
   font-size: 18px;
   color: #0f172a;
   margin: 0;
+  flex: 1 1 100%;
 }
 
 /* ============================================================
@@ -881,13 +938,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.peds2-contact { padding: 24px 0; background: var(--bg); }
+.peds2-contact { padding: 16px 0; background: var(--bg); border-top: 1px solid rgba(15, 23, 42, 0.08); }
 
 .peds2-contact-card {
-  padding: 16px 0;
+  padding: 8px 0;
 }
 
-.peds2-contact-header { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+.peds2-contact-header { text-align: center; max-width: 640px; margin: 0 auto 24px; }
 .peds2-contact-header h2 { font-size: 34px; color: var(--navy-dark); margin: 0 0 12px; }
 .peds2-contact-header p { color: #0f172a; font-size: 18px; margin: 0; }
 
@@ -895,7 +952,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-bottom: 36px;
+  margin-bottom: 20px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -903,7 +960,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .peds2-contact-item {
   text-align: center;
-  padding: 26px 20px;
+  padding: 18px 20px;
   border-radius: var(--radius-lg);
   background: var(--surface);
   border: 1.5px solid var(--border);
@@ -912,7 +969,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 .peds2-contact-icon {
   width: 52px; height: 52px;
-  margin: 0 auto 14px;
+  margin: 0 auto 10px;
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%;
   background: var(--navy);
@@ -1211,10 +1268,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   background: var(--peach-dark);
   color: #ffffff; font-size: 16px; font-weight: 700;
   cursor: pointer; transition: opacity 0.2s ease, transform 0.2s ease;
-  box-shadow: var(--shadow-peach);
 }
 .booking-submit-btn:hover:not([disabled]) { opacity: 0.92; transform: translateY(-2px); }
-.booking-submit-btn[disabled] { background: hsl(18, 60%, 82%); cursor: not-allowed; box-shadow: none; }
+.booking-submit-btn[disabled] { background: hsl(18, 60%, 82%); cursor: not-allowed; }
 
 @media (max-width: 640px) {
   .booking-form-row { grid-template-columns: 1fr; }
@@ -1231,11 +1287,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .peds2-footer { background: var(--navy-dark); color: hsl(218, 25%, 85%); padding: 36px 0 0; }
 
 .peds2-footer-inner {
-  max-width: 1000px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 0 24px 28px;
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
   gap: 36px;
   align-items: start;
 }
@@ -1249,7 +1306,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .peds2-footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
 .peds2-footer-social-label { font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
-.peds2-footer-social { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; max-width: 278px; min-width: 0; }
+.peds2-footer-social { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; max-width: 344px; min-width: 0; }
 .peds2-footer-social a {
   width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
@@ -1268,6 +1325,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   text-align: left;
   gap: 16px;
   width: 100%;
+  min-width: 0;
 }
 
 .peds2-footer-links-group {
@@ -1276,6 +1334,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   align-items: flex-start;
   gap: 8px;
   width: 100%;
+  min-width: 0;
 }
 
 .peds2-footer-links-group h4 {
@@ -1294,6 +1353,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   justify-content: flex-start;
   gap: 14px;
   max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
 }
 
@@ -1465,7 +1525,19 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   .peds2-about-grid,
   .peds2-philosophy-grid { grid-template-columns: 1fr; }
   .peds2-philosophy-visual { order: -1; }
-  .peds2-services-grid { grid-template-columns: repeat(2, 1fr); }
+  /* 2 per row — each card takes 6 of the 12 tracks. A lone final card keeps
+     its normal width and is centred by starting on track 4. */
+  .peds2-service-card,
+  .peds2-service-card:last-child:nth-child(3n + 1),
+  .peds2-service-card:nth-last-child(2):nth-child(3n + 1),
+  .peds2-service-card:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+
+  .peds2-service-card:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
+
   .peds2-contact-grid { grid-template-columns: 1fr; }
   .peds2-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .peds2-footer-inner { grid-template-columns: 1fr 1fr; }
@@ -1515,7 +1587,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 @media (max-width: 640px) {
-  .peds2-services-grid { grid-template-columns: 1fr; }
+  /* 1 per row — every card, leftover or not, spans the full 12 tracks. */
+  .peds2-service-card,
+  .peds2-service-card:last-child:nth-child(odd),
+  .peds2-service-card:last-child:nth-child(3n + 1),
+  .peds2-service-card:nth-last-child(2):nth-child(3n + 1),
+  .peds2-service-card:last-child:nth-child(3n + 2) {
+    grid-column: 1 / -1;
+  }
+
   .peds2-gallery-grid { grid-template-columns: 1fr; }
   .peds2-footer-inner { grid-template-columns: 1fr; }
   .peds2-contact-card { padding: 12px 0; }
@@ -1549,7 +1629,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: auto auto;
-  align-items: center;
+  align-items: start;
   column-gap: 32px;
   row-gap: 0;
   min-width: 0;
@@ -1597,15 +1677,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 .footer-social {
-  /* Capped to exactly 6 icons per row (6 * 42px icon + 5 * 14px gap =
-     322px) so a 7th+ icon added later wraps to a new row instead of
+  /* Capped to exactly 8 icons per row (8 * 42px icon + 7 * 14px gap =
+     434px) so a 9th+ icon added later wraps to a new row instead of
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 14px;
-  max-width: 322px;
+  max-width: 434px;
   min-width: 0;
 }
 
@@ -1630,6 +1710,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 .footer-social-facebook { background: #1877f2; }
+.footer-social-facebook-alt { background: #0d5cd7; }
+.footer-social-website { background: #64748b; }
 .footer-social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
 .footer-social-x { background: #000000; }
 .footer-social-linkedin { background: #0a66c2; }
