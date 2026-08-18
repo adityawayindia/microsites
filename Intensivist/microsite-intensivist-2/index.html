@@ -18,6 +18,7 @@
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
 </head>
@@ -73,30 +74,17 @@
             - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
             - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
-    <div
-      class="digidr-banner-module single-image-banner-section"
-      id="digidrBannerModule"
-      data-banner-active="true"
-      data-banner-start="2026-08-11T00:00:00+05:30"
-      data-banner-end="2026-08-15T23:59:59+05:30"
-      aria-label="Main Clinic Banner"
-      data-banner-src="assets/intensivist_banner-1.jpeg"
-      data-banner-src-mobile=""
-      data-banner-alt="Intensive care Independence Day banner"
-      data-banner-href="#"
-    >
+    <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule" data-banner-active="true"
+      data-banner-start="2026-08-11T00:00:00+05:30" data-banner-end="2026-08-15T23:59:59+05:30"
+      aria-label="Main Clinic Banner" data-banner-src="assets/intensivist_banner-1.jpeg" data-banner-src-mobile=""
+      data-banner-alt="Intensive care Independence Day banner" data-banner-href="#">
       <div class="container digidr-banner-container single-image-banner-container">
         <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
           <div class="digidr-banner-wrap single-image-banner-wrap">
             <picture>
               <source media="(max-width: 768px)" srcset="assets/intensivist_banner-1.jpeg" />
-              <img
-                src="assets/intensivist_banner-1.jpeg"
-                alt="Intensive care Independence Day banner"
-                class="digidr-banner-img single-image-banner-img"
-                id="digidrBannerImg"
-                loading="eager"
-              />
+              <img src="assets/intensivist_banner-1.jpeg" alt="Intensive care Independence Day banner"
+                class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
             </picture>
           </div>
         </a>
@@ -123,7 +111,7 @@
 
           <p class="iv-hero-reg">
             <i class="fa-solid fa-id-card" aria-hidden="true"></i>
-            MCI Registration Number: MCI-CCM-2012-73892
+            MCI Regd No.: MCI-CCM-2012-73892
           </p>
 
           <div class="iv-hero-actions">
@@ -131,10 +119,10 @@
               <i class="fa-solid fa-truck-medical" aria-hidden="true"></i>
               Request ICU Consultation
             </a> -->
-            <a href="#services" class="iv-btn-ghost">
+            <!-- <a href="#services" class="iv-btn-ghost">
               <i class="fa-solid fa-arrow-down-long" aria-hidden="true"></i>
               Explore Critical Care
-            </a>
+            </a> -->
           </div>
 
           <p class="iv-hero-langs">
@@ -143,8 +131,10 @@
           </p>
 
           <div class="iv-social-pills" aria-label="Social media links">
-            <a href="#" class="iv-social-pill sp-fb" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="iv-social-pill sp-fb2" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="iv-social-pill sp-fb" aria-label="Facebook Page"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="iv-social-pill sp-fb2" aria-label="Facebook Profile"><i
+                class="fa-brands fa-facebook"></i></a>
             <a href="#" class="iv-social-pill sp-ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" class="iv-social-pill sp-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="#" class="iv-social-pill sp-li" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -237,7 +227,7 @@
     </div>
   </section>
 
-  <div class="iv-drip-rule" aria-hidden="true"></div>
+  <!-- <div class="iv-drip-rule" aria-hidden="true"></div> -->
 
   <!-- ===== SERVICES ===== -->
   <section class="iv-services" id="services">
@@ -413,22 +403,23 @@
           <!-- Hexagonal Matrix Pattern -->
           <pattern id="ivHexGrid" width="60" height="104" patternUnits="userSpaceOnUse">
             <!-- Hex Outlines -->
-            <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" 
-                  fill="none" stroke="var(--iv)" stroke-width="1" opacity="0.09" />
-            <path d="M 30 52 L 60 69.32 L 60 103.96 L 30 121.28 L 0 103.96 L 0 69.32 Z" 
-                  fill="none" stroke="var(--saline)" stroke-width="1" opacity="0.07" />
-            <path d="M -30 52 L 0 69.32 L 0 103.96 L -30 121.28 L -60 103.96 L -60 69.32 Z" 
-                  fill="none" stroke="var(--iv-deep)" stroke-width="1" opacity="0.06" />
+            <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" fill="none" stroke="var(--iv)"
+              stroke-width="1" opacity="0.09" />
+            <path d="M 30 52 L 60 69.32 L 60 103.96 L 30 121.28 L 0 103.96 L 0 69.32 Z" fill="none"
+              stroke="var(--saline)" stroke-width="1" opacity="0.07" />
+            <path d="M -30 52 L 0 69.32 L 0 103.96 L -30 121.28 L -60 103.96 L -60 69.32 Z" fill="none"
+              stroke="var(--iv-deep)" stroke-width="1" opacity="0.06" />
 
             <!-- Glowing Highlight Dots at Vertices/Centers -->
-            <circle cx="30" cy="34.64" r="2.5" fill="var(--saline)" opacity="0.3" class="iv-hex-dot iv-hex-dot--pulse" />
+            <circle cx="30" cy="34.64" r="2.5" fill="var(--saline)" opacity="0.3"
+              class="iv-hex-dot iv-hex-dot--pulse" />
             <circle cx="0" cy="17.32" r="1.8" fill="var(--iv-bright)" opacity="0.22" />
             <circle cx="60" cy="17.32" r="1.8" fill="var(--vital)" opacity="0.2" />
             <circle cx="30" cy="86.64" r="2.2" fill="var(--iv)" opacity="0.25" class="iv-hex-dot iv-hex-dot--pulse2" />
             <circle cx="0" cy="69.32" r="1.5" fill="var(--saline-bright)" opacity="0.2" />
             <circle cx="60" cy="69.32" r="1.5" fill="var(--iv-deep)" opacity="0.2" />
           </pattern>
-          
+
           <radialGradient id="ivHexGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="var(--iv)" stop-opacity="0.12" />
             <stop offset="60%" stop-color="var(--saline)" stop-opacity="0.05" />
@@ -438,7 +429,7 @@
 
         <!-- Ambient Glow Base -->
         <rect width="100%" height="100%" fill="url(#ivHexGlow)" />
-        
+
         <!-- Hex Grid Fill -->
         <rect width="100%" height="100%" fill="url(#ivHexGrid)" />
       </svg>
@@ -579,22 +570,23 @@
           <!-- Hexagonal Matrix Pattern -->
           <pattern id="ivTestiHexGrid" width="60" height="104" patternUnits="userSpaceOnUse">
             <!-- Hex Outlines -->
-            <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" 
-                  fill="none" stroke="var(--iv)" stroke-width="1" opacity="0.09" />
-            <path d="M 30 52 L 60 69.32 L 60 103.96 L 30 121.28 L 0 103.96 L 0 69.32 Z" 
-                  fill="none" stroke="var(--saline)" stroke-width="1" opacity="0.07" />
-            <path d="M -30 52 L 0 69.32 L 0 103.96 L -30 121.28 L -60 103.96 L -60 69.32 Z" 
-                  fill="none" stroke="var(--iv-deep)" stroke-width="1" opacity="0.06" />
+            <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" fill="none" stroke="var(--iv)"
+              stroke-width="1" opacity="0.09" />
+            <path d="M 30 52 L 60 69.32 L 60 103.96 L 30 121.28 L 0 103.96 L 0 69.32 Z" fill="none"
+              stroke="var(--saline)" stroke-width="1" opacity="0.07" />
+            <path d="M -30 52 L 0 69.32 L 0 103.96 L -30 121.28 L -60 103.96 L -60 69.32 Z" fill="none"
+              stroke="var(--iv-deep)" stroke-width="1" opacity="0.06" />
 
             <!-- Glowing Highlight Dots at Vertices/Centers -->
-            <circle cx="30" cy="34.64" r="2.5" fill="var(--saline)" opacity="0.3" class="iv-hex-dot iv-hex-dot--pulse" />
+            <circle cx="30" cy="34.64" r="2.5" fill="var(--saline)" opacity="0.3"
+              class="iv-hex-dot iv-hex-dot--pulse" />
             <circle cx="0" cy="17.32" r="1.8" fill="var(--iv-bright)" opacity="0.22" />
             <circle cx="60" cy="17.32" r="1.8" fill="var(--vital)" opacity="0.2" />
             <circle cx="30" cy="86.64" r="2.2" fill="var(--iv)" opacity="0.25" class="iv-hex-dot iv-hex-dot--pulse2" />
             <circle cx="0" cy="69.32" r="1.5" fill="var(--saline-bright)" opacity="0.2" />
             <circle cx="60" cy="69.32" r="1.5" fill="var(--iv-deep)" opacity="0.2" />
           </pattern>
-          
+
           <radialGradient id="ivTestiHexGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="var(--saline)" stop-opacity="0.1" />
             <stop offset="60%" stop-color="var(--iv)" stop-opacity="0.05" />
@@ -604,7 +596,7 @@
 
         <!-- Ambient Glow Base -->
         <rect width="100%" height="100%" fill="url(#ivTestiHexGlow)" />
-        
+
         <!-- Hex Grid Fill -->
         <rect width="100%" height="100%" fill="url(#ivTestiHexGrid)" />
       </svg>
@@ -787,7 +779,7 @@
           </div>
           <div class="booking-field">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
             <p class="booking-error" data-error-for="phone"></p>
           </div>
         </div>
@@ -894,14 +886,22 @@
         <div class="footer-social-wrap">
           <span class="footer-social-label">Follow me on:</span>
           <div class="footer-social" aria-label="Footer social links">
-            <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-            <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i
+                class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i
+                class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i
+                class="fa-solid fa-globe"></i></a>
+            <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i
+                class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i
+                class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -935,11 +935,13 @@
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copy"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> &copy; 2026 Dr. Sarah Jenkins. All rights reserved.</p>
+      <p class="footer-copy"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> &copy; 2026 Dr. Sarah Jenkins.
+        All rights reserved.</p>
     </div>
   </footer>
 
   <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="script/index.js"></script>
   <script src="./script/chatbot.js" defer></script>
 </body>

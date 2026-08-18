@@ -387,9 +387,64 @@ if (menuToggle && mainNav) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
 
-    function validatePhone(value) {
-        const digits = value.replace(/[\s\-().+]/g, "");
-        return /^[0-9]{4,15}$/.test(digits);
+    let iti = null;
+    let phoneUtilsReady = false;
+
+    function getPhoneErrorMessage(errorCode) {
+        if (!window.intlTelInput) return "Please enter a valid phone number.";
+        const { VALIDATION_ERROR } = window.intlTelInput;
+        switch (errorCode) {
+            case VALIDATION_ERROR.INVALID_COUNTRY_CODE: return "Invalid country code.";
+            case VALIDATION_ERROR.TOO_SHORT: return "Phone number is too short.";
+            case VALIDATION_ERROR.TOO_LONG: return "Phone number is too long.";
+            default: return "Please enter a valid phone number.";
+        }
+    }
+
+    function initPhonePlugin() {
+        const phoneInputEl = form.phone;
+        if (!phoneInputEl || !window.intlTelInput) return;
+
+        iti = window.intlTelInput(phoneInputEl, {
+            initialCountry: "in",
+            countryOrder: ["in"],
+            separateDialCode: true,
+            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
+        });
+
+        iti.promise.then(() => { phoneUtilsReady = true; }).catch(() => {});
+
+        phoneInputEl.addEventListener("countrychange", () => {
+            if (phoneInputEl.value.trim()) {
+                clearErrors();
+            }
+        });
+
+        form.addEventListener("reset", () => {
+            iti?.setNumber("");
+            iti?.setSelectedCountry("in");
+        });
+    }
+
+    form.fullName?.addEventListener("input", () => {
+        const el = form.fullName;
+        const sanitized = el.value.replace(/[^A-Za-z\s.'-]/g, "");
+        if (sanitized !== el.value) el.value = sanitized;
+    });
+
+    initPhonePlugin();
+
+    function validatePhone() {
+        if (!form.phone.value.trim()) return "Please enter your phone number.";
+        if (iti && phoneUtilsReady) {
+            if (!iti.isValidNumber()) {
+                return getPhoneErrorMessage(iti.getValidationError());
+            }
+        } else {
+            const digits = form.phone.value.replace(/[\s\-().+]/g, "");
+            if (!/^[0-9]{4,15}$/.test(digits)) return "Please enter a valid phone number.";
+        }
+        return "";
     }
 
     function validateDateNotPast(value) {
@@ -582,10 +637,12 @@ if (menuToggle && mainNav) {
 
         clearErrors();
 
+        if (iti) {
+            try { await iti.promise; } catch (e) {}
+        }
+
         const fullName = form.fullName.value.trim();
         const email = form.email.value.trim();
-        const phone = form.phone.value.trim();
-        const fullPhone = phone;
         const preferredDate = form.preferredDate.value;
         const preferredTime = form.preferredTime.value;
         const reason = form.reason.value.trim();
@@ -596,7 +653,14 @@ if (menuToggle && mainNav) {
         if (!fullName) {
             showError("fullName", "Please enter your full name.");
             isValid = false;
+        } else if (fullName.length < 3) {
+            showError("fullName", "Name should be at least 3 characters.");
+            isValid = false;
+        } else if (!/^[A-Za-z\s.'-]+$/.test(fullName)) {
+            showError("fullName", "Name should contain only letters.");
+            isValid = false;
         }
+
         if (!email) {
             showError("email", "Please enter your email address.");
             isValid = false;
@@ -604,13 +668,13 @@ if (menuToggle && mainNav) {
             showError("email", "Please enter a valid email address.");
             isValid = false;
         }
-        if (!phone) {
-            showError("phone", "Please enter your phone number.");
-            isValid = false;
-        } else if (!validatePhone(phone)) {
-            showError("phone", "Please enter a valid phone number.");
+
+        const phoneError = validatePhone();
+        if (phoneError) {
+            showError("phone", phoneError);
             isValid = false;
         }
+
         if (!preferredDate) {
             showError("preferredDate", "Please select a preferred date.");
             isValid = false;

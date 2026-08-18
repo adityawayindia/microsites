@@ -70,7 +70,7 @@
                 '</div>' +
 
                 /* Footer */
-                '<div class="chatbot-footer">I am an AI and can make mistakes.</div>' +
+                '<div class="chatbot-footer">This is for informational purposes only, not medical advice; consult the doctor for your treatment plan.</div>' +
 
             '</div>' +
 

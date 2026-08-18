@@ -1337,12 +1337,15 @@ background: var(--bg-2);
   --iti-country-selector-bg: var(--white);
 }
 .iti__country-selector { border-radius: 12px; max-width: none; }
-.iti__dial-code { font-size: 16px; }
+.iti__selected-country { font-size: 16px; line-height: normal; }
+.iti__selected-dial-code { font-size: 16px; line-height: normal; color: var(--text); }
+.iti__dial-code { font-size: 15px; }
 .booking-field .iti__search-input {
   padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal));
   padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal));
   padding-top: 8px;
   padding-bottom: 8px;
+  font-size: 15px;
 }
 .booking-field .iti__tel-input.is-invalid { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15); }
 

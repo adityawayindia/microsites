@@ -428,7 +428,7 @@ h1, h2, h3, h4 {
     radial-gradient(1000px 520px at 82% -8%, hsl(268 64% 34% / 0.7) 0%, transparent 62%),
     radial-gradient(760px 420px at 6% 104%, hsl(190 84% 30% / 0.5) 0%, transparent 60%),
     linear-gradient(165deg, var(--ink) 0%, var(--ink-2) 58%, hsl(258 42% 13%) 100%);
-  padding: 28px 0 56px;
+  padding: 16px 0 56px;
   isolation: isolate;
 }
 
@@ -458,7 +458,7 @@ h1, h2, h3, h4 {
   grid-template-columns: 1.08fr 0.92fr;
   gap: 48px;
   align-items: center;
-  padding: 54px 0 46px;
+  padding: 24px 0 46px;
 }
 
 /* Hero copy ---------------------------------------------------------------*/
@@ -582,14 +582,14 @@ h1, h2, h3, h4 {
 }
 
 .iv-social-pill {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: hsl(258 20% 88%);
-  font-size: 16px;
+  font-size: 19px;
   text-decoration: none;
   background: hsl(0 0% 100% / 0.07);
   border: 1px solid hsl(0 0% 100% / 0.12);
@@ -987,7 +987,7 @@ h1, h2, h3, h4 {
    ABOUT
    ========================================================================== */
 .iv-about {
-  padding: 66px 0;
+  padding: 44px 0;
   background: var(--white);
 }
 
@@ -1121,7 +1121,7 @@ h1, h2, h3, h4 {
    SERVICES — infusion line cards
    ========================================================================== */
 .iv-services {
-  padding: 66px 0;
+  padding: 44px 0;
   background: var(--surface-2);
 }
 
@@ -1267,7 +1267,7 @@ h1, h2, h3, h4 {
    PHILOSOPHY
    ========================================================================== */
 .iv-philosophy {
-  padding: 66px 0;
+  padding: 44px 0;
   background: var(--white);
 }
 
@@ -1379,7 +1379,7 @@ h1, h2, h3, h4 {
    ========================================================================== */
 .iv-journey {
   position: relative;
-  padding: 66px 0 76px;
+  padding: 44px 0 56px;
   background-color: var(--surface-2);
   background-image:
     radial-gradient(ellipse 80% 50% at 50% 0%, hsl(268 70% 58% / 0.07), transparent 70%),
@@ -1535,7 +1535,7 @@ h1, h2, h3, h4 {
    CONTACT
    ========================================================================== */
 .iv-contact {
-  padding: 66px 0;
+  padding: 44px 0;
   background: var(--white);
 }
 
@@ -1617,7 +1617,7 @@ h1, h2, h3, h4 {
    ========================================================================== */
 .iv-testimonials {
   position: relative;
-  padding: 66px 0;
+  padding: 44px 0;
   background-color: var(--surface-2);
   background-image:
     radial-gradient(ellipse 80% 50% at 50% 0%, hsl(190 88% 45% / 0.07), transparent 70%),
@@ -1785,7 +1785,7 @@ h1, h2, h3, h4 {
    GALLERY
    ========================================================================== */
 .iv-gallery {
-  padding: 66px 0 72px;
+  padding: 44px 0 52px;
   background: var(--white);
 }
 
@@ -1912,6 +1912,41 @@ h1, h2, h3, h4 {
 
 .booking-error { font-size: 16px; color: hsl(0 72% 51%); margin: 0; min-height: 0; }
 .booking-error:empty { display: none; }
+
+/* ── Phone field — intl-tel-input country code dropdown ────────────────── */
+.iti {
+  display: block;
+  width: 100%;
+  --iti-border-color: var(--border);
+  --iti-country-selector-bg: var(--white);
+}
+.iti__country-selector {
+  border-radius: 12px;
+  max-width: none;
+}
+.iti__selected-country {
+  font-size: 16px;
+  line-height: normal;
+}
+.iti__selected-dial-code {
+  font-size: 16px;
+  line-height: normal;
+  color: var(--text);
+}
+.iti__dial-code {
+  font-size: 15px;
+}
+.booking-field .iti__search-input {
+  padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal));
+  padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal));
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 15px;
+}
+.booking-field .iti__tel-input.is-invalid {
+  border-color: hsl(0 72% 51%);
+  box-shadow: 0 0 0 3px hsl(0 72% 51% / 0.16);
+}
 
 .booking-select-wrap { position: relative; }
 .booking-select-wrap select { appearance: none; width: 100%; padding-right: 36px; }
@@ -2049,6 +2084,7 @@ h1, h2, h3, h4 {
   text-align: left;
   gap: 16px;
   width: 100%;
+  min-width: 0;
 }
 
 .footer-links-group {
@@ -2057,6 +2093,7 @@ h1, h2, h3, h4 {
   align-items: flex-start;
   gap: 8px;
   width: 100%;
+  min-width: 0;
 }
 
 .footer-links-group h4 {
@@ -2075,7 +2112,19 @@ h1, h2, h3, h4 {
   justify-content: flex-start;
   gap: 14px;
   max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.footer-nav-horizontal::-webkit-scrollbar {
+  height: 4px;
+}
+
+.footer-nav-horizontal::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
 
 .footer-nav-horizontal a {
@@ -2084,6 +2133,7 @@ h1, h2, h3, h4 {
   color: hsl(258 20% 82%);
   transition: color 0.2s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .footer-nav-horizontal a:hover {
@@ -2190,7 +2240,7 @@ h1, h2, h3, h4 {
 .blog-hero-content h1 { color: #fff; font-size: clamp(30px, 4vw, 44px); margin: 0 0 12px; }
 .blog-hero-content p { color: hsl(258 26% 86%); font-size: 18px; max-width: 620px; margin: 0 auto; }
 
-.blog-listing-section { padding: 56px 0; background: var(--surface-2); }
+.blog-listing-section { padding: 40px 0; background: var(--surface-2); }
 
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 
@@ -2217,7 +2267,7 @@ h1, h2, h3, h4 {
 .blog-page-link { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: auto !important; min-height: 38px; padding: 0 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--white); color: var(--text); text-decoration: none; font-size: 18px; font-weight: 600; }
 .blog-page-link.is-active, .blog-page-link:hover { background: var(--iv-deep); color: #fff; border-color: var(--iv-deep); }
 
-.blog-detail-content { padding: 54px 0; background: var(--white); }
+.blog-detail-content { padding: 40px 0; background: var(--white); }
 .blog-detail-title { font-size: clamp(28px, 3.4vw, 38px); margin: 0 0 12px; }
 .blog-detail-meta { font-size: 18px; color: var(--muted); margin-bottom: 26px; }
 .blog-detail-section { margin-bottom: 26px; }
@@ -2268,7 +2318,7 @@ h1, h2, h3, h4 {
   .iv-gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 1100px) {
   .nav-links { display: none; }
   .nav-links.open,
   .nav-links.is-open {
@@ -2310,7 +2360,7 @@ h1, h2, h3, h4 {
   .iv-hud-item { padding: 6px 8px; }
 
   .iv-about, .iv-services, .iv-philosophy, .iv-journey, .iv-contact,
-  .iv-testimonials, .iv-gallery { padding: 48px 0; }
+  .iv-testimonials, .iv-gallery { padding: 36px 0; }
 
   .iv-cred-grid,
   .iv-about-grid--full .iv-cred-grid { grid-template-columns: 1fr; }

@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Sarah Jenkins | Consultant Intensivist &amp; Critical Care Specialist</title>
-  <meta name="description" content="Board-certified consultant intensivist providing advanced ICU management, mechanical ventilation, hemodynamic monitoring and sepsis care. Book a critical care consultation." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f2a3d'/%3E%3Cpath d='M10 32h9l4-11 6 22 5-16 3 5h17' stroke='%232ec4b6' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+  <meta name="description"
+    content="Board-certified consultant intensivist providing advanced ICU management, mechanical ventilation, hemodynamic monitoring and sepsis care. Book a critical care consultation." />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f2a3d'/%3E%3Cpath d='M10 32h9l4-11 6 22 5-16 3 5h17' stroke='%232ec4b6' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container navbar">
@@ -31,7 +34,8 @@
         </span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="mainNav">
         <span></span>
         <span></span>
         <span></span>
@@ -54,8 +58,8 @@
   </header>
 
   <main>
-  <section class="hero-section">
-    <!-- ==========================================================================
+    <section class="hero-section">
+      <!-- ==========================================================================
          DIGIDR MODULAR BANNER MODULE (Hero Banner)
          ==========================================================================
          Backend Integration Guide:
@@ -67,561 +71,617 @@
              - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
              - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
-    <div
-      class="digidr-banner-module single-image-banner-section"
-      id="digidrBannerModule"
-      data-banner-active="true"
-      data-banner-start="2026-08-11T00:00:00+05:30"
-      data-banner-end="2026-08-15T23:59:59+05:30"
-      aria-label="Main Clinic Banner"
-      data-banner-src="assets/intensivist_banner-1.jpeg"
-      data-banner-src-mobile=""
-      data-banner-alt="Intensive care Independence Day banner"
-      data-banner-href="#"
-    >
-      <div class="container digidr-banner-container single-image-banner-container">
-        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
-          <div class="digidr-banner-wrap single-image-banner-wrap">
-            <picture>
-              <source media="(max-width: 768px)" srcset="assets/intensivist_banner-1.jpeg" />
-              <img src="assets/intensivist_banner-1.jpeg" alt="Intensive care Independence Day banner" class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
-            </picture>
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- END OF MODULAR BANNER MODULE -->
-
-    <div class="hero-mesh" aria-hidden="true"></div>
-    <div class="hero-grid-lines" aria-hidden="true"></div>
-
-    <svg class="hero-ecg-line" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
-      <path class="hero-ecg-path" d="M0,40 L100,40 L122,40 L136,14 L150,68 L164,26 L178,40 L400,40 L422,40 L436,14 L450,68 L464,26 L478,40 L700,40 L722,40 L736,14 L750,68 L764,26 L778,40 L1000,40 L1022,40 L1036,14 L1050,68 L1064,26 L1078,40 L1200,40" />
-    </svg>
-
-    <div class="container hero-layout">
-      <div class="hero-content">
-        <p class="expert-badge">
-          <span class="expert-badge-pulse" aria-hidden="true"></span>
-          Consultant Intensivist &amp; Critical Care Specialist
-        </p>
-
-        <h1 class="hero-title">Dr. Sarah Jenkins</h1>
-        <p class="hero-subtitle">MD, FNB (Intensive Care) &middot; Board Certified Intensivist</p>
-        <p class="mic"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Registration Number: MCI-CCM-2012-73892</p>
-
-        <div class="hero-stats-grid">
-          <article class="hero-stat-box">
-            <i class="fa-solid fa-award" aria-hidden="true"></i>
-            <strong>12+ Years</strong>
-            <span>Experience</span>
-          </article>
-          <article class="hero-stat-box">
-            <i class="fa-solid fa-users" aria-hidden="true"></i>
-            <strong>8,200+</strong>
-            <span>ICU Recoveries</span>
-          </article>
-          <article class="hero-stat-box">
-            <i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i>
-            <strong>98.2%</strong>
-            <span>Positive Reviews</span>
-          </article>
-        </div>
-
-        <p class="languages"><strong>Language Proficiency:</strong> English, Hindi, Kannada</p>
-
-        <div class="hero-actions">
-          <a href="#contact-us" class="hero-cta-secondary">
-            <i class="fa-solid fa-phone" aria-hidden="true"></i>
-            <span>Contact</span>
+      <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule" data-banner-active="true"
+        data-banner-start="2026-08-11T00:00:00+05:30" data-banner-end="2026-08-15T23:59:59+05:30"
+        aria-label="Main Clinic Banner" data-banner-src="assets/intensivist_banner-1.jpeg" data-banner-src-mobile=""
+        data-banner-alt="Intensive care Independence Day banner" data-banner-href="#">
+        <div class="container digidr-banner-container single-image-banner-container">
+          <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+            <div class="digidr-banner-wrap single-image-banner-wrap">
+              <picture>
+                <source media="(max-width: 768px)" srcset="assets/intensivist_banner-1.jpeg" />
+                <img src="assets/intensivist_banner-1.jpeg" alt="Intensive care Independence Day banner"
+                  class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
+              </picture>
+            </div>
           </a>
         </div>
+      </div>
+      <!-- END OF MODULAR BANNER MODULE -->
 
-        <div class="social-links" aria-label="Social media links">
-          <a href="#" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="social social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-          <a href="#" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <div class="hero-mesh" aria-hidden="true"></div>
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+
+      <svg class="hero-ecg-line" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+        <path class="hero-ecg-path"
+          d="M0,40 L100,40 L122,40 L136,14 L150,68 L164,26 L178,40 L400,40 L422,40 L436,14 L450,68 L464,26 L478,40 L700,40 L722,40 L736,14 L750,68 L764,26 L778,40 L1000,40 L1022,40 L1036,14 L1050,68 L1064,26 L1078,40 L1200,40" />
+      </svg>
+
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <p class="expert-badge">
+            <span class="expert-badge-pulse" aria-hidden="true"></span>
+            Consultant Intensivist &amp; Critical Care Specialist
+          </p>
+
+          <h1 class="hero-title">Dr. Sarah Jenkins</h1>
+          <p class="hero-subtitle">MD, FNB (Intensive Care) &middot; Board Certified Intensivist</p>
+          <p class="mic"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd No.: MCI-CCM-2012-73892</p>
+
+          <div class="hero-stats-grid">
+            <article class="hero-stat-box">
+              <i class="fa-solid fa-award" aria-hidden="true"></i>
+              <strong>12+ Years</strong>
+              <span>Experience</span>
+            </article>
+            <article class="hero-stat-box">
+              <i class="fa-solid fa-users" aria-hidden="true"></i>
+              <strong>8,200+</strong>
+              <span>ICU Recoveries</span>
+            </article>
+            <article class="hero-stat-box">
+              <i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i>
+              <strong>98.2%</strong>
+              <span>Positive Reviews</span>
+            </article>
+          </div>
+
+          <p class="languages"><strong>Language Proficiency:</strong> English, Hindi, Kannada</p>
+
+          <div class="hero-actions">
+            <a href="#contact-us" class="hero-cta-secondary">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <span>Contact</span>
+            </a>
+          </div>
+
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social social-facebook" aria-label="Facebook Page"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i
+                class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social social-instagram" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+            <a href="#" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-visual">
-        <div class="hero-visual-blob" aria-hidden="true"></div>
-        <div class="hero-portrait">
-          <img src="assets/dr-sarah-jenkins.png" alt="Dr. Sarah Jenkins, consultant intensivist" class="hero-image" />
-        </div>
-      </div>
-    </div>
-
-    <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,0 C240,40 480,80 720,80 C960,80 1200,40 1440,0 L1440,90 L0,90 Z"></path>
-    </svg>
-  </section>
-
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="about-intro">
-        <p class="about-kicker"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> About the Intensivist</p>
-        <h2 class="about-title">Life support. Critical healing.<br />Resilient hope.</h2>
-        <p class="about-subtitle">
-          Advanced intensive care and clinical monitoring for critical recoveries and post-operative management.
-        </p>
-      </div>
-
-      <div class="about-story-new about-story-new--centered">
-        <p>
-          Dr. Sarah Jenkins is a board-certified Intensivist with over 12 years of experience in managing high-acuity
-          patients, respiratory failure, cardiac emergencies, and systemic infections. She specializes in intensive care
-          coordination, hemodynamic monitoring, and multi-organ life support.
-        </p>
-        <p>
-          Recognized for her swift decision-making and empathetic family consultations, Dr. Jenkins leads
-          multidisciplinary ICU teams to deliver evidence-based, compassionate care when patients and their families
-          need it most.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="services-section" id="services">
-    <svg class="section-ecg-line section-ecg-line--top" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
-      <path class="hero-ecg-path" d="M0,40 L150,40 L172,40 L186,14 L200,68 L214,26 L228,40 L550,40 L572,40 L586,14 L600,68 L614,26 L628,40 L950,40 L972,40 L986,14 L1000,68 L1014,26 L1028,40 L1200,40" />
-    </svg>
-    <div class="container">
-      <div class="services-header">
-        <p class="services-kicker"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Intensivist Services</p>
-        <h2 class="services-title">Precision Intensive Care</h2>
-        <p class="services-subtitle">
-          Specialized medical interventions, life support systems, and continuous physiological monitoring.
-        </p>
-      </div>
-
-      <div class="services-grid-new">
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-bed-pulse"></i></div>
-          <div class="service-body-new">
-            <h3>ICU Management</h3>
-            <p>Comprehensive clinical supervision and life-support management for critically ill patients in the Intensive Care Unit.</p>
-          </div>
-        </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-lungs"></i></div>
-          <div class="service-body-new">
-            <h3>Mechanical Ventilation</h3>
-            <p>Expert management of invasive and non-invasive airway support, tailoring ventilator settings for optimal respiratory recovery.</p>
-          </div>
-        </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-kit-medical"></i></div>
-          <div class="service-body-new">
-            <h3>Hemodynamic Monitoring</h3>
-            <p>Continuous monitoring and drug titration to maintain cardiovascular stability and target organ perfusion.</p>
-          </div>
-        </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-suitcase-medical"></i></div>
-          <div class="service-body-new">
-            <h3>Trauma &amp; Emergency Care</h3>
-            <p>Immediate resuscitation, advanced cardiac life support, and rapid triage coordination for severe trauma cases.</p>
-          </div>
-        </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-file-waveform"></i></div>
-          <div class="service-body-new">
-            <h3>Post-Operative Recovery</h3>
-            <p>Specialized monitoring and pain management following high-risk surgical procedures to ensure stable patient transitions.</p>
-          </div>
-        </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
-          <div class="service-body-new">
-            <h3>Sepsis Management</h3>
-            <p>Early detection protocols, source control, and targeted antimicrobial stewardship to combat severe systemic infections.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="philosophy-section" id="philosophy">
-    <div class="container philosophy-layout">
-      <div class="philosophy-visual">
-        <div class="philosophy-img-frame">
-          <img src="assets/intensivist-workspace.png" alt="ICU clinical telemetry workspace" class="philosophy-photo" loading="lazy" />
-          <div class="philosophy-float-badge">
-            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-            <div>
-              <strong>99.2% Success</strong>
-              <span>Target Organ Stability</span>
-            </div>
+        <div class="hero-visual">
+          <div class="hero-visual-blob" aria-hidden="true"></div>
+          <div class="hero-portrait">
+            <img src="assets/dr-sarah-jenkins.png" alt="Dr. Sarah Jenkins, consultant intensivist" class="hero-image" />
           </div>
         </div>
       </div>
 
-      <div class="philosophy-content">
-        <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Critical Care Philosophy</p>
-        <h2 class="about-title">Critical care excellence and vigilant support</h2>
-        <p class="about-subtitle">
-          Delivering rapid, high-precision intensive care for complex and high-risk clinical conditions.
-        </p>
+      <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 C240,40 480,80 720,80 C960,80 1200,40 1440,0 L1440,90 L0,90 Z"></path>
+      </svg>
+    </section>
 
-        <div class="philosophy-pillars">
-          <div class="philosophy-pillar">
-            <div class="pillar-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
-            <div class="pillar-text">
-              <h3>Continuous ICU Monitoring</h3>
-              <p>Real-time tracking of vital organs, oxygenation, and hemodynamic stability.</p>
-            </div>
-          </div>
-          <div class="philosophy-pillar">
-            <div class="pillar-icon" aria-hidden="true"><i class="fa-solid fa-kit-medical"></i></div>
-            <div class="pillar-text">
-              <h3>Evidence-Based Intervention</h3>
-              <p>Rapid deployment of protocol-driven life support and critical therapies.</p>
-            </div>
-          </div>
-          <div class="philosophy-pillar">
-            <div class="pillar-icon" aria-hidden="true"><i class="fa-solid fa-people-roof"></i></div>
-            <div class="pillar-text">
-              <h3>Family-Centered Communication</h3>
-              <p>Transparent daily briefings and empathetic support for patient families.</p>
-            </div>
-          </div>
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-intro">
+          <p class="about-kicker"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> About the Intensivist</p>
+          <h2 class="about-title">Life support. Critical healing.<br />Resilient hope.</h2>
+          <p class="about-subtitle">
+            Advanced intensive care and clinical monitoring for critical recoveries and post-operative management.
+          </p>
+        </div>
+
+        <div class="about-story-new about-story-new--centered">
+          <p>
+            Dr. Sarah Jenkins is a board-certified Intensivist with over 12 years of experience in managing high-acuity
+            patients, respiratory failure, cardiac emergencies, and systemic infections. She specializes in intensive
+            care
+            coordination, hemodynamic monitoring, and multi-organ life support.
+          </p>
+          <p>
+            Recognized for her swift decision-making and empathetic family consultations, Dr. Jenkins leads
+            multidisciplinary ICU teams to deliver evidence-based, compassionate care when patients and their families
+            need it most.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="tech-ledger-section" id="technology">
-    <svg class="section-ecg-line section-ecg-line--bottom" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
-      <path class="hero-ecg-path" d="M0,40 L150,40 L172,40 L186,14 L200,68 L214,26 L228,40 L550,40 L572,40 L586,14 L600,68 L614,26 L628,40 L950,40 L972,40 L986,14 L1000,68 L1014,26 L1028,40 L1200,40" />
-    </svg>
-    <div class="container">
-      <div class="tech-ledger-header">
-        <p class="services-kicker"><i class="fa-solid fa-microchip" aria-hidden="true"></i> ICU Technology</p>
-        <h2 class="services-title">Advanced Critical Care Equipment</h2>
-        <p class="services-subtitle">
-          Cutting-edge monitoring and life-support technology enabling precise, real-time clinical decision-making.
-        </p>
-      </div>
+    <section class="services-section" id="services">
+      <svg class="section-ecg-line section-ecg-line--top" viewBox="0 0 1200 80" preserveAspectRatio="none"
+        aria-hidden="true">
+        <path class="hero-ecg-path"
+          d="M0,40 L150,40 L172,40 L186,14 L200,68 L214,26 L228,40 L550,40 L572,40 L586,14 L600,68 L614,26 L628,40 L950,40 L972,40 L986,14 L1000,68 L1014,26 L1028,40 L1200,40" />
+      </svg>
+      <div class="container">
+        <div class="services-header">
+          <p class="services-kicker"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Intensivist Services</p>
+          <h2 class="services-title">Precision Intensive Care</h2>
+          <p class="services-subtitle">
+            Specialized medical interventions, life support systems, and continuous physiological monitoring.
+          </p>
+        </div>
 
-      <div class="tech-ledger-rows">
-        <div class="tech-ledger-row">
-          <span class="tech-ledger-index">01</span>
-          <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-lungs"></i></span>
-          <div class="tech-ledger-body">
-            <h3>Mechanical Ventilators</h3>
-            <p>Multi-mode invasive and non-invasive ventilators with lung-protective strategies for precise respiratory support.</p>
-          </div>
-          <span class="tech-ledger-tag">Respiratory</span>
-        </div>
-        <div class="tech-ledger-row">
-          <span class="tech-ledger-index">02</span>
-          <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></span>
-          <div class="tech-ledger-body">
-            <h3>Hemodynamic Monitors</h3>
-            <p>Continuous arterial line and cardiac output monitoring for real-time circulatory and perfusion assessment.</p>
-          </div>
-          <span class="tech-ledger-tag">Circulatory</span>
-        </div>
-        <div class="tech-ledger-row">
-          <span class="tech-ledger-index">03</span>
-          <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-wave-square"></i></span>
-          <div class="tech-ledger-body">
-            <h3>Continuous ECG Telemetry</h3>
-            <p>Round-the-clock cardiac rhythm surveillance with automated alerts for early detection of arrhythmias and instability.</p>
-          </div>
-          <span class="tech-ledger-tag">Cardiac</span>
-        </div>
-        <div class="tech-ledger-row">
-          <span class="tech-ledger-index">04</span>
-          <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-droplet"></i></span>
-          <div class="tech-ledger-body">
-            <h3>Renal Replacement Therapy</h3>
-            <p>Continuous dialysis systems supporting acute kidney injury management in critically unstable patients.</p>
-          </div>
-          <span class="tech-ledger-tag">Renal</span>
-        </div>
-        <div class="tech-ledger-row">
-          <span class="tech-ledger-index">05</span>
-          <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-vial-circle-check"></i></span>
-          <div class="tech-ledger-body">
-            <h3>Point-of-Care Diagnostics</h3>
-            <p>Bedside blood gas and lab analysis delivering critical results within minutes to guide urgent treatment.</p>
-          </div>
-          <span class="tech-ledger-tag">Diagnostics</span>
-        </div>
-        <div class="tech-ledger-row">
-          <span class="tech-ledger-index">06</span>
-          <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-syringe"></i></span>
-          <div class="tech-ledger-body">
-            <h3>Smart Infusion Systems</h3>
-            <p>Programmable pumps with dosage safeguards for precise titration of vasopressors and critical medications.</p>
-          </div>
-          <span class="tech-ledger-tag">Medication</span>
+        <div class="services-grid-new">
+          <article class="service-card-new">
+            <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-bed-pulse"></i></div>
+            <div class="service-body-new">
+              <h3>ICU Management</h3>
+              <p>Comprehensive clinical supervision and life-support management for critically ill patients in the
+                Intensive Care Unit.</p>
+            </div>
+          </article>
+          <article class="service-card-new">
+            <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-lungs"></i></div>
+            <div class="service-body-new">
+              <h3>Mechanical Ventilation</h3>
+              <p>Expert management of invasive and non-invasive airway support, tailoring ventilator settings for
+                optimal respiratory recovery.</p>
+            </div>
+          </article>
+          <article class="service-card-new">
+            <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-kit-medical"></i></div>
+            <div class="service-body-new">
+              <h3>Hemodynamic Monitoring</h3>
+              <p>Continuous monitoring and drug titration to maintain cardiovascular stability and target organ
+                perfusion.</p>
+            </div>
+          </article>
+          <article class="service-card-new">
+            <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-suitcase-medical"></i></div>
+            <div class="service-body-new">
+              <h3>Trauma &amp; Emergency Care</h3>
+              <p>Immediate resuscitation, advanced cardiac life support, and rapid triage coordination for severe trauma
+                cases.</p>
+            </div>
+          </article>
+          <article class="service-card-new">
+            <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-file-waveform"></i></div>
+            <div class="service-body-new">
+              <h3>Post-Operative Recovery</h3>
+              <p>Specialized monitoring and pain management following high-risk surgical procedures to ensure stable
+                patient transitions.</p>
+            </div>
+          </article>
+          <article class="service-card-new">
+            <div class="service-icon-wrap" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="service-body-new">
+              <h3>Sepsis Management</h3>
+              <p>Early detection protocols, source control, and targeted antimicrobial stewardship to combat severe
+                systemic infections.</p>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="process-section" id="process">
-    <div class="container">
-      <div class="process-header">
-        <p class="services-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
-        <h2 class="services-title">The Critical Care Pathway</h2>
-        <p class="services-subtitle">
-          A disciplined, multi-stage protocol ensuring high-acuity patient safety and structured recovery.
-        </p>
-      </div>
-
-      <div class="process-steps-wrap">
-        <div class="process-timeline-line" aria-hidden="true"></div>
-        <div class="process-grid">
-          <div class="process-step">
-            <div class="step-visual-wrap">
-              <div class="step-circle">
-                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
-                </svg>
-                <i class="fa-solid fa-truck-medical" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="step-body">
-              <span class="step-number">01</span>
-              <h3>Rapid Assessment</h3>
-              <p>Immediate triage, airway and hemodynamic evaluation, and first-line stabilization.</p>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-visual-wrap">
-              <div class="step-circle">
-                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
-                </svg>
-                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="step-body">
-              <span class="step-number">02</span>
-              <h3>Advanced Diagnostics</h3>
-              <p>Comprehensive lab analysis, blood gas monitoring, and imaging review.</p>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-visual-wrap">
-              <div class="step-circle">
-                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
-                </svg>
-                <i class="fa-solid fa-notes-medical" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="step-body">
-              <span class="step-number">03</span>
-              <h3>Protocol Execution</h3>
-              <p>Targeted ICU management, organ support, and specialized medication titration.</p>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-visual-wrap">
-              <div class="step-circle">
-                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
-                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
-                </svg>
-                <i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="step-body">
-              <span class="step-number">04</span>
-              <h3>Step-Down &amp; Recovery</h3>
-              <p>Gradual weaning, recovery milestone tracking, and safe step-down transition.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact-section" id="contact-us">
-    <div class="container">
-      <div class="contact-header">
-        <p class="contact-kicker"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</p>
-        <h2 class="contact-title">Get in Touch</h2>
-        <p class="contact-subtitle">
-          Have questions or want to schedule an appointment? Reach out to our team directly.
-        </p>
-      </div>
-
-      <div class="contact-layout-new">
-        <aside class="contact-card-new contact-card-new--info">
-          <h3>ICU &amp; Clinic Details</h3>
-          <div class="contact-list-new">
-            <div class="contact-item-new">
-              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+    <section class="philosophy-section" id="philosophy">
+      <div class="container philosophy-layout">
+        <div class="philosophy-visual">
+          <div class="philosophy-img-frame">
+            <img src="assets/intensivist-workspace.png" alt="ICU clinical telemetry workspace" class="philosophy-photo"
+              loading="lazy" />
+            <div class="philosophy-float-badge">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
               <div>
-                <h4>Address</h4>
-                <p>
-                  <strong>Metro Intensivist Suite,</strong><br />
-                  3rd Floor, City General Hospital, 100 Feet Road,<br />
-                  Indiranagar, Bengaluru, Karnataka 560038
-                </p>
+                <strong>99.2% Success</strong>
+                <span>Target Organ Stability</span>
               </div>
             </div>
-            <!-- <div class="contact-item-new">
+          </div>
+        </div>
+
+        <div class="philosophy-content">
+          <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Critical Care Philosophy
+          </p>
+          <h2 class="about-title">Critical care excellence and vigilant support</h2>
+          <p class="about-subtitle">
+            Delivering rapid, high-precision intensive care for complex and high-risk clinical conditions.
+          </p>
+
+          <div class="philosophy-pillars">
+            <div class="philosophy-pillar">
+              <div class="pillar-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
+              <div class="pillar-text">
+                <h3>Continuous ICU Monitoring</h3>
+                <p>Real-time tracking of vital organs, oxygenation, and hemodynamic stability.</p>
+              </div>
+            </div>
+            <div class="philosophy-pillar">
+              <div class="pillar-icon" aria-hidden="true"><i class="fa-solid fa-kit-medical"></i></div>
+              <div class="pillar-text">
+                <h3>Evidence-Based Intervention</h3>
+                <p>Rapid deployment of protocol-driven life support and critical therapies.</p>
+              </div>
+            </div>
+            <div class="philosophy-pillar">
+              <div class="pillar-icon" aria-hidden="true"><i class="fa-solid fa-people-roof"></i></div>
+              <div class="pillar-text">
+                <h3>Family-Centered Communication</h3>
+                <p>Transparent daily briefings and empathetic support for patient families.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-ledger-section" id="technology">
+      <svg class="section-ecg-line section-ecg-line--bottom" viewBox="0 0 1200 80" preserveAspectRatio="none"
+        aria-hidden="true">
+        <path class="hero-ecg-path"
+          d="M0,40 L150,40 L172,40 L186,14 L200,68 L214,26 L228,40 L550,40 L572,40 L586,14 L600,68 L614,26 L628,40 L950,40 L972,40 L986,14 L1000,68 L1014,26 L1028,40 L1200,40" />
+      </svg>
+      <div class="container">
+        <div class="tech-ledger-header">
+          <p class="services-kicker"><i class="fa-solid fa-microchip" aria-hidden="true"></i> ICU Technology</p>
+          <h2 class="services-title">Advanced Critical Care Equipment</h2>
+          <p class="services-subtitle">
+            Cutting-edge monitoring and life-support technology enabling precise, real-time clinical decision-making.
+          </p>
+        </div>
+
+        <div class="tech-ledger-rows">
+          <div class="tech-ledger-row">
+            <span class="tech-ledger-index">01</span>
+            <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-lungs"></i></span>
+            <div class="tech-ledger-body">
+              <h3>Mechanical Ventilators</h3>
+              <p>Multi-mode invasive and non-invasive ventilators with lung-protective strategies for precise
+                respiratory support.</p>
+            </div>
+            <span class="tech-ledger-tag">Respiratory</span>
+          </div>
+          <div class="tech-ledger-row">
+            <span class="tech-ledger-index">02</span>
+            <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></span>
+            <div class="tech-ledger-body">
+              <h3>Hemodynamic Monitors</h3>
+              <p>Continuous arterial line and cardiac output monitoring for real-time circulatory and perfusion
+                assessment.</p>
+            </div>
+            <span class="tech-ledger-tag">Circulatory</span>
+          </div>
+          <div class="tech-ledger-row">
+            <span class="tech-ledger-index">03</span>
+            <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-wave-square"></i></span>
+            <div class="tech-ledger-body">
+              <h3>Continuous ECG Telemetry</h3>
+              <p>Round-the-clock cardiac rhythm surveillance with automated alerts for early detection of arrhythmias
+                and instability.</p>
+            </div>
+            <span class="tech-ledger-tag">Cardiac</span>
+          </div>
+          <div class="tech-ledger-row">
+            <span class="tech-ledger-index">04</span>
+            <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-droplet"></i></span>
+            <div class="tech-ledger-body">
+              <h3>Renal Replacement Therapy</h3>
+              <p>Continuous dialysis systems supporting acute kidney injury management in critically unstable patients.
+              </p>
+            </div>
+            <span class="tech-ledger-tag">Renal</span>
+          </div>
+          <div class="tech-ledger-row">
+            <span class="tech-ledger-index">05</span>
+            <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-vial-circle-check"></i></span>
+            <div class="tech-ledger-body">
+              <h3>Point-of-Care Diagnostics</h3>
+              <p>Bedside blood gas and lab analysis delivering critical results within minutes to guide urgent
+                treatment.</p>
+            </div>
+            <span class="tech-ledger-tag">Diagnostics</span>
+          </div>
+          <div class="tech-ledger-row">
+            <span class="tech-ledger-index">06</span>
+            <span class="tech-ledger-icon" aria-hidden="true"><i class="fa-solid fa-syringe"></i></span>
+            <div class="tech-ledger-body">
+              <h3>Smart Infusion Systems</h3>
+              <p>Programmable pumps with dosage safeguards for precise titration of vasopressors and critical
+                medications.</p>
+            </div>
+            <span class="tech-ledger-tag">Medication</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" id="process">
+      <div class="container">
+        <div class="process-header">
+          <p class="services-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
+          <h2 class="services-title">The Critical Care Pathway</h2>
+          <p class="services-subtitle">
+            A disciplined, multi-stage protocol ensuring high-acuity patient safety and structured recovery.
+          </p>
+        </div>
+
+        <div class="process-steps-wrap">
+          <div class="process-timeline-line" aria-hidden="true"></div>
+          <div class="process-grid">
+            <div class="process-step">
+              <div class="step-visual-wrap">
+                <div class="step-circle">
+                  <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                    <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-dasharray="5 7" stroke-linecap="round" />
+                  </svg>
+                  <i class="fa-solid fa-truck-medical" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-body">
+                <span class="step-number">01</span>
+                <h3>Rapid Assessment</h3>
+                <p>Immediate triage, airway and hemodynamic evaluation, and first-line stabilization.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-visual-wrap">
+                <div class="step-circle">
+                  <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                    <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-dasharray="5 7" stroke-linecap="round" />
+                  </svg>
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-body">
+                <span class="step-number">02</span>
+                <h3>Advanced Diagnostics</h3>
+                <p>Comprehensive lab analysis, blood gas monitoring, and imaging review.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-visual-wrap">
+                <div class="step-circle">
+                  <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                    <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-dasharray="5 7" stroke-linecap="round" />
+                  </svg>
+                  <i class="fa-solid fa-notes-medical" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-body">
+                <span class="step-number">03</span>
+                <h3>Protocol Execution</h3>
+                <p>Targeted ICU management, organ support, and specialized medication titration.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-visual-wrap">
+                <div class="step-circle">
+                  <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                    <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-dasharray="5 7" stroke-linecap="round" />
+                  </svg>
+                  <i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="step-body">
+                <span class="step-number">04</span>
+                <h3>Step-Down &amp; Recovery</h3>
+                <p>Gradual weaning, recovery milestone tracking, and safe step-down transition.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact-us">
+      <div class="container">
+        <div class="contact-header">
+          <p class="contact-kicker"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</p>
+          <h2 class="contact-title">Get in Touch</h2>
+          <p class="contact-subtitle">
+            Have questions or want to schedule an appointment? Reach out to our team directly.
+          </p>
+        </div>
+
+        <div class="contact-layout-new">
+          <aside class="contact-card-new contact-card-new--info">
+            <h3>ICU &amp; Clinic Details</h3>
+            <div class="contact-list-new">
+              <div class="contact-item-new">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <div>
+                  <h4>Address</h4>
+                  <p>
+                    <strong>Metro Intensivist Suite,</strong><br />
+                    3rd Floor, City General Hospital, 100 Feet Road,<br />
+                    Indiranagar, Bengaluru, Karnataka 560038
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="contact-item-new">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
               <div>
                 <h4>ICU Availability</h4>
                 <p>Round-the-clock critical care cover, including weekends and public holidays.</p>
               </div>
             </div> -->
-          </div>
-        </aside>
-
-        <aside class="contact-card-new contact-card-new--reach">
-          <h3>Reach Us</h3>
-          <div class="contact-list-new">
-            <div class="contact-item-new">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <div>
-                <h4>Phone &amp; Email</h4>
-                <p>
-                  <a href="tel:+918045678901">+91-8045678901</a><br />
-                  <a href="mailto:dr.sarah@metro-icu.care">dr.sarah@metro-icu.care</a>
-                </p>
-              </div>
             </div>
-            <!-- <div class="contact-item-new">
+          </aside>
+
+          <aside class="contact-card-new contact-card-new--reach">
+            <h3>Reach Us</h3>
+            <div class="contact-list-new">
+              <div class="contact-item-new">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <div>
+                  <h4>Phone &amp; Email</h4>
+                  <p>
+                    <a href="tel:+918045678901">+91-8045678901</a><br />
+                    <a href="mailto:dr.sarah@metro-icu.care">dr.sarah@metro-icu.care</a>
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="contact-item-new">
               <i class="fa-solid fa-comments" aria-hidden="true"></i>
               <div>
                 <h4>Family Briefings</h4>
                 <p>Scheduled daily updates for families of admitted critical care patients.</p>
               </div>
             </div> -->
-          </div>
-        </aside>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="testimonials-header">
-        <p class="testimonials-kicker"><i class="fa-solid fa-circle-h" aria-hidden="true"></i> Patient Experiences</p>
-        <h2 class="testimonials-title">Voices from Critical Recoveries</h2>
-        <p class="testimonials-subtitle">
-          Feedback from patients and families who received care during critical hospitalizations.
-        </p>
-      </div>
-
-      <div class="testimonials-carousel-wrap">
-        <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <div class="testimonials-carousel" id="testimonialsCarousel">
-          <div class="testimonials-track" id="testimonialsTrack">
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"Saved my father's life during severe respiratory distress. The diagnostic speed and steady presence in the ICU are unmatched."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Rohan Mehta" class="testimonial-avatar" loading="lazy" />
-                <div>
-                  <h3 class="testimonial-name">Rohan Mehta</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"The clarity provided during my husband's post-op recovery was a huge comfort. Extremely professional and reassuring throughout."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Sneha Reddy" class="testimonial-avatar" loading="lazy" />
-                <div>
-                  <h3 class="testimonial-name">Sneha Reddy</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"A true professional. The prompt handling of my mother's septic shock in the emergency wing made all the difference."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Amit Joshi" class="testimonial-avatar" loading="lazy" />
-                <div>
-                  <h3 class="testimonial-name">Amit Joshi</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"Very systematic approach. Complex telemetry details were explained in simple terms to help us make the right medical choices."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Kavya Nair" class="testimonial-avatar" loading="lazy" />
-                <div>
-                  <h3 class="testimonial-name">Kavya Nair</h3>
-                  <div class="testimonial-stars" aria-label="4 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="testimonials-header">
+          <p class="testimonials-kicker"><i class="fa-solid fa-circle-h" aria-hidden="true"></i> Patient Experiences</p>
+          <h2 class="testimonials-title">Voices from Critical Recoveries</h2>
+          <p class="testimonials-subtitle">
+            Feedback from patients and families who received care during critical hospitalizations.
+          </p>
         </div>
 
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
-      </div>
-    </div>
-  </section>
+        <div class="testimonials-carousel-wrap">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
 
-  <section class="gallery-section" id="gallery">
-    <div class="container">
-      <div class="gallery-header">
-        <p class="gallery-kicker"><i class="fa-solid fa-hospital" aria-hidden="true"></i> Practice Gallery</p>
-        <h2 class="gallery-title">A Look Inside My Practice</h2>
-        <p class="gallery-subtitle">A glimpse into our Critical Care Unit and the environment where patients are monitored around the clock.</p>
-      </div>
+          <div class="testimonials-carousel" id="testimonialsCarousel">
+            <div class="testimonials-track" id="testimonialsTrack">
+              <article class="testimonial-card testimonial-card-new">
+                <p class="testimonial-quote">"Saved my father's life during severe respiratory distress. The diagnostic
+                  speed and steady presence in the ICU are unmatched."</p>
+                <div class="testimonial-footer">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=200&amp;q=80"
+                    alt="Rohan Mehta" class="testimonial-avatar" loading="lazy" />
+                  <div>
+                    <h3 class="testimonial-name">Rohan Mehta</h3>
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="testimonial-card testimonial-card-new">
+                <p class="testimonial-quote">"The clarity provided during my husband's post-op recovery was a huge
+                  comfort. Extremely professional and reassuring throughout."</p>
+                <div class="testimonial-footer">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=200&amp;q=80"
+                    alt="Sneha Reddy" class="testimonial-avatar" loading="lazy" />
+                  <div>
+                    <h3 class="testimonial-name">Sneha Reddy</h3>
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="testimonial-card testimonial-card-new">
+                <p class="testimonial-quote">"A true professional. The prompt handling of my mother's septic shock in
+                  the emergency wing made all the difference."</p>
+                <div class="testimonial-footer">
+                  <img
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=crop&amp;w=200&amp;q=80"
+                    alt="Amit Joshi" class="testimonial-avatar" loading="lazy" />
+                  <div>
+                    <h3 class="testimonial-name">Amit Joshi</h3>
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="testimonial-card testimonial-card-new">
+                <p class="testimonial-quote">"Very systematic approach. Complex telemetry details were explained in
+                  simple terms to help us make the right medical choices."</p>
+                <div class="testimonial-footer">
+                  <img
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&amp;fit=crop&amp;w=200&amp;q=80"
+                    alt="Kavya Nair" class="testimonial-avatar" loading="lazy" />
+                  <div>
+                    <h3 class="testimonial-name">Kavya Nair</h3>
+                    <div class="testimonial-stars" aria-label="4 out of 5 stars">
+                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
 
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Intensive care unit bed and monitoring equipment" loading="lazy" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Clinical team reviewing patient charts" loading="lazy" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Hospital corridor leading to critical care wing" loading="lazy" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Modern hospital facility exterior" loading="lazy" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Medical monitoring equipment at a bedside" loading="lazy" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Clinician preparing critical care treatment" loading="lazy" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
+          <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <div class="gallery-header">
+          <p class="gallery-kicker"><i class="fa-solid fa-hospital" aria-hidden="true"></i> Practice Gallery</p>
+          <h2 class="gallery-title">A Look Inside My Practice</h2>
+          <p class="gallery-subtitle">A glimpse into our Critical Care Unit and the environment where patients are
+            monitored around the clock.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+              alt="Intensive care unit bed and monitoring equipment" loading="lazy" />
+            <span class="gallery-item-overlay" aria-hidden="true"><i
+                class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+              alt="Clinical team reviewing patient charts" loading="lazy" />
+            <span class="gallery-item-overlay" aria-hidden="true"><i
+                class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+              alt="Hospital corridor leading to critical care wing" loading="lazy" />
+            <span class="gallery-item-overlay" aria-hidden="true"><i
+                class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+              alt="Modern hospital facility exterior" loading="lazy" />
+            <span class="gallery-item-overlay" aria-hidden="true"><i
+                class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+              alt="Medical monitoring equipment at a bedside" loading="lazy" />
+            <span class="gallery-item-overlay" aria-hidden="true"><i
+                class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+              alt="Clinician preparing critical care treatment" loading="lazy" />
+            <span class="gallery-item-overlay" aria-hidden="true"><i
+                class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
@@ -638,8 +698,10 @@
       <div class="booking-modal-header">
         <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic
+            Visit</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online
+            Consultation</button>
         </div>
       </div>
 
@@ -652,7 +714,7 @@
           </div>
           <div class="booking-field">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
             <p class="booking-error" data-error-for="phone"></p>
           </div>
         </div>
@@ -667,14 +729,17 @@
             <label for="preferredDateText">Preferred Date</label>
             <div class="booking-datepicker" id="preferredDateField">
               <div class="booking-input-with-icon">
-                <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+                <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date"
+                  readonly autocomplete="off" />
               </div>
               <input type="hidden" id="preferredDate" name="preferredDate" />
               <div class="booking-calendar" id="preferredDateCalendar" hidden>
                 <div class="booking-calendar-header">
-                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i
+                      class="fa-solid fa-chevron-left"></i></button>
                   <span class="booking-calendar-title" data-cal-title></span>
-                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i
+                      class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="booking-calendar-weekdays">
                   <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
@@ -706,7 +771,8 @@
 
         <div class="booking-field">
           <label for="reason">Reason For Visit</label>
-          <textarea id="reason" name="reason" rows="3" placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+          <textarea id="reason" name="reason" rows="3"
+            placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
           <p class="booking-error" data-error-for="reason"></p>
         </div>
 
@@ -752,14 +818,22 @@
         <div class="footer-social-wrap">
           <span class="footer-social-label">Follow me on:</span>
           <div class="footer-social" aria-label="Footer social links">
-            <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-            <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i
+                class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i
+                class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i
+                class="fa-solid fa-globe"></i></a>
+            <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i
+                class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i
+                class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -793,12 +867,15 @@
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copy"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> &copy; 2026 Dr. Sarah Jenkins. All rights reserved.</p>
+      <p class="footer-copy"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> &copy; 2026 Dr. Sarah Jenkins.
+        All rights reserved.</p>
     </div>
   </footer>
 
   <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="script/index.js"></script>
   <script src="./script/chatbot.js" defer></script>
 </body>
+
 </html>

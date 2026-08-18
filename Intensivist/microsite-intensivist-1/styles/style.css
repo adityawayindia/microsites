@@ -420,7 +420,7 @@ a {
 .hero-section {
   position: relative;
   isolation: isolate;
-  padding: 28px 0 120px;
+  padding: 16px 0 120px;
   background:
     radial-gradient(ellipse 70% 60% at 78% 20%, hsl(178 60% 30% / 0.35), transparent 62%),
     radial-gradient(ellipse 60% 50% at 12% 78%, hsl(196 62% 28% / 0.28), transparent 60%),
@@ -512,7 +512,7 @@ a {
   grid-template-columns: 1.05fr 0.95fr;
   gap: 56px;
   align-items: center;
-  padding-top: 64px;
+  padding-top: 24px;
 }
 
 .hero-content {
@@ -872,7 +872,7 @@ a {
    ========================================================================== */
 
 .about-section {
-  padding: 48px 0;
+  padding: 32px 0;
   background: var(--bg);
 }
 
@@ -916,7 +916,7 @@ a {
 
 .services-section {
   position: relative;
-  padding: 88px 0;
+  padding: 48px 0;
   background:
     linear-gradient(160deg, hsl(205 47% 8% / 0.72) 0%, hsl(205 47% 10% / 0.6) 55%, hsl(205 47% 8% / 0.74) 100%),
     url('../assets/services-bg.jpg') center / cover no-repeat fixed;
@@ -948,7 +948,6 @@ a {
   gap: 22px;
   align-items: stretch;
   justify-content: center;
-  counter-reset: icu-sec;
 }
 
 .service-card-new {
@@ -981,35 +980,13 @@ a {
   background: var(--bone);
   border: 1px solid hsl(205 22% 89%);
   box-shadow: var(--shadow-sm);
-  counter-increment: icu-sec;
   transition: transform 0.28s var(--ease), box-shadow 0.28s ease, border-color 0.28s ease;
-}
-
-.service-card-new::before {
-  content: "ICU-0" counter(icu-sec);
-  position: absolute;
-  top: 16px;
-  right: 18px;
-  padding: 3px 8px;
-  border-radius: 5px;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  background: var(--button-light);
-  transition: background 0.24s ease, color 0.24s ease;
 }
 
 .service-card-new:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow);
   border-color: hsl(178 50% 68%);
-}
-
-.service-card-new:hover::before {
-  background: var(--accent);
-  color: var(--white);
 }
 
 .service-icon-wrap {
@@ -1051,7 +1028,7 @@ a {
    ========================================================================== */
 
 .philosophy-section {
-  padding: 88px 0;
+  padding: 48px 0;
   background: var(--bg);
   overflow: hidden;
 }
@@ -1179,7 +1156,7 @@ a {
 
 .tech-ledger-section {
   position: relative;
-  padding: 88px 0;
+  padding: 48px 0;
   background:
     linear-gradient(160deg, hsl(205 47% 8% / 0.94) 0%, hsl(205 47% 8% / 0.9) 55%, hsl(205 47% 8% / 0.95) 100%),
     url('../assets/tech-bg.jpg') center / cover no-repeat fixed;
@@ -1329,7 +1306,7 @@ a {
    ========================================================================== */
 
 .process-section {
-  padding: 88px 0;
+  padding: 48px 0;
   background: var(--surface-alt);
 }
 
@@ -1427,7 +1404,7 @@ a {
 
 .contact-section {
   position: relative;
-  padding: 88px 0;
+  padding: 48px 0;
   background:
     linear-gradient(160deg, hsl(205 47% 11% / 0.93) 0%, hsl(205 44% 14% / 0.9) 55%, hsl(205 47% 11% / 0.94) 100%),
     url('../assets/contact-bg-photo.jpg') center / cover no-repeat fixed;
@@ -1530,7 +1507,7 @@ a {
    ========================================================================== */
 
 .testimonials-section {
-  padding: 88px 0;
+  padding: 48px 0;
   background: var(--surface-alt);
 }
 
@@ -1656,7 +1633,7 @@ a {
    ========================================================================== */
 
 .gallery-section {
-  padding: 88px 0;
+  padding: 48px 0;
   background: var(--bg);
 }
 
@@ -1953,6 +1930,41 @@ a {
   color: hsl(6 76% 46%); /* darker than --signal for AA text contrast on white */
 }
 
+/* ── Phone field — intl-tel-input country code dropdown ────────────────── */
+.iti {
+  display: block;
+  width: 100%;
+  --iti-border-color: hsl(205 22% 86%);
+  --iti-country-selector-bg: var(--bone);
+}
+.iti__country-selector {
+  border-radius: 10px;
+  max-width: none;
+}
+.iti__selected-country {
+  font-size: 16px;
+  line-height: normal;
+}
+.iti__selected-dial-code {
+  font-size: 16px;
+  line-height: normal;
+  color: var(--text);
+}
+.iti__dial-code {
+  font-size: 15px;
+}
+.booking-field .iti__search-input {
+  padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal));
+  padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal));
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 15px;
+}
+.booking-field .iti__tel-input.is-invalid {
+  border-color: hsl(6 76% 46%);
+  box-shadow: 0 0 0 3px hsl(6 76% 46% / 0.16);
+}
+
 /* Datepicker */
 .booking-datepicker {
   position: relative;
@@ -2238,6 +2250,7 @@ a {
   text-align: left;
   gap: 16px;
   width: 100%;
+  min-width: 0;
 }
 
 .footer-links-group {
@@ -2246,6 +2259,7 @@ a {
   align-items: flex-start;
   gap: 8px;
   width: 100%;
+  min-width: 0;
 }
 
 .footer-links-group h4 {
@@ -2264,7 +2278,19 @@ a {
   justify-content: flex-start;
   gap: 14px;
   max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.footer-nav-horizontal::-webkit-scrollbar {
+  height: 4px;
+}
+
+.footer-nav-horizontal::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
 
 .footer-nav-horizontal a {
@@ -2273,6 +2299,7 @@ a {
   color: hsl(196 24% 78%);
   transition: color 0.2s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .footer-nav-horizontal a:hover {
@@ -2400,7 +2427,7 @@ a {
 }
 
 .blog-listing-section {
-  padding: 72px 0;
+  padding: 48px 0;
   background: var(--bg);
 }
 
@@ -2523,7 +2550,7 @@ a {
 
 /* Blog detail */
 .blog-detail-section {
-  padding: 60px 0 80px;
+  padding: 40px 0 56px;
   background: var(--bg);
 }
 
@@ -2676,7 +2703,7 @@ a {
   }
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 1100px) {
   .menu-toggle {
     display: flex;
     order: 2;
@@ -2849,7 +2876,7 @@ a {
   }
 
   .about-section {
-    padding: 48px 0;
+    padding: 32px 0;
   }
 
   .services-section,
@@ -2859,7 +2886,7 @@ a {
   .contact-section,
   .testimonials-section,
   .gallery-section {
-    padding: 64px 0;
+    padding: 40px 0;
   }
 
   .services-header,
