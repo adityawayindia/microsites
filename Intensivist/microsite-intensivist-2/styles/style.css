@@ -1888,7 +1888,7 @@ h1, h2, h3, h4 {
 .booking-form { display: flex; flex-direction: column; gap: 12px; padding: 0 36px 32px; }
 .booking-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-.booking-field { display: flex; flex-direction: column; gap: 4px; }
+.booking-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .booking-field label { font-size: 16px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em; }
 
 .booking-field input, .booking-field select, .booking-field textarea {
@@ -1917,8 +1917,14 @@ h1, h2, h3, h4 {
 .iti {
   display: block;
   width: 100%;
+  min-width: 0;
   --iti-border-color: var(--border);
   --iti-country-selector-bg: var(--white);
+}
+.booking-field .iti input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 .iti__country-selector {
   border-radius: 12px;
@@ -1953,7 +1959,7 @@ h1, h2, h3, h4 {
 .booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
 
 .booking-upload-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.booking-upload-btn { flex-shrink: 0; display: inline-flex; align-items: center; background: var(--iv-soft); color: var(--iv-deep); border: 1.5px solid var(--iv-line); border-radius: 10px; padding: 9px 18px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.booking-upload-btn { flex-shrink: 0; display: inline-flex; align-items: center; background: var(--iv-soft); color: var(--iv-deep); border: 1.5px solid var(--iv-line); border-radius: 999px; padding: 9px 18px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s, color 0.2s; }
 .booking-upload-btn:hover { background: var(--iv-deep); color: #fff; }
 .booking-field--file input[type="file"] { display: none; }
 .booking-upload-help { font-size: 16px; color: var(--muted); }
@@ -1967,7 +1973,7 @@ h1, h2, h3, h4 {
   background: linear-gradient(135deg, var(--iv-deep) 0%, var(--iv) 55%, var(--saline) 130%);
   color: #fff;
   border: none;
-  border-radius: 14px;
+  border-radius: 999px;
   padding: 14px 28px;
   font-size: 16px;
   font-weight: 700;
@@ -2318,7 +2324,7 @@ h1, h2, h3, h4 {
   .iv-gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .nav-links { display: none; }
   .nav-links.open,
   .nav-links.is-open {

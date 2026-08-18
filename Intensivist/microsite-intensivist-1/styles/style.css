@@ -2081,7 +2081,7 @@ a {
 
 .booking-upload-btn {
   padding: 9px 20px;
-  border-radius: 8px;
+  border-radius: 999px;
   background: var(--accent);
   color: var(--white);
   font-size: 16px;
@@ -2703,7 +2703,7 @@ a {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .menu-toggle {
     display: flex;
     order: 2;

@@ -374,7 +374,7 @@ body {
   background: var(--navy);
   color: var(--white);
   padding: 11px 24px;
-  border-radius: 6px;
+  border-radius: 999px;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -677,7 +677,7 @@ display: flex;
   font-size: 16px;
   font-weight: 600;
   padding: 14px 28px;
-  border-radius: 6px;
+  border-radius: 999px;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   box-shadow: 0 6px 20px rgba(10, 25, 47, 0.2);
@@ -700,7 +700,7 @@ display: flex;
   font-size: 16px;
   font-weight: 600;
   padding: 13px 24px;
-  border-radius: 6px;
+  border-radius: 999px;
   border: 1.5px solid var(--button);
   text-decoration: none;
   transition: all 0.18s ease;
@@ -2171,13 +2171,13 @@ display: flex;
 .booking-modal-dialog {
   position: relative;
   z-index: 1;
-  width: min(560px, 92vw);
+  width: min(600px, 96vw);
   background: var(--bg);
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 0;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(10, 25, 47, 0.06);
-  max-height: calc(100vh - 32px);
+  max-height: 90vh;
   overflow-y: auto;
   overflow-x: hidden;
   opacity: 0;
@@ -2204,10 +2204,10 @@ display: flex;
   /* flex so the inline-flex pill row does not pick up baseline descender space */
   display: flex;
   align-items: flex-start;
-  padding: 28px 28px 16px;
-  margin-bottom: 16px;
-  border-radius: 12px 12px 0 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 20px 24px 0;
+  margin-bottom: 18px;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
 }
 
 .booking-error:empty {
@@ -2267,7 +2267,7 @@ display: flex;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 0 28px 30px;
+  padding: 0 24px 20px;
 }
 
 .booking-form-row {
@@ -2295,10 +2295,10 @@ display: flex;
 .booking-field textarea,
 .booking-select-wrap select {
   width: 100%;
-  border-radius: 8px;
-  border: 1px solid rgba(10, 25, 47, 0.1);
+  border-radius: 10px;
+  border: 1.5px solid rgba(10, 25, 47, 0.1);
   background: var(--white);
-  padding: 10px 12px;
+  padding: 11px 14px;
   font-size: 16px;
   font-family: var(--sans);
   color: var(--text);
@@ -2499,7 +2499,7 @@ display: flex;
 
 .booking-calendar-weekdays {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   text-align: center;
   font-size: 16px;
   font-weight: 600;
@@ -2510,12 +2510,14 @@ display: flex;
 
 .booking-calendar-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 2px;
 }
 
 .booking-calendar-day {
   position: relative;
+  width: 100%;
+  min-width: 0;
   aspect-ratio: 1 / 1;
   border: none;
   background: transparent;
@@ -2586,15 +2588,18 @@ display: flex;
 .booking-field--file .booking-upload-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .booking-upload-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 9px 18px;
+  border-radius: 999px;
   border: 1px solid rgba(10, 25, 47, 0.12);
   background: var(--white);
   font-size: 16px;
@@ -2628,19 +2633,20 @@ display: flex;
   margin-top: 6px;
   width: 100%;
   border: none;
-  border-radius: 6px;
-  padding: 13px 16px;
+  border-radius: 999px;
+  padding: 14px;
   background: var(--navy);
   color: var(--white);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: opacity 0.2s, transform 0.2s;
   letter-spacing: 0.02em;
 }
 
-.booking-submit-btn:hover {
-  background: var(--button-hover);
+.booking-submit-btn:hover:not([disabled]) {
+  opacity: 0.92;
+  transform: translateY(-2px);
 }
 
 .booking-submit-btn:disabled {
@@ -2756,7 +2762,7 @@ display: flex;
    Responsive â€” 900px
    ========================================================================== */
 
-@media (max-width: 1030px) {
+@media (max-width: 1200px) {
   .navbar {
     min-height: 68px;
     position: relative;
@@ -3973,6 +3979,57 @@ select {
 .booking-error {
   font-size: 16px !important;
   line-height: 1.3;
+}
+
+/* ==========================================================================
+   DigiDr Global — 18px minimum body copy (p, a, li), booking modal excluded
+   ========================================================================== */
+p, li, a {
+  font-size: 18px;
+}
+
+.booking-modal p,
+.booking-modal li,
+.booking-modal a,
+.booking-modal-dialog p,
+.booking-modal-dialog li,
+.booking-modal-dialog a {
+  font-size: 16px;
+}
+
+/* CTA buttons, nav/footer links, pills & badges are exempt from 18px body-copy sizing */
+.cta-btn,
+.hero-v2-cta,
+.hero-v2-cta-secondary,
+.blog-read-more,
+.blog-page-link,
+.nav-links a,
+.footer-nav a,
+.footer-links a,
+.contact-cta-wrap .cta-btn,
+.carousel-btn,
+.social,
+.footer-social-icon,
+.blog-detail-back-link,
+.gallery-lightbox-nav,
+.pill,
+.badge-pill,
+.hero-v2-lang-tag,
+.hero-v2-chip,
+.hero-v2-badge,
+.hero-v2-reg,
+.about-kicker,
+.services-kicker,
+.contact-kicker,
+.testimonials-kicker,
+.gallery-kicker,
+.blog-hero-badge,
+.blog-card-meta,
+.blog-detail-meta,
+.step-number,
+.footer-social-label,
+.footer-copy {
+  font-size: 16px;
 }
 
 
