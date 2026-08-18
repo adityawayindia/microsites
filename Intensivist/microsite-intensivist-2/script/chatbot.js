@@ -53,7 +53,6 @@
                         '<p class="chatbot-header-name">' + BOT_NAME + '</p>' +
                     '</div>' +
                     '<button type="button" class="chatbot-header-close" id="chatbotCloseBtn" aria-label="Close chat">' +
-                        /* This microsite loads Font Awesome, not Material Symbols */
                         '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
                     '</button>' +
                 '</div>' +

@@ -409,7 +409,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   background: var(--peach-dark);
   color: #ffffff;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   transition: transform 0.25s ease, filter 0.25s ease;
   white-space: nowrap;
   flex-shrink: 0;
@@ -924,7 +924,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .peds2-step-number {
   display: inline-block;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--peach-dark);
   background: var(--peach-light);

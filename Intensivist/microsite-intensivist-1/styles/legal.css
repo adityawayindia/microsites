@@ -69,8 +69,10 @@
   border: 1px solid var(--button);
   background: #ffffff;
   color: var(--button);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
+  height: auto !important;
+  min-height: fit-content;
 }
 
 .legal-page .blog-detail-content {
@@ -146,7 +148,7 @@
   }
 
   .legal-effective-date {
-    font-size: 16px;
+    font-size: 18px;
     padding: 7px 11px;
   }
 

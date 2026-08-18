@@ -5,13 +5,6 @@
 
     var WELCOME_MSG = "Hi there! 👋 I'm your Assistant. How can I help you today?";
 
-    var SUGGESTIONS = [
-        'What services do you offer?',
-        'How to get started?',
-        'Pricing plans',
-        'Book a demo'
-    ];
-
     /* ── Inject CSS ── */
     (function injectCSS() {
         if (document.getElementById('chatbot-css')) return;
@@ -25,12 +18,6 @@
     /* ── Build HTML ── */
     function svgSend() {
         return '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>';
-    }
-
-    function buildSuggestions() {
-        return SUGGESTIONS.map(function (s) {
-            return '<button class="chatbot-suggestion-chip" type="button">' + escHtml(s) + '</button>';
-        }).join('');
     }
 
     function escHtml(str) {
@@ -73,19 +60,6 @@
 
                 /* Messages */
                 '<div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite" aria-label="Chat messages"></div>' +
-
-                /* Quick-reply chips */
-                '<div class="chatbot-suggestions-wrap" id="chatbotSuggestionsWrap">' +
-                    '<button type="button" class="chatbot-suggestions-arrow chatbot-suggestions-arrow--prev" id="chatbotSuggPrev" aria-label="Scroll suggestions left">' +
-                        '<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>' +
-                    '</button>' +
-                    '<div class="chatbot-suggestions" id="chatbotSuggestions">' +
-                        buildSuggestions() +
-                    '</div>' +
-                    '<button type="button" class="chatbot-suggestions-arrow chatbot-suggestions-arrow--next" id="chatbotSuggNext" aria-label="Scroll suggestions right">' +
-                        '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>' +
-                    '</button>' +
-                '</div>' +
 
                 /* Input */
                 '<div class="chatbot-input-area">' +
@@ -284,11 +258,13 @@
     });
 
     /* ── Suggestion chips ── */
-    suggestions.addEventListener('click', function (e) {
-        var chip = e.target.closest('.chatbot-suggestion-chip');
-        if (!chip) return;
-        sendMessage(chip.textContent);
-    });
+    if (suggestions) {
+        suggestions.addEventListener('click', function (e) {
+            var chip = e.target.closest('.chatbot-suggestion-chip');
+            if (!chip) return;
+            sendMessage(chip.textContent);
+        });
+    }
 
     /* ── Suggestion chips: left/right arrow scroll + swipe ── */
     function updateSuggArrows() {

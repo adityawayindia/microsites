@@ -193,7 +193,7 @@ aside,
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: var(--text);
   background: var(--white);
@@ -201,7 +201,7 @@ body {
 }
 
 p, li {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text);
 }
 
@@ -237,7 +237,7 @@ h1, h2, h3, h4 {
   gap: 9px;
   padding: 7px 16px 7px 12px;
   border-radius: 999px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -245,6 +245,8 @@ h1, h2, h3, h4 {
   color: var(--iv-deep);
   border: 1.5px solid var(--iv-line);
   margin-bottom: 16px;
+  height: auto !important;
+  min-height: fit-content;
 }
 
 .iv-chip i { font-size: 16px; }
@@ -266,7 +268,7 @@ h1, h2, h3, h4 {
 }
 
 .iv-sub {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
   margin: 0;
 }
@@ -328,7 +330,7 @@ h1, h2, h3, h4 {
 
 .brand-name {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text);
   line-height: 1.2;
@@ -336,7 +338,7 @@ h1, h2, h3, h4 {
 }
 
 .brand-role {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--iv-deep);
   letter-spacing: 0.08em;
@@ -348,7 +350,7 @@ h1, h2, h3, h4 {
 .nav-links a {
   position: relative;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--text-2);
   padding: 4px 0;
@@ -469,11 +471,13 @@ h1, h2, h3, h4 {
   background: hsl(258 40% 100% / 0.08);
   border: 1px solid hsl(190 70% 76% / 0.28);
   color: hsl(190 84% 84%);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   backdrop-filter: blur(6px);
+  height: auto !important;
+  min-height: fit-content;
 }
 
 .iv-live-dot {
@@ -502,7 +506,7 @@ h1, h2, h3, h4 {
 
 .iv-hero-title .iv-hero-title-sub {
   display: block;
-  font-size: clamp(17px, 1.7vw, 22px);
+  font-size: clamp(18px, 1.7vw, 22px);
   font-weight: 500;
   letter-spacing: -0.01em;
   margin-top: 12px;
@@ -510,7 +514,7 @@ h1, h2, h3, h4 {
 }
 
 .iv-hero-lead {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.75;
   color: hsl(258 30% 88%);
   max-width: 52ch;
@@ -526,7 +530,7 @@ h1, h2, h3, h4 {
   border-radius: 10px;
   background: hsl(0 0% 100% / 0.06);
   border: 1px dashed hsl(190 60% 74% / 0.35);
-  font-size: 16px;
+  font-size: 18px;
   color: hsl(258 24% 86%);
 }
 
@@ -547,7 +551,7 @@ h1, h2, h3, h4 {
   padding: 12px 24px;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: hsl(190 84% 84%);
   border: 1.5px solid hsl(190 70% 74% / 0.4);
@@ -563,7 +567,7 @@ h1, h2, h3, h4 {
 
 .iv-hero-langs {
   margin: 22px 0 0;
-  font-size: 16px;
+  font-size: 18px;
   color: hsl(258 22% 82%);
 }
 
@@ -654,7 +658,7 @@ h1, h2, h3, h4 {
   z-index: 2;
   text-align: center;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.14em;
   color: hsl(190 90% 92%);
@@ -772,7 +776,7 @@ h1, h2, h3, h4 {
 
 .iv-monitor-bed {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -783,7 +787,7 @@ h1, h2, h3, h4 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -857,7 +861,7 @@ h1, h2, h3, h4 {
 
 .iv-vital-label {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -877,7 +881,7 @@ h1, h2, h3, h4 {
 .iv-vital:nth-child(2) .iv-vital-value { color: hsl(272 84% 80%); }
 .iv-vital:nth-child(3) .iv-vital-value { color: hsl(340 82% 76%); }
 
-.iv-vital-unit { font-size: 16px; font-weight: 600; color: hsl(258 16% 66%); }
+.iv-vital-unit { font-size: 18px; font-weight: 600; color: hsl(258 16% 66%); }
 
 /* Hero HUD stat strip -----------------------------------------------------*/
 .iv-hud {
@@ -929,7 +933,7 @@ h1, h2, h3, h4 {
 
 .iv-hud-lbl {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1006,14 +1010,14 @@ h1, h2, h3, h4 {
 .iv-about-copy .iv-title { text-align: left; }
 
 .iv-about-lead {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--iv-deep);
   margin: 0 0 16px;
 }
 
 .iv-about-body p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text);
   margin: 0 0 16px;
 }
@@ -1045,13 +1049,13 @@ h1, h2, h3, h4 {
 
 .iv-cred strong {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text);
   line-height: 1.35;
 }
 
-.iv-cred span { display: block; font-size: 16px; color: var(--muted); }
+.iv-cred span { display: block; font-size: 18px; color: var(--muted); }
 
 /* Portrait — "fluid chamber" frame */
 .iv-about-visual { position: relative; }
@@ -1110,8 +1114,8 @@ h1, h2, h3, h4 {
   flex-shrink: 0;
 }
 
-.iv-portrait-badge strong { display: block; font-size: 16px; font-weight: 700; color: var(--text); }
-.iv-portrait-badge span { display: block; font-size: 16px; color: var(--muted); }
+.iv-portrait-badge strong { display: block; font-size: 18px; font-weight: 700; color: var(--text); }
+.iv-portrait-badge span { display: block; font-size: 18px; color: var(--muted); }
 
 /* ==========================================================================
    SERVICES — infusion line cards
@@ -1225,15 +1229,6 @@ h1, h2, h3, h4 {
   transform: rotate(-6deg);
 }
 
-.iv-svc-code {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-
 .iv-svc-body h3 {
   font-size: 22px;
   font-weight: 700;
@@ -1243,7 +1238,7 @@ h1, h2, h3, h4 {
 }
 
 .iv-svc-body p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text);
   margin: 0 0 14px;
 }
@@ -1256,12 +1251,14 @@ h1, h2, h3, h4 {
   gap: 7px;
   padding: 5px 12px;
   border-radius: 999px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.04em;
   background: var(--saline-soft);
   color: hsl(190 90% 26%);
   border: 1px solid var(--saline-line);
+  height: auto !important;
+  min-height: fit-content;
 }
 
 .iv-tag i { font-size: 16px; color: inherit; }
@@ -1305,7 +1302,7 @@ h1, h2, h3, h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 17px;
+  font-size: 20px;
   flex-shrink: 0;
   color: #fff;
   background: linear-gradient(135deg, var(--iv-deep), var(--iv));
@@ -1329,7 +1326,7 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
-.iv-pillar-text p { font-size: 16px; color: var(--text); margin: 0; }
+.iv-pillar-text p { font-size: 18px; color: var(--text); margin: 0; }
 
 .iv-phil-visual { position: relative; }
 
@@ -1374,8 +1371,8 @@ h1, h2, h3, h4 {
   flex-shrink: 0;
 }
 
-.iv-phil-badge strong { display: block; font-size: 16px; font-weight: 700; color: var(--text); }
-.iv-phil-badge span { display: block; font-size: 16px; color: var(--muted); }
+.iv-phil-badge strong { display: block; font-size: 18px; font-weight: 700; color: var(--text); }
+.iv-phil-badge span { display: block; font-size: 18px; color: var(--muted); }
 
 /* ==========================================================================
    JOURNEY — vertical infusion line timeline with SVG telemetry pattern
@@ -1478,7 +1475,7 @@ h1, h2, h3, h4 {
 .iv-step-num {
   display: inline-block;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.18em;
   color: var(--iv-deep);
@@ -1492,7 +1489,7 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
-.iv-step-card p { font-size: 16px; color: var(--text); margin: 0; }
+.iv-step-card p { font-size: 18px; color: var(--text); margin: 0; }
 
 .iv-step-orb {
   grid-column: 2;
@@ -1602,14 +1599,14 @@ h1, h2, h3, h4 {
 }
 
 .iv-contact-row h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   margin: 0 0 4px;
   color: var(--text);
   letter-spacing: 0.02em;
 }
 
-.iv-contact-row p { font-size: 16px; color: var(--text); margin: 0; }
+.iv-contact-row p { font-size: 18px; color: var(--text); margin: 0; }
 .iv-contact-row a { color: var(--iv-deep); text-decoration: none; font-weight: 600; }
 .iv-contact-row a:hover { text-decoration: underline; }
 
@@ -1696,7 +1693,7 @@ h1, h2, h3, h4 {
 }
 
 .testimonial-quote {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.75;
   color: var(--text);
   margin: 0 0 22px;
@@ -1721,7 +1718,7 @@ h1, h2, h3, h4 {
 }
 
 .testimonial-name {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text);
   margin: 0 0 3px;
@@ -2009,11 +2006,12 @@ h1, h2, h3, h4 {
 
 .footer-inner {
   position: relative;
-  width: min(1000px, 92%);
+  width: min(760px, 92%);
   margin: 0 auto;
   padding: 0 24px 28px;
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
   gap: 36px;
   align-items: start;
 }
@@ -2025,11 +2023,11 @@ h1, h2, h3, h4 {
 .footer-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .footer-brand-col .brand-text { display: flex; flex-direction: column; }
 .footer-brand-col .brand-name { font-size: 18px; font-weight: 700; color: #ffffff !important; }
-.footer-brand-col .brand-role { font-size: 16px; color: hsl(186 92% 72%); font-weight: 500; }
+.footer-brand-col .brand-role { font-size: 18px; color: hsl(186 92% 72%); font-weight: 500; }
 .footer-tagline { font-size: 18px; color: hsl(258 20% 82%); margin: 0; max-width: 340px; text-align: left; line-height: 1.4; }
 
 .footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
-.footer-social-label { font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
+.footer-social-label { font-size: 18px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
 .footer-social { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: flex-start; max-width: 344px; min-width: 0; }
 
 .footer-social-icon { width: 36px; height: 36px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; color: #fff; text-decoration: none; transition: transform 0.2s var(--ease); }
@@ -2062,7 +2060,7 @@ h1, h2, h3, h4 {
 }
 
 .footer-links-group h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -2107,11 +2105,13 @@ h1, h2, h3, h4 {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
   max-width: 100%;
   color: #ffffff !important;
   transition: background .25s ease, border-color .25s ease, transform .25s ease;
+  height: auto !important;
+  min-height: fit-content;
 }
 
 .footer-visitor-badge:hover {
@@ -2128,7 +2128,7 @@ h1, h2, h3, h4 {
 
 .footer-visitor-badge span,
 .footer-visitor-badge .footer-visitor-badge-label {
-  white-space: nowrap;
+  white-space: normal;
   color: #f1f5f9 !important;
   font-weight: 500;
 }
@@ -2175,7 +2175,7 @@ h1, h2, h3, h4 {
   gap: 9px;
   padding: 7px 16px;
   border-radius: 999px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2183,10 +2183,12 @@ h1, h2, h3, h4 {
   border: 1px solid hsl(190 70% 76% / 0.3);
   color: hsl(190 84% 84%);
   margin-bottom: 16px;
+  height: auto !important;
+  min-height: fit-content;
 }
 
 .blog-hero-content h1 { color: #fff; font-size: clamp(30px, 4vw, 44px); margin: 0 0 12px; }
-.blog-hero-content p { color: hsl(258 26% 86%); font-size: 16px; max-width: 620px; margin: 0 auto; }
+.blog-hero-content p { color: hsl(258 26% 86%); font-size: 18px; max-width: 620px; margin: 0 auto; }
 
 .blog-listing-section { padding: 56px 0; background: var(--surface-2); }
 
@@ -2204,22 +2206,22 @@ h1, h2, h3, h4 {
 .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .blog-card-image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 .blog-card-content { padding: 22px 22px 24px; }
-.blog-card-meta { font-size: 16px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.blog-card-meta { font-size: 18px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
 .blog-card-title { font-size: 22px; font-weight: 700; margin: 0 0 10px; color: var(--text); }
 .blog-card-title a { color: inherit; text-decoration: none; }
 .blog-card-title a:hover { color: var(--iv-deep); }
-.blog-read-more { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: var(--iv-deep); text-decoration: none; }
+.blog-read-more { display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--iv-deep); text-decoration: none; }
 .blog-read-more:hover { gap: 12px; }
 
 .blog-pagination { display: flex; justify-content: center; gap: 8px; margin-top: 36px; }
-.blog-page-link { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--white); color: var(--text); text-decoration: none; font-size: 16px; font-weight: 600; }
+.blog-page-link { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: auto !important; min-height: 38px; padding: 0 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--white); color: var(--text); text-decoration: none; font-size: 18px; font-weight: 600; }
 .blog-page-link.is-active, .blog-page-link:hover { background: var(--iv-deep); color: #fff; border-color: var(--iv-deep); }
 
 .blog-detail-content { padding: 54px 0; background: var(--white); }
 .blog-detail-title { font-size: clamp(28px, 3.4vw, 38px); margin: 0 0 12px; }
-.blog-detail-meta { font-size: 16px; color: var(--muted); margin-bottom: 26px; }
+.blog-detail-meta { font-size: 18px; color: var(--muted); margin-bottom: 26px; }
 .blog-detail-section { margin-bottom: 26px; }
-.blog-detail-back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--iv-deep); text-decoration: none; font-weight: 700; font-size: 16px; }
+.blog-detail-back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--iv-deep); text-decoration: none; font-weight: 700; font-size: 18px; }
 
 /* ==========================================================================
    RESPONSIVE
@@ -2242,6 +2244,8 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 900px) {
+  .footer-inner { grid-template-columns: 1fr; justify-content: start; }
+
   .iv-about-grid { grid-template-columns: 1fr; gap: 40px; }
   .iv-about-visual { order: -1; max-width: 420px; margin: 0 auto; width: 100%; }
   .iv-portrait-badge { left: 0; }
@@ -2289,8 +2293,8 @@ h1, h2, h3, h4 {
   .navbar { justify-content: flex-start; gap: 10px; }
   .brand { margin-right: auto; min-width: 0; }
   .brand-text { min-width: 0; overflow: hidden; }
-  .brand-name { font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .brand-role { font-size: 16px; }
+  .brand-name { font-size: 18px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
+  .brand-role { font-size: 18px; }
   .avatar { width: 38px; height: 38px; }
 }
 
