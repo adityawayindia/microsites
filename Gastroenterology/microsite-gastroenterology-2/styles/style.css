@@ -266,6 +266,10 @@ img {
   cursor: pointer;
 }
 
+.cta-btn span {
+  color: var(--white) !important;
+}
+
 .cta-btn:hover,
 .contact-btn:hover {
   transform: translateY(-2px);
@@ -582,10 +586,11 @@ overflow: hidden;
 }
 
 .social {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
+  font-size: 19px;
   border-radius: 50%;
-  background: var(--surface);
+  background: #ffffff !important;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -1098,7 +1103,11 @@ overflow: hidden;
 
 .testimonials-section {
   padding: 52px 0;
-  background: var(--bg);
+  background-image: linear-gradient(rgba(248, 250, 252, 0.94), rgba(248, 250, 252, 0.94)), url('../assets/digestive-system.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: var(--bg);
 }
 
 .testimonials-header {
@@ -1300,7 +1309,8 @@ overflow: hidden;
   transition: opacity var(--transition-normal);
 }
 
-.gallery-lightbox.is-visible {
+.gallery-lightbox.is-visible,
+.gallery-lightbox.is-open {
   opacity: 1;
   pointer-events: auto;
 }
@@ -1330,12 +1340,43 @@ overflow: hidden;
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 20;
+  z-index: 25;
   background: transparent;
   border: none;
   color: var(--white);
   font-size: 36px;
   cursor: pointer;
+}
+
+.gallery-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--white);
+  border: none;
+  font-size: 48px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background var(--transition-fast);
+}
+
+.gallery-lightbox-nav:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-lightbox-prev {
+  left: 24px;
+}
+
+.gallery-lightbox-next {
+  right: 24px;
 }
 
 /* ==========================================================================
@@ -1679,22 +1720,23 @@ overflow: hidden;
 }
 
 .footer-social {
-  /* Capped to exactly 8 icons per row (8 * 40px icon + 7 * 14px gap =
-     418px) so a 9th+ icon added later wraps to a new row instead of
+  /* Capped to exactly 8 icons per row (8 * 45px icon + 7 * 14px gap =
+     458px) so a 9th+ icon added later wraps to a new row instead of
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 14px;
-  max-width: 418px;
+  max-width: 458px;
   min-width: 0;
   margin: 0 auto;
 }
 
 .footer-social-icon {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
+  font-size: 19px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   color: var(--white);
@@ -2048,6 +2090,29 @@ overflow: hidden;
 }
 
 @media (max-width: 1100px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand {
+    order: 1;
+    margin-right: auto;
+  }
+
+  .cta-btn {
+    order: 2;
+    padding: 8px 16px;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-right: 15px;
+  }
+
+  .menu-toggle {
+    order: 3;
+  }
+
   .nav-links {
     position: fixed;
     top: 80px;
@@ -2621,6 +2686,7 @@ overflow: hidden;
   flex-wrap: wrap !important;
 }
 
+.booking-field label.booking-upload-btn,
 .booking-upload-btn {
   padding: 9px 20px !important;
   border-radius: 999px !important;

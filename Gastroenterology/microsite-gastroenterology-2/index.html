@@ -31,7 +31,7 @@
         </span>
         <span class="brand-text">
           <span class="brand-name">Dr. Sarah Jenkins</span>
-          <span class="brand-role">Gastro</span>
+          <span class="brand-role">Gastroenterologist</span>
         </span>
       </a>
 
@@ -71,30 +71,17 @@
             - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
             - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
-    <div
-      class="digidr-banner-module single-image-banner-section"
-      id="digidrBannerModule"
-      data-banner-active="true"
-      data-banner-start="2026-08-11T00:00:00+05:30"
-      data-banner-end="2026-08-15T23:59:59+05:30"
-      aria-label="Main Clinic Banner"
-      data-banner-src="assets/gastro-independence-banner.svg"
-      data-banner-src-mobile=""
-      data-banner-alt="Gastroenterology Independence Day care banner"
-      data-banner-href="#"
-    >
+    <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule" data-banner-active="true"
+      data-banner-start="2026-08-11T00:00:00+05:30" data-banner-end="2026-08-15T23:59:59+05:30"
+      aria-label="Main Clinic Banner" data-banner-src="assets/gastro-independence-banner.svg" data-banner-src-mobile=""
+      data-banner-alt="Gastroenterology Independence Day care banner" data-banner-href="#">
       <div class="container digidr-banner-container single-image-banner-container">
         <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
           <div class="digidr-banner-wrap single-image-banner-wrap">
             <picture>
               <source media="(max-width: 768px)" srcset="assets/gastro-independence-banner.svg" />
-              <img
-                src="assets/gastro-independence-banner.svg"
-                alt="Gastroenterology Independence Day care banner"
-                class="digidr-banner-img single-image-banner-img"
-                id="digidrBannerImg"
-                loading="eager"
-              />
+              <img src="assets/gastro-independence-banner.svg" alt="Gastroenterology Independence Day care banner"
+                class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
             </picture>
           </div>
         </a>
@@ -150,19 +137,19 @@
 
     <div class="container hero-layout">
       <div class="hero-content">
-        <div class="digestive-hud-bar">
+        <!-- <div class="digestive-hud-bar">
           <span class="hud-chip"><span class="hud-pulse-dot"></span> Advanced Endoscopy Solutions</span>
           <span class="hud-chip"><i class="fa-solid fa-apple-whole"></i> Gut Microbiome &amp; Diet</span>
-        </div>
+        </div> -->
 
         <div class="expert-badge">
           <i class="fa-solid fa-stethoscope"></i>
-          Gastroenterology &amp; Digestive Care
+          Gastroenterology
         </div>
 
         <h1 class="hero-title">Dr. Sarah Jenkins</h1>
-        <p class="hero-subtitle">MD, DM (Gastroenterology) · Board Certified Gastroenterologist</p>
-        <p class="mic">MCI Registration Number: MCI-GI-2012-73892</p>
+        <p class="hero-subtitle"><i class="fa-solid fa-user-graduate"></i> <strong>Qualification:</strong> MD, DM (Gastroenterology) · Board Certified Gastroenterologist</p>
+        <p class="mic"><i class="fa-solid fa-id-card"></i> <strong>MCI Regd No:</strong> MCI-GI-2012-73892</p>
 
         <div class="hero-stats-grid">
           <article class="hero-stat-box">
@@ -183,14 +170,16 @@
         </div>
 
         <p class="languages">
-          <strong>Language Proficiency:</strong> English, Hindi, Kannada
+          <i class="fa-solid fa-language"></i> <strong>Language:</strong> English, Hindi, Kannada
         </p>
 
         <div class="hero-actions">
-          <a href="#contact-us" class="contact-btn">Contact Now</a>
+          <!-- <a href="#contact-us" class="contact-btn">Contact Now</a> -->
           <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social social-facebook" aria-label="Facebook Page"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i
+                class="fa-brands fa-facebook"></i></a>
             <a href="#" class="social social-instagram" aria-label="Instagram"><i
                 class="fa-brands fa-instagram"></i></a>
             <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
@@ -489,7 +478,8 @@
         style="text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
         <p class="contact-kicker"
           style="margin: 0; font-size: 16px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--deep, var(--text, #0f172a)); display: inline-flex; align-items: center; gap: 8px; justify-content: center;">
-          <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</p>
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact
+        </p>
         <h2 class="contact-title"
           style="margin: 10px auto 12px; font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; color: var(--deep, var(--text, #0f172a)); letter-spacing: -0.03em; line-height: 1.25; text-align: center; max-width: none;">
           Get in Touch</h2>
@@ -808,13 +798,16 @@
         <div class="footer-social" aria-label="Footer social links">
           <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i
               class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i
+              class="fa-brands fa-facebook"></i></a>
           <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i
               class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i
+              class="fa-brands fa-x-twitter"></i></a>
           <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i
               class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i
+              class="fa-solid fa-globe"></i></a>
           <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i
               class="fa-brands fa-whatsapp"></i></a>
           <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i
