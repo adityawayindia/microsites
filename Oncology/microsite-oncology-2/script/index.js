@@ -79,6 +79,62 @@ if (menuToggle && mainNav) {
     });
 }
 
+// Animated Stat Counters (hero stat strip)
+(function () {
+    const counters = document.querySelectorAll("[data-count-to]");
+    if (!counters.length) return;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const DURATION = 1400;
+
+    function animateCounter(el) {
+        const target = parseFloat(el.getAttribute("data-count-to"), 10) || 0;
+        const suffix = el.getAttribute("data-suffix") || "";
+        const useCommas = target >= 1000;
+
+        function formatValue(value) {
+            const rounded = Math.round(value);
+            return (useCommas ? rounded.toLocaleString("en-US") : String(rounded)) + suffix;
+        }
+
+        if (prefersReducedMotion) {
+            el.textContent = formatValue(target);
+            return;
+        }
+
+        const startTime = performance.now();
+
+        function tick(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / DURATION, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = formatValue(target * eased);
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                el.textContent = formatValue(target);
+            }
+        }
+
+        requestAnimationFrame(tick);
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        counters.forEach(animateCounter);
+    } else {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        counters.forEach((el) => observer.observe(el));
+    }
+})();
+
 // Testimonials Carousel
 (function () {
     const track = document.getElementById("testimonialsTrack");
@@ -782,7 +838,7 @@ if (menuToggle && mainNav) {
       ".footer-visitor-badge{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.32);box-shadow:0 2px 10px rgba(0,0,0,0.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:18px;line-height:1.4;max-width:100%;transition:background .25s ease,border-color .25s ease,transform .25s ease;}",
       ".footer-visitor-badge:hover{background:rgba(255,255,255,0.24);border-color:rgba(255,255,255,0.44);transform:translateY(-1px);}",
       ".footer-visitor-badge .footer-visitor-badge-icon{font-size:18px;color:#ffffff;}",
-      ".footer-visitor-badge .footer-visitor-badge-label{white-space:nowrap;color:#ffffff;font-weight:600;}",
+      ".footer-visitor-badge .footer-visitor-badge-label{white-space:nowrap;color:#f1f5f9;font-weight:500;}",
       ".footer-visitor-badge .footer-visitor-badge-count{font-weight:700;color:#ffffff;font-variant-numeric:tabular-nums;}",
       "@media (max-width:480px){.footer-visitor-badge{font-size:18px;padding:9px 14px;gap:6px;margin-top:12px;}}"
     ].join("");
@@ -791,7 +847,6 @@ if (menuToggle && mainNav) {
 
   function findSocialContainer(footer) {
     return (
-      footer.querySelector(".footer-social-wrap") ||
       footer.querySelector(".peds2-footer-social") ||
       footer.querySelector(".alt-footer-social") ||
       footer.querySelector(".footer-social") ||
