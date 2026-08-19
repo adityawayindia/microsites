@@ -433,6 +433,53 @@ if (menuToggle && mainNav) {
         return /^[0-9]{4,15}$/.test(digits);
     }
 
+    let iti = null;
+    let phoneUtilsReady = false;
+
+    function getPhoneErrorMessage(errorCode) {
+        if (!window.intlTelInput) return "Please enter a valid phone number.";
+        const { VALIDATION_ERROR } = window.intlTelInput;
+        switch (errorCode) {
+            case VALIDATION_ERROR.INVALID_COUNTRY_CODE: return "Invalid country code.";
+            case VALIDATION_ERROR.TOO_SHORT: return "Phone number is too short.";
+            case VALIDATION_ERROR.TOO_LONG: return "Phone number is too long.";
+            default: return "Please enter a valid phone number.";
+        }
+    }
+
+    function initPhonePlugin() {
+        const phoneInputEl = form.phone;
+        if (!phoneInputEl || !window.intlTelInput) return;
+
+        iti = window.intlTelInput(phoneInputEl, {
+            initialCountry: "in",
+            countryOrder: ["in"],
+            separateDialCode: true,
+            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
+        });
+
+        iti.promise.then(() => { phoneUtilsReady = true; }).catch(() => {});
+
+        phoneInputEl.addEventListener("countrychange", () => {
+            if (phoneInputEl.value.trim()) {
+                clearErrors();
+            }
+        });
+
+        form.addEventListener("reset", () => {
+            iti?.setNumber("");
+            iti?.setSelectedCountry("in");
+        });
+    }
+
+    form.fullName?.addEventListener("input", () => {
+        const el = form.fullName;
+        const sanitized = el.value.replace(/[^A-Za-z\s.'-]/g, "");
+        if (sanitized !== el.value) el.value = sanitized;
+    });
+
+    initPhonePlugin();
+
     function validateDateNotPast(value) {
         if (!value) return false;
         const today = new Date();
@@ -621,6 +668,10 @@ if (menuToggle && mainNav) {
         event.preventDefault();
         if (isSubmitting) return;
 
+        if (iti) {
+            try { await iti.promise; } catch (e) {}
+        }
+
         clearErrors();
 
         const fullName = form.fullName.value.trim();
@@ -637,6 +688,9 @@ if (menuToggle && mainNav) {
         if (!fullName) {
             showError("fullName", "Please enter your full name.");
             isValid = false;
+        } else if (!/^[A-Za-z\s.'-]+$/.test(fullName)) {
+            showError("fullName", "Name should contain only letters.");
+            isValid = false;
         }
         if (!email) {
             showError("email", "Please enter your email address.");
@@ -648,6 +702,11 @@ if (menuToggle && mainNav) {
         if (!phone) {
             showError("phone", "Please enter your phone number.");
             isValid = false;
+        } else if (iti && phoneUtilsReady) {
+            if (!iti.isValidNumber()) {
+                showError("phone", getPhoneErrorMessage(iti.getValidationError()));
+                isValid = false;
+            }
         } else if (!validatePhone(phone)) {
             showError("phone", "Please enter a valid phone number.");
             isValid = false;
@@ -762,12 +821,12 @@ if (menuToggle && mainNav) {
     var style = document.createElement("style");
     style.id = STYLE_ID;
     style.textContent = [
-      ".footer-visitor-badge{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.32);box-shadow:0 2px 10px rgba(0,0,0,0.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:16px;line-height:1.4;max-width:100%;transition:background .25s ease,border-color .25s ease,transform .25s ease;}",
+      ".footer-visitor-badge{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.32);box-shadow:0 2px 10px rgba(0,0,0,0.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:18px;line-height:1.4;max-width:100%;transition:background .25s ease,border-color .25s ease,transform .25s ease;}",
       ".footer-visitor-badge:hover{background:rgba(255,255,255,0.24);border-color:rgba(255,255,255,0.44);transform:translateY(-1px);}",
-      ".footer-visitor-badge .footer-visitor-badge-icon{font-size:16px;color:#ffffff;}",
+      ".footer-visitor-badge .footer-visitor-badge-icon{font-size:18px;color:#ffffff;}",
       ".footer-visitor-badge .footer-visitor-badge-label{white-space:nowrap;color:#f1f5f9;font-weight:500;}",
       ".footer-visitor-badge .footer-visitor-badge-count{font-weight:700;color:#ffffff;font-variant-numeric:tabular-nums;}",
-      "@media (max-width:480px){.footer-visitor-badge{font-size:16px;padding:9px 14px;gap:6px;margin-top:12px;}}"
+      "@media (max-width:480px){.footer-visitor-badge{font-size:18px;padding:9px 14px;gap:6px;margin-top:12px;}}"
     ].join("");
     document.head.appendChild(style);
   }

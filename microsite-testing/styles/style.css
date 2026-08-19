@@ -2903,8 +2903,8 @@ min-height: 92vh;
   }
 
   .brand-name { font-size: 16px; }
-  .brand-role { font-size: 16px; }
-  .avatar { width: 38px; height: 38px; }
+  .brand-role { font-size: 14px; }
+  .avatar { display: none; }
 
   .cta-btn {
     display: inline-block;
@@ -3812,11 +3812,11 @@ select {
    ========================================================================== */
 @media (max-width: 640px) {
   .gallery-grid, .alt-gallery-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 8px !important;
   }
   .gallery-item, .alt-gallery-item {
-    aspect-ratio: 1 / 1 !important;
+    aspect-ratio: 4 / 3 !important;
     height: auto !important;
   }
 }

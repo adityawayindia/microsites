@@ -159,7 +159,7 @@ html {
 
 body {
   font-family: "Outfit", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--text);
   background:
@@ -173,7 +173,7 @@ body {
 }
 
 p, li {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
   line-height: 1.5;
 }
@@ -207,7 +207,7 @@ img {
 .testimonials-kicker,
 .gallery-kicker,
 .contact-kicker {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -240,7 +240,7 @@ img {
 .testimonials-subtitle,
 .gallery-subtitle,
 .contact-subtitle {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
   max-width: 680px;
   line-height: 1.5;
@@ -336,7 +336,7 @@ img {
 }
 
 .brand-role {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--teal-primary);
 }
@@ -349,7 +349,7 @@ img {
 
 .nav-links a {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
   position: relative;
   padding: 6px 0;
@@ -457,7 +457,7 @@ overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--teal-dark);
   background: var(--surface);
@@ -486,7 +486,7 @@ overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--amber-text);
   background: var(--amber-soft);
@@ -513,7 +513,7 @@ overflow: hidden;
 }
 
 .mic {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-muted);
   margin: 0 0 28px 0;
 }
@@ -557,12 +557,12 @@ overflow: hidden;
 }
 
 .hero-stat-box span {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
 }
 
 .languages {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
   margin: 0 0 28px 0;
 }
@@ -692,7 +692,7 @@ overflow: hidden;
 }
 
 .about-story-new p {
-  font-size: 16.5px;
+  font-size: 18px;
   line-height: 1.55;
   color: var(--text-body);
   margin: 0;
@@ -720,11 +720,15 @@ overflow: hidden;
 
 .services-grid-new {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 28px;
+  align-items: stretch;
+  justify-content: center;
 }
 
 .service-card-new {
+  grid-column: span 4;
+  min-width: 0;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -735,9 +739,37 @@ overflow: hidden;
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 18px;
   position: relative;
   overflow: hidden;
+}
+
+/* Final row holds ONE leftover card (total ≡ 1 mod 3): widen it to two
+   card-widths (span 8 = 2x4 tracks + the gap between) and centre it. */
+.service-card-new:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+
+/* Final row holds TWO leftover cards (total ≡ 2 mod 3): keep both at normal
+   card width and shift the pair inward so it centres on the row. */
+.service-card-new:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+
+.service-card-new:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
+}
+
+.service-card-new .service-icon-wrap {
+  margin: 0 auto;
+}
+
+.service-card-new .service-body-new h3,
+.service-card-new .service-body-new p {
+  text-align: center;
 }
 
 .service-card-new::before {
@@ -789,7 +821,7 @@ overflow: hidden;
 }
 
 .service-body-new p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
   margin: 0;
   line-height: 1.5;
@@ -870,7 +902,7 @@ overflow: hidden;
 }
 
 .pillar-text p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
   margin: 0;
 }
@@ -960,7 +992,7 @@ overflow: hidden;
 
 .step-number {
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--amber-text);
   background: var(--amber-soft);
@@ -978,7 +1010,7 @@ overflow: hidden;
 }
 
 .step-body p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
   margin: 0;
   line-height: 1.5;
@@ -1043,14 +1075,14 @@ overflow: hidden;
 }
 
 .contact-item-new h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text);
   margin: 0 0 4px 0;
 }
 
 .contact-item-new p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
   margin: 0;
   line-height: 1.5;
@@ -1107,7 +1139,7 @@ overflow: hidden;
 }
 
 .testimonial-quote {
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
   color: var(--text-body);
   line-height: 1.5;
@@ -1129,7 +1161,7 @@ overflow: hidden;
 }
 
 .testimonial-name {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text);
   margin: 0 0 4px 0;
@@ -1137,7 +1169,7 @@ overflow: hidden;
 
 .testimonial-stars {
   color: var(--amber-accent);
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   gap: 3px;
 }
@@ -1453,6 +1485,35 @@ overflow: hidden;
   box-shadow: 0 0 0 3px var(--teal-light);
 }
 
+/* Country-code phone field (intl-tel-input v29.2.2) — AGENTS.md Section 10 */
+.iti {
+  display: block;
+  width: 100%;
+  --iti-border-color: var(--border);
+  --iti-country-selector-bg: var(--surface);
+}
+
+.iti__country-selector {
+  border-radius: var(--radius-sm);
+  max-width: none;
+}
+
+.iti__dial-code {
+  font-size: 15px;
+}
+
+.booking-field .iti__search-input {
+  padding-left: 36px;
+  padding-right: 14px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.booking-field .iti__tel-input.is-invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
 .booking-select-wrap {
   position: relative;
 }
@@ -1594,7 +1655,7 @@ overflow: hidden;
 
 .footer-nav a {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -1605,13 +1666,13 @@ overflow: hidden;
 .footer-social-wrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   min-width: 0;
 }
 
 .footer-social-label {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.01em;
@@ -1623,11 +1684,12 @@ overflow: hidden;
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 14px;
   max-width: 418px;
   min-width: 0;
+  margin: 0 auto;
 }
 
 .footer-social-icon {
@@ -1651,7 +1713,7 @@ overflow: hidden;
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -1660,7 +1722,7 @@ overflow: hidden;
 }
 
 .footer-copy {
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
 }
@@ -1687,7 +1749,7 @@ overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--teal-primary);
   background: var(--teal-light);
@@ -1705,7 +1767,7 @@ overflow: hidden;
 }
 
 .blog-hero-content p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-body);
   margin: 0;
   line-height: 1.5;
@@ -1764,7 +1826,7 @@ overflow: hidden;
 }
 
 .blog-card-meta {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--teal-primary);
   margin: 0 0 10px 0;
@@ -1781,7 +1843,7 @@ overflow: hidden;
 
 .blog-read-more {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--teal-primary);
   display: inline-flex;
   align-items: center;
@@ -1813,13 +1875,13 @@ overflow: hidden;
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--teal-primary);
   margin-bottom: 24px;
 }
 
 .blog-detail-meta {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--amber-text);
   margin: 0 0 10px 0;
@@ -1857,20 +1919,20 @@ overflow: hidden;
 
 .blog-detail-author-name {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text);
   margin: 0;
 }
 
 .blog-detail-author-role {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--teal-primary);
   margin: 0;
 }
 
 .blog-detail-date {
   margin-left: auto;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-muted);
 }
 
@@ -1888,13 +1950,13 @@ overflow: hidden;
 }
 
 .blog-detail-content {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--text-body);
 }
 
 .blog-detail-content p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--text-body);
   margin-bottom: 24px;
@@ -1919,7 +1981,7 @@ overflow: hidden;
 }
 
 .legal-date {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-muted);
   margin: 0 0 30px 0;
 }
@@ -1944,7 +2006,7 @@ overflow: hidden;
 }
 
 .legal-card p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--text-body);
   margin-bottom: 18px;
@@ -1956,7 +2018,7 @@ overflow: hidden;
 }
 
 .legal-list li {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--text-body);
   margin-bottom: 8px;
@@ -1974,16 +2036,18 @@ overflow: hidden;
     gap: 36px;
   }
 
-  .services-grid-new {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 1300px) {
+  .nav-links {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 1100px) {
   .nav-links {
     position: fixed;
     top: 80px;
@@ -2047,10 +2111,12 @@ overflow: hidden;
     grid-template-columns: 1fr;
   }
 
-  .services-grid-new,
-  .process-grid,
-  .gallery-grid {
+  .process-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .booking-form-row {
@@ -2070,6 +2136,59 @@ overflow: hidden;
     top: 14px;
     right: 14px;
   }
+
+  /* Footer quick links: horizontally scrollable row on mobile instead of
+     wrapping — fixed short UI labels, acceptable nowrap exception
+     (AGENTS.md Section 6). */
+  .footer-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  .footer-nav a {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+/* Services grid centering breakpoints (AGENTS.md Section 12.1) — order
+   matters: 1200px reset must precede 640px, and each block's leftover-row
+   centering rule must come after its own reset rule (rule-order dependent). */
+@media (max-width: 1200px) {
+  /* 2 per row — reset the desktop leftover rules back to a plain half-row span. */
+  .service-card-new,
+  .service-card-new:last-child:nth-child(3n + 1),
+  .service-card-new:nth-last-child(2):nth-child(3n + 1),
+  .service-card-new:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+
+  /* 2 per row means a lone last card happens exactly when the total is odd. */
+  .service-card-new:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  /* 1 per row — every card, leftover or not, spans the full 12 tracks. */
+  .service-card-new,
+  .service-card-new:last-child:nth-child(odd),
+  .service-card-new:last-child:nth-child(3n + 1),
+  .service-card-new:nth-last-child(2):nth-child(3n + 1),
+  .service-card-new:last-child:nth-child(3n + 2) {
+    grid-column: 1 / -1;
+  }
+
+  .brand-role {
+    font-size: 14px;
+  }
+
+  .avatar {
+    display: none;
+  }
 }
 
 /* Large Screen Responsive Typography (AGENTS.md Section 7) */
@@ -2087,27 +2206,12 @@ overflow: hidden;
   .testimonials-subtitle,
   .gallery-subtitle,
   .contact-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
-@media (min-width: 1900px) {
-  body {
-    font-size: 20px;
-  }
-
-  p, li {
-    font-size: 20px;
-  }
-
-  .about-subtitle,
-  .services-subtitle,
-  .testimonials-subtitle,
-  .gallery-subtitle,
-  .contact-subtitle {
-    font-size: 22px;
-  }
-}
+/* Body/subtitle sizing is capped at 18px (AGENTS.md Section 7) — width
+   beyond 1400px is handled via max-width/measure, not further font scaling. */
 /* DigiDr booking modal font-size normalization (all microsites) */
 .booking-modal-dialog {
   font-size: 16px;
@@ -2157,6 +2261,472 @@ overflow: hidden;
 .booking-error {
   font-size: 16px !important;
   line-height: 1.3;
+}
+
+/* ==========================================================================
+   Booking Modal — Intensivist-style redesign (final override, wins cascade)
+   ========================================================================== */
+.booking-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 1300 !important;
+  display: none !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  overflow-y: auto !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.booking-modal.is-open,
+.booking-modal.open {
+  display: flex !important;
+}
+
+.booking-modal-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(6, 30, 27, 0.7) !important;
+  backdrop-filter: blur(3px) !important;
+}
+
+.booking-modal-dialog {
+  position: relative !important;
+  z-index: 1 !important;
+  width: min(560px, 92vw) !important;
+  margin: auto !important;
+  padding: 0 !important;
+  border-radius: 20px !important;
+  background: var(--surface) !important;
+  box-shadow: var(--shadow-lg) !important;
+  max-height: calc(100vh - 32px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  border-top: 4px solid var(--teal-primary) !important;
+}
+
+.booking-modal-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 5 !important;
+  background: inherit !important;
+  padding: 24px 26px 0 !important;
+  margin-bottom: 18px !important;
+  border-radius: 20px 20px 0 0 !important;
+  border-bottom: 2px solid var(--border) !important;
+}
+
+.booking-error:empty {
+  display: none !important;
+}
+
+.booking-modal-close {
+  position: absolute !important;
+  top: 14px !important;
+  right: 16px !important;
+  width: 38px !important;
+  height: 38px !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: var(--surface-alt) !important;
+  color: var(--text) !important;
+  font-size: 26px !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease !important;
+}
+
+.booking-modal-close:hover {
+  background: var(--teal-soft) !important;
+}
+
+.booking-modal-tabs {
+  display: flex !important;
+  gap: 8px !important;
+  margin-bottom: -2px !important;
+}
+
+.booking-tab {
+  flex: 1 !important;
+  padding: 10px 14px !important;
+  border: none !important;
+  border-bottom: 3px solid transparent !important;
+  margin-bottom: -2px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease !important;
+}
+
+.booking-tab.is-active {
+  background: transparent !important;
+  color: var(--teal-primary) !important;
+  border-bottom-color: var(--teal-primary) !important;
+  box-shadow: none !important;
+}
+
+.booking-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  padding: 0 26px 26px !important;
+}
+
+.booking-form-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  min-width: 0 !important;
+}
+
+.booking-field {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+}
+
+.booking-field label {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--text) !important;
+}
+
+.booking-field input[type="text"],
+.booking-field input[type="email"],
+.booking-field textarea,
+.booking-select-wrap select {
+  width: 100% !important;
+  padding: 11px 14px !important;
+  border-radius: 10px !important;
+  border: 1.5px solid var(--border) !important;
+  background: var(--surface) !important;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  color: var(--text) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.booking-field input[type="tel"] {
+  width: 100% !important;
+  border-radius: 10px !important;
+  border: 1.5px solid var(--border) !important;
+  background: var(--surface) !important;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  color: var(--text) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+/* intl-tel-input reserves left space for the flag/dial-code selector via
+   inline custom properties on .iti — the plain type="tel" rule above must
+   not set left/right padding, or the plugin's own offset gets clobbered
+   and the dial code visually overlaps the placeholder text. */
+.iti .iti__tel-input {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+  padding-right: 14px !important;
+}
+
+.booking-field input:focus,
+.booking-field textarea:focus,
+.booking-select-wrap select:focus {
+  outline: none !important;
+  border-color: var(--teal-primary) !important;
+  box-shadow: 0 0 0 3px var(--teal-glow) !important;
+}
+
+.booking-field textarea {
+  resize: vertical !important;
+  min-height: 92px !important;
+}
+
+.booking-select-wrap {
+  position: relative !important;
+}
+
+.booking-select-wrap select {
+  appearance: none !important;
+  cursor: pointer !important;
+}
+
+.booking-select-icon {
+  position: absolute !important;
+  top: 50% !important;
+  right: 14px !important;
+  transform: translateY(-50%) !important;
+  pointer-events: none !important;
+  font-size: 16px !important;
+  color: var(--text-muted) !important;
+}
+
+.booking-error {
+  margin: 0 !important;
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+  color: hsl(6 76% 46%) !important;
+}
+
+/* Phone field — intl-tel-input country code dropdown */
+.iti {
+  display: block !important;
+  width: 100% !important;
+  --iti-border-color: var(--border);
+  --iti-country-selector-bg: var(--surface);
+}
+.iti__country-selector {
+  border-radius: 10px !important;
+  max-width: none !important;
+}
+.iti__selected-country {
+  font-size: 16px !important;
+  line-height: normal !important;
+}
+.iti__selected-dial-code {
+  font-size: 16px !important;
+  line-height: normal !important;
+  color: var(--text) !important;
+}
+.iti__dial-code {
+  font-size: 15px !important;
+}
+.booking-field .iti__search-input {
+  padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal)) !important;
+  padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal)) !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  font-size: 15px !important;
+}
+.booking-field .iti__tel-input.is-invalid {
+  border-color: hsl(6 76% 46%) !important;
+  box-shadow: 0 0 0 3px hsl(6 76% 46% / 0.16) !important;
+}
+
+/* Datepicker */
+.booking-datepicker {
+  position: relative !important;
+}
+
+.booking-input-with-icon {
+  position: relative !important;
+}
+
+.booking-date-display {
+  cursor: pointer !important;
+}
+
+.booking-calendar {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 0 !important;
+  z-index: 20 !important;
+  width: min(310px, 88vw) !important;
+  padding: 16px !important;
+  border-radius: 13px !important;
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.booking-calendar[hidden] {
+  display: none !important;
+}
+
+.booking-calendar-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 12px !important;
+}
+
+.booking-calendar-nav {
+  width: 32px !important;
+  height: 32px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  background: var(--surface-alt) !important;
+  color: var(--text) !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease !important;
+}
+
+.booking-calendar-nav:hover {
+  background: var(--teal-soft) !important;
+  color: var(--teal-primary) !important;
+}
+
+.booking-calendar-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+}
+
+.booking-calendar-weekdays,
+.booking-calendar-grid {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 4px !important;
+  text-align: center !important;
+}
+
+.booking-calendar-weekdays {
+  margin-bottom: 6px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--text-muted) !important;
+}
+
+.booking-calendar-day {
+  padding: 8px 0 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  color: var(--text) !important;
+  cursor: pointer !important;
+  transition: background 0.18s ease, color 0.18s ease !important;
+}
+
+.booking-calendar-day:hover:not(.is-disabled) {
+  background: var(--teal-soft) !important;
+  color: var(--teal-primary) !important;
+}
+
+.booking-calendar-day.is-today {
+  box-shadow: inset 0 0 0 1px var(--teal-primary) !important;
+}
+
+.booking-calendar-day.is-selected {
+  background: var(--teal-primary) !important;
+  color: var(--white) !important;
+}
+
+.booking-calendar-day.is-disabled {
+  color: #b8c2c0 !important;
+  cursor: not-allowed !important;
+}
+
+/* Upload + consent + submit */
+.booking-upload-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.booking-upload-btn {
+  padding: 9px 20px !important;
+  border-radius: 999px !important;
+  background: var(--teal-primary) !important;
+  color: var(--white) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  border: none !important;
+  transition: background 0.2s ease !important;
+}
+
+.booking-upload-btn:hover {
+  background: var(--teal-dark) !important;
+}
+
+.booking-field--file input[type="file"] {
+  display: none !important;
+}
+
+.booking-upload-help {
+  font-size: 16px !important;
+  color: var(--text-muted) !important;
+}
+
+.booking-file-preview:not(:empty) {
+  margin-top: 8px !important;
+  padding: 9px 12px !important;
+  border-radius: 8px !important;
+  background: var(--surface-alt) !important;
+  font-size: 16px !important;
+  color: var(--text-muted) !important;
+}
+
+.booking-consent-field {
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.booking-consent-field input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  margin-top: 2px !important;
+  accent-color: var(--teal-primary) !important;
+  flex-shrink: 0 !important;
+  cursor: pointer !important;
+}
+
+.booking-consent-field label {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: var(--text-muted) !important;
+  cursor: pointer !important;
+}
+
+.booking-submit-btn {
+  padding: 15px 24px !important;
+  border: none !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, var(--teal-primary), var(--teal-dark)) !important;
+  color: var(--white) !important;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 10px 24px var(--teal-glow) !important;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.booking-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--teal-dark), var(--teal-deep)) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 30px var(--teal-glow) !important;
+}
+
+.booking-submit-btn:disabled {
+  background: #c7cdcb !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+}
+
+.booking-loader {
+  display: none !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding-top: 8px !important;
+}
+
+.booking-loader.is-open,
+.booking-loader[aria-hidden="false"] {
+  display: flex !important;
+}
+
+.loader-spinner {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--teal-soft) !important;
+  border-top-color: var(--teal-primary) !important;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 

@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f766e'/%3E%3Cpath d='M16 32h8l4-12 5 24 5-18 4 6h8' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet" />
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -15,7 +15,9 @@
           crossorigin="anonymous"
           referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
 </head>
 <body>
   <header class="site-header">
@@ -29,7 +31,7 @@
         </span>
         <span class="brand-text">
             <span class="brand-name">Dr. Sarah Jenkins</span>
-            <span class="brand-role">General Physician</span>
+            <span class="brand-role">Physician</span>
         </span>
       </a>
 
@@ -204,13 +206,13 @@
         </div>
 
         <!-- CTA + Socials -->
-        <div class="hero-v2-actions">
-          <!-- <a href="#contact-us" class="hero-v2-cta">
+        <!-- <div class="hero-v2-actions">
+          <a href="#contact-us" class="hero-v2-cta">
             <i class="fa-solid fa-calendar-check"></i>
             Book Appointment
-          </a> -->
+          </a>
           <a href="#contact-us" class="hero-v2-cta-secondary">Contact Now</a>
-        </div>
+        </div> -->
 
         <div class="social-links hero-v2-socials" aria-label="Social media links">
           <a href="#" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
@@ -851,7 +853,9 @@
   </footer>
 
   <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
 </body>
 </html>
 

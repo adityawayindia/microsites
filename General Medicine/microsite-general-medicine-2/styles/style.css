@@ -319,13 +319,13 @@ body {
 
 .brand-name {
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--navy);
 }
 
 .brand-role {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -536,6 +536,27 @@ display: flex;
   white-space: normal;
 }
 
+.expert-badge-alt {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(197, 155, 39, 0.1);
+  color: var(--navy);
+  border: 1px solid rgba(197, 155, 39, 0.25);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 7px 16px;
+  border-radius: 4px;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.expert-badge-alt i {
+  color: var(--gold);
+  font-size: 18px;
+}
+
 .hero-v2-reg {
   display: inline-flex;
   align-items: center;
@@ -569,7 +590,7 @@ display: flex;
 }
 
 .hero-v2-subtitle {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
   line-height: 1.5;
   margin: 0;
@@ -585,6 +606,12 @@ display: flex;
   gap: 10px;
   margin: 0;
   flex-wrap: wrap;
+}
+
+.hero-v2-languages strong {
+  font-size: 18px;
+  color: var(--navy);
+  font-weight: 600;
 }
 
 .hero-v2-languages i {
@@ -611,10 +638,10 @@ display: flex;
   justify-content: center;
   gap: 0;
   background: var(--white);
-  border: 1px solid rgba(13, 148, 136, 0.15);
-  border-radius: 12px;
-  box-shadow: 0 6px 24px rgba(13, 148, 136, 0.04);
-  padding: 16px 0;
+  border: 1.5px solid rgba(197, 155, 39, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 18px 44px rgba(10, 25, 47, 0.12);
+  padding: 22px 0;
   max-width: 680px;
   width: 100%;
   box-sizing: border-box;
@@ -627,34 +654,58 @@ display: flex;
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 0 22px;
+}
+
+.hero-v2-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.hero-v2-stat-top i {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  font-size: 18px;
+  color: var(--gold);
+  flex-shrink: 0;
 }
 
 .hero-v2-stat strong {
   display: block;
   font-family: var(--sans);
-  font-size: clamp(22px, 2.8vw, 32px);
-  font-weight: 700;
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 800;
   color: var(--navy);
   line-height: 1.1;
-  margin-bottom: 4px;
   overflow-wrap: break-word;
 }
 
 .hero-v2-stat span {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
   color: var(--muted);
   font-weight: 500;
   line-height: 1.3;
   overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .hero-v2-stat-divider {
-  width: 1px;
+  width: 2px;
   align-self: stretch;
   min-height: 32px;
-  background: rgba(10, 25, 47, 0.1);
+  background: rgba(197, 155, 39, 0.25);
+  border-radius: 2px;
   flex-shrink: 0;
 }
 
@@ -831,13 +882,13 @@ display: flex;
 }
 
 .social {
-  width: 36px;
-  height: 36px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
   color: var(--white);
   text-decoration: none;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -890,7 +941,7 @@ display: flex;
    ========================================================================== */
 
 .about-section {
-  padding: 58px 0 64px;
+  padding: 64px 0;
   background:
     radial-gradient(ellipse 70% 50% at 50% 0%, rgba(197, 155, 39, 0.08), transparent 70%),
     radial-gradient(ellipse 60% 40% at 88% 80%, rgba(10, 25, 47, 0.04), transparent 60%),
@@ -957,7 +1008,7 @@ display: flex;
   margin: 0 0 18px;
   font-family: var(--serif);
   font-size: clamp(32px, 4vw, 44px);
-  font-weight: 400;
+  font-weight: 700;
   color: var(--navy);
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -966,7 +1017,7 @@ display: flex;
 .about-subtitle {
   margin: 0 auto;
   color: var(--muted);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.5;
   max-width: 680px;
   font-weight: 400;
@@ -997,7 +1048,7 @@ display: flex;
 }
 
 .about-story-new p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.55;
   color: #0f172a;
   margin: 0 0 20px;
@@ -1018,7 +1069,7 @@ display: flex;
 .services-section {
   position: relative;
   overflow: hidden;
-  padding: 52px 0 56px;
+  padding: 64px 0;
   background:
     radial-gradient(ellipse 50% 50% at 0% 100%, rgba(10, 25, 47, 0.02), transparent 50%),
     linear-gradient(180deg, var(--white) 0%, var(--bg-warm) 100%);
@@ -1057,27 +1108,31 @@ display: flex;
   margin: 10px 0 14px;
   font-family: var(--serif);
   font-size: clamp(28px, 3.2vw, 40px);
-  font-weight: 400;
+  font-weight: 700;
   color: var(--navy);
   line-height: 1.2;
 }
 
 .services-subtitle {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--muted);
 }
 
 .services-grid-new {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+  justify-content: center;
   position: relative;
   z-index: 1;
 }
 
 .service-card-new {
+  grid-column: span 4;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -1090,6 +1145,22 @@ display: flex;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   align-items: flex-start;
   text-align: left;
+}
+
+/* Final row holds ONE leftover card (total ≡ 1 mod 3): widen it to two
+   card-widths and centre it. */
+.service-card-new:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+
+/* Final row holds TWO leftover cards (total ≡ 2 mod 3): shift the pair
+   inward so it centres on the row. */
+.service-card-new:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+
+.service-card-new:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
 }
 
 .service-card-new:nth-child(2) { border-top-color: var(--navy); }
@@ -1130,7 +1201,7 @@ display: flex;
 }
 
 .service-body-new p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
   line-height: 1.5;
   margin: 0;
@@ -1142,7 +1213,7 @@ display: flex;
    ========================================================================== */
 
 .contact-section {
-  padding: 46px 0 56px;
+  padding: 64px 0;
   background:
     radial-gradient(ellipse 50% 50% at 100% 0%, rgba(197, 155, 39, 0.03), transparent 50%),
     linear-gradient(180deg, var(--bg-warm) 0%, var(--bg) 100%);
@@ -1204,14 +1275,14 @@ display: flex;
 }
 
 .contact-item-new h4 {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--navy);
   margin: 0 0 4px;
   font-weight: 600;
 }
 
 .contact-item-new p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
   margin: 0;
   line-height: 1.5;
@@ -1255,7 +1326,7 @@ display: flex;
   background:
     radial-gradient(ellipse 40% 40% at 10% 50%, rgba(197, 155, 39, 0.03), transparent 50%),
     linear-gradient(180deg, var(--bg) 0%, var(--white) 50%, var(--bg-warm) 100%);
-  padding: 52px 0 56px;
+  padding: 64px 0;
 }
 
 .testimonials-header {
@@ -1280,14 +1351,14 @@ display: flex;
   margin: 10px 0 12px;
   font-family: var(--serif);
   font-size: clamp(28px, 3.2vw, 40px);
-  font-weight: 400;
+  font-weight: 700;
   color: var(--navy);
   line-height: 1.2;
 }
 
 .testimonials-subtitle {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -1425,7 +1496,7 @@ display: flex;
 
 .testimonial-quote {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.55;
   color: var(--text);
   font-weight: 400;
@@ -1454,7 +1525,7 @@ display: flex;
 
 .testimonial-name {
   margin: 0 0 4px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--navy);
 }
@@ -1507,7 +1578,7 @@ display: flex;
    ========================================================================== */
 
 .gallery-section {
-  padding: 46px 0 56px;
+  padding: 64px 0;
   background: var(--white);
 }
 
@@ -1521,14 +1592,14 @@ display: flex;
   margin: 10px 0 12px;
   font-family: var(--serif);
   font-size: clamp(28px, 3.2vw, 40px);
-  font-weight: 400;
+  font-weight: 700;
   color: var(--navy);
   line-height: 1.2;
 }
 
 .gallery-subtitle {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -1716,7 +1787,7 @@ display: flex;
 .footer-social-wrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   min-width: 0;
 }
@@ -1735,7 +1806,7 @@ display: flex;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 12px;
   max-width: 404px;
   min-width: 0;
@@ -1787,7 +1858,7 @@ display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .footer-links a {
@@ -1806,7 +1877,7 @@ display: flex;
 
 .footer-copy {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.65);
   display: inline-flex;
   align-items: center;
@@ -2629,6 +2700,55 @@ display: flex;
   color: #b91c1c;
 }
 
+/* ── Phone field — intl-tel-input country code dropdown ────────────────── */
+.iti {
+  display: block;
+  width: 100%;
+  --iti-border-color: #d1d5db;
+  --iti-country-selector-bg: #ffffff;
+}
+.booking-field .iti input {
+  width: 100%;
+  min-width: 0;
+}
+.iti__country-selector {
+  border-radius: 10px;
+  max-width: none;
+}
+.iti__selected-country {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 16px;
+  line-height: normal;
+  font-family: var(--sans);
+}
+.iti__selected-dial-code {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: normal;
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--text);
+}
+.iti__dial-code {
+  font-size: 15px;
+}
+.booking-field .iti__search-input {
+  padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal));
+  padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal));
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 15px;
+}
+.booking-field .iti__tel-input.is-invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
 .booking-submit-btn {
   margin-top: 6px;
   width: 100%;
@@ -2762,7 +2882,7 @@ display: flex;
    Responsive â€” 900px
    ========================================================================== */
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
   .navbar {
     min-height: 68px;
     position: relative;
@@ -2849,10 +2969,20 @@ display: flex;
     white-space: normal;
   }
 
-  /* Services */
+  /* Services — 2 per row, reset desktop leftover rules back to a half-row span */
   .services-grid-new {
-    grid-template-columns: repeat(2, 1fr);
     gap: 18px;
+  }
+
+  .service-card-new,
+  .service-card-new:last-child:nth-child(3n + 1),
+  .service-card-new:nth-last-child(2):nth-child(3n + 1),
+  .service-card-new:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+
+  .service-card-new:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
   }
 
   /* Contact */
@@ -2911,9 +3041,9 @@ display: flex;
     width: 94%;
   }
 
-  .brand-name { font-size: 16px; }
-  .brand-role { font-size: 16px; }
-  .avatar { width: 38px; height: 38px; }
+  .brand-name { font-size: 18px; }
+  .brand-role { font-size: 14px; }
+  .avatar { display: none; }
 
   .cta-btn {
     display: inline-block;
@@ -2950,7 +3080,25 @@ display: flex;
     font-size: 28px;
   }
 
+  .hero-v2-stats {
+    flex-direction: column;
+    padding: 10px 22px;
+  }
+
+  .hero-v2-stat {
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 14px 0;
+  }
+
   .hero-v2-stat strong { font-size: 22px; }
+
+  .hero-v2-stat-divider {
+    width: 100%;
+    height: 2px;
+    min-height: 0;
+    align-self: stretch;
+  }
 
   .hero-v2-cta,
   .hero-v2-cta-secondary {
@@ -2963,11 +3111,11 @@ display: flex;
   .services-section,
   .testimonials-section,
   .gallery-section {
-    padding: 56px 0 64px;
+    padding: 48px 0;
   }
 
   .contact-section {
-    padding: 56px 0 72px;
+    padding: 48px 0;
   }
 
   .about-story-new {
@@ -2975,8 +3123,15 @@ display: flex;
   }
 
   .services-grid-new {
-    grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .service-card-new,
+  .service-card-new:last-child:nth-child(odd),
+  .service-card-new:last-child:nth-child(3n + 1),
+  .service-card-new:nth-last-child(2):nth-child(3n + 1),
+  .service-card-new:last-child:nth-child(3n + 2) {
+    grid-column: 1 / -1;
   }
 
   .contact-card-new {
@@ -2999,7 +3154,7 @@ display: flex;
   }
 
   .testimonial-quote {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .carousel-btn {
@@ -3040,10 +3195,21 @@ display: flex;
 
   /* Footer */
   .footer-inner { gap: 14px; }
-  .footer-nav { gap: 16px; font-size: 16px; flex-wrap: wrap; justify-content: center; }
+  .footer-nav {
+    width: 100%;
+    gap: 24px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 6px 4px;
+  }
+  .footer-nav::-webkit-scrollbar { display: none; }
+  .footer-nav a { flex-shrink: 0; }
   .footer-social-icon { width: 36px; height: 36px; font-size: 16px; }
-  .footer-links { font-size: 16px; }
-  .footer-copy { font-size: 16px; }
+  .footer-links { font-size: 18px; }
+  .footer-copy { font-size: 18px; }
 
   /* Booking */
   .booking-modal {
@@ -3134,7 +3300,7 @@ display: flex;
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 58px 0;
+  padding: 64px 0;
   background-color: var(--bone);
   position: relative;
   overflow: hidden;
@@ -3191,13 +3357,14 @@ display: flex;
   margin-bottom: 20px;
   font-family: var(--serif);
   font-size: 38px;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--navy);
 }
 
 .philosophy-content .about-subtitle {
   color: var(--muted);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   margin-bottom: 40px;
 }
@@ -3246,7 +3413,7 @@ display: flex;
 }
 
 .pillar-text p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
   line-height: 1.5;
   margin-top: 0;
@@ -3256,7 +3423,7 @@ display: flex;
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 100px 0;
+  padding: 64px 0;
   background-color: var(--bg-warm);
   position: relative;
   overflow: hidden;
@@ -3446,11 +3613,11 @@ display: flex;
   }
 
   .philosophy-section {
-    padding: 70px 0;
+    padding: 64px 0;
   }
 
   .process-section {
-    padding: 70px 0;
+    padding: 64px 0;
   }
 
   .process-timeline-line {
@@ -3697,11 +3864,11 @@ select {
    ========================================================================== */
 @media (max-width: 640px) {
   .gallery-grid, .alt-gallery-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 8px !important;
   }
   .gallery-item, .alt-gallery-item {
-    aspect-ratio: 1 / 1 !important;
+    aspect-ratio: 4 / 3 !important;
     height: auto !important;
   }
 }
@@ -3756,13 +3923,13 @@ select {
 }
 
 .about-float-badge strong {
-  font-size: 16px;
+  font-size: 18px;
   color: #0f172a;
   font-weight: 700;
 }
 
 .about-float-badge span {
-  font-size: 16px;
+  font-size: 18px;
   color: #64748b;
 }
 
@@ -3823,28 +3990,28 @@ select {
 
 .step-card-content p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: #64748b;
   line-height: 1.5;
 }
 
 /* Background Images for Alternate Sections */
 .services-section {
-  background: 
-    linear-gradient(rgba(244, 251, 247, 0.55), rgba(244, 251, 247, 0.55)),
+  background:
+    linear-gradient(rgba(244, 251, 247, 0.35), rgba(244, 251, 247, 0.35)),
     url('../assets/services-bg.jpg') center / cover no-repeat fixed !important;
 }
 
 .process-section {
-  background: 
-    linear-gradient(rgba(244, 251, 247, 0.55), rgba(244, 251, 247, 0.55)),
+  background:
+    linear-gradient(rgba(244, 251, 247, 0.35), rgba(244, 251, 247, 0.35)),
     url('../assets/journey-bg-new.jpg') center / cover no-repeat fixed !important;
-  padding: 52px 0;
+  padding: 64px 0;
 }
 
 .testimonials-section {
-  background: 
-    linear-gradient(rgba(244, 251, 247, 0.55), rgba(244, 251, 247, 0.55)),
+  background:
+    linear-gradient(rgba(244, 251, 247, 0.35), rgba(244, 251, 247, 0.35)),
     url('../assets/testimonials-bg.jpg') center / cover no-repeat fixed !important;
 }
 
@@ -3982,36 +4149,10 @@ select {
 }
 
 /* ==========================================================================
-   DigiDr Global — 18px minimum body copy (p, a, li), booking modal excluded
+   DigiDr Global — 18px minimum on all text (p, a, li, pills, badges, etc.)
+   Exceptions: booking/appointment modal and the chatbot widget only.
    ========================================================================== */
-p, li, a {
-  font-size: 18px;
-}
-
-.booking-modal p,
-.booking-modal li,
-.booking-modal a,
-.booking-modal-dialog p,
-.booking-modal-dialog li,
-.booking-modal-dialog a {
-  font-size: 16px;
-}
-
-/* CTA buttons, nav/footer links, pills & badges are exempt from 18px body-copy sizing */
-.cta-btn,
-.hero-v2-cta,
-.hero-v2-cta-secondary,
-.blog-read-more,
-.blog-page-link,
-.nav-links a,
-.footer-nav a,
-.footer-links a,
-.contact-cta-wrap .cta-btn,
-.carousel-btn,
-.social,
-.footer-social-icon,
-.blog-detail-back-link,
-.gallery-lightbox-nav,
+p, li, a,
 .pill,
 .badge-pill,
 .hero-v2-lang-tag,
@@ -4028,7 +4169,43 @@ p, li, a {
 .blog-detail-meta,
 .step-number,
 .footer-social-label,
-.footer-copy {
+.footer-copy,
+.nav-links a,
+.footer-nav a,
+.footer-links a {
+  font-size: 18px;
+}
+
+.booking-modal p,
+.booking-modal li,
+.booking-modal a,
+.booking-modal-dialog p,
+.booking-modal-dialog li,
+.booking-modal-dialog a,
+[id^="chatbot"] p,
+[id^="chatbot"] li,
+[id^="chatbot"] a,
+[class^="chatbot-"] p,
+[class^="chatbot-"] li,
+[class^="chatbot-"] a,
+[class*=" chatbot-"] p,
+[class*=" chatbot-"] li,
+[class*=" chatbot-"] a {
+  font-size: 16px;
+}
+
+/* CTA buttons keep their own button sizing, not body-copy sizing */
+.cta-btn,
+.hero-v2-cta,
+.hero-v2-cta-secondary,
+.blog-read-more,
+.blog-page-link,
+.contact-cta-wrap .cta-btn,
+.carousel-btn,
+.social,
+.footer-social-icon,
+.blog-detail-back-link,
+.gallery-lightbox-nav {
   font-size: 16px;
 }
 

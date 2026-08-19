@@ -1800,6 +1800,14 @@ background: var(--bg-2);
   .footer-links {
     font-size: 18px;
   }
+
+  .alt-brand-role {
+    font-size: 14px;
+  }
+
+  .alt-avatar {
+    display: none;
+  }
 }
 
 /* Scroll margin for sticky header */
@@ -1942,11 +1950,11 @@ background: var(--bg-2);
    ========================================================================== */
 @media (max-width: 640px) {
   .gallery-grid, .alt-gallery-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 8px !important;
   }
   .gallery-item, .alt-gallery-item {
-    aspect-ratio: 1 / 1 !important;
+    aspect-ratio: 4 / 3 !important;
     height: auto !important;
   }
 }

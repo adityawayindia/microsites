@@ -18,7 +18,9 @@
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="styles/style.css?v=12" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
 </head>
 
 <body>
@@ -31,7 +33,7 @@
         </span>
         <span class="brand-text">
           <span class="brand-name">Dr. Sarah Jenkins</span>
-          <span class="brand-role">General Physician</span>
+          <span class="brand-role">Physician</span>
         </span>
       </a>
 
@@ -162,7 +164,7 @@
         
         <div class="expert-badge-alt">
           <i class="fa-solid fa-notes-medical"></i>
-          General Medicine & Primary Healthcare Specialist
+          General Medicine Physician
         </div>
 
         <h1 class="hero-v2-title">Dr. Sarah <span class="hero-v2-title-accent">Jenkins</span></h1>
@@ -174,20 +176,26 @@
 
         <div class="hero-v2-stats">
           <article class="hero-v2-stat">
-            <i class="fa-solid fa-user-doctor" style="font-size: 20px; color: var(--gold); margin-bottom: 2px;"></i>
-            <strong>12+ Years</strong>
-            <span>Clinical Experience</span>
+            <div class="hero-v2-stat-top">
+              <i class="fa-solid fa-user-doctor"></i>
+              <strong>12+</strong>
+            </div>
+            <span>Years Experience</span>
           </article>
           <div class="hero-v2-stat-divider"></div>
           <article class="hero-v2-stat">
-            <i class="fa-solid fa-hospital-user" style="font-size: 20px; color: var(--gold); margin-bottom: 2px;"></i>
-            <strong>8,200+</strong>
+            <div class="hero-v2-stat-top">
+              <i class="fa-solid fa-hospital-user"></i>
+              <strong>8,200+</strong>
+            </div>
             <span>Patients Treated</span>
           </article>
           <div class="hero-v2-stat-divider"></div>
           <article class="hero-v2-stat">
-            <i class="fa-solid fa-circle-check" style="font-size: 20px; color: var(--gold); margin-bottom: 2px;"></i>
-            <strong>98%</strong>
+            <div class="hero-v2-stat-top">
+              <i class="fa-solid fa-circle-check"></i>
+              <strong>98%</strong>
+            </div>
             <span>Positive Outcome</span>
           </article>
         </div>
@@ -199,10 +207,10 @@
           <span class="hero-v2-lang-tag">Kannada</span>
         </div>
 
-        <div class="hero-v2-actions">
+        <!-- <div class="hero-v2-actions">
           <a href="#services" class="hero-v2-cta-secondary">View Clinical Services</a>
         </div>
-        
+         -->
         <div class="social-links hero-socials-centered" aria-label="Social media links">
           <a href="#" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
@@ -451,9 +459,9 @@
   <section class="contact-section" id="contact-us">
     <div class="container">
                   <div class="contact-header" style="text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
-        <p class="contact-kicker" style="margin: 0; font-size: 16px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--deep, var(--text, #0f172a)); display: inline-flex; align-items: center; gap: 8px; justify-content: center;"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</p>
+        <p class="contact-kicker" style="margin: 0; font-size: 18px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--deep, var(--text, #0f172a)); display: inline-flex; align-items: center; gap: 8px; justify-content: center;"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</p>
         <h2 class="contact-title" style="margin: 10px auto 12px; font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; color: var(--deep, var(--text, #0f172a)); letter-spacing: -0.03em; line-height: 1.25; text-align: center; max-width: none;">Get in Touch</h2>
-        <p class="contact-subtitle" style="margin: 0 auto; font-size: 16px; color: var(--muted, #334155); max-width: 600px; line-height: 1.6; text-align: center;">Have questions or want to schedule an appointment? Reach out to our team directly.</p>
+        <p class="contact-subtitle" style="margin: 0 auto; font-size: 18px; color: var(--muted, #334155); max-width: 600px; line-height: 1.6; text-align: center;">Have questions or want to schedule an appointment? Reach out to our team directly.</p>
       </div>
       <div class="contact-layout-new">
         <aside class="contact-card-new contact-card-new--info contact-card-new--address">
@@ -797,7 +805,9 @@
   </footer>
 
   <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
 </body>
 
 </html>

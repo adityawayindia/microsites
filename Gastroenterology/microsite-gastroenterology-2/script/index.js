@@ -327,6 +327,27 @@ if (menuToggle && mainNav) {
 
     if (!modal || !dialog || !form) return;
 
+    // Country-code phone field (intl-tel-input v29.2.2)
+    let iti = null;
+    let phoneUtilsReady = false;
+
+    if (form.phone && window.intlTelInput) {
+        iti = window.intlTelInput(form.phone, {
+            initialCountry: "in",
+            countryOrder: ["in"],
+            separateDialCode: true,
+            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
+        });
+        iti.promise.then(() => { phoneUtilsReady = true; });
+    }
+
+    // Full Name: letters/spaces/apostrophes/hyphens only, sanitized live
+    form.fullName?.addEventListener("input", () => {
+        const el = form.fullName;
+        const sanitized = el.value.replace(/[^A-Za-z\s.'-]/g, "");
+        if (sanitized !== el.value) el.value = sanitized;
+    });
+
     function setBodyScroll(disable) {
         document.body.style.overflow = disable ? "hidden" : "";
     }
@@ -388,8 +409,15 @@ if (menuToggle && mainNav) {
     }
 
     function validatePhone(value) {
+        if (iti && phoneUtilsReady) {
+            return iti.isValidNumber();
+        }
         const digits = value.replace(/[\s\-().+]/g, "");
         return /^[0-9]{4,15}$/.test(digits);
+    }
+
+    function validateFullName(value) {
+        return /^[A-Za-z\s.'-]+$/.test(value);
     }
 
     function validateDateNotPast(value) {
@@ -582,6 +610,10 @@ if (menuToggle && mainNav) {
 
         clearErrors();
 
+        if (iti) {
+            await iti.promise;
+        }
+
         const fullName = form.fullName.value.trim();
         const email = form.email.value.trim();
         const phone = form.phone.value.trim();
@@ -595,6 +627,9 @@ if (menuToggle && mainNav) {
 
         if (!fullName) {
             showError("fullName", "Please enter your full name.");
+            isValid = false;
+        } else if (!validateFullName(fullName)) {
+            showError("fullName", "Name should contain only letters.");
             isValid = false;
         }
         if (!email) {
@@ -647,6 +682,10 @@ if (menuToggle && mainNav) {
 
         showPopup(msg, true);
         form.reset();
+        if (iti) {
+            iti.setNumber("");
+            iti.setSelectedCountry("in");
+        }
         filePreviewDiv.innerHTML = "";
         clearErrors();
         compressedFile = null;

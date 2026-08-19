@@ -2247,7 +2247,7 @@ margin-bottom: 0;
 .footer-social-wrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   min-width: 0;
 }
@@ -2266,7 +2266,7 @@ margin-bottom: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 14px;
   max-width: 434px;
   min-width: 0;
@@ -2772,13 +2772,11 @@ margin-bottom: 0;
   }
 
   .brand-role {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .avatar {
-    width: 38px;
-    height: 38px;
-    font-size: 20px;
+    display: none;
   }
 
   .cta-btn {
@@ -3604,6 +3602,55 @@ margin-bottom: 0;
   color: #b91c1c;
 }
 
+/* ── Phone field — intl-tel-input country code dropdown ────────────────── */
+.iti {
+  display: block;
+  width: 100%;
+  --iti-border-color: #d1d5db;
+  --iti-country-selector-bg: #ffffff;
+}
+.booking-field .iti input {
+  width: 100%;
+  min-width: 0;
+}
+.iti__country-selector {
+  border-radius: 10px;
+  max-width: none;
+}
+.iti__selected-country {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 16px;
+  line-height: normal;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.iti__selected-dial-code {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: normal;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: var(--text);
+}
+.iti__dial-code {
+  font-size: 15px;
+}
+.booking-field .iti__search-input {
+  padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal));
+  padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal));
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 15px;
+}
+.booking-field .iti__tel-input.is-invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
 .booking-submit-btn {
   margin-top: 6px;
   width: 100%;
@@ -4403,10 +4450,10 @@ margin-bottom: 0;
 }
 
 .hero-stat-box strong {
-  font-size: 22px;
+  font-size: 32px;
   color: var(--deep);
   display: block;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .hero-stat-box span {
@@ -5300,16 +5347,16 @@ min-height: 100vh;
 .hero-float-pill--1 {
   width: 32px;
   height: 56px;
-  top: 15%;
-  left: 45%;
+  top: 10%;
+  right: 3%;
   animation: pillFloat1 15s ease-in-out infinite;
 }
 
 .hero-float-pill--2 {
   width: 40px;
   height: 40px;
-  bottom: 25%;
-  left: 42%;
+  bottom: 30%;
+  right: 6%;
   animation: pillFloat2 18s ease-in-out infinite;
   animation-delay: -5s;
 }
@@ -5318,7 +5365,7 @@ min-height: 100vh;
   width: 36px;
   height: 60px;
   top: 45%;
-  right: 48%;
+  right: 1%;
   animation: pillFloat1 22s ease-in-out infinite;
   animation-delay: -10s;
 }
@@ -5326,8 +5373,8 @@ min-height: 100vh;
 .hero-float-pill--4 {
   width: 48px;
   height: 30px;
-  top: 65%;
-  left: 15%;
+  bottom: 8%;
+  right: 4%;
   animation: pillFloat2 14s ease-in-out infinite;
   animation-delay: -3s;
 }
@@ -6403,22 +6450,22 @@ select {
 .service-card-new {
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border: 1.5px solid rgba(13, 148, 136, 0.12);
+  border: 1.5px solid rgba(13, 148, 136, 0.35) !important;
 }
 
 .service-card-new:hover {
   transform: translateY(-4px);
-  border-color: rgba(13, 148, 136, 0.4);
+  border-color: rgba(13, 148, 136, 0.55) !important;
   box-shadow: 0 16px 36px rgba(13, 148, 136, 0.12);
 }
 
 @media (max-width: 640px) {
   .gallery-grid, .alt-gallery-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 8px !important;
   }
   .gallery-item, .alt-gallery-item {
-    aspect-ratio: 1 / 1 !important;
+    aspect-ratio: 4 / 3 !important;
     height: auto !important;
   }
 }

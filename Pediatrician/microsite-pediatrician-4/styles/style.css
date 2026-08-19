@@ -1577,7 +1577,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     grid-column: 1 / -1;
   }
 
-  .peds4-gallery-grid { grid-template-columns: 1fr; }
+  .peds4-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .peds4-footer-inner { grid-template-columns: 1fr; }
   .peds4-contact-card { padding: 32px 20px; }
   .peds4-hero-title { font-size: 36px; }
@@ -1585,6 +1585,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .peds4-stat-cluster { margin-top: 20px; }
   .peds4-testi-card { flex: 0 0 100%; }
   .peds4-about { padding-top: 64px; }
+
+  .peds4-brand-role {
+    font-size: 14px;
+  }
+
+  .peds4-avatar {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

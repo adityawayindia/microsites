@@ -433,6 +433,53 @@ if (menuToggle && mainNav) {
         return /^[0-9]{4,15}$/.test(digits);
     }
 
+    let iti = null;
+    let phoneUtilsReady = false;
+
+    function getPhoneErrorMessage(errorCode) {
+        if (!window.intlTelInput) return "Please enter a valid phone number.";
+        const { VALIDATION_ERROR } = window.intlTelInput;
+        switch (errorCode) {
+            case VALIDATION_ERROR.INVALID_COUNTRY_CODE: return "Invalid country code.";
+            case VALIDATION_ERROR.TOO_SHORT: return "Phone number is too short.";
+            case VALIDATION_ERROR.TOO_LONG: return "Phone number is too long.";
+            default: return "Please enter a valid phone number.";
+        }
+    }
+
+    function initPhonePlugin() {
+        const phoneInputEl = form.phone;
+        if (!phoneInputEl || !window.intlTelInput) return;
+
+        iti = window.intlTelInput(phoneInputEl, {
+            initialCountry: "in",
+            countryOrder: ["in"],
+            separateDialCode: true,
+            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
+        });
+
+        iti.promise.then(() => { phoneUtilsReady = true; }).catch(() => {});
+
+        phoneInputEl.addEventListener("countrychange", () => {
+            if (phoneInputEl.value.trim()) {
+                clearErrors();
+            }
+        });
+
+        form.addEventListener("reset", () => {
+            iti?.setNumber("");
+            iti?.setSelectedCountry("in");
+        });
+    }
+
+    form.fullName?.addEventListener("input", () => {
+        const el = form.fullName;
+        const sanitized = el.value.replace(/[^A-Za-z\s.'-]/g, "");
+        if (sanitized !== el.value) el.value = sanitized;
+    });
+
+    initPhonePlugin();
+
     function validateDateNotPast(value) {
         if (!value) return false;
         const today = new Date();
@@ -621,6 +668,10 @@ if (menuToggle && mainNav) {
         event.preventDefault();
         if (isSubmitting) return;
 
+        if (iti) {
+            try { await iti.promise; } catch (e) {}
+        }
+
         clearErrors();
 
         const fullName = form.fullName.value.trim();
@@ -637,6 +688,9 @@ if (menuToggle && mainNav) {
         if (!fullName) {
             showError("fullName", "Please enter your full name.");
             isValid = false;
+        } else if (!/^[A-Za-z\s.'-]+$/.test(fullName)) {
+            showError("fullName", "Name should contain only letters.");
+            isValid = false;
         }
         if (!email) {
             showError("email", "Please enter your email address.");
@@ -648,6 +702,11 @@ if (menuToggle && mainNav) {
         if (!phone) {
             showError("phone", "Please enter your phone number.");
             isValid = false;
+        } else if (iti && phoneUtilsReady) {
+            if (!iti.isValidNumber()) {
+                showError("phone", getPhoneErrorMessage(iti.getValidationError()));
+                isValid = false;
+            }
         } else if (!validatePhone(phone)) {
             showError("phone", "Please enter a valid phone number.");
             isValid = false;
