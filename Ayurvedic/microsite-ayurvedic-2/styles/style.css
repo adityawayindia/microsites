@@ -4644,11 +4644,14 @@ margin-bottom: 0;
 
 /* ===== Ayurvedic Custom Redesign Layout Pass ===== */
 .hero-portrait {
-  border-radius: 160px 160px 16px 16px !important;
-  border: 5px solid rgba(255, 255, 255, 0.95) !important;
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
+  border-radius: 50% !important;
+  border: 8px solid #ffffff !important;
+  outline: none;
   box-shadow: 0 20px 45px rgba(45, 90, 39, 0.15) !important;
+}
+
+.hero-portrait .hero-image {
+  aspect-ratio: 1 / 1 !important;
 }
 
 .hero-stats-grid {
