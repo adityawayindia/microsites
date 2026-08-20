@@ -1,22 +1,22 @@
 :root {
-    --bg: #f9fbf9;
-    --text: #0f172a;
-    --muted: #334155;
-    --button: #2d5a27;
-    --button-hover: #1f3f1b;
-    --button-light: #eaf2e9;
-    --accent: #d4a373;
-    --accent-soft: #fbf5e6;
-    --accent-warm: #bc6c25;
-    --bone: #fdfcf7;
-    --titanium: #4a5752;
-    --deep: #1e3f20;
+    --bg: #fffbf5;
+    --text: #261c14;
+    --muted: #524336;
+    --button: #c25918;
+    --button-hover: #9e430b;
+    --button-light: #fceee4;
+    --accent: #d99b26;
+    --accent-soft: #fff6e0;
+    --accent-warm: #b87c14;
+    --bone: #fef8ee;
+    --titanium: #594a3e;
+    --deep: #522106;
     --white: #ffffff;
-    --shadow: 0 1px 2px rgba(45, 90, 39, 0.08);
+    --shadow: 0 4px 20px rgba(194, 89, 24, 0.10);
 }
 
 /* ==========================================================================
-   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -33,13 +33,16 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Rule 1.5: Line Height & Body Text Readability */
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
 }
 
 p, li, span, a, button, label {
   line-height: 1.6;
-  color: #0f172a;
+  color: #261c14;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .about-section p,
@@ -48,7 +51,7 @@ p, li, span, a, button, label {
 .about-story-new p {
   text-align: justify;
   line-height: 1.8;
-  color: #0f172a;
+  color: #261c14;
   hyphens: auto;
 }
 
@@ -124,12 +127,12 @@ body {
   font-size: 16px;
   margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 450;
+  font-weight: 400;
   background:
-    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(212, 163, 115, 0.1), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 8%, rgba(45, 90, 39, 0.08), transparent 50%),
-    linear-gradient(180deg, #ffffff 0%, var(--bg) 40%, #f1f6f1 100%);
-  color: #0f172a;
+    radial-gradient(ellipse 75% 50% at 0% 0%, rgba(217, 155, 38, 0.12), transparent 55%),
+    radial-gradient(ellipse 65% 45% at 100% 10%, rgba(194, 89, 24, 0.08), transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 40%, #f7ece1 100%);
+  color: #261c14;
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -202,9 +205,9 @@ body {
 }
 
 .brand-name {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .brand-role {
@@ -330,36 +333,16 @@ margin-bottom: 0;
   transform: rotate(-8deg);
 }
 
-.hero-section::before {
-  content: "";
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  border: 1px solid rgba(13, 115, 119, 0.12);
-  border-radius: 50%;
-  right: 0;
-  top: 8%;
-  pointer-events: none;
-  transform: translateX(40%);
-}
-
+.hero-section::before,
 .hero-section::after {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  border: 1px solid rgba(46, 196, 182, 0.35);
-  border-radius: 50%;
-  left: 6%;
-  bottom: 10%;
-  pointer-events: none;
+  display: none !important;
 }
 
 .hero-layout {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 0.95fr 1.05fr;
   gap: 48px;
   align-items: center;
 }
@@ -591,43 +574,40 @@ margin-bottom: 0;
   transform: translateY(-1px);
 }
 
-.hero-image-wrap {
+.hero-visual {
   position: relative;
   width: 100%;
-  max-width: 520px;
-  justify-self: start;
-  animation: fadeRise 1s ease 0.12s both;
+  max-width: 420px;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
-.hero-portrait-glow {
-  position: absolute;
-  inset: 6% 4% 2%;
-  border-radius: 8px;
-  background: radial-gradient(circle at 50% 35%, rgba(46, 196, 182, 0.4), rgba(13, 115, 119, 0.2) 55%, transparent 72%);
-  filter: blur(22px);
-  animation: portraitPulse 5.5s ease-in-out infinite;
-  z-index: 0;
+.hero-visual-blob {
+  display: none;
 }
 
-.hero-portrait-frame {
+.hero-portrait {
   position: relative;
-  border-radius: 32px;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50% !important;
   overflow: hidden;
-  box-shadow:
-    0 0 0 8px rgba(255, 255, 255, 0.85),
-    0 0 0 14px rgba(46, 196, 182, 0.35),
-    0 28px 56px rgba(13, 115, 119, 0.18);
-  transform: none;
-  clip-path: none;
+  border: none;
+  box-shadow: none;
 }
 
 .hero-image {
   width: 100%;
+  height: 100%;
   display: block;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center top;
-  transform: scale(1.01);
+  border-radius: 50% !important;
 }
 
 .hero-bone-mark {
@@ -4130,7 +4110,7 @@ margin-bottom: 0;
 
 .hero-floating-leaves i {
   position: absolute;
-  color: #2d5a27;
+  color: var(--button);
   opacity: 0.14;
   font-size: 28px;
   filter: blur(0.5px);
@@ -4269,7 +4249,7 @@ margin-bottom: 0;
 
 .section-floating-leaves i {
   position: absolute;
-  color: #2d5a27;
+  color: var(--button);
   opacity: 0.12;
   font-size: 26px;
   filter: blur(0.5px);
