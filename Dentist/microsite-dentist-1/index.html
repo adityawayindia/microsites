@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230d7377'/%3E%3Cpath d='M32 46s-16-9.5-16-21a9 9 0 0 1 16-5.6A9 9 0 0 1 48 25c0 11.5-16 21-16 21z' fill='%23fff'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet" />
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -15,7 +15,9 @@
           crossorigin="anonymous"
           referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/banner-module.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
 </head>
 <body>
   <header class="site-header">
@@ -105,6 +107,17 @@
     </div>
     <!-- END OF MODULAR BANNER MODULE -->
     <div class="hero-mesh" aria-hidden="true"></div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="tooth-icon" viewBox="0 0 256 256">
+        <path fill="#0d7377" d="M169.49,67.71,138.77,80l30.72,12.28A4,4,0,0,1,168,100a3.91,3.91,0,0,1-1.49-.29L128,84.31,89.49,99.71A3.91,3.91,0,0,1,88,100a4,4,0,0,1-1.49-7.72L117.23,80,86.51,67.71a4,4,0,0,1,3-7.43L128,75.69l38.51-15.41a4,4,0,0,1,3,7.43Zm50.51,12c.07,71.08-23.16,130.07-45.65,146.05a11.74,11.74,0,0,1-11.93,1,11.91,11.91,0,0,1-6.9-10C154.35,200.93,149.33,164,128,164s-26.35,36.94-27.52,52.82a12.11,12.11,0,0,1-12,11.19,11.77,11.77,0,0,1-6.83-2.2c-22.49-16-45.72-75-45.65-146A52,52,0,0,1,88,28h80A52,52,0,0,1,220,79.75Zm-8,0A44,44,0,0,0,168,36H88A44,44,0,0,0,44,79.76c-.07,67.58,21.9,125,42.29,139.51a3.77,3.77,0,0,0,3.89.33,4,4,0,0,0,2.32-3.37C95.36,177.39,108,156,128,156s32.64,21.4,35.5,60.24a4,4,0,0,0,2.32,3.37,3.77,3.77,0,0,0,3.89-.33C190.1,204.8,212.07,147.34,212,79.76Z"/>
+      </symbol>
+    </svg>
+    <div class="hero-edge-tooth hero-edge-tooth--left" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#tooth-icon"/></svg></div>
+    <div class="hero-edge-tooth hero-edge-tooth--left-top" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#tooth-icon"/></svg></div>
+    <div class="hero-edge-tooth hero-edge-tooth--left-bottom" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#tooth-icon"/></svg></div>
+    <div class="hero-edge-tooth hero-edge-tooth--right" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#tooth-icon"/></svg></div>
+    <div class="hero-edge-tooth hero-edge-tooth--right-top" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#tooth-icon"/></svg></div>
+    <div class="hero-edge-tooth hero-edge-tooth--right-bottom" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#tooth-icon"/></svg></div>
     <div class="container hero-layout">
       <div class="hero-content">
             <div class="expert-badge">
@@ -113,21 +126,21 @@
             </div>
 
             <h1 class="hero-title">Dr. Anika Sharma</h1>
-            <p class="hero-subtitle">BDS, MDS (Conservative Dentistry) Â· Manipal College of Dental Sciences</p>
-            <p class="mic">MCI Registration number: MCI-KA-2014-48217</p>
+            <p class="hero-subtitle"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <strong>BDS, MDS (Conservative Dentistry) · Manipal College of Dental Sciences</strong></p>
+            <p class="mic"><i class="fa-solid fa-id-card" aria-hidden="true"></i> <strong>MCI Registration number:</strong> MCI-KA-2014-48217</p>
 
             <ul class="hero-highlights">
-                <li><i class="fa-solid fa-star" aria-hidden="true"></i> 12+ Years Experience</li>
-                <li><i class="fa-solid fa-face-smile" aria-hidden="true"></i> 8,200+ Smiles Cared For</li>
-                <li><i class="fa-solid fa-thumbs-up" aria-hidden="true"></i> 98% Patient Rating</li>
+                <li><i class="fa-solid fa-star" aria-hidden="true"></i> <strong>12+ Years</strong> Experience</li>
+                <li><i class="fa-solid fa-face-smile" aria-hidden="true"></i> <strong>8,200+</strong> Smiles Cared For</li>
+                <li><i class="fa-solid fa-thumbs-up" aria-hidden="true"></i> <strong>98%</strong> Patient Rating</li>
             </ul>
 
             <p class="languages">
-                <strong>Language Proficiency:</strong> English, Hindi, Kannada
+                <i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Language Proficiency:</strong> English, Hindi, Kannada
             </p>
 
         <div class="hero-actions">
-            <a href="#contact-us" class="contact-btn">Contact Now</a>
+            <!-- <a href="#contact-us" class="contact-btn">Contact Now</a> -->
             <div class="social-links" aria-label="Social media links">
                 <a href="#" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
@@ -143,26 +156,17 @@
 
       <div class="hero-visual">
         <div class="hero-visual-blob" aria-hidden="true"></div>
+        <div class="hero-visual-tooth" aria-hidden="true">
+          <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#0d7377" fill-opacity="0.14" d="M169.49,67.71,138.77,80l30.72,12.28A4,4,0,0,1,168,100a3.91,3.91,0,0,1-1.49-.29L128,84.31,89.49,99.71A3.91,3.91,0,0,1,88,100a4,4,0,0,1-1.49-7.72L117.23,80,86.51,67.71a4,4,0,0,1,3-7.43L128,75.69l38.51-15.41a4,4,0,0,1,3,7.43Zm50.51,12c.07,71.08-23.16,130.07-45.65,146.05a11.74,11.74,0,0,1-11.93,1,11.91,11.91,0,0,1-6.9-10C154.35,200.93,149.33,164,128,164s-26.35,36.94-27.52,52.82a12.11,12.11,0,0,1-12,11.19,11.77,11.77,0,0,1-6.83-2.2c-22.49-16-45.72-75-45.65-146A52,52,0,0,1,88,28h80A52,52,0,0,1,220,79.75Zm-8,0A44,44,0,0,0,168,36H88A44,44,0,0,0,44,79.76c-.07,67.58,21.9,125,42.29,139.51a3.77,3.77,0,0,0,3.89.33,4,4,0,0,0,2.32-3.37C95.36,177.39,108,156,128,156s32.64,21.4,35.5,60.24a4,4,0,0,0,2.32,3.37,3.77,3.77,0,0,0,3.89-.33C190.1,204.8,212.07,147.34,212,79.76Z"/>
+          </svg>
+        </div>
         <div class="hero-portrait">
           <img
             src="assets/dr-anika-sharma.png"
             alt="Dr. Anika Sharma"
             class="hero-image"
           />
-        </div>
-        <div class="hero-float-card hero-float-card--rating">
-          <i class="fa-solid fa-star" aria-hidden="true"></i>
-          <div>
-            <strong>4.9 / 5</strong>
-            <span>Patient Rating</span>
-          </div>
-        </div>
-        <div class="hero-float-card hero-float-card--experience">
-          <i class="fa-solid fa-tooth" aria-hidden="true"></i>
-          <div>
-            <strong>12+ Years</strong>
-            <span>Dental Practice</span>
-          </div>
         </div>
       </div>
     </div>
@@ -190,8 +194,8 @@
         </p>
         <p>
             Known for a calm chairside manner and transparent treatment plans, Dr. Sharma helps
-            families and working professionals maintain healthy teethâ€”from routine cleanings through
-            complex restorative workâ€”with confidence and clarity.
+            families and working professionals maintain healthy teeth—from routine cleanings through
+            complex restorative work—with confidence and clarity.
         </p>
       </div>
 
@@ -205,7 +209,7 @@
         <p class="services-kicker"><i class="fa-solid fa-tooth" aria-hidden="true"></i> Smile care</p>
         <h2 class="services-title">Dental Care That Feels Easy</h2>
         <p class="services-subtitle">
-          From cleanings and fillings to root canals and whitening â€” care tailored to your smile goals.
+          From cleanings and fillings to root canals and whitening — care tailored to your smile goals.
         </p>
       </div>
 
@@ -267,7 +271,7 @@
               <span class="service-index" aria-hidden="true"></span>
               <div class="service-body">
                 <h3 class="service-card-title">Family &amp; Kids Care</h3>
-                <p class="service-card-desc">Friendly visits for all agesâ€”sealants, guidance, and early care that builds lifelong habits.</p>
+                <p class="service-card-desc">Friendly visits for all ages—sealants, guidance, and early care that builds lifelong habits.</p>
               </div>
           </article>
       </div>
@@ -409,7 +413,7 @@
           <p class="contact-kicker"><i class="fa-solid fa-face-smile" aria-hidden="true"></i> Book your visit</p>
           <h2>Ready for a healthier smile?</h2>
           <p>
-              Schedule a consultation with our specialist â€” clinic visits and online options available.
+              Schedule a consultation with our specialist — clinic visits and online options available.
           </p>
         </div>
 
@@ -601,7 +605,7 @@
               </div>
               <div class="booking-field">
                   <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
+                  <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
                   <p class="booking-error" data-error-for="phone"></p>
               </div>
           </div>
@@ -722,7 +726,9 @@
   </footer>
 
   <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
 </body>
 </html>
 

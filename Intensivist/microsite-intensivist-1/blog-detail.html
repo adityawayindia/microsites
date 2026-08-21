@@ -7,14 +7,16 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f2a3d'/%3E%3Cpath d='M12 32h8l4-11 6 22 5-16 3 5h14' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
           rel="stylesheet" />
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
     <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/chatbot.css" id="chatbot-css" />
 </head>
 <body>
   <header class="site-header">
@@ -114,6 +116,103 @@
     </section>
   </main>
 
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+        </div>
+      </div>
+      <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+                  <p class="booking-error" data-error-for="fullName"></p>
+              </div>
+              <div class="booking-field">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
+                  <p class="booking-error" data-error-for="phone"></p>
+              </div>
+          </div>
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                  <p class="booking-error" data-error-for="email"></p>
+              </div>
+              <div class="booking-field booking-field--date">
+                  <label for="preferredDateText">Preferred Date</label>
+                  <div class="booking-datepicker" id="preferredDateField">
+                      <div class="booking-input-with-icon">
+                          <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+                      </div>
+                      <input type="hidden" id="preferredDate" name="preferredDate" />
+                      <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                          <div class="booking-calendar-header">
+                              <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                              <span class="booking-calendar-title" data-cal-title></span>
+                              <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                          </div>
+                          <div class="booking-calendar-weekdays">
+                              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                          </div>
+                          <div class="booking-calendar-grid" data-cal-grid></div>
+                      </div>
+                  </div>
+                  <p class="booking-error" data-error-for="preferredDate"></p>
+              </div>
+          </div>
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="preferredTime">Preferred Time</label>
+                  <div class="booking-select-wrap">
+                      <select id="preferredTime" name="preferredTime" required>
+                          <option value="">Select Time Slot</option>
+                          <option value="10:00 AM">10:00 AM</option>
+                          <option value="11:30 AM">11:30 AM</option>
+                          <option value="02:00 PM">02:00 PM</option>
+                          <option value="04:30 PM">04:30 PM</option>
+                      </select>
+                      <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+                  </div>
+                  <p class="booking-error" data-error-for="preferredTime"></p>
+              </div>
+          </div>
+          <div class="booking-field">
+              <label for="reason">Reason For Visit</label>
+              <textarea id="reason" name="reason" rows="3" placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+              <p class="booking-error" data-error-for="reason"></p>
+          </div>
+          <div class="booking-field booking-field--file">
+              <label for="report">Upload Report</label>
+              <div class="booking-upload-row">
+                  <label class="booking-upload-btn" for="report">Upload</label>
+                  <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+                  <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+              </div>
+              <div class="booking-file-preview" id="filePreview"></div>
+              <p class="booking-error" data-error-for="report"></p>
+          </div>
+
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" class="booking-submit-btn" id="submitBtn" disabled>Book Appointment</button>
+          <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+              <div class="loader-spinner"></div>
+              <p>Booking your appointment...</p>
+          </div>
+      </form>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand-col">
@@ -176,6 +275,8 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="script/index.js"></script>
+  <script src="script/chatbot.js" defer></script>
 </body>
 </html>

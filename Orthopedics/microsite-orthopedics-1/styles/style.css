@@ -2024,6 +2024,8 @@ margin-bottom: 0;
 }
 
 .blog-detail-article {
+  max-width: 1100px;
+  margin: 0 auto;
   background: #ffffff;
   border-radius: 18px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
@@ -2120,7 +2122,7 @@ margin-bottom: 0;
 }
 
 .blog-detail-content {
-  max-width: 820px;
+  max-width: 1000px;
 }
 
 .blog-detail-content p {
@@ -2920,7 +2922,6 @@ margin-bottom: 0;
 
   .blog-detail-date {
     margin-left: 0;
-    width: 100%;
   }
 
   .blog-detail-content p {

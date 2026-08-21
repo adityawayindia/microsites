@@ -387,9 +387,44 @@ if (menuToggle && mainNav) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
 
-    function validatePhone(value) {
-        const digits = value.replace(/[\s\-().+]/g, "");
-        return /^[0-9]{4,15}$/.test(digits);
+    let iti = null;
+    let phoneUtilsReady = false;
+
+    function getPhoneErrorMessage(errorCode) {
+        if (!window.intlTelInput) return "Please enter a valid phone number.";
+        const { VALIDATION_ERROR } = window.intlTelInput;
+        switch (errorCode) {
+            case VALIDATION_ERROR.INVALID_COUNTRY_CODE: return "Invalid country code.";
+            case VALIDATION_ERROR.TOO_SHORT: return "Phone number is too short.";
+            case VALIDATION_ERROR.TOO_LONG: return "Phone number is too long.";
+            default: return "Please enter a valid phone number.";
+        }
+    }
+
+    function initPhonePlugin() {
+        const phoneInputEl = form.phone;
+        if (!phoneInputEl || !window.intlTelInput) return;
+
+        iti = window.intlTelInput(phoneInputEl, {
+            initialCountry: "in",
+            countryOrder: ["in"],
+            separateDialCode: true,
+            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
+        });
+
+        iti.promise.then(() => { phoneUtilsReady = true; }).catch(() => {});
+
+        form.addEventListener("reset", () => {
+            iti?.setNumber("");
+            iti?.setSelectedCountry("in");
+        });
+    }
+
+    initPhonePlugin();
+
+    function validatePhone() {
+        if (!iti || !phoneUtilsReady) return true;
+        return iti.isValidNumber();
     }
 
     function validateDateNotPast(value) {
@@ -582,6 +617,10 @@ if (menuToggle && mainNav) {
 
         clearErrors();
 
+        if (iti) {
+            try { await iti.promise; } catch (e) {}
+        }
+
         const fullName = form.fullName.value.trim();
         const email = form.email.value.trim();
         const phone = form.phone.value.trim();
@@ -607,8 +646,8 @@ if (menuToggle && mainNav) {
         if (!phone) {
             showError("phone", "Please enter your phone number.");
             isValid = false;
-        } else if (!validatePhone(phone)) {
-            showError("phone", "Please enter a valid phone number.");
+        } else if (!validatePhone()) {
+            showError("phone", getPhoneErrorMessage(iti && iti.getValidationError()));
             isValid = false;
         }
         if (!preferredDate) {

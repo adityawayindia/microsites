@@ -2075,6 +2075,8 @@ display: flex;
 }
 
 .blog-detail-article {
+  max-width: 1100px;
+  margin: 0 auto;
   background: var(--white);
   border-radius: 12px;
   box-shadow: 0 8px 28px rgba(10, 25, 47, 0.04);
@@ -2172,7 +2174,7 @@ display: flex;
 }
 
 .blog-detail-content {
-  max-width: 820px;
+  max-width: 1000px;
 }
 
 .blog-detail-content p {
@@ -3187,7 +3189,6 @@ display: flex;
   }
   .blog-detail-date {
     margin-left: 0;
-    width: 100%;
   }
 
   .blog-detail-content p { font-size: 16px; line-height: 1.55; }

@@ -16,7 +16,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -102,7 +102,7 @@ html {
 body {
   font-size: 16px;
   margin: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   background:
     radial-gradient(ellipse 70% 45% at 0% 0%, rgba(46, 196, 182, 0.12), transparent 55%),
     radial-gradient(ellipse 60% 40% at 100% 8%, rgba(13, 115, 119, 0.08), transparent 50%),
@@ -129,7 +129,7 @@ body {
 .testimonials-section,
 .social-media-section,
 .gallery-section {
-  padding: 80px 0 96px;
+  padding: 48px 0 56px;
   background: #ffffff;
 }
 
@@ -180,7 +180,7 @@ body {
 }
 
 .brand-name {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: 600;
 }
@@ -369,7 +369,7 @@ margin-bottom: 0;
 
 .hero-title {
   margin: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(36px, 4.8vw, 56px);
   font-weight: 600;
   line-height: 1.08;
@@ -420,7 +420,7 @@ margin-bottom: 0;
 
 .stat-card h3 {
   margin: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 1;
@@ -457,13 +457,13 @@ margin-bottom: 0;
 }
 
 .social {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 20px;
   color: #ffffff;
   text-decoration: none;
   transition: transform 0.2s ease;
@@ -664,12 +664,12 @@ margin-bottom: 0;
   }
 }
 
-/* About Section â€” open split with copper rail */
+/* About Section — open split with copper rail */
 .about-section {
   background:
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(46, 196, 182, 0.1), transparent 55%),
     linear-gradient(180deg, #f3faf8 0%, #e8f5f2 100%);
-  padding: 88px 0;
+  padding: 48px 0 56px;
   position: relative;
   overflow: hidden;
 }
@@ -757,7 +757,7 @@ margin-bottom: 0;
 
 .about-title {
   margin: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(28px, 3.4vw, 42px);
   font-weight: 600;
   color: var(--deep);
@@ -875,7 +875,7 @@ margin-bottom: 0;
   }
 }
 
-/* Services Section â€” soft slate wash */
+/* Services Section — soft slate wash */
 .services-section {
   position: relative;
   overflow: hidden;
@@ -930,7 +930,7 @@ margin-bottom: 0;
 
 .services-title {
   margin: 10px 0 12px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 600;
   color: var(--deep);
@@ -947,8 +947,10 @@ margin-bottom: 0;
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+  justify-content: center;
   border-top: none;
   counter-reset: service;
   position: relative;
@@ -956,6 +958,7 @@ margin-bottom: 0;
 }
 
 .service-card {
+  grid-column: span 4;
   background: #ffffff;
   border-radius: 20px;
   padding: 28px 24px 30px;
@@ -969,7 +972,47 @@ margin-bottom: 0;
   counter-increment: service;
   position: relative;
   overflow: hidden;
+  min-width: 0;
   min-height: 240px;
+}
+
+/* Final row holds ONE leftover card (total ≡ 1 mod 3): widen it to two
+   card-widths and centre it. */
+.service-card:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+
+/* Final row holds TWO leftover cards (total ≡ 2 mod 3): shift the pair
+   inward so it centres on the row. */
+.service-card:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+
+.service-card:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
+}
+
+@media (max-width: 1200px) {
+  .service-card,
+  .service-card:last-child:nth-child(3n + 1),
+  .service-card:nth-last-child(2):nth-child(3n + 1),
+  .service-card:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+
+  .service-card:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-card,
+  .service-card:last-child:nth-child(odd),
+  .service-card:last-child:nth-child(3n + 1),
+  .service-card:nth-last-child(2):nth-child(3n + 1),
+  .service-card:last-child:nth-child(3n + 2) {
+    grid-column: 1 / -1;
+  }
 }
 
 .service-card::before {
@@ -1030,7 +1073,7 @@ margin-bottom: 0;
   color: rgba(13, 115, 119, 0.07);
   padding-top: 0;
   line-height: 1;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   pointer-events: none;
 }
 
@@ -1060,7 +1103,7 @@ margin-bottom: 0;
   color: var(--muted);
 }
 
-/* Contact Section â€” light split panel */
+/* Contact Section — light split panel */
 .contact-section {
   padding: 44px 0 52px;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 100%);
@@ -1104,7 +1147,7 @@ margin-bottom: 0;
 
 .contact-header h2 {
   margin: 10px 0 14px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(28px, 3.2vw, 42px);
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -1219,7 +1262,7 @@ margin-bottom: 0;
   background: var(--button-hover);
 }
 
-/* Testimonials Section â€” dark slate quote panels */
+/* Testimonials Section — dark slate quote panels */
 .testimonials-section {
   background:
     linear-gradient(180deg, #f3faf8 0%, #ffffff 45%, #eaf7f4 100%);
@@ -1238,7 +1281,7 @@ margin-bottom: 0;
 
 .testimonials-title {
   margin: 10px 0 12px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 600;
   color: var(--deep);
@@ -1453,7 +1496,7 @@ margin-bottom: 0;
 
 .social-media-title {
   margin: 0 0 16px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(30px, 3.6vw, 44px);
   font-weight: 600;
   color: var(--deep);
@@ -1730,7 +1773,7 @@ margin-bottom: 0;
   justify-content: space-between;
 }
 
-/* Gallery Section â€” uniform card grid */
+/* Gallery Section — uniform card grid */
 .gallery-section {
   padding: 46px 0 56px;
   background: #ffffff;
@@ -1744,7 +1787,7 @@ margin-bottom: 0;
 
 .gallery-title {
   margin: 10px 0 12px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 600;
   color: var(--deep);
@@ -1918,7 +1961,7 @@ margin-bottom: 0;
 
 .blog-hero-content h1 {
   margin: 0 0 10px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(32px, 3.2vw, 46px);
   font-weight: 600;
   line-height: 1.2;
@@ -2057,6 +2100,8 @@ margin-bottom: 0;
 }
 
 .blog-detail-article {
+  max-width: 1100px;
+  margin: 0 auto;
   background: #ffffff;
   border-radius: 18px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
@@ -2089,7 +2134,7 @@ margin-bottom: 0;
 
 .blog-detail-title {
   margin: 0 0 16px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(32px, 3.4vw, 46px);
   font-weight: 600;
   line-height: 1.2;
@@ -2153,7 +2198,7 @@ margin-bottom: 0;
 }
 
 .blog-detail-content {
-  max-width: 820px;
+  max-width: 1000px;
 }
 
 .blog-detail-content p {
@@ -2239,7 +2284,7 @@ margin-bottom: 0;
 .footer-social-wrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   min-width: 0;
 }
@@ -2257,7 +2302,7 @@ margin-bottom: 0;
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 14px;
   max-width: 434px;
@@ -2472,10 +2517,24 @@ margin-bottom: 0;
   }
 
   .footer-nav {
+    width: 100%;
     gap: 18px;
     font-size: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 4px;
+  }
+
+  .footer-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .footer-nav a {
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .footer-social-icon {
@@ -2518,7 +2577,7 @@ margin-bottom: 0;
 
 @media (max-width: 640px) {
   .contact-section {
-  padding: 72px 0 88px;
+  padding: 40px 0 48px;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 100%);
 }
 
@@ -2543,7 +2602,7 @@ margin-bottom: 0;
   }
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 1200px) {
   .navbar {
     min-height: 72px;
     position: relative;
@@ -2638,7 +2697,6 @@ margin-bottom: 0;
 }
 
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
@@ -2836,18 +2894,14 @@ margin-bottom: 0;
   }
 
   .social {
-    width: 34px;
-    height: 34px;
-    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 
   .contact-btn {
     width: 100%;
     max-width: 280px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
   }
 
   .services-section {
@@ -2895,7 +2949,7 @@ margin-bottom: 0;
   .testimonials-section {
   background:
     linear-gradient(180deg, #f3faf8 0%, #ffffff 45%, #eaf7f4 100%);
-  padding: 88px 0 96px;
+  padding: 48px 0 56px;
 }
 
   .testimonials-header {
@@ -2932,7 +2986,7 @@ margin-bottom: 0;
 }
 
   .gallery-section {
-  padding: 80px 0 96px;
+  padding: 40px 0 48px;
   background: #ffffff;
 }
 
@@ -2967,7 +3021,7 @@ margin-bottom: 0;
   }
 
   .gallery-section {
-  padding: 80px 0 96px;
+  padding: 40px 0 48px;
   background: #ffffff;
 }
 
@@ -3027,7 +3081,6 @@ margin-bottom: 0;
 
   .blog-detail-date {
     margin-left: 0;
-    width: 100%;
   }
 
   .blog-detail-content p {
@@ -3253,7 +3306,7 @@ margin-bottom: 0;
   background: #ffffff;
   padding: 10px 12px;
   font-size: 16px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   color: #111827;
   outline: none;
 }
@@ -3457,7 +3510,7 @@ margin-bottom: 0;
 
 .booking-calendar-weekdays {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   text-align: center;
   font-size: 16px;
   font-weight: 600;
@@ -3466,14 +3519,20 @@ margin-bottom: 0;
   text-transform: uppercase;
 }
 
+.booking-calendar-weekdays span {
+  min-width: 0;
+}
+
 .booking-calendar-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 2px;
 }
 
 .booking-calendar-day {
   position: relative;
+  width: 100%;
+  min-width: 0;
   aspect-ratio: 1 / 1;
   border: none;
   background: transparent;
@@ -3484,6 +3543,9 @@ margin-bottom: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
   transition: background 0.15s ease, color 0.15s ease;
 }
 
@@ -3750,7 +3812,7 @@ margin-bottom: 0;
 }
 .about-title {
   margin: 0 0 14px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(28px, 3.4vw, 42px);
   font-weight: 700;
   color: var(--deep);
@@ -3941,8 +4003,8 @@ margin-bottom: 0;
 
 .testimonials-section {
   background:
-    radial-gradient(circle at 12% 30%, rgba(46, 196, 182, 0.11), transparent 25%),
-    linear-gradient(180deg, #f4fbff 0%, #ffffff 42%, #eefaf6 100%);
+    radial-gradient(ellipse 62% 50% at 50% 0%, rgba(46, 196, 182, 0.14), transparent 60%),
+    linear-gradient(180deg, #eefcf9 0%, #f8fffd 42%, #ffffff 100%);
 }
 
 .testimonial-card:nth-child(2n) {
@@ -3989,6 +4051,76 @@ margin-bottom: 0;
   to { background-position: 30px 20px, -20px 25px, -25px -20px, 20px -15px; }
 }
 
+.hero-edge-tooth {
+  position: absolute;
+  top: 50%;
+  width: clamp(40px, 4.5vw, 70px);
+  height: auto;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+  --base-rotate: 0deg;
+  transform: translateY(-50%) rotate(var(--base-rotate));
+  animation: floatTooth 6s ease-in-out infinite;
+}
+
+@keyframes floatTooth {
+  0%, 100% { transform: translateY(-50%) rotate(var(--base-rotate)); }
+  50% { transform: translateY(calc(-50% - 8px)) rotate(var(--base-rotate)); }
+}
+
+.hero-edge-tooth svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-edge-tooth--left {
+  top: 50%;
+  left: clamp(8px, 2vw, 32px);
+  --base-rotate: -8deg;
+  animation-delay: 0s;
+}
+
+.hero-edge-tooth--right {
+  top: 50%;
+  right: clamp(8px, 2vw, 32px);
+  --base-rotate: 8deg;
+  animation-delay: 2s;
+}
+
+.hero-edge-tooth--left-top {
+  top: 14%;
+  left: clamp(60px, 8vw, 120px);
+  width: clamp(24px, 2.6vw, 40px);
+  --base-rotate: 14deg;
+  animation-delay: 1s;
+}
+
+.hero-edge-tooth--left-bottom {
+  top: 82%;
+  left: clamp(24px, 5vw, 80px);
+  width: clamp(28px, 3vw, 46px);
+  --base-rotate: -18deg;
+  animation-delay: 3.2s;
+}
+
+.hero-edge-tooth--right-top {
+  top: 20%;
+  right: clamp(40px, 6vw, 100px);
+  width: clamp(24px, 2.6vw, 40px);
+  --base-rotate: -12deg;
+  animation-delay: 1.6s;
+}
+
+.hero-edge-tooth--right-bottom {
+  top: 78%;
+  right: clamp(60px, 7vw, 110px);
+  width: clamp(28px, 3vw, 46px);
+  --base-rotate: 20deg;
+  animation-delay: 2.8s;
+}
+
 .hero-layout {
   position: relative;
   z-index: 1;
@@ -4010,7 +4142,7 @@ margin-bottom: 0;
 
 .hero-title {
   margin: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(36px, 4.6vw, 54px);
   font-weight: 700;
   line-height: 1.1;
@@ -4025,6 +4157,19 @@ margin-bottom: 0;
   line-height: 1.55;
 }
 
+.hero-subtitle i,
+.mic i,
+.languages i {
+  color: var(--button);
+  margin-right: 4px;
+}
+
+.hero-subtitle strong,
+.mic strong {
+  color: var(--deep);
+  font-weight: 600;
+}
+
 .mic {
   margin: 0;
   font-size: 16px;
@@ -4036,28 +4181,40 @@ margin-bottom: 0;
   list-style: none;
   margin: 6px 0 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+  width: 100%;
 }
 
 .hero-highlights li {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
   background: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(13, 115, 119, 0.12);
-  border-radius: 999px;
+  border-radius: 16px;
   padding: 12px 18px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--deep);
   box-shadow: 0 6px 16px rgba(13, 115, 119, 0.06);
+}
+
+.hero-highlights li:last-child {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 5px);
 }
 
 .hero-highlights li i {
   color: var(--button);
   font-size: 16px;
+}
+
+.hero-highlights li strong {
+  font-weight: 700;
+  color: var(--deep);
 }
 
 .hero-highlights li:nth-child(2) i {
@@ -4116,6 +4273,23 @@ margin-bottom: 0;
   animation: none;
 }
 
+.hero-visual-tooth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 92%;
+  height: 92%;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.hero-visual-tooth svg {
+  width: 100%;
+  height: 100%;
+}
+
 @keyframes blobMorph {
   0%, 100% { border-radius: 48% 52% 55% 45% / 55% 45% 55% 45%; }
   50% { border-radius: 55% 45% 45% 55% / 45% 55% 45% 55%; }
@@ -4138,70 +4312,6 @@ margin-bottom: 0;
   object-position: center top;
 }
 
-.hero-float-card {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 10px 14px;
-  box-shadow: 0 14px 30px rgba(13, 115, 119, 0.16);
-  border: 1px solid rgba(13, 115, 119, 0.08);
-  animation: floatCard 4.5s ease-in-out infinite;
-}
-
-.hero-float-card i {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(145deg, #e6f7f5, #b8f2e6);
-  color: var(--button);
-  font-size: 16px;
-  flex-shrink: 0;
-}
-
-.hero-float-card div {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.hero-float-card strong {
-  font-size: 16px;
-  color: var(--deep);
-}
-
-.hero-float-card span {
-  font-size: 16px;
-  color: var(--muted);
-}
-
-.hero-float-card--rating {
-  top: 6%;
-  right: 4%;
-  animation-delay: 0s;
-}
-
-.hero-float-card--experience {
-  bottom: 8%;
-  left: 4%;
-  animation-delay: 1.2s;
-}
-
-.hero-float-card--experience i {
-  background: linear-gradient(145deg, #fff2d9, #ffe6b3);
-  color: #b8860b;
-}
-
-@keyframes floatCard {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
 .hero-wave {
   position: relative;
   z-index: 1;
@@ -4215,6 +4325,10 @@ margin-bottom: 0;
 }
 
 @media (max-width: 900px) {
+  .hero-edge-tooth {
+    display: none;
+  }
+
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -4229,10 +4343,6 @@ margin-bottom: 0;
     order: 2;
   }
 
-  .hero-highlights {
-    justify-content: center;
-  }
-
   .hero-actions {
     justify-content: center;
   }
@@ -4240,18 +4350,6 @@ margin-bottom: 0;
   .hero-visual {
     max-width: 340px;
     order: 1;
-  }
-
-  .hero-float-card {
-    padding: 8px 12px;
-  }
-
-  .hero-float-card--rating {
-    right: 0;
-  }
-
-  .hero-float-card--experience {
-    left: 0;
   }
 }
 
@@ -4268,20 +4366,22 @@ margin-bottom: 0;
     font-size: 16px;
     padding: 9px 14px;
   }
+}
 
-  .hero-float-card strong {
-    font-size: 16px;
+@media (max-width: 480px) {
+  .hero-highlights {
+    grid-template-columns: 1fr;
   }
 
-  .hero-float-card span {
-    font-size: 16px;
+  .hero-highlights li:last-child {
+    grid-column: auto;
+    max-width: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-mesh,
   .hero-visual-blob,
-  .hero-float-card,
   .hero-content,
   .hero-visual {
     animation: none !important;
@@ -4383,7 +4483,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 
 /* ==========================================================================
-   DigiDr Global â€” Enhanced Service & Feature Card Heading Sizing
+   DigiDr Global — Enhanced Service & Feature Card Heading Sizing
    ========================================================================== */
 .service-card h3,
 .service-card-new h3,
@@ -4490,13 +4590,23 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background-color: var(--button-light);
+  background: linear-gradient(145deg, #e6f7f5 0%, #b8f2e6 100%);
   color: var(--button);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   flex-shrink: 0;
+}
+
+.philosophy-pillar:nth-child(2) .pillar-icon {
+  background: linear-gradient(145deg, #e7f0ff 0%, #cfe1ff 100%);
+  color: #2f5aa8;
+}
+
+.philosophy-pillar:nth-child(3) .pillar-icon {
+  background: linear-gradient(145deg, #fff2d9 0%, #ffe6b3 100%);
+  color: #9a6a00;
 }
 
 .pillar-text h3 {
@@ -4518,7 +4628,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 /* Section: Consultation Journey */
 .process-section {
   padding: 52px 0 58px;
-  background-color: rgba(0, 0, 0, 0.02);
+  background:
+    radial-gradient(ellipse 62% 50% at 50% 0%, rgba(46, 196, 182, 0.14), transparent 60%),
+    linear-gradient(180deg, #eefcf9 0%, #f8fffd 42%, #ffffff 100%);
 }
 
 .process-header {
@@ -4572,12 +4684,27 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
   border-radius: 50%;
-  background-color: #ffffff;
+  background: linear-gradient(145deg, #e6f7f5 0%, #b8f2e6 100%);
   color: var(--button);
   font-size: 32px;
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:nth-child(2) .step-circle {
+  background: linear-gradient(145deg, #e7f0ff 0%, #cfe1ff 100%);
+  color: #2f5aa8;
+}
+
+.process-step:nth-child(3) .step-circle {
+  background: linear-gradient(145deg, #fff2d9 0%, #ffe6b3 100%);
+  color: #9a6a00;
+}
+
+.process-step:nth-child(4) .step-circle {
+  background: linear-gradient(145deg, #2ec4b6 0%, #0d7377 100%);
+  color: #ffffff;
 }
 
 .process-step:hover .step-circle {
@@ -4596,6 +4723,18 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
   opacity: 0.55;
   animation: spinRing 25s linear infinite;
   transform-origin: center center;
+}
+
+.process-step:nth-child(2) .step-circle-ring {
+  color: #2f5aa8;
+}
+
+.process-step:nth-child(3) .step-circle-ring {
+  color: #9a6a00;
+}
+
+.process-step:nth-child(4) .step-circle-ring {
+  color: #0d7377;
 }
 
 .process-step:hover .step-circle-ring {
@@ -4894,6 +5033,40 @@ select {
 .booking-error {
   font-size: 16px !important;
   line-height: 1.3;
+}
+
+
+/* ==========================================================================
+   Site-wide minimum 18px body text (paragraphs, links, list items, badges,
+   pills, meta text). Excludes the booking/appointment modal and the
+   chatbot widget, which keep their own compact sizing.
+   ========================================================================== */
+p:not(.booking-modal *),
+li:not(.booking-modal *),
+a:not(.booking-modal *):not(.chatbot-fab-wrap *),
+span:not(.booking-modal *):not(.chatbot-fab-wrap *):not(.service-index),
+label:not(.booking-modal *),
+strong:not(.booking-modal *),
+small:not(.booking-modal *) {
+  font-size: 18px;
+}
+
+.expert-badge {
+  font-size: 18px;
+}
+
+/* CTA buttons are exempt from body-copy sizing (button sizing, not text). */
+.cta-btn,
+.cta-btn span,
+.contact-btn,
+.blog-read-more,
+.blog-page-link {
+  font-size: 16px;
+}
+
+/* Decorative giant background numeral — not body copy. */
+.service-index {
+  font-size: 48px;
 }
 
 
