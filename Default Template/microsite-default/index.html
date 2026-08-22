@@ -1,0 +1,798 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. [Doctor Name] | [Specialty]</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f6e5c'/%3E%3Cpath d='M28 16h8v12h12v8H36v12h-8V36H16v-8h12z' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/chatbot.css" id="chatbot-css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Dr. [Doctor Name]">
+        <span class="avatar" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" alt="Dr. [Doctor Name]" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Dr. [Doctor Name]</span>
+          <span class="brand-role">[Specialty]</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="mainNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact-us">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#gallery">Gallery</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <a href="#" class="cta-btn">
+        <span class="cta-text-desktop">Book Appointment</span>
+        <span class="cta-text-mobile">Book Now</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+                   1. Server-Side Rendering (PHP/Node/Python):
+             - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+             - Set 'data-banner-active="false"' to hide banner if no active image.
+             - Set 'data-banner-href="URL"' to turn image into a clickable link.
+          2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule" data-banner-active="false"
+      data-banner-start="" data-banner-end=""
+      aria-label="Main Clinic Banner" data-banner-src=""
+      data-banner-src-mobile="" data-banner-alt="Clinic promotional banner" data-banner-href="#">
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="" />
+              <img src="" alt="Clinic promotional banner"
+                class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
+    <div class="hero-mesh" aria-hidden="true"></div>
+    <div class="hero-floating-leaves" aria-hidden="true">
+      <i class="fa-solid fa-heart-pulse leaf-1"></i>
+      <i class="fa-solid fa-heart-pulse leaf-2"></i>
+      <i class="fa-solid fa-heart-pulse leaf-3"></i>
+      <i class="fa-solid fa-heart-pulse leaf-4"></i>
+      <i class="fa-solid fa-heart-pulse leaf-5"></i>
+      <i class="fa-solid fa-heart-pulse leaf-6"></i>
+      <i class="fa-solid fa-heart-pulse leaf-7"></i>
+      <i class="fa-solid fa-heart-pulse leaf-8"></i>
+      <i class="fa-solid fa-heart-pulse leaf-9"></i>
+      <i class="fa-solid fa-heart-pulse leaf-10"></i>
+      <i class="fa-solid fa-heart-pulse leaf-11"></i>
+      <i class="fa-solid fa-heart-pulse leaf-12"></i>
+    </div>
+    <div class="container hero-layout">
+      <div class="hero-content">
+        <div class="expert-badge">
+          <i class="fa-solid fa-heart-pulse"></i>
+          Expert Medical Care
+        </div>
+
+        <h1 class="hero-title">Dr. [Doctor Name]</h1>
+        <p class="hero-subtitle"><i class="fa-solid fa-user-doctor" aria-hidden="true"
+            style="margin-right: 6px; color: var(--button);"></i>[Qualification] &middot; [Institution Name]
+        </p>
+        <p class="mic"><i class="fa-solid fa-id-card" aria-hidden="true"
+            style="margin-right: 6px; color: var(--button);"></i>MCI Registration Number: [Registration Number]</p>
+
+        <div class="hero-stats-grid">
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-award"></i>
+            <strong>12+ Years</strong>
+            <span>Experience</span>
+          </article>
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-users"></i>
+            <strong>8,200+</strong>
+            <span>Patients Treated</span>
+          </article>
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-star"></i>
+            <strong>98%</strong>
+            <span>Patient Rating</span>
+          </article>
+        </div>
+
+        <p class="languages">
+          <i class="fa-solid fa-language" aria-hidden="true"
+            style="margin-right: 6px; color: var(--button);"></i><strong>Language Proficiency:</strong> English, Hindi,
+          Kannada
+        </p>
+
+        <div class="hero-actions">
+          <!-- <a href="#contact-us" class="contact-btn">Contact Now</a> -->
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social social-facebook" aria-label="Facebook Page"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i
+                class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social social-instagram" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+            <a href="#" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-blob" aria-hidden="true"></div>
+        <div class="hero-portrait">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" alt="Dr. [Doctor Name]" class="hero-image" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-intro">
+        <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> About the doctor</p>
+        <h2 class="about-title">Compassionate care. Lasting wellness.</h2>
+        <p class="about-subtitle">
+          Personalized consultations and treatment plans designed to restore health and improve quality of life.
+        </p>
+      </div>
+
+      <div class="about-story-new" style="max-width: 880px; margin: 40px auto 0;">
+        <p>
+          Dr. [Doctor Name] is a qualified physician with over [X] years of experience in clinical practice,
+          diagnosis, and patient care. They specialize in comprehensive health management, preventive care,
+          and treatment plans tailored to each individual.
+        </p>
+        <p>
+          Recognized for a thorough approach and clear treatment plans, Dr. [Doctor Name] helps patients manage
+          both routine and long-term health concerns with a systematic, evidence-based approach to medicine.
+        </p>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section class="services-section" id="services">
+    <div class="section-floating-leaves" aria-hidden="true">
+      <i class="fa-solid fa-heart-pulse leaf-1"></i>
+      <i class="fa-solid fa-heart-pulse leaf-2"></i>
+      <i class="fa-solid fa-heart-pulse leaf-3"></i>
+      <i class="fa-solid fa-heart-pulse leaf-4"></i>
+      <i class="fa-solid fa-heart-pulse leaf-5"></i>
+      <i class="fa-solid fa-heart-pulse leaf-6"></i>
+    </div>
+    <div class="container">
+      <div class="services-header">
+        <p class="services-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Our Services</p>
+        <h2 class="services-title">Comprehensive Medical Care</h2>
+        <p class="services-subtitle">
+          From routine consultations and diagnostics to specialized treatment and ongoing care plans.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+          <div class="service-body">
+            <h3 class="service-card-title">General Consultation</h3>
+            <p class="service-card-desc">Comprehensive health assessment and personalized guidance for your medical
+              concerns.</p>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <i class="fa-solid fa-vial"></i>
+          </div>
+          <div class="service-body">
+            <h3 class="service-card-title">Diagnostic Services</h3>
+            <p class="service-card-desc">Accurate testing and evaluation to identify the underlying cause of your
+              symptoms.</p>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <i class="fa-solid fa-notes-medical"></i>
+          </div>
+          <div class="service-body">
+            <h3 class="service-card-title">Treatment Planning</h3>
+            <p class="service-card-desc">Customized treatment plans designed around your specific health needs and
+              goals.</p>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <div class="service-body">
+            <h3 class="service-card-title">Preventive Care</h3>
+            <p class="service-card-desc">Routine screenings and lifestyle guidance to help you stay healthy long
+              term.</p>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <i class="fa-solid fa-kit-medical"></i>
+          </div>
+          <div class="service-body">
+            <h3 class="service-card-title">Chronic Condition Management</h3>
+            <p class="service-card-desc">Ongoing monitoring and care coordination for long-term health
+              conditions.</p>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          <div class="service-body">
+            <h3 class="service-card-title">Follow-up Care</h3>
+            <p class="service-card-desc">Continued support and progress tracking to ensure the best possible
+              outcomes.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="philosophy-section" id="philosophy">
+    <div class="container philosophy-layout">
+      <!-- Left: Visual Column -->
+      <div class="philosophy-visual">
+        <div class="philosophy-img-frame">
+          <img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=900&q=80" alt="Clinical workspace flat-lay" class="philosophy-photo"
+            loading="lazy" />
+        </div>
+      </div>
+      <!-- Right: Content Column -->
+      <div class="philosophy-content">
+        <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Care Philosophy</p>
+        <h2 class="about-title">Patient-Centered, Evidence-Based Care</h2>
+        <p class="about-subtitle">
+          We believe in treating the whole patient, combining clinical expertise with genuine, attentive care.
+        </p>
+        <div class="philosophy-pillars">
+
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <div class="pillar-text">
+              <h3>Personalized Attention</h3>
+              <p>Every treatment plan is tailored to the individual, not a one-size-fits-all approach.</p>
+            </div>
+          </div>
+
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-book-medical"></i></div>
+            <div class="pillar-text">
+              <h3>Evidence-Based Practice</h3>
+              <p>Utilizing proven medical knowledge and up-to-date clinical standards for every diagnosis.</p>
+            </div>
+          </div>
+
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-seedling"></i></div>
+            <div class="pillar-text">
+              <h3>Preventive Wellness Guidance</h3>
+              <p>Empowering patients with lifestyle guidance and preventive habits for lasting health.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section" id="process">
+    <div class="section-floating-leaves" aria-hidden="true">
+      <i class="fa-solid fa-heart-pulse leaf-1"></i>
+      <i class="fa-solid fa-heart-pulse leaf-2"></i>
+      <i class="fa-solid fa-heart-pulse leaf-3"></i>
+      <i class="fa-solid fa-heart-pulse leaf-4"></i>
+      <i class="fa-solid fa-heart-pulse leaf-5"></i>
+      <i class="fa-solid fa-heart-pulse leaf-6"></i>
+    </div>
+    <div class="container">
+      <div class="process-header">
+        <p class="about-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
+        <h2 class="about-title" style="text-align: center;">Your Care Journey</h2>
+        <p class="about-subtitle" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+          A thoughtful, 4-step consultation process designed for accurate diagnosis and lasting health.
+        </p>
+      </div>
+
+      <div class="process-steps-wrap">
+        <div class="process-timeline-line" aria-hidden="true"></div>
+        <div class="process-grid">
+
+          <div class="process-step">
+            <div class="step-visual-wrap">
+              <div class="step-circle">
+                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-dasharray="5 7" stroke-linecap="round" />
+                </svg>
+                <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="step-body">
+              <span class="step-number">01</span>
+              <h3>Initial Assessment</h3>
+              <p>Consultation to understand your symptoms, medical history, and current health concerns.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-visual-wrap">
+              <div class="step-circle">
+                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-dasharray="5 7" stroke-linecap="round" />
+                </svg>
+                <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="step-body">
+              <span class="step-number">02</span>
+              <h3>Clinical Examination</h3>
+              <p>Thorough physical examination and diagnostic review to pinpoint the underlying issue.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-visual-wrap">
+              <div class="step-circle">
+                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-dasharray="5 7" stroke-linecap="round" />
+                </svg>
+                <i class="fa-solid fa-notes-medical" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="step-body">
+              <span class="step-number">03</span>
+              <h3>Custom Treatment Plan</h3>
+              <p>A personalized treatment plan, including medication and lifestyle recommendations.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-visual-wrap">
+              <div class="step-circle">
+                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-dasharray="5 7" stroke-linecap="round" />
+                </svg>
+                <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="step-body">
+              <span class="step-number">04</span>
+              <h3>Recovery & Follow-up</h3>
+              <p>Continuous progress tracking, timely check-ins, and ongoing wellness support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact-us">
+    <div class="container">
+      <div class="contact-header"
+        style="text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+        <p class="contact-kicker"
+          style="margin: 0; font-size: 16px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--deep, var(--text, #0f172a)); display: inline-flex; align-items: center; gap: 8px; justify-content: center;">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact
+        </p>
+        <h2 class="contact-title"
+          style="margin: 10px auto 12px; font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; color: var(--deep, var(--text, #0f172a)); letter-spacing: -0.03em; line-height: 1.25; text-align: center; max-width: none;">
+          Get in Touch</h2>
+        <p class="contact-subtitle"
+          style="margin: 0 auto; font-size: 16px; color: var(--muted, #334155); max-width: 600px; line-height: 1.6; text-align: center;">
+          Have questions or want to schedule an appointment? Reach out to our team directly.</p>
+      </div>
+      <div class="contact-layout-new">
+        <aside class="contact-card-new contact-card-new--info">
+          <h3>Clinic details</h3>
+          <div class="contact-list-new">
+            <div class="contact-item-new">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Address</h4>
+                <p>
+                  <strong>[Clinic Name],</strong><br />
+                  [Street Address],<br />
+                  [City, State PIN Code]
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <aside class="contact-card-new contact-card-new--reach">
+          <h3>Reach Us</h3>
+          <div class="contact-list-new">
+            <div class="contact-item-new">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <h4>Phone &amp; Email</h4>
+                <p>
+                  <a href="tel:+910000000000">+91-XXXXXXXXXX</a><br />
+                  <a href="mailto:contact@example.com">contact@example.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-cta-wrap">
+            <a href="#" class="cta-btn">Book Appointment</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section" id="testimonials">
+    <div class="section-floating-leaves" aria-hidden="true">
+      <i class="fa-solid fa-heart-pulse leaf-1"></i>
+      <i class="fa-solid fa-heart-pulse leaf-2"></i>
+      <i class="fa-solid fa-heart-pulse leaf-3"></i>
+      <i class="fa-solid fa-heart-pulse leaf-4"></i>
+      <i class="fa-solid fa-heart-pulse leaf-5"></i>
+      <i class="fa-solid fa-heart-pulse leaf-6"></i>
+    </div>
+    <div class="container">
+      <div class="testimonials-header">
+        <p class="testimonials-kicker"><i class="fa-solid fa-heart" aria-hidden="true"></i> Patient Experiences</p>
+        <h2 class="testimonials-title">Patient Experiences</h2>
+        <p class="testimonials-subtitle">
+          Real experiences from patients who received personalized care and treatment under our specialist's care.
+        </p>
+      </div>
+
+      <div class="testimonials-carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+          <div class="testimonials-track" id="testimonialsTrack">
+            <article class="testimonial-card testimonial-card-new">
+              <p class="testimonial-quote">"Managed to find lasting relief from chronic lower back pain after completing
+                a structured treatment plan."</p>
+              <div class="testimonial-footer">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+                  alt="Rohan Mehta" class="testimonial-avatar" />
+                <div>
+                  <h3 class="testimonial-name">Rohan Mehta</h3>
+                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card testimonial-card-new">
+              <p class="testimonial-quote">"The lifestyle changes and medical advice helped resolve my long-term acid
+                reflux. Highly professional clinic."</p>
+              <div class="testimonial-footer">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+                  alt="Sneha Reddy" class="testimonial-avatar" />
+                <div>
+                  <h3 class="testimonial-name">Sneha Reddy</h3>
+                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card testimonial-card-new">
+              <p class="testimonial-quote">"Consulted for my father's osteoarthritis. The specialized knee treatments
+                and therapies greatly improved his mobility."</p>
+              <div class="testimonial-footer">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80"
+                  alt="Amit Joshi" class="testimonial-avatar" />
+                <div>
+                  <h3 class="testimonial-name">Amit Joshi</h3>
+                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card testimonial-card-new">
+              <p class="testimonial-quote">"Very methodical approach. Dr. [Doctor Name] explained the root causes
+                clearly and suggested practical lifestyle adjustments."</p>
+              <div class="testimonial-footer">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
+                  alt="Kavya Nair" class="testimonial-avatar" />
+                <div>
+                  <h3 class="testimonial-name">Kavya Nair</h3>
+                  <div class="testimonial-stars" aria-label="4 out of 5 stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <p class="gallery-kicker"><i class="fa-solid fa-camera" aria-hidden="true"></i> Photo gallery</p>
+        <h2 class="gallery-title">A Look Inside My Practice</h2>
+        <p class="gallery-subtitle">
+          A glimpse into our clinic, treatment spaces, and patient care environment.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80"
+            alt="Gallery image" />
+          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80"
+            alt="Gallery image" />
+          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=600&q=80"
+            alt="Gallery image" />
+          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80"
+            alt="Gallery image" />
+          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1447078806655-40579c2520d6?auto=format&fit=crop&w=600&q=80"
+            alt="Gallery image" />
+          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80"
+            alt="Gallery image" />
+          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div>
+    <figure class="gallery-lightbox-content">
+      <img src="" alt="Enlarged gallery image" id="galleryLightboxImage" />
+    </figure>
+    <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">
+      &times;
+    </button>
+  </div>
+
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">
+          &times;
+        </button>
+
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
+            Clinic Visit
+          </button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">
+            Online Consultation
+          </button>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+            <p class="booking-error" data-error-for="fullName"></p>
+          </div>
+          <div class="booking-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
+            <p class="booking-error" data-error-for="phone"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            <p class="booking-error" data-error-for="email"></p>
+          </div>
+          <div class="booking-field booking-field--date">
+            <label for="preferredDateText">Preferred Date</label>
+            <div class="booking-datepicker" id="preferredDateField">
+              <div class="booking-input-with-icon">
+                <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date"
+                  readonly autocomplete="off" />
+              </div>
+              <input type="hidden" id="preferredDate" name="preferredDate" />
+              <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                <div class="booking-calendar-header">
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i
+                      class="fa-solid fa-chevron-left"></i></button>
+                  <span class="booking-calendar-title" data-cal-title></span>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i
+                      class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="booking-calendar-weekdays">
+                  <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+                <div class="booking-calendar-grid" data-cal-grid></div>
+              </div>
+            </div>
+            <p class="booking-error" data-error-for="preferredDate"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="preferredTime">Preferred Time</label>
+            <div class="booking-select-wrap">
+              <select id="preferredTime" name="preferredTime" required>
+                <option value="">Select Time Slot</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="04:30 PM">04:30 PM</option>
+                <option value="06:00 PM">06:00 PM</option>
+              </select>
+              <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+            </div>
+            <p class="booking-error" data-error-for="preferredTime"></p>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="reason">Reason For Visit</label>
+          <textarea id="reason" name="reason" rows="3"
+            placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+          <p class="booking-error" data-error-for="reason"></p>
+        </div>
+
+        <div class="booking-field booking-field--file">
+          <label for="report">Upload Report</label>
+          <div class="booking-upload-row">
+            <label class="booking-upload-btn" for="report">Upload</label>
+            <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+            <span class="booking-upload-help">(JPEG, PNG file formats supported)</span>
+          </div>
+          <div class="booking-file-preview" id="filePreview"></div>
+          <p class="booking-error" data-error-for="report"></p>
+        </div>
+
+
+        <div class="booking-field booking-consent-field">
+          <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+        </div>
+
+        <button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
+          Book Appointment
+        </button>
+
+        <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+          <div class="loader-spinner"></div>
+          <p>Booking your appointment...</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact-us">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+      </nav>
+
+      <div class="footer-social-wrap">
+        <span class="footer-social-label">Follow me on:</span>
+        <div class="footer-social" aria-label="Footer social links">
+          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i
+              class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i
+              class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i
+              class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i
+              class="fa-solid fa-globe"></i></a>
+          <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i
+              class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i
+              class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-visitor-badge">
+        <i class="fa-solid fa-users"></i>
+        <span>No. of Visitor: <strong>2,600</strong></span>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="footer-divider">|</span>
+          <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+        <span class="footer-dot-sep">&bull;</span>
+        <p class="footer-copy"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Dr. [Doctor Name]. All rights reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="script/index.js"></script>
+  <script src="script/chatbot.js" defer></script>
+</body>
+
+</html>
