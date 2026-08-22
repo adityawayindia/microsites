@@ -883,7 +883,6 @@ margin-bottom: 0;
   background:
     radial-gradient(ellipse 60% 50% at 50% 0%, rgba(46, 196, 182, 0.14), transparent 60%),
     linear-gradient(180deg, #eaf7f4 0%, #f3faf8 45%, #ffffff 100%);
-  counter-reset: service;
 }
 
 .services-section::before {
@@ -952,7 +951,6 @@ margin-bottom: 0;
   align-items: stretch;
   justify-content: center;
   border-top: none;
-  counter-reset: service;
   position: relative;
   z-index: 1;
 }
@@ -969,7 +967,6 @@ margin-bottom: 0;
   gap: 16px;
   align-items: flex-start;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  counter-increment: service;
   position: relative;
   overflow: hidden;
   min-width: 0;
@@ -1061,24 +1058,6 @@ margin-bottom: 0;
   color: var(--button);
   font-size: 22px;
   box-shadow: inset 0 0 0 1px rgba(13, 115, 119, 0.08);
-}
-
-.service-index {
-  position: absolute;
-  right: 16px;
-  top: 14px;
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: rgba(13, 115, 119, 0.07);
-  padding-top: 0;
-  line-height: 1;
-  font-family: "Outfit", sans-serif;
-  pointer-events: none;
-}
-
-.service-index::before {
-  content: counter(service, decimal-leading-zero);
 }
 
 .service-body {
@@ -5045,7 +5024,7 @@ select {
 p:not(.booking-modal *),
 li:not(.booking-modal *),
 a:not(.booking-modal *):not(.chatbot-fab-wrap *),
-span:not(.booking-modal *):not(.chatbot-fab-wrap *):not(.service-index),
+span:not(.booking-modal *):not(.chatbot-fab-wrap *),
 label:not(.booking-modal *),
 strong:not(.booking-modal *),
 small:not(.booking-modal *) {
@@ -5063,11 +5042,6 @@ small:not(.booking-modal *) {
 .blog-read-more,
 .blog-page-link {
   font-size: 16px;
-}
-
-/* Decorative giant background numeral — not body copy. */
-.service-index {
-  font-size: 48px;
 }
 
 
