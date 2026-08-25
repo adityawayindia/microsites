@@ -1,5 +1,5 @@
-/* ==========================================================================
-   DigiDr Modular Banner System — Component Stylesheet
+﻿/* ==========================================================================
+   DigiDr Modular Banner System â€” Component Stylesheet
    ========================================================================== */
 
 .digidr-banner-module {
@@ -29,12 +29,11 @@
   text-decoration: none;
   color: inherit;
   outline: none;
-  cursor: pointer;
+  cursor: default;
 }
 
-.digidr-banner-link[href="#"],
-.digidr-banner-link:not([href]) {
-  cursor: default;
+.digidr-banner-link[href]:not([href="#"]) {
+  cursor: pointer;
 }
 
 .digidr-banner-wrap {
