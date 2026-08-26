@@ -658,12 +658,13 @@ h1, h2, h3, h4 {
   z-index: 2;
   text-align: center;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: hsl(190 90% 92%);
   text-transform: uppercase;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .iv-bag-hanger {
@@ -1835,7 +1836,7 @@ h1, h2, h3, h4 {
 .gallery-lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 200; }
 .gallery-lightbox.is-open { display: flex; }
 .gallery-lightbox-backdrop { position: absolute; inset: 0; background: hsl(258 46% 8% / 0.9); }
-.gallery-lightbox-content { position: relative; margin: 0; max-width: min(1100px, 92vw); max-height: 82vh; border-radius: 20px; overflow: hidden; box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5); z-index: 1; }
+.gallery-lightbox-content { position: relative; margin: 0; max-width: min(1100px, 92vw); max-height: 82vh; max-height: 82dvh; border-radius: 20px; overflow: hidden; box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5); z-index: 1; }
 .gallery-lightbox-content img { width: 100%; height: 100%; display: block; object-fit: contain; background: var(--surface-2); }
 .gallery-lightbox-close { position: absolute; top: 16px; right: 20px; z-index: 2; width: 42px; height: 42px; border-radius: 14px; border: none; background: rgba(255, 255, 255, 0.92); color: var(--ink); font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
 .gallery-lightbox-close:hover { background: #fff; }
@@ -1857,6 +1858,7 @@ h1, h2, h3, h4 {
   border-radius: 24px;
   width: min(600px, 96vw);
   max-height: 92vh;
+  max-height: 92dvh;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0;
@@ -2362,6 +2364,7 @@ h1, h2, h3, h4 {
   .iv-hero-grid { padding: 38px 0 34px; }
   .iv-hero-rig { grid-template-columns: 70px 1fr; gap: 8px; }
   .iv-bag { width: 62px; height: 96px; }
+  .iv-bag-label { font-size: 13px; letter-spacing: 0.06em; white-space: nowrap; }
   .iv-hud { grid-template-columns: 1fr; gap: 8px; padding: 16px; }
   .iv-hud-item { padding: 6px 8px; }
 

@@ -1709,11 +1709,13 @@ a {
   margin: 0;
   max-width: min(920px, 92vw);
   max-height: 86vh;
+  max-height: 86dvh;
 }
 
 .gallery-lightbox-content img {
   width: 100%;
   max-height: 86vh;
+  max-height: 86dvh;
   object-fit: contain;
   border-radius: var(--radius);
 }
@@ -1737,6 +1739,55 @@ a {
 
 .gallery-lightbox-close:hover {
   background: hsl(0 0% 100% / 0.25);
+}
+
+.gallery-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  min-width: 0;
+  border: none;
+  border-radius: 50%;
+  background: hsl(0 0% 100% / 0.12);
+  color: var(--white);
+  font-size: 34px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.gallery-lightbox-nav:hover {
+  background: hsl(0 0% 100% / 0.25);
+}
+
+.gallery-lightbox-prev {
+  left: 26px;
+}
+
+.gallery-lightbox-next {
+  right: 26px;
+}
+
+@media (max-width: 640px) {
+  .gallery-lightbox-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 26px;
+  }
+
+  .gallery-lightbox-prev {
+    left: 10px;
+  }
+
+  .gallery-lightbox-next {
+    right: 10px;
+  }
 }
 
 /* ==========================================================================
@@ -1776,6 +1827,7 @@ a {
   background: var(--bone);
   box-shadow: var(--shadow-lg);
   max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
   overflow-y: auto;
   overflow-x: hidden;
   border-top: 4px solid var(--accent);
@@ -2971,6 +3023,7 @@ a {
     width: 94vw;
     padding: 0;
     max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
     margin: 0 auto;
   }
 
