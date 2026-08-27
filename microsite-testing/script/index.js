@@ -639,10 +639,6 @@ if (menuToggle && mainNav) {
             showError("reason", "Please provide a brief description (min 10 characters).");
             isValid = false;
         }
-        if (!report) {
-            showError("report", "Please upload a report image or PDF.");
-            isValid = false;
-        }
 
         if (!isValid) return;
 

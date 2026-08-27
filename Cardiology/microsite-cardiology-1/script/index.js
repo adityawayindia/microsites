@@ -915,11 +915,6 @@ if (menuToggle && mainNav) {
             isValid = false;
         }
 
-        if (!report || report.length == 0) {
-            showError("report", "Please provide a image");
-            isValid = false;
-        }
-
         if (!isValid) return;
 
         isSubmitting = true;
