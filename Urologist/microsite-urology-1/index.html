@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Arjun Mehta | Urologist — Precision Urology & Kidney Care Clinic</title>
+  <meta name="description" content="Board-certified urological care from Dr. Arjun Mehta — kidney stone treatment, prostate health, urologic oncology, and minimally invasive surgery for men and women." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23103a5c'/%3E%3Cpath d='M20 18h10a10 10 0 0 1 10 10v10a10 10 0 0 1-10 10H26a6 6 0 0 1-6-6V18z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Ccircle cx='24' cy='24' r='2.4' fill='%23fff'/%3E%3C/svg%3E" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/urologist-1/" /><!-- TODO: replace with live production domain before launch -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr. Arjun Mehta Urology Care" />
+  <meta property="og:title" content="Dr. Arjun Mehta | Urologist — Precision Urology & Kidney Care Clinic" />
+  <meta property="og:description" content="Board-certified urological care from Dr. Arjun Mehta — kidney stone treatment, prostate health, urologic oncology, and minimally invasive surgery for men and women." />
+  <meta property="og:url" content="https://www.example.com/urologist-1/" />
+  <meta property="og:image" content="https://www.example.com/urologist-1/assets/dr-arjun-mehta.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Arjun Mehta | Urologist — Precision Urology & Kidney Care Clinic" />
+  <meta name="twitter:description" content="Board-certified urological care from Dr. Arjun Mehta — kidney stone treatment, prostate health, urologic oncology, and minimally invasive surgery for men and women." />
+  <meta name="twitter:image" content="https://www.example.com/urologist-1/assets/dr-arjun-mehta.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Arjun Mehta",
+    "medicalSpecialty": "Urology",
+    "image": "https://www.example.com/urologist-1/assets/dr-arjun-mehta.jpg",
+    "url": "https://www.example.com/urologist-1/",
+    "telephone": "+91-9068935571",
+    "email": "dr.mehta@wayindiahospitals.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1800 Orchids Lane, Walt Disney World, Bay Lake",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32805",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#" class="brand" aria-label="Dr. Arjun Mehta">
+        <span class="avatar">
+          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name" title="Dr. Arjun Mehta">Dr. Arjun Mehta</span>
+          <span class="brand-role">Urologist</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact-us">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#gallery">Gallery</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="cta-btn cta-btn" id="openBookingBtn">
+          <span class="cta-text-desktop">Book Appointment</span>
+          <span class="cta-text-mobile">Book</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== HERO — mirrored card-portrait layout with clinical motif ====== -->
+  <section class="hero-section" id="home">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+         1. Server-Side Rendering (PHP/Node/Python):
+            - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+            - Set 'data-banner-active="false"' to hide banner if no active image.
+            - Set 'data-banner-href="URL"' to turn image into a clickable link.
+         2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div
+      class="digidr-banner-module single-image-banner-section"
+      id="digidrBannerModule"
+      data-banner-active="true"
+      data-banner-start="2026-01-01T00:00:00+05:30"
+      data-banner-end="2027-12-31T23:59:59+05:30"
+      aria-label="Main Clinic Banner"
+      data-banner-src="assets/pedia_banner-1.jpeg"
+      data-banner-src-mobile="assets/pedia_independence_mobile.png"
+      data-banner-alt="Urology Care Banner"
+      data-banner-href="#"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/pedia_independence_mobile.png" />
+              <img
+                src="assets/pedia_banner-1.jpeg"
+                alt="Dr. Arjun Mehta Urology Care Banner"
+                class="digidr-banner-img single-image-banner-img"
+                id="digidrBannerImg"
+                loading="eager"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
+
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+
+    <div class="container hero-layout">
+      <div class="hero-image-wrap">
+        <div class="hero-portrait-glow" aria-hidden="true"></div>
+        <div class="hero-portrait-frame">
+          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta, board-certified urologist, portrait" />
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <span class="hero-specialty-line">
+          <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+          Urologist
+        </span>
+
+        <h1 class="hero-title">Dr. Arjun Mehta</h1>
+        <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MS (Urology) &middot; Fellowship in Uro-Oncology &amp; Endourology</p>
+        <p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. 57492</p>
+
+        <!-- <p class="hero-subtitle">
+          Precise, minimally invasive urological care for kidney stones, prostate health, and urologic
+          cancers — combining advanced surgical technique with a calm, dignity-first approach for every patient.
+        </p> -->
+
+        <ul class="languages" aria-label="Practice highlights">
+          <li><span class="hero-fact-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></span>Languages Known: <span class="languages-list">English &bull; Hindi &bull; Odia</span></li>
+        </ul>
+
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+          <a href="#" class="social" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating stat card cluster bridging hero and about -->
+  <div class="container hero-stats" aria-label="Practice statistics">
+    <div class="hero-stats-inner">
+      <div class="stat-card">
+        <span class="stat-card-icon"><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i></span>
+        <span>
+          <span class="stat-card-num" data-count-to="18" data-suffix="+">18+</span>
+          <span class="stat-card-lbl">Years of Experience</span>
+        </span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+        <span>
+          <span class="stat-card-num" data-count-to="12" data-suffix="k+">12k+</span>
+          <span class="stat-card-lbl">Patients Treated</span>
+        </span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+        <span>
+          <span class="stat-card-num" data-count-to="97" data-suffix="%">97%</span>
+          <span class="stat-card-lbl">Patient Satisfaction</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== ABOUT — executive, icon-free typography ====== -->
+  <section class="about-section" id="about">
+    <div class="container about-layout">
+      <div class="about-aside">
+        <div class="about-photo-glow" aria-hidden="true"></div>
+        <div class="about-photo-frame">
+          <img src="assets/about-photo.png" alt="Doctor examining an anatomical kidney model during a urology consultation at Dr. Arjun Mehta's practice" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="about-kicker">About the Practice</span>
+        <h2 class="about-title">Precise, Compassionate Urological Care</h2>
+        <p class="about-description">
+          Combining advanced surgical training with an unhurried, patient-first approach to every consultation.
+        </p>
+        <p>
+          Dr. Arjun Mehta is a board-certified urologist specializing in the diagnosis and treatment of kidney,
+          bladder, and prostate conditions in both men and women. He manages kidney stones, urinary tract
+          infections, prostate enlargement, urologic cancers, and male infertility with a calm, evidence-based
+          approach. Trained at leading institutions in India and abroad, Dr. Mehta blends surgical precision
+          with clear communication for every patient.
+        </p>
+        <p>
+          He takes time to explain every diagnosis and treatment option, so patients feel informed and in
+          control of their care. Beyond treatment, Dr. Mehta is committed to minimally invasive and robotic
+          techniques that reduce recovery time&mdash;helping patients return to their daily lives faster, with
+          less pain and better long-term outcomes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVICES ====== -->
+  <section class="services-section" id="services">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="container">
+      <div class="services-header">
+        <span class="services-kicker">
+          <i class="fa-solid fa-droplet" aria-hidden="true"></i> Specialized Services
+        </span>
+        <h2 class="services-title">Comprehensive Urological Care</h2>
+        <p class="services-subtitle">
+          Offering a complete range of urological healthcare services with personalized treatment and preventive guidance.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-gem" aria-hidden="true"></i></div>
+          <h3>Kidney Stone Treatment</h3>
+          <p>Advanced diagnosis and removal of kidney and ureteric stones, including lithotripsy and minimally invasive procedures.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-venus-mars" aria-hidden="true"></i></div>
+          <h3>Prostate &amp; BPH Care</h3>
+          <p>Evaluation and treatment for enlarged prostate, urinary symptoms, and prostate health screening.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-ribbon" aria-hidden="true"></i></div>
+          <h3>Urologic Oncology</h3>
+          <p>Comprehensive diagnosis and treatment planning for cancers of the kidney, bladder, and prostate.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-syringe" aria-hidden="true"></i></div>
+          <h3>Minimally Invasive &amp; Robotic Surgery</h3>
+          <p>Laparoscopic and robot-assisted procedures for faster recovery and reduced surgical risk.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
+          <h3>UTI &amp; Bladder Health</h3>
+          <p>Diagnosis and management of recurrent infections, incontinence, and overactive bladder.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-person-dots-from-line" aria-hidden="true"></i></div>
+          <h3>Male Infertility &amp; Sexual Health</h3>
+          <p>Confidential evaluation and treatment for male infertility, erectile dysfunction, and related concerns.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CARE PHILOSOPHY (light split panel, image right) ====== -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="container philosophy-layout">
+      <div class="philosophy-content">
+        <span class="philosophy-kicker">
+          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Care Philosophy
+        </span>
+        <h2 class="philosophy-title">A Precise Approach to Every Diagnosis</h2>
+        <p class="philosophy-subtitle">
+          Dedicated to accurate diagnosis, minimally invasive treatment, and dignified urological care.
+        </p>
+
+        <div class="philosophy-pillars">
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+            <div>
+              <h3>Precision Diagnosis</h3>
+              <p>Advanced imaging and lab evaluation to identify the exact cause before treatment begins.</p>
+            </div>
+          </div>
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-book-medical" aria-hidden="true"></i></div>
+            <div>
+              <h3>Minimally Invasive Care</h3>
+              <p>Preference for laparoscopic and endoscopic techniques to reduce pain and recovery time.</p>
+            </div>
+          </div>
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+            <div>
+              <h3>Patient Dignity</h3>
+              <p>Sensitive, confidential consultations that respect every patient's comfort and privacy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="philosophy-visual">
+        <div class="philosophy-img-glow" aria-hidden="true"></div>
+        <div class="philosophy-img-frame">
+          <img src="assets/philosophy-photo.jpg" alt="Surgeon operating a robotic surgical system, reflecting a precise, minimally invasive approach to urological care" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONSULTATION JOURNEY — staggered ghost-numeral cascade ====== -->
+  <section class="process-section" id="process">
+    <div class="process-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="process-header">
+        <span class="process-kicker">
+          <i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey
+        </span>
+        <h2 class="process-title" style="text-align:center;">Your Care Journey</h2>
+        <p class="process-subtitle" style="text-align:center; max-width:700px; margin:0 auto;">
+          A clear, reassuring 4-step process for complete urological care.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">01</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          </div>
+          <h3>Appointment Booking</h3>
+          <p>Book online or by phone for a clinic visit or online consultation.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">02</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          </div>
+          <h3>Diagnostic Evaluation</h3>
+          <p>Thorough clinical examination, imaging, and lab tests to confirm diagnosis.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">03</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-clipboard-user" aria-hidden="true"></i>
+          </div>
+          <h3>Personalized Treatment Plan</h3>
+          <p>Clear guidance on medical, surgical, or minimally invasive treatment options.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">04</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          </div>
+          <h3>Recovery &amp; Follow-Up</h3>
+          <p>Post-procedure monitoring, routine follow-ups, and long-term wellness support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section class="contact-section" id="contact-us">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <h2>Contact Us</h2>
+          <p>Get expert urological care you can trust. Schedule a consultation with our specialist today.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <h3>Address</h3>
+            <p>
+              <strong>Building Number: 1800</strong><br />
+              Street Name: Orchids Lane<br />
+              Street Address: Walt Disney World, Bay Lake<br />
+              State: FL &middot; City: Orlando &middot; 32805
+            </p>
+          </div>
+
+          <div class="contact-divider"></div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+            <h3>Contact Information</h3>
+            <p>
+              <a href="tel:+919068935571">+91-9068935571</a><br />
+              <a href="mailto:dr.mehta@wayindiahospitals.com">dr.mehta@wayindia<wbr />hospitals.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-cta-wrap">
+          <a href="tel:+919068935571" class="contact-btn">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Clinic
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="testimonials-kicker">
+          <i class="fa-solid fa-droplet" aria-hidden="true"></i> Testimonials
+        </span>
+        <h2 class="testimonials-title">What Our Patients Say</h2>
+        <p class="testimonials-subtitle">
+          Read testimonials from patients who have experienced precise, compassionate urological care under our specialist's guidance.
+        </p>
+      </div>
+
+      <div class="testimonials-carousel-wrap testimonials-carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev carousel-btn" aria-label="Previous testimonials">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn carousel-btn--next carousel-btn" aria-label="Next testimonials">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+          <div class="testimonials-track testimonials-track" id="testimonialsTrack">
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="James Pattinson" class="testimonial-avatar" />
+              <h3>James Pattinson</h3>
+              <div class="testimonial-stars" aria-label="4 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+              <p>"Dr. Mehta diagnosed my kidney stone quickly and explained every option clearly. The minimally invasive procedure had me back on my feet within days. Highly recommend."</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop" alt="Greg Stuart" class="testimonial-avatar" />
+              <h3>Greg Stuart</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"Outstanding experience from start to finish. Dr. Mehta explained my prostate treatment options clearly and took time to address all my concerns. Five stars!"</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop" alt="Trevor Mitchell" class="testimonial-avatar" />
+              <h3>Trevor Mitchell</h3>
+              <div class="testimonial-stars" aria-label="3 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+              <p>"Good care overall. Dr. Mehta helped manage my recurring UTIs effectively. The follow-up process was thorough. Would recommend for urology consultations."</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop" alt="Maria Rodriguez" class="testimonial-avatar" />
+              <h3>Maria Rodriguez</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"After my diagnosis, Dr. Mehta's guidance was invaluable. He genuinely cares about his patients' long-term health. I feel confident and well-supported."</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop" alt="David Chen" class="testimonial-avatar" />
+              <h3>David Chen</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"The best urologist I've consulted. Dr. Mehta's diagnostic skills are remarkable. He identified the issue quickly and guided me clearly. Forever grateful for his expertise."</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Emily Watson" class="testimonial-avatar" />
+              <h3>Emily Watson</h3>
+              <div class="testimonial-stars" aria-label="4 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+              <p>"Professional, knowledgeable, and kind. Dr. Mehta made every appointment stress-free. The clinic runs smoothly and appointments are always on time."</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALLERY ====== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <h2 class="gallery-title">A Look Inside My Practice</h2>
+        <p class="gallery-subtitle">
+          A glimpse into our urology clinic, consultation rooms, and diagnostic facilities.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1400&q=80" alt="Modern clinic exterior" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80" alt="Clinic reception and waiting area" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1400&q=80" alt="Clinic consultation room" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=80" alt="Clinic corridor and seating" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1400&q=80" alt="Diagnostic equipment area" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1400&q=80" alt="Treatment room" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery lightbox -->
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div>
+    <figure class="gallery-lightbox-content">
+      <img src="" alt="Enlarged gallery image" id="galleryLightboxImage" />
+    </figure>
+    <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">&times;</button>
+  </div>
+
+  <!-- ====== BOOKING MODAL ====== -->
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate>
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+            <p class="booking-error" data-error-for="fullName"></p>
+          </div>
+          <div class="booking-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
+            <p class="booking-error" data-error-for="phone"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            <p class="booking-error" data-error-for="email"></p>
+          </div>
+          <div class="booking-field booking-field--date">
+            <label for="preferredDateText">Preferred Date</label>
+            <div class="booking-datepicker" id="preferredDateField">
+              <div class="booking-input-with-icon">
+                <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+              </div>
+              <input type="hidden" id="preferredDate" name="preferredDate" />
+              <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                <div class="booking-calendar-header">
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                  <span class="booking-calendar-title" data-cal-title></span>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="booking-calendar-weekdays">
+                  <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+                <div class="booking-calendar-grid" data-cal-grid></div>
+              </div>
+            </div>
+            <p class="booking-error" data-error-for="preferredDate"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="preferredTime">Preferred Time</label>
+            <div class="booking-select-wrap">
+              <select id="preferredTime" name="preferredTime" required>
+                <option value="">Select Time Slot</option>
+                <option value="09:00-10:00">09:00 - 10:00 AM</option>
+                <option value="10:00-11:00">10:00 - 11:00 AM</option>
+                <option value="11:00-12:00">11:00 - 12:00 PM</option>
+                <option value="14:00-15:00">02:00 - 03:00 PM</option>
+                <option value="15:00-16:00">03:00 - 04:00 PM</option>
+                <option value="16:00-17:00">04:00 - 05:00 PM</option>
+              </select>
+              <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+            </div>
+            <p class="booking-error" data-error-for="preferredTime"></p>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="reason">Reason For Visit</label>
+          <textarea id="reason" name="reason" rows="3" placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+          <p class="booking-error" data-error-for="reason"></p>
+        </div>
+
+        <div class="booking-field booking-field--file">
+          <label for="report">Upload Report</label>
+          <div class="booking-upload-row">
+            <label class="booking-upload-btn" for="report">Upload</label>
+            <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+            <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+          </div>
+          <p class="booking-error" data-error-for="report"></p>
+        </div>
+
+        <div class="booking-field booking-consent-field">
+          <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+        </div>
+
+        <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
+
+        <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+          <div class="loader-spinner"></div>
+          <p>Booking your appointment...</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <a href="#" class="brand">
+          <span class="avatar">
+            <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Dr. Arjun Mehta</span>
+            <span class="brand-role">Board-Certified Urologist</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Precise, minimally invasive urological care for every patient.</p>
+        <div class="footer-social-wrap">
+          <span class="footer-social-label">Follow me on:</span>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right-col">
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <nav class="footer-nav">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact-us">Contact</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#gallery">Gallery</a>
+          </nav>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Legal</h4>
+          <nav class="footer-nav">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </nav>
+        </div>
+
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
+          <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+          <span class="footer-visitor-badge-label">No. of Visitor:</span>
+          <span class="footer-visitor-badge-count">500</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p>&copy; 2026 Dr. Arjun Mehta. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="./script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
+</body>
+</html>

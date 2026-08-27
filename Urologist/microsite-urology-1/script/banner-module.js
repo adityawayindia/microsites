@@ -22,7 +22,7 @@
     // Allows scheduling banners for any specific timeframe in the future.
     // Format: ISO 8601 string or Date format (e.g., 'YYYY-MM-DDTHH:mm:ss+05:30')
     schedule: {
-      enabled: false, // Set to false to bypass schedule checks and rely only on manual toggle
+      enabled: true, // Set to false to bypass schedule checks and rely only on manual toggle
       startDate: '2026-08-11T00:00:00+05:30', // Campaign Start (Today)
       endDate: '2026-08-15T23:59:59+05:30'    // Campaign End (15 August 11:59 PM IST)
     },
