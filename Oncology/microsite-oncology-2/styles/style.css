@@ -469,7 +469,7 @@ margin-bottom: 0;
     margin: 0;
     font-size: 18px;
     font-weight: 400;
-    color: #5a6f6a;
+    color: var(--text);
 }
 
 .hero-cancer-badge {
@@ -910,7 +910,11 @@ margin-bottom: 0;
 
 /* Services Section */
 .services-section {
-  background: #eef7f4;
+  background:
+    linear-gradient(rgba(10, 20, 18, 0.72), rgba(10, 20, 18, 0.72)),
+    url("../assets/services-bg.jpg");
+  background-size: cover;
+  background-position: center;
   padding: 32px 0 36px;
   position: relative;
   overflow: hidden;
@@ -918,6 +922,11 @@ margin-bottom: 0;
 
 .services-section::before,
 .services-section::after,
+.testimonials-section::before,
+.testimonials-section::after {
+  display: none;
+}
+
 .testimonials-section::before,
 .testimonials-section::after {
   content: "";
@@ -967,12 +976,16 @@ margin-bottom: 0;
   display: none;
 }
 
+.services-header .services-kicker {
+  color: var(--accent-on-dark);
+}
+
 .services-title {
   margin: 10px 0 12px;
   font-family: "Outfit", sans-serif;
   font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 600;
-  color: var(--deep);
+  color: var(--white);
   letter-spacing: -0.03em;
   line-height: 1.15;
 }
@@ -981,7 +994,7 @@ margin-bottom: 0;
   margin: 0;
   font-size: 18px;
   line-height: 1.5;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .services-grid {
@@ -1106,7 +1119,11 @@ margin-bottom: 0;
 /* Contact Section */
 .contact-section {
   padding: 0;
-  background: var(--deep);
+  background:
+    linear-gradient(rgba(6, 26, 21, 0.78), rgba(6, 26, 21, 0.78)),
+    url("../assets/contact-bg.jpg");
+  background-size: cover;
+  background-position: center;
   position: relative;
 }
 

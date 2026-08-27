@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg: #fdfcff;
     --text: #0f172a;
     --muted: #334155;
@@ -12,7 +12,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global Ã¢â‚¬â€ Responsive Text & Auto-Height Container Rules
+   DigiDr Global - Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -3154,7 +3154,7 @@ margin-bottom: 0;
   box-shadow: 0 0 0 1px rgba(107, 70, 193, 0.45);
 }
 
-/* ── Phone field — intl-tel-input country code dropdown ────────────────── */
+/* Phone field - intl-tel-input country code dropdown */
 .iti {
   display: block;
   width: 100%;
@@ -3622,7 +3622,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 
 /* ==========================================================================
-   DigiDr Global Ã¢â‚¬â€ Enhanced Service & Feature Card Heading Sizing
+   DigiDr Global - Enhanced Service & Feature Card Heading Sizing
    ========================================================================== */
 .service-card h3,
 .service-card-new h3,
