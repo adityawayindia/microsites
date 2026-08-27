@@ -5222,10 +5222,10 @@ body {
   background: linear-gradient(160deg, #f0fdf9 0%, #e8f9f5 38%, #f4fffe 70%, #f9fffc 100%) !important;
   position: relative;
   overflow: hidden;
-min-height: 100vh;
+  min-height: min(100vh, 820px);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 /* ---- Glow orbs ---- */
