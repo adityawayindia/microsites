@@ -38,7 +38,7 @@ body {
 }
 
 /* ==========================================================================
-   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -670,7 +670,7 @@ margin-bottom: 0;
   }
 }
 
-/* About Section â€” open split with copper rail */
+/* About Section — open split with copper rail */
 .about-section {
   background: 
     linear-gradient(rgba(244, 251, 247, 0.85), rgba(244, 251, 247, 0.85)),
@@ -881,7 +881,7 @@ margin-bottom: 0;
   }
 }
 
-/* Services Section â€” soft slate wash */
+/* Services Section — soft slate wash */
 .services-section {
   position: relative;
   overflow: hidden;
@@ -1066,7 +1066,7 @@ margin-bottom: 0;
   color: var(--muted);
 }
 
-/* Contact Section â€” light split panel */
+/* Contact Section — light split panel */
 .contact-section {
   padding: 44px 0 52px;
   background: 
@@ -1227,7 +1227,7 @@ margin-bottom: 0;
   background: var(--button-hover);
 }
 
-/* Testimonials Section â€” dark slate quote panels */
+/* Testimonials Section — dark slate quote panels */
 .testimonials-section {
   background:
     linear-gradient(180deg, #f3faf8 0%, #ffffff 45%, #eaf7f4 100%);
@@ -1738,7 +1738,7 @@ margin-bottom: 0;
   justify-content: space-between;
 }
 
-/* Gallery Section â€” uniform card grid */
+/* Gallery Section — uniform card grid */
 .gallery-section {
   padding: 46px 0 56px;
   background: #ffffff;
@@ -4727,7 +4727,7 @@ margin-bottom: 0;
 }
 
 .testimonial-card-new::before {
-  content: "â€œ";
+  content: "“";
   position: absolute;
   top: -10px;
   right: 15px;
@@ -5218,7 +5218,7 @@ body {
    Hero V2 - Animated Background System
    ========================================================================== */
 .hero-section--v2 {
-  padding: 40px 0 78px !important;
+  padding: 15px 0 78px !important;
   background: linear-gradient(160deg, #f0fdf9 0%, #e8f9f5 38%, #f4fffe 70%, #f9fffc 100%) !important;
   position: relative;
   overflow: hidden;
@@ -5780,7 +5780,7 @@ body {
 
 
 /* ==========================================================================
-   DigiDr Global â€” Enhanced Service & Feature Card Heading Sizing
+   DigiDr Global — Enhanced Service & Feature Card Heading Sizing
    ========================================================================== */
 .service-card h3,
 .service-card-new h3,
@@ -6585,3 +6585,50 @@ select {
 }
 
 
+
+/* Read More toggle (About section) */
+.read-more-wrap .read-more-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.read-more-wrap.is-expanded .read-more-content {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--button, #0f766e);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.read-more-btn span {
+  color: var(--button, #0f766e);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover span,
+.read-more-btn:hover i,
+.read-more-btn:hover {
+  color: var(--accent, #0f766e);
+}
+
+.read-more-wrap.is-expanded .read-more-btn i {
+  transform: rotate(180deg);
+}

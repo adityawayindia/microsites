@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dr. Sarah Jenkins â€” Intensivist / Critical Care Microsite
+   Dr. Arjun Mehta — Intensivist / Critical Care Microsite
    Design language: clinical monitor. Deep navy command surface, medical teal
    signal accent, coral vitals indicator. Light, calm content surfaces.
    ========================================================================== */
@@ -17,7 +17,7 @@
   --muted: hsl(205 20% 26%);
   --titanium: hsl(205 24% 26%);
 
-  /* Brand â€” medical teal */
+  /* Brand — medical teal */
   --accent: hsl(178 64% 34%);
   --accent-bright: hsl(174 70% 44%);
   --accent-soft: hsl(178 52% 96%);
@@ -28,7 +28,7 @@
   --navy-2: hsl(205 40% 16%);
   --navy-line: hsl(196 40% 30%);
 
-  /* Signal â€” vitals / alerts */
+  /* Signal — vitals / alerts */
   --signal: hsl(6 76% 60%);
   --signal-soft: hsl(6 80% 96%);
 
@@ -49,7 +49,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -194,7 +194,7 @@ a {
   padding: 0 24px;
 }
 
-/* Shared section heading rhythm â€” AGENTS.md type scale */
+/* Shared section heading rhythm — AGENTS.md type scale */
 .about-kicker,
 .services-kicker,
 .testimonials-kicker,
@@ -414,7 +414,7 @@ a {
 }
 
 /* ==========================================================================
-   Hero â€” clinical command surface
+   Hero — clinical command surface
    ========================================================================== */
 
 .hero-section {
@@ -1150,7 +1150,7 @@ a {
 }
 
 /* ==========================================================================
-   ICU Technology â€” ledger rows
+   ICU Technology — ledger rows
    ========================================================================== */
 
 .tech-ledger-section {
@@ -1301,7 +1301,7 @@ a {
 }
 
 /* ==========================================================================
-   Consultation Journey â€” process timeline
+   Consultation Journey — process timeline
    ========================================================================== */
 
 .process-section {
@@ -1502,7 +1502,7 @@ a {
 }
 
 /* ==========================================================================
-   Testimonials â€” carousel
+   Testimonials — carousel
    ========================================================================== */
 
 .testimonials-section {
@@ -2727,7 +2727,7 @@ a {
 }
 
 /* ==========================================================================
-   Responsive â€” 1440px down to 320px
+   Responsive — 1440px down to 320px
    ========================================================================== */
 
 @media (max-width: 1080px) {
@@ -3152,7 +3152,7 @@ a {
 }
 
 /* ==========================================================================
-   Large screen typography scaling â€” AGENTS.md Section 7
+   Large screen typography scaling — AGENTS.md Section 7
    ========================================================================== */
 
 @media (min-width: 1400px) {
@@ -3199,4 +3199,51 @@ a {
     stroke-dashoffset: 0;
     opacity: 0.8;
   }
+}
+
+/* Read More toggle (About section) */
+.read-more-wrap .read-more-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.read-more-wrap.is-expanded .read-more-content {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--accent, #0f766e);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.read-more-btn span {
+  color: var(--accent, #0f766e);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover span,
+.read-more-btn:hover i,
+.read-more-btn:hover {
+  color: var(--accent-bright, #0f766e);
+}
+
+.read-more-wrap.is-expanded .read-more-btn i {
+  transform: rotate(180deg);
 }

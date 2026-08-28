@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
 
 /* ============================================================
-   TOKEN LAYER â€” Clinical Navy-Steel / Gold / Teal Urology Palette
+   TOKEN LAYER — Clinical Navy-Steel / Gold / Teal Urology Palette
    60% neutral (bg/surface) / 30% brand (sky navy-steel + teal) /
    10% accent (amber-gold, strictly CTAs & interactive elements)
    ============================================================ */
 :root {
-  /* Base surfaces â€” cool clinical white/steel, never warm porcelain */
+  /* Base surfaces — cool clinical white/steel, never warm porcelain */
   --bg:            hsl(206, 45%, 97%);
   --bg-2:          hsl(206, 42%, 94%);
   --bg-3:          hsl(174, 30%, 95%);  /* teal-tinted section bg */
@@ -18,7 +18,7 @@
   --text:          hsl(212, 55%, 12%);  /* deep clinical navy-black for high contrast */
   --muted:         hsl(212, 25%, 24%);
 
-  /* Brand colours â€” steel navy-blue (primary, urologic/renal clinical tone)
+  /* Brand colours — steel navy-blue (primary, urologic/renal clinical tone)
      + deep teal (secondary) + warm amber-gold (accent, CTAs only) */
   --sky:           hsl(206, 78%, 32%);
   --sky-dark:      hsl(210, 82%, 20%);
@@ -52,7 +52,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -393,7 +393,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 /* ============================================================
-   HERO â€” mirrored card-portrait layout w/ EKG motif
+   HERO — mirrored card-portrait layout w/ EKG motif
    ============================================================ */
 .hero-section {
   position: relative;
@@ -633,7 +633,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .stat-card-lbl { font-size: 18px; color: var(--muted); font-weight: 600; display: block; }
 
 /* ============================================================
-   ABOUT â€” executive, icon-free typography
+   ABOUT — executive, icon-free typography
    ============================================================ */
 .about-section { padding: 96px 0 64px; background: var(--bg); }
 
@@ -779,7 +779,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 /* ============================================================
-   PHILOSOPHY â€” light split panel
+   PHILOSOPHY — light split panel
    ============================================================ */
 .philosophy-section {
   padding: 64px 0;
@@ -856,7 +856,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .philosophy-img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ============================================================
-   CONSULTATION JOURNEY â€” staggered ghost-numeral cascade
+   CONSULTATION JOURNEY — staggered ghost-numeral cascade
    ============================================================ */
 .process-section { position: relative; padding: 64px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
@@ -1024,7 +1024,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .contact-item a { font-size: 18px; color: var(--sky-dark); font-weight: 700; }
 
 /* ============================================================
-   TESTIMONIALS â€” light card carousel
+   TESTIMONIALS — light card carousel
    ============================================================ */
 .testimonials-section { position: relative; padding: 64px 0; background: var(--bg-2); overflow: hidden; }
 .testimonials-section > .container { position: relative; z-index: 1; }
@@ -1789,7 +1789,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 /* ============================================================
-   LEGAL PAGE FOOTER (site-footer) â€” privacy-policy / terms-of-service
+   LEGAL PAGE FOOTER (site-footer) — privacy-policy / terms-of-service
    ============================================================ */
 .site-footer {
   background: var(--sky-dark);
@@ -1978,4 +1978,51 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .footer-links {
     font-size: 18px;
   }
+}
+
+/* Read More toggle (About section) */
+.read-more-wrap .read-more-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.read-more-wrap.is-expanded .read-more-content {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--button, #0f766e);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.read-more-btn span {
+  color: var(--button, #0f766e);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover span,
+.read-more-btn:hover i,
+.read-more-btn:hover {
+  color: var(--button-hover, #0f766e);
+}
+
+.read-more-wrap.is-expanded .read-more-btn i {
+  transform: rotate(180deg);
 }

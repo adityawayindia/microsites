@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #fff5f8; /* Soft warm rosy blush background â€” pediatric pink */
+  --bg: #fff5f8; /* Soft warm rosy blush background — pediatric pink */
   --text: #1e293b; /* Dark slate - WCAG AAA 14:1 contrast */
   --muted: #64748b;
   --button: #d63384; /* Vibrant professional rose pink - 4.7:1 contrast with white text */
@@ -31,7 +31,7 @@
   --color-pink-dark: #9d174d; /* Deep rose for text contrast */
   --color-pink-mid: #ec4899;  /* Bright vivid pink for accents */
 
-  /* Toy-pattern decorative background â€” used in hero section only */
+  /* Toy-pattern decorative background — used in hero section only */
   --toy-bg: url('../assets/toy-pattern-bg.png');
 }
 
@@ -66,7 +66,7 @@ body {
 
 
 /* ==========================================================================
-   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -3405,7 +3405,7 @@ margin-bottom: 0;
 }
 
 /* ==========================================================================
-   DigiDr Global â€” Enhanced Service & Feature Card Heading Sizing
+   DigiDr Global — Enhanced Service & Feature Card Heading Sizing
    ========================================================================== */
 .service-card h3,
 .service-card-new h3,
@@ -3997,3 +3997,50 @@ select {
 }
 
 
+
+/* Read More toggle (About section) */
+.read-more-wrap .read-more-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.read-more-wrap.is-expanded .read-more-content {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--button, #0f766e);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.read-more-btn span {
+  color: var(--button, #0f766e);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover span,
+.read-more-btn:hover i,
+.read-more-btn:hover {
+  color: var(--button-hover, #0f766e);
+}
+
+.read-more-wrap.is-expanded .read-more-btn i {
+  transform: rotate(180deg);
+}

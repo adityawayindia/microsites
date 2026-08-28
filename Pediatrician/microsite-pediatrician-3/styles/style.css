@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
 
 /* ============================================================
-   TOKEN LAYER â€” Navy / Peach / Sage Pediatric Palette
+   TOKEN LAYER — Navy / Peach / Sage Pediatric Palette
    ============================================================ */
 :root {
   /* Base surfaces */
@@ -49,7 +49,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -444,7 +444,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 /* ============================================================
-   HERO â€” asymmetric portrait-blob layout
+   HERO — asymmetric portrait-blob layout
    ============================================================ */
 .peds2-hero {
   position: relative;
@@ -860,7 +860,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .peds2-philosophy-visual { min-width: 0; }
 
 /* ============================================================
-   CONSULTATION JOURNEY â€” vertical alternating timeline
+   CONSULTATION JOURNEY — vertical alternating timeline
    ============================================================ */
 .peds2-journey { padding: 64px 0; background: var(--bg-3); }
 .peds2-journey .peds2-section-header { text-align: center; margin-bottom: 56px; }
@@ -1473,7 +1473,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 /* ============================================================
-   Toy scatter layer â€” JS-placed pediatric emoji decorations
+   Toy scatter layer — JS-placed pediatric emoji decorations
    ============================================================ */
 .toys-scatter-layer {
   position: absolute;
@@ -1508,7 +1508,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   .peds2-hero-title { font-size: 60px; }
 }
 @media (min-width: 1900px) {
-  /* Body copy stays capped at 18px â€” do not scale further at >=1900px. */
+  /* Body copy stays capped at 18px — do not scale further at >=1900px. */
   .peds2-hero-title { font-size: 68px; }
   .container { max-width: 1440px; }
 }
@@ -1667,7 +1667,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 /* ============================================================
-   LEGAL PAGE FOOTER (site-footer) â€” privacy-policy / terms-of-service
+   LEGAL PAGE FOOTER (site-footer) — privacy-policy / terms-of-service
    ============================================================ */
 .site-footer {
   background: var(--navy-dark);
@@ -1856,4 +1856,51 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
   .footer-links {
     font-size: 18px;
   }
+}
+
+/* Read More toggle (About section) */
+.read-more-wrap .read-more-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.read-more-wrap.is-expanded .read-more-content {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--button, #0f766e);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.read-more-btn span {
+  color: var(--button, #0f766e);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover span,
+.read-more-btn:hover i,
+.read-more-btn:hover {
+  color: var(--button-hover, #0f766e);
+}
+
+.read-more-wrap.is-expanded .read-more-btn i {
+  transform: rotate(180deg);
 }

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dr. Sarah Jenkins — Intensivist / Critical Care (ALTERNATE)
+   Dr. Arjun Mehta — Intensivist / Critical Care (ALTERNATE)
    Design language: "Infusion" — IV line motifs, drip chambers, live monitor
    telemetry. Deep infusion-indigo command surfaces, saline cyan flow,
    vitals-rose signal. Content surfaces stay light with dark, readable text.
@@ -2474,4 +2474,51 @@ h1, h2, h3, h4 {
 .booking-error {
   font-size: 16px !important;
   line-height: 1.3;
+}
+
+/* Read More toggle (About section) */
+.read-more-wrap .read-more-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.read-more-wrap.is-expanded .read-more-content {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--iv-deep, #0f766e);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.read-more-btn span {
+  color: var(--iv-deep, #0f766e);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover span,
+.read-more-btn:hover i,
+.read-more-btn:hover {
+  color: var(--iv, #0f766e);
+}
+
+.read-more-wrap.is-expanded .read-more-btn i {
+  transform: rotate(180deg);
 }

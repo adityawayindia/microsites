@@ -828,3 +828,51 @@ if (menuToggle && mainNav) {
     renderVisitorCounter();
   }
 })();
+
+(function () {
+  function checkTruncation(wrap) {
+    var btn = wrap.querySelector(".read-more-btn");
+    var content = wrap.querySelector(".read-more-content");
+    if (!btn || !content) return;
+
+    var isTruncated = content.scrollHeight > content.clientHeight + 2;
+    btn.style.display = isTruncated ? "" : "none";
+  }
+
+  function bindToggle(wrap) {
+    var btn = wrap.querySelector(".read-more-btn");
+    var label = btn && btn.querySelector("span");
+    if (!btn || btn.dataset.bound) return;
+    btn.dataset.bound = "true";
+    btn.addEventListener("click", function () {
+      var expanded = wrap.classList.toggle("is-expanded");
+      btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+      if (label) label.textContent = expanded ? "Read Less" : "Read More";
+    });
+  }
+
+  function initReadMore(root) {
+    (root || document).querySelectorAll(".read-more-wrap").forEach(function (wrap) {
+      bindToggle(wrap);
+      checkTruncation(wrap);
+    });
+  }
+
+  window.DigiDrReadMore = { init: initReadMore, check: checkTruncation };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () { initReadMore(); });
+  } else {
+    initReadMore();
+  }
+
+  function debounce(fn, wait) {
+    var t;
+    return function () {
+      clearTimeout(t);
+      t = setTimeout(fn, wait);
+    };
+  }
+
+  window.addEventListener("resize", debounce(function () { initReadMore(); }, 200));
+})();

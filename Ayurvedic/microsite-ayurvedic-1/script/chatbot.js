@@ -3,7 +3,7 @@
     var BOT_NAME = 'Assistant';
     var BOT_ICON = 'assets/chatbot-icon.svg';
 
-    var WELCOME_MSG = "Namaste! 👋 I'm Dr. Anika's Ayurvedic Care Assistant. How can I help you today?";
+    var WELCOME_MSG = "Namaste! 👋 I'm Dr. Arjun's Ayurvedic Care Assistant. How can I help you today?";
 
     /* ── Inject CSS ── */
     (function injectCSS() {
@@ -211,7 +211,7 @@
         setTimeout(function () {
             hideTyping();
             addMessage(
-                "Thank you for contacting Dr. Anika Sharma's clinic. Our team will get back to you shortly. For appointments, you can also use the 'Book Appointment' button on our page.",
+                "Thank you for contacting Dr. Arjun Mehta's clinic. Our team will get back to you shortly. For appointments, you can also use the 'Book Appointment' button on our page.",
                 'bot'
             );
         }, 1200);

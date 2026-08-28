@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap');
 
 /* ============================================================
-   TOKEN LAYER â€” Clinical Sky-Blue / Amber / Teal Pediatric Palette
+   TOKEN LAYER — Clinical Sky-Blue / Amber / Teal Pediatric Palette
    ============================================================ */
 :root {
-  /* Base surfaces â€” cool clinical white/sky, never warm porcelain */
+  /* Base surfaces — cool clinical white/sky, never warm porcelain */
   --bg:            hsl(204, 60%, 98%);
   --bg-2:          hsl(204, 55%, 95%);
   --bg-3:          hsl(38, 60%, 96%);   /* amber-tinted section bg */
@@ -47,7 +47,7 @@
 }
 
 /* ==========================================================================
-   DigiDr Global â€” Responsive Text & Auto-Height Container Rules
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
    Apply to ALL microsites. Do not remove or override these.
    ========================================================================== */
 
@@ -358,7 +358,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 /* ============================================================
-   HERO â€” mirrored card-portrait layout w/ EKG motif
+   HERO — mirrored card-portrait layout w/ EKG motif
    ============================================================ */
 .peds4-hero {
   position: relative;
@@ -579,7 +579,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .peds4-stat-lbl { font-size: 18px; color: var(--muted); font-weight: 600; display: block; }
 
 /* ============================================================
-   ABOUT â€” executive, icon-free typography
+   ABOUT — executive, icon-free typography
    ============================================================ */
 .peds4-about { padding: 96px 0 64px; background: var(--bg); }
 
@@ -728,7 +728,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 /* ============================================================
-   PHILOSOPHY â€” light split panel
+   PHILOSOPHY — light split panel
    ============================================================ */
 .peds4-philosophy {
   padding: 64px 0;
@@ -797,7 +797,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .peds4-philosophy-photo img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; }
 
 /* ============================================================
-   CONSULTATION JOURNEY â€” staggered ghost-numeral cascade
+   CONSULTATION JOURNEY — staggered ghost-numeral cascade
    ============================================================ */
 .peds4-journey { position: relative; padding: 64px 0; background: var(--bg-3); overflow: hidden; }
 .peds4-journey .peds4-section-header { text-align: center; margin-bottom: 56px; }
@@ -956,7 +956,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .peds4-contact-item a { font-size: 18px; color: var(--sky-dark); font-weight: 700; }
 
 /* ============================================================
-   TESTIMONIALS â€” light card carousel
+   TESTIMONIALS — light card carousel
    ============================================================ */
 .peds4-testimonials { position: relative; padding: 64px 0; background: var(--bg-2); overflow: hidden; }
 .peds4-testimonials > .container { position: relative; z-index: 1; }
@@ -1604,7 +1604,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 /* ============================================================
-   LEGAL PAGE FOOTER (site-footer) â€” privacy-policy / terms-of-service
+   LEGAL PAGE FOOTER (site-footer) — privacy-policy / terms-of-service
    ============================================================ */
 .site-footer {
   background: var(--sky-dark);
@@ -1793,4 +1793,51 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .footer-links {
     font-size: 18px;
   }
+}
+
+/* Read More toggle (About section) */
+.read-more-wrap .read-more-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.read-more-wrap.is-expanded .read-more-content {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--button, #0f766e);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.read-more-btn span {
+  color: var(--button, #0f766e);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover span,
+.read-more-btn:hover i,
+.read-more-btn:hover {
+  color: var(--button-hover, #0f766e);
+}
+
+.read-more-wrap.is-expanded .read-more-btn i {
+  transform: rotate(180deg);
 }
