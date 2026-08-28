@@ -2058,3 +2058,62 @@ background: var(--bg-2);
 .read-more-wrap.is-expanded .read-more-btn i {
   transform: rotate(180deg);
 }
+
+/* ==========================================================================
+   Single Image Banner System (Inside Hero Section)
+   ========================================================================== */
+.single-image-banner-section {
+  width: 100%;
+  padding: 10px 0 24px;
+  background-color: transparent;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.single-image-banner-container {
+  min-width: 0;
+  padding: 0;
+}
+
+.single-image-banner-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(240, 90, 40, 0.14), 0 4px 15px rgba(0, 0, 0, 0.04);
+  border: 3px solid #ffffff;
+  background: var(--white);
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+}
+
+.single-image-banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease, filter 0.3s ease;
+  max-width: 100%;
+}
+
+.single-image-banner-wrap:hover .single-image-banner-img {
+  transform: scale(1.012);
+}
+
+@media (max-width: 768px) {
+  .single-image-banner-section {
+    padding: 10px 0 16px;
+  }
+  .single-image-banner-wrap {
+    border-radius: 14px;
+    border-width: 2px;
+  }
+  .single-image-banner-img {
+    aspect-ratio: 16 / 5;
+    max-height: none;
+  }
+}
