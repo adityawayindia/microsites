@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  NOTE: A sitemap.xml only takes effect once, at the domain root
+  (digidr.app/sitemap.xml). This file is a per-microsite draft listing only
+  this doctor's pages — backend team must merge every microsite's <url>
+  entries into ONE combined sitemap.xml served at digidr.app/sitemap.xml.
+  Path below assumes this microsite is served at digidr.app/REPLACE-WITH-SLUG/
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://digidr.app/REPLACE-WITH-SLUG/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://digidr.app/REPLACE-WITH-SLUG/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digidr.app/REPLACE-WITH-SLUG/blog-detail.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://digidr.app/REPLACE-WITH-SLUG/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://digidr.app/REPLACE-WITH-SLUG/terms-of-service.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
