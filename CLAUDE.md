@@ -89,6 +89,20 @@ Practice Gallery → Booking Modal → Footer.
   verbatim, keep its rule order, and test with 4/5/6/7 cards — the leftover rules are
   dormant at 6 cards, so regressions are invisible there.
 
+## About-section "Read More" toggle (AGENTS.md §13, mandatory)
+
+- Any About-section bio long enough to plausibly exceed 7 lines gets a **Read
+  More/Read Less** toggle — clip via `-webkit-line-clamp: 7` on a `.read-more-content`
+  wrapper inside a `.read-more-wrap` container, with a `.read-more-btn` (chevron icon)
+  after it.
+- Copy the CSS and JS blocks from **AGENTS.md §13.2/§13.3 verbatim** — swap only the
+  button/hover CSS variables to match the microsite's existing palette. The JS is a
+  self-contained IIFE appended to the end of `script/index.js`; don't rewrite it.
+- Button **auto-hides** if the bio already fits in 7 lines (`scrollHeight` vs
+  `clientHeight` check) — always test with both a short and a long bio.
+- Before adding: check for the `Read More toggle` CSS comment and `DigiDrReadMore` in
+  JS — skip if already present, don't duplicate.
+
 ## Other standards
 
 - Fully responsive 320px–1440px.

@@ -49,16 +49,9 @@
         </span>
         <span class="brand-text">
           <span class="brand-name">Dr. Arjun Mehta</span>
-          <span class="brand-role">Physician</span>
+          <span class="brand-role">General Medicine</span>
         </span>
       </a>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false"
-        aria-controls="mainNav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
 
       <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
         <a href="#about">About</a>
@@ -69,10 +62,19 @@
         <a href="blog.html">Blog</a>
       </nav>
 
-      <a href="#" class="cta-btn" id="headerBookBtn">
-        <span class="cta-text-desktop">Book Appointment</span>
-        <span class="cta-text-mobile">Book Now</span>
-      </a>
+      <div class="navbar-actions">
+        <a href="#" class="cta-btn" id="headerBookBtn">
+          <span class="cta-text-desktop">Book Appointment</span>
+          <span class="cta-text-mobile">Appointment</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="mainNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -187,7 +189,7 @@
         <p class="hero-v2-subtitle">MD, DNB (General Medicine) · Board Certified Consultant Physician</p>
         
         <div class="hero-v2-reg">
-          <i class="fa-solid fa-id-card"></i> MCI Reg: MCI-MED-2012-73892
+           MCI Reg: MCI-MED-2012-73892
         </div>
 
         <div class="hero-v2-stats">
@@ -218,9 +220,11 @@
 
         <div class="hero-v2-languages">
           <strong><i class="fa-solid fa-language"></i> Languages:</strong>
-          <span class="hero-v2-lang-tag">English</span>
-          <span class="hero-v2-lang-tag">Hindi</span>
-          <span class="hero-v2-lang-tag">Kannada</span>
+          <div class="hero-v2-lang-tags">
+            <span class="hero-v2-lang-tag">English</span>
+            <span class="hero-v2-lang-tag">Hindi</span>
+            <span class="hero-v2-lang-tag">Kannada</span>
+          </div>
         </div>
 
         <!-- <div class="hero-v2-actions">
@@ -311,8 +315,6 @@
             <i class="fa-solid fa-heart-circle-check"></i>
           </div>
           <div class="service-body-new">
-            <span class="pill pill-sm pill-amber" style="margin-bottom: 8px;"><i
-                class="fa-solid fa-clock-rotate-left"></i> Long-Term Care</span>
             <h3>Chronic Care Management</h3>
             <p>Tailored treatment protocols for long-term health issues including diabetes, hypertension, cholesterol,
               and thyroid disorders.</p>
@@ -323,8 +325,6 @@
             <i class="fa-solid fa-kit-medical"></i>
           </div>
           <div class="service-body-new">
-            <span class="pill pill-sm pill-emerald" style="margin-bottom: 8px;"><i
-                class="fa-solid fa-shield-halved"></i> Prevention</span>
             <h3>Preventive Health Checkups</h3>
             <p>Comprehensive physical exams, health risk assessments, and targeted clinical screenings to catch issues
               before they arise.</p>
@@ -335,8 +335,6 @@
             <i class="fa-solid fa-virus-slash"></i>
           </div>
           <div class="service-body-new">
-            <span class="pill pill-sm pill-rose" style="margin-bottom: 8px;"><i class="fa-solid fa-virus-slash"></i>
-              Acute Illness</span>
             <h3>Infectious Disease Care</h3>
             <p>Accurate diagnosis and effective treatment plans for seasonal viral fevers, bacterial infections, and
               standard vaccinations.</p>
@@ -347,8 +345,6 @@
             <i class="fa-solid fa-people-roof"></i>
           </div>
           <div class="service-body-new">
-            <span class="pill pill-sm pill-purple" style="margin-bottom: 8px;"><i class="fa-solid fa-people-roof"></i>
-              Family Health</span>
             <h3>Geriatric &amp; Family Care</h3>
             <p>Dedicated medical support for older adults, focusing on age-related health conditions and
               multi-generational family health.</p>
@@ -359,8 +355,6 @@
             <i class="fa-solid fa-apple-whole"></i>
           </div>
           <div class="service-body-new">
-            <span class="pill pill-sm pill-teal" style="margin-bottom: 8px;"><i class="fa-solid fa-apple-whole"></i>
-              Wellness</span>
             <h3>Lifestyle &amp; Diet Advice</h3>
             <p>Professional counseling on weight management, heart-healthy habits, stress reduction, and overall
               metabolic fitness.</p>
@@ -371,8 +365,6 @@
             <i class="fa-solid fa-vial"></i>
           </div>
           <div class="service-body-new">
-            <span class="pill pill-sm pill-cyan" style="margin-bottom: 8px;"><i class="fa-solid fa-vial"></i>
-              Diagnostics</span>
             <h3>Diagnostic Lab Analysis</h3>
             <p>In-depth analysis of routine blood tests, imaging scans, and urine tests to construct precise and
               effective treatment plans.</p>

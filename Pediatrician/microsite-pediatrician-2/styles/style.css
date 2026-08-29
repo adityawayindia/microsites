@@ -1835,9 +1835,46 @@ background: var(--bg-2);
 }
 
 @media (max-width: 1030px) {
-  .alt-navbar { min-height: 68px; position: relative; gap: 10px; }
-  .alt-menu-toggle { display: block; order: 2; }
-  .alt-cta-btn { order: 1; margin-left: auto; padding: 9px 14px; font-size: 16px; }
+  .alt-navbar {
+    min-height: 68px;
+    position: relative;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .alt-brand {
+    flex-basis: 100%;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .alt-brand-text { align-items: center; }
+
+  .alt-header .alt-brand-name,
+  .alt-brand-name,
+  .alt-brand-role {
+    max-width: 100%;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  .alt-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .alt-menu-toggle { display: block; order: -1; }
+  .alt-cta-btn { padding: 9px 14px; font-size: 16px; white-space: nowrap; }
   .alt-nav-links {
     position: absolute;
     top: calc(100% + 8px);

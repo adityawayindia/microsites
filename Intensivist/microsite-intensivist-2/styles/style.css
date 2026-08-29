@@ -312,6 +312,12 @@ h1, h2, h3, h4 {
   position: relative;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 
 .avatar {
@@ -2344,15 +2350,16 @@ h1, h2, h3, h4 {
     box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
     z-index: 90;
   }
-  .menu-toggle { display: flex; flex-direction: column; justify-content: center; order: 2; flex-shrink: 0; }
+  .menu-toggle { display: flex; flex-direction: column; justify-content: center; order: -1; flex-shrink: 0; }
   .cta-text-desktop { display: none; }
   .cta-text-mobile { display: inline; }
-  .cta-btn { padding: 10px 16px; font-size: 16px; gap: 6px; order: 3; flex-shrink: 0; white-space: nowrap; }
-  .navbar { justify-content: flex-start; gap: 10px; }
-  .brand { margin-right: auto; min-width: 0; }
-  .brand-text { min-width: 0; overflow: hidden; }
-  .brand-name { font-size: 18px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
-  .brand-role { font-size: 14px; }
+  .cta-btn { padding: 10px 16px; font-size: 16px; gap: 6px; flex-shrink: 0; white-space: nowrap; }
+  .navbar { justify-content: center; gap: 10px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+  .navbar-actions { flex-basis: 100%; justify-content: center; margin-left: 0; }
+  .brand { margin-right: 0; min-width: 0; flex-basis: 100%; justify-content: center; }
+  .brand-text { min-width: 0; overflow: visible; align-items: center; }
+  .brand-name { font-size: 18px; white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: break-word; word-break: break-word; text-align: center; }
+  .brand-role { font-size: 14px; text-align: center; }
   .avatar { display: none; }
 }
 

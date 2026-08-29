@@ -1609,7 +1609,40 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 @media (max-width: 1030px) {
-  .peds2-menu-toggle { display: flex; }
+  .peds2-navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .peds2-brand {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .peds2-brand-text { align-items: center; }
+
+  .peds2-header .peds2-brand-name,
+  .peds2-brand-name,
+  .peds2-brand-role {
+    max-width: 100%;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  .peds2-nav-actions {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .peds2-cta-btn { white-space: nowrap; }
+
+  .peds2-menu-toggle { display: flex; order: -1; }
   .peds2-nav-links {
     position: absolute;
     top: 100%; left: 0; right: 0;

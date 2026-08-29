@@ -146,6 +146,12 @@ body {
   gap: 24px;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -2706,19 +2712,51 @@ margin-bottom: 0;
     min-height: 72px;
     position: relative;
     gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .brand {
+    flex-shrink: 1;
+    min-width: 0;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .brand-text {
+    align-items: center;
+  }
+
+  .brand-name,
+  .brand-role {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  .navbar-actions {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-left: 0;
   }
 
   .menu-toggle {
     display: block;
-    margin-left: 8px;
-    order: 2;
+    order: -1;
+    margin-left: 0;
   }
 
   .cta-btn {
-    order: 1;
-    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px 14px;
     font-size: 16px;
+    min-height: 42px;
+    box-sizing: border-box;
   }
 
   .nav-links {
@@ -2929,9 +2967,14 @@ margin-bottom: 0;
   }
 
   .cta-btn {
-    display: inline-block;
-    padding: 10px 18px;
-    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    font-size: 13px;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .cta-text-desktop {

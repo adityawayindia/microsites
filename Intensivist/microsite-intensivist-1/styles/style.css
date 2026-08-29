@@ -266,6 +266,12 @@ a {
   min-height: 72px;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -2759,9 +2765,45 @@ a {
 }
 
 @media (max-width: 1200px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .brand {
+    flex-shrink: 1;
+    min-width: 0;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .brand-text {
+    align-items: center;
+  }
+
+  .brand-name,
+  .brand-role {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  .navbar-actions {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .cta-btn {
+    white-space: nowrap;
+  }
+
   .menu-toggle {
     display: flex;
-    order: 2;
+    order: -1;
     margin-left: 0;
     flex-shrink: 0;
   }

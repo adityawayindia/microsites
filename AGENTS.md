@@ -519,3 +519,164 @@ so short and long descriptions stay optically aligned:
 }
 ```
 
+---
+
+## 13. About-Section "Read More" Toggle (Standard, Mandatory)
+
+The About section's bio paragraph(s) must clip to **7 lines** with a "Read More" /
+"Read Less" toggle button, rather than always showing the full bio. Apply this to
+every microsite — new or existing — whose About section has body copy long enough to
+plausibly exceed 7 lines.
+
+**Before adding:** search `styles/style.css` for the `Read More toggle` comment marker
+and `script/index.js` for `DigiDrReadMore` — if present, this microsite already has it;
+don't duplicate.
+
+### 13.1 HTML structure
+
+Wrap the existing bio paragraph(s) in two nested `<div>`s and add the button
+immediately after, inside the same outer wrapper. Keep whatever classes the outer
+wrapper already had (e.g. `about-story-new`, `about-description`) — just add
+`read-more-wrap` alongside them:
+
+```html
+<div class="about-story-new read-more-wrap">
+  <div class="read-more-content">
+    <p>...existing bio paragraph(s), unchanged...</p>
+  </div>
+  <button type="button" class="read-more-btn" aria-expanded="false">
+    <span>Read More</span>
+    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+  </button>
+</div>
+```
+
+Don't alter the bio text itself — only wrap it.
+
+### 13.2 CSS
+
+Insert near the About-section styles in `styles/style.css`, marked with the
+`Read More toggle` comment so re-runs can detect it. Use whatever CSS variables this
+microsite already uses for its primary button colour (base) and its hover/accent
+colour (hover) — fall back to `#0f766e` if neither var exists:
+
+```css
+/* Read More toggle (About section) */
+.read-more-wrap .read-more-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.read-more-wrap.is-expanded .read-more-content {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--button, #0f766e);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.read-more-btn span {
+  color: var(--button, #0f766e);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover span,
+.read-more-btn:hover i,
+.read-more-btn:hover {
+  color: var(--button-hover, #0f766e);
+}
+
+.read-more-wrap.is-expanded .read-more-btn i {
+  transform: rotate(180deg);
+}
+```
+
+### 13.3 JS
+
+Append verbatim to the end of `script/index.js` (this is a self-contained IIFE — copy
+it exactly, do not rewrite or inline it elsewhere):
+
+```js
+(function () {
+  function checkTruncation(wrap) {
+    var btn = wrap.querySelector(".read-more-btn");
+    var content = wrap.querySelector(".read-more-content");
+    if (!btn || !content) return;
+
+    var isTruncated = content.scrollHeight > content.clientHeight + 2;
+    btn.style.display = isTruncated ? "" : "none";
+  }
+
+  function bindToggle(wrap) {
+    var btn = wrap.querySelector(".read-more-btn");
+    var label = btn && btn.querySelector("span");
+    if (!btn || btn.dataset.bound) return;
+    btn.dataset.bound = "true";
+    btn.addEventListener("click", function () {
+      var expanded = wrap.classList.toggle("is-expanded");
+      btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+      if (label) label.textContent = expanded ? "Read Less" : "Read More";
+    });
+  }
+
+  function initReadMore(root) {
+    (root || document).querySelectorAll(".read-more-wrap").forEach(function (wrap) {
+      bindToggle(wrap);
+      checkTruncation(wrap);
+    });
+  }
+
+  window.DigiDrReadMore = { init: initReadMore, check: checkTruncation };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () { initReadMore(); });
+  } else {
+    initReadMore();
+  }
+
+  function debounce(fn, wait) {
+    var t;
+    return function () {
+      clearTimeout(t);
+      t = setTimeout(fn, wait);
+    };
+  }
+
+  window.addEventListener("resize", debounce(function () { initReadMore(); }, 200));
+})();
+```
+
+### 13.4 Behaviour notes
+
+- **7-line clamp** via `-webkit-line-clamp` — supported in all current evergreen
+  browsers (Chrome, Edge, Safari, Firefox 68+) despite the `-webkit-` prefix; no
+  fallback needed.
+- **Button auto-hides when there's nothing to expand.** `checkTruncation` compares
+  `scrollHeight` to `clientHeight`; if the bio already fits in 7 lines the button never
+  renders. Always test with both a short bio (button should NOT appear) and a long one
+  (button should appear and toggle correctly).
+- **Re-checks on resize** (debounced 200ms) so rotating a phone or resizing a desktop
+  window never leaves the button in a stale visible/hidden state.
+- `window.DigiDrReadMore.init(root)` is exposed so any future dynamic content loader
+  can re-run the check after injecting new bio text.
+- If multiple bio paragraphs exist, keep them all inside the single
+  `.read-more-content` wrapper — do not create one wrapper per paragraph.
+

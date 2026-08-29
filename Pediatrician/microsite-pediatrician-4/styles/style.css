@@ -1546,7 +1546,40 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 @media (max-width: 1030px) {
-  .peds4-menu-toggle { display: flex; }
+  .peds4-navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .peds4-brand {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .peds4-brand-text { align-items: center; }
+
+  .peds4-header .peds4-brand-name,
+  .peds4-brand-name,
+  .peds4-brand-role {
+    max-width: 100%;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  .peds4-nav-actions {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .peds4-cta-btn { white-space: nowrap; }
+
+  .peds4-menu-toggle { display: flex; order: -1; }
   .peds4-nav-links {
     position: absolute;
     top: 100%; left: 0; right: 0;

@@ -78,10 +78,6 @@
         </span>
       </a>
 
-      <button class="alt-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
-        <span></span><span></span><span></span>
-      </button>
-
       <nav class="alt-nav-links" id="mainNav" aria-label="Main Navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -91,10 +87,16 @@
         <a href="blog.html">Blog</a>
       </nav>
 
-      <a href="#" class="alt-cta-btn cta-btn" id="openBookingBtn">
-        <span class="cta-text-desktop">Book Appointment</span>
-        <span class="cta-text-mobile">Book</span>
-      </a>
+      <div class="alt-nav-actions">
+        <button class="alt-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <a href="#" class="alt-cta-btn cta-btn" id="openBookingBtn">
+          <span class="cta-text-desktop">Book Appointment</span>
+          <span class="cta-text-mobile">Book Appointment</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -779,7 +781,6 @@
 
   <script src="./script/banner-module.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
-  <script src="./script/banner-module.js"></script>
   <script src="./script/index.js"></script>
   <script src="./script/chatbot.js" defer></script>
 </body>
