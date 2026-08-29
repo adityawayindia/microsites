@@ -609,6 +609,7 @@ display: flex;
 .hero-v2-languages {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin: 0;
   flex-wrap: wrap;
@@ -617,6 +618,7 @@ display: flex;
 .hero-v2-lang-tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   flex-basis: 100%;
 }
