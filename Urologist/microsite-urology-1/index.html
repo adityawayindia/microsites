@@ -83,7 +83,7 @@
       <div class="nav-actions">
         <a href="#" class="cta-btn cta-btn" id="openBookingBtn">
           <span class="cta-text-desktop">Book Appointment</span>
-          <span class="cta-text-mobile">Book</span>
+          <span class="cta-text-mobile">Appointment</span>
         </a>
 
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
@@ -93,7 +93,7 @@
     </div>
   </header>
 
-  <!-- ====== HERO — mirrored card-portrait layout with clinical motif ====== -->
+  <!-- ====== HERO — clinical command surface with uroflowmetry trace ====== -->
   <section class="hero-section" id="home">
     <!-- ==========================================================================
          DIGIDR MODULAR BANNER MODULE (Hero Banner)
@@ -138,34 +138,45 @@
     </div>
     <!-- END OF MODULAR BANNER MODULE -->
 
-    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="hero-mesh" aria-hidden="true"></div>
 
     <div class="container hero-layout">
-      <div class="hero-image-wrap">
-        <div class="hero-portrait-glow" aria-hidden="true"></div>
-        <div class="hero-portrait-frame">
-          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta, board-certified urologist, portrait" />
-        </div>
-      </div>
-
       <div class="hero-content">
-        <span class="hero-specialty-line">
-          <i class="fa-solid fa-droplet" aria-hidden="true"></i>
-          Urologist
-        </span>
+        <p class="expert-badge">
+          <span class="expert-badge-pulse" aria-hidden="true"></span>
+          Consultant Urologist &amp; Uro-Oncology Specialist
+        </p>
 
         <h1 class="hero-title">Dr. Arjun Mehta</h1>
         <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MS (Urology) &middot; Fellowship in Uro-Oncology &amp; Endourology</p>
         <p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. 57492</p>
 
-        <!-- <p class="hero-subtitle">
-          Precise, minimally invasive urological care for kidney stones, prostate health, and urologic
-          cancers — combining advanced surgical technique with a calm, dignity-first approach for every patient.
-        </p> -->
+        <div class="hero-stats-grid">
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-count-to="18" data-suffix="+">18+</strong>
+            <span>Years of Experience</span>
+          </article>
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-count-to="12" data-suffix="k+">12k+</strong>
+            <span>Patients Treated</span>
+          </article>
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-count-to="97" data-suffix="%">97%</strong>
+            <span>Patient Satisfaction</span>
+          </article>
+        </div>
 
-        <ul class="languages" aria-label="Practice highlights">
-          <li><span class="hero-fact-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></span>Languages Known: <span class="languages-list">English &bull; Hindi &bull; Odia</span></li>
-        </ul>
+        <p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Languages:</strong> English &bull; Hindi &bull; Odia</p>
+
+        <div class="hero-actions">
+          <a href="#contact-us" class="hero-cta-secondary">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span>Contact</span>
+          </a>
+        </div>
 
         <div class="social-links" aria-label="Social media links">
           <a href="#" class="social" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
@@ -178,35 +189,19 @@
           <a href="#" class="social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Floating stat card cluster bridging hero and about -->
-  <div class="container hero-stats" aria-label="Practice statistics">
-    <div class="hero-stats-inner">
-      <div class="stat-card">
-        <span class="stat-card-icon"><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i></span>
-        <span>
-          <span class="stat-card-num" data-count-to="18" data-suffix="+">18+</span>
-          <span class="stat-card-lbl">Years of Experience</span>
-        </span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
-        <span>
-          <span class="stat-card-num" data-count-to="12" data-suffix="k+">12k+</span>
-          <span class="stat-card-lbl">Patients Treated</span>
-        </span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
-        <span>
-          <span class="stat-card-num" data-count-to="97" data-suffix="%">97%</span>
-          <span class="stat-card-lbl">Patient Satisfaction</span>
-        </span>
+      <div class="hero-visual">
+        <div class="hero-visual-blob" aria-hidden="true"></div>
+        <div class="hero-portrait">
+          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta, board-certified urologist, portrait" class="hero-image" />
+        </div>
       </div>
     </div>
-  </div>
+
+    <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 C240,40 480,80 720,80 C960,80 1200,40 1440,0 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
 
   <!-- ====== ABOUT — executive, icon-free typography ====== -->
   <section class="about-section" id="about">
