@@ -1858,6 +1858,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .uro-hero-langs { padding: 10px 14px; gap: 10px; }
   .uro-hud { grid-template-columns: 1fr; gap: 10px; }
   .uro-hud-item { padding: 12px 16px; }
+  .social-links { display: grid; grid-template-columns: repeat(4, 46px); justify-content: center; align-self: center; }
   .testimonial-card { flex: 0 0 100%; }
   .about-section { padding-top: 64px; }
 
