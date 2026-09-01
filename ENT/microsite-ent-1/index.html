@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Kabir Anand | ENT Specialist — Ear, Nose & Throat Care Clinic</title>
+  <meta name="description" content="Board-certified ENT care from Dr. Kabir Anand — hearing loss treatment, sinus & allergy care, throat & voice disorders, and head & neck surgery for the whole family." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230e433a'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round'%3E%3Ccircle cx='20' cy='32' r='2.4' fill='%23fff' stroke='none'/%3E%3Cpath d='M28 20a17 17 0 0 1 0 24'/%3E%3Cpath d='M36 24a11 11 0 0 1 0 16'/%3E%3C/g%3E%3C/svg%3E" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/ent-1/" /><!-- TODO: replace with live production domain before launch -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dr. Kabir Anand | ENT Specialist" />
+  <meta property="og:description" content="Dr. Kabir Anand, ENT Specialist (Otolaryngologist)." />
+  <meta property="og:image" content="assets/dr-arjun-mehta.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Dr. Kabir Anand, ENT Specialist" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Kabir Anand | ENT Specialist" />
+  <meta name="twitter:description" content="Dr. Kabir Anand, ENT Specialist (Otolaryngologist)." />
+  <meta name="twitter:image" content="assets/dr-arjun-mehta.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Kabir Anand",
+    "medicalSpecialty": "Otolaryngologic",
+    "image": "https://www.example.com/ent-1/assets/dr-arjun-mehta.jpg",
+    "url": "https://www.example.com/ent-1/",
+    "telephone": "+91-9068935572",
+    "email": "dr.anand@wayindiahospitals.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1800 Orchids Lane, Walt Disney World, Bay Lake",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32805",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#" class="brand" aria-label="Dr. Kabir Anand">
+        <span class="avatar">
+          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Kabir Anand" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name" title="Dr. Kabir Anand">Dr. Kabir Anand</span>
+          <span class="brand-role">ENT Specialist</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact-us">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#gallery">Gallery</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="cta-btn cta-btn" id="openBookingBtn">
+          <span class="cta-text-desktop">Book Appointment</span>
+          <span class="cta-text-mobile">Appointment</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== HERO — clinical command surface with sound-wave motif ====== -->
+  <section class="hero-section" id="home">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+         1. Server-Side Rendering (PHP/Node/Python):
+            - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+            - Set 'data-banner-active="false"' to hide banner if no active image.
+            - Set 'data-banner-href="URL"' to turn image into a clickable link.
+         2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div
+      class="digidr-banner-module single-image-banner-section"
+      id="digidrBannerModule"
+      data-banner-active="true"
+      data-banner-start="2026-01-01T00:00:00+05:30"
+      data-banner-end="2027-12-31T23:59:59+05:30"
+      aria-label="Main Clinic Banner"
+      data-banner-src="assets/pedia_banner-1.jpeg"
+      data-banner-src-mobile="assets/pedia_independence_mobile.png"
+      data-banner-alt="ENT Care Banner"
+      data-banner-href="#"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/pedia_independence_mobile.png" />
+              <img
+                src="assets/pedia_banner-1.jpeg"
+                alt="Dr. Kabir Anand ENT Care Banner"
+                class="digidr-banner-img single-image-banner-img"
+                id="digidrBannerImg"
+                loading="eager"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
+
+    <div class="hero-mesh" aria-hidden="true"></div>
+
+    <div class="container hero-layout">
+      <div class="hero-content">
+        <p class="expert-badge">
+          <span class="expert-badge-pulse" aria-hidden="true"></span>
+          Consultant ENT Surgeon &amp; Otolaryngologist
+        </p>
+
+        <h1 class="hero-title">Dr. Kabir Anand</h1>
+        <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MS (ENT) &middot; Fellowship in Otology, Rhinology &amp; Head-Neck Surgery</p>
+        <p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. 63820</p>
+
+        <div class="hero-stats-grid">
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-count-to="15" data-suffix="+">15+</strong>
+            <span>Years of Experience</span>
+          </article>
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-count-to="20" data-suffix="k+">20k+</strong>
+            <span>Patients Treated</span>
+          </article>
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-ear-listen" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-count-to="98" data-suffix="%">98%</strong>
+            <span>Patient Satisfaction</span>
+          </article>
+        </div>
+
+        <p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Languages:</strong> English &bull; Hindi &bull; Punjabi</p>
+
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+          <a href="#" class="social" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-blob" aria-hidden="true"></div>
+        <div class="hero-portrait">
+          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Kabir Anand, board-certified ENT specialist, portrait" class="hero-image" />
+        </div>
+
+        <div class="hero-float-icon hero-float-icon--ear" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.154 18c0-6.075 5.304-11 11.846-11s11.846 4.925 11.846 11c0 3.807-2.082 7.163-5.25 9.139c-2.689 1.676-5.52 4.315-5.52 7.772V35c0 3.314-2.892 6-6.46 6c-3.57 0-6.462-2.686-6.462-6v-2H10v2c0 4.418 3.857 8 8.615 8s8.616-3.582 8.616-8v-.089c0-2.404 2.013-4.52 4.565-6.112C35.536 26.467 38 22.501 38 18c0-7.18-6.268-13-14-13s-14 5.82-14 13zM23 14c-1.948 0-3.528 1.315-3.911 3.02h.028c.813.042 1.918.158 3.038.464c1.111.304 2.312.816 3.247 1.697c.964.909 1.598 2.169 1.598 3.827q0 .045-.004.09c-.146 1.61-.54 2.84-1.137 3.762c-.606.937-1.386 1.503-2.202 1.824c-.798.314-1.598.382-2.249.382c-.327 0-.629-.018-.878-.033l-.099-.007l-.3-.018l-.041.077a6 6 0 0 0-.277.674c-.064.174-.137.374-.233.614c-.21.525-.511 1.178-1.017 1.7c-.544.559-1.284.927-2.252.927c-.838 0-1.532-.192-2.076-.565a2.74 2.74 0 0 1-1.031-1.34A3.5 3.5 0 0 1 13 29.891a4 4 0 0 1 .04-.546l.003-.014l.001-.005v-.003c0-.001 0-.002.984.178l.984.179v-.003l.001-.003v-.003v.003l-.004.038a1.7 1.7 0 0 0 .073.695a.74.74 0 0 0 .281.376c.14.096.417.216.948.216c.402 0 .632-.131.817-.321c.221-.228.405-.574.595-1.049c.046-.115.097-.253.152-.401c.13-.35.282-.76.436-1.058q.05-.1.12-.213c.556-1.423 1.417-3.915 1.069-4.958c-.233-.698-.682-1.396-1.096-1.943c-.504-.422-.888-.83-1.12-1.318c-.286-.604-.285-1.235-.284-1.815v-.103c0-3.248 2.721-5.82 6-5.82s6 2.572 6 5.82h-2c0-2.075-1.756-3.82-4-3.82m-2.808 14.92l-.009.01z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <div class="hero-float-icon hero-float-icon--nose" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="currentColor">
+            <path d="M30.915 6.403a1 1 0 1 0-1.83-.806l-.004.008l-.013.03a30 30 0 0 1-.266.582a93 93 0 0 1-3.76 7.217c-2.48 4.279-5.741 9.017-9.033 11.39c-4.344 3.118-5.65 6.952-4.735 10.162c.896 3.145 3.865 5.387 7.37 5.387h3.229A2.627 2.627 0 0 1 24.5 43h2a4.627 4.627 0 0 0-4.627-4.627h-.576c.224-.336.582-.665 1.126-.918c.994-.464 2.68-.7 5.35-.08a1 1 0 1 0 .453-1.948c-2.929-.68-5.11-.503-6.649.215c-1.357.633-2.155 1.664-2.461 2.73h-.472c-2.647 0-4.805-1.683-5.446-3.935c-.624-2.187.121-5.221 3.978-7.989l.002-.001c3.67-2.645 7.111-7.725 9.595-12.01a96 96 0 0 0 3.844-7.379l.278-.608l.015-.034l.005-.011zL30 6zm4.841 28.588c-.52 2.09-1.817 3.979-3.227 4.858L31.47 38.15c.882-.55 1.923-1.947 2.344-3.642c.409-1.647.195-3.408-1.16-4.815l1.44-1.388c1.947 2.022 2.192 4.547 1.66 6.685"/>
+          </svg>
+        </div>
+
+        <!-- Audiogram card — the single most recognizable ENT/audiology
+             clinical chart, so the specialty reads instantly. -->
+        <div class="hero-audiogram-card" aria-hidden="true">
+          <div class="hero-audiogram-head">
+            <span>Audiogram</span>
+            <span class="hero-audiogram-unit">dB HL</span>
+          </div>
+          <svg viewBox="0 0 200 108" class="hero-audiogram-chart">
+            <line x1="30" y1="14" x2="190" y2="14" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="30" y1="30" x2="190" y2="30" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="30" y1="46" x2="190" y2="46" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="30" y1="62" x2="190" y2="62" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="30" y1="78" x2="190" y2="78" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="30" y1="94" x2="190" y2="94" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="30" y1="14" x2="30" y2="94" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="57" y1="14" x2="57" y2="94" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="83" y1="14" x2="83" y2="94" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="110" y1="14" x2="110" y2="94" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="137" y1="14" x2="137" y2="94" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="163" y1="14" x2="163" y2="94" stroke="#D6E3DD" stroke-width="0.75"/>
+            <line x1="190" y1="14" x2="190" y2="94" stroke="#D6E3DD" stroke-width="0.75"/>
+            <text x="14" y="18" font-size="7" fill="#4B615C">0</text>
+            <text x="8" y="98" font-size="7" fill="#4B615C">100</text>
+            <polyline points="30,26 57,22 83,30 110,26 137,34 163,30 190,26" fill="none" stroke="#196B5B" stroke-width="1.3" stroke-dasharray="3 2"/>
+            <polyline points="30,22 57,18 83,26 110,22 137,30 163,26 190,22" fill="none" stroke="#C53620" stroke-width="1.3"/>
+            <g stroke="#196B5B" stroke-width="1.1">
+              <path d="M27,23 27,29 M27,23 33,29 M27,29 33,23"/>
+              <path d="M54,19 54,25 M54,19 60,25 M54,25 60,19"/>
+              <path d="M80,27 80,33 M80,27 86,33 M80,33 86,27"/>
+              <path d="M107,23 107,29 M107,23 113,29 M107,29 113,23"/>
+              <path d="M134,31 134,37 M134,31 140,37 M134,37 140,31"/>
+              <path d="M160,27 160,33 M160,27 166,33 M160,33 166,27"/>
+              <path d="M187,23 187,29 M187,23 193,29 M187,29 193,23"/>
+            </g>
+            <g fill="#ffffff" stroke="#C53620" stroke-width="1.2">
+              <circle cx="30" cy="22" r="2.6"/>
+              <circle cx="57" cy="18" r="2.6"/>
+              <circle cx="83" cy="26" r="2.6"/>
+              <circle cx="110" cy="22" r="2.6"/>
+              <circle cx="137" cy="30" r="2.6"/>
+              <circle cx="163" cy="26" r="2.6"/>
+              <circle cx="190" cy="22" r="2.6"/>
+            </g>
+          </svg>
+          <div class="hero-audiogram-legend">
+            <span><i></i>Right</span>
+            <span><i class="hero-audiogram-legend-left"></i>Left</span>
+            <span class="hero-audiogram-legend-tag">Normal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,45 L60,20 L120,60 L180,15 L240,55 L300,25 L360,65 L420,10 L480,50 L540,30 L600,60 L660,20 L720,45 L780,15 L840,55 L900,25 L960,65 L1020,10 L1080,50 L1140,30 L1200,60 L1260,20 L1320,45 L1380,25 L1440,40 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
+
+  <!-- ====== ABOUT — executive, icon-free typography ====== -->
+  <section class="about-section" id="about">
+    <div class="container about-layout">
+      <div class="about-aside">
+        <div class="about-photo-glow" aria-hidden="true"></div>
+        <div class="about-photo-frame">
+          <img src="https://images.unsplash.com/photo-1741174844812-c59239e677be?auto=format&fit=crop&w=900&q=80" alt="ENT specialist examining a patient's ear with an otoscope during a consultation at Dr. Kabir Anand's practice" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="about-kicker">About the Practice</span>
+        <h2 class="about-title">Attentive, Complete Ear, Nose &amp; Throat Care</h2>
+        <p class="about-description">
+          Combining advanced surgical training with an unhurried, patient-first approach to every consultation.
+        </p>
+        <div class="read-more-wrap">
+          <div class="read-more-content">
+            <p>
+              Dr. Kabir Anand is a board-certified ENT specialist (otolaryngologist) specializing in the diagnosis
+              and treatment of ear, nose, throat, and head-and-neck conditions in patients of every age. He manages
+              hearing loss, chronic sinusitis, tonsil and adenoid disease, voice and swallowing disorders, and
+              head-and-neck tumours with a calm, evidence-based approach. Trained at leading institutions in India
+              and abroad, Dr. Anand blends surgical precision with clear communication for every patient.
+            </p>
+            <p>
+              He takes time to explain every diagnosis and treatment option, so patients feel informed and in
+              control of their care. Beyond treatment, Dr. Anand is committed to minimally invasive endoscopic and
+              microsurgical techniques that reduce recovery time&mdash;helping patients return to clear hearing,
+              easy breathing, and a healthy voice faster, with less discomfort and better long-term outcomes.
+            </p>
+          </div>
+          <button type="button" class="read-more-btn" aria-expanded="false">
+            <span>Read More</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVICES ====== -->
+  <section class="services-section" id="services">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="container">
+      <div class="services-header">
+        <span class="services-kicker">
+          <i class="fa-solid fa-ear-listen" aria-hidden="true"></i> Specialized Services
+        </span>
+        <h2 class="services-title">Comprehensive Ear, Nose &amp; Throat Care</h2>
+        <p class="services-subtitle">
+          Offering a complete range of ENT healthcare services with personalized treatment and preventive guidance.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-ear-listen" aria-hidden="true"></i></div>
+          <h3>Hearing &amp; Ear Care</h3>
+          <p>Comprehensive hearing assessments, ear infection treatment, and micro-ear surgery for children and adults.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-wind" aria-hidden="true"></i></div>
+          <h3>Sinus &amp; Nasal Care</h3>
+          <p>Diagnosis and treatment of chronic sinusitis, nasal blockage, deviated septum, and allergic rhinitis.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-microphone" aria-hidden="true"></i></div>
+          <h3>Throat &amp; Voice Disorders</h3>
+          <p>Evaluation and treatment of tonsillitis, laryngitis, voice disorders, and swallowing difficulties.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-syringe" aria-hidden="true"></i></div>
+          <h3>Minimally Invasive &amp; Endoscopic Surgery</h3>
+          <p>Endoscopic sinus surgery and microsurgical procedures for faster recovery and reduced surgical risk.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-moon" aria-hidden="true"></i></div>
+          <h3>Sleep &amp; Snoring Disorders</h3>
+          <p>Diagnosis and treatment of snoring, sleep apnea, and airway obstruction for restful, healthy sleep.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-child" aria-hidden="true"></i></div>
+          <h3>Pediatric ENT &amp; Allergy Care</h3>
+          <p>Gentle evaluation and treatment for childhood ear infections, tonsils, adenoids, and nasal allergies.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CARE PHILOSOPHY (light split panel, image right) ====== -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="container philosophy-layout">
+      <div class="philosophy-content">
+        <span class="philosophy-kicker">
+          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Care Philosophy
+        </span>
+        <h2 class="philosophy-title">A Precise Approach to Every Diagnosis</h2>
+        <p class="philosophy-subtitle">
+          Dedicated to accurate diagnosis, minimally invasive treatment, and attentive ENT care.
+        </p>
+
+        <div class="philosophy-pillars">
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+            <div>
+              <h3>Precision Diagnosis</h3>
+              <p>Advanced endoscopy, audiometry, and imaging to identify the exact cause before treatment begins.</p>
+            </div>
+          </div>
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-book-medical" aria-hidden="true"></i></div>
+            <div>
+              <h3>Minimally Invasive Care</h3>
+              <p>Preference for endoscopic and microsurgical techniques to reduce pain and recovery time.</p>
+            </div>
+          </div>
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+            <div>
+              <h3>Patient Dignity</h3>
+              <p>Sensitive, unhurried consultations that respect every patient's comfort and concerns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="philosophy-visual">
+        <div class="philosophy-img-glow" aria-hidden="true"></div>
+        <div class="philosophy-img-frame">
+          <img src="assets/philosophy-photo.jpg" alt="Surgeon operating a robotic surgical system during transoral robotic surgery, reflecting a precise, minimally invasive approach to head and neck care" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONSULTATION JOURNEY — staggered ghost-numeral cascade ====== -->
+  <section class="process-section" id="process">
+    <div class="process-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="process-header">
+        <span class="process-kicker">
+          <i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey
+        </span>
+        <h2 class="process-title" style="text-align:center;">Your Care Journey</h2>
+        <p class="process-subtitle" style="text-align:center; max-width:700px; margin:0 auto;">
+          A clear, reassuring 4-step process for complete ear, nose &amp; throat care.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">01</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          </div>
+          <h3>Appointment Booking</h3>
+          <p>Book online or by phone for a clinic visit or online consultation.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">02</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          </div>
+          <h3>Diagnostic Evaluation</h3>
+          <p>Thorough clinical examination, endoscopy, and hearing tests to confirm diagnosis.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">03</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-clipboard-user" aria-hidden="true"></i>
+          </div>
+          <h3>Personalized Treatment Plan</h3>
+          <p>Clear guidance on medical, surgical, or minimally invasive treatment options.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">04</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          </div>
+          <h3>Recovery &amp; Follow-Up</h3>
+          <p>Post-procedure monitoring, routine follow-ups, and long-term wellness support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section class="contact-section" id="contact-us">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <h2>Contact Us</h2>
+          <p>Get expert ENT care you can trust. Schedule a consultation with our specialist today.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <h3>Address</h3>
+            <p>
+              <strong>Building Number: 1800</strong><br />
+              Street Name: Orchids Lane<br />
+              Street Address: Walt Disney World, Bay Lake<br />
+              State: FL &middot; City: Orlando &middot; 32805
+            </p>
+          </div>
+
+          <div class="contact-divider"></div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+            <h3>Contact Information</h3>
+            <p>
+              <a href="tel:+919068935572">+91-9068935572</a><br />
+              <a href="mailto:dr.anand@wayindiahospitals.com">dr.anand@wayindia<wbr />hospitals.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-cta-wrap">
+          <a href="tel:+919068935572" class="contact-btn">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Clinic
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="testimonials-kicker">
+          <i class="fa-solid fa-ear-listen" aria-hidden="true"></i> Testimonials
+        </span>
+        <h2 class="testimonials-title">What Our Patients Say</h2>
+        <p class="testimonials-subtitle">
+          Read testimonials from patients who have experienced precise, attentive ENT care under our specialist's guidance.
+        </p>
+      </div>
+
+      <div class="testimonials-carousel-wrap testimonials-carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev carousel-btn" aria-label="Previous testimonials">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn carousel-btn--next carousel-btn" aria-label="Next testimonials">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+          <div class="testimonials-track testimonials-track" id="testimonialsTrack">
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="James Pattinson" class="testimonial-avatar" />
+              <h3>James Pattinson</h3>
+              <div class="testimonial-stars" aria-label="4 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+              <p>"Dr. Anand diagnosed my chronic sinusitis quickly and explained every option clearly. The endoscopic procedure had me breathing easy within days. Highly recommend."</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop" alt="Greg Stuart" class="testimonial-avatar" />
+              <h3>Greg Stuart</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"Outstanding experience from start to finish. Dr. Anand explained my hearing loss treatment options clearly and took time to address all my concerns. Five stars!"</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop" alt="Trevor Mitchell" class="testimonial-avatar" />
+              <h3>Trevor Mitchell</h3>
+              <div class="testimonial-stars" aria-label="3 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+              <p>"Good care overall. Dr. Anand helped manage my son's recurring tonsillitis effectively. The follow-up process was thorough. Would recommend for ENT consultations."</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop" alt="Maria Rodriguez" class="testimonial-avatar" />
+              <h3>Maria Rodriguez</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"After my diagnosis, Dr. Anand's guidance was invaluable. He genuinely cares about his patients' long-term health. I feel confident and well-supported."</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop" alt="David Chen" class="testimonial-avatar" />
+              <h3>David Chen</h3>
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"The best ENT specialist I've consulted. Dr. Anand's diagnostic skills are remarkable. He identified the issue quickly and guided me clearly. Forever grateful for his expertise."</p>
+            </article>
+            <article class="testimonial-card testimonial-card">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Emily Watson" class="testimonial-avatar" />
+              <h3>Emily Watson</h3>
+              <div class="testimonial-stars" aria-label="4 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+              <p>"Professional, knowledgeable, and kind. Dr. Anand made every appointment stress-free. The clinic runs smoothly and appointments are always on time."</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALLERY ====== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <h2 class="gallery-title">A Look Inside My Practice</h2>
+        <p class="gallery-subtitle">
+          A glimpse into our ENT clinic, consultation rooms, and diagnostic facilities.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1400&q=80" alt="Modern clinic exterior" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80" alt="Clinic reception and waiting area" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1400&q=80" alt="Clinic consultation room" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=80" alt="Clinic corridor and seating" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1400&q=80" alt="Diagnostic equipment area" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1400&q=80" alt="Treatment room" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery lightbox -->
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div>
+    <figure class="gallery-lightbox-content">
+      <img src="" alt="Enlarged gallery image" id="galleryLightboxImage" />
+    </figure>
+    <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">&times;</button>
+  </div>
+
+  <!-- ====== BOOKING MODAL ====== -->
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate>
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+            <p class="booking-error" data-error-for="fullName"></p>
+          </div>
+          <div class="booking-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
+            <p class="booking-error" data-error-for="phone"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            <p class="booking-error" data-error-for="email"></p>
+          </div>
+          <div class="booking-field booking-field--date">
+            <label for="preferredDateText">Preferred Date</label>
+            <div class="booking-datepicker" id="preferredDateField">
+              <div class="booking-input-with-icon">
+                <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+              </div>
+              <input type="hidden" id="preferredDate" name="preferredDate" />
+              <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                <div class="booking-calendar-header">
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                  <span class="booking-calendar-title" data-cal-title></span>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="booking-calendar-weekdays">
+                  <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+                <div class="booking-calendar-grid" data-cal-grid></div>
+              </div>
+            </div>
+            <p class="booking-error" data-error-for="preferredDate"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="preferredTime">Preferred Time</label>
+            <div class="booking-select-wrap">
+              <select id="preferredTime" name="preferredTime" required>
+                <option value="">Select Time Slot</option>
+                <option value="09:00-10:00">09:00 - 10:00 AM</option>
+                <option value="10:00-11:00">10:00 - 11:00 AM</option>
+                <option value="11:00-12:00">11:00 - 12:00 PM</option>
+                <option value="14:00-15:00">02:00 - 03:00 PM</option>
+                <option value="15:00-16:00">03:00 - 04:00 PM</option>
+                <option value="16:00-17:00">04:00 - 05:00 PM</option>
+              </select>
+              <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+            </div>
+            <p class="booking-error" data-error-for="preferredTime"></p>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="reason">Reason For Visit</label>
+          <textarea id="reason" name="reason" rows="3" placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+          <p class="booking-error" data-error-for="reason"></p>
+        </div>
+
+        <div class="booking-field booking-field--file">
+          <label for="report">Upload Report</label>
+          <div class="booking-upload-row">
+            <label class="booking-upload-btn" for="report">Upload</label>
+            <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+            <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+          </div>
+          <p class="booking-error" data-error-for="report"></p>
+        </div>
+
+        <div class="booking-field booking-consent-field">
+          <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+        </div>
+
+        <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
+
+        <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+          <div class="loader-spinner"></div>
+          <p>Booking your appointment...</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <a href="#" class="brand">
+          <span class="avatar">
+            <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Kabir Anand" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Dr. Kabir Anand</span>
+            <span class="brand-role">Board-Certified ENT Specialist</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Precise, minimally invasive ear, nose &amp; throat care for every patient.</p>
+        <div class="footer-social-wrap">
+          <span class="footer-social-label">Follow me on:</span>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right-col">
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <nav class="footer-nav">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact-us">Contact</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#gallery">Gallery</a>
+          </nav>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Legal</h4>
+          <nav class="footer-nav">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </nav>
+        </div>
+
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
+          <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+          <span class="footer-visitor-badge-label">No. of Visitor:</span>
+          <span class="footer-visitor-badge-count">500</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p>&copy; 2026 Dr. Kabir Anand. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="./script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
+</body>
+</html>
