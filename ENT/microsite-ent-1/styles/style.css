@@ -111,7 +111,12 @@ p, li, span, a, button, label {
 .philosophy-content,
 .philosophy-visual,
 .philosophy-pillar,
+.pillar-body,
+.philosophy-badge,
+.philosophy-badge-text,
 .process-step,
+.process-step-card,
+.process-step-marker,
 .contact-item,
 .testimonial-card,
 .gallery-item,
@@ -134,6 +139,9 @@ aside,
 .languages,
 .service-card,
 .process-step,
+.process-step-card,
+.philosophy-pillar,
+.philosophy-badge,
 .contact-item,
 .testimonial-card {
   height: auto !important;
@@ -418,30 +426,36 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   isolation: isolate;
   overflow: hidden;
   padding: 0px 0 0;
-  background:
-    radial-gradient(ellipse 58% 62% at 76% 26%, hsl(150 46% 88% / 0.85), transparent 68%),
-    radial-gradient(ellipse 52% 58% at 6% 78%, hsl(38 60% 90% / 0.75), transparent 66%),
-    linear-gradient(165deg, #ffffff 0%, hsl(150 34% 97%) 46%, hsl(150 26% 94%) 100%);
+  background-image:
+    radial-gradient(ellipse 65% 55% at 12% 15%, hsla(8, 72%, 50%, 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 60% at 88% 85%, hsla(150, 45%, 45%, 0.22), transparent 58%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340' viewBox='0 0 340 340'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cg transform='translate(18,48) scale(0.95)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.154 18c0-6.075 5.304-11 11.846-11s11.846 4.925 11.846 11c0 3.807-2.082 7.163-5.25 9.139c-2.689 1.676-5.52 4.315-5.52 7.772V35c0 3.314-2.892 6-6.46 6c-3.57 0-6.462-2.686-6.462-6v-2H10v2c0 4.418 3.857 8 8.615 8s8.616-3.582 8.616-8v-.089c0-2.404 2.013-4.52 4.565-6.112C35.536 26.467 38 22.501 38 18c0-7.18-6.268-13-14-13s-14 5.82-14 13zM23 14c-1.948 0-3.528 1.315-3.911 3.02h.028c.813.042 1.918.158 3.038.464c1.111.304 2.312.816 3.247 1.697c.964.909 1.598 2.169 1.598 3.827q0 .045-.004.09c-.146 1.61-.54 2.84-1.137 3.762c-.606.937-1.386 1.503-2.202 1.824c-.798.314-1.598.382-2.249.382c-.327 0-.629-.018-.878-.033l-.099-.007l-.3-.018l-.041.077a6 6 0 0 0-.277.674c-.064.174-.137.374-.233.614c-.21.525-.511 1.178-1.017 1.7c-.544.559-1.284.927-2.252.927c-.838 0-1.532-.192-2.076-.565a2.74 2.74 0 0 1-1.031-1.34A3.5 3.5 0 0 1 13 29.891a4 4 0 0 1 .04-.546l.003-.014l.001-.005v-.003c0-.001 0-.002.984.178l.984.179v-.003l.001-.003v-.003v.003l-.004.038a1.7 1.7 0 0 0 .073.695a.74.74 0 0 0 .281.376c.14.096.417.216.948.216c.402 0 .632-.131.817-.321c.221-.228.405-.574.595-1.049c.046-.115.097-.253.152-.401c.13-.35.282-.76.436-1.058q.05-.1.12-.213c.556-1.423 1.417-3.915 1.069-4.958c-.233-.698-.682-1.396-1.096-1.943c-.504-.422-.888-.83-1.12-1.318c-.286-.604-.285-1.235-.284-1.815v-.103c0-3.248 2.721-5.82 6-5.82s6 2.572 6 5.82h-2c0-2.075-1.756-3.82-4-3.82m-2.808 14.92l-.009.01z'/%3E%3C/g%3E%3Cg transform='translate(206,16) scale(0.95)'%3E%3Cpath d='M30.915 6.403a1 1 0 1 0-1.83-.806l-.004.008l-.013.03a30 30 0 0 1-.266.582a93 93 0 0 1-3.76 7.217c-2.48 4.279-5.741 9.017-9.033 11.39c-4.344 3.118-5.65 6.952-4.735 10.162c.896 3.145 3.865 5.387 7.37 5.387h3.229A2.627 2.627 0 0 1 24.5 43h2a4.627 4.627 0 0 0-4.627-4.627h-.576c.224-.336.582-.665 1.126-.918c.994-.464 2.68-.7 5.35-.08a1 1 0 1 0 .453-1.948c-2.929-.68-5.11-.503-6.649.215c-1.357.633-2.155 1.664-2.461 2.73h-.472c-2.647 0-4.805-1.683-5.446-3.935c-.624-2.187.121-5.221 3.978-7.989l.002-.001c3.67-2.645 7.111-7.725 9.595-12.01a96 96 0 0 0 3.844-7.379l.278-.608l.015-.034l.005-.011zL30 6zm4.841 28.588c-.52 2.09-1.817 3.979-3.227 4.858L31.47 38.15c.882-.55 1.923-1.947 2.344-3.642c.409-1.647.195-3.408-1.16-4.815l1.44-1.388c1.947 2.022 2.192 4.547 1.66 6.685'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(160deg, hsl(170, 55%, 12%) 0%, hsl(168, 50%, 9%) 55%, hsl(168, 45%, 7%) 100%);
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-position: center, center, 0 0, center;
+  background-size: cover, cover, 340px 340px, cover;
 }
 
-/* Audiogram ruling — the faint horizontal decibel grid of a hearing
-   chart, drawn in CSS and faded out toward the edges. */
+/* The hero surface is now the same dark emerald band as the Journey
+   section, so its copy needs the same light-on-dark treatment. */
+.hero-section .hero-title { color: #ffffff; }
+.hero-section .hero-credentials { color: rgba(255, 255, 255, 0.92); }
+.hero-section .hero-reg-id { color: rgba(255, 255, 255, 0.72); }
+.hero-section .languages { color: rgba(255, 255, 255, 0.8); }
+.hero-section .languages strong { color: #ffffff; }
+.hero-section .hero-cta-secondary { color: #ffffff; }
+
+/* Sound-wave atmosphere — faint concentric arcs echoing the ear-canal
+   motif (see .hero-section::before) instead of a graph-paper grid, so
+   the hero surface reads as audiology rather than a dashboard. */
 .hero-atmosphere {
   position: absolute;
   inset: 0;
-  background-image:
-    repeating-linear-gradient(
-      180deg,
-      hsl(168 34% 40% / 0.14) 0 1px,
-      transparent 1px 46px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      hsl(168 34% 40% / 0.08) 0 1px,
-      transparent 1px 92px
-    );
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340' viewBox='0 0 340 340'%3E%3Cg fill='%23145043' fill-opacity='1'%3E%3Cg transform='translate(18,48) scale(0.95)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.154 18c0-6.075 5.304-11 11.846-11s11.846 4.925 11.846 11c0 3.807-2.082 7.163-5.25 9.139c-2.689 1.676-5.52 4.315-5.52 7.772V35c0 3.314-2.892 6-6.46 6c-3.57 0-6.462-2.686-6.462-6v-2H10v2c0 4.418 3.857 8 8.615 8s8.616-3.582 8.616-8v-.089c0-2.404 2.013-4.52 4.565-6.112C35.536 26.467 38 22.501 38 18c0-7.18-6.268-13-14-13s-14 5.82-14 13zM23 14c-1.948 0-3.528 1.315-3.911 3.02h.028c.813.042 1.918.158 3.038.464c1.111.304 2.312.816 3.247 1.697c.964.909 1.598 2.169 1.598 3.827q0 .045-.004.09c-.146 1.61-.54 2.84-1.137 3.762c-.606.937-1.386 1.503-2.202 1.824c-.798.314-1.598.382-2.249.382c-.327 0-.629-.018-.878-.033l-.099-.007l-.3-.018l-.041.077a6 6 0 0 0-.277.674c-.064.174-.137.374-.233.614c-.21.525-.511 1.178-1.017 1.7c-.544.559-1.284.927-2.252.927c-.838 0-1.532-.192-2.076-.565a2.74 2.74 0 0 1-1.031-1.34A3.5 3.5 0 0 1 13 29.891a4 4 0 0 1 .04-.546l.003-.014l.001-.005v-.003c0-.001 0-.002.984.178l.984.179v-.003l.001-.003v-.003v.003l-.004.038a1.7 1.7 0 0 0 .073.695a.74.74 0 0 0 .281.376c.14.096.417.216.948.216c.402 0 .632-.131.817-.321c.221-.228.405-.574.595-1.049c.046-.115.097-.253.152-.401c.13-.35.282-.76.436-1.058q.05-.1.12-.213c.556-1.423 1.417-3.915 1.069-4.958c-.233-.698-.682-1.396-1.096-1.943c-.504-.422-.888-.83-1.12-1.318c-.286-.604-.285-1.235-.284-1.815v-.103c0-3.248 2.721-5.82 6-5.82s6 2.572 6 5.82h-2c0-2.075-1.756-3.82-4-3.82m-2.808 14.92l-.009.01z'/%3E%3C/g%3E%3Cg transform='translate(206,16) scale(0.95)'%3E%3Cpath d='M30.915 6.403a1 1 0 1 0-1.83-.806l-.004.008l-.013.03a30 30 0 0 1-.266.582a93 93 0 0 1-3.76 7.217c-2.48 4.279-5.741 9.017-9.033 11.39c-4.344 3.118-5.65 6.952-4.735 10.162c.896 3.145 3.865 5.387 7.37 5.387h3.229A2.627 2.627 0 0 1 24.5 43h2a4.627 4.627 0 0 0-4.627-4.627h-.576c.224-.336.582-.665 1.126-.918c.994-.464 2.68-.7 5.35-.08a1 1 0 1 0 .453-1.948c-2.929-.68-5.11-.503-6.649.215c-1.357.633-2.155 1.664-2.461 2.73h-.472c-2.647 0-4.805-1.683-5.446-3.935c-.624-2.187.121-5.221 3.978-7.989l.002-.001c3.67-2.645 7.111-7.725 9.595-12.01a96 96 0 0 0 3.844-7.379l.278-.608l.015-.034l.005-.011zL30 6zm4.841 28.588c-.52 2.09-1.817 3.979-3.227 4.858L31.47 38.15c.882-.55 1.923-1.947 2.344-3.642c.409-1.647.195-3.408-1.16-4.815l1.44-1.388c1.947 2.022 2.192 4.547 1.66 6.685'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 340px 340px;
   filter: none;
-  opacity: 1;
+  opacity: 0.1;
   z-index: 0;
   mask-image: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 62%, transparent 100%);
   -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 62%, transparent 100%);
@@ -457,21 +471,41 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     radial-gradient(circle at 84% 72%, hsl(150 40% 45% / 0.12), transparent 28%);
 }
 
-/* Sound-wave motif — concentric arcs radiating from an ear-canal dot,
-   inked dark now that the hero surface is light. */
-.hero-section::before {
-  content: "";
+/* Animated soundwave bg — a bundle of flowing sine lines (matching a
+   reference "woven ribbon" waveform) that scroll continuously across the
+   hero, replacing the previous static tiled ear-canal motif. The SVG
+   holds two identical tiles side by side (via <use>) inside a viewport
+   twice the container's width; animating that layer left by exactly
+   half its own width (-50%) shifts it by exactly one tile, so the loop
+   is seamless. */
+.hero-soundwave-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23145043' stroke-width='1.4' stroke-linecap='round'%3E%3Ccircle cx='14' cy='36' r='2' fill='%23145043' stroke='none'/%3E%3Cpath d='M22 22a19.8 19.8 0 0 1 0 28'/%3E%3Cpath d='M30 27a12.5 12.5 0 0 1 0 18'/%3E%3Cpath d='M38 31a7 7 0 0 1 0 10'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 72px 72px;
-  background-position: 0 0;
-  opacity: 0.06;
-  mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 30%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 30%, transparent 78%);
+  overflow: hidden;
+}
+/* Uniform scaling (no preserveAspectRatio="none") keeps the strokes even
+   — stretching a short viewBox over the full hero height distorted them
+   into blobs. Height follows the width, so the wave reads as a calm band
+   centred in the hero; the -50% Y offset is folded into the scroll
+   keyframes so both transforms can coexist. */
+.hero-soundwave-bg svg {
+  position: absolute;
+  top: 62%;
+  left: 0;
+  width: 200%;
+  height: auto;
+  display: block;
+  animation: heroWaveScroll 34s linear infinite;
+}
+
+@keyframes heroWaveScroll {
+  from { transform: translate(0, -50%); }
+  to   { transform: translate(-50%, -50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-soundwave-bg svg { animation: none; transform: translate(0, -50%); }
 }
 
 .hero-layout {
@@ -559,7 +593,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--muted);
   margin: 0 0 22px;
@@ -758,9 +792,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   object-position: center top;
 }
 
-/* Floating ear/nose badges — gently bobbing icon chips anchored to the
-   portrait frame, reinforcing the ENT specialty at a glance. Icons are
-   Health Icons (healthicons.org), CC0-licensed. */
+/* Floating ear/nose/throat badges — gently bobbing icon chips anchored to
+   the portrait frame, reinforcing the ENT specialty at a glance. Ear and
+   nose are Health Icons (healthicons.org), CC0-licensed; throat is sourced
+   from SVG Repo (svgrepo.com), free for commercial use, recolored to
+   currentColor to match. */
 .hero-float-icon {
   position: absolute;
   z-index: 3;
@@ -790,6 +826,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   color: var(--amber);
   animation-delay: 1.6s;
 }
+.hero-float-icon--throat {
+  bottom: 10%;
+  left: -6%;
+  color: var(--teal);
+  animation-delay: 0.8s;
+}
+.hero-float-icon--throat svg { width: 26px; height: 26px; }
 
 @keyframes heroFloatBob {
   0%, 100% { transform: translateY(0); }
@@ -797,82 +840,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-float-icon { animation: none; }
-}
-
-/* Audiogram card — a real hearing-test chart (grid + right-ear circles +
-   left-ear X's, exactly as printed on a clinic report) floating beside the
-   portrait. This is the one graphic every patient immediately recognizes
-   as "ENT / audiology", so it carries most of the specialty signal. */
-.hero-audiogram-card {
-  position: absolute;
-  z-index: 3;
-  bottom: 12%;
-  left: -4%;
-  width: 178px;
-  background: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-hover);
-  padding: 12px 14px 10px;
-}
-.hero-audiogram-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 6px;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--sky-dark);
-}
-.hero-audiogram-unit {
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.hero-audiogram-chart {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.hero-audiogram-legend {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 6px;
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--muted);
-}
-.hero-audiogram-legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: inherit;
-}
-.hero-audiogram-legend i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--amber);
-  flex-shrink: 0;
-}
-.hero-audiogram-legend-left {
-  border-radius: 0 !important;
-  background: none !important;
-  border: 1.4px solid var(--sky);
-  transform: rotate(45deg);
-}
-.hero-audiogram-legend-tag {
-  margin-left: auto;
-  padding: 2px 8px;
-  border-radius: var(--radius-pill);
-  background: var(--teal-light);
-  color: var(--teal-dark);
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
 }
 
 /* Equalizer bars — a literal audio-visualizer graphic anchored under the
@@ -1078,16 +1045,19 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 /* ============================================================
-   PHILOSOPHY — light split panel
+   PHILOSOPHY — image-left credential card, connected-rail pillars right
    ============================================================ */
 .philosophy-section {
   padding: 64px 0;
   background: var(--bg-3);
 }
 
+/* Care Philosophy — image-left credential card + connected-rail pillars
+   on the right, distinct from the sibling microsites' plain split panel
+   with divider-row pillars. */
 .philosophy-layout {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 56px;
   align-items: center;
 }
@@ -1095,57 +1065,75 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .philosophy-content { min-width: 0; }
 
 .philosophy-pillars {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  margin-top: 26px;
-  border-top: 1px solid var(--border);
+  gap: 26px;
+  margin-top: 30px;
+  padding-left: 4px;
+}
+/* Connecting rail running behind the icon nodes */
+.philosophy-pillars::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  bottom: 26px;
+  left: 25px;
+  width: 2px;
+  background: repeating-linear-gradient(180deg, var(--border) 0 6px, transparent 6px 12px);
+  z-index: 0;
 }
 .philosophy-pillar {
+  position: relative;
   display: flex;
   align-items: flex-start;
-  gap: 18px;
-  padding: 22px 4px;
+  gap: 20px;
+  padding: 0;
   border-radius: 0;
   background: none;
   border: none;
-  border-bottom: 1px solid var(--border);
   box-shadow: none;
+  z-index: 1;
 }
 .pillar-icon {
-  width: 44px; height: 44px;
+  position: relative;
+  width: 52px; height: 52px;
   flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%;
-  background: none;
+  background: var(--accent, var(--sky));
+  border: none;
+  color: #ffffff;
+  font-size: 19px;
+  box-shadow: var(--shadow-card);
+}
+.pillar-index {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 20px; height: 20px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--surface);
   border: 2px solid var(--accent, var(--sky));
   color: var(--accent, var(--sky));
-  font-size: 16px;
   font-family: var(--font-heading);
+  font-size: 10px;
   font-weight: 800;
 }
 .philosophy-pillar:nth-child(1) .pillar-icon { --accent: var(--sky); }
 .philosophy-pillar:nth-child(2) .pillar-icon { --accent: var(--teal); }
 .philosophy-pillar:nth-child(3) .pillar-icon { --accent: var(--amber-dark); }
+.pillar-body { min-width: 0; padding-top: 6px; }
 .philosophy-pillar h3 { font-size: 18px; color: var(--sky-dark); margin: 0 0 6px; }
 .philosophy-pillar p { font-size: 18px; color: var(--muted); margin: 0; }
 
 .philosophy-visual { position: relative; min-width: 0; display: flex; justify-content: center; }
-.philosophy-img-glow {
-  position: absolute;
-  width: 100%;
-  max-width: 520px;
-  height: 460px;
-  border-radius: var(--radius-xl);
-  background: var(--amber);
-  transform: translate(-12px, 12px);
-  z-index: 0;
-}
 .philosophy-img-frame {
   position: relative;
   width: 100%;
-  max-width: 520px;
-  height: 460px;
+  max-width: 460px;
+  height: 440px;
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-hover);
@@ -1154,21 +1142,56 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .philosophy-img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* Floating credential badge overlapping the image's lower-right corner —
+   echoes the hero audiogram card's floating-card language. */
+.philosophy-badge {
+  position: absolute;
+  right: 6%;
+  bottom: -28px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: calc(100% - 24px);
+  padding: 14px 18px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hover);
+  border: 1px solid var(--border-light);
+}
+.philosophy-badge-icon {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #ffffff;
+  font-size: 16px;
+}
+.philosophy-badge-text { min-width: 0; display: flex; flex-direction: column; line-height: 1.3; }
+.philosophy-badge-text strong { font-family: var(--font-heading); font-size: 16px; color: var(--sky-dark); }
+.philosophy-badge-text span { font-size: 14px; color: var(--muted); font-weight: 600; }
+
 /* ============================================================
-   CONSULTATION JOURNEY — staggered ghost-numeral cascade
+   CONSULTATION JOURNEY — vertical alternating zig-zag timeline
    ============================================================ */
 .process-section { position: relative; padding: 64px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
 
+/* Brand emerald gradient with a faint ear / nose / throat line-art motif —
+   replaces the previous unrelated OR-photo + violet tint, which clashed
+   with the site's emerald/coral palette. */
 .process-bg {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(180deg, rgba(18, 10, 42, 0.72) 0%, rgba(18, 10, 42, 0.6) 50%, rgba(18, 10, 42, 0.78) 100%),
-    url('../assets/journey-bg.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    radial-gradient(ellipse 65% 55% at 12% 15%, hsla(8, 72%, 50%, 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 60% at 88% 85%, hsla(150, 45%, 45%, 0.22), transparent 58%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340' viewBox='0 0 340 340'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cg transform='translate(18,48) scale(0.95)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.154 18c0-6.075 5.304-11 11.846-11s11.846 4.925 11.846 11c0 3.807-2.082 7.163-5.25 9.139c-2.689 1.676-5.52 4.315-5.52 7.772V35c0 3.314-2.892 6-6.46 6c-3.57 0-6.462-2.686-6.462-6v-2H10v2c0 4.418 3.857 8 8.615 8s8.616-3.582 8.616-8v-.089c0-2.404 2.013-4.52 4.565-6.112C35.536 26.467 38 22.501 38 18c0-7.18-6.268-13-14-13s-14 5.82-14 13zM23 14c-1.948 0-3.528 1.315-3.911 3.02h.028c.813.042 1.918.158 3.038.464c1.111.304 2.312.816 3.247 1.697c.964.909 1.598 2.169 1.598 3.827q0 .045-.004.09c-.146 1.61-.54 2.84-1.137 3.762c-.606.937-1.386 1.503-2.202 1.824c-.798.314-1.598.382-2.249.382c-.327 0-.629-.018-.878-.033l-.099-.007l-.3-.018l-.041.077a6 6 0 0 0-.277.674c-.064.174-.137.374-.233.614c-.21.525-.511 1.178-1.017 1.7c-.544.559-1.284.927-2.252.927c-.838 0-1.532-.192-2.076-.565a2.74 2.74 0 0 1-1.031-1.34A3.5 3.5 0 0 1 13 29.891a4 4 0 0 1 .04-.546l.003-.014l.001-.005v-.003c0-.001 0-.002.984.178l.984.179v-.003l.001-.003v-.003v.003l-.004.038a1.7 1.7 0 0 0 .073.695a.74.74 0 0 0 .281.376c.14.096.417.216.948.216c.402 0 .632-.131.817-.321c.221-.228.405-.574.595-1.049c.046-.115.097-.253.152-.401c.13-.35.282-.76.436-1.058q.05-.1.12-.213c.556-1.423 1.417-3.915 1.069-4.958c-.233-.698-.682-1.396-1.096-1.943c-.504-.422-.888-.83-1.12-1.318c-.286-.604-.285-1.235-.284-1.815v-.103c0-3.248 2.721-5.82 6-5.82s6 2.572 6 5.82h-2c0-2.075-1.756-3.82-4-3.82m-2.808 14.92l-.009.01z'/%3E%3C/g%3E%3Cg transform='translate(206,16) scale(0.95)'%3E%3Cpath d='M30.915 6.403a1 1 0 1 0-1.83-.806l-.004.008l-.013.03a30 30 0 0 1-.266.582a93 93 0 0 1-3.76 7.217c-2.48 4.279-5.741 9.017-9.033 11.39c-4.344 3.118-5.65 6.952-4.735 10.162c.896 3.145 3.865 5.387 7.37 5.387h3.229A2.627 2.627 0 0 1 24.5 43h2a4.627 4.627 0 0 0-4.627-4.627h-.576c.224-.336.582-.665 1.126-.918c.994-.464 2.68-.7 5.35-.08a1 1 0 1 0 .453-1.948c-2.929-.68-5.11-.503-6.649.215c-1.357.633-2.155 1.664-2.461 2.73h-.472c-2.647 0-4.805-1.683-5.446-3.935c-.624-2.187.121-5.221 3.978-7.989l.002-.001c3.67-2.645 7.111-7.725 9.595-12.01a96 96 0 0 0 3.844-7.379l.278-.608l.015-.034l.005-.011zL30 6zm4.841 28.588c-.52 2.09-1.817 3.979-3.227 4.858L31.47 38.15c.882-.55 1.923-1.947 2.344-3.642c.409-1.647.195-3.408-1.16-4.815l1.44-1.388c1.947 2.022 2.192 4.547 1.66 6.685'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(160deg, hsl(170, 55%, 12%) 0%, hsl(168, 50%, 9%) 55%, hsl(168, 45%, 7%) 100%);
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-position: center, center, 0 0, center;
+  background-size: cover, cover, 340px 340px, cover;
   z-index: 0;
 }
 
@@ -1179,63 +1202,70 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .process-section .process-title { color: #ffffff; }
 .process-section .process-subtitle { color: rgba(255, 255, 255, 0.85); }
 
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: start;
-  gap: 0;
+/* Vertical alternating timeline — a centred connecting rail with step
+   cards zig-zagging left/right, replacing the sibling microsites'
+   horizontal 4-column row with a top rail. */
+.process-timeline {
   position: relative;
+  max-width: 900px;
+  margin: 0 auto;
 }
-
-/* Connected top rail — a single line running behind the step nodes,
-   replacing the cascading ghost-numeral card stack */
-.process-grid::before {
+.process-timeline::before {
   content: "";
   position: absolute;
-  top: 31px;
-  left: 12.5%;
-  right: 12.5%;
-  height: 2px;
+  left: 50%;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
   background: hsla(0, 0%, 100%, 0.25);
+  transform: translateX(-50%);
   z-index: 0;
 }
 
 .process-step {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 84px 1fr;
+  align-items: center;
+  column-gap: 32px;
   min-width: 0;
   background: none;
   border: none;
   border-radius: 0;
-  padding: 0 18px;
+  padding: 0;
   box-shadow: none;
   overflow: visible;
   transition: none;
-  text-align: center;
+  text-align: left;
 }
+.process-step + .process-step { margin-top: 44px; }
 .process-step:hover { transform: none; box-shadow: none; }
 
-.process-step:nth-child(2),
-.process-step:nth-child(4) { margin-top: 0; }
+.process-step-marker { grid-column: 2; justify-self: center; z-index: 1; }
+
+.process-step-card { grid-column: 3; min-width: 0; }
+.process-step:nth-child(even) .process-step-card {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+}
+.process-step:nth-child(even) .step-number { margin-left: auto; margin-right: 0; }
 
 .step-number {
-  display: none !important;
-  position: absolute;
-  top: -10px;
-  right: 8px;
+  display: inline-flex !important;
+  position: static;
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 800;
   line-height: 1;
-  color: var(--sky-dark);
-  opacity: 1;
-  z-index: 2;
-  user-select: none;
-  pointer-events: none;
+  color: #ffffff;
   background: var(--amber);
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  margin: 0 0 10px;
 }
 
 .step-circle {
@@ -1248,11 +1278,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   border: 3px solid var(--accent, var(--sky));
   color: var(--accent, var(--sky));
   font-size: 24px;
-  margin: 0 auto 22px;
   box-shadow: var(--shadow-card);
   transition: box-shadow 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
-.process-step:hover .step-circle { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.process-step:hover .step-circle { transform: scale(1.06); box-shadow: var(--shadow-hover); }
 .process-step:hover .step-circle {
   color: #fff;
   background: var(--accent, var(--sky));
@@ -1296,11 +1325,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   margin-right: auto;
 }
 
-.contact-cta-wrap {
-  text-align: center;
-  margin-top: 32px;
-}
-
 .contact-item {
   text-align: center;
   padding: 0 4px;
@@ -1328,10 +1352,24 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    TESTIMONIALS — light card carousel
    ============================================================ */
-.testimonials-section { position: relative; padding: 64px 0; background: var(--bg-2); overflow: hidden; }
+.testimonials-section {
+  position: relative;
+  padding: 64px 0;
+  overflow: hidden;
+  background-image:
+    radial-gradient(ellipse 65% 55% at 12% 15%, hsla(8, 72%, 50%, 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 60% at 88% 85%, hsla(150, 45%, 45%, 0.22), transparent 58%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340' viewBox='0 0 340 340'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cg transform='translate(18,48) scale(0.95)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.154 18c0-6.075 5.304-11 11.846-11s11.846 4.925 11.846 11c0 3.807-2.082 7.163-5.25 9.139c-2.689 1.676-5.52 4.315-5.52 7.772V35c0 3.314-2.892 6-6.46 6c-3.57 0-6.462-2.686-6.462-6v-2H10v2c0 4.418 3.857 8 8.615 8s8.616-3.582 8.616-8v-.089c0-2.404 2.013-4.52 4.565-6.112C35.536 26.467 38 22.501 38 18c0-7.18-6.268-13-14-13s-14 5.82-14 13zM23 14c-1.948 0-3.528 1.315-3.911 3.02h.028c.813.042 1.918.158 3.038.464c1.111.304 2.312.816 3.247 1.697c.964.909 1.598 2.169 1.598 3.827q0 .045-.004.09c-.146 1.61-.54 2.84-1.137 3.762c-.606.937-1.386 1.503-2.202 1.824c-.798.314-1.598.382-2.249.382c-.327 0-.629-.018-.878-.033l-.099-.007l-.3-.018l-.041.077a6 6 0 0 0-.277.674c-.064.174-.137.374-.233.614c-.21.525-.511 1.178-1.017 1.7c-.544.559-1.284.927-2.252.927c-.838 0-1.532-.192-2.076-.565a2.74 2.74 0 0 1-1.031-1.34A3.5 3.5 0 0 1 13 29.891a4 4 0 0 1 .04-.546l.003-.014l.001-.005v-.003c0-.001 0-.002.984.178l.984.179v-.003l.001-.003v-.003v.003l-.004.038a1.7 1.7 0 0 0 .073.695a.74.74 0 0 0 .281.376c.14.096.417.216.948.216c.402 0 .632-.131.817-.321c.221-.228.405-.574.595-1.049c.046-.115.097-.253.152-.401c.13-.35.282-.76.436-1.058q.05-.1.12-.213c.556-1.423 1.417-3.915 1.069-4.958c-.233-.698-.682-1.396-1.096-1.943c-.504-.422-.888-.83-1.12-1.318c-.286-.604-.285-1.235-.284-1.815v-.103c0-3.248 2.721-5.82 6-5.82s6 2.572 6 5.82h-2c0-2.075-1.756-3.82-4-3.82m-2.808 14.92l-.009.01z'/%3E%3C/g%3E%3Cg transform='translate(206,16) scale(0.95)'%3E%3Cpath d='M30.915 6.403a1 1 0 1 0-1.83-.806l-.004.008l-.013.03a30 30 0 0 1-.266.582a93 93 0 0 1-3.76 7.217c-2.48 4.279-5.741 9.017-9.033 11.39c-4.344 3.118-5.65 6.952-4.735 10.162c.896 3.145 3.865 5.387 7.37 5.387h3.229A2.627 2.627 0 0 1 24.5 43h2a4.627 4.627 0 0 0-4.627-4.627h-.576c.224-.336.582-.665 1.126-.918c.994-.464 2.68-.7 5.35-.08a1 1 0 1 0 .453-1.948c-2.929-.68-5.11-.503-6.649.215c-1.357.633-2.155 1.664-2.461 2.73h-.472c-2.647 0-4.805-1.683-5.446-3.935c-.624-2.187.121-5.221 3.978-7.989l.002-.001c3.67-2.645 7.111-7.725 9.595-12.01a96 96 0 0 0 3.844-7.379l.278-.608l.015-.034l.005-.011zL30 6zm4.841 28.588c-.52 2.09-1.817 3.979-3.227 4.858L31.47 38.15c.882-.55 1.923-1.947 2.344-3.642c.409-1.647.195-3.408-1.16-4.815l1.44-1.388c1.947 2.022 2.192 4.547 1.66 6.685'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(160deg, hsl(170, 55%, 12%) 0%, hsl(168, 50%, 9%) 55%, hsl(168, 45%, 7%) 100%);
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-position: center, center, 0 0, center;
+  background-size: cover, cover, 340px 340px, cover;
+}
 .testimonials-section > .container { position: relative; z-index: 1; }
 .testimonials-header { text-align: center; margin: 0 auto 44px; max-width: 700px; }
 .testimonials-subtitle { margin-left: auto; margin-right: auto; }
+.testimonials-section .testimonials-title { color: #ffffff; }
+.testimonials-section .testimonials-subtitle { color: rgba(255, 255, 255, 0.85); }
 
 .testimonials-carousel-wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 56px; }
 
@@ -1542,7 +1580,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .booking-tab {
   background: none; border: none; padding: 10px 20px;
-  font-size: 16px; font-weight: 600; color: var(--muted); cursor: pointer;
+  font-family: inherit; font-size: 16px; font-weight: 600; color: var(--muted); cursor: pointer;
   border-bottom: 3px solid transparent; margin-bottom: -2px;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
@@ -1590,6 +1628,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-datepicker { position: relative; }
 .booking-input-with-icon { position: relative; }
 .booking-date-display { cursor: pointer; }
+.booking-field input.booking-date-display { padding-right: 40px; }
+.booking-date-icon { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
 .booking-calendar {
   position: absolute;
   top: calc(100% + 8px);
@@ -1667,6 +1707,64 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-field--file input[type="file"] { display: none; }
 .booking-upload-help { font-size: 16px; color: var(--muted); }
 
+.booking-upload-preview {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  min-width: 0;
+  height: auto;
+  max-width: 100%;
+}
+.booking-upload-preview.is-visible { display: flex; }
+.booking-upload-preview-thumb {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--bg-2);
+}
+/* The global `img { display: block }` reset beats the browser's native
+   [hidden] handling for <img> specifically — restore it here so a PDF
+   upload doesn't leave a broken-image box showing next to the file icon. */
+.booking-upload-preview-thumb[hidden] { display: none; }
+.booking-upload-preview-icon {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--amber-light);
+  color: var(--amber-dark);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+/* Same issue as the thumb above — an explicit `display: flex` here would
+   otherwise beat the browser's native [hidden] handling. */
+.booking-upload-preview-icon[hidden] { display: none; }
+.booking-upload-preview-info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.booking-upload-preview-name {
+  font-size: 16px; font-weight: 600; color: var(--sky-dark);
+  overflow-wrap: break-word; word-break: break-word;
+}
+.booking-upload-preview-size { font-size: 14px; color: var(--muted); }
+.booking-upload-preview-remove {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.booking-upload-preview-remove:hover { background: hsl(0, 72%, 94%); color: #dc2626; }
+
 .booking-consent-field { display: flex !important; flex-direction: row !important; align-items: center; gap: 10px; }
 .booking-consent-field input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--amber); cursor: pointer; }
 .booking-consent-field label { font-size: 16px; color: var(--sky-dark); cursor: pointer; max-width: none; }
@@ -1674,7 +1772,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-submit-btn {
   width: 100%; padding: 14px; border: none; border-radius: var(--radius-pill);
   background: var(--amber);
-  color: #ffffff; font-size: 16px; font-weight: 700;
+  font-family: inherit; color: #ffffff; font-size: 16px; font-weight: 700;
   cursor: pointer; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .booking-submit-btn:hover:not([disabled]) { background: var(--amber-dark); transform: translateY(-2px); box-shadow: var(--shadow-amber); }
@@ -1900,6 +1998,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   color: hsl(160, 25%, 78%);
   margin: 0;
 }
+/* The global reset's `span { color }` rule beats inherited color, so the
+   wrapped "All rights reserved." span needs its own explicit override. */
+.footer-bottom-row p .footer-rights {
+  color: inherit;
+}
 
 /* ============================================================
    LARGE SCREEN TYPOGRAPHY SCALING
@@ -1967,7 +2070,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .about-layout,
   .philosophy-layout { grid-template-columns: 1fr; }
   .about-aside { max-width: 340px; margin: 0 auto; }
-  .philosophy-visual { order: -1; }
+  .philosophy-visual { margin-bottom: 44px; }
+  .philosophy-badge { right: auto; left: 50%; transform: translateX(-50%); }
   /* 2 per row — each card takes 6 of the 12 tracks. A lone final card keeps
      its normal width and is centred by starting on track 4. */
   .service-card,
@@ -1992,13 +2096,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .hero-visual { order: -1; margin-bottom: 24px; min-height: 320px; }
   .hero-portrait { max-width: 260px; }
   .hero-visual-blob { width: min(300px, 88%); }
-  .hero-visual::before { width: min(310px, 92%); }
-  .hero-visual::after { width: min(348px, 104%); }
+  .hero-visual::before,
+  .hero-visual::after { display: none; }
   .hero-float-icon { width: 50px; height: 50px; }
   .hero-float-icon svg { width: 24px; height: 24px; }
   .hero-float-icon--ear { top: 2%; left: 4%; }
   .hero-float-icon--nose { top: 2%; right: 4%; }
-  .hero-audiogram-card { width: 160px; bottom: -4%; left: 50%; transform: translateX(-50%); }
+  .hero-float-icon--throat { bottom: 4%; left: 4%; }
+  .hero-section .hero-soundwave-bg svg { top: 34%; }
   .hero-stats-grid { max-width: 480px; }
   .languages { justify-content: center; }
   .hero-actions { justify-content: center; }
@@ -2011,15 +2116,23 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .hero-visual { flex-direction: column; flex-wrap: wrap; gap: 10px; }
 }
 
-@media (max-width: 900px) {
-  .process-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
-  .process-grid::before { display: none; }
-}
-
-@media (max-width: 560px) {
-  .process-grid { grid-template-columns: 1fr; gap: 32px; }
-  .process-step:nth-child(2),
-  .process-step:nth-child(4) { margin-top: 0; }
+/* Below 760px the alternating zig-zag collapses to a single left-aligned
+   column: rail moves to the left edge, marker + card sit side by side. */
+@media (max-width: 760px) {
+  .process-timeline::before { left: 27px; transform: none; }
+  .process-step {
+    grid-template-columns: 56px 1fr;
+    column-gap: 20px;
+  }
+  .process-step + .process-step { margin-top: 36px; }
+  .process-step-marker { grid-column: 1; }
+  .process-step-card,
+  .process-step:nth-child(even) .process-step-card {
+    grid-column: 2;
+    text-align: left;
+  }
+  .process-step:nth-child(even) .step-number { margin-left: 0; margin-right: auto; }
+  .step-circle { width: 56px; height: 56px; font-size: 20px; }
 }
 
 @media (max-width: 1030px) {
@@ -2066,6 +2179,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     justify-content: flex-start;
     text-align: left;
   }
+  .footer-rights { display: block; margin-top: 2px; }
   .contact-card { padding: 32px 20px; }
   .testimonial-card { flex: 0 0 100%; }
   .about-section { padding-top: 64px; }

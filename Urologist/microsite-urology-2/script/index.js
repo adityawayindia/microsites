@@ -651,6 +651,64 @@ if (menuToggle && mainNav) {
       if (!field) return;
       field.addEventListener("change", () => validateField(name));
     });
+
+    if (form.report) {
+      form.report.addEventListener("change", () => {
+        renderReportPreview(form.report.files[0]);
+      });
+    }
+
+    const removeBtn = document.getElementById("reportPreviewRemove");
+    if (removeBtn) {
+      removeBtn.addEventListener("click", () => {
+        form.report.value = "";
+        renderReportPreview(null);
+        validateField("report");
+      });
+    }
+  }
+
+  function formatFileSize(bytes) {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  }
+
+  function renderReportPreview(file) {
+    const preview = document.getElementById("reportPreview");
+    const thumb = document.getElementById("reportPreviewThumb");
+    const icon = document.getElementById("reportPreviewIcon");
+    const nameEl = document.getElementById("reportPreviewName");
+    const sizeEl = document.getElementById("reportPreviewSize");
+    if (!preview || !thumb || !icon || !nameEl || !sizeEl) return;
+
+    if (thumb.src && thumb.src.startsWith("blob:")) {
+      URL.revokeObjectURL(thumb.src);
+    }
+
+    if (!file) {
+      preview.classList.remove("is-visible");
+      thumb.hidden = true;
+      thumb.src = "";
+      icon.hidden = true;
+      return;
+    }
+
+    nameEl.textContent = file.name;
+    sizeEl.textContent = formatFileSize(file.size);
+
+    if (file.type.startsWith("image/")) {
+      thumb.src = URL.createObjectURL(file);
+      thumb.alt = file.name;
+      thumb.hidden = false;
+      icon.hidden = true;
+    } else {
+      thumb.hidden = true;
+      thumb.src = "";
+      icon.hidden = false;
+    }
+
+    preview.classList.add("is-visible");
   }
 
   function setA11yAttributes() {
@@ -836,6 +894,7 @@ if (menuToggle && mainNav) {
     submitBtnEl.style.display = "block";
 
     form.reset();
+    renderReportPreview(null);
     closeModal();
     showBookingPopup(msg, true);
 

@@ -127,11 +127,15 @@ if (menuToggle && mainNav) {
     const targetCard = cards[currentIndex];
     const offset = targetCard ? -targetCard.offsetLeft : 0;
     track.style.transform = `translateX(${offset}px)`;
-    updateDots();
+    setActiveDot();
     resetAutoPlay();
   }
 
-  function updateDots() {
+  // Rebuilds the dot buttons — only needed on init/resize, when the dot
+  // count itself can change. Calling this from goTo() on every click was
+  // tearing down and re-creating the whole row each time, causing a brief
+  // reflow that nudged mobile scroll position after tapping prev/next.
+  function buildDots() {
     if (!dotsContainer) return;
     dotsContainer.innerHTML = "";
     const maxIndex = getMaxIndex();
@@ -143,6 +147,13 @@ if (menuToggle && mainNav) {
       dot.addEventListener("click", () => goTo(i));
       dotsContainer.appendChild(dot);
     }
+  }
+
+  function setActiveDot() {
+    if (!dotsContainer) return;
+    dotsContainer.querySelectorAll(".carousel-dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+    });
   }
 
   function resetAutoPlay() {
@@ -195,11 +206,11 @@ if (menuToggle && mainNav) {
 
   window.addEventListener("resize", () => {
     goTo(Math.min(currentIndex, getMaxIndex()));
-    updateDots();
+    buildDots();
   });
 
   goTo(0);
-  updateDots();
+  buildDots();
 })();
 
 // Gallery Lightbox
@@ -326,11 +337,15 @@ if (menuToggle && mainNav) {
     const targetCard = cards[currentIndex];
     const offset = targetCard ? -targetCard.offsetLeft : 0;
     track.style.transform = `translateX(${offset}px)`;
-    updateDots();
+    setActiveDot();
     resetAutoPlay();
   }
 
-  function updateDots() {
+  // Rebuilds the dot buttons — only needed on init/resize, when the dot
+  // count itself can change. Calling this from goTo() on every click was
+  // tearing down and re-creating the whole row each time, causing a brief
+  // reflow that nudged mobile scroll position after tapping prev/next.
+  function buildDots() {
     if (!dotsContainer) return;
     dotsContainer.innerHTML = "";
     const maxIndex = getMaxIndex();
@@ -342,6 +357,13 @@ if (menuToggle && mainNav) {
       dot.addEventListener("click", () => goTo(i));
       dotsContainer.appendChild(dot);
     }
+  }
+
+  function setActiveDot() {
+    if (!dotsContainer) return;
+    dotsContainer.querySelectorAll(".carousel-dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+    });
   }
 
   function resetAutoPlay() {
@@ -394,11 +416,11 @@ if (menuToggle && mainNav) {
 
   window.addEventListener("resize", () => {
     goTo(Math.min(currentIndex, getMaxIndex()));
-    updateDots();
+    buildDots();
   });
 
   goTo(0);
-  updateDots();
+  buildDots();
 })();
 
 // Booking Modal & Form Validation
@@ -651,6 +673,64 @@ if (menuToggle && mainNav) {
       if (!field) return;
       field.addEventListener("change", () => validateField(name));
     });
+
+    if (form.report) {
+      form.report.addEventListener("change", () => {
+        renderReportPreview(form.report.files[0]);
+      });
+    }
+
+    const removeBtn = document.getElementById("reportPreviewRemove");
+    if (removeBtn) {
+      removeBtn.addEventListener("click", () => {
+        form.report.value = "";
+        renderReportPreview(null);
+        validateField("report");
+      });
+    }
+  }
+
+  function formatFileSize(bytes) {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  }
+
+  function renderReportPreview(file) {
+    const preview = document.getElementById("reportPreview");
+    const thumb = document.getElementById("reportPreviewThumb");
+    const icon = document.getElementById("reportPreviewIcon");
+    const nameEl = document.getElementById("reportPreviewName");
+    const sizeEl = document.getElementById("reportPreviewSize");
+    if (!preview || !thumb || !icon || !nameEl || !sizeEl) return;
+
+    if (thumb.src && thumb.src.startsWith("blob:")) {
+      URL.revokeObjectURL(thumb.src);
+    }
+
+    if (!file) {
+      preview.classList.remove("is-visible");
+      thumb.hidden = true;
+      thumb.src = "";
+      icon.hidden = true;
+      return;
+    }
+
+    nameEl.textContent = file.name;
+    sizeEl.textContent = formatFileSize(file.size);
+
+    if (file.type.startsWith("image/")) {
+      thumb.src = URL.createObjectURL(file);
+      thumb.alt = file.name;
+      thumb.hidden = false;
+      icon.hidden = true;
+    } else {
+      thumb.hidden = true;
+      thumb.src = "";
+      icon.hidden = false;
+    }
+
+    preview.classList.add("is-visible");
   }
 
   function setA11yAttributes() {
@@ -836,6 +916,7 @@ if (menuToggle && mainNav) {
     submitBtnEl.style.display = "block";
 
     form.reset();
+    renderReportPreview(null);
     closeModal();
     showBookingPopup(msg, true);
 

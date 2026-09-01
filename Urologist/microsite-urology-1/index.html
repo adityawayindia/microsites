@@ -144,7 +144,7 @@
       <div class="hero-content">
         <p class="expert-badge">
           <span class="expert-badge-pulse" aria-hidden="true"></span>
-          Consultant Urologist &amp; Uro-Oncology Specialist
+          Consultant Urologist
         </p>
 
         <h1 class="hero-title">Dr. Arjun Mehta</h1>
@@ -612,6 +612,7 @@
             <div class="booking-datepicker" id="preferredDateField">
               <div class="booking-input-with-icon">
                 <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+                <i class="fa-solid fa-calendar-days booking-date-icon" aria-hidden="true"></i>
               </div>
               <input type="hidden" id="preferredDate" name="preferredDate" />
               <div class="booking-calendar" id="preferredDateCalendar" hidden>
@@ -661,6 +662,17 @@
             <label class="booking-upload-btn" for="report">Upload</label>
             <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
             <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+          </div>
+          <div class="booking-upload-preview" id="reportPreview">
+            <img class="booking-upload-preview-thumb" id="reportPreviewThumb" alt="" hidden />
+            <div class="booking-upload-preview-icon" id="reportPreviewIcon" hidden><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></div>
+            <div class="booking-upload-preview-info">
+              <span class="booking-upload-preview-name" id="reportPreviewName"></span>
+              <span class="booking-upload-preview-size" id="reportPreviewSize"></span>
+            </div>
+            <button type="button" class="booking-upload-preview-remove" id="reportPreviewRemove" aria-label="Remove uploaded file">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
           </div>
           <p class="booking-error" data-error-for="report"></p>
         </div>

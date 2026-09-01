@@ -1338,7 +1338,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .booking-tab {
   background: none; border: none; padding: 10px 20px;
-  font-size: 16px; font-weight: 600; color: var(--muted); cursor: pointer;
+  font-family: inherit; font-size: 16px; font-weight: 600; color: var(--muted); cursor: pointer;
   border-bottom: 3px solid transparent; margin-bottom: -2px;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
@@ -1386,6 +1386,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-datepicker { position: relative; }
 .booking-input-with-icon { position: relative; }
 .booking-date-display { cursor: pointer; }
+.booking-field input.booking-date-display { padding-right: 40px; }
+.booking-date-icon { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
 .booking-calendar {
   position: absolute;
   top: calc(100% + 8px);
@@ -1462,6 +1464,64 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-upload-btn:hover { filter: brightness(0.9); }
 .booking-field--file input[type="file"] { display: none; }
 .booking-upload-help { font-size: 16px; color: var(--muted); }
+
+.booking-upload-preview {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  min-width: 0;
+  height: auto;
+  max-width: 100%;
+}
+.booking-upload-preview.is-visible { display: flex; }
+.booking-upload-preview-thumb {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--bg-2);
+}
+/* The global `img { display: block }` reset beats the browser's native
+   [hidden] handling for <img> specifically — restore it here so a PDF
+   upload doesn't leave a broken-image box showing next to the file icon. */
+.booking-upload-preview-thumb[hidden] { display: none; }
+.booking-upload-preview-icon {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--amber-light);
+  color: var(--amber-dark);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+/* Same issue as the thumb above — an explicit `display: flex` here would
+   otherwise beat the browser's native [hidden] handling. */
+.booking-upload-preview-icon[hidden] { display: none; }
+.booking-upload-preview-info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.booking-upload-preview-name {
+  font-size: 16px; font-weight: 600; color: var(--sky-dark);
+  overflow-wrap: break-word; word-break: break-word;
+}
+.booking-upload-preview-size { font-size: 14px; color: var(--muted); }
+.booking-upload-preview-remove {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.booking-upload-preview-remove:hover { background: hsl(0, 72%, 94%); color: #dc2626; }
 
 .booking-consent-field { display: flex !important; flex-direction: row !important; align-items: center; gap: 10px; }
 .booking-consent-field input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--amber); cursor: pointer; }

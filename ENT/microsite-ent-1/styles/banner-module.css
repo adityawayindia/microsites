@@ -53,7 +53,7 @@
 .digidr-banner-img {
   width: 100%;
   height: auto;
-  max-height: 220px; /* Cap height on desktop so it doesn't feel oversized (~16:3) */
+  aspect-ratio: 16 / 2.5; /* Fixed banner ratio on desktop */
   object-fit: cover;
   object-position: center;
   display: block;
