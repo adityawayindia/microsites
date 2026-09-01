@@ -70,7 +70,7 @@
                 '</div>' +
 
                 /* Footer */
-                '<div class="chatbot-footer">Informational only, not medical advice.<br>Consult your doctor</div>' +
+                '<div class="chatbot-footer">Informational only. Not medical advice. Consult your doctor.</div>' +
 
             '</div>' +
 

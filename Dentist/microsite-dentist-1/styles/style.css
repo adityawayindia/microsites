@@ -1123,7 +1123,7 @@ margin-bottom: 0;
 }
 
 .contact-header {
-  text-align: left;
+  text-align: center;
   margin: 0;
   max-width: none;
   grid-column: auto;
@@ -1131,17 +1131,18 @@ margin-bottom: 0;
 }
 
 .contact-header h2 {
-  margin: 10px 0 14px;
+  margin: 10px auto 14px;
   font-family: "Outfit", sans-serif;
-  font-size: clamp(28px, 3.2vw, 42px);
+  font-size: clamp(24px, 3.2vw, 42px);
   font-weight: 600;
   letter-spacing: -0.03em;
   color: var(--deep);
-  max-width: 14ch;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .contact-header p {
-  margin: 0;
+  margin: 0 auto;
   font-size: 16px;
   color: var(--muted);
   line-height: 1.5;
@@ -2693,6 +2694,7 @@ margin-bottom: 0;
     font-size: 24px;
     max-width: none;
     color: var(--deep);
+    white-space: normal;
   }
 
   .contact-header p {
@@ -3146,6 +3148,7 @@ margin-bottom: 0;
   .contact-header h2 {
     max-width: none;
     color: var(--deep);
+    white-space: normal;
   }
 
   .testimonials-section {

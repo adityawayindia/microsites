@@ -2812,7 +2812,7 @@ margin-bottom: 0;
 
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 16px;
   }
 
   .services-section {
@@ -2834,9 +2834,7 @@ margin-bottom: 0;
   .service-card,
   .service-card:nth-child(odd),
   .service-card:nth-child(even) {
-    padding: 20px 0;
-    border-right: none;
-    grid-template-columns: 44px 1fr;
+    padding: 20px;
   }
 
   .service-card-title {
