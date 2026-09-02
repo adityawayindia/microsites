@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 /* ============================================================
    TOKEN LAYER — Aubergine / Ivory / Ochre ENT Palette
@@ -62,7 +62,7 @@
   --shadow-amber:  none;
   --shadow-teal:   none;
 
-  --font-heading:  'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-heading:  'Sora', 'IBM Plex Sans', sans-serif;
   --font-body:     'IBM Plex Sans', 'Segoe UI', sans-serif;
 }
 
@@ -565,6 +565,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     radial-gradient(circle at 84% 72%, hsl(295 45% 35% / 0.09), transparent 28%);
 }
 
+
 /* Animated soundwave bg — a bundle of flowing sine lines (matching a
    reference "woven ribbon" waveform) that scroll continuously across the
    hero, replacing the previous static tiled ear-canal motif. The SVG
@@ -843,20 +844,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .hero-visual { justify-content: flex-end; }
 }
 
-/* A solid aubergine block offset behind the portrait — the printed-plate
-   register mark of this system, replacing the old blurred colour blob. */
-/* Sized to match .hero-portrait exactly so only the offset sliver shows. */
+/* Retired: the solid aubergine plate offset behind the portrait read as a
+   heavy black/near-black border to users rather than a printed-plate
+   register mark, so it's removed — the two hairline rules below (::before/
+   ::after) still give the frame its registration-mark feel without the
+   solid block. */
 .hero-visual-blob {
-  position: absolute;
-  width: min(380px, 100%);
-  aspect-ratio: 3 / 4;
-  border-radius: 0;
-  background: var(--sky-dark);
-  filter: none;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(calc(-50% + 18px), calc(-50% + 18px));
+  display: none;
 }
 
 /* Two concentric square registration rules around the portrait. */
@@ -891,25 +885,26 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 @media (min-width: 901px) {
   .hero-visual::before,
   .hero-visual::after { left: auto; right: 0; transform: translateY(-50%); }
-  /* The plate sits proud of the portrait's lower-right corner so the
-     photo reads as printed over it. */
-  .hero-visual-blob {
-    left: auto;
-    right: -16px;
-    width: min(380px, 100%);
-    transform: translateY(calc(-50% + 18px));
-  }
 }
 
-/* One registration rule is enough alongside the solid plate — the second
-   outer rule made the corner busy. */
+/* One registration rule is enough — the second outer rule made the
+   corner busy. */
 .hero-visual::after { display: none; }
+
+/* Matches .hero-portrait's own width, not .hero-visual's (which is wider
+   and end-aligns the portrait on desktop) — so the three corner bubbles
+   below anchor to the photo itself instead of drifting into the empty
+   flex space beside it. */
+.hero-portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
 
 .hero-portrait {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 380px;
   aspect-ratio: 3 / 4;
   border-radius: 0;
   overflow: hidden;
@@ -933,7 +928,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    from SVG Repo (svgrepo.com), free for commercial use, recolored to
    currentColor to match. */
 .hero-float-icon {
-  display: none;
+  display: flex;
   position: absolute;
   z-index: 3;
   width: 60px;
@@ -950,20 +945,22 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   width: 30px;
   height: 30px;
 }
+/* Three corners of the portrait frame: ear top-left, nose top-right,
+   throat bottom-left — each bubble half-overlapping the photo's edge. */
 .hero-float-icon--ear {
-  top: 4%;
-  left: -2%;
+  top: -14px;
+  left: -14px;
   color: var(--sky);
 }
 .hero-float-icon--nose {
-  top: 2%;
-  right: -3%;
+  top: -14px;
+  right: -14px;
   color: var(--amber);
   animation-delay: 1.6s;
 }
 .hero-float-icon--throat {
-  bottom: 10%;
-  left: -6%;
+  bottom: -14px;
+  left: -14px;
   color: var(--teal);
   animation-delay: 0.8s;
 }
@@ -1065,13 +1062,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .about-photo-frame img { width: 100%; height: 100%; min-height: 0; object-fit: cover; display: block; }
 
 .about-content { min-width: 0; }
-/* Standfirst: a serif italic pull-quote ruled off in ochre, the way a
-   feature article opens. */
+/* Standfirst: a medium-weight pull-quote ruled off in ochre, the way a
+   feature article opens. Sora has no true italic, so the emphasis comes
+   from size and the rule instead of a synthetic oblique. */
 .about-description {
   font-family: var(--font-heading);
-  font-size: 24px;
-  font-style: italic;
-  font-weight: 400;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
   color: var(--sky-dark);
   margin: 0 0 20px;
   line-height: 1.45;
@@ -1079,8 +1077,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   border-left: 3px solid var(--amber);
 }
 .about-description::first-letter {
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: 500;
   color: var(--sky-dark);
   float: none;
   line-height: 1;
@@ -1427,24 +1425,27 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   margin: 0 0 12px;
 }
 
-/* Square step plate on the timeline rail. */
+/* Square step plate on the timeline rail. Solid amber fill by default —
+   an outlined icon on the dark aubergine ground only cleared 3.1:1
+   contrast, well under AA; white-on-amber clears 5.5:1. */
 .step-circle {
   position: relative;
   z-index: 1;
   width: 62px; height: 62px;
   display: flex; align-items: center; justify-content: center;
   border-radius: var(--radius-sm);
-  background: var(--sky-deep);
+  background: var(--accent, var(--amber));
   border: 1px solid var(--accent, var(--amber));
-  color: var(--accent, var(--amber));
+  color: #ffffff;
   font-size: 23px;
   box-shadow: none;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 .process-step:hover .step-circle { transform: none; box-shadow: none; }
 .process-step:hover .step-circle {
-  color: var(--sky-deep);
-  background: var(--accent, var(--amber));
+  background: var(--sky-deep);
+  border-color: #ffffff;
+  color: #ffffff;
 }
 .step-circle-ring { display: none; }
 
@@ -1604,11 +1605,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .testimonial-card h3 { font-size: 22px; font-weight: 600; margin: 0 0 6px; color: var(--sky-dark); }
 .testimonial-stars { color: var(--amber); font-size: 16px; letter-spacing: 0.14em; margin-bottom: 12px; }
-/* Quotes are set in the serif italic, like a pulled quotation in print. */
+/* Quotes are set in the heading sans at a lighter weight, like a pulled
+   quotation, without relying on a synthetic italic. */
 .testimonial-card p {
   font-family: var(--font-heading);
-  font-size: 19px;
-  font-style: italic;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
   color: var(--text);
   margin: 0;
   padding-top: 14px;
@@ -2270,15 +2273,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .hero-layout { grid-template-columns: 1fr; text-align: center; padding-top: 32px; padding-bottom: 40px; gap: 40px; }
   .hero-content { align-items: center; }
   .hero-visual { order: -1; margin-bottom: 24px; min-height: 320px; }
-  .hero-portrait { max-width: 260px; }
-  .hero-visual-blob { width: min(300px, 88%); }
+  .hero-portrait-frame { max-width: 260px; }
   .hero-visual::before,
   .hero-visual::after { display: none; }
   .hero-float-icon { width: 50px; height: 50px; }
   .hero-float-icon svg { width: 24px; height: 24px; }
-  .hero-float-icon--ear { top: 2%; left: 4%; }
-  .hero-float-icon--nose { top: 2%; right: 4%; }
-  .hero-float-icon--throat { bottom: 4%; left: 4%; }
+  .hero-float-icon--ear { top: -10px; left: -10px; }
+  .hero-float-icon--nose { top: -10px; right: -10px; }
+  .hero-float-icon--throat { bottom: -10px; left: -10px; }
   .hero-section .hero-soundwave-bg svg { top: 34%; }
   .hero-stats-grid { max-width: 480px; }
   .languages { justify-content: center; }
