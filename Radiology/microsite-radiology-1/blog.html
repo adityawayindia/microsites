@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imaging Insights & Patient Guide | Dr. Vikram Rao</title>
+  <meta name="description" content="Plain-language guides to MRI, CT, X-ray and ultrasound — how to prepare, what your report means, and how imaging doses are kept low, by Dr. Vikram Rao." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230b1a2c'/%3E%3Cg fill='none' stroke='%2322d3ee' stroke-width='3' stroke-linecap='round'%3E%3Ccircle cx='32' cy='32' r='16' stroke-dasharray='4 6'/%3E%3Cpath d='M32 15v11M32 38v11M15 32h11M38 32h11'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='4.5' fill='%2322d3ee'/%3E%3C/svg%3E" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/radiology-1/blog.html" /><!-- TODO: replace with live production domain before launch -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr. Vikram Rao Diagnostic Imaging" />
+  <meta property="og:title" content="Imaging Insights & Patient Guide | Dr. Vikram Rao" />
+  <meta property="og:description" content="Plain-language guides to MRI, CT, X-ray and ultrasound — how to prepare, what your report means, and how imaging doses are kept low, by Dr. Vikram Rao." />
+  <meta property="og:url" content="https://www.example.com/radiology-1/blog.html" />
+  <meta property="og:image" content="https://www.example.com/radiology-1/assets/dr-arjun-mehta.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Imaging Insights & Patient Guide | Dr. Vikram Rao" />
+  <meta name="twitter:description" content="Plain-language guides to MRI, CT, X-ray and ultrasound — how to prepare, what your report means, and how imaging doses are kept low, by Dr. Vikram Rao." />
+  <meta name="twitter:image" content="https://www.example.com/radiology-1/assets/dr-arjun-mehta.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Dr. Vikram Rao">
+        <span class="avatar">
+          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Vikram Rao" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name" title="Dr. Vikram Rao">Dr. Vikram Rao</span>
+          <span class="brand-role">Consultant Radiologist</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact-us">Contact</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="cta-btn cta-btn" id="openBookingBtn">
+          <span class="cta-text-desktop">Book a Scan</span>
+          <span class="cta-text-mobile">Book Scan</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-hero-section">
+      <div class="container">
+        <div class="blog-hero-content">
+          <span class="blog-hero-badge">
+            <i class="fa-solid fa-radiation"></i>
+            Imaging Blog
+          </span>
+          <h1>Understanding Your Scans &amp; Reports</h1>
+          <p>
+            Practical guidance from Dr. Vikram Rao on preparing for a scan, reading your report,
+            radiation safety, and choosing the study that actually answers the question.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-listing-section">
+      <div class="container">
+        <div class="blog-grid">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about what an MRI report says">
+              <img src="https://images.unsplash.com/photo-1631563019676-dade0dbdb8fc?auto=format&fit=crop&w=900&q=80" alt="A montage of MRI slices displayed for reporting" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Reading Your Report | March 2026</p>
+              <h2 class="blog-card-title">What Your MRI Report Actually Says</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about preparing for a contrast CT scan">
+              <img src="https://images.unsplash.com/photo-1758206523747-69af03fb56e4?auto=format&fit=crop&w=900&q=80" alt="A radiographer assisting a patient during a CT scan" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Scan Preparation | March 2026</p>
+              <h2 class="blog-card-title">How To Prepare For A Contrast CT Scan</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about choosing between MRI and CT">
+              <img src="https://images.unsplash.com/photo-1666214282459-c7dff167ecc0?auto=format&fit=crop&w=900&q=80" alt="The gantry of an imaging scanner in the scan room" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Choosing A Scan | February 2026</p>
+              <h2 class="blog-card-title">MRI Or CT: Which Scan Answers Which Question</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about CT radiation safety">
+              <img src="https://images.unsplash.com/photo-1666214280352-db292c05fd80?auto=format&fit=crop&w=900&q=80" alt="A scanner suite with the patient table prepared for a study" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Radiation Safety | February 2026</p>
+              <h2 class="blog-card-title">Is The Radiation From A CT Scan Safe?</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about what a chest X-ray shows">
+              <img src="https://images.unsplash.com/photo-1631651363531-fd29aec4cb5c?auto=format&fit=crop&w=900&q=80" alt="A chest X-ray displayed for reporting" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">X-Ray | February 2026</p>
+              <h2 class="blog-card-title">What A Chest X-Ray Can And Cannot Show</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about coping with claustrophobia during a scan">
+              <img src="https://images.unsplash.com/photo-1666214275099-0ca566aefe26?auto=format&fit=crop&w=900&q=80" alt="A radiographer positioning a patient for a scan" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Patient Comfort | January 2026</p>
+              <h2 class="blog-card-title">Claustrophobia In The Scanner: Ways To Get Through It</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about ultrasound preparation instructions">
+              <img src="https://images.unsplash.com/photo-1691933880096-4046bc9e2fa0?auto=format&fit=crop&w=900&q=80" alt="A sonographer operating an ultrasound machine" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Ultrasound | January 2026</p>
+              <h2 class="blog-card-title">Why Your Ultrasound Appointment Comes With Instructions</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about whole-body screening packages">
+              <img src="https://images.unsplash.com/photo-1758574438033-1b28ccebae74?auto=format&fit=crop&w=900&q=80" alt="Clinicians examining medical scans together" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Screening | January 2026</p>
+              <h2 class="blog-card-title">Whole-Body Screening Packages: What They Actually Include</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about second opinions on imaging">
+              <img src="https://images.unsplash.com/photo-1758574437877-68a1ec5fafc3?auto=format&fit=crop&w=900&q=80" alt="Radiologists reviewing X-ray films on a light board" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Second Opinions | December 2025</p>
+              <h2 class="blog-card-title">When A Second Opinion On Your Scan Is Worth It</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about what happens during an image-guided biopsy">
+              <img src="https://images.unsplash.com/photo-1691935071222-c008a4ccc2ca?auto=format&fit=crop&w=900&q=80" alt="An imaging machine with a monitor in a procedure room" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Interventional | December 2025</p>
+              <h2 class="blog-card-title">Image-Guided Biopsy: What Happens On The Day</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about paediatric imaging doses">
+              <img src="https://images.unsplash.com/photo-1631563018856-81be9c118283?auto=format&fit=crop&w=900&q=80" alt="A doctor explaining an X-ray to a patient" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">Paediatric Imaging | November 2025</p>
+              <h2 class="blog-card-title">Imaging Children: Keeping The Dose As Low As Possible</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-card-image-link" aria-label="Read more about MRI safety with implants">
+              <img src="https://images.unsplash.com/photo-1616012480717-fd9867059ca0?auto=format&fit=crop&w=900&q=80" alt="An X-ray of the rib cage" class="blog-card-image" />
+            </a>
+            <div class="blog-card-content">
+              <p class="blog-card-meta">MRI Safety | November 2025</p>
+              <h2 class="blog-card-title">Implants, Pacemakers And MRI: The Safety Checklist</h2>
+              <a href="blog-detail.html" class="blog-read-more">Read More</a>
+            </div>
+          </article>
+        </div>
+
+        <nav class="blog-pagination" aria-label="Blog page navigation">
+          <a href="#" class="blog-page-link is-active" aria-current="page">1</a>
+          <a href="#" class="blog-page-link">2</a>
+          <a href="#" class="blog-page-link">3</a>
+          <a href="#" class="blog-page-link">Next</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- Booking Form Modal -->
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">
+          &times;
+        </button>
+
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button
+            type="button"
+            class="booking-tab is-active"
+            id="clinicVisitTab"
+            role="tab"
+            aria-selected="true"
+          >
+            Scan Appointment
+          </button>
+          <button
+            type="button"
+            class="booking-tab"
+            id="onlineConsultTab"
+            role="tab"
+            aria-selected="false"
+          >
+            Online Consultation
+          </button>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate>
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter Your Full Name"
+              required
+            />
+            <p class="booking-error" data-error-for="fullName"></p>
+          </div>
+
+          <div class="booking-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
+            <p class="booking-error" data-error-for="phone"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
+            <p class="booking-error" data-error-for="email"></p>
+          </div>
+
+          <div class="booking-field booking-field--date">
+            <label for="preferredDateText">Preferred Date</label>
+            <div class="booking-datepicker" id="preferredDateField">
+              <div class="booking-input-with-icon">
+                <input
+                  type="text"
+                  id="preferredDateText"
+                  class="booking-date-display"
+                  placeholder="Select a date"
+                  readonly
+                  autocomplete="off"
+                />
+              </div>
+              <input type="hidden" id="preferredDate" name="preferredDate" />
+              <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                <div class="booking-calendar-header">
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                  <span class="booking-calendar-title" data-cal-title></span>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="booking-calendar-weekdays">
+                  <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+                <div class="booking-calendar-grid" data-cal-grid></div>
+              </div>
+            </div>
+            <p class="booking-error" data-error-for="preferredDate"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="preferredTime">Preferred Time</label>
+            <div class="booking-select-wrap">
+              <select id="preferredTime" name="preferredTime" required>
+                <option value="">Select Time Slot</option>
+                <option value="09:00-10:00">09:00 - 10:00 AM</option>
+                <option value="10:00-11:00">10:00 - 11:00 AM</option>
+                <option value="11:00-12:00">11:00 - 12:00 PM</option>
+                <option value="14:00-15:00">02:00 - 03:00 PM</option>
+                <option value="15:00-16:00">03:00 - 04:00 PM</option>
+                <option value="16:00-17:00">04:00 - 05:00 PM</option>
+              </select>
+              <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+            </div>
+            <p class="booking-error" data-error-for="preferredTime"></p>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="reason">Reason For Scan</label>
+          <textarea
+            id="reason"
+            name="reason"
+            rows="3"
+            placeholder="Which scan do you need, and what is the clinical concern?"
+            required
+          ></textarea>
+          <p class="booking-error" data-error-for="reason"></p>
+        </div>
+
+        <div class="booking-field booking-field--file">
+          <label for="report">Upload Prescription / Prior Report</label>
+          <div class="booking-upload-row">
+            <label class="booking-upload-btn" for="report">Upload</label>
+            <input
+              type="file"
+              id="report"
+              name="report"
+              accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf"
+            />
+            <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+          </div>
+          <p class="booking-error" data-error-for="report"></p>
+        </div>
+
+
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" id="submitBtn" class="booking-submit-btn" disabled>
+          Book Appointment
+        </button>
+
+        <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+          <div class="loader-spinner"></div>
+          <p>Booking your appointment...</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <a href="index.html" class="brand">
+          <span class="avatar">
+            <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Vikram Rao" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Dr. Vikram Rao</span>
+            <span class="brand-role">Consultant Radiologist</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Protocol-led diagnostic and interventional imaging, reported within 24 hours.</p>
+        <div class="footer-social-wrap">
+          <span class="footer-social-label">Follow me on:</span>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right-col">
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <nav class="footer-nav">
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#contact-us">Contact</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="blog.html">Blog</a>
+          </nav>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Legal</h4>
+          <nav class="footer-nav">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </nav>
+        </div>
+
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
+          <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+          <span class="footer-visitor-badge-label">No. of Visitor:</span>
+          <span class="footer-visitor-badge-count">500</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p>&copy; 2026 Dr. Vikram Rao. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="./script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
+</body>
+</html>
