@@ -179,13 +179,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 /* Desktop breathing room — content never runs to the viewport edge.
-   Applied on the shared container so every full-bleed section band keeps
-   its background while the content inside stays inset. */
-@media (min-width: 1100px) {
-  .container { padding-left: 48px; padding-right: 48px; }
-}
-@media (min-width: 1500px) {
-  .container { padding-left: 64px; padding-right: 64px; }
+   From 768px up, the container's own width scales down to 92% of the
+   viewport (capped at 1480px), so the side margin grows proportionally
+   with the screen instead of only appearing on ultra-wide monitors —
+   the same framed feel as the Pediatrician microsites, without capping
+   the container below the 1440-1600px band (AGENTS.md §11). */
+@media (min-width: 768px) {
+  .container { width: min(1480px, 92%); }
 }
 
 .about-title,
@@ -444,6 +444,33 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .hero-section .languages { color: rgba(255, 255, 255, 0.8); }
 .hero-section .languages strong { color: #ffffff; }
 .hero-section .hero-cta-secondary { color: #ffffff; }
+
+/* Dark glass surfaces for badge/stat-cards/socials so they sit into the
+   dark emerald hero instead of reading as bright white cutouts. */
+.hero-section .expert-badge {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+.hero-section .hero-stat-box {
+  position: relative;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.hero-section .hero-stat-box:hover {
+  border-color: rgba(255, 255, 255, 0.26);
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.hero-section .hero-stat-box i { color: hsl(160, 55%, 66%); }
+.hero-section .hero-stat-box strong { color: #ffffff; }
+.hero-section .hero-stat-box span { color: rgba(255, 255, 255, 0.72); }
+.hero-section .social {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
 
 /* Sound-wave atmosphere — faint concentric arcs echoing the ear-canal
    motif (see .hero-section::before) instead of a graph-paper grid, so
@@ -728,6 +755,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   min-width: 0;
   min-height: 400px;
 }
+@media (min-width: 901px) {
+  .hero-visual { justify-content: flex-end; }
+}
 
 .hero-visual-blob {
   position: absolute;
@@ -737,6 +767,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   background: radial-gradient(circle, hsl(150 45% 70% / 0.42), transparent 70%);
   filter: blur(16px);
   z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Sound-wave frame rings around the portrait, echoing its rounded-
@@ -769,6 +802,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   pointer-events: none;
 }
 
+@media (min-width: 901px) {
+  .hero-visual-blob,
+  .hero-visual::before,
+  .hero-visual::after { left: auto; right: 0; transform: translateY(-50%); }
+}
+
 .hero-portrait {
   position: relative;
   z-index: 2;
@@ -798,6 +837,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    from SVG Repo (svgrepo.com), free for commercial use, recolored to
    currentColor to match. */
 .hero-float-icon {
+  display: none;
   position: absolute;
   z-index: 3;
   width: 62px;
@@ -806,7 +846,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   background: #ffffff;
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-hover);
-  display: flex;
   align-items: center;
   justify-content: center;
   animation: heroFloatBob 4.5s ease-in-out infinite;
@@ -890,8 +929,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   z-index: 2;
   display: block;
   width: 100%;
-  height: 70px;
+  height: 71px;
   margin-top: -1px;
+  margin-bottom: -1px;
 }
 .hero-wave path { fill: var(--bg); }
 
@@ -1140,7 +1180,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   border: 5px solid var(--sky-dark);
   z-index: 1;
 }
-.philosophy-img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.philosophy-img-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 65% 45%; display: block; }
 
 /* Floating credential badge overlapping the image's lower-right corner —
    echoes the hero audiogram card's floating-card language. */
