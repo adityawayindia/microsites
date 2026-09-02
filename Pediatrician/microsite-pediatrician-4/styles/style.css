@@ -1874,3 +1874,120 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .read-more-wrap.is-expanded .read-more-btn i {
   transform: rotate(180deg);
 }
+
+/* ==========================================================================
+   DigiDr Compact Mobile Header
+   Single row: [menu] [name/role] [Appointment].
+   Appended last so it beats the earlier header rules above.
+   ========================================================================== */
+@media (max-width: 1030px) {
+  .peds4-navbar {
+    min-height: 60px;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .peds4-nav-actions { display: contents; }
+
+  .peds4-menu-toggle {
+    display: flex !important;
+    order: -1;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 7px;
+    box-sizing: border-box;
+  }
+  .peds4-menu-toggle span { width: 22px; }
+
+  .peds4-brand {
+    order: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .peds4-cta-btn {
+    order: 2;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 16px;
+    font-size: 15px;
+    min-height: 38px;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+  .peds4-cta-btn span { font-size: 15px; }
+
+  .peds4-brand-text { display: block; min-width: 0; }
+
+  .peds4-header .peds4-brand-name,
+  .peds4-header .peds4-brand-role {
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .peds4-header .peds4-brand-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    font-size: 17px !important;
+    line-height: 1.25;
+  }
+
+  .peds4-header .peds4-brand-role {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px !important;
+    line-height: 1.25;
+  }
+
+  .peds4-header .peds4-avatar { display: none; }
+
+  .peds4-nav-links {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 60;
+  }
+}
+
+@media (max-width: 480px) {
+  .peds4-navbar { gap: 8px; }
+
+  .peds4-header .peds4-brand-name { font-size: 16px !important; }
+  .peds4-header .peds4-brand-role { font-size: 14px !important; }
+
+  .peds4-cta-btn,
+  .peds4-cta-btn span { font-size: 13px !important; }
+
+  .peds4-cta-btn { padding: 8px 12px; }
+}
+
+/* Very narrow phones: drop the role line, keep name + CTA */
+@media (max-width: 360px) {
+  .peds4-header .peds4-brand-role { display: none; }
+  .peds4-cta-btn { padding: 8px 10px; }
+}
+}
