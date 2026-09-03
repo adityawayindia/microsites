@@ -1064,9 +1064,16 @@ margin-bottom: 0;
   margin-inline: auto;
 }
 
+/* Flex (not a 2-col grid) so that when only one contact item is rendered
+   (e.g. no email/phone on file) it centers instead of sitting pinned to
+   the left column. Requires the missing item to be removed from the DOM
+   entirely, not just visually hidden (display:none siblings still count
+   for grid columns and the :only-child divider rule below). */
 .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 20px;
   border: none;
   background: transparent;
@@ -1076,11 +1083,22 @@ margin-bottom: 0;
   margin-right: auto;
 }
 
+.contact-grid .contact-item {
+  flex: 1 1 380px;
+  max-width: 420px;
+}
+
 /* Simple divider between the two contact items instead of each one being
-   its own bordered/shadowed mini-card (AGENTS.md §11). */
+   its own bordered/shadowed mini-card (AGENTS.md §11). Suppressed when
+   only one item is present so a lone centered card has no stray border. */
 .contact-grid .contact-item + .contact-item {
   border-left: 1px solid #dbe7ff;
   padding-left: 30px;
+}
+
+.contact-grid .contact-item:only-child {
+  border-left: none;
+  padding-left: 0;
 }
 
 /* .contact-item sits inside the already-bordered/shadowed .contact-card,
@@ -2385,8 +2403,12 @@ margin-bottom: 0;
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .contact-grid .contact-item {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 
   .contact-grid .contact-item + .contact-item {
@@ -2394,6 +2416,11 @@ margin-bottom: 0;
     border-top: 1px solid #dbe7ff;
     padding-left: 0;
     padding-top: 20px;
+  }
+
+  .contact-grid .contact-item:only-child {
+    border-top: none;
+    padding-top: 0;
   }
 }
 

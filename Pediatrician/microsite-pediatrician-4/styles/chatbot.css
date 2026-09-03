@@ -695,6 +695,30 @@
         right: 44px;
         left: auto;
     }
+
+    .chatbot-window {
+        width: 340px;
+        height: min(420px, calc(100dvh - 110px));
+        max-height: min(440px, calc(100dvh - 110px));
+    }
+
+    .chatbot-window .chatbot-header {
+        padding: 10px 14px;
+    }
+
+    .chatbot-window .chatbot-footer {
+        font-size: 14px;
+        padding: 2px 14px 8px;
+    }
+}
+
+@supports not (height: 1dvh) {
+    @media (min-width: 769px) {
+        .chatbot-window {
+            height: min(420px, calc(100vh - 110px));
+            max-height: min(440px, calc(100vh - 110px));
+        }
+    }
 }
 
 /* ── Mobile Responsive ── */

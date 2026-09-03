@@ -1429,9 +1429,16 @@ a {
 }
 
 .contact-layout-new {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 24px;
+}
+
+.contact-layout-new .contact-card-new {
+  flex: 1 1 340px;
+  max-width: 420px;
 }
 
 .contact-card-new {

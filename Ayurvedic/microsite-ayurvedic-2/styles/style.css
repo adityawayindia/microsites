@@ -1144,14 +1144,21 @@ margin-bottom: 0;
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 16px;
   margin: 0;
   max-width: none;
   text-align: left;
   grid-column: auto;
   grid-row: auto;
+}
+
+.contact-grid .contact-item {
+  flex: 1 1 380px;
+  max-width: 420px;
 }
 
 .contact-item {
@@ -2605,8 +2612,9 @@ margin-bottom: 0;
     grid-row: auto;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .contact-grid .contact-item {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }
 
@@ -2997,8 +3005,9 @@ margin-bottom: 0;
     font-size: 16px;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .contact-grid .contact-item {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 
   .contact-card {
@@ -4868,11 +4877,18 @@ margin-bottom: 0;
 
 /* Contact 2-column split layout */
 .contact-layout-new {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 30px;
   margin-top: 40px;
   text-align: left;
+}
+
+.contact-layout-new .contact-card-new {
+  flex: 1 1 380px;
+  max-width: 460px;
 }
 
 .contact-card-new {
@@ -5018,8 +5034,11 @@ margin-bottom: 0;
     gap: 16px;
   }
   .contact-layout-new {
-    grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .contact-layout-new .contact-card-new {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }
 

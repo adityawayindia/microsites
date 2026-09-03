@@ -1123,14 +1123,21 @@ margin-bottom: 0;
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 16px;
   margin: 0;
   max-width: none;
   text-align: left;
   grid-column: auto;
   grid-row: auto;
+}
+
+.contact-grid .contact-item {
+  flex: 1 1 380px;
+  max-width: 420px;
 }
 
 .contact-item {
@@ -2523,8 +2530,9 @@ margin-bottom: 0;
     grid-row: auto;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .contact-grid .contact-item {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }
 
@@ -2892,8 +2900,9 @@ margin-bottom: 0;
     font-size: 16px;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .contact-grid .contact-item {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 
   .contact-card {
@@ -5642,6 +5651,20 @@ body {
   .contact-card-new--reach:hover {
     transform: none !important;
   }
+}
+
+/* When only one contact card is rendered (e.g. no phone/email on file),
+   collapse the split card to one column and center it instead of leaving
+   a lopsided 1.15fr/0.85fr layout with an empty half. */
+.contact-layout-new:has(.contact-card-new:only-child) {
+  grid-template-columns: 1fr !important;
+  max-width: 560px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.contact-card-new--info:only-child {
+  border-right: none !important;
 }
 
 /* Testimonial Quote Panel overrides */

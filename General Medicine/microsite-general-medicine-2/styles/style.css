@@ -1250,9 +1250,16 @@ display: flex;
 }
 
 .contact-layout-new {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 28px;
+}
+
+.contact-layout-new .contact-card-new {
+  flex: 1 1 380px;
+  max-width: 460px;
 }
 
 .contact-card-new {
@@ -3041,8 +3048,12 @@ display: flex;
 
   /* Contact */
   .contact-layout-new {
-    grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .contact-layout-new .contact-card-new {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 
   /* Testimonials */

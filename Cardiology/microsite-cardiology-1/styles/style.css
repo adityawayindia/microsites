@@ -696,10 +696,17 @@ margin-bottom: 0;
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 22px;
   margin-bottom: 26px;
+}
+
+.contact-grid .contact-item {
+  flex: 1 1 380px;
+  max-width: 420px;
 }
 
 .contact-item {
@@ -1939,8 +1946,12 @@ margin-bottom: 0;
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  .contact-grid .contact-item {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }
 
