@@ -1651,8 +1651,17 @@ h1, h2, h3, h4 {
 
 .testimonials-carousel-wrap {
   position: relative;
-  padding: 0 62px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "carousel carousel"
+    "dots dots"
+    "prev next";
+  row-gap: 22px;
 }
+
+.testimonials-carousel-wrap .testimonials-carousel { grid-area: carousel; }
+.testimonials-carousel-wrap .carousel-dots { grid-area: dots; margin-top: 0; }
 
 .testimonials-carousel { overflow: hidden; }
 
@@ -1737,9 +1746,7 @@ h1, h2, h3, h4 {
 .testimonial-stars { display: flex; gap: 3px; color: var(--amber); font-size: 16px; }
 
 .carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
   width: 48px;
   height: 48px;
   border-radius: 16px;
@@ -1760,11 +1767,11 @@ h1, h2, h3, h4 {
   background: linear-gradient(135deg, var(--iv-deep), var(--iv));
   color: #fff;
   border-color: transparent;
-  transform: translateY(-50%) scale(1.06);
+  transform: scale(1.06);
 }
 
-.carousel-btn--prev { left: 0; }
-.carousel-btn--next { right: 0; }
+.carousel-btn--prev { grid-area: prev; justify-self: end; }
+.carousel-btn--next { grid-area: next; justify-self: start; }
 
 .carousel-dots {
   display: flex;
@@ -2379,7 +2386,7 @@ h1, h2, h3, h4 {
   .container { width: 94%; }
 
   .iv-hero { padding: 22px 0 44px; }
-  .iv-hero-grid { padding: 38px 0 34px; }
+  .iv-hero-grid { padding: 0px 0 34px; }
   .iv-hero-rig { grid-template-columns: 70px 1fr; gap: 8px; }
   .iv-bag { width: 62px; height: 96px; }
   .iv-bag-label { font-size: 13px; letter-spacing: 0.06em; white-space: nowrap; }
@@ -2409,10 +2416,29 @@ h1, h2, h3, h4 {
   .iv-svc-body h3, .iv-pillar-text h3, .iv-step-card h3,
   .iv-contact-card h3, .blog-card-title { font-size: 20px; }
 
-  .testimonials-carousel-wrap { padding: 0 46px; }
   .carousel-btn { width: 40px; height: 40px; }
 
   .iv-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .gallery-lightbox {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "content content"
+      "prev next";
+    align-items: center;
+    justify-items: center;
+    row-gap: 20px;
+    column-gap: 24px;
+    padding-bottom: 24px;
+  }
+  .gallery-lightbox.is-open { display: grid; }
+  .gallery-lightbox-content { grid-area: content; max-height: 74vh; max-height: 74dvh; }
+  .gallery-lightbox-nav { position: relative; top: auto; transform: none; }
+  .gallery-lightbox-prev { grid-area: prev; justify-self: end; left: auto; }
+  .gallery-lightbox-next { grid-area: next; justify-self: start; right: auto; }
+  .gallery-lightbox-nav:hover { transform: scale(1.08); }
 
   .blog-grid { grid-template-columns: 1fr; }
 
