@@ -2179,6 +2179,20 @@ overflow: hidden;
     grid-template-columns: 1fr;
   }
 
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(4, 45px);
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .footer-social {
+    display: grid;
+    grid-template-columns: repeat(4, 45px);
+    justify-content: center;
+    gap: 14px;
+  }
+
   .process-grid {
     grid-template-columns: 1fr;
   }
@@ -2256,6 +2270,10 @@ overflow: hidden;
 
   .avatar {
     display: none;
+  }
+
+  .contact-section {
+    padding: 32px 0 40px;
   }
 }
 

@@ -1535,7 +1535,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .peds4-hero-subtitle { margin-left: auto; margin-right: auto; }
   .peds4-hero-facts { justify-content: center; }
   .peds4-hero-actions { justify-content: center; }
-  .peds4-hero-social { justify-content: center; }
+  .peds4-hero-social { display: grid; grid-template-columns: repeat(4, 46px); justify-content: center; }
 }
 
 @media (max-width: 720px) {
@@ -1613,6 +1613,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
   .peds4-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .peds4-footer-inner { grid-template-columns: 1fr; }
+  .peds4-footer-social { display: grid; grid-template-columns: repeat(4, 36px); justify-content: flex-start; }
   .peds4-contact-card { padding: 32px 20px; }
   .peds4-hero-title { font-size: 36px; }
   .peds4-stat-card { flex: 0 1 100%; }
@@ -1825,6 +1826,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
   .footer-links {
     font-size: 18px;
+  }
+
+  .peds4-contact {
+    padding: 24px 0;
   }
 }
 

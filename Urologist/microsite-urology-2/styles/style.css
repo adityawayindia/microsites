@@ -1900,6 +1900,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr; justify-content: start; justify-items: start; }
+  /* Scoped to the plain (unclassed-icon) footer-social row used on this
+     page — .footer-social is also reused on privacy-policy.html /
+     terms-of-service.html with larger .footer-social-icon children, which
+     must keep its own flex layout untouched. */
+  .footer-social:not(:has(.footer-social-icon)) {
+    display: grid;
+    grid-template-columns: repeat(4, 36px);
+    justify-content: flex-start;
+  }
   .footer-right-col,
   .footer-links-group,
   .footer-nav {
@@ -2150,6 +2159,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
   .footer-links {
     font-size: 18px;
+  }
+
+  .contact-section {
+    padding: 28px 0;
   }
 }
 

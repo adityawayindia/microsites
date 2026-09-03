@@ -77,6 +77,13 @@ if (menuToggle && mainNav) {
             menuToggle.setAttribute("aria-expanded", "false");
         }
     });
+
+    mainNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
 }
 
 // Testimonials Carousel

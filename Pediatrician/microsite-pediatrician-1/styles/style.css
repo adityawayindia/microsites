@@ -2357,6 +2357,12 @@ margin-bottom: 0;
     justify-content: center;
   }
 
+  .footer-social {
+    display: grid;
+    grid-template-columns: repeat(4, 38px);
+    justify-content: flex-start;
+  }
+
   .footer-social-icon {
     width: 38px;
     height: 38px;
@@ -2393,7 +2399,7 @@ margin-bottom: 0;
 
 @media (max-width: 640px) {
   .contact-section {
-    padding: 48px 0 60px;
+    padding: 32px 0 40px;
   }
 
   .contact-card {
@@ -2561,6 +2567,8 @@ margin-bottom: 0;
   }
 
   .social-links {
+    display: grid;
+    grid-template-columns: repeat(4, 38px);
     justify-content: flex-start;
   }
 
@@ -2655,8 +2663,8 @@ margin-bottom: 0;
   }
 
   .hero-section {
-    padding: 40px 0 78px;
-    margin-bottom: 34px;
+    padding: 40px 0 32px;
+    margin-bottom: 0;
   }
 
   .hero-title {
@@ -2724,6 +2732,10 @@ margin-bottom: 0;
     width: 34px;
     height: 34px;
     font-size: 16px;
+  }
+
+  .social-links {
+    grid-template-columns: repeat(4, 34px);
   }
 
   /* Single column — every card, leftover or not, spans the full 12 tracks. */

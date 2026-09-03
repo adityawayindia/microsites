@@ -1794,6 +1794,10 @@ a {
   .gallery-lightbox-next {
     right: 10px;
   }
+
+  .contact-section {
+    padding: 32px 0;
+  }
 }
 
 /* ==========================================================================
@@ -2878,7 +2882,7 @@ a {
 
   /* Hero stacks */
   .hero-section {
-    padding-bottom: 96px;
+    padding-bottom: 32px;
   }
 
   .hero-layout {
@@ -2896,8 +2900,13 @@ a {
     text-align: left;
   }
 
-  .hero-actions,
+  .hero-actions {
+    justify-content: center;
+  }
+
   .social-links {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
     justify-content: center;
   }
 
@@ -2957,6 +2966,14 @@ a {
   .footer-inner {
     grid-template-columns: 1fr;
     justify-content: start;
+  }
+
+  .footer-social {
+    display: grid;
+    grid-template-columns: repeat(4, 36px);
+    justify-content: flex-start;
+    gap: 8px;
+    max-width: none;
   }
 
   .gallery-grid {

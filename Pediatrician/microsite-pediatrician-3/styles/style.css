@@ -1676,8 +1676,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
   .peds2-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .peds2-footer-inner { grid-template-columns: 1fr; }
+  .peds2-footer-social { display: grid; grid-template-columns: repeat(4, 36px); justify-content: flex-start; }
   .peds2-contact-card { padding: 12px 0; }
   .peds2-hero-title { font-size: 38px; }
+  .peds2-hero-social { display: grid; grid-template-columns: repeat(4, 46px); justify-content: flex-start; }
   .peds2-stat-ribbon-inner { justify-content: center; }
   .peds2-testi-card { flex: 0 0 100%; }
   .peds2-float-badge--top { left: 0; top: -6%; }

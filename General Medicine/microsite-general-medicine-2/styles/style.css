@@ -3111,6 +3111,7 @@ display: flex;
   /* Hero V2 */
   .hero-section--v2 {
     min-height: auto;
+    padding: 40px 0 32px;
   }
 
   .hero-v2-layout {
@@ -3272,6 +3273,12 @@ display: flex;
   }
   .footer-nav::-webkit-scrollbar { display: none; }
   .footer-nav a { flex-shrink: 0; }
+  .footer-social {
+    display: grid;
+    grid-template-columns: repeat(4, 36px);
+    justify-content: center;
+    gap: 12px;
+  }
   .footer-social-icon { width: 36px; height: 36px; font-size: 16px; }
   .footer-links { font-size: 18px; }
   .footer-copy { font-size: 18px; }

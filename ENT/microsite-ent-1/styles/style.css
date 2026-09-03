@@ -2147,7 +2147,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .hero-stats-grid { max-width: 480px; }
   .languages { justify-content: center; }
   .hero-actions { justify-content: center; }
-  .social-links { justify-content: center; }
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(4, 46px);
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -2220,6 +2225,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     text-align: left;
   }
   .footer-rights { display: block; margin-top: 2px; }
+  .footer-social {
+    display: grid;
+    grid-template-columns: repeat(4, 36px);
+    justify-content: flex-start;
+    gap: 8px;
+  }
   .contact-card { padding: 32px 20px; }
   .testimonial-card { flex: 0 0 100%; }
   .about-section { padding-top: 64px; }
@@ -2452,6 +2463,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
   .footer-links {
     font-size: 18px;
+  }
+
+  .contact-section {
+    padding: 28px 0;
   }
 }
 

@@ -1933,6 +1933,7 @@ background: var(--bg-2);
   .alt-stat-num { font-size: 26px; }
 
   .alt-hero-social-strip { flex-direction: column; gap: 10px; text-align: center; }
+  .alt-social-pills { display: grid; grid-template-columns: repeat(4, 40px); justify-content: center; }
 
   /* 1 per row — every card, leftover or not, spans the full 12 tracks. */
   .alt-bento-card,
@@ -1952,6 +1953,7 @@ background: var(--bg-2);
 
   .alt-footer-inner { grid-template-columns: 1fr; gap: 22px; }
   .alt-footer-tagline { max-width: 100%; }
+  .alt-footer-social { display: grid; grid-template-columns: repeat(4, 36px); justify-content: flex-start; }
 
   .blog-grid { grid-template-columns: 1fr; }
   .booking-form-row { grid-template-columns: 1fr; }
