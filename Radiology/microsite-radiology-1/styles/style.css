@@ -559,7 +559,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     repeating-linear-gradient(180deg, hsl(188 90% 70% / 0.06) 0 1px, transparent 1px 80px);
   background-repeat: repeat;
   background-size: 160px 160px, 80px 80px, 80px 80px;
-  opacity: 0.45;
+  opacity: 0.18;
   mask-image: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
   -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
 }
@@ -991,7 +991,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    ABOUT — executive, icon-free typography
    ============================================================ */
-.about-section { padding: 80px 0 72px; background: var(--surface); }
+.about-section { padding: 48px 0; background: var(--surface); }
 
 /* Portrait column is capped so the photo stays a supporting element
    rather than dominating the section on wide desktops. */
@@ -1064,7 +1064,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    white service panels float on. */
 .services-section {
   position: relative;
-  padding: 72px 0;
+  padding: 48px 0;
   background: var(--sky-deep);
   overflow: hidden;
 }
@@ -1169,7 +1169,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — image-left credential card, connected-rail pillars right
    ============================================================ */
 .philosophy-section {
-  padding: 72px 0;
+  padding: 48px 0;
   background: var(--bg);
 }
 
@@ -1297,7 +1297,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONSULTATION JOURNEY — vertical alternating zig-zag timeline
    ============================================================ */
-.process-section { position: relative; padding: 64px 0; background: var(--bg-3); overflow: hidden; }
+.process-section { position: relative; padding: 48px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
 
 /* Deep reading-room navy carrying the same reticle matrix as the hero
@@ -1308,7 +1308,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   background-image:
     radial-gradient(ellipse 65% 55% at 12% 15%, hsla(191, 92%, 46%, 0.22), transparent 60%),
     radial-gradient(ellipse 60% 60% at 88% 85%, hsla(250, 62%, 58%, 0.22), transparent 58%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg stroke='%23ffffff' stroke-opacity='0.35' stroke-width='1.1' stroke-linecap='round' fill='none'%3E%3Cpath d='M80 68v24M68 80h24'/%3E%3Cpath d='M0 0h10M0 0v10M160 0h-10M160 0v10M0 160h10M0 160v-10M160 160h-10M160 160v-10'/%3E%3Ccircle cx='80' cy='80' r='34' stroke-dasharray='3 9'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg stroke='%23ffffff' stroke-opacity='0.14' stroke-width='1.1' stroke-linecap='round' fill='none'%3E%3Cpath d='M80 68v24M68 80h24'/%3E%3Cpath d='M0 0h10M0 0v10M160 0h-10M160 0v10M0 160h10M0 160v-10M160 160h-10M160 160v-10'/%3E%3Ccircle cx='80' cy='80' r='34' stroke-dasharray='3 9'/%3E%3C/g%3E%3C/svg%3E"),
     repeating-linear-gradient(90deg, hsla(188, 90%, 70%, 0.06) 0 1px, transparent 1px 80px),
     repeating-linear-gradient(180deg, hsla(188, 90%, 70%, 0.06) 0 1px, transparent 1px 80px),
     linear-gradient(160deg, hsl(214, 56%, 14%) 0%, hsl(215, 60%, 10%) 55%, hsl(217, 64%, 7%) 100%);
@@ -1427,7 +1427,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-section { padding: 64px 0; background: var(--surface); }
+.contact-section { padding: 48px 0; background: var(--surface); }
 
 .contact-card {
   background: var(--surface);
@@ -1493,7 +1493,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    quotes are soft panels sharing the accent-cap of every other card. */
 .testimonials-section {
   position: relative;
-  padding: 72px 0;
+  padding: 48px 0;
   overflow: hidden;
   border-top: 1px solid var(--border);
   background-color: var(--bg-2);
@@ -1598,7 +1598,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    GALLERY
    ============================================================ */
-.gallery-section { padding: 72px 0; background: var(--surface); }
+.gallery-section { padding: 48px 0; background: var(--surface); }
 .gallery-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
 .gallery-subtitle { margin-left: auto; margin-right: auto; }
 
@@ -2347,7 +2347,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .footer-rights { display: block; margin-top: 2px; }
   .contact-card { padding: 32px 20px; }
   .testimonial-card { flex: 0 0 100%; }
-  .about-section { padding-top: 64px; }
+  .about-section { padding-top: 48px; }
 
   /* Carousel prev/next: drop out of absolute positioning beside the card
      and place them as a static row below it instead. */

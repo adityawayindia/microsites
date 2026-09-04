@@ -938,7 +938,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    ABOUT — executive, icon-free typography
    ============================================================ */
-.about-section { padding: 96px 0 64px; background: var(--bg); }
+.about-section { padding: 64px 0; background: var(--bg); }
 
 /* Portrait column is capped so the photo stays a supporting element
    rather than dominating the section on wide desktops. */

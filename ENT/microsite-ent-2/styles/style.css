@@ -1025,7 +1025,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    ABOUT — executive, icon-free typography
    ============================================================ */
-.about-section { padding: 80px 0 72px; background: var(--surface); }
+.about-section { padding: 64px 0; background: var(--surface); }
 
 /* Portrait column is capped so the photo stays a supporting element
    rather than dominating the section on wide desktops. */
@@ -1097,7 +1097,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    the white service cells are cut into. */
 .services-section {
   position: relative;
-  padding: 72px 0;
+  padding: 64px 0;
   background: var(--sky-deep);
   overflow: hidden;
 }
@@ -1203,7 +1203,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — image-left credential card, connected-rail pillars right
    ============================================================ */
 .philosophy-section {
-  padding: 72px 0;
+  padding: 64px 0;
   background: var(--bg);
 }
 
@@ -1526,7 +1526,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ruled white cells with the same accent-cap as every other card. */
 .testimonials-section {
   position: relative;
-  padding: 72px 0;
+  padding: 64px 0;
   overflow: hidden;
   border-top: 1px solid var(--border);
   background-color: var(--bg-2);
@@ -1630,7 +1630,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    GALLERY
    ============================================================ */
-.gallery-section { padding: 72px 0; background: var(--surface); }
+.gallery-section { padding: 64px 0; background: var(--surface); }
 .gallery-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
 .gallery-subtitle { margin-left: auto; margin-right: auto; }
 
