@@ -1192,6 +1192,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   display: flex;
   align-items: center;
   gap: 12px;
+  width: max-content;
   max-width: calc(100% - 24px);
   padding: 14px 18px;
   background: var(--surface);
@@ -1209,8 +1210,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   font-size: 16px;
 }
 .philosophy-badge-text { min-width: 0; display: flex; flex-direction: column; line-height: 1.3; }
-.philosophy-badge-text strong { font-family: var(--font-heading); font-size: 16px; color: var(--sky-dark); }
-.philosophy-badge-text span { font-size: 14px; color: var(--muted); font-weight: 600; }
+.philosophy-badge-text strong { font-family: var(--font-heading); font-size: 16px; color: var(--sky-dark); white-space: nowrap; }
+.philosophy-badge-text span { font-size: 14px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 
 /* ============================================================
    CONSULTATION JOURNEY — vertical alternating zig-zag timeline
