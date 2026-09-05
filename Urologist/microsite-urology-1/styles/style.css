@@ -165,6 +165,16 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   padding: 0 24px;
 }
 
+/* Desktop breathing room — content never runs to the viewport edge.
+   From 768px up, the container's own width scales down to 92% of the
+   viewport (capped at 1480px), so the side margin grows proportionally
+   with the screen instead of only appearing on ultra-wide monitors —
+   the same framed feel as the ENT microsites, without capping the
+   container below the 1440-1600px band (AGENTS.md §11). */
+@media (min-width: 768px) {
+  .container { width: min(1480px, 92%); }
+}
+
 .about-title,
 .services-title,
 .philosophy-title,
@@ -391,7 +401,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 16px 0 0;
+  padding: 0;
   background:
     radial-gradient(ellipse 70% 60% at 78% 18%, hsl(182 48% 28% / 0.35), transparent 62%),
     radial-gradient(ellipse 60% 55% at 10% 82%, hsl(206 60% 24% / 0.32), transparent 60%),
@@ -516,17 +526,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 .hero-reg-id {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
   font-size: 18px;
   font-weight: 600;
   color: rgba(255,255,255,0.85);
   margin: 0 0 22px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: hsl(210 45% 22% / 0.6);
-  border: 1px solid hsl(200 40% 45% / 0.28);
 }
 .hero-reg-id i { color: var(--amber); }
 
@@ -702,13 +708,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   width: 100%;
   height: 70px;
   margin-top: -1px;
+  margin-bottom: -1px;
 }
 .hero-wave path { fill: var(--bg); }
 
 /* ============================================================
    ABOUT — executive, icon-free typography
    ============================================================ */
-.about-section { padding: 96px 0 64px; background: var(--bg); }
+.about-section { padding: 72px 0 48px; background: var(--bg); }
 
 .about-layout {
   display: grid;
@@ -764,8 +771,23 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    SERVICES
    ============================================================ */
-.services-section { position: relative; padding: 64px 0; background: var(--bg-2); overflow: hidden; }
+.services-section { position: relative; padding: 48px 0; background: var(--bg-2); overflow: hidden; }
 .services-section > .container { position: relative; z-index: 1; }
+
+/* Same repeating droplet watermark as the hero, scaled down and
+   tinted dark for visibility on this light section background. */
+.services-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='96' viewBox='0 0 72 96'%3E%3Cpath d='M36 8c11 16 18 27 18 37a18 18 0 1 1-36 0c0-10 7-21 18-37Z' fill='none' stroke='%23103a5c' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 44px 58px;
+  background-position: 0 0;
+  opacity: 0.05;
+}
 
 .services-header { text-align: center; margin: 0 auto 48px; max-width: 700px; }
 .services-subtitle { margin-left: auto; margin-right: auto; }
@@ -855,7 +877,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — light split panel
    ============================================================ */
 .philosophy-section {
-  padding: 64px 0;
+  padding: 48px 0;
   background: var(--bg-3);
 }
 
@@ -931,14 +953,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONSULTATION JOURNEY — staggered ghost-numeral cascade
    ============================================================ */
-.process-section { position: relative; padding: 64px 0; background: var(--bg-3); overflow: hidden; }
+.process-section { position: relative; padding: 48px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
 
 .process-bg {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(180deg, rgba(10, 22, 38, 0.72) 0%, rgba(10, 22, 38, 0.6) 50%, rgba(10, 22, 38, 0.78) 100%),
+    linear-gradient(180deg, rgba(10, 22, 38, 0.82) 0%, rgba(10, 22, 38, 0.7) 50%, rgba(10, 22, 38, 0.88) 100%),
     url('../assets/journey-bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -1041,7 +1063,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-section { padding: 40px 0; background: var(--bg); }
+.contact-section { padding: 32px 0; background: var(--bg); }
 
 .contact-card {
   background: var(--surface);
@@ -1108,8 +1130,23 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    TESTIMONIALS — light card carousel
    ============================================================ */
-.testimonials-section { position: relative; padding: 64px 0; background: var(--bg-2); overflow: hidden; }
+.testimonials-section { position: relative; padding: 48px 0; background: var(--bg-2); overflow: hidden; }
 .testimonials-section > .container { position: relative; z-index: 1; }
+
+/* Same repeating droplet watermark as the hero, scaled down and
+   tinted dark for visibility on this light section background. */
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='96' viewBox='0 0 72 96'%3E%3Cpath d='M36 8c11 16 18 27 18 37a18 18 0 1 1-36 0c0-10 7-21 18-37Z' fill='none' stroke='%23103a5c' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 44px 58px;
+  background-position: 0 0;
+  opacity: 0.05;
+}
 .testimonials-header { text-align: center; margin: 0 auto 44px; max-width: 700px; }
 .testimonials-subtitle { margin-left: auto; margin-right: auto; }
 
@@ -1186,7 +1223,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    GALLERY
    ============================================================ */
-.gallery-section { padding: 64px 0; background: var(--bg); }
+.gallery-section { padding: 48px 0; background: var(--bg); }
 .gallery-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
 .gallery-subtitle { margin-left: auto; margin-right: auto; }
 
@@ -1747,12 +1784,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    BLOG PAGES
    ============================================================ */
-.blog-hero-section { padding: 44px 0 24px; }
+.blog-hero-section { padding: 32px 0 18px; }
 .blog-hero-content { max-width: 760px; padding: 10px 0; display: flex; flex-direction: column; justify-content: center; }
 .blog-hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-dark); background: none; border: none; border-left: 4px solid var(--amber-dark); border-radius: 0; padding: 0 0 0 14px; width: fit-content; margin-bottom: 14px; line-height: 1.6; }
 .blog-hero-content h1 { margin: 0 0 10px; font-size: clamp(30px, 3vw, 42px); line-height: 1.2; letter-spacing: -0.4px; color: var(--text); }
 .blog-hero-content p { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.5; }
-.blog-listing-section { padding: 10px 0 72px; }
+.blog-listing-section { padding: 10px 0 48px; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .blog-card { background: var(--surface); border-radius: 0; overflow: hidden; border: 1px solid var(--border); border-top: 3px solid var(--sky); display: flex; flex-direction: column; box-shadow: none; }
 .blog-card-image-link { display: block; text-decoration: none; }
@@ -1766,7 +1803,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .blog-page-link { min-width: 38px; height: 38px; padding: 0 6px; border-radius: 0; border: 1.5px solid var(--border); color: var(--muted); text-decoration: none; font-size: 18px; display: inline-flex; align-items: center; justify-content: center; font-weight: 500; background: var(--surface); }
 .blog-page-link:last-child { width: auto; padding: 0 13px; }
 .blog-page-link.is-active { background: var(--sky-dark); color: #fff; border-color: var(--sky-dark); }
-.blog-detail-section { padding: 44px 0 80px; }
+.blog-detail-section { padding: 32px 0 56px; }
 .blog-detail-article { background: var(--surface); border-radius: 0; border: 1px solid var(--border); border-top: 4px solid var(--sky-dark); box-shadow: none; padding: 30px 34px 36px; }
 .blog-detail-back-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--muted); font-size: 18px; font-weight: 500; margin-bottom: 18px; }
 .blog-detail-back-link:hover { color: var(--amber-dark); }
@@ -1900,7 +1937,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
   .contact-card { padding: 32px 20px; }
   .testimonial-card { flex: 0 0 100%; }
-  .about-section { padding-top: 64px; }
+  .about-section { padding-top: 48px; }
 
   /* Carousel prev/next: drop out of absolute positioning beside the card
      and place them as a static row below it instead. */
@@ -2133,7 +2170,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
 
   .contact-section {
-    padding: 28px 0;
+    padding: 22px 0;
   }
 }
 

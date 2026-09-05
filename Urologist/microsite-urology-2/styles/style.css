@@ -186,6 +186,16 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   padding: 0 24px;
 }
 
+/* Desktop breathing room — content never runs to the viewport edge.
+   From 768px up, the container's own width scales down to 92% of the
+   viewport (capped at 1480px), so the side margin grows proportionally
+   with the screen instead of only appearing on ultra-wide monitors —
+   the same framed feel as the ENT microsites, without capping the
+   container below the 1440-1600px band (AGENTS.md §11). */
+@media (min-width: 768px) {
+  .container { width: min(1480px, 92%); }
+}
+
 .about-title,
 .services-title,
 .philosophy-title,
@@ -415,11 +425,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   position: relative;
   overflow: hidden;
   background: linear-gradient(165deg, var(--bg) 0%, var(--bg-2) 55%, var(--teal-light) 100%);
-  padding: 16px 0 0;
+  padding: 20px 0 0;
   isolation: isolate;
 }
 
-.hero-section .digidr-banner-module { padding-top: 0; position: relative; z-index: 2; }
+.hero-section .digidr-banner-module { margin-top: 12px; padding-top: 0; padding-bottom: 10px; position: relative; z-index: 2; }
 
 /* Ambient soft-blob texture — shared with the light services/philosophy
    sections elsewhere in this stylesheet, so the hero reads as part of the
@@ -737,7 +747,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    ABOUT — executive, icon-free typography
    ============================================================ */
-.about-section { padding: 96px 0 64px; background: var(--bg); }
+.about-section { padding: 72px 0 48px; background: var(--bg); }
 
 .about-layout {
   display: grid;
@@ -793,7 +803,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    SERVICES
    ============================================================ */
-.services-section { position: relative; padding: 64px 0; background: var(--bg-2); overflow: hidden; }
+.services-section { position: relative; padding: 48px 0; background: var(--bg-2); overflow: hidden; }
 .services-section > .container { position: relative; z-index: 1; }
 
 .services-header { text-align: center; margin: 0 auto 48px; max-width: 700px; }
@@ -884,7 +894,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — light split panel
    ============================================================ */
 .philosophy-section {
-  padding: 64px 0;
+  padding: 48px 0;
   background: var(--bg-3);
 }
 
@@ -960,7 +970,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONSULTATION JOURNEY — staggered ghost-numeral cascade
    ============================================================ */
-.process-section { position: relative; padding: 64px 0; background: var(--bg-3); overflow: hidden; }
+.process-section { position: relative; padding: 48px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
 
 .process-bg {
@@ -1070,7 +1080,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-section { padding: 40px 0; background: var(--bg); }
+.contact-section { padding: 32px 0; background: var(--bg); }
 
 .contact-card {
   background: var(--surface);
@@ -1137,7 +1147,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    TESTIMONIALS — light card carousel
    ============================================================ */
-.testimonials-section { position: relative; padding: 64px 0; background: var(--bg-2); overflow: hidden; }
+.testimonials-section { position: relative; padding: 48px 0; background: var(--bg-2); overflow: hidden; }
 .testimonials-section > .container { position: relative; z-index: 1; }
 .testimonials-header { text-align: center; margin: 0 auto 44px; max-width: 700px; }
 .testimonials-subtitle { margin-left: auto; margin-right: auto; }
@@ -1215,7 +1225,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    GALLERY
    ============================================================ */
-.gallery-section { padding: 64px 0; background: var(--bg); }
+.gallery-section { padding: 48px 0; background: var(--bg); }
 .gallery-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
 .gallery-subtitle { margin-left: auto; margin-right: auto; }
 
@@ -1783,12 +1793,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    BLOG PAGES
    ============================================================ */
-.blog-hero-section { padding: 44px 0 24px; }
+.blog-hero-section { padding: 32px 0 18px; }
 .blog-hero-content { max-width: 760px; padding: 10px 0; display: flex; flex-direction: column; justify-content: center; }
 .blog-hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-dark); background: none; border: none; border-left: 4px solid var(--amber-dark); border-radius: var(--radius-md); padding: 0 0 0 14px; width: fit-content; margin-bottom: 14px; line-height: 1.6; }
 .blog-hero-content h1 { margin: 0 0 10px; font-size: clamp(30px, 3vw, 42px); line-height: 1.2; letter-spacing: -0.4px; color: var(--text); }
 .blog-hero-content p { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.5; }
-.blog-listing-section { padding: 10px 0 72px; }
+.blog-listing-section { padding: 10px 0 48px; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .blog-card { background: var(--surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); border-top: 3px solid var(--sky); display: flex; flex-direction: column; box-shadow: none; }
 .blog-card-image-link { display: block; text-decoration: none; }
@@ -1802,7 +1812,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .blog-page-link { min-width: 38px; height: 38px; padding: 0 6px; border-radius: var(--radius-md); border: 1.5px solid var(--border); color: var(--muted); text-decoration: none; font-size: 18px; display: inline-flex; align-items: center; justify-content: center; font-weight: 500; background: var(--surface); }
 .blog-page-link:last-child { width: auto; padding: 0 13px; }
 .blog-page-link.is-active { background: var(--sky-dark); color: #fff; border-color: var(--sky-dark); }
-.blog-detail-section { padding: 44px 0 80px; }
+.blog-detail-section { padding: 32px 0 56px; }
 .blog-detail-article { background: var(--surface); border-radius: var(--radius-md); border: 1px solid var(--border); border-top: 4px solid var(--sky-dark); box-shadow: none; padding: 30px 34px 36px; }
 .blog-detail-back-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--muted); font-size: 18px; font-weight: 500; margin-bottom: 18px; }
 .blog-detail-back-link:hover { color: var(--amber-dark); }
@@ -1856,7 +1866,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 @media (max-width: 980px) {
-  .uro-hero-grid { grid-template-columns: 1fr; gap: 56px; padding-top: 12px; padding-bottom: 30px; }
+  .uro-hero-grid { grid-template-columns: 1fr; gap: 56px; padding-top: 20px; padding-bottom: 30px; }
   .uro-hero-visual { max-width: 360px; margin: 0 auto; order: -1; }
   .uro-hero-copy { max-width: 100%; align-items: flex-start; text-align: left; order: 1; }
   .uro-hero-copy::before { width: 300px; height: 300px; left: -100px; top: 30%; }
@@ -1926,8 +1936,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     text-align: left;
   }
   .contact-card { padding: 32px 20px; }
-  .hero-section { padding: 22px 0 44px; }
-  .uro-hero-grid { padding: 12px 0 24px; gap: 46px; }
+  .hero-section { padding: 0 0 32px; }
+  .uro-hero-grid { padding: 20px 0 24px; gap: 46px; }
   .uro-hero-visual { max-width: 280px; }
   .uro-hero-chip { font-size: 14px; letter-spacing: 0.08em; padding: 7px 16px; gap: 8px; }
   .uro-hero-title { margin-top: 16px; }
@@ -1938,7 +1948,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .uro-hud-item { padding: 12px 16px; }
   .social-links { display: grid; grid-template-columns: repeat(4, 46px); justify-content: center; align-self: center; }
   .testimonial-card { flex: 0 0 100%; }
-  .about-section { padding-top: 64px; }
+  .about-section { padding-top: 48px; }
 
   /* Carousel prev/next: drop out of absolute positioning beside the card
      and place them as a static row below it instead. */
@@ -2171,7 +2181,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
 
   .contact-section {
-    padding: 28px 0;
+    padding: 22px 0;
   }
 }
 

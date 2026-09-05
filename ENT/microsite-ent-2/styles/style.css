@@ -618,8 +618,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
      the copy block, so centering them as a row left the shorter copy
      column looking adrift instead of balanced against the photo. */
   align-items: start;
-  padding-top: 56px;
-  padding-bottom: 64px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .hero-content {
@@ -1025,7 +1025,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    ABOUT — executive, icon-free typography
    ============================================================ */
-.about-section { padding: 64px 0; background: var(--surface); }
+.about-section { padding: 36px 0; background: var(--surface); }
 
 /* Portrait column is capped so the photo stays a supporting element
    rather than dominating the section on wide desktops. */
@@ -1087,8 +1087,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 /* Hold the bio to a readable measure — the about column is far wider than
    comfortable line length on a large desktop. */
-.about-content p { font-size: 18px; color: var(--muted); margin: 0 0 14px; text-align: justify; hyphens: none; max-width: 70ch; }
-.about-description { max-width: 66ch; }
+.about-content p { font-size: 18px; color: var(--muted); margin: 0 0 14px; text-align: justify; hyphens: none; }
+.about-description { max-width: none; }
 
 /* ============================================================
    SERVICES
@@ -1097,7 +1097,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    the white service cells are cut into. */
 .services-section {
   position: relative;
-  padding: 64px 0;
+  padding: 36px 0;
   background: var(--sky-deep);
   overflow: hidden;
 }
@@ -1203,7 +1203,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — image-left credential card, connected-rail pillars right
    ============================================================ */
 .philosophy-section {
-  padding: 64px 0;
+  padding: 36px 0;
   background: var(--bg);
 }
 
@@ -1331,7 +1331,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONSULTATION JOURNEY — vertical alternating zig-zag timeline
    ============================================================ */
-.process-section { position: relative; padding: 64px 0; background: var(--bg-3); overflow: hidden; }
+.process-section { position: relative; padding: 40px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
 
 /* Brand aubergine gradient with a faint ear / nose / throat line-art motif —
@@ -1460,7 +1460,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-section { padding: 64px 0; background: var(--surface); }
+.contact-section { padding: 36px 0; background: var(--surface); }
 
 .contact-card {
   background: var(--surface);
@@ -1526,7 +1526,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ruled white cells with the same accent-cap as every other card. */
 .testimonials-section {
   position: relative;
-  padding: 64px 0;
+  padding: 36px 0;
   overflow: hidden;
   border-top: 1px solid var(--border);
   background-color: var(--bg-2);
@@ -1630,7 +1630,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    GALLERY
    ============================================================ */
-.gallery-section { padding: 64px 0; background: var(--surface); }
+.gallery-section { padding: 36px 0; background: var(--surface); }
 .gallery-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
 .gallery-subtitle { margin-left: auto; margin-right: auto; }
 
@@ -2040,7 +2040,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    FOOTER
    ============================================================ */
-.site-footer { background: var(--sky-deep); color: hsl(38, 30%, 88%); padding: 44px 0 0; border-top: 3px solid var(--amber); }
+.site-footer { background: var(--sky-deep); color: hsl(38, 30%, 88%); padding: 36px 0 0; border-top: 3px solid var(--amber); }
 
 .footer-inner {
   max-width: 760px;
@@ -2200,7 +2200,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    BLOG PAGES
    ============================================================ */
-.blog-hero-section { padding: 44px 0 24px; }
+.blog-hero-section { padding: 32px 0 24px; }
 .blog-hero-content { max-width: 760px; padding: 10px 0; display: flex; flex-direction: column; justify-content: center; }
 /* Matches the ruled section kickers rather than the retired pill badge. */
 .blog-hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); background: none; border: none; border-radius: 0; padding: 0; width: fit-content; margin-bottom: 16px; line-height: 1.4; }
@@ -2208,7 +2208,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .blog-hero-badge i, .blog-hero-badge span { color: inherit; }
 .blog-hero-content h1 { margin: 0 0 10px; font-size: clamp(30px, 3vw, 42px); line-height: 1.2; letter-spacing: -0.4px; color: var(--text); }
 .blog-hero-content p { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.5; }
-.blog-listing-section { padding: 10px 0 72px; }
+.blog-listing-section { padding: 10px 0 40px; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .blog-card { background: var(--surface); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; box-shadow: var(--shadow-card); transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
@@ -2223,7 +2223,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .blog-page-link { min-width: 38px; height: 38px; padding: 0 6px; border-radius: var(--radius-pill); border: 1.5px solid var(--border); color: var(--muted); text-decoration: none; font-size: 18px; display: inline-flex; align-items: center; justify-content: center; font-weight: 500; background: var(--surface); }
 .blog-page-link:last-child { width: auto; padding: 0 13px; }
 .blog-page-link.is-active { background: var(--sky-dark); color: #fff; border-color: var(--sky-dark); }
-.blog-detail-section { padding: 44px 0 80px; }
+.blog-detail-section { padding: 32px 0 40px; }
 .blog-detail-article { background: var(--surface); border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-card); padding: 30px 34px 36px; }
 .blog-detail-back-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--muted); font-size: 18px; font-weight: 500; margin-bottom: 18px; }
 .blog-detail-back-link:hover { color: var(--amber-dark); }
@@ -2380,7 +2380,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .footer-rights { display: block; margin-top: 2px; }
   .contact-card { padding: 32px 20px; }
   .testimonial-card { flex: 0 0 100%; }
-  .about-section { padding-top: 64px; }
+  .about-section { padding-top: 32px; }
 
   /* Carousel prev/next: drop out of absolute positioning beside the card
      and place them as a static row below it instead. */
