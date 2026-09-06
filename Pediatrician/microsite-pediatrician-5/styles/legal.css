@@ -1,0 +1,5 @@
+/* Legal Pages — supplemental (base rules already defined in styles/style.css;
+   this file is kept for path parity with the shared microsite template) */
+.legal-page {
+  background: var(--bg);
+}

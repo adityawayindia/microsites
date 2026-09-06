@@ -1,0 +1,10 @@
+# NOTE: robots.txt only takes effect at the domain root (digidr.app/robots.txt).
+# This file is a per-microsite draft — backend team must merge all microsites'
+# rules into ONE robots.txt served at digidr.app/robots.txt, and point the
+# Sitemap line at the single combined sitemap (see sitemap.xml note in this folder).
+# Path below assumes this microsite is served at digidr.app/REPLACE-WITH-SLUG/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://digidr.app/sitemap.xml

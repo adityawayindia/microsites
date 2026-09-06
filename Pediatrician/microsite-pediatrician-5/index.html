@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Rohan Kapoor | Pediatrician — Violet & Lime Child Health Clinic</title>
+  <meta name="description" content="Compassionate, evidence-based pediatric care from Dr. Rohan Kapoor — newborn checkups, immunizations, growth monitoring, and respiratory care for growing families." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23431f5e'/%3E%3Cpath d='M32 46s-16-9.5-16-21a9 9 0 0 1 16-5.6A9 9 0 0 1 48 25c0 11.5-16 21-16 21z' fill='%23a8d94a'/%3E%3C/svg%3E" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/pediatrician-5/" /><!-- TODO: replace with live production domain before launch -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dr. Rohan Kapoor | Pediatrician" />
+  <meta property="og:description" content="Dr. Rohan Kapoor, Pediatrician — Fellowship in Pediatric Pulmonology." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&h=1200&fit=crop&q=80" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Dr. Rohan Kapoor, Pediatrician" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Rohan Kapoor | Pediatrician" />
+  <meta name="twitter:description" content="Dr. Rohan Kapoor, Pediatrician." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&h=1200&fit=crop&q=80" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Rohan Kapoor",
+    "medicalSpecialty": "Pediatric",
+    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&h=1200&fit=crop&q=80",
+    "url": "https://www.example.com/pediatrician-5/",
+    "telephone": "+91-9845123670",
+    "email": "dr.kapoor@brightbloomclinic.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "42 Willowmere Crescent, Green Park Extension",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "KA",
+      "postalCode": "560071",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header class="peds5-header">
+    <div class="container peds5-navbar">
+      <a href="#" class="peds5-brand" aria-label="Dr. Rohan Kapoor">
+        <span class="peds5-avatar">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=120&h=120&fit=crop&q=80" alt="Dr. Rohan Kapoor" />
+        </span>
+        <span class="peds5-brand-text">
+          <span class="peds5-brand-name" title="Dr. Rohan Kapoor">Dr. Rohan Kapoor</span>
+          <span class="peds5-brand-role">Pediatrician</span>
+        </span>
+      </a>
+
+      <nav class="peds5-nav-links" id="mainNav" aria-label="Main Navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact-us">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#gallery">Gallery</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <div class="peds5-nav-actions">
+        <a href="#" class="peds5-cta-btn cta-btn" id="openBookingBtn">
+          <span class="cta-text-desktop">Book Appointment</span>
+          <span class="cta-text-mobile">Appointment</span>
+        </a>
+
+        <button class="peds5-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== HERO — portrait medallion + floating stats rail ====== -->
+  <section class="peds5-hero" id="home">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+         1. Server-Side Rendering (PHP/Node/Python):
+            - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+            - Set 'data-banner-active="false"' to hide banner if no active image.
+            - Set 'data-banner-href="URL"' to turn image into a clickable link.
+         2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    <div
+      class="digidr-banner-module single-image-banner-section"
+      id="digidrBannerModule"
+      data-banner-active="true"
+      data-banner-start="2026-09-01T00:00:00+05:30"
+      data-banner-end="2026-09-30T23:59:59+05:30"
+      aria-label="Main Clinic Banner"
+      data-banner-src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&h=250&fit=crop&q=80"
+      data-banner-src-mobile="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=250&fit=crop&q=80"
+      data-banner-alt="Pediatric clinic promotional banner"
+      data-banner-href="#contact-us"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#contact-us" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=250&fit=crop&q=80" />
+              <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&h=250&fit=crop&q=80"
+                alt="Pediatric clinic — book a screening slot with Dr. Rohan Kapoor"
+                class="digidr-banner-img single-image-banner-img"
+                id="digidrBannerImg"
+                loading="eager"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- END OF MODULAR BANNER MODULE -->
+
+    <div class="peds5-hero-blob peds5-hero-blob--1" aria-hidden="true"></div>
+    <div class="peds5-hero-blob peds5-hero-blob--2" aria-hidden="true"></div>
+    <div class="peds5-hero-blob peds5-hero-blob--3" aria-hidden="true"></div>
+    <div class="peds5-hero-motifs" aria-hidden="true">
+      <i class="fa-solid fa-star peds5-hero-motif peds5-hero-motif--1"></i>
+      <i class="fa-solid fa-heart peds5-hero-motif peds5-hero-motif--2"></i>
+      <i class="fa-solid fa-baby peds5-hero-motif peds5-hero-motif--3"></i>
+      <i class="fa-solid fa-star peds5-hero-motif peds5-hero-motif--4"></i>
+      <i class="fa-solid fa-heart-pulse peds5-hero-motif peds5-hero-motif--5"></i>
+      <i class="fa-solid fa-star peds5-hero-motif peds5-hero-motif--6"></i>
+    </div>
+
+    <div class="container peds5-hero-grid">
+      <div class="peds5-hero-visual">
+        <div class="peds5-medallion-ring" aria-hidden="true"></div>
+        <div class="peds5-portrait-medallion">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=680&h=680&fit=crop&q=80" alt="Dr. Rohan Kapoor, pediatrician, portrait" width="340" height="340" />
+        </div>
+        <div class="peds5-stat-rail" aria-label="Practice statistics">
+          <div class="peds5-stat-card">
+            <span class="peds5-stat-icon"><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i></span>
+            <span>
+              <span class="peds5-stat-num" data-count-to="16" data-suffix="+">0+</span>
+              <span class="peds5-stat-lbl">Years of Experience</span>
+            </span>
+          </div>
+          <div class="peds5-stat-card">
+            <span class="peds5-stat-icon"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></span>
+            <span>
+              <span class="peds5-stat-num" data-count-to="7" data-suffix="k+">0k+</span>
+              <span class="peds5-stat-lbl">Children Treated</span>
+            </span>
+          </div>
+          <div class="peds5-stat-card">
+            <span class="peds5-stat-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+            <span>
+              <span class="peds5-stat-num" data-count-to="97" data-suffix="%">0%</span>
+              <span class="peds5-stat-lbl">Parent Satisfaction</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="peds5-hero-content">
+        <span class="peds5-hero-kicker">
+          <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+          Pediatrician
+        </span>
+
+        <h1 class="peds5-hero-title">Dr. Rohan Kapoor</h1>
+        <p class="peds5-hero-role"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MD (Pediatrics) &middot; Fellowship in Pediatric Pulmonology</p>
+        <p class="peds5-hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. 61947</p>
+
+        <p class="peds5-hero-subtitle">
+          Gentle, evidence-based care plans for newborns, toddlers, school-age children, and teens — grounded in
+          preventive medicine and clear, ongoing communication with parents.
+        </p>
+
+        <ul class="peds5-hero-facts" aria-label="Practice highlights">
+          <li><span class="peds5-fact-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></span>Languages Known: English &bull; Hindi &bull; Kannada</li>
+        </ul>
+
+        <div class="peds5-hero-actions">
+          <a href="#" class="peds5-btn-primary cta-btn">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> <span>Book Appointment</span>
+          </a>
+          <a href="tel:+919845123670" class="peds5-btn-primary">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> <span>Call Clinic</span>
+          </a>
+        </div>
+
+        <div class="peds5-hero-social" aria-label="Social media links">
+          <a href="#" class="peds5-social" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="peds5-social" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="peds5-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="peds5-social" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="peds5-social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="peds5-social" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+          <a href="#" class="peds5-social" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="peds5-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT — executive typography with Read More toggle ====== -->
+  <section class="peds5-about" id="about">
+    <div class="container peds5-about-grid">
+      <div class="peds5-about-visual">
+        <div class="peds5-about-photo">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=680&h=850&fit=crop&q=80" alt="Pediatrician examining a young child during a consultation" loading="lazy" width="340" height="425" />
+        </div>
+      </div>
+
+      <div class="peds5-about-content">
+        <span class="peds5-chip peds5-chip--brand2">About the Practice</span>
+        <h2 class="peds5-section-title">Gentle, Evidence-Based Pediatric Care</h2>
+        <p class="peds5-about-lead">
+          Combining rigorous clinical training with an unhurried, family-first approach to every consultation.
+        </p>
+        <div class="about-story-new read-more-wrap">
+          <div class="read-more-content">
+            <p>
+              Dr. Rohan Kapoor is a board-certified pediatrician with over sixteen years of clinical experience
+              spanning newborn, infant, child, and adolescent care. After completing his MBBS and MD in
+              Pediatrics, he pursued a fellowship in Pediatric Pulmonology, deepening his expertise in
+              childhood asthma, chronic cough, recurrent wheeze, and other respiratory conditions that are
+              common yet often mismanaged in general practice. His clinical philosophy rests on one simple
+              idea: every child deserves a calm, unhurried consultation where parents leave with clarity, not
+              just a prescription.
+            </p>
+            <p>
+              Beyond respiratory care, Dr. Kapoor manages the full spectrum of general pediatrics — newborn
+              checkups, growth and nutrition monitoring, vaccination schedules, fever and infection management,
+              allergy care, and developmental screening. He is a firm believer in preventive medicine and
+              works closely with families to keep vaccination calendars on track, catch growth concerns early,
+              and build healthy daily habits that compound over a childhood.
+            </p>
+            <p>
+              Dr. Kapoor trained at premier medical institutions in India and completed additional clinical
+              rotations focused on pediatric respiratory medicine. He continues to participate in continuing
+              medical education, ensuring that every treatment plan he recommends reflects current, peer
+              reviewed pediatric guidelines rather than outdated convention. Parents often note his patience in
+              explaining diagnoses in plain language, and his willingness to answer every question — even the
+              ones that feel too small to ask.
+            </p>
+            <p>
+              Outside the clinic, Dr. Kapoor mentors junior residents and volunteers with school health
+              screening camps, believing that pediatric care extends beyond the four walls of a consultation
+              room and into the everyday environments where children grow, play, and learn.
+            </p>
+          </div>
+          <button type="button" class="read-more-btn" aria-expanded="false">
+            <span>Read More</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVICES ====== -->
+  <section class="peds5-services" id="services">
+    <div class="container">
+      <div class="peds5-section-header">
+        <span class="peds5-chip peds5-chip--brand">
+          <i class="fa-solid fa-heart" aria-hidden="true"></i> Specialized Services
+        </span>
+        <h2 class="peds5-section-title">Comprehensive Pediatric Care</h2>
+        <p class="peds5-section-subtitle">
+          A complete range of child healthcare services, with a special focus on respiratory and pulmonary
+          conditions alongside general pediatrics.
+        </p>
+      </div>
+
+      <div class="peds5-services-grid">
+        <article class="peds5-service-card">
+          <div class="peds5-service-icon"><i class="fa-solid fa-baby" aria-hidden="true"></i></div>
+          <h3>Newborn &amp; Infant Care</h3>
+          <p>Comprehensive care for newborns, feeding guidance, early development support, and infant wellness.</p>
+        </article>
+
+        <article class="peds5-service-card">
+          <div class="peds5-service-icon"><i class="fa-solid fa-lungs" aria-hidden="true"></i></div>
+          <h3>Pediatric Pulmonology</h3>
+          <p>Specialized management of asthma, chronic cough, recurrent wheeze, and other breathing concerns.</p>
+        </article>
+
+        <article class="peds5-service-card">
+          <div class="peds5-service-icon"><i class="fa-solid fa-syringe" aria-hidden="true"></i></div>
+          <h3>Vaccination &amp; Immunization</h3>
+          <p>Routine vaccination schedules, catch-up plans, and parent education for complete protection.</p>
+        </article>
+
+        <article class="peds5-service-card">
+          <div class="peds5-service-icon"><i class="fa-solid fa-thermometer" aria-hidden="true"></i></div>
+          <h3>Fever &amp; Infection Management</h3>
+          <p>Evidence-based treatment for seasonal infections, viral illnesses, and recurring fevers.</p>
+        </article>
+
+        <article class="peds5-service-card">
+          <div class="peds5-service-icon"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i></div>
+          <h3>Growth &amp; Nutrition Monitoring</h3>
+          <p>Regular growth tracking, nutrition counseling, and early intervention for developmental concerns.</p>
+        </article>
+
+        <article class="peds5-service-card">
+          <div class="peds5-service-icon"><i class="fa-solid fa-user-group" aria-hidden="true"></i></div>
+          <h3>Adolescent Health Counseling</h3>
+          <p>Support for teenage health, lifestyle, emotional wellbeing, and preventive checkups.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CARE PHILOSOPHY (split screen, image LEFT) ====== -->
+  <section class="peds5-philosophy" id="philosophy">
+    <div class="container peds5-philosophy-grid">
+      <div class="peds5-philosophy-visual">
+        <div class="peds5-philosophy-photo">
+          <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=920&h=880&fit=crop&q=80" alt="A child playfully examining a teddy bear with a toy stethoscope" loading="lazy" width="460" height="440" />
+        </div>
+        <div class="peds5-philosophy-badge">
+          <span class="peds5-philosophy-badge-icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></span>
+          <span>
+            <strong>16+ Years</strong>
+            <span>Trusted Pediatric Care</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="peds5-philosophy-content">
+        <span class="peds5-chip peds5-chip--accent">
+          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Care Philosophy
+        </span>
+        <h2 class="peds5-section-title">A Thoughtful Approach to Every Child's Health</h2>
+        <p class="peds5-section-subtitle">
+          Dedicated to comprehensive child health, growth tracking, and compassionate pediatric and pulmonary care.
+        </p>
+
+        <div class="peds5-pillars">
+          <div class="peds5-pillar">
+            <div class="peds5-pillar-icon">
+              <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+              <span class="peds5-pillar-index">1</span>
+            </div>
+            <div>
+              <h3>Preventive Care</h3>
+              <p>Timely immunizations, routine checkups, and early management of childhood illnesses.</p>
+            </div>
+          </div>
+          <div class="peds5-pillar">
+            <div class="peds5-pillar-icon">
+              <i class="fa-solid fa-book-medical" aria-hidden="true"></i>
+              <span class="peds5-pillar-index">2</span>
+            </div>
+            <div>
+              <h3>Evidence-Based Medicine</h3>
+              <p>Treatment plans grounded in current pediatric research and clinical best practice.</p>
+            </div>
+          </div>
+          <div class="peds5-pillar">
+            <div class="peds5-pillar-icon">
+              <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+              <span class="peds5-pillar-index">3</span>
+            </div>
+            <div>
+              <h3>Shared Decisions</h3>
+              <p>Empowering parents with clear guidance so every care decision is made together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONSULTATION JOURNEY — numbered vertical rail cards ====== -->
+  <section class="peds5-journey" id="process">
+    <div class="container">
+      <div class="peds5-section-header">
+        <span class="peds5-chip peds5-chip--brand">
+          <i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey
+        </span>
+        <h2 class="peds5-section-title" style="text-align:center;">Your Child's Care Journey</h2>
+        <p class="peds5-section-subtitle" style="text-align:center; max-width:700px; margin:0 auto;">
+          A clear, reassuring 4-step process for complete pediatric care.
+        </p>
+      </div>
+
+      <div class="peds5-timeline">
+        <div class="peds5-step">
+          <span class="peds5-step-num" aria-hidden="true">1</span>
+          <div class="peds5-step-card">
+            <h3>Appointment Booking</h3>
+            <p>Book online or by phone for checkups, vaccinations, or pulmonology consultations.</p>
+          </div>
+          <div class="peds5-step-circle-col">
+            <div class="peds5-step-circle"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="peds5-step-fill"></div>
+        </div>
+
+        <div class="peds5-step">
+          <span class="peds5-step-num" aria-hidden="true">2</span>
+          <div class="peds5-step-fill"></div>
+          <div class="peds5-step-circle-col">
+            <div class="peds5-step-circle"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></div>
+          </div>
+          <div class="peds5-step-card">
+            <h3>Friendly Examination</h3>
+            <p>Gentle check of vitals, growth metrics, breathing, and physical development.</p>
+          </div>
+        </div>
+
+        <div class="peds5-step">
+          <span class="peds5-step-num" aria-hidden="true">3</span>
+          <div class="peds5-step-card">
+            <h3>Personalized Care Plan</h3>
+            <p>Clear guidance on treatments, medication, and vaccination schedules.</p>
+          </div>
+          <div class="peds5-step-circle-col">
+            <div class="peds5-step-circle"><i class="fa-solid fa-clipboard-user" aria-hidden="true"></i></div>
+          </div>
+          <div class="peds5-step-fill"></div>
+        </div>
+
+        <div class="peds5-step">
+          <span class="peds5-step-num" aria-hidden="true">4</span>
+          <div class="peds5-step-fill"></div>
+          <div class="peds5-step-circle-col">
+            <div class="peds5-step-circle"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="peds5-step-card">
+            <h3>Growth Tracking &amp; Support</h3>
+            <p>Regular milestone checks, routine follow-ups, and ongoing wellness support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section class="peds5-contact" id="contact-us">
+    <div class="container">
+      <div class="peds5-contact-card">
+        <div class="peds5-contact-header">
+          <h2>Contact Us</h2>
+          <p>Give your child the best start with compassionate pediatric care. Schedule a consultation with our specialist today.</p>
+        </div>
+
+        <div class="peds5-contact-grid">
+          <div class="peds5-contact-item">
+            <div class="peds5-contact-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <h3>Address</h3>
+            <p>
+              <strong>Building Number: 42</strong><br />
+              Street Name: Willowmere Crescent<br />
+              Street Address: Green Park Extension<br />
+              State: KA &middot; City: Bengaluru &middot; 560071
+            </p>
+          </div>
+
+          <div class="peds5-contact-divider"></div>
+
+          <div class="peds5-contact-item">
+            <div class="peds5-contact-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+            <h3>Contact Information</h3>
+            <p>
+              <a href="tel:+919845123670">+91-9845123670</a><br />
+              <a href="mailto:dr.kapoor@brightbloomclinic.com">dr.kapoor@brightbloom<wbr />clinic.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="peds5-contact-cta">
+          <a href="tel:+919845123670" class="peds5-btn-secondary">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> <span>Call Clinic</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="peds5-testimonials" id="testimonials">
+    <div class="container">
+      <div class="peds5-section-header">
+        <span class="peds5-chip peds5-chip--accent">
+          <i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Testimonials
+        </span>
+        <h2 class="peds5-section-title">What Our Patients Say</h2>
+        <p class="peds5-section-subtitle">
+          Read testimonials from families who have experienced compassionate pediatric care under our specialist's guidance.
+        </p>
+      </div>
+
+      <div class="peds5-testi-carousel-wrap testimonials-carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev peds5-carousel-btn" aria-label="Previous testimonials">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn carousel-btn--next peds5-carousel-btn" aria-label="Next testimonials">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+          <div class="testimonials-track peds5-testi-track" id="testimonialsTrack">
+            <article class="testimonial-card peds5-testi-card">
+              <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?w=120&h=120&fit=crop" alt="Ananya Rao" class="peds5-testi-avatar" loading="lazy" />
+              <h3>Ananya Rao</h3>
+              <div class="peds5-testi-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"Dr. Kapoor diagnosed my son's recurring wheeze when three other doctors missed it. His pulmonology background made all the difference. Forever grateful."</p>
+            </article>
+            <article class="testimonial-card peds5-testi-card">
+              <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=120&h=120&fit=crop" alt="Karan Mehta" class="peds5-testi-avatar" loading="lazy" />
+              <h3>Karan Mehta</h3>
+              <div class="peds5-testi-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"Outstanding experience from start to finish. Dr. Kapoor explained everything clearly and took time to address all my concerns. Five stars!"</p>
+            </article>
+            <article class="testimonial-card peds5-testi-card">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Priya Nair" class="peds5-testi-avatar" loading="lazy" />
+              <h3>Priya Nair</h3>
+              <div class="peds5-testi-stars" aria-label="4 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+              <p>"Good care overall. Dr. Kapoor helped manage my daughter's recurring infections effectively. The follow-up process was thorough."</p>
+            </article>
+            <article class="testimonial-card peds5-testi-card">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop" alt="Vikram Shetty" class="peds5-testi-avatar" loading="lazy" />
+              <h3>Vikram Shetty</h3>
+              <div class="peds5-testi-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"After my son's asthma diagnosis, Dr. Kapoor's guidance was invaluable. He genuinely cares about long-term outcomes, not quick fixes."</p>
+            </article>
+            <article class="testimonial-card peds5-testi-card">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop" alt="Sneha Iyer" class="peds5-testi-avatar" loading="lazy" />
+              <h3>Sneha Iyer</h3>
+              <div class="peds5-testi-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p>"The best pediatrician we've consulted. His diagnostic skills are remarkable and he guided us clearly through a scary first month."</p>
+            </article>
+            <article class="testimonial-card peds5-testi-card">
+              <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=120&h=120&fit=crop" alt="Rohan Das" class="peds5-testi-avatar" loading="lazy" />
+              <h3>Rohan Das</h3>
+              <div class="peds5-testi-stars" aria-label="4 out of 5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+              <p>"Professional, knowledgeable, and kind. Every appointment felt stress-free and the clinic always runs on time."</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALLERY ====== -->
+  <section class="peds5-gallery" id="gallery">
+    <div class="container">
+      <div class="peds5-section-header">
+        <h2 class="peds5-section-title">A Look Inside My Practice</h2>
+        <p class="peds5-section-subtitle">
+          A glimpse into our child-friendly pediatric clinic, consultation rooms, and wellness facilities.
+        </p>
+      </div>
+
+      <div class="peds5-gallery-grid">
+        <figure class="gallery-item peds5-gallery-item">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=600&q=80" alt="Modern clinic exterior" loading="lazy" />
+        </figure>
+        <figure class="gallery-item peds5-gallery-item">
+          <img src="https://images.unsplash.com/photo-1666214280165-8757062f9c8f?auto=format&fit=crop&w=600&q=80" alt="Clinic reception and waiting area" loading="lazy" />
+        </figure>
+        <figure class="gallery-item peds5-gallery-item">
+          <img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=600&q=80" alt="Clinic consultation room" loading="lazy" />
+        </figure>
+        <figure class="gallery-item peds5-gallery-item">
+          <img src="https://images.unsplash.com/photo-1587351021355-a479a299d2f9?auto=format&fit=crop&w=600&q=80" alt="Clinic corridor and seating" loading="lazy" />
+        </figure>
+        <figure class="gallery-item peds5-gallery-item">
+          <img src="https://images.unsplash.com/photo-1666887360742-974c8fce8e6a?auto=format&fit=crop&w=600&q=80" alt="Diagnostic equipment area" loading="lazy" />
+        </figure>
+        <figure class="gallery-item peds5-gallery-item">
+          <img src="https://images.unsplash.com/photo-1666214280235-b0e4a1c5c1c1?auto=format&fit=crop&w=600&q=80" alt="Treatment room" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery lightbox -->
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div>
+    <figure class="gallery-lightbox-content">
+      <img src="" alt="Enlarged gallery image" id="galleryLightboxImage" />
+    </figure>
+    <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">&times;</button>
+  </div>
+
+  <!-- ====== BOOKING MODAL ====== -->
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate>
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+            <p class="booking-error" data-error-for="fullName"></p>
+          </div>
+          <div class="booking-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
+            <p class="booking-error" data-error-for="phone"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            <p class="booking-error" data-error-for="email"></p>
+          </div>
+          <div class="booking-field booking-field--date">
+            <label for="preferredDateText">Preferred Date</label>
+            <div class="booking-datepicker" id="preferredDateField">
+              <div class="booking-input-with-icon">
+                <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+              </div>
+              <input type="hidden" id="preferredDate" name="preferredDate" />
+              <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                <div class="booking-calendar-header">
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                  <span class="booking-calendar-title" data-cal-title></span>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="booking-calendar-weekdays">
+                  <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+                <div class="booking-calendar-grid" data-cal-grid></div>
+              </div>
+            </div>
+            <p class="booking-error" data-error-for="preferredDate"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="preferredTime">Preferred Time</label>
+            <div class="booking-select-wrap">
+              <select id="preferredTime" name="preferredTime" required>
+                <option value="">Select Time Slot</option>
+                <option value="09:00-10:00">09:00 - 10:00 AM</option>
+                <option value="10:00-11:00">10:00 - 11:00 AM</option>
+                <option value="11:00-12:00">11:00 - 12:00 PM</option>
+                <option value="14:00-15:00">02:00 - 03:00 PM</option>
+                <option value="15:00-16:00">03:00 - 04:00 PM</option>
+                <option value="16:00-17:00">04:00 - 05:00 PM</option>
+              </select>
+              <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+            </div>
+            <p class="booking-error" data-error-for="preferredTime"></p>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="reason">Reason For Visit</label>
+          <textarea id="reason" name="reason" rows="3" placeholder="Please describe your child's symptoms or reason for consultation..." required></textarea>
+          <p class="booking-error" data-error-for="reason"></p>
+        </div>
+
+        <div class="booking-field booking-field--file">
+          <label for="report">Upload Report</label>
+          <div class="booking-upload-row">
+            <label class="booking-upload-btn" for="report">Upload</label>
+            <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+            <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+          </div>
+          <p class="booking-error" data-error-for="report"></p>
+        </div>
+
+        <div class="booking-field booking-consent-field">
+          <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+        </div>
+
+        <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="peds5-footer">
+    <div class="peds5-footer-inner">
+      <div class="peds5-footer-brand-col">
+        <a href="#" class="peds5-footer-brand">
+          <span class="peds5-avatar">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=120&h=120&fit=crop&q=80" alt="Dr. Rohan Kapoor" />
+          </span>
+          <span class="peds5-brand-text">
+            <span class="peds5-brand-name">Dr. Rohan Kapoor</span>
+            <span class="peds5-brand-role">Board-Certified Pediatrician</span>
+          </span>
+        </a>
+        <p class="peds5-footer-tagline">Evidence-based pediatric &amp; pulmonary care for growing families.</p>
+        <div class="peds5-footer-social-wrap">
+          <span class="peds5-footer-social-label">Follow me on:</span>
+          <div class="peds5-footer-social">
+            <a href="#" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="peds5-footer-right-col">
+        <div class="peds5-footer-links-group">
+          <h4>Quick Links</h4>
+          <nav class="peds5-footer-nav-horizontal">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact-us">Contact</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#gallery">Gallery</a>
+          </nav>
+        </div>
+
+        <div class="peds5-footer-links-group">
+          <h4>Legal</h4>
+          <nav class="peds5-footer-nav-horizontal">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </nav>
+        </div>
+
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
+          <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+          <span class="footer-visitor-badge-label">No. of Visitor:</span>
+          <span class="footer-visitor-badge-count">500</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="peds5-footer-bottom">
+      <p>&copy; 2026 Dr. Rohan Kapoor. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="./script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
+</body>
+</html>

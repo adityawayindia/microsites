@@ -351,8 +351,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .nav-actions {
@@ -422,6 +422,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   display: flex;
   align-items: center;
   gap: 4px;
+  /* Pushes nav-links (and everything after it) flush to the right edge of
+     the navbar. If the Book Appointment CTA is removed/hidden on desktop,
+     nav-links automatically becomes the rightmost element instead of
+     floating in the middle of the header — no JS or extra markup needed. */
+  margin-left: auto;
 }
 /* Nav items are underlined on hover rather than filled — no pill chips
    anywhere in this system. */
@@ -460,6 +465,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .cta-btn i { color: #ffffff; font-size: 14px; }
 .cta-btn span { color: #ffffff; }
 .cta-text-mobile { display: none; }
+
+/* Lets a microsite hide the CTA (e.g. <a id="openBookingBtn" hidden>) and
+   have nav-links (margin-left: auto above) take over the right edge,
+   instead of the [hidden] attribute silently losing to .cta-btn's own
+   `display: inline-flex`. */
+.cta-btn[hidden] { display: none; }
 
 .menu-toggle {
   display: none;
@@ -508,7 +519,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .hero-section .hero-reg-id { color: var(--muted); }
 .hero-section .languages { color: var(--muted); }
 .hero-section .languages strong { color: var(--sky-dark); }
-.hero-section .hero-cta-secondary { color: var(--amber-dark); }
+.hero-section .hero-cta-secondary { color: #ffffff; }
 
 /* Badge, stat tiles and socials are drawn as flat white cards cut into the
    ivory sheet — hairline ruled, square, and lifted only by an ochre rule. */
@@ -786,7 +797,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   margin-bottom: 26px;
 }
 
-/* Outline sibling of the site-wide filled button — same ochre hue */
+/* Filled the same as every other button — no outline/ghost buttons
+   anywhere on the site (AGENTS.md §15). */
 .hero-cta-secondary {
   display: inline-flex;
   align-items: center;
@@ -794,15 +806,17 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   padding: 13px 28px;
   border-radius: var(--radius-pill);
   border: 2px solid var(--amber);
-  background: transparent;
-  color: var(--amber-dark);
+  background: var(--amber);
+  color: #ffffff;
   font-size: 18px;
   font-weight: 700;
+  box-shadow: var(--shadow-amber);
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .hero-cta-secondary i, .hero-cta-secondary span { color: inherit; }
 .hero-cta-secondary:hover {
-  background: var(--amber);
+  background: var(--amber-dark);
+  border-color: var(--amber-dark);
   color: #ffffff;
   transform: translateY(-3px);
   box-shadow: var(--shadow-amber);
@@ -2327,7 +2341,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .step-circle { width: 56px; height: 56px; font-size: 20px; }
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 1200px) {
   .menu-toggle { display: flex; }
   .nav-links {
     position: absolute;
@@ -2670,7 +2684,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    Appended last so it beats the base .brand-name nowrap/15ch truncation
    and the site-wide 18px body-text sizing above.
    ========================================================================== */
-@media (max-width: 1030px) {
+@media (max-width: 1200px) {
   .navbar {
     min-height: 60px;
     position: relative;
@@ -2788,6 +2802,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     top: calc(100% + 6px);
     left: 0;
     right: 0;
+    margin-left: 0;
     z-index: 60;
   }
 }

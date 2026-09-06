@@ -32,7 +32,7 @@ Practice Gallery → Booking Modal → Footer.
    when content wraps.
 4. **Social icon rows must have `flex-wrap: wrap`** (header, hero, footer) — any class
    name, check every `display: flex` social wrapper.
-5. Insert the **Section 3 standard CSS block from AGENTS.md** near the top of
+5. Insert the **§22 standard CSS block from AGENTS.md** near the top of
    `styles/style.css`, right after `:root {}` tokens — check first for the
    `DigiDr Global` comment marker before adding, don't duplicate. Add any new
    component classes used to the `min-width: 0` / `height: auto` lists.
@@ -51,7 +51,7 @@ Practice Gallery → Booking Modal → Footer.
   outside `h1`, paragraphs, list items, or the footer.
 - Section padding: `64px 0`, not `100px 0` (avoids ~200px dead-space stacking).
 
-## Colour & contrast (hard-bound, Section 7.1 of AGENTS.md)
+## Colour & contrast (hard-bound, see AGENTS.md §1.1)
 
 - **60% neutral base / 30% brand colour / 10% accent** (accent strictly for CTAs and
   important links — never decorative fills).
@@ -61,7 +61,7 @@ Practice Gallery → Booking Modal → Footer.
   finalizing any brand/accent colour, especially text on coloured surfaces.
 - Semantic colours fixed regardless of brand: green=success, red=error, blue=link.
 
-## Layout, branding & interaction (AGENTS.md §11)
+## Layout, branding & interaction (see AGENTS.md §2, §6, §11, §15)
 
 - **Container width:** don't cap the main container at 1280px — use 1440–1600px for a
   modern wide layout. Keep inner text blocks to a readable ~65–75ch measure regardless.
@@ -85,17 +85,17 @@ Practice Gallery → Booking Modal → Footer.
 - **Services grid is 3-per-row on 12 tracks** (`repeat(12, minmax(0, 1fr))`, cards
   `span 4`) — 2 per row at 1200px, 1 per row at 640px. An incomplete final row must be
   centered, which is *only* possible with the 12-track system; never go back to
-  `repeat(3, 1fr)` + `grid-column: 1 / -1`. Copy the block from **AGENTS.md §12.1**
+  `repeat(3, 1fr)` + `grid-column: 1 / -1`. Copy the block from **AGENTS.md §23**
   verbatim, keep its rule order, and test with 4/5/6/7 cards — the leftover rules are
   dormant at 6 cards, so regressions are invisible there.
 
-## About-section "Read More" toggle (AGENTS.md §13, mandatory)
+## About-section "Read More" toggle (AGENTS.md §24, mandatory)
 
 - Any About-section bio long enough to plausibly exceed 7 lines gets a **Read
   More/Read Less** toggle — clip via `-webkit-line-clamp: 7` on a `.read-more-content`
   wrapper inside a `.read-more-wrap` container, with a `.read-more-btn` (chevron icon)
   after it.
-- Copy the CSS and JS blocks from **AGENTS.md §13.2/§13.3 verbatim** — swap only the
+- Copy the CSS and JS blocks from **AGENTS.md §24 verbatim** — swap only the
   button/hover CSS variables to match the microsite's existing palette. The JS is a
   self-contained IIFE appended to the end of `script/index.js`; don't rewrite it.
 - Button **auto-hides** if the bio already fits in 7 lines (`scrollHeight` vs
@@ -113,7 +113,7 @@ Practice Gallery → Booking Modal → Footer.
 - Never delete a file without explicit user approval.
 - Test every new/edited layout with long doctor names and long specialty text.
 
-## Known gotchas (see AGENTS.md §9–10 for full detail)
+## Known gotchas (see AGENTS.md §25–26 for full detail)
 
 - The global reset's `max-width: 100%` can collapse absolutely-positioned third-party
   widget panels (e.g. dropdowns) — override `max-width: none` on the specific widget
