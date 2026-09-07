@@ -453,6 +453,12 @@ if (menuToggle && mainNav) {
 
         consentCheckbox.addEventListener("change", () => {
             submitBtnEl.disabled = !consentCheckbox.checked;
+            if (typeof gtag === "function") {
+                gtag("event", "consent_checkbox_click", {
+                    checked: consentCheckbox.checked,
+                    page_path: window.location.pathname,
+                });
+            }
         });
 
         // Intercept disabled property sets to respect consent checkbox state

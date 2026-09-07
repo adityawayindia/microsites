@@ -1,3 +1,15 @@
+// GA4 generic click tracking — any element with data-ga-event is tracked
+// automatically, including nested icons/spans, via event delegation.
+document.addEventListener("click", (event) => {
+  const el = event.target.closest("[data-ga-event]");
+  if (!el || typeof gtag !== "function") return;
+
+  gtag("event", el.getAttribute("data-ga-event"), {
+    label: el.getAttribute("data-ga-label") || el.textContent.trim().slice(0, 60),
+    page_path: window.location.pathname,
+  });
+});
+
 // Always start fresh on load/refresh: reset scroll position and strip any
 // URL hash left over from in-page nav so a reload never resumes mid-page.
 if ("scrollRestoration" in history) {
@@ -441,6 +453,12 @@ if (menuToggle && mainNav) {
 
         consentCheckbox.addEventListener("change", () => {
             submitBtnEl.disabled = !consentCheckbox.checked;
+            if (typeof gtag === "function") {
+                gtag("event", "consent_checkbox_click", {
+                    checked: consentCheckbox.checked,
+                    page_path: window.location.pathname,
+                });
+            }
         });
 
         // Intercept disabled property sets to respect consent checkbox state
@@ -677,6 +695,9 @@ if (menuToggle && mainNav) {
     if (form.report) {
       form.report.addEventListener("change", () => {
         renderReportPreview(form.report.files[0]);
+        if (form.report.files[0] && typeof gtag === "function") {
+          gtag("event", "report_uploaded", { page_path: window.location.pathname });
+        }
       });
     }
 
@@ -919,6 +940,13 @@ if (menuToggle && mainNav) {
     renderReportPreview(null);
     closeModal();
     showBookingPopup(msg, true);
+
+    if (typeof gtag === "function") {
+      gtag("event", "booking_submitted", {
+        appointment_type: isOnline ? "online" : "clinic",
+        page_path: window.location.pathname,
+      });
+    }
 
     isSubmitting = false;
   });
