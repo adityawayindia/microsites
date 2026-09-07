@@ -243,6 +243,9 @@
     /* ── Button events ── */
     fab.addEventListener('click', function () {
         if (!isOpen) openChat();
+        if (typeof gtag === 'function') {
+            gtag('event', 'chatbot_open_click', { page_path: window.location.pathname });
+        }
     });
 
     if (closeBtn) {
@@ -255,6 +258,9 @@
 
     sendBtn.addEventListener('click', function () {
         sendMessage(inputEl.value);
+        if (typeof gtag === 'function') {
+            gtag('event', 'chatbot_send_click', { page_path: window.location.pathname });
+        }
     });
 
     /* ── Suggestion chips ── */
