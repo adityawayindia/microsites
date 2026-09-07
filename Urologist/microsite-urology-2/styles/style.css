@@ -460,7 +460,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   background-repeat: repeat;
   background-size: 72px 96px;
   background-position: 0 0;
-  opacity: 0.075;
+  opacity: 0.15;
   mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 30%, transparent 78%);
   -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 30%, transparent 78%);
 }
@@ -585,7 +585,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   border: 1px solid hsla(150, 40%, 34%, 0.22);
   font-size: 18px;
   line-height: 1.6;
-  color: var(--muted);
+  color: var(--text);
   width: 100%;
   max-width: 52ch;
 }
