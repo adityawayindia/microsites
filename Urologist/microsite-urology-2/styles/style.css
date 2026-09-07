@@ -731,7 +731,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .uro-hud .stat-card-num {
   display: block;
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text);
