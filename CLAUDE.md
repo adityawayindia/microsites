@@ -49,7 +49,8 @@ Practice Gallery → Booking Modal → Footer.
   further at 1900px+; control width via `max-width`/measure instead.
 - Sub-headings/badges/kickers stay generic — no doctor names or "20+ years" claims
   outside `h1`, paragraphs, list items, or the footer.
-- Section padding: `64px 0`, not `100px 0` (avoids ~200px dead-space stacking).
+- Section padding: `10px 0` on every top-level section (desktop and mobile alike, no
+  separate mobile override) — avoids dead-space stacking.
 
 ## Colour & contrast (hard-bound, see AGENTS.md §1.1)
 

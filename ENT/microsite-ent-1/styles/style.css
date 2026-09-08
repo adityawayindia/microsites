@@ -951,7 +951,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    ABOUT — executive, icon-free typography
    ============================================================ */
-.about-section { padding: 40px 0; background: var(--bg); }
+.about-section { padding: 10px 0; background: var(--bg); }
 
 /* Portrait column is capped so the photo stays a supporting element
    rather than dominating the section on wide desktops. */
@@ -1010,7 +1010,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    SERVICES
    ============================================================ */
-.services-section { position: relative; padding: 40px 0; background: var(--bg-2); overflow: hidden; }
+.services-section { position: relative; padding: 10px 0; background: var(--bg-2); overflow: hidden; }
 .services-section > .container { position: relative; z-index: 1; }
 
 .services-header { text-align: center; margin: 0 auto 48px; max-width: 700px; }
@@ -1101,7 +1101,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — image-left credential card, connected-rail pillars right
    ============================================================ */
 .philosophy-section {
-  padding: 40px 0;
+  padding: 10px 0;
   background: var(--bg-3);
 }
 
@@ -1229,7 +1229,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONSULTATION JOURNEY — vertical alternating zig-zag timeline
    ============================================================ */
-.process-section { position: relative; padding: 40px 0; background: var(--bg-3); overflow: hidden; }
+.process-section { position: relative; padding: 10px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
 
 /* Brand emerald gradient with a faint ear / nose / throat line-art motif —
@@ -1353,7 +1353,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-section { padding: 32px 0; background: var(--bg); }
+.contact-section { padding: 10px 0; background: var(--bg); }
 
 .contact-card {
   background: var(--surface);
@@ -1417,7 +1417,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ============================================================ */
 .testimonials-section {
   position: relative;
-  padding: 40px 0;
+  padding: 10px 0;
   overflow: hidden;
   background-image:
     radial-gradient(ellipse 65% 55% at 12% 15%, hsla(8, 72%, 50%, 0.18), transparent 60%),
@@ -1509,7 +1509,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    GALLERY
    ============================================================ */
-.gallery-section { padding: 40px 0; background: var(--bg); }
+.gallery-section { padding: 10px 0; background: var(--bg); }
 .gallery-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
 .gallery-subtitle { margin-left: auto; margin-right: auto; }
 
@@ -2283,7 +2283,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
   .contact-card { padding: 32px 20px; }
   .testimonial-card { flex: 0 0 100%; }
-  .about-section { padding-top: 32px; }
+  .about-section { padding-top: 10px; }
 
   /* Carousel prev/next: drop out of absolute positioning beside the card
      and place them as a static row below it instead. */
@@ -2516,7 +2516,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
 
   .contact-section {
-    padding: 24px 0;
+    padding: 10px 0;
   }
 }
 

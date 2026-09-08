@@ -458,7 +458,7 @@ ENT-1 implements it (`data-count-to` / `data-suffix` attributes).
 
 | Element | Value |
 |---|---|
-| Section padding | `36px 0` (→ `32px` top only at `≤640px`) |
+| Section padding | `10px 0` (same at all breakpoints) |
 | `.about-layout` | grid `0.58fr 1.42fr`, `gap:48px` → collapses to 1 column at `≤1100px` |
 | `h2` (`.about-title`) | `34px`, weight 800 → `30px` at `≤480px` |
 | Lede/intro paragraph | `22px`, weight 700, line-height `1.5`, left border `4px solid var(--accent)`, `padding-left:18px` |
@@ -474,7 +474,7 @@ ENT-1 implements it (`data-count-to` / `data-suffix` attributes).
 
 | Element | Value |
 |---|---|
-| Section padding | `36px 0` |
+| Section padding | `10px 0` |
 | Header block | `max-width:700px`, `margin-bottom:48px` |
 | Grid | `repeat(12, minmax(0,1fr))`, `gap:26px` |
 | Card span (desktop) | `span 4` → **3 per row** |
@@ -497,7 +497,7 @@ ENT-1 implements it (`data-count-to` / `data-suffix` attributes).
 
 | Element | Value |
 |---|---|
-| Section padding | `36px 0` |
+| Section padding | `10px 0` |
 | Layout | grid `0.9fr 1.1fr`, `gap:56px` → 1 column at `≤1100px` |
 | Image frame | `max-width:460px`, fixed `height:440px`, `5px solid var(--brand-dark)` border, `--radius-xl` |
 | Floating credential badge | padding `14px 18px`, `--radius-lg`; icon `40px × 40px` (`16px` glyph); label `strong` `18px` / `span` `18px` (corrected — ENT-1 currently ships `16px`/`14px`) |
@@ -511,7 +511,7 @@ ENT-1 implements it (`data-count-to` / `data-suffix` attributes).
 
 | Element | Value |
 |---|---|
-| Section padding | `36px 0`; header `margin-bottom:56px` |
+| Section padding | `10px 0`; header `margin-bottom:56px` |
 | Timeline container | `max-width:900px`; connecting line `2px` |
 | Step grid | `1fr 84px 1fr`, `column-gap:32px`; steps stack with `margin-top:44px` between them |
 | Step-number chip | `26px × 26px` circle, `13px` numeral |
@@ -534,7 +534,7 @@ the dead duplication into new sites.
 
 | Element | Value |
 |---|---|
-| Section padding | `36px 0` |
+| Section padding | `10px 0` |
 | Carousel wrap | `max-width:1180px`, side padding `56px` (room for nav arrows) |
 | Track gap | `22px` |
 | Card width | `flex: 0 0 calc(33.333% - 15px)` (3 visible) → `50%` (2 visible) at `≤900px` → `100%` (1 visible) at `≤640px` |
@@ -555,7 +555,7 @@ overlapping the card edges.
 
 | Element | Value |
 |---|---|
-| Section padding | `36px 0` |
+| Section padding | `10px 0` |
 | Grid | 12-track system (`repeat(12, minmax(0,1fr))`, `gap:18px`), same mechanism as Services §6 — 3 per row desktop (`span 4`), 2 per row at `≤1100px` (`span 6`), stays 2-column down to smallest widths (no forced single-column gallery) |
 | Item | `aspect-ratio:4/3`, `--radius-lg`, `--shadow-card`; hover: image `scale(1.08)` |
 
@@ -856,7 +856,7 @@ extend an earlier, shorter 10-section version of this list:
 - **Contact section** (id `#contact-us`) sits between Consultation Journey and
   Testimonials — a dedicated address/phone/email card, separate from the footer and
   separate from the booking modal. Treat this as a mandatory 11th standard section
-  going forward, positioned exactly there in the sequence. Section padding: `36px 0`,
+  going forward, positioned exactly there in the sequence. Section padding: `10px 0`,
   same as every other section per §19.
 - **Gallery lightbox** is part of the standard Gallery section, not optional — every
   gallery grid should be click-to-enlarge with keyboard nav support, matching §10 above.
@@ -865,7 +865,7 @@ extend an earlier, shorter 10-section version of this list:
 
 | Element | Value |
 |---|---|
-| Section padding | `36px 0` |
+| Section padding | `10px 0` |
 | Card | `--radius-xl`, `1px solid var(--border)` (no top border — sits flush under the section header), `--shadow-card`, padding `36px 56px` (→ `32px 20px` at `≤640px`) |
 | Header block | centered, `max-width:640px`, `margin: 0 auto 28px` |
 | Header `h2` | `34px` |
@@ -884,18 +884,18 @@ are no longer side-by-side); `≤640px` — card padding tightens to `32px 20px`
 
 ## 19. Section Vertical Rhythm Summary
 
-Every top-level section uses **`36px 0`** padding, desktop and mobile alike (no
-separate mobile override needed for this value — it's already tight enough).
+Every top-level section uses **`10px 0`** padding, desktop and mobile alike (no
+separate mobile override needed for this value).
 
 | Section | Padding |
 |---|---|
-| About | **36px 0** |
-| Services | **36px 0** |
-| Philosophy | **36px 0** |
-| Consultation Journey | **36px 0** |
-| Contact | **36px 0** |
-| Testimonials | **36px 0** |
-| Gallery | **36px 0** |
+| About | **10px 0** |
+| Services | **10px 0** |
+| Philosophy | **10px 0** |
+| Consultation Journey | **10px 0** |
+| Contact | **10px 0** |
+| Testimonials | **10px 0** |
+| Gallery | **10px 0** |
 
 Any section shipping a different value is a bug to fix, not a valid variant.
 

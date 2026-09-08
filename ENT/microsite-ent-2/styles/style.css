@@ -1039,7 +1039,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    ABOUT — executive, icon-free typography
    ============================================================ */
-.about-section { padding: 36px 0; background: var(--surface); }
+.about-section { padding: 10px 0; background: var(--surface); }
 
 /* Portrait column is capped so the photo stays a supporting element
    rather than dominating the section on wide desktops. */
@@ -1111,7 +1111,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    the white service cells are cut into. */
 .services-section {
   position: relative;
-  padding: 36px 0;
+  padding: 10px 0;
   background: var(--sky-deep);
   overflow: hidden;
 }
@@ -1217,7 +1217,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — image-left credential card, connected-rail pillars right
    ============================================================ */
 .philosophy-section {
-  padding: 36px 0;
+  padding: 10px 0;
   background: var(--bg);
 }
 
@@ -1345,7 +1345,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONSULTATION JOURNEY — vertical alternating zig-zag timeline
    ============================================================ */
-.process-section { position: relative; padding: 40px 0; background: var(--bg-3); overflow: hidden; }
+.process-section { position: relative; padding: 10px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
 
 /* Brand aubergine gradient with a faint ear / nose / throat line-art motif —
@@ -1474,7 +1474,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-section { padding: 36px 0; background: var(--surface); }
+.contact-section { padding: 10px 0; background: var(--surface); }
 
 .contact-card {
   background: var(--surface);
@@ -1540,7 +1540,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ruled white cells with the same accent-cap as every other card. */
 .testimonials-section {
   position: relative;
-  padding: 36px 0;
+  padding: 10px 0;
   overflow: hidden;
   border-top: 1px solid var(--border);
   background-color: var(--bg-2);
@@ -1644,7 +1644,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    GALLERY
    ============================================================ */
-.gallery-section { padding: 36px 0; background: var(--surface); }
+.gallery-section { padding: 10px 0; background: var(--surface); }
 .gallery-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
 .gallery-subtitle { margin-left: auto; margin-right: auto; }
 
@@ -2394,7 +2394,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .footer-rights { display: block; margin-top: 2px; }
   .contact-card { padding: 32px 20px; }
   .testimonial-card { flex: 0 0 100%; }
-  .about-section { padding-top: 32px; }
+  .about-section { padding-top: 10px; }
 
   /* Carousel prev/next: drop out of absolute positioning beside the card
      and place them as a static row below it instead. */
@@ -2627,7 +2627,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
 
   .contact-section {
-    padding: 32px 0;
+    padding: 10px 0;
   }
 }
 
