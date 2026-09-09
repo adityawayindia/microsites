@@ -4,7 +4,7 @@
 
 .digidr-banner-module {
   width: 100%;
-  padding: 10px 0 24px;
+  padding: 16px 0;
   background-color: transparent;
   min-width: 0;
   box-sizing: border-box;
@@ -68,7 +68,7 @@
 @media (max-width: 768px) {
   .digidr-banner-section,
   .digidr-banner-module {
-    padding: 10px 0 16px;
+    padding: 12px 0;
   }
   .digidr-banner-wrap {
     border-radius: 14px;

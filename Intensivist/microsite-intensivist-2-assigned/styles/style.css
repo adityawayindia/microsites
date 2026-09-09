@@ -434,12 +434,8 @@ h1, h2, h3, h4 {
     radial-gradient(1000px 520px at 82% -8%, hsl(268 64% 34% / 0.7) 0%, transparent 62%),
     radial-gradient(760px 420px at 6% 104%, hsl(190 84% 30% / 0.5) 0%, transparent 60%),
     linear-gradient(165deg, var(--ink) 0%, var(--ink-2) 58%, hsl(258 42% 13%) 100%);
-  padding: 16px 0 56px;
+  padding: 10px 0;
   isolation: isolate;
-}
-
-.iv-hero .digidr-banner-module {
-  padding-top: 0;
 }
 
 .iv-hero-grid-lines {
@@ -464,7 +460,7 @@ h1, h2, h3, h4 {
   grid-template-columns: 1.08fr 0.92fr;
   gap: 48px;
   align-items: center;
-  padding: 24px 0 46px;
+  padding: 0 0 10px;
 }
 
 /* Hero copy ---------------------------------------------------------------*/
@@ -507,7 +503,12 @@ h1, h2, h3, h4 {
   font-weight: 700;
   letter-spacing: -0.04em;
   color: #fff;
-  margin: 22px 0 6px;
+  margin: 0 0 6px;
+}
+
+@media (min-width: 641px) {
+  .iv-hero-title { margin-top: 8px; }
+  .iv-hero-rig { margin-top: 8px; }
 }
 
 .iv-hero-title .iv-hero-title-sub {
@@ -994,7 +995,7 @@ h1, h2, h3, h4 {
    ABOUT
    ========================================================================== */
 .iv-about {
-  padding: 44px 0;
+  padding: 10px 0;
   background: var(--white);
 }
 
@@ -1128,7 +1129,7 @@ h1, h2, h3, h4 {
    SERVICES — infusion line cards
    ========================================================================== */
 .iv-services {
-  padding: 44px 0;
+  padding: 10px 0;
   background: var(--surface-2);
 }
 
@@ -1205,15 +1206,28 @@ h1, h2, h3, h4 {
 
 .iv-svc-card:hover .iv-svc-line::after { top: 0; }
 
-.iv-svc-body { flex: 1; }
+.iv-svc-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "icon title"
+    "desc desc"
+    "tags tags";
+  column-gap: 14px;
+  align-items: center;
+}
 
 .iv-svc-top {
+  grid-area: icon;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 0;
 }
+
+.iv-svc-body h3 { grid-area: title; }
+.iv-svc-body p { grid-area: desc; margin-top: 14px; }
+.iv-svc-body .iv-tag-row { grid-area: tags; }
 
 .iv-svc-icon {
   width: 46px;
@@ -1240,8 +1254,9 @@ h1, h2, h3, h4 {
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 8px;
+  margin: 0;
   color: var(--text);
+  min-width: 0;
 }
 
 .iv-svc-body p {
@@ -1274,7 +1289,7 @@ h1, h2, h3, h4 {
    PHILOSOPHY
    ========================================================================== */
 .iv-philosophy {
-  padding: 44px 0;
+  padding: 10px 0;
   background: var(--white);
 }
 
@@ -1386,7 +1401,7 @@ h1, h2, h3, h4 {
    ========================================================================== */
 .iv-journey {
   position: relative;
-  padding: 44px 0 56px;
+  padding: 10px 0;
   background-color: var(--surface-2);
   background-image:
     radial-gradient(ellipse 80% 50% at 50% 0%, hsl(268 70% 58% / 0.07), transparent 70%),
@@ -1542,7 +1557,7 @@ h1, h2, h3, h4 {
    CONTACT
    ========================================================================== */
 .iv-contact {
-  padding: 44px 0;
+  padding: 10px 0;
   background: var(--white);
 }
 
@@ -1627,7 +1642,7 @@ h1, h2, h3, h4 {
    ========================================================================== */
 .iv-testimonials {
   position: relative;
-  padding: 44px 0;
+  padding: 10px 0;
   background-color: var(--surface-2);
   background-image:
     radial-gradient(ellipse 80% 50% at 50% 0%, hsl(190 88% 45% / 0.07), transparent 70%),
@@ -1802,7 +1817,7 @@ h1, h2, h3, h4 {
    GALLERY
    ========================================================================== */
 .iv-gallery {
-  padding: 44px 0 52px;
+  padding: 10px 0;
   background: var(--white);
 }
 
@@ -1977,8 +1992,9 @@ h1, h2, h3, h4 {
 .booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
 
 .booking-upload-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.booking-upload-btn { flex-shrink: 0; display: inline-flex; align-items: center; background: var(--iv-soft); color: var(--iv-deep); border: 1.5px solid var(--iv-line); border-radius: 999px; padding: 9px 18px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s, color 0.2s; }
-.booking-upload-btn:hover { background: var(--iv-deep); color: #fff; }
+.booking-upload-btn { flex-shrink: 0; display: inline-flex; align-items: center; background: linear-gradient(135deg, var(--iv-deep) 0%, var(--iv) 55%, var(--saline) 130%); color: #fff; border: none; border-radius: 999px; padding: 9px 18px; font-size: 16px; font-weight: 700; cursor: pointer; transition: transform 0.2s var(--ease); }
+.booking-upload-btn:hover { transform: translateY(-2px); }
+.booking-field label.booking-upload-btn { color: #fff; }
 .booking-field--file input[type="file"] { display: none; }
 .booking-upload-help { font-size: 16px; color: var(--muted); }
 .booking-file-preview { font-size: 16px; color: var(--muted); margin-top: 4px; }
@@ -2235,7 +2251,7 @@ h1, h2, h3, h4 {
    BLOG / LEGAL SHARED PAGES
    ========================================================================== */
 .blog-hero-section {
-  padding: 54px 0;
+  padding: 10px 0;
   background:
     radial-gradient(700px 320px at 80% -20%, hsl(268 64% 34% / 0.6), transparent 60%),
     linear-gradient(160deg, var(--ink), var(--ink-2));
@@ -2264,7 +2280,7 @@ h1, h2, h3, h4 {
 .blog-hero-content h1 { color: #fff; font-size: clamp(30px, 4vw, 44px); margin: 0 0 12px; }
 .blog-hero-content p { color: hsl(258 26% 86%); font-size: 18px; max-width: 620px; margin: 0 auto; }
 
-.blog-listing-section { padding: 40px 0; background: var(--surface-2); }
+.blog-listing-section { padding: 10px 0; background: var(--surface-2); }
 
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 
@@ -2291,7 +2307,7 @@ h1, h2, h3, h4 {
 .blog-page-link { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: auto !important; min-height: 38px; padding: 0 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--white); color: var(--text); text-decoration: none; font-size: 18px; font-weight: 600; }
 .blog-page-link.is-active, .blog-page-link:hover { background: var(--iv-deep); color: #fff; border-color: var(--iv-deep); }
 
-.blog-detail-content { padding: 40px 0; background: var(--white); }
+.blog-detail-content { padding: 10px 0; background: var(--white); }
 .blog-detail-title { font-size: clamp(28px, 3.4vw, 38px); margin: 0 0 12px; }
 .blog-detail-meta { font-size: 18px; color: var(--muted); margin-bottom: 26px; }
 .blog-detail-section { margin-bottom: 26px; }
@@ -2350,7 +2366,7 @@ h1, h2, h3, h4 {
   .iv-gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   .nav-links { display: none; }
   .nav-links.open,
   .nav-links.is-open {
@@ -2385,8 +2401,8 @@ h1, h2, h3, h4 {
 @media (max-width: 640px) {
   .container { width: 94%; }
 
-  .iv-hero { padding: 22px 0 44px; }
-  .iv-hero-grid { padding: 0px 0 34px; }
+  .iv-hero { padding: 10px 0; }
+  .iv-hero-grid { padding: 10px 0; }
   .iv-hero-rig { grid-template-columns: 70px 1fr; gap: 8px; }
   .iv-bag { width: 62px; height: 96px; }
   .iv-bag-label { font-size: 13px; letter-spacing: 0.06em; white-space: nowrap; }
@@ -2400,7 +2416,7 @@ h1, h2, h3, h4 {
   }
 
   .iv-about, .iv-services, .iv-philosophy, .iv-journey, .iv-contact,
-  .iv-testimonials, .iv-gallery { padding: 36px 0; }
+  .iv-testimonials, .iv-gallery { padding: 10px 0; }
 
   .iv-cred-grid,
   .iv-about-grid--full .iv-cred-grid { grid-template-columns: 1fr; }
@@ -2520,7 +2536,7 @@ h1, h2, h3, h4 {
   }
 
   .iv-contact {
-    padding: 28px 0;
+    padding: 10px 0;
   }
 }
 
@@ -2582,7 +2598,7 @@ h1, h2, h3, h4 {
    Single row: [menu] [name/role] [Appointment].
    Appended last so it beats the earlier header rules above.
    ========================================================================== */
-@media (max-width: 1030px) {
+@media (max-width: 1440px) {
   .navbar {
     min-height: 60px;
     position: relative;
