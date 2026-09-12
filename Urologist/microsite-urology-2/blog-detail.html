@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) — TODO: replace G-XXXXXXXXXX with this microsite's real GA4 Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DDLFELHEW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-7DDLFELHEW');
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -63,16 +63,16 @@
       </a>
 
       <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#contact-us">Contact</a>
-        <a href="index.html#testimonials">Testimonials</a>
-        <a href="index.html#gallery">Gallery</a>
-        <a href="blog.html">Blog</a>
+        <a href="index.html#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
+        <a href="index.html#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
+        <a href="index.html#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
+        <a href="index.html#testimonials" data-ga-event="nav_link_click" data-ga-label="Testimonials">Testimonials</a>
+        <a href="index.html#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
+        <a href="blog.html" data-ga-event="nav_link_click" data-ga-label="Blog">Blog</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="#" class="cta-btn cta-btn" id="openBookingBtn">
+        <a href="#" class="cta-btn cta-btn" id="openBookingBtn" data-ga-event="book_appointment_click" data-ga-label="Navbar">
           <span class="cta-text-desktop">Book Appointment</span>
           <span class="cta-text-mobile">Appointment</span>
         </a>
@@ -88,7 +88,7 @@
     <section class="blog-detail-section">
       <div class="container">
         <article class="blog-detail-article">
-          <a href="blog.html" class="blog-detail-back-link">
+          <a href="blog.html" class="blog-detail-back-link" data-ga-event="blog_back_to_list_click">
             <i class="fa-solid fa-arrow-left"></i>
             Back to Blog
           </a>
@@ -177,6 +177,7 @@
             id="clinicVisitTab"
             role="tab"
             aria-selected="true"
+            data-ga-event="clinic_visit_tab_click"
           >
             Clinic Visit
           </button>
@@ -186,6 +187,7 @@
             id="onlineConsultTab"
             role="tab"
             aria-selected="false"
+            data-ga-event="online_consult_tab_click"
           >
             Online Consultation
           </button>
@@ -290,7 +292,7 @@
         <div class="booking-field booking-field--file">
           <label for="report">Upload Report</label>
           <div class="booking-upload-row">
-            <label class="booking-upload-btn" for="report">Upload</label>
+            <label class="booking-upload-btn" for="report" data-ga-event="upload_report_click">Upload</label>
             <input
               type="file"
               id="report"
@@ -336,14 +338,14 @@
         <div class="footer-social-wrap">
           <span class="footer-social-label">Follow me on:</span>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Footer"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Footer"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram" data-ga-event="social_instagram_click" data-ga-label="Footer"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X" data-ga-event="social_x_click" data-ga-label="Footer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Footer"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Website" data-ga-event="social_website_click" data-ga-label="Footer"><i class="fa-solid fa-globe"></i></a>
+            <a href="#" aria-label="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -352,20 +354,20 @@
         <div class="footer-links-group">
           <h4>Quick Links</h4>
           <nav class="footer-nav">
-            <a href="index.html#about">About</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#contact-us">Contact</a>
-            <a href="index.html#testimonials">Testimonials</a>
-            <a href="index.html#gallery">Gallery</a>
-            <a href="blog.html">Blog</a>
+            <a href="index.html#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
+            <a href="index.html#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
+            <a href="index.html#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
+            <a href="index.html#testimonials" data-ga-event="footer_nav_link_click" data-ga-label="Testimonials">Testimonials</a>
+            <a href="index.html#gallery" data-ga-event="footer_nav_link_click" data-ga-label="Gallery">Gallery</a>
+            <a href="blog.html" data-ga-event="footer_nav_link_click" data-ga-label="Blog">Blog</a>
           </nav>
         </div>
 
         <div class="footer-links-group">
           <h4>Legal</h4>
           <nav class="footer-nav">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="privacy-policy.html" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
+            <a href="terms-of-service.html" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
           </nav>
         </div>
 
@@ -383,6 +385,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="./script/analytics.js"></script>
   <script src="./script/index.js"></script>
   <script src="./script/chatbot.js" defer></script>
 </body>

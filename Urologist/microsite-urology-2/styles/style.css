@@ -35,6 +35,11 @@
   --button:        var(--amber);
   --button-hover:  var(--amber-dark);
 
+  /* Unified overlay/backdrop token — used for every full-screen overlay
+     (booking modal, gallery lightbox, confirmation popups) so no two
+     components invent their own darkness (AGENTS.md §16). */
+  --overlay-backdrop: rgba(8, 18, 32, 0.7);
+
   --radius-xl:     28px;
   --radius-lg:     20px;
   --radius-md:     16px;
@@ -739,7 +744,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
 .uro-hud-lbl {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -974,6 +979,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ============================================================ */
 .process-section { position: relative; padding: 10px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
+.process-subtitle { margin-left: auto; margin-right: auto; }
 
 .process-bg {
   position: absolute;
@@ -1032,22 +1038,24 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .process-step:nth-child(4) { margin-top: 0; }
 
 .step-number {
-  display: none !important;
+  display: flex;
   position: absolute;
-  top: -10px;
-  right: 8px;
+  top: -6px;
+  right: calc(50% - 45px);
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 800;
   line-height: 1;
-  color: var(--sky-dark);
+  color: #ffffff;
   opacity: 1;
   z-index: 2;
   user-select: none;
   pointer-events: none;
   background: var(--amber);
-  width: 24px;
-  height: 24px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
   align-items: center;
   justify-content: center;
 }
@@ -1071,10 +1079,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .step-circle-ring { display: none; }
 
-.process-step:nth-child(4n+1) { --accent: var(--amber); --accent-light: var(--amber-light); }
-.process-step:nth-child(4n+2) { --accent: var(--amber); --accent-light: var(--amber-light); }
-.process-step:nth-child(4n+3) { --accent: var(--amber); --accent-light: var(--amber-light); }
-.process-step:nth-child(4n+4) { --accent: var(--amber); --accent-light: var(--amber-light); }
+/* Every step uses the same accent by design (all 4 duplicate nth-child
+   rules previously resolved to this one value — collapsed per AGENTS.md
+   §8, which calls that out as dead code to drop rather than carry
+   forward). */
+.process-step { --accent: var(--amber); --accent-light: var(--amber-light); }
 
 .process-step h3 { position: relative; z-index: 1; font-size: 20px; margin: 0 0 8px; color: #ffffff; }
 .process-step p { position: relative; z-index: 1; font-size: 18px; color: rgba(255,255,255,0.92); margin: 0; }
@@ -1233,16 +1242,32 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 18px;
+  align-items: stretch;
+  justify-content: center;
 }
 .gallery-item {
+  grid-column: span 4;
+  min-width: 0;
   margin: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
   aspect-ratio: 4 / 3;
   box-shadow: none;
   border: 1px solid var(--border);
+}
+
+/* Leftover-row centering (AGENTS.md §23, same mechanism as Services §6) —
+   copied verbatim, class name swapped to .gallery-item. Do not reorder. */
+.gallery-item:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+.gallery-item:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+.gallery-item:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
 }
 .gallery-item img {
   width: 100%; height: 100%; object-fit: cover;
@@ -1255,7 +1280,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ============================================================ */
 .gallery-lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 600; }
 .gallery-lightbox.is-open { display: flex; }
-.gallery-lightbox-backdrop { position: absolute; inset: 0; background: rgba(8, 20, 35, 0.85); }
+.gallery-lightbox-backdrop { position: absolute; inset: 0; background: var(--overlay-backdrop); }
 .gallery-lightbox-content { position: relative; margin: 0; max-width: min(1100px, 92vw); max-height: 82vh; max-height: 82dvh; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); z-index: 1; }
 .gallery-lightbox-content img { width: 100%; height: 100%; display: block; object-fit: contain; background: #f8f9fa; }
 .gallery-lightbox-close {
@@ -1321,7 +1346,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ============================================================ */
 .booking-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 700; padding: 20px; }
 .booking-modal.is-open { display: flex; }
-.booking-modal-backdrop { position: absolute; inset: 0; background: rgba(8, 18, 32, 0.6); }
+.booking-modal-backdrop { position: absolute; inset: 0; background: var(--overlay-backdrop); }
 
 .booking-modal-dialog {
   position: relative;
@@ -1341,7 +1366,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-modal-header {
   position: sticky; top: 0; z-index: 5;
   background: var(--surface);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   padding: 20px 32px 0;
   border-radius: 20px 20px 0 0;
   border-bottom: 2px solid var(--border);
@@ -1365,8 +1390,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .booking-tab.is-active { color: var(--amber-dark); border-bottom-color: var(--amber); }
 
-.booking-form { display: flex; flex-direction: column; gap: 12px; padding: 0 32px 32px; }
-.booking-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.booking-form { display: flex; flex-direction: column; gap: 10px; padding: 0 32px 32px; }
+.booking-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .booking-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .booking-field label { font-size: 16px; font-weight: 600; color: var(--sky-dark); }
 .booking-field input, .booking-field select, .booking-field textarea {
@@ -1588,7 +1613,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-popup-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(6, 16, 30, 0.6);
+  background: var(--overlay-backdrop);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1635,7 +1660,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    FOOTER
    ============================================================ */
-.site-footer { background: var(--sky-dark); color: hsl(204, 30%, 88%); padding: 36px 0 0; border-top: 4px solid var(--amber); }
+.site-footer { background: var(--sky-dark); color: hsl(204, 30%, 88%); padding: 32px 0 0; border-top: 4px solid var(--amber); }
 
 .footer-inner {
   max-width: 760px;
@@ -1666,7 +1691,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   color: #fff;
   transition: background 0.25s ease, transform 0.25s ease;
 }
-.footer-social a:hover { background: var(--amber); color: var(--sky-dark); transform: translateY(-3px); }
+.footer-social a:hover { background: var(--amber); color: #ffffff; transform: translateY(-3px); }
 
 /* Right Column: Links & Visitor Counter */
 .footer-right-col {
@@ -1728,7 +1753,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   justify-content: center;
   gap: 8px;
   margin-top: 6px;
-  padding: 8px 18px;
+  padding: 10px 18px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.30);
@@ -1863,7 +1888,17 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
 
   .contact-grid .contact-item { flex-basis: 100%; max-width: 100%; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Gallery drops to 2 per row (span 6) — stays 2-column at every width
+     below this too, per AGENTS.md §10 (never forces a single column). */
+  .gallery-item,
+  .gallery-item:last-child:nth-child(3n + 1),
+  .gallery-item:nth-last-child(2):nth-child(3n + 1),
+  .gallery-item:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+  .gallery-item:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1886,7 +1921,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .process-step:nth-child(4) { margin-top: 0; }
 }
 
-@media (max-width: 1030px) {
+/* Hamburger breakpoint — measured, not guessed (AGENTS.md §3.2). This
+   site's header carries 6 nav links + a "Book Appointment"/"Appointment"
+   CTA and a brand name near the 15ch cap, the same content weight as
+   ENT-1's reference case, whose crush zone measured 1030-1180px with a
+   1030px breakpoint (squeezing .brand-name to a sliver just before the
+   hamburger rescues it). Moved to 1200px — comfortably above that
+   crush zone — instead of reusing the un-verified 1030px value. */
+@media (max-width: 1200px) {
   .menu-toggle { display: flex; }
   .nav-links {
     position: absolute;
@@ -1919,7 +1961,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     grid-column: 1 / -1;
   }
 
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr; justify-content: start; justify-items: start; }
   /* Scoped to the plain (unclassed-icon) footer-social row used on this
      page — .footer-social is also reused on privacy-policy.html /
@@ -1993,17 +2034,17 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
 /* ============================================================
    LEGAL PAGE FOOTER (site-footer) — privacy-policy / terms-of-service
+   Scoped to .legal-page so it can't clobber the marketing-page
+   .site-footer rule above (AGENTS.md §12 — one footer spec, one
+   container width, used by every page; this block only adjusts the
+   legal pages' inner layout, never the base padding/border). Container
+   width intentionally matches the sitewide .container (1480px / 92%)
+   rather than a separate legal-only width.
    ============================================================ */
-.site-footer {
-  background: var(--sky-dark);
-  padding: 30px 0 22px;
-  color: hsl(204, 30%, 88%);
-  border-top: 1px solid rgba(255,255,255,0.07);
-}
-
 .legal-footer-inner {
-  width: min(1240px, 92%);
+  width: min(1480px, 92%);
   margin: 0 auto;
+  padding: 0 0 22px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: auto auto;
@@ -2055,21 +2096,23 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 .footer-social {
-  /* Capped to exactly 8 icons per row (8 * 42px icon + 7 * 14px gap =
-     434px) so a 9th+ icon added later wraps to a new row instead of
+  /* Capped to exactly 8 icons per row (8 * 36px icon + 7 * 14px gap =
+     386px) so a 9th+ icon added later wraps to a new row instead of
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 14px;
-  max-width: 434px;
+  max-width: 386px;
   min-width: 0;
 }
 
 .footer-social-icon {
-  width: 42px;
-  height: 42px;
+  /* 36px x 36px — the single social-icon standard sitewide (AGENTS.md
+     §12); this legal-footer variant previously shipped 42px. */
+  width: 36px;
+  height: 36px;
   border-radius: 12px;
   display: inline-flex;
   align-items: center;
@@ -2238,9 +2281,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    DigiDr Compact Mobile Header
    Single row: [menu] [name/role] [Appointment].
    Appended last so it beats the base .brand-name nowrap/15ch truncation
-   and the site-wide 18px body-text sizing above.
+   and the site-wide 18px body-text sizing above. Breakpoint kept in sync
+   with the hamburger breakpoint above (moved 1030px -> 1200px, §3.2).
    ========================================================================== */
-@media (max-width: 1030px) {
+@media (max-width: 1200px) {
   .navbar {
     min-height: 60px;
     position: relative;

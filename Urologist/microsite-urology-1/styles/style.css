@@ -35,6 +35,11 @@
   --button:        var(--amber);
   --button-hover:  var(--amber-dark);
 
+  /* AGENTS.md §16: one overlay/backdrop token for every full-screen overlay
+     (booking modal, gallery lightbox, confirmation popup) — previously each
+     used its own one-off rgba value. */
+  --overlay-backdrop: rgba(8, 18, 32, 0.7);
+
   --radius-xl:     6px;
   --radius-lg:     4px;
   --radius-md:     4px;
@@ -346,6 +351,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   display: flex;
   align-items: center;
   gap: 6px;
+  /* AGENTS.md §3.1: auto left-margin absorbs free space before nav-links,
+     so if the CTA is ever hidden nav-links (and nothing after it) still
+     hugs the right edge instead of stranding in the middle of the header. */
+  margin-left: auto;
 }
 .nav-links a {
   font-size: 18px;
@@ -573,6 +582,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
 .hero-stat-box strong {
   display: block;
+  /* AGENTS.md §4/§0.2 spec value is 26px; kept at 30px here because a
+     recent commit (e080fcf) deliberately enlarged this — see report. */
   font-size: 30px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -1052,10 +1063,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .step-circle-ring { display: none; }
 
-.process-step:nth-child(4n+1) { --accent: var(--amber); --accent-light: var(--amber-light); }
-.process-step:nth-child(4n+2) { --accent: var(--amber); --accent-light: var(--amber-light); }
-.process-step:nth-child(4n+3) { --accent: var(--amber); --accent-light: var(--amber-light); }
-.process-step:nth-child(4n+4) { --accent: var(--amber); --accent-light: var(--amber-light); }
+/* AGENTS.md §8: all four per-nth-child selectors previously resolved to the
+   same --accent value — dead-code duplication. Collapsed to one rule. */
+.process-step { --accent: var(--amber); --accent-light: var(--amber-light); }
 
 .process-step h3 { position: relative; z-index: 1; font-size: 20px; margin: 0 0 8px; color: #ffffff; }
 .process-step p { position: relative; z-index: 1; font-size: 18px; color: rgba(255,255,255,0.92); margin: 0; }
@@ -1227,11 +1237,37 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .gallery-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
 .gallery-subtitle { margin-left: auto; margin-right: auto; }
 
+/* AGENTS.md §10/§23: 12-track grid with mandatory leftover-row centering —
+   same mechanism as Services (§6), swapped to .gallery-item. Do not go back
+   to repeat(3, 1fr): that pattern can't centre an incomplete final row. */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 18px;
+  align-items: stretch;
+  justify-content: center;
 }
+
+.gallery-item {
+  grid-column: span 4;
+  min-width: 0;
+}
+
+/* Final row holds ONE leftover item (total ≡ 1 mod 3): widen it to two
+   item-widths (span 8 = 2x4 tracks + the gap between) and centre it. */
+.gallery-item:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 8;
+}
+
+/* Final row holds TWO leftover items (total ≡ 2 mod 3): keep both at
+   normal item width and shift the pair inward so it centres on the row. */
+.gallery-item:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+.gallery-item:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
+}
+
 .gallery-item {
   margin: 0;
   border-radius: 0;
@@ -1251,7 +1287,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ============================================================ */
 .gallery-lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 600; }
 .gallery-lightbox.is-open { display: flex; }
-.gallery-lightbox-backdrop { position: absolute; inset: 0; background: rgba(8, 20, 35, 0.85); }
+.gallery-lightbox-backdrop { position: absolute; inset: 0; background: var(--overlay-backdrop); }
 .gallery-lightbox-content { position: relative; margin: 0; max-width: min(1100px, 92vw); max-height: 82vh; max-height: 82dvh; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); z-index: 1; }
 .gallery-lightbox-content img { width: 100%; height: 100%; display: block; object-fit: contain; background: #f8f9fa; }
 .gallery-lightbox-close {
@@ -1317,7 +1353,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ============================================================ */
 .booking-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 700; padding: 20px; }
 .booking-modal.is-open { display: flex; }
-.booking-modal-backdrop { position: absolute; inset: 0; background: rgba(8, 18, 32, 0.6); }
+.booking-modal-backdrop { position: absolute; inset: 0; background: var(--overlay-backdrop); }
 
 .booking-modal-dialog {
   position: relative;
@@ -1337,7 +1373,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-modal-header {
   position: sticky; top: 0; z-index: 5;
   background: var(--surface);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   padding: 20px 32px 0;
   border-radius: 20px 20px 0 0;
   border-bottom: 2px solid var(--border);
@@ -1361,8 +1397,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .booking-tab.is-active { color: var(--amber-dark); border-bottom-color: var(--amber); }
 
-.booking-form { display: flex; flex-direction: column; gap: 12px; padding: 0 32px 32px; }
-.booking-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.booking-form { display: flex; flex-direction: column; gap: 10px; padding: 0 32px 32px; }
+.booking-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .booking-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .booking-field label { font-size: 16px; font-weight: 600; color: var(--sky-dark); }
 .booking-field input, .booking-field select, .booking-field textarea {
@@ -1476,7 +1512,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-upload-btn {
   flex-shrink: 0; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;
   padding: 9px 18px; border-radius: var(--radius-pill); background: var(--amber); color: var(--sky-dark) !important;
-  font-size: 16px; font-weight: 600; cursor: pointer; transition: filter 0.2s ease;
+  /* AGENTS.md §11/§15: upload is a primary-action button, not a form-field
+     — 18px per the unified button scale, not the 16px form-control size. */
+  font-size: 18px; font-weight: 600; cursor: pointer; transition: filter 0.2s ease;
 }
 .booking-upload-btn:hover { filter: brightness(0.9); }
 .booking-field--file input[type="file"] { display: none; }
@@ -1547,8 +1585,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-submit-btn {
   width: 100%; padding: 14px; border: none; border-radius: var(--radius-pill);
   background: var(--sky-dark);
-  color: #ffffff; font-size: 16px; font-weight: 700;
+  /* AGENTS.md §11/§15: the submit button is the modal's primary CTA —
+     18px per the unified button scale, not the 16px form-control size. */
+  color: #ffffff; font-size: 18px; font-weight: 700;
   cursor: pointer; transition: opacity 0.2s ease, transform 0.2s ease;
+  font-family: inherit;
 }
 .booking-submit-btn:hover:not([disabled]) { opacity: 0.92; transform: translateY(-2px); }
 .booking-submit-btn[disabled] { background: hsl(205, 40%, 80%); cursor: not-allowed; }
@@ -1584,7 +1625,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-popup-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(6, 16, 30, 0.6);
+  background: var(--overlay-backdrop);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1694,14 +1735,16 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 .footer-nav {
+  /* CLAUDE.md/§20.1 Rule 1: no hard nowrap+scroll on dynamic link text —
+     wrap onto a second line instead so a longer label never forces
+     horizontal scroll. */
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   gap: 14px;
   max-width: 100%;
   min-width: 0;
-  overflow-x: auto;
 }
 
 .footer-nav a {
@@ -1709,7 +1752,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   font-size: 18px;
   color: hsl(204, 30%, 85%);
   transition: color 0.2s ease;
-  white-space: nowrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .footer-nav a:hover {
@@ -1852,7 +1896,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
 
   .contact-grid .contact-item { flex-basis: 100%; max-width: 100%; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  /* AGENTS.md §10: gallery drops to 2 per row (span 6) at ≤1100px, same
+     12-track mechanism as Services, and a lone leftover item re-centres
+     at column 4. Gallery never collapses to 1-column (unlike Services). */
+  .gallery-item {
+    grid-column: span 6;
+  }
+  .gallery-item:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1896,6 +1948,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     padding: 16px 24px;
     border-bottom: 1px solid var(--border);
     display: none;
+    /* Irrelevant to layout once absolutely positioned, but neutralized
+       per AGENTS.md §3.1 for clarity. */
+    margin-left: 0;
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 10px 14px; width: 100%; }
@@ -1917,7 +1972,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     grid-column: 1 / -1;
   }
 
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Gallery stays 2-column down to the smallest widths per §10 — the
+     ≤1100px span-6 rules above already apply and don't need resetting. */
   .footer-inner { grid-template-columns: 1fr; justify-content: start; justify-items: start; }
   /* Scoped to the plain (unclassed-icon) footer-social row used on this
      page — .footer-social is also reused on privacy-policy.html /
@@ -1980,16 +2036,19 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
 /* ============================================================
    LEGAL PAGE FOOTER (site-footer) — privacy-policy / terms-of-service
+   AGENTS.md §12: one .site-footer spec for every page — this block
+   used to re-declare .site-footer background/padding/border-top with
+   different values than the marketing footer above, and because it
+   appears later in the cascade it silently overrode padding/border-top
+   sitewide (including on index.html). Fixed by dropping the duplicate
+   .site-footer redeclaration; .legal-footer-inner below (unique to the
+   legal pages) carries its own layout without touching .site-footer.
    ============================================================ */
-.site-footer {
-  background: var(--sky-dark);
-  padding: 30px 0 22px;
-  color: hsl(204, 30%, 88%);
-  border-top: 1px solid rgba(255,255,255,0.07);
-}
-
 .legal-footer-inner {
-  width: min(1240px, 92%);
+  /* AGENTS.md §2: one container width sitewide (1480px) — this used to be
+     a separate min(1240px, 92%) legal-page-only width, the exact bug
+     called out in the spec. */
+  width: min(1480px, 92%);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -2042,21 +2101,23 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 .footer-social {
-  /* Capped to exactly 8 icons per row (8 * 42px icon + 7 * 14px gap =
-     434px) so a 9th+ icon added later wraps to a new row instead of
+  /* Capped to exactly 8 icons per row (8 * 36px icon + 7 * 14px gap =
+     386px) so a 9th+ icon added later wraps to a new row instead of
      growing the row indefinitely, even when the container has room. */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 14px;
-  max-width: 434px;
+  max-width: 386px;
   min-width: 0;
 }
 
 .footer-social-icon {
-  width: 42px;
-  height: 42px;
+  /* AGENTS.md §12: social icons are 36px everywhere — this legal-page
+     variant previously shipped 42px, the exact deviation the spec flags. */
+  width: 36px;
+  height: 36px;
   border-radius: 12px;
   display: inline-flex;
   align-items: center;

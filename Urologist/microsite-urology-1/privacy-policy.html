@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) — TODO: replace G-XXXXXXXXXX with this microsite's real GA4 Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DDLFELHEW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-7DDLFELHEW');
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -54,7 +54,7 @@
     <section class="blog-detail-section legal-section">
       <div class="container">
         <article class="blog-detail-article legal-article">
-          <a href="index.html" class="blog-detail-back-link">
+          <a href="index.html" class="blog-detail-back-link" data-ga-event="legal_back_to_home_click" data-ga-label="Privacy Policy">
             <i class="fa-solid fa-arrow-left"></i>
             Back to Home
           </a>
@@ -161,52 +161,53 @@
   <footer class="site-footer">
     <div class="legal-footer-inner">
       <nav class="legal-footer-nav" aria-label="Footer navigation">
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#contact-us">Contact</a>
-        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
+        <a href="index.html#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
+        <a href="index.html#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
+        <a href="index.html#testimonials" data-ga-event="footer_nav_link_click" data-ga-label="Testimonials">Testimonials</a>
       </nav>
 
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page">
+          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Footer">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile">
+          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Footer">
             <i class="fa-brands fa-facebook"></i>
           </a>
-          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
+          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-ga-event="social_instagram_click" data-ga-label="Footer">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="#" class="footer-social-icon footer-social-x" aria-label="X">
+          <a href="#" class="footer-social-icon footer-social-x" aria-label="X" data-ga-event="social_x_click" data-ga-label="Footer">
             <i class="fa-brands fa-x-twitter"></i>
           </a>
-          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn">
+          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Footer">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website">
+          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website" data-ga-event="social_website_click" data-ga-label="Footer">
             <i class="fa-solid fa-globe"></i>
           </a>
-          <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp">
+          <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
-          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube">
+          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer">
             <i class="fa-brands fa-youtube"></i>
           </a>
         </div>
       </div>
 
       <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="privacy-policy.html" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
         <span class="footer-divider">|</span>
-        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="terms-of-service.html" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
       </div>
 
       <p class="footer-copy">[Doctor/Clinic Name]. All rights reserved</p>
     </div>
   </footer>
 
+  <script src="./script/analytics.js"></script>
   <script src="./script/index.js"></script>
   <script src="./script/chatbot.js" defer></script>
 </body>
