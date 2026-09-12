@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DDLFELHEW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7DDLFELHEW');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. {{full_name}} | {{speciality}}</title>
+  <meta name="description" content="Board-certified urological care from Dr. {{full_name}} — kidney stone treatment, prostate health, urologic oncology, and minimally invasive surgery for men and women." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23103a5c'/%3E%3Cpath d='M20 18h10a10 10 0 0 1 10 10v10a10 10 0 0 1-10 10H26a6 6 0 0 1-6-6V18z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Ccircle cx='24' cy='24' r='2.4' fill='%23fff'/%3E%3C/svg%3E" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/{{speciality}}-1/" /><!-- TODO: replace with live production domain before launch -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta property="og:image" content="{{profile}}" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta name="twitter:image" content="{{profile}}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+    <link rel="stylesheet" href="{{path}}/styles/style.css" />
+    <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. {{full_name}}",
+    "medicalSpecialty": "Urology",
+    "image": "https://www.example.com/{{speciality}}-1/{{profile}}",
+    "url": "https://www.example.com/{{speciality}}-1/",
+    "telephone": "+91-9068935571",
+    "email": "dr.mehta@wayindiahospitals.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1800 Orchids Lane, Walt Disney World, Bay Lake",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32805",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+</head>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="/{{slug}}" class="brand" aria-label="Dr. {{full_name}}">
+        <span class="avatar">
+          <img src="{{profile}}" alt="Dr. {{full_name}}" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name" title="Dr. {{full_name}}">Dr. {{full_name}}</span>
+          <span class="brand-role">{{speciality}}</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+        <a href="#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
+        <a href="#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
+        <a href="#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
+        <a href="#testimonials" data-ga-event="nav_link_click" data-ga-label="Testimonials">Testimonials</a>
+        <a href="#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
+        {{#hasBlog}}
+            <a href="/{{slug}}/blog" data-ga-event="nav_link_click" data-ga-label="Blog">Blog</a>
+        {{/hasBlog}}
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="cta-btn cta-btn" id="openBookingBtn" data-ga-event="book_appointment_click" data-ga-label="Navbar">
+          <span class="cta-text-desktop">Book Appointment</span>
+          <span class="cta-text-mobile">Appointment</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== HERO — clinical command surface with uroflowmetry trace ====== -->
+  <section class="hero-section" id="home">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+         1. Server-Side Rendering (PHP/Node/Python):
+            - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+            - Set 'data-banner-active="false"' to hide banner if no active image.
+            - Set 'data-banner-href="URL"' to turn image into a clickable link.
+         2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    {{#has_banner}}
+        <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule"
+             aria-label="Main Clinic Banner" data-banner-active="true" data-banner-start="{{banner_start}}"
+             data-banner-end="{{banner_end}}" data-banner-src="{{banner_src}}"
+             data-banner-src-mobile="{{banner_src_mobile}}" data-banner-alt="{{banner_alt}}"
+             data-banner-href="#">
+            <div class="container digidr-banner-container single-image-banner-container">
+                <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+                    <div class="digidr-banner-wrap single-image-banner-wrap">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
+                            <img src="{{banner_src}}" alt="{{banner_alt}}"
+                                 class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
+                        </picture>
+                    </div>
+                </a>
+            </div>
+        </div>
+    {{/has_banner}}
+    <!-- END OF MODULAR BANNER MODULE -->
+
+    <div class="hero-mesh" aria-hidden="true"></div>
+
+    <div class="container hero-layout">
+      <div class="hero-content">
+        <p class="expert-badge">
+          <span class="expert-badge-pulse" aria-hidden="true"></span>
+          {{speciality}}
+        </p>
+
+        <h1 class="hero-title">Dr. {{full_name}}</h1>
+        <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{awards}},{{education}}</p>
+        {{#hasmic}}
+        <p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. {{mci}}</p>
+        {{/hasmic}}
+
+        <div class="hero-stats-grid">
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-count-to="18" data-suffix="+">{{experience}}</strong>
+            <span>Years of Experience</span>
+          </article>
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-count-to="12" data-suffix="k+">{{totalpatient}}</strong>
+            <span>Patients Treated</span>
+          </article>
+          <article class="hero-stat-box">
+            <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-count-to="97" data-suffix="%">97%</strong>
+            <span>Patient Satisfaction</span>
+          </article>
+        </div>
+
+        <p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Languages:</strong> {{languages}}</p>
+
+        <!-- <div class="hero-actions">
+          <a href="#contact-us" class="hero-cta-secondary">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span>Contact</span>
+          </a>
+        </div> -->
+
+        <div class="social-links" aria-label="Social media links">
+          {{#hasFacebookPage}}<a href="{{facebook}}" class="social" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Hero"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="social is-disabled" aria-label="Facebook page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+          {{#hasFacebook}}<a href="{{facebookpage}}" class="social" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Hero"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="social is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasInstagram}}<a href="{{instagram}}" class="social" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="social_instagram_click" data-ga-label="Hero"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="social is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+          {{#hasTwitter}}<a href="{{twitter}}" class="social" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="social_x_click" data-ga-label="Hero"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="social is-disabled" aria-label="X not linked" aria-disabled="true" data-tooltip="Not Enabled" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="social" aria-label="LinkedIn" data-tooltip="Linkedin" data-ga-event="social_linkedin_click" data-ga-label="Hero"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="social is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+          {{#hasWebsite}}<a href="{{website}}" class="social" aria-label="Website" data-tooltip="Website" data-ga-event="social_website_click" data-ga-label="Hero"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="social is-disabled" aria-label="Website not linked" aria-disabled="true" data-tooltip="Not Enabled" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+          {{#hasWhatsapp}}<a href="{{whatsapp}}" class="social" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Hero"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="social is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+          {{#hasYoutube}}<a href="{{youtube}}" class="social" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="social_youtube_click" data-ga-label="Hero"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="social is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-blob" aria-hidden="true"></div>
+        <div class="hero-portrait">
+          <img src="{{profile}}" alt="Dr. {{full_name}}, {{speciality}}" class="hero-image" />
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 C240,40 480,80 720,80 C960,80 1200,40 1440,0 L1440,90 L0,90 Z"></path>
+    </svg>
+  </section>
+
+  <!-- ====== ABOUT — executive, icon-free typography ====== -->
+  <section class="about-section" id="about">
+    <div class="container about-layout">
+      <div class="about-aside">
+        <div class="about-photo-glow" aria-hidden="true"></div>
+        <div class="about-photo-frame">
+          <img src="https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/about-photo.png" alt="Doctor examining an anatomical kidney model during a urology consultation at Dr. {{full_name}}'s practice" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="about-kicker">About the Practice</span>
+        <h2 class="about-title">Precise, Compassionate Urological Care</h2>
+        <p class="about-description">
+          Combining advanced surgical training with an unhurried, patient-first approach to every consultation.
+        </p>
+        <div class="read-more-wrap">
+          <div class="read-more-content">
+            {{introduction}}
+          </div>
+          <button type="button" class="read-more-btn" aria-expanded="false" data-ga-event="read_more_click">
+            <span>Read More</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVICES ====== -->
+  <section class="services-section" id="services">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="container">
+      <div class="services-header">
+        <span class="services-kicker">
+          <i class="fa-solid fa-droplet" aria-hidden="true"></i> Specialized Services
+        </span>
+        <h2 class="services-title">Comprehensive Urological Care</h2>
+        <p class="services-subtitle">
+          Offering a complete range of urological healthcare services with personalized treatment and preventive guidance.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        
+
+        {{#services}}
+                <article class="service-card">
+          <div class="service-icon"><i class="fa-solid {{icon}}" aria-hidden="true"></i></div>
+          <h3>{{title}}</h3>
+          <p>{{description}}</p>
+        </article>
+                {{/services}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CARE PHILOSOPHY (light split panel, image right) ====== -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="container philosophy-layout">
+      <div class="philosophy-content">
+        <span class="philosophy-kicker">
+          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Care Philosophy
+        </span>
+        <h2 class="philosophy-title">A Precise Approach to Every Diagnosis</h2>
+        <p class="philosophy-subtitle">
+          Dedicated to accurate diagnosis, minimally invasive treatment, and dignified urological care.
+        </p>
+
+        <div class="philosophy-pillars">
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+            <div>
+              <h3>Precision Diagnosis</h3>
+              <p>Advanced imaging and lab evaluation to identify the exact cause before treatment begins.</p>
+            </div>
+          </div>
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-book-medical" aria-hidden="true"></i></div>
+            <div>
+              <h3>Minimally Invasive Care</h3>
+              <p>Preference for laparoscopic and endoscopic techniques to reduce pain and recovery time.</p>
+            </div>
+          </div>
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+            <div>
+              <h3>Patient Dignity</h3>
+              <p>Sensitive, confidential consultations that respect every patient's comfort and privacy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="philosophy-visual">
+        <div class="philosophy-img-glow" aria-hidden="true"></div>
+        <div class="philosophy-img-frame">
+          <img src="https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/philosophy-photo.jpg" alt="{{speciality}} reviewing a live endoscopic camera feed during a minimally invasive urology procedure" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONSULTATION JOURNEY — staggered ghost-numeral cascade ====== -->
+  <section class="process-section" id="process">
+    <div class="process-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="process-header">
+        <span class="process-kicker">
+          <i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey
+        </span>
+        <h2 class="process-title" style="text-align:center;">Your Care Journey</h2>
+        <p class="process-subtitle" style="text-align:center; max-width:700px; margin:0 auto;">
+          A clear, reassuring 4-step process for complete urological care.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">01</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          </div>
+          <h3>Appointment Booking</h3>
+          <p>Book online or by phone for a clinic visit or online consultation.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">02</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          </div>
+          <h3>Diagnostic Evaluation</h3>
+          <p>Thorough clinical examination, imaging, and lab tests to confirm diagnosis.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">03</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-clipboard-user" aria-hidden="true"></i>
+          </div>
+          <h3>Personalized Treatment Plan</h3>
+          <p>Clear guidance on medical, surgical, or minimally invasive treatment options.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">04</span>
+          <div class="step-circle">
+            <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+              <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+            </svg>
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          </div>
+          <h3>Recovery &amp; Follow-Up</h3>
+          <p>Post-procedure monitoring, routine follow-ups, and long-term wellness support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section class="contact-section" id="contact-us">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <h2>Contact Us</h2>
+          <p>Get expert urological care you can trust. Schedule a consultation with our specialist today.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <h3>Address</h3>
+            <p>
+              {{clinicname}}<br />
+              {{address}}<br />
+              {{district}}, {{state}} - {{pincode}}
+            </p>
+          </div>
+
+          <div class="contact-divider"></div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+            <h3>Contact Information</h3>
+            <p>
+              <a href="tel:+{{code}}{{phone}}" data-ga-event="phone_number_click">{{code}}-{{phone}}</a><br />
+              <a href="mailto:{{email}}" data-ga-event="email_click">{{email}}</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- <div class="contact-cta-wrap">
+          <a href="tel:+919068935571" class="contact-btn">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Clinic
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="testimonials-kicker">
+          <i class="fa-solid fa-droplet" aria-hidden="true"></i> Testimonials
+        </span>
+        <h2 class="testimonials-title">What Our Patients Say</h2>
+        <p class="testimonials-subtitle">
+          Read testimonials from patients who have experienced precise, compassionate urological care under our specialist's guidance.
+        </p>
+      </div>
+
+      <div class="testimonials-carousel-wrap testimonials-carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev carousel-btn" aria-label="Previous testimonials">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn carousel-btn--next carousel-btn" aria-label="Next testimonials">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+          <div class="testimonials-track testimonials-track" id="testimonialsTrack">
+            
+            {{#testimonials}}
+              <article class="testimonial-card testimonial-card">
+                <img src="{{profile_picture}}" alt="{{patient_name}}" class="testimonial-avatar" />
+                <h3>{{patient_name}}</h3>
+                <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
+                  {{stars_html}}
+                </div>
+                <p>"{{comment}}"</p>
+            </article>
+            {{/testimonials}}
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALLERY ====== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <h2 class="gallery-title">A Look Inside My Practice</h2>
+        <p class="gallery-subtitle">
+          A glimpse into our urology clinic, consultation rooms, and diagnostic facilities.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- <figure class="gallery-item gallery-item">
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1400&q=80" alt="Modern clinic exterior" loading="lazy" />
+        </figure> -->
+        {{#images}}
+          <figure class="gallery-item">
+              <img src="{{image}}" alt="Modern hospital lobby" />
+              <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+        {{/images}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery lightbox -->
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div>
+    <figure class="gallery-lightbox-content">
+      <img src="" alt="Enlarged gallery image" id="galleryLightboxImage" />
+    </figure>
+    <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">&times;</button>
+  </div>
+
+  <!-- ====== BOOKING MODAL ====== -->
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true" data-ga-event="clinic_visit_tab_click">Clinic Visit</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" data-ga-event="online_consult_tab_click">Online Consultation</button>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+            <p class="booking-error" data-error-for="fullName"></p>
+          </div>
+          <div class="booking-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
+            <p class="booking-error" data-error-for="phone"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            <p class="booking-error" data-error-for="email"></p>
+          </div>
+          <div class="booking-field booking-field--date">
+            <label for="preferredDateText">Preferred Date</label>
+            <div class="booking-datepicker" id="preferredDateField">
+              <div class="booking-input-with-icon">
+                <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+                <i class="fa-solid fa-calendar-days booking-date-icon" aria-hidden="true"></i>
+              </div>
+              <input type="hidden" id="preferredDate" name="preferredDate" />
+              <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                <div class="booking-calendar-header">
+                  <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                  <span class="booking-calendar-title" data-cal-title></span>
+                  <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="booking-calendar-weekdays">
+                  <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+                <div class="booking-calendar-grid" data-cal-grid></div>
+              </div>
+            </div>
+            <p class="booking-error" data-error-for="preferredDate"></p>
+          </div>
+        </div>
+
+        <div class="booking-form-row">
+          <div class="booking-field">
+            <label for="preferredTime">Preferred Time</label>
+            <div class="booking-select-wrap">
+              <select id="preferredTime" name="preferredTime" required>
+                <option value="">Select Time Slot</option>
+              </select>
+              <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+            </div>
+            <p class="booking-error" data-error-for="preferredTime"></p>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="reason">Reason For Visit</label>
+          <textarea id="reason" name="reason" rows="3" placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+          <p class="booking-error" data-error-for="reason"></p>
+        </div>
+
+        <div class="booking-field booking-field--file">
+            <label for="report">Upload Report</label>
+            <div class="booking-upload-row">
+                <label class="booking-upload-btn" for="report" data-ga-event="upload_report_click">Upload</label>
+                <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+                <span class="booking-upload-help">(JPEG, PNG file formats supported)</span>
+            </div>
+            <div class="booking-file-preview" id="filePreview"></div>
+            <p class="booking-error" data-error-for="report"></p>
+        </div>
+
+        <div class="booking-field booking-consent-field">
+          <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+        </div>
+
+        <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
+
+        <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+          <div class="loader-spinner"></div>
+          <p>Booking your appointment...</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <a href="/{{slug}}" class="brand">
+          <span class="avatar">
+            <img src="{{profile}}" alt="Dr. {{full_name}}" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Dr. {{full_name}}</span>
+            <span class="brand-role">Board-Certified {{speciality}}</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Precise, minimally invasive urological care for every patient.</p>
+        <div class="footer-social-wrap">
+          <span class="footer-social-label">Follow me on:</span>
+          <div class="footer-social">
+            {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Footer"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+            {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+            {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Footer"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+            {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+            {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="social_instagram_click" data-ga-label="Footer"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+            {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+            {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="Twitter" data-ga-event="social_x_click" data-ga-label="Footer"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+            {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+            {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Footer"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+            {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+            {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="social_website_click" data-ga-label="Footer"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+            {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+            {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+            {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+            {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+            {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right-col">
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <nav class="footer-nav">
+            <a href="#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
+            <a href="#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
+            <a href="#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
+            <a href="#testimonials" data-ga-event="footer_nav_link_click" data-ga-label="Testimonials">Testimonials</a>
+            <a href="#gallery" data-ga-event="footer_nav_link_click" data-ga-label="Gallery">Gallery</a>
+          </nav>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Legal</h4>
+          <nav class="footer-nav">
+            <a href="/{{slug}}/privacy-policy" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
+            <a href="/{{slug}}/terms-of-service" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
+          </nav>
+        </div>
+
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 0">
+          <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+          <span class="footer-visitor-badge-label">No. of Visitor:</span>
+          <span class="footer-visitor-badge-count" id="visitorCount">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p>&copy; 2026 Dr. {{full_name}}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="{{path}}/script/banner-module.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+    <script src="{{path}}/script/analytics.js"></script>
+    <script src="{{path}}/script/index.js"></script>
+    <script src="{{path}}/script/chatbot.js" defer></script>
+</body>
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("testimonialsTrack");
+
+        if (!track || track.children.length === 0) {
+            document.getElementById("testimonials")?.remove();
+
+            document
+                .querySelectorAll('a[href="#testimonials"]')
+                .forEach(x => x.remove());
+        }
+    });
+</script>
+
+<script>
+    (function () {
+        const micrositeId = document.body.dataset.micrositeid;
+        const el = document.getElementById("visitorCount");
+        if (!micrositeId || !el) return;
+
+        fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+            method: "POST"
+        })
+            .then(res => res.ok ? res.json() : Promise.reject(res.status))
+            .then(data => {
+                el.textContent = data.visitorCount.toLocaleString();
+            })
+            .catch(err => console.error("Visitor count error:", err));
+    })();
+</script>
