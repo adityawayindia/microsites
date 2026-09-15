@@ -1,0 +1,932 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYX1G4KGPS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DYX1G4KGPS');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. {{full_name}} | {{speciality}}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
+    <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
+    <meta property="og:image" content="https://storage.googleapis.com/digidr/microsites/drraj/assets/kumar_og.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_" />
+    <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
+    <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
+    <meta name="twitter:image" content="https://storage.googleapis.com/digidr/microsites/drraj/assets/kumar_og.png" />
+    <meta name="description"
+          content="Round-the-clock intensive care led by Dr. {{full_name}} — ICU life support, ventilation, hemodynamic monitoring, sepsis and post-operative critical care. Book a consultation." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23231045'/%3E%3Cpath d='M12 32h8l4-11 6 22 5-16 3 5h14' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+    <link rel="stylesheet" href="{{path}}/styles/style.css" />
+    <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+</head>
+
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
+    <!-- ===== HEADER ===== -->
+    
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="/{{slug}}" class="brand" aria-label="Dr. {{full_name}}">
+                <span class="avatar" aria-hidden="true">
+                    <img src="{{profile}}" alt="Dr. {{full_name}}" />
+                </span>
+                <span class="brand-text">
+                    <span class="brand-name">Dr. {{full_name}}</span>
+                    <span class="brand-role">{{speciality}}</span>
+                </span>
+            </a>
+
+            <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+                <a href="#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
+                <a href="#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
+                <a href="#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
+                <a href="#testimonials" data-ga-event="nav_link_click" data-ga-label="Testimonials">Testimonials</a>
+                <a href="#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
+                {{#hasBlog}}
+                <a href="/{{slug}}/blog" data-ga-event="nav_link_click" data-ga-label="Blog">Blog</a>
+                {{/hasBlog}}
+            </nav>
+
+            <div class="navbar-actions">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                        aria-controls="mainNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a href="#" class="cta-btn" id="headerBookBtn" data-ga-event="book_appointment_click" data-ga-label="Navbar">
+                    <span class="cta-text-desktop">Book Appointment</span>
+                    <span class="cta-text-mobile">Appointment</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO — INFUSION COMMAND DECK ===== -->
+    <section class="iv-hero" id="home">
+        <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule" data-banner-active="true"
+             data-banner-start="{{banner_start}}" data-banner-end="{{banner_end}}"
+             aria-label="Main Clinic Banner" data-banner-src="{{banner_src}}" data-banner-src-mobile="{{banner_src_mobile}}"
+             data-banner-alt="{{banner_alt}}" data-banner-href="#">
+            <div class="container digidr-banner-container single-image-banner-container">
+                <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+                    <div class="digidr-banner-wrap single-image-banner-wrap">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
+                            <img src="{{banner_src}}" alt="{{banner_alt}}"
+                                 class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
+                        </picture>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- END OF MODULAR BANNER MODULE -->
+
+        <div class="iv-hero-grid-lines" aria-hidden="true"></div>
+
+        <div class="container">
+            <div class="iv-hero-grid">
+                <!-- Copy -->
+                <div class="iv-hero-copy">
+                    <h1 class="iv-hero-title">
+                        Dr. {{full_name}}
+                        <span class="iv-hero-title-sub">Emergency medicine/Intensive care</span>
+                    </h1>
+
+                    <p class="iv-hero-lead">
+                        {{awards}},{{education}}.
+                    </p>
+                    {{#hasmic}}
+                    <p class="iv-hero-reg">
+                        <i class="fa-solid fa-id-card" aria-hidden="true"></i>
+                        MCI Regd No.: {{mci}}
+                    </p>
+                    {{/hasmic}}
+                    <p class="iv-hero-langs">
+                        <i class="fa-solid fa-language" aria-hidden="true"></i>
+                        <strong>Languages:</strong> {{languages}}
+                    </p>
+
+                    <div class="iv-social-pills" aria-label="Social media links">
+                        {{#hasFacebookPage}}<a href="{{facebookpage}}" class="iv-social-pill sp-fb" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Hero"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+                        {{#noFacebookPage}}<span class="iv-social-pill sp-fb is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+                        {{#hasFacebook}}<a href="{{facebook}}" class="iv-social-pill sp-fb2" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Hero"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+                        {{#noFacebook}}<span class="iv-social-pill sp-fb2 is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+                        {{#hasInstagram}}<a href="{{instagram}}" class="iv-social-pill sp-ig" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="social_instagram_click" data-ga-label="Hero"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+                        {{#noInstagram}}<span class="iv-social-pill sp-ig is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+                        {{#hasTwitter}}<a href="{{twitter}}" class="iv-social-pill sp-x" aria-label="X" data-tooltip="Twitter" data-ga-event="social_x_click" data-ga-label="Hero"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+                        {{#noTwitter}}<span class="iv-social-pill sp-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+                        {{#hasLinkedin}}<a href="{{linkedin}}" class="iv-social-pill sp-li" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Hero"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+                        {{#noLinkedin}}<span class="iv-social-pill sp-li is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+                        {{#hasWebsite}}<a href="{{website}}" class="iv-social-pill sp-web" aria-label="Website" data-tooltip="Website" data-ga-event="social_website_click" data-ga-label="Hero"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+                        {{#noWebsite}}<span class="iv-social-pill sp-web is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+                        {{#hasWhatsapp}}<a href="{{whatsapp}}" class="iv-social-pill sp-wa" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Hero"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+                        {{#noWhatsapp}}<span class="iv-social-pill sp-wa is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+                        {{#hasYoutube}}<a href="{{youtube}}" class="iv-social-pill sp-yt" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="social_youtube_click" data-ga-label="Hero"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+                        {{#noYoutube}}<span class="iv-social-pill sp-yt is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+
+                    </div>
+                </div>
+
+                <!-- IV rig + live monitor -->
+                <div class="iv-hero-rig" aria-hidden="true">
+                    <div class="iv-pole">
+                        <div class="iv-bag">
+                            <span class="iv-bag-label">ICU<br />24/7</span>
+                        </div>
+                        <div class="iv-bag-hanger"></div>
+                        <div class="iv-chamber">
+                            <span class="iv-drop"></span>
+                            <span class="iv-drop"></span>
+                            <span class="iv-drop"></span>
+                        </div>
+                        <div class="iv-tube"></div>
+                        <div class="iv-cannula"></div>
+                    </div>
+
+                    <div class="iv-monitor">
+                        <div class="iv-monitor-screen">
+                            <img src="{{profile}}" alt="Dr. {{full_name}}" />
+                            <div class="iv-screen-scan"></div>
+                            <svg class="iv-ecg" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M0 46 H60 l10 -4 10 8 8 -30 10 54 10 -30 8 6 h44 l10 -4 10 8 8 -30 10 54 10 -30 8 6 h44 l10 -4 10 8 8 -30 10 54 10 -30 8 6 h44 l10 -4 10 8 8 -30 10 54 10 -30 8 6 H600" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HUD stat strip -->
+            <div class="iv-hud">
+                <div class="iv-hud-item">
+                    <span class="iv-hud-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+                    <div>
+                        <strong class="iv-hud-num">{{experience}}</strong>
+                        <span class="iv-hud-lbl">Years Experience</span>
+                    </div>
+                </div>
+                <div class="iv-hud-item">
+                    <span class="iv-hud-icon"><i class="fa-solid fa-hospital-user" aria-hidden="true"></i></span>
+                    <div>
+                        <strong class="iv-hud-num">{{totalpatient}}</strong>
+                        <span class="iv-hud-lbl">ICU Recoveries</span>
+                    </div>
+                </div>
+                <div class="iv-hud-item">
+                    <span class="iv-hud-icon"><i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i></span>
+                    <div>
+                        <strong class="iv-hud-num">98.2%</strong>
+                        <span class="iv-hud-lbl">Positive Reviews</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="iv-about" id="about">
+        <div class="container iv-about-grid iv-about-grid--full">
+            <div class="iv-about-copy">
+                <span class="iv-chip"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> About the Doctor</span>
+                <h2 class="iv-title">
+                    {{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}
+                    {{#no_about_section_title}}Steady hands when <em>every minute counts</em>{{/no_about_section_title}}
+                </h2>
+                <p class="iv-about-lead">
+                    {{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}
+                    {{#no_about_section_subtitle}}Advanced intensive care, continuous monitoring and organ support for the most fragile hours of a patient's
+                    recovery.{{/no_about_section_subtitle}}
+                </p>
+
+                <div class="iv-about-body read-more-wrap">
+                    <div class="read-more-content">
+                        <p>
+                            {{introduction}}
+                        </p>
+                    </div>
+                    <button type="button" class="read-more-btn" aria-expanded="false" data-ga-event="read_more_click">
+                        <span>Read More</span>
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="iv-drip-rule" aria-hidden="true"></div> -->
+    <!-- ===== SERVICES ===== -->
+    <section class="iv-services" id="services">
+        <div class="container">
+            <div class="iv-section-head">
+                <span class="iv-chip iv-chip--saline">
+                    <i class="fa-solid fa-syringe" aria-hidden="true"></i> Critical Care
+                    Services
+                </span>
+                <h2 class="iv-title">
+                    {{#has_service_section_title}}{{service_section_title}}{{/has_service_section_title}}
+                    {{#no_service_section_title}}Every line, every reading, <em>accounted for</em>{{/no_service_section_title}}
+                </h2>
+                <p class="iv-sub">
+                    {{#has_service_section_subtitle}}{{service_section_subtitle}}{{/has_service_section_subtitle}}
+                    {{#no_service_section_subtitle}}Life-support systems, targeted infusions and continuous physiological monitoring, delivered under strict
+                    clinical protocol.{{/no_service_section_subtitle}}
+                </p>
+            </div>
+
+            <div class="iv-svc-grid">
+
+                {{#services}}
+                <article class="iv-svc-card">
+                    <span class="iv-svc-line" aria-hidden="true"></span>
+                    <div class="iv-svc-body">
+                        <div class="iv-svc-top">
+                            <span class="iv-svc-icon"><i class="fa-solid {{icon}}" aria-hidden="true"></i></span>
+                        </div>
+                        <h3>
+                            {{title}}
+                        </h3>
+                        <p>
+                            {{description}}
+                        </p>
+                    </div>
+                </article>
+                {{/services}}
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CARE PHILOSOPHY ===== -->
+    <section class="iv-philosophy" id="philosophy">
+        <div class="container iv-phil-grid">
+            <div class="iv-phil-copy">
+                <span class="iv-chip iv-chip--vital">
+                    <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Care
+                    Philosophy
+                </span>
+                <h2 class="iv-title">
+                    {{#has_philosophy_section_title}}{{philosophy_section_title}}{{/has_philosophy_section_title}}
+                    {{#no_philosophy_section_title}} Vigilance is the <em>treatment</em>{{/no_philosophy_section_title}}
+                </h2>
+                <p class="iv-sub">
+                    {{#has_philosophy_section_subtitle}}{{philosophy_section_subtitle}}{{/has_philosophy_section_subtitle}}
+                    {{#no_philosophy_section_subtitle}}Critical care is won in small margins — a pressure trend caught early, a drip adjusted an hour sooner, a
+                    family kept genuinely informed.{{/no_philosophy_section_subtitle}}
+                </p>
+
+                <div class="iv-pillars">
+                    <div class="iv-pillar">
+                        <span class="iv-pillar-icon"><i class="fa-solid fa-wave-square" aria-hidden="true"></i></span>
+                        <div class="iv-pillar-text">
+                            <h3>
+                                {{#has_philosophy_section_pillar_text_1}}{{philosophy_section_pillar_text_1}}{{/has_philosophy_section_pillar_text_1}}
+                                {{#no_philosophy_section_pillar_text_1}}Continuous Monitoring{{/no_philosophy_section_pillar_text_1}}
+                            </h3>
+                            <p>
+                                {{#has_philosophy_section_pillar_subtext_1}}{{philosophy_section_pillar_subtext_1}}{{/has_philosophy_section_pillar_subtext_1}}
+                                {{#no_philosophy_section_pillar_subtext_1}}Real-time tracking of oxygenation, perfusion and organ function, with trends reviewed on every round.{{/no_philosophy_section_pillar_subtext_1}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="iv-pillar">
+                        <span class="iv-pillar-icon"><i class="fa-solid fa-flask-vial" aria-hidden="true"></i></span>
+                        <div class="iv-pillar-text">
+                            <h3>
+                                {{#has_philosophy_section_pillor_text_2}}{{philosophy_section_pillor_text_2}}{{/has_philosophy_section_pillor_text_2}}
+                                {{#no_philosophy_section_pillor_text_2}}Evidence-Based Intervention{{/no_philosophy_section_pillor_text_2}}
+                            </h3>
+                            <p>
+                                {{#has_philosophy_section_piller_subtext_2}}{{philosophy_section_piller_subtext_2}}{{/has_philosophy_section_piller_subtext_2}}
+                                {{#no_philosophy_section_piller_subtext_2}}Protocol-driven life support and therapies deployed fast, then de-escalated the moment they are no
+                                longer needed.{{/no_philosophy_section_piller_subtext_2}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="iv-pillar">
+                        <span class="iv-pillar-icon"><i class="fa-solid fa-people-roof" aria-hidden="true"></i></span>
+                        <div class="iv-pillar-text">
+                            <h3>
+                                {{#has_philosophy_section_pillar_text_3}}{{philosophy_section_pillar_text_3}}{{/has_philosophy_section_pillar_text_3}}
+                                {{#no_philosophy_section_pillar_text_3}}Family-Centred Communication{{/no_philosophy_section_pillar_text_3}}
+                            </h3>
+                            <p>
+                                {{#has_philosophy_section_pillar_subtext_3}}{{philosophy_section_pillar_subtext_3}}{{/has_philosophy_section_pillar_subtext_3}}
+                                {{#no_philosophy_section_pillar_subtext_3}}Daily briefings in plain language, so families understand the plan and share in every major decision.{{/no_philosophy_section_pillar_subtext_3}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="iv-phil-visual">
+                <div class="iv-phil-frame">
+                    <img src="https://storage.googleapis.com/microsite_buck/microsite-intensivist-2/assets/intensivist-workspace.png" alt="ICU telemetry and clinical monitoring workspace"
+                         loading="lazy" />
+                </div>
+                <div class="iv-phil-badge">
+                    <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                    <div>
+                        <strong>99.2% Protocol Success</strong>
+                        <span>Target organ stability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="iv-drip-rule" aria-hidden="true"></div>
+
+    <!-- ===== CONSULTATION JOURNEY ===== -->
+    <section class="iv-journey" id="process">
+        <!-- SVG Background Pattern for ICU Hexagonal Medical Matrix -->
+        <div class="iv-journey-bg-pattern" aria-hidden="true">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Hexagonal Matrix Pattern -->
+                    <pattern id="ivHexGrid" width="60" height="104" patternUnits="userSpaceOnUse">
+                        <!-- Hex Outlines -->
+                        <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" fill="none" stroke="var(--iv)"
+                              stroke-width="1" opacity="0.09" />
+                        <path d="M 30 52 L 60 69.32 L 60 103.96 L 30 121.28 L 0 103.96 L 0 69.32 Z" fill="none"
+                              stroke="var(--saline)" stroke-width="1" opacity="0.07" />
+                        <path d="M -30 52 L 0 69.32 L 0 103.96 L -30 121.28 L -60 103.96 L -60 69.32 Z" fill="none"
+                              stroke="var(--iv-deep)" stroke-width="1" opacity="0.06" />
+
+                        <!-- Glowing Highlight Dots at Vertices/Centers -->
+                        <circle cx="30" cy="34.64" r="2.5" fill="var(--saline)" opacity="0.3"
+                                class="iv-hex-dot iv-hex-dot--pulse" />
+                        <circle cx="0" cy="17.32" r="1.8" fill="var(--iv-bright)" opacity="0.22" />
+                        <circle cx="60" cy="17.32" r="1.8" fill="var(--vital)" opacity="0.2" />
+                        <circle cx="30" cy="86.64" r="2.2" fill="var(--iv)" opacity="0.25" class="iv-hex-dot iv-hex-dot--pulse2" />
+                        <circle cx="0" cy="69.32" r="1.5" fill="var(--saline-bright)" opacity="0.2" />
+                        <circle cx="60" cy="69.32" r="1.5" fill="var(--iv-deep)" opacity="0.2" />
+                    </pattern>
+
+                    <radialGradient id="ivHexGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="var(--iv)" stop-opacity="0.12" />
+                        <stop offset="60%" stop-color="var(--saline)" stop-opacity="0.05" />
+                        <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+
+                <!-- Ambient Glow Base -->
+                <rect width="100%" height="100%" fill="url(#ivHexGlow)" />
+
+                <!-- Hex Grid Fill -->
+                <rect width="100%" height="100%" fill="url(#ivHexGrid)" />
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="iv-section-head">
+                <span class="iv-chip"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</span>
+                <h2 class="iv-title">
+                    {{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}
+                    {{#no_process_section_about_title}}From admission to <em>step-down</em>{{/no_process_section_about_title}}
+                </h2>
+                <p class="iv-sub">
+                    {{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}
+                    {{#no_process_section_about_subtitle}}A disciplined, multi-stage protocol that keeps high-acuity patients safe at every handover.{{/no_process_section_about_subtitle}}
+                </p>
+            </div>
+
+            <div class="iv-timeline">
+                <div class="iv-timeline-line" aria-hidden="true"></div>
+
+                <div class="iv-step">
+                    <div class="iv-step-card">
+                        <span class="iv-step-num">STEP 01</span>
+                        <h3>
+                            {{#has_process_section_step_body_text_1}}{{process_section_step_body_text_1}}{{/has_process_section_step_body_text_1}}
+                            {{#no_process_section_step_body_text_1}}Rapid Assessment{{/no_process_section_step_body_text_1}}
+                        </h3>
+                        <p>
+                            {{#has_process_section_step_body_subtext_1}}{{process_section_step_body_subtext_1}}{{/has_process_section_step_body_subtext_1}}
+                            {{#no_process_section_step_body_subtext_1}}Immediate triage, airway and hemodynamic evaluation, and first-line stabilisation on arrival.{{/no_process_section_step_body_subtext_1}}
+                        </p>
+                    </div>
+                    <div class="iv-step-orb">
+                        <svg class="iv-step-orb-ring" viewBox="0 0 136 136" aria-hidden="true">
+                            <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="5 9"
+                                    stroke-linecap="round" />
+                        </svg>
+                        <i class="fa-solid fa-truck-medical" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="iv-step iv-step--right">
+                    <div class="iv-step-card">
+                        <span class="iv-step-num">STEP 02</span>
+                        <h3>
+                            {{#has_process_section_step_body_text_2}}{{process_section_step_body_text_2}}{{/has_process_section_step_body_text_2}}
+                            {{#no_process_section_step_body_text_2}}Advanced Diagnostics{{/no_process_section_step_body_text_2}}
+                        </h3>
+                        <p>
+                            {{#has_process_section_step_body_subtext_2}}{{process_section_step_body_subtext_2}}{{/has_process_section_step_body_subtext_2}}
+                            {{#no_process_section_step_body_subtext_2}}Blood gas trends, laboratory panels and bedside imaging reviewed together to find the true driver.{{/no_process_section_step_body_subtext_2}}
+                        </p>
+                    </div>
+                    <div class="iv-step-orb iv-step-orb--saline">
+                        <svg class="iv-step-orb-ring" viewBox="0 0 136 136" aria-hidden="true">
+                            <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="5 9"
+                                    stroke-linecap="round" />
+                        </svg>
+                        <i class="fa-solid fa-vial-circle-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="iv-step">
+                    <div class="iv-step-card">
+                        <span class="iv-step-num">STEP 03</span>
+                        <h3>
+                            {{#has_process_section_step_body_text_3}}{{process_section_step_body_subtext_3}}{{/has_process_section_step_body_text_3}}
+                            {{#no_process_section_step_body_text_3}}Protocol Execution{{/no_process_section_step_body_text_3}}
+                        </h3>
+                        <p>
+                            {{#has_process_section_step_body_subtext_3}}{{process_section_step_body_subtext_3}}{{/has_process_section_step_body_subtext_3}}
+                            {{#no_process_section_step_body_subtext_3}}Targeted organ support, titrated infusions and specialist medication under continuous review.{{/no_process_section_step_body_subtext_3}}
+                        </p>
+                    </div>
+                    <div class="iv-step-orb iv-step-orb--violet">
+                        <svg class="iv-step-orb-ring" viewBox="0 0 136 136" aria-hidden="true">
+                            <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="5 9"
+                                    stroke-linecap="round" />
+                        </svg>
+                        <i class="fa-solid fa-syringe" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="iv-step iv-step--right">
+                    <div class="iv-step-card">
+                        <span class="iv-step-num">STEP 04</span>
+                        <h3>
+                            {{#has_process_section_step_body_text_4}}{{process_section_step_body_text_4}}{{/has_process_section_step_body_text_4}}
+                            {{#no_process_section_step_body_text_4}}Step-Down &amp; Recovery{{/no_process_section_step_body_text_4}}
+                        </h3>
+                        <p>
+                            {{#has_process_section_step_body_subtext_4}}{{process_section_step_body_subtext_4}}{{/has_process_section_step_body_subtext_4}}
+                            {{#no_process_section_step_body_subtext_4}}Gradual weaning, milestone tracking and a documented handover to the ward or home care team.{{/no_process_section_step_body_subtext_4}}
+                        </p>
+                    </div>
+                    <div class="iv-step-orb iv-step-orb--vital">
+                        <svg class="iv-step-orb-ring" viewBox="0 0 136 136" aria-hidden="true">
+                            <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="5 9"
+                                    stroke-linecap="round" />
+                        </svg>
+                        <i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="iv-contact" id="contact-us">
+        <div class="container">
+            <div class="iv-section-head">
+                <span class="iv-chip iv-chip--saline">
+                    <i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Get In
+                    Touch
+                </span>
+                <h2 class="iv-title">
+
+                    Speak to the <em>critical care desk</em>
+                </h2>
+                <p class="iv-sub">
+                    {{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}
+                    {{#no_contact_us_subtitle}}Questions about an admission, a transfer or a scheduled consultation? Reach the team
+                    directly.{{/no_contact_us_subtitle}}
+                </p>
+            </div>
+
+            <div class="iv-contact-grid">
+                <article class="iv-contact-card">
+                    <h3>ICU &amp; Clinic Details</h3>
+                    <div class="iv-contact-row">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>
+                                {{clinicname}}<br />
+                                {{address}}<br />
+                                {{district}}, {{state}} - {{pincode}}
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="iv-contact-card iv-contact-card--reach">
+                    <h3>Reach Us</h3>
+                    <div class="iv-contact-row">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <div>
+                            <h4>Phone &amp; Email</h4>
+                            <p>
+                                <a href="tel:+{{code}}{{phone}}" data-ga-event="phone_number_click">{{code}}-{{phone}}</a><br />
+                                <a href="mailto:{{email}}" data-ga-event="email_click">{{email}}</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="iv-drip-rule" aria-hidden="true"></div>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="iv-testimonials" id="testimonials">
+        <!-- SVG Background Pattern for ICU Hexagonal Medical Matrix -->
+        <div class="iv-testimonials-bg-pattern" aria-hidden="true">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Hexagonal Matrix Pattern -->
+                    <pattern id="ivTestiHexGrid" width="60" height="104" patternUnits="userSpaceOnUse">
+                        <!-- Hex Outlines -->
+                        <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" fill="none" stroke="var(--iv)"
+                              stroke-width="1" opacity="0.09" />
+                        <path d="M 30 52 L 60 69.32 L 60 103.96 L 30 121.28 L 0 103.96 L 0 69.32 Z" fill="none"
+                              stroke="var(--saline)" stroke-width="1" opacity="0.07" />
+                        <path d="M -30 52 L 0 69.32 L 0 103.96 L -30 121.28 L -60 103.96 L -60 69.32 Z" fill="none"
+                              stroke="var(--iv-deep)" stroke-width="1" opacity="0.06" />
+
+                        <!-- Glowing Highlight Dots at Vertices/Centers -->
+                        <circle cx="30" cy="34.64" r="2.5" fill="var(--saline)" opacity="0.3"
+                                class="iv-hex-dot iv-hex-dot--pulse" />
+                        <circle cx="0" cy="17.32" r="1.8" fill="var(--iv-bright)" opacity="0.22" />
+                        <circle cx="60" cy="17.32" r="1.8" fill="var(--vital)" opacity="0.2" />
+                        <circle cx="30" cy="86.64" r="2.2" fill="var(--iv)" opacity="0.25" class="iv-hex-dot iv-hex-dot--pulse2" />
+                        <circle cx="0" cy="69.32" r="1.5" fill="var(--saline-bright)" opacity="0.2" />
+                        <circle cx="60" cy="69.32" r="1.5" fill="var(--iv-deep)" opacity="0.2" />
+                    </pattern>
+
+                    <radialGradient id="ivTestiHexGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="var(--saline)" stop-opacity="0.1" />
+                        <stop offset="60%" stop-color="var(--iv)" stop-opacity="0.05" />
+                        <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+
+                <!-- Ambient Glow Base -->
+                <rect width="100%" height="100%" fill="url(#ivTestiHexGlow)" />
+
+                <!-- Hex Grid Fill -->
+                <rect width="100%" height="100%" fill="url(#ivTestiHexGrid)" />
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="iv-section-head iv-testi-head">
+                <span class="iv-chip iv-chip--vital">
+                    <i class="fa-solid fa-comment-medical" aria-hidden="true"></i> Patient
+                    Experiences
+                </span>
+                <h2 class="iv-title">
+                    {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
+                    {{#no_testimonial_title}}Families who waited out <em>the hard nights</em>{{/no_testimonial_title}}
+                </h2>
+                <p class="iv-sub">Feedback from patients and families cared for during critical hospitalisations.</p>
+            </div>
+
+            <div class="testimonials-carousel-wrap">
+                <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div class="testimonials-carousel" id="testimonialsCarousel">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        {{#testimonials}}
+                        <article class="testimonial-card">
+                            <span class="iv-testi-drop" aria-hidden="true"><i class="fa-solid fa-quote-right"></i></span>
+                            <p class="testimonial-quote">
+                                {{comment}}
+                            </p>
+                            <div class="testimonial-footer">
+                                <img src="{{profile_picture}}"
+                                     alt="{{patient_name}}" class="testimonial-avatar" />
+                                <div>
+                                    <h3 class="testimonial-name">{{patient_name}}</h3>
+                                    <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
+                                        {{stars_html}}
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        {{/testimonials}}
+                    </div>
+                </div>
+
+                <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="iv-gallery" id="gallery">
+        <div class="container">
+            <div class="iv-section-head">
+                <span class="iv-chip"><i class="fa-solid fa-hospital" aria-hidden="true"></i> Practice Gallery</span>
+                <h2 class="iv-title">
+                    {{#has_gallery_section_title}}{{gallery_section_subtitle}}{{/has_gallery_section_title}}
+                    {{#no_gallery_section_title}}A Look Inside <em>My Practice</em>{{/no_gallery_section_title}}
+                </h2>
+                <p class="iv-sub">
+                    {{#has_gallery_section_subtitle}}{{gallery_section_subtitle}}{{/has_gallery_section_subtitle}}
+                    {{#no_gallery_section_subtitle}}A look at the critical care environment where patients are monitored around the clock. {{/no_gallery_section_subtitle}}
+                </p>
+            </div>
+
+            <div class="iv-gallery-grid">
+
+                {{#images}}
+                <figure class="gallery-item">
+                    <img src="{{image}}"
+                         alt="Critical care monitoring bay" loading="lazy" />
+                    <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                </figure>
+                {{/images}}
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+        <div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div>
+        <figure class="gallery-lightbox-content">
+            <img src="" alt="Enlarged gallery image" id="galleryLightboxImage" />
+        </figure>
+        <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">
+            &times;
+        </button>
+    </div>
+
+    <!-- ===== BOOKING MODAL ===== -->
+    <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+        <div class="booking-modal-dialog" role="document">
+            <div class="booking-modal-header">
+                <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">
+                    &times;
+                </button>
+
+                <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+                    <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true" data-ga-event="clinic_visit_tab_click">
+                        Clinic Visit
+                    </button>
+                    <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" data-ga-event="online_consult_tab_click">
+                        Online Consultation
+                    </button>
+                </div>
+            </div>
+
+            <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
+                <div class="booking-form-row">
+                    <div class="booking-field">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+                        <p class="booking-error" data-error-for="fullName"></p>
+                    </div>
+                    <div class="booking-field">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
+                        <p class="booking-error" data-error-for="phone"></p>
+                    </div>
+                </div>
+
+                <div class="booking-form-row">
+                    <div class="booking-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                        <p class="booking-error" data-error-for="email"></p>
+                    </div>
+                    <div class="booking-field booking-field--date">
+                        <label for="preferredDateText">Preferred Date</label>
+                        <div class="booking-datepicker" id="preferredDateField">
+                            <div class="booking-input-with-icon">
+                                <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date"
+                                       readonly autocomplete="off" />
+                            </div>
+                            <input type="hidden" id="preferredDate" name="preferredDate" />
+                            <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                                <div class="booking-calendar-header">
+                                    <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <span class="booking-calendar-title" data-cal-title></span>
+                                    <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="booking-calendar-weekdays">
+                                    <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                                </div>
+                                <div class="booking-calendar-grid" data-cal-grid></div>
+                            </div>
+                        </div>
+                        <p class="booking-error" data-error-for="preferredDate"></p>
+                    </div>
+                </div>
+
+                <div class="booking-form-row">
+                    <div class="booking-field">
+                        <label for="preferredTime">Preferred Time</label>
+                        <div class="booking-select-wrap">
+                            <select id="preferredTime" name="preferredTime" required>
+                                <option value="">Select Time Slot</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+                        </div>
+                        <p class="booking-error" data-error-for="preferredTime"></p>
+                    </div>
+                </div>
+
+                <div class="booking-field">
+                    <label for="reason">Reason For Visit</label>
+                    <textarea id="reason" name="reason" rows="3"
+                              placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+                    <p class="booking-error" data-error-for="reason"></p>
+                </div>
+
+                <div class="booking-field booking-field--file">
+                    <label for="report">Upload Report</label>
+                    <div class="booking-upload-row">
+                        <label class="booking-upload-btn" for="report" data-ga-event="upload_report_click">Upload</label>
+                        <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+                        <span class="booking-upload-help">(JPEG, PNG file formats supported)</span>
+                    </div>
+                    <div class="booking-file-preview" id="filePreview"></div>
+                    <p class="booking-error" data-error-for="report"></p>
+                </div>
+
+                <div class="booking-field booking-consent-field">
+                    <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+                    <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+                </div>
+
+                <button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
+                    Book Appointment
+                </button>
+
+                <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+                    <div class="loader-spinner"></div>
+                    <p>Booking your appointment...</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand-col">
+                <a href="#" class="footer-brand">
+                    <span class="footer-avatar">
+                        <img src="{{profile}}" alt="Dr. {{full_name}}" />
+                    </span>
+                    <span class="brand-text">
+                        <span class="brand-name">Dr. {{full_name}}</span>
+                        <span class="brand-role">{{speciality}}</span>
+                    </span>
+                </a>
+                <p class="footer-tagline">Advanced Critical Care &amp; ICU Management for Critical Moments.</p>
+                <div class="footer-social-wrap">
+                    <span class="footer-social-label">Follow me on:</span>
+                    <div class="footer-social" aria-label="Footer social links">
+                        {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Footer"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+                        {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+                        {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Footer"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+                        {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+                        {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="social_instagram_click" data-ga-label="Footer"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+                        {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+                        {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="Twitter" data-ga-event="social_x_click" data-ga-label="Footer"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+                        {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+                        {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Footer"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+                        {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+                        {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="social_website_click" data-ga-label="Footer"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+                        {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+                        {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+                        {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+                        {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+                        {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-right-col">
+                <div class="footer-links-group">
+                    <h4>Quick Links</h4>
+                    <nav class="footer-nav-horizontal" aria-label="Quick Links">
+                        <a href="#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
+                        <a href="#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
+                        <a href="#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
+                        <a href="#testimonials" data-ga-event="footer_nav_link_click" data-ga-label="Testimonials">Testimonials</a>
+                        <a href="#gallery" data-ga-event="footer_nav_link_click" data-ga-label="Gallery">Gallery</a>
+                    </nav>
+                </div>
+
+                <div class="footer-links-group">
+                    <h4>Legal</h4>
+                    <nav class="footer-nav-horizontal" aria-label="Legal Links">
+                        <a href="/{{slug}}/privacy-policy" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
+                        <a href="/{{slug}}/terms-of-service" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
+                    </nav>
+                </div>
+
+                <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 0">
+                    <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+                    <span class="footer-visitor-badge-label">No. of Visitor:</span>
+                    <span class="footer-visitor-badge-count" id="visitorCount">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copy">
+                <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> &copy; <span id="footerYear"></span> Dr. {{full_name}}.
+                All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="{{path}}/script/banner-module.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+    <script src="{{path}}/script/analytics.js"></script>
+    <script src="{{path}}/script/index.js"></script>
+    <script src="{{path}}/script/chatbot.js" defer></script>
+</body>
+
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("testimonialsTrack");
+
+        if (!track || track.children.length === 0) {
+            document.getElementById("testimonials")?.remove();
+
+            document
+                .querySelectorAll('a[href="#testimonials"]')
+                .forEach(x => x.remove());
+        }
+    });
+</script>
+
+<script>
+    (function () {
+        const micrositeId = document.body.dataset.micrositeid;
+        const el = document.getElementById("visitorCount");
+        if (!micrositeId || !el) return;
+
+        fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+            method: "POST"
+        })
+            .then(res => res.ok ? res.json() : Promise.reject(res.status))
+            .then(data => {
+                el.textContent = data.visitorCount.toLocaleString();
+            })
+            .catch(err => console.error("Visitor count error:", err));
+    })();
+</script>

@@ -1,0 +1,24 @@
+<svg width="1440" height="60" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .ecg-divider {
+      stroke-dasharray: 1600;
+      stroke-dashoffset: 1600;
+      animation: ecgDividerSweep 5s linear infinite;
+    }
+    @keyframes ecgDividerSweep {
+      to { stroke-dashoffset: 0; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="divGrad" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="rgba(13,148,136,0.0)"/>
+      <stop offset="25%" stop-color="rgba(13,148,136,0.5)"/>
+      <stop offset="50%" stop-color="rgba(2,132,199,0.75)"/>
+      <stop offset="75%" stop-color="rgba(13,148,136,0.5)"/>
+      <stop offset="100%" stop-color="rgba(13,148,136,0.0)"/>
+    </linearGradient>
+  </defs>
+  <path class="ecg-divider"
+    d="M0 30 L320 30 L340 30 L350 38 L358 8 L368 52 L378 26 L386 30 L420 30 L440 30 L450 38 L458 8 L468 52 L478 26 L486 30 L760 30 L770 30 L780 38 L788 8 L798 52 L808 26 L816 30 L860 30 L870 38 L878 8 L888 52 L898 26 L906 30 L1440 30"
+    stroke="url(#divGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

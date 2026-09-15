@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JK26BJZTNV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-JK26BJZTNV');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Child Health Article | Pediatrician Microsite</title>
+    <meta name="description" content="Detailed medical guidance and child development insights from Dr. {{full_name}}." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.example.com/pediatrician-1/blog-detail.html" /><!-- TODO: replace with live production domain before launch -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dr. {{full_name}} Pediatric Care" />
+    <meta property="og:title" content="Pediatric Article Details | Dr. {{full_name}}" />
+    <meta property="og:description" content="Detailed medical guidance and child development insights from Dr. {{full_name}}." />
+    <meta property="og:url" content="https://www.example.com/pediatrician-1/blog-detail.html" />
+    <meta property="og:image" content="https://www.example.com/pediatrician-1/assets/dr-sarah-smith.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pediatric Article Details | Dr. {{full_name}}" />
+    <meta name="twitter:description" content="Detailed medical guidance and child development insights from Dr. {{full_name}}." />
+    <meta name="twitter:image" content="https://www.example.com/pediatrician-1/assets/dr-sarah-smith.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{{path}}/styles/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+    <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+</head>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="/{{slug}}" class="brand" aria-label="Dr. {{full_name}}">
+                <span class="avatar" aria-hidden="true">
+                    <img src="{{profile}}"
+                         alt="Dr. {{full_name}}" />
+                </span>
+                <span class="brand-text">
+                    <span class="brand-name" title="Dr. {{full_name}}">Dr. {{full_name}}</span>
+                    <span class="brand-role">{{specialist}}</span>
+                </span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mainNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+                <a href="/{{slug}}/#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
+                <a href="/{{slug}}/#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
+                <a href="/{{slug}}/#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
+                <a href="/{{slug}}/#testimonials" data-ga-event="nav_link_click" data-ga-label="Testimonials">Testimonials</a>
+                <a href="/{{slug}}/#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
+                {{#hasBlog}}
+                <a href="/{{slug}}/blog" data-ga-event="nav_link_click" data-ga-label="Blog">Blog</a>
+                {{/hasBlog}}
+            </nav>
+
+            <a href="#" class="cta-btn" data-ga-event="book_appointment_click" data-ga-label="Navbar">
+                <span class="cta-text-desktop">Book Appointment</span>
+                <span class="cta-text-mobile">Book Now</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-detail-section">
+            <div class="container">
+                <article class="blog-detail-article">
+                    <a href="/{{slug}}/blog" class="blog-detail-back-link" data-ga-event="blog_detail_back_click" data-ga-label="Back to Blog">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Blog
+                    </a>
+
+                    <p class="blog-detail-meta">{{blogdetails.created}}</p>
+                    <h1 class="blog-detail-title">{{blogdetails.subject}}</h1>
+
+                    <div class="blog-detail-author-row">
+                        <img src="{{profile}}"
+                             alt="Dr. {{full_name}}"
+                             class="blog-detail-author-image" />
+                        <div class="blog-detail-author-info">
+                            <p class="blog-detail-author-name">Dr. {{full_name}}</p>
+                            <p class="blog-detail-author-role">{{specialist}}</p>
+                        </div>
+                        <p class="blog-detail-date">Updated on 20 Apr 2026</p>
+                    </div>
+
+                    <figure class="blog-detail-featured-media">
+                        <img src="{{blogdetails.blogimages}}"
+                             alt="{{blogdetails.subject}}" />
+                    </figure>
+
+                    <div class="blog-detail-content">
+                        <p>
+                            {{blogdetails.body}}
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Booking Form Modal -->
+    <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+        <div class="booking-modal-dialog" role="document">
+            <div class="booking-modal-header">
+                <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">
+                    &times;
+                </button>
+
+                <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+                    <button type="button"
+                            class="booking-tab is-active"
+                            id="clinicVisitTab"
+                            role="tab"
+                            aria-selected="true"
+                            data-ga-event="clinic_visit_tab_click">
+                        Clinic Visit
+                    </button>
+                    <button type="button"
+                            class="booking-tab"
+                            id="onlineConsultTab"
+                            role="tab"
+                            aria-selected="false"
+                            data-ga-event="online_consult_tab_click">
+                        Online Consultation
+                    </button>
+                </div>
+            </div>
+
+            <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
+                <div class="booking-form-row">
+                    <div class="booking-field">
+                        <label for="fullName">Full Name</label>
+                        <input type="text"
+                               id="fullName"
+                               name="fullName"
+                               placeholder="Enter Your Full Name"
+                               required />
+                        <p class="booking-error" data-error-for="fullName"></p>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
+                        <p class="booking-error" data-error-for="phone"></p>
+                    </div>
+                </div>
+
+                <div class="booking-form-row">
+                    <div class="booking-field">
+                        <label for="email">Email</label>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="your@email.com"
+                               required />
+                        <p class="booking-error" data-error-for="email"></p>
+                    </div>
+
+                    <div class="booking-field booking-field--date">
+                        <label for="preferredDateText">Preferred Date</label>
+                        <div class="booking-datepicker" id="preferredDateField">
+                            <div class="booking-input-with-icon">
+                                <input type="text"
+                                       id="preferredDateText"
+                                       class="booking-date-display"
+                                       placeholder="Select a date"
+                                       readonly
+                                       autocomplete="off" />
+                            </div>
+                            <input type="hidden" id="preferredDate" name="preferredDate" />
+                            <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                                <div class="booking-calendar-header">
+                                    <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <span class="booking-calendar-title" data-cal-title></span>
+                                    <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                                </div>
+                                <div class="booking-calendar-weekdays">
+                                    <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                                </div>
+                                <div class="booking-calendar-grid" data-cal-grid></div>
+                            </div>
+                        </div>
+                        <p class="booking-error" data-error-for="preferredDate"></p>
+                    </div>
+                </div>
+
+                <div class="booking-form-row">
+                    <div class="booking-field">
+                        <label for="preferredTime">Preferred Time</label>
+                        <div class="booking-select-wrap">
+                            <select id="preferredTime" name="preferredTime" required>
+                                <option value="">Select Time Slot</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+                        </div>
+                        <p class="booking-error" data-error-for="preferredTime"></p>
+                    </div>
+                </div>
+
+                <div class="booking-field">
+                    <label for="reason">Reason For Visit</label>
+                    <textarea id="reason"
+                              name="reason"
+                              rows="3"
+                              placeholder="Please describe your symptoms or reason for consultation..."
+                              required></textarea>
+                    <p class="booking-error" data-error-for="reason"></p>
+                </div>
+
+                <div class="booking-field booking-field--file">
+                    <label for="report">Upload Report</label>
+                    <div class="booking-upload-row">
+                        <label class="booking-upload-btn" for="report" data-ga-event="upload_report_click">Upload</label>
+                        <input type="file"
+                               id="report"
+                               name="report"
+                               accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+                        <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
+                    </div>
+                    <div class="booking-file-preview" id="filePreview"></div>
+                    <p class="booking-error" data-error-for="report"></p>
+                </div>
+
+
+                <div class="booking-field booking-consent-field">
+                    <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+                    <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+                </div>
+
+                <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>
+                    Book Appointment
+                </button>
+                <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+                    <div class="loader-spinner"></div>
+                    <p>Booking your appointment...</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="/{{slug}}/#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
+                <a href="/{{slug}}/#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
+                <a href="/{{slug}}/#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
+                <a href="/{{slug}}/#testimonials" data-ga-event="footer_nav_link_click" data-ga-label="Testimonials">Testimonials</a>
+            </nav>
+
+            <div class="footer-social-wrap">
+                <span class="footer-social-label">Follow me on:</span>
+                <div class="footer-social" aria-label="Footer social links">
+                    {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="social_facebook_click" data-ga-label="Footer"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+                    {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebookpage is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+                    {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="social_facebook_click" data-ga-label="Footer"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+                    {{#noFacebook}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebook}}
+                    {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="social_instagram_click" data-ga-label="Footer"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+                    {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+                    {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="Twitter" data-ga-event="social_x_click" data-ga-label="Footer"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+                    {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+                    {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Footer"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+                    {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+                    {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="social_website_click" data-ga-label="Footer"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+                    {{#noWebsite}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+                    {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+                    {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+                    {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+                    {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="/{{slug}}/privacy-policy" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
+                <span class="footer-divider">|</span>
+                <a href="/{{slug}}/terms-of-service" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
+            </div>
+
+            <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 0">
+                <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+                <span class="footer-visitor-badge-label">No. of Visitor:</span>
+                <span class="footer-visitor-badge-count" id="visitorCount">0</span>
+            </div>
+
+            <p class="footer-copy">Dr. {{full_name}}. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+    <script src="{{path}}/script/analytics.js"></script>
+    <script src="{{path}}/script/index.js"></script>
+    <script src="{{path}}/script/chatbot.js" defer></script>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("testimonialsTrack");
+
+        if (!track || track.children.length === 0) {
+            document.getElementById("testimonials")?.remove();
+
+            document
+                .querySelectorAll('a[href="#testimonials"]')
+                .forEach(x => x.remove());
+        }
+    });
+</script>
+
+<script>
+    (function () {
+        const micrositeId = document.body.dataset.micrositeid;
+        const el = document.getElementById("visitorCount");
+        if (!micrositeId || !el) return;
+
+        fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+            method: "POST"
+        })
+            .then(res => res.ok ? res.json() : Promise.reject(res.status))
+            .then(data => {
+                el.textContent = data.visitorCount.toLocaleString();
+            })
+            .catch(err => console.error("Visitor count error:", err));
+    })();
+</script>
