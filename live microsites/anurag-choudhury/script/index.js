@@ -1325,3 +1325,27 @@ initPhonePlugin();
 
     window.addEventListener("resize", debounce(function () { initReadMore(); }, 200));
 })();
+
+/* FAQ accordion — universal .faq-item / .faq-question / .faq-answer */
+(function () {
+  var faqList = document.querySelector(".faq-list");
+  if (!faqList) return;
+
+  faqList.addEventListener("click", function (e) {
+    var btn = e.target.closest(".faq-question");
+    if (!btn) return;
+
+    var item = btn.closest(".faq-item");
+    var isActive = item.classList.contains("is-active");
+
+    faqList.querySelectorAll(".faq-item.is-active").forEach(function (openItem) {
+      if (openItem !== item) {
+        openItem.classList.remove("is-active");
+        openItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+      }
+    });
+
+    item.classList.toggle("is-active", !isActive);
+    btn.setAttribute("aria-expanded", String(!isActive));
+  });
+})();

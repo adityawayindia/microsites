@@ -1332,3 +1332,32 @@ initPhonePlugin();
 
     window.addEventListener("resize", debounce(function () { initReadMore(); }, 200));
 })();
+
+/* ==========================================================================
+   FAQ Accordion Functionality
+   ========================================================================== */
+(function initFaqAccordion() {
+  const faqList = document.querySelector('.faq-list');
+  if (!faqList) return;
+
+  faqList.addEventListener('click', (e) => {
+    const questionBtn = e.target.closest('.faq-question');
+    if (!questionBtn) return;
+
+    const currentItem = questionBtn.closest('.faq-item');
+    const isActive = currentItem.classList.contains('is-active');
+
+    // Close all items (single-open behavior)
+    faqList.querySelectorAll('.faq-item').forEach((item) => {
+      item.classList.remove('is-active');
+      const btn = item.querySelector('.faq-question');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+
+    // Toggle clicked item
+    if (!isActive) {
+      currentItem.classList.add('is-active');
+      questionBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+})();
