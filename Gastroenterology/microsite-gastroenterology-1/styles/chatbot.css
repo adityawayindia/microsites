@@ -29,6 +29,7 @@
     padding: 7px 16px 7px 10px;
     box-sizing: border-box;
     border-radius: 999px;
+    font-family: inherit;
     /* Solid brand-colour pill with a white rim — no gradient. */
     background: var(--chatbot-primary);
     border: 2px solid #ffffff;
@@ -393,7 +394,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-    font-family: var(--font-family-primary, "Plus Jakarta Sans", sans-serif);
+    font-family: "Plus Jakarta Sans", sans-serif;
     margin-bottom: 12px;
     flex-shrink: 0;
     scroll-snap-align: start;
@@ -482,7 +483,7 @@
     border-radius: 20px;
     font-size: 16px;
     line-height: 1.5;
-    font-family: var(--font-family-primary, "Plus Jakarta Sans", sans-serif);
+    font-family: "Plus Jakarta Sans", sans-serif;
     word-break: break-word;
     letter-spacing: -0.01em;
 }
@@ -603,7 +604,7 @@
     outline: none;
     font-size: 16px;
     color: #0f172a;
-    font-family: var(--font-family-primary, "Plus Jakarta Sans", sans-serif);
+    font-family: "Plus Jakarta Sans", sans-serif;
     resize: none;
     line-height: 1.5;
     max-height: 100px;

@@ -196,7 +196,7 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1480px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -660,7 +660,7 @@ overflow: hidden;
    ========================================================================== */
 
 .about-section {
-  padding: 46px 0;
+  padding: 10px 0;
   background: var(--surface);
 }
 
@@ -709,7 +709,7 @@ overflow: hidden;
    ========================================================================== */
 
 .services-section {
-  padding: 52px 0;
+  padding: 10px 0;
   position: relative;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(240, 253, 244, 0.80) 100%),
               url('../assets/digestive-system.svg') center/contain no-repeat;
@@ -837,7 +837,7 @@ overflow: hidden;
    ========================================================================== */
 
 .philosophy-section {
-  padding: 52px 0;
+  padding: 10px 0;
   background: var(--surface);
 }
 
@@ -917,7 +917,7 @@ overflow: hidden;
    ========================================================================== */
 
 .process-section {
-  padding: 52px 0;
+  padding: 10px 0;
   position: relative;
   background: linear-gradient(180deg, rgba(240, 253, 244, 0.80) 0%, rgba(255, 255, 255, 0.80) 100%),
               url('../assets/digestive-system.svg') center/contain no-repeat;
@@ -1026,7 +1026,7 @@ overflow: hidden;
    ========================================================================== */
 
 .contact-section {
-  padding: 52px 0;
+  padding: 10px 0;
   background: var(--surface);
 }
 
@@ -1109,7 +1109,7 @@ overflow: hidden;
    ========================================================================== */
 
 .testimonials-section {
-  padding: 52px 0;
+  padding: 10px 0;
   background-image: linear-gradient(rgba(248, 250, 252, 0.94), rgba(248, 250, 252, 0.94)), url('../assets/digestive-system.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -1246,7 +1246,7 @@ overflow: hidden;
    ========================================================================== */
 
 .gallery-section {
-  padding: 52px 0;
+  padding: 10px 0;
   background: var(--surface);
 }
 
@@ -1325,7 +1325,7 @@ overflow: hidden;
 .gallery-lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(6, 30, 27, 0.7);
 }
 
 .gallery-lightbox-content {
@@ -1473,6 +1473,7 @@ overflow: hidden;
   padding: 10px;
   font-weight: 600;
   font-size: 16px;
+  font-family: inherit;
   border: none;
   background: transparent;
   color: var(--text-body);
@@ -1588,9 +1589,10 @@ overflow: hidden;
   background: var(--teal-light);
   color: var(--teal-primary);
   font-weight: 600;
-  font-size: 16px;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  font-size: 18px;
+  font-family: inherit;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
   cursor: pointer;
   border: 1px solid var(--border-teal);
 }
@@ -1627,9 +1629,10 @@ overflow: hidden;
   background: var(--teal-dark);
   color: var(--white);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
+  font-family: inherit;
   padding: 14px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
   border: none;
   cursor: pointer;
   transition: background var(--transition-fast);
@@ -1744,8 +1747,8 @@ overflow: hidden;
 }
 
 .footer-social-icon {
-  width: 45px;
-  height: 45px;
+  width: 36px;
+  height: 36px;
   font-size: 19px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
@@ -2281,7 +2284,7 @@ overflow: hidden;
   }
 
   .contact-section {
-    padding: 32px 0 40px;
+    padding: 10px 0;
   }
 }
 
@@ -2326,10 +2329,14 @@ overflow: hidden;
 .booking-select-wrap select,
 .booking-field input::placeholder,
 .booking-field textarea::placeholder,
-.booking-upload-btn,
-.booking-upload-help,
-.booking-submit-btn {
+.booking-upload-help {
   font-size: 16px !important;
+  line-height: 1.4;
+}
+
+.booking-upload-btn,
+.booking-submit-btn {
+  font-size: 18px !important;
   line-height: 1.4;
 }
 
@@ -2718,11 +2725,12 @@ overflow: hidden;
 
 .booking-field label.booking-upload-btn,
 .booking-upload-btn {
-  padding: 9px 20px !important;
+  padding: 9px 18px !important;
   border-radius: 999px !important;
   background: var(--teal-primary) !important;
   color: var(--white) !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
+  font-family: inherit !important;
   font-weight: 600 !important;
   cursor: pointer !important;
   border: none !important;
@@ -2774,13 +2782,13 @@ overflow: hidden;
 }
 
 .booking-submit-btn {
-  padding: 15px 24px !important;
+  padding: 14px !important;
   border: none !important;
   border-radius: 999px !important;
   background: linear-gradient(135deg, var(--teal-primary), var(--teal-dark)) !important;
   color: var(--white) !important;
   font-family: inherit !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
   font-weight: 700 !important;
   cursor: pointer !important;
   box-shadow: 0 10px 24px var(--teal-glow) !important;
@@ -2991,4 +2999,171 @@ overflow: hidden;
 @media (max-width: 360px) {
   .site-header .brand-role { display: none; }
   .cta-btn { padding: 8px 10px; }
+}
+
+/* ============================================================
+   FAQ SECTION — universal .faq-* classes, gallery(--surface)
+   alternates to --bg. Accordion state is class-driven
+   (.faq-item.is-active); JS only toggles it.
+   ============================================================ */
+.faq-section {
+  padding: 10px 0;
+  background: var(--bg);
+}
+
+.faq-header {
+  text-align: center;
+  margin: 0 auto 40px;
+  max-width: 700px;
+}
+
+.faq-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--teal-dark);
+  margin: 10px 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.faq-subtitle {
+  font-size: 18px;
+  color: var(--text-body);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  min-width: 0;
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item.is-active {
+  border-color: var(--teal-primary);
+  box-shadow: 0 4px 16px rgba(8, 18, 32, 0.08);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.faq-question span {
+  min-width: 0;
+  flex: 1;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--teal-primary);
+  background: var(--teal-light);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.faq-item.is-active .faq-icon {
+  transform: rotate(180deg);
+  background: var(--teal-primary);
+  color: #fff;
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.faq-item.is-active .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq-answer-inner > p {
+  min-width: 0;
+  margin: 0;
+  padding: 0 22px 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-body);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+@media (max-width: 900px) {
+  .faq-title {
+    font-size: 30px;
+  }
+
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 17px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 18px 18px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-question {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 14px 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .faq-title {
+    font-size: 38px;
+  }
 }

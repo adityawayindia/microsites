@@ -991,7 +991,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    ABOUT — executive, icon-free typography
    ============================================================ */
-.about-section { padding: 48px 0; background: var(--surface); }
+.about-section { padding: 10px 0; background: var(--surface); }
 
 /* Portrait column is capped so the photo stays a supporting element
    rather than dominating the section on wide desktops. */
@@ -1064,7 +1064,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    white service panels float on. */
 .services-section {
   position: relative;
-  padding: 48px 0;
+  padding: 10px 0;
   background: var(--sky-deep);
   overflow: hidden;
 }
@@ -1169,7 +1169,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — image-left credential card, connected-rail pillars right
    ============================================================ */
 .philosophy-section {
-  padding: 48px 0;
+  padding: 10px 0;
   background: var(--bg);
 }
 
@@ -1297,7 +1297,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONSULTATION JOURNEY — vertical alternating zig-zag timeline
    ============================================================ */
-.process-section { position: relative; padding: 48px 0; background: var(--bg-3); overflow: hidden; }
+.process-section { position: relative; padding: 10px 0; background: var(--bg-3); overflow: hidden; }
 .process-header { text-align: center; margin-bottom: 56px; }
 
 /* Deep reading-room navy carrying the same reticle matrix as the hero
@@ -1427,7 +1427,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-section { padding: 48px 0; background: var(--surface); }
+.contact-section { padding: 10px 0; background: var(--surface); }
 
 .contact-card {
   background: var(--surface);
@@ -1493,7 +1493,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    quotes are soft panels sharing the accent-cap of every other card. */
 .testimonials-section {
   position: relative;
-  padding: 48px 0;
+  padding: 10px 0;
   overflow: hidden;
   border-top: 1px solid var(--border);
   background-color: var(--bg-2);
@@ -1598,7 +1598,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    GALLERY
    ============================================================ */
-.gallery-section { padding: 48px 0; background: var(--surface); }
+.gallery-section { padding: 10px 0; background: var(--surface); }
 .gallery-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
 .gallery-subtitle { margin-left: auto; margin-right: auto; }
 
@@ -1628,7 +1628,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ============================================================ */
 .gallery-lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 600; }
 .gallery-lightbox.is-open { display: flex; }
-.gallery-lightbox-backdrop { position: absolute; inset: 0; background: rgba(8, 20, 35, 0.85); }
+.gallery-lightbox-backdrop { position: absolute; inset: 0; background: rgba(8, 20, 35, 0.7); }
 .gallery-lightbox-content { position: relative; margin: 0; max-width: min(1100px, 92vw); max-height: 82vh; max-height: 82dvh; border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); z-index: 1; }
 .gallery-lightbox-content img { width: 100%; height: 100%; display: block; object-fit: contain; background: #f8f9fa; }
 .gallery-lightbox-close {
@@ -1694,7 +1694,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ============================================================ */
 .booking-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 700; padding: 20px; }
 .booking-modal.is-open { display: flex; }
-.booking-modal-backdrop { position: absolute; inset: 0; background: rgba(8, 18, 32, 0.6); }
+.booking-modal-backdrop { position: absolute; inset: 0; background: rgba(8, 20, 35, 0.7); }
 
 .booking-modal-dialog {
   position: relative;
@@ -1853,7 +1853,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-upload-btn {
   flex-shrink: 0; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;
   padding: 9px 18px; border-radius: var(--radius-pill); background: var(--amber); color: #ffffff !important;
-  font-size: 16px; font-weight: 600; cursor: pointer; transition: filter 0.2s ease;
+  font-size: 18px; font-family: inherit; font-weight: 600; cursor: pointer; transition: filter 0.2s ease;
 }
 .booking-upload-btn:hover { filter: brightness(0.9); }
 .booking-field--file input[type="file"] { display: none; }
@@ -1924,7 +1924,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-submit-btn {
   width: 100%; padding: 14px; border: none; border-radius: var(--radius-pill);
   background: var(--amber);
-  font-family: inherit; color: #ffffff; font-size: 16px; font-weight: 700;
+  font-family: inherit; color: #ffffff; font-size: 18px; font-weight: 700;
   cursor: pointer; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .booking-submit-btn:hover:not([disabled]) { background: var(--amber-dark); transform: translateY(-2px); box-shadow: var(--shadow-amber); }
@@ -2347,7 +2347,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .footer-rights { display: block; margin-top: 2px; }
   .contact-card { padding: 32px 20px; }
   .testimonial-card { flex: 0 0 100%; }
-  .about-section { padding-top: 48px; }
+  .about-section { padding: 10px 0; }
 
   /* Carousel prev/next: drop out of absolute positioning beside the card
      and place them as a static row below it instead. */
@@ -2465,8 +2465,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 .footer-social-icon {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -2588,7 +2588,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
 
   .contact-section {
-    padding: 32px 0;
+    padding: 10px 0;
   }
 }
 
@@ -2798,5 +2798,172 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
   .cta-btn {
     padding: 8px 10px;
+  }
+}
+
+/* ============================================================
+   FAQ SECTION — universal .faq-* classes, gallery(--surface) ↔ FAQ(--bg-3)
+   alternation per AGENTS.md §2 branded-band pattern. Accordion state
+   is class-driven (.faq-item.is-active); JS only toggles it.
+   ============================================================ */
+.faq-section {
+  padding: 10px 0;
+  background: var(--bg-3);
+}
+
+.faq-header {
+  text-align: center;
+  margin: 0 auto 40px;
+  max-width: 700px;
+}
+
+.faq-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--sky-dark);
+  margin: 10px 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.faq-subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  min-width: 0;
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item.is-active {
+  border-color: var(--sky);
+  box-shadow: 0 4px 16px rgba(8, 18, 32, 0.08);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.faq-question span {
+  min-width: 0;
+  flex: 1;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--sky);
+  background: var(--sky-light);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.faq-item.is-active .faq-icon {
+  transform: rotate(180deg);
+  background: var(--sky);
+  color: #fff;
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.faq-item.is-active .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq-answer-inner > p {
+  min-width: 0;
+  margin: 0;
+  padding: 0 22px 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+@media (max-width: 900px) {
+  .faq-title {
+    font-size: 30px;
+  }
+
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 17px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 18px 18px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-question {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 14px 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .faq-title {
+    font-size: 38px;
   }
 }

@@ -257,7 +257,7 @@ body {
 }
 
 .container {
-  width: min(1200px, 92%);
+  width: min(1480px, 92%);
   margin: 0 auto;
 }
 
@@ -964,7 +964,7 @@ body {
    ========================================================================== */
 
 .about-section {
-  padding: 64px 0;
+  padding: 10px 0;
   background:
     radial-gradient(ellipse 70% 50% at 50% 0%, rgba(197, 155, 39, 0.08), transparent 70%),
     radial-gradient(ellipse 60% 40% at 88% 80%, rgba(10, 25, 47, 0.04), transparent 60%),
@@ -1092,7 +1092,7 @@ body {
 .services-section {
   position: relative;
   overflow: hidden;
-  padding: 64px 0;
+  padding: 10px 0;
   background:
     radial-gradient(ellipse 50% 50% at 0% 100%, rgba(10, 25, 47, 0.02), transparent 50%),
     linear-gradient(180deg, var(--white) 0%, var(--bg-warm) 100%);
@@ -1236,7 +1236,7 @@ body {
    ========================================================================== */
 
 .contact-section {
-  padding: 64px 0;
+  padding: 10px 0;
   background:
     radial-gradient(ellipse 50% 50% at 100% 0%, rgba(197, 155, 39, 0.03), transparent 50%),
     linear-gradient(180deg, var(--bg-warm) 0%, var(--bg) 100%);
@@ -1356,7 +1356,7 @@ body {
   background:
     radial-gradient(ellipse 40% 40% at 10% 50%, rgba(197, 155, 39, 0.03), transparent 50%),
     linear-gradient(180deg, var(--bg) 0%, var(--white) 50%, var(--bg-warm) 100%);
-  padding: 64px 0;
+  padding: 10px 0;
 }
 
 .testimonials-header {
@@ -1608,7 +1608,7 @@ body {
    ========================================================================== */
 
 .gallery-section {
-  padding: 64px 0;
+  padding: 10px 0;
   background: var(--white);
 }
 
@@ -1719,7 +1719,7 @@ body {
 .gallery-lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(10, 25, 47, 0.88);
+  background: rgba(10, 25, 47, 0.7);
 }
 
 .gallery-lightbox-content {
@@ -1844,8 +1844,8 @@ body {
 }
 
 .footer-social-icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -2357,6 +2357,7 @@ body {
   background: transparent;
   padding: 8px 22px;
   font-size: 16px;
+  font-family: inherit;
   font-weight: 500;
   border-radius: 4px;
   color: var(--muted);
@@ -2708,7 +2709,8 @@ body {
   border-radius: 999px;
   border: 1px solid rgba(10, 25, 47, 0.12);
   background: var(--white);
-  font-size: 16px;
+  font-size: 18px;
+  font-family: inherit;
   font-weight: 500;
   color: var(--navy);
   cursor: pointer;
@@ -2792,7 +2794,8 @@ body {
   padding: 14px;
   background: var(--navy);
   color: var(--white);
-  font-size: 16px;
+  font-size: 18px;
+  font-family: inherit;
   font-weight: 700;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.2s;
@@ -3189,11 +3192,11 @@ body {
   .services-section,
   .testimonials-section,
   .gallery-section {
-    padding: 48px 0;
+    padding: 10px 0;
   }
 
   .contact-section {
-    padding: 48px 0;
+    padding: 10px 0;
   }
 
   .about-story-new {
@@ -3384,7 +3387,7 @@ body {
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 64px 0;
+  padding: 10px 0;
   background-color: var(--bone);
   position: relative;
   overflow: hidden;
@@ -3507,7 +3510,7 @@ body {
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 64px 0;
+  padding: 10px 0;
   background-color: var(--bg-warm);
   position: relative;
   overflow: hidden;
@@ -3697,11 +3700,11 @@ body {
   }
 
   .philosophy-section {
-    padding: 64px 0;
+    padding: 10px 0;
   }
 
   .process-section {
-    padding: 64px 0;
+    padding: 10px 0;
   }
 
   .process-timeline-line {
@@ -4086,7 +4089,7 @@ select {
 
 .process-section {
     background: linear-gradient(rgba(244, 251, 247, 0.72), rgba(244, 251, 247, 0.72)), url('https://storage.googleapis.com/microsite_buck/microsite-general-medicine-2/assets/journey-bg.png') center / cover no-repeat fixed !important;
-    padding: 64px 0;
+    padding: 10px 0;
 }
 
 .testimonials-section {
@@ -4221,10 +4224,14 @@ select {
 .booking-select-wrap select,
 .booking-field input::placeholder,
 .booking-field textarea::placeholder,
-.booking-upload-btn,
-.booking-upload-help,
-.booking-submit-btn {
+.booking-upload-help {
   font-size: 16px !important;
+  line-height: 1.4;
+}
+
+.booking-upload-btn,
+.booking-submit-btn {
+  font-size: 18px !important;
   line-height: 1.4;
 }
 

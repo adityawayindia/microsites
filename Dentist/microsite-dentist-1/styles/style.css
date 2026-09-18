@@ -129,12 +129,12 @@ body {
 .testimonials-section,
 .social-media-section,
 .gallery-section {
-  padding: 48px 0 56px;
+  padding: 10px 0;
   background: #ffffff;
 }
 
 .container {
-  width: min(1200px, 92%);
+  width: min(1480px, 92%);
   margin: 0 auto;
 }
 
@@ -675,7 +675,7 @@ margin-bottom: 0;
   background:
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(46, 196, 182, 0.1), transparent 55%),
     linear-gradient(180deg, #f3faf8 0%, #e8f5f2 100%);
-  padding: 48px 0 56px;
+  padding: 10px 0;
   position: relative;
   overflow: hidden;
 }
@@ -860,7 +860,7 @@ margin-bottom: 0;
 
 @media (max-width: 900px) {
   .about-section {
-    padding: 56px 0;
+    padding: 10px 0;
   }
 
   .about-layout {
@@ -885,7 +885,7 @@ margin-bottom: 0;
 .services-section {
   position: relative;
   overflow: hidden;
-  padding: 52px 0 56px;
+  padding: 10px 0;
   background:
     radial-gradient(ellipse 60% 50% at 50% 0%, rgba(46, 196, 182, 0.14), transparent 60%),
     linear-gradient(180deg, #eaf7f4 0%, #f3faf8 45%, #ffffff 100%);
@@ -1090,7 +1090,7 @@ margin-bottom: 0;
 
 /* Contact Section — light split panel */
 .contact-section {
-  padding: 44px 0 52px;
+  padding: 10px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 100%);
 }
 
@@ -1259,7 +1259,7 @@ margin-bottom: 0;
 .testimonials-section {
   background:
     linear-gradient(180deg, #f3faf8 0%, #ffffff 45%, #eaf7f4 100%);
-  padding: 52px 0 56px;
+  padding: 10px 0;
 }
 
 .testimonials-header {
@@ -1478,7 +1478,7 @@ margin-bottom: 0;
 /* Social Media Section */
 .social-media-section {
   background: #ffffff;
-  padding: 44px 0 48px;
+  padding: 10px 0;
 }
 
 .social-media-header {
@@ -1768,7 +1768,7 @@ margin-bottom: 0;
 
 /* Gallery Section — uniform card grid */
 .gallery-section {
-  padding: 46px 0 56px;
+  padding: 10px 0;
   background: #ffffff;
 }
 
@@ -1879,7 +1879,7 @@ margin-bottom: 0;
 .gallery-lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.7);
 }
 
 .gallery-lightbox-content {
@@ -2401,8 +2401,8 @@ margin-bottom: 0;
 }
 
 .footer-social-icon {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -2664,8 +2664,8 @@ margin-bottom: 0;
   }
 
   .footer-social-icon {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     font-size: 16px;
   }
 }
@@ -2696,7 +2696,7 @@ margin-bottom: 0;
 
 @media (max-width: 640px) {
   .contact-section {
-  padding: 40px 0 48px;
+  padding: 10px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 100%);
 }
 
@@ -2916,7 +2916,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 48px 0;
+    padding: 10px 0;
   }
 
   .contact-card {
@@ -3128,7 +3128,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 48px 0;
+    padding: 10px 0;
   }
 
   .services-header {
@@ -3174,7 +3174,7 @@ margin-bottom: 0;
   .testimonials-section {
   background:
     linear-gradient(180deg, #f3faf8 0%, #ffffff 45%, #eaf7f4 100%);
-  padding: 48px 0 56px;
+  padding: 10px 0;
 }
 
   .testimonials-header {
@@ -3211,7 +3211,7 @@ margin-bottom: 0;
 }
 
   .gallery-section {
-  padding: 40px 0 48px;
+  padding: 10px 0;
   background: #ffffff;
 }
 
@@ -3230,7 +3230,7 @@ margin-bottom: 0;
   }
 
   .social-media-section {
-    padding: 40px 0 48px;
+    padding: 10px 0;
   }
 
   .social-media-header {
@@ -3246,7 +3246,7 @@ margin-bottom: 0;
   }
 
   .gallery-section {
-  padding: 40px 0 48px;
+  padding: 10px 0;
   background: #ffffff;
 }
 
@@ -3397,7 +3397,7 @@ margin-bottom: 0;
 .booking-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(15, 23, 42, 0.7);
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -3485,6 +3485,7 @@ margin-bottom: 0;
   background: transparent;
   padding: 8px 22px;
   font-size: 16px;
+  font-family: inherit;
   font-weight: 500;
   border-radius: 999px;
   color: var(--button-hover);
@@ -3852,11 +3853,12 @@ margin-bottom: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
   border: 1px solid #e5e7eb;
   background: #ffffff;
-  font-size: 16px;
+  font-size: 18px;
+  font-family: inherit;
   font-weight: 500;
   color: #111827;
   cursor: pointer;
@@ -3882,12 +3884,13 @@ margin-bottom: 0;
   margin-top: 6px;
   width: 100%;
   border: none;
-  border-radius: 10px;
-  padding: 12px 16px;
+  border-radius: 999px;
+  padding: 14px;
   background: var(--button);
   color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -4015,7 +4018,7 @@ margin-bottom: 0;
 
 /* ===== Dentist about redesign ===== */
 .about-section {
-  padding: 52px 0 56px;
+  padding: 10px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 55%, #eaf7f4 100%);
   position: relative;
   overflow: hidden;
@@ -4758,7 +4761,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 52px 0 58px;
+  padding: 10px 0;
   background-color: var(--bg);
   position: relative;
   overflow: hidden;
@@ -4865,7 +4868,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 52px 0 58px;
+  padding: 10px 0;
   background:
     radial-gradient(ellipse 62% 50% at 50% 0%, rgba(46, 196, 182, 0.14), transparent 60%),
     linear-gradient(180deg, #eefcf9 0%, #f8fffd 42%, #ffffff 100%);
@@ -5242,10 +5245,14 @@ select {
 .booking-select-wrap select,
 .booking-field input::placeholder,
 .booking-field textarea::placeholder,
-.booking-upload-btn,
-.booking-upload-help,
-.booking-submit-btn {
+.booking-upload-help {
   font-size: 16px !important;
+  line-height: 1.4;
+}
+
+.booking-upload-btn,
+.booking-submit-btn {
+  font-size: 18px !important;
   line-height: 1.4;
 }
 
@@ -5399,5 +5406,172 @@ small:not(.booking-modal *) {
 
   .cta-btn {
     padding: 8px 10px;
+  }
+}
+
+/* ============================================================
+   FAQ SECTION — universal .faq-* classes, gallery(#fff) alternates
+   to --bg tint. Accordion state is class-driven
+   (.faq-item.is-active); JS only toggles it.
+   ============================================================ */
+.faq-section {
+  padding: 10px 0;
+  background: var(--bg);
+}
+
+.faq-header {
+  text-align: center;
+  margin: 0 auto 40px;
+  max-width: 700px;
+}
+
+.faq-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--button-hover);
+  margin: 10px 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.faq-subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(13, 115, 119, 0.12);
+  border-radius: 20px;
+  min-width: 0;
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item.is-active {
+  border-color: var(--button);
+  box-shadow: 0 4px 16px rgba(8, 18, 32, 0.08);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.faq-question span {
+  min-width: 0;
+  flex: 1;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--button);
+  background: var(--button-light);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.faq-item.is-active .faq-icon {
+  transform: rotate(180deg);
+  background: var(--button);
+  color: #fff;
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.faq-item.is-active .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq-answer-inner > p {
+  min-width: 0;
+  margin: 0;
+  padding: 0 22px 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+@media (max-width: 900px) {
+  .faq-title {
+    font-size: 30px;
+  }
+
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 17px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 18px 18px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-question {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 14px 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .faq-title {
+    font-size: 38px;
   }
 }
