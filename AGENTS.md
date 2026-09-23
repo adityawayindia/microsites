@@ -903,21 +903,31 @@ Any section shipping a different value is a bug to fix, not a valid variant.
 
 ## 20. Project Folder Structure & File Conventions
 
-Specialty folders in this workspace:
+Specialty folders in this workspace — this table is the **single canonical list**
+referenced by CLAUDE.md. `Tag slug` is the exact string used as the Clarity
+`clarity('set', 'specialty', '<slug>')` value (§27) — always reuse the slug below for
+a given specialty, never invent a new spelling/casing for the same specialty:
 
-| Folder | Specialty |
-|---|---|
-| `microsite-ayurvedic` | Ayurvedic Medicine |
-| `microsite-cardiology` | Cardiology |
-| `microsite-dentist` | Dentistry |
-| `microsite-gastroenterology` | Gastroenterology |
-| `microsite-general-medicine` | General Medicine |
-| `microsite-homeopathy` | Homeopathy |
-| `microsite-intensivist` | Intensivist / Critical Care |
-| `microsite-neurology` | Neurology |
-| `microsite-oncology` | Oncology |
-| `microsite-orthopedics` | Orthopedics |
-| `microsite-pediatrician` | Pediatrics |
+| Folder | Specialty | Tag slug |
+|---|---|---|
+| `microsite-ayurvedic` | Ayurvedic Medicine | `ayurvedic` |
+| `microsite-cardiology` | Cardiology | `cardiology` |
+| `microsite-dentist` | Dentistry | `dentist` |
+| `microsite-ent` | ENT (Ear, Nose & Throat) | `ent` |
+| `microsite-gastroenterology` | Gastroenterology | `gastroenterology` |
+| `microsite-general-medicine` | General Medicine | `general-medicine` |
+| `microsite-homeopathy` | Homeopathy | `homeopathy` |
+| `microsite-intensivist` | Intensivist / Critical Care | `intensivist` |
+| `microsite-neurology` | Neurology | `neurology` |
+| `microsite-oncology` | Oncology | `oncology` |
+| `microsite-orthopedics` | Orthopedics | `orthopedics` |
+| `microsite-pediatrician` | Pediatrics | `pediatrician` |
+| `microsite-radiology` | Radiology | `radiology` |
+| `microsite-urology` | Urology | `urology` |
+
+When adding a brand-new specialty not listed above: add it to this table first (folder
+name, display name, and a lowercase-hyphenated tag slug), in the same commit that adds
+the folder — don't let a new specialty slug get invented ad hoc in a microsite's code.
 
 Each specialty lives in its own folder, one subfolder per microsite variant:
 
@@ -1393,11 +1403,59 @@ looks correct.
 
 ---
 
-## 27. New Microsite Build Checklist
+## 27. Microsoft Clarity Analytics Standard (Shared Project, Mandatory)
+
+All microsites share **one** Microsoft Clarity project ("DigiDr Microsites", project ID
+`ymqvcvdc4v`) rather than a separate Clarity project per microsite. At 1000+ microsites,
+one-project-per-site does not scale (no bulk/API project creation in Clarity); instead,
+every microsite loads the same project ID and self-identifies via two custom tags.
+
+**Snippet** (place in `<head>`, immediately after the Clarity IIFE's closing
+`</script>`):
+
+```html
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ymqvcvdc4v");
+</script>
+<script>
+    if (typeof clarity === "function") {
+      clarity('set', 'microsite', '{{slug}}');
+      clarity('set', 'specialty', '<tag-slug-from-§20-table>');
+    }
+</script>
+```
+
+- **Never** generate or hardcode a new per-site Clarity project ID (no more
+  `CLARITY_ID_<DOCTOR_NAME>` placeholders) — always the single shared ID above.
+- `microsite` tag value: should be the templated `{{slug}}` variable (already available
+  on `<body data-slug="{{slug}}">` in every page). **Current exception:** the backend
+  does not yet resolve `{{slug}}` for already-deployed live microsites, so for those,
+  hardcode the site's actual live URL slug instead (e.g. `https://digidr.app/drraj` →
+  `clarity('set', 'microsite', 'drraj')`) — note the live slug can differ from the
+  folder name. Switch back to `{{slug}}` once the backend resolves it for these pages.
+- `specialty` tag value: must be one of the exact tag slugs in the §20 specialty table
+  (e.g. `dentist`, `ent`, `oncology`) — never invent a new spelling for an existing
+  specialty, and add new specialties to that table first (§20).
+- Apply to every page that loads Clarity (`index.html`, `privacy-policy.html`,
+  `terms-of-service.html`, and `blog.html`/`blog-detail.html` if/when blog pages are
+  re-enabled).
+- This reuses Clarity's built-in Filters panel for per-site and per-specialty session
+  filtering/rollups inside the one shared project — no additional dashboard setup
+  required.
+
+---
+
+## 28. New Microsite Build Checklist
 
 Working order for building a new microsite from this file alone:
 
-1. Copy the folder structure from an existing microsite (§20).
+1. Copy the folder structure from an existing microsite (§20), and add the shared
+   Clarity snippet + `microsite`/`specialty` tags to every page (§27).
 2. Pick real HSL values for every `:root` token (§1), verify AA 4.5:1 contrast before
    finalizing.
 3. Add the mandatory global CSS block (§22) right after the `:root` block.

@@ -19,6 +19,21 @@ assets/            ← images/media
 (split-screen) → Consultation Journey (4-step timeline) → Testimonials (carousel) →
 Practice Gallery → Booking Modal → Footer.
 
+## Analytics — Microsoft Clarity (AGENTS.md §27, mandatory)
+
+- **One shared Clarity project for all microsites** — project ID `ymqvcvdc4v`. Never
+  create or hardcode a new per-site Clarity project ID (no `CLARITY_ID_<NAME>`
+  placeholders).
+- Every page with the Clarity snippet also sets two custom tags right after it:
+  `clarity('set', 'microsite', '{{slug}}')` and
+  `clarity('set', 'specialty', '<tag-slug>')`.
+- `<tag-slug>` must come from the **canonical specialties table in AGENTS.md §20** (the
+  single source of truth for every specialty folder name, display name, and tag slug,
+  e.g. `dentist`, `ent`, `oncology`, `pediatrician`) — never invent a new spelling for
+  an existing specialty. Add new specialties to that table first, in the same commit
+  that adds the folder.
+- Copy the snippet + tag block from **AGENTS.md §27 verbatim**.
+
 ## Non-negotiable CSS rules (every microsite)
 
 1. **No hard text overflow.** Never `white-space: nowrap` on dynamic content (names,
