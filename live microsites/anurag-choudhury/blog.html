@@ -1,7 +1,19 @@
+<!-- BLOG PAGE DISABLED (not required for now). Entire file commented out.
+     To restore: delete this header and the final closing marker, then change every "<!~~" back to a normal comment opener and every "~~>" back to a normal comment closer.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+  <!~~ Microsoft Clarity ~~>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_ID_ANURAG_CHOUDHURY");
+  </script>
+
+    <!~~ Google tag (gtag.js) ~~>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6TMSHDKST"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -87,7 +99,7 @@
         <section class="blog-listing-section">
             <div class="container">
                 <div class="blog-grid">
-                    <!--<article class="blog-card">
+                    <!~~<article class="blog-card">
                         <a href="blog-detail.html" class="blog-card-image-link" aria-label="Managing Type 2 Diabetes: A Modern Primary Care Approach">
                             <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="Managing Type 2 Diabetes: A Modern Primary Care Approach" class="blog-card-image" />
                         </a>
@@ -96,7 +108,7 @@
                             <h2 class="blog-card-title">Managing Type 2 Diabetes: A Modern Primary Care Approach</h2>
                             <a href="blog-detail.html" class="blog-read-more">Read More</a>
                         </div>
-                    </article>-->
+                    </article>~~>
                     {{#blog}}
                     <article class="blog-card">
                         <a href="blog-detail?id={{id}}" class="blog-card-image-link" aria-label="{{subject}}" data-ga-event="blog_card_click">
@@ -290,3 +302,4 @@
             .catch(err => console.error("Visitor count error:", err));
     })();
 </script>
+END OF DISABLED BLOG PAGE -->

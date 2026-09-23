@@ -372,8 +372,12 @@ if (menuToggle && mainNav) {
     if (consentCheckbox && submitBtnEl) {
         submitBtnEl.disabled = !consentCheckbox.checked;
 
-        consentCheckbox.addEventListener("change", () => {
+        consentCheckbox.addEventListener("change", (event) => {
             submitBtnEl.disabled = !consentCheckbox.checked;
+            // Programmatic syncs from the consent modal are reported by that
+            // flow's own events — don't log them as user checkbox clicks.
+            if (!event.isTrusted) return;
+            window.trackEvent?.("consent_checkbox_click", { checked: consentCheckbox.checked });
         });
 
         // Intercept disabled property sets to respect consent checkbox state
@@ -428,8 +432,119 @@ if (menuToggle && mainNav) {
   closeBtn?.addEventListener("click", closeModal);
   backdrop?.addEventListener("click", closeModal);
 
+  /* ---- Patient Consent modal --------------------------------------------
+     Swaps places with the booking modal: opening it hides the booking form
+     (entered data is preserved, the form is never reset) and closing it or
+     clicking "I Agree" brings the booking form straight back. */
+  const consentModal = document.getElementById("consentModal");
+  const consentClose = document.getElementById("consentModalClose");
+  const consentBackdrop = document.getElementById("consentModalBackdrop");
+  const consentAgree = document.getElementById("consentAgreeBtn");
+  const consentFooter = document.getElementById("consentModalFooter");
+  const consentDialog = consentModal?.querySelector(".consent-modal-dialog");
+
+  // GA4 + Clarity helper for the consent flow. Mirrors the shape used by the
+  // delegated data-ga-event tracker, which can't cover these (the Agree button
+  // starts disabled, and open/scroll/close aren't clicks on a tagged element).
+  function trackConsentEvent(eventName, params) {
+    if (typeof gtag === "function") {
+      gtag("event", eventName, {
+        page_path: window.location.pathname,
+        ...params,
+      });
+    }
+    if (typeof trackClarityEvent === "function") {
+      trackClarityEvent(eventName);
+    } else if (typeof clarity === "function") {
+      clarity("event", eventName);
+    }
+  }
+
+  // Button label always reads "I Agree" — only its disabled state changes.
+  // The "Please read the full notice to continue" hint carries the instruction.
+  // The dialog itself is the scroller (overflow-y: auto); the body is static.
+  function markAsRead() {
+    if (!consentAgree) return;
+    consentAgree.disabled = false;
+    consentFooter?.classList.add("is-read");
+    trackConsentEvent("consent_scrolled_to_bottom");
+  }
+
+  function checkScrolledToBottom() {
+    if (!consentDialog || !consentAgree || !consentAgree.disabled) return;
+    const remaining =
+      consentDialog.scrollHeight - consentDialog.scrollTop - consentDialog.clientHeight;
+    // 8px slack absorbs sub-pixel rounding and zoom levels.
+    if (remaining <= 8) markAsRead();
+  }
+
+  function resetConsentGate() {
+    if (!consentAgree) return;
+    consentAgree.disabled = true;
+    consentFooter?.classList.remove("is-read");
+  }
+
+  function openConsentModal() {
+    if (!consentModal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    consentModal.classList.add("is-open");
+    consentModal.setAttribute("aria-hidden", "false");
+    setBodyScroll(true);
+    resetConsentGate();
+    if (consentDialog) consentDialog.scrollTop = 0;
+    // If the notice is short enough to need no scrolling, unlock immediately.
+    requestAnimationFrame(checkScrolledToBottom);
+    consentClose?.focus();
+    trackConsentEvent("consent_modal_open");
+  }
+
+  function closeConsentModal(agreed, method) {
+    if (!consentModal) return;
+    // Captured before the gate resets, so we can see whether people who
+    // dismissed the notice had actually read to the end.
+    const hadRead = consentAgree ? !consentAgree.disabled : false;
+    consentModal.classList.remove("is-open");
+    consentModal.setAttribute("aria-hidden", "true");
+    trackConsentEvent(agreed ? "consent_agreed" : "consent_dismissed", {
+      method: method || "unknown",
+      scrolled_to_bottom: hadRead,
+    });
+    if (consentCheckbox) {
+      // Consent is granted only via "I Agree" — any other exit leaves it unticked.
+      consentCheckbox.checked = !!agreed;
+      consentCheckbox.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+    // Return to the appointment form with all entered data intact.
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    setBodyScroll(true);
+    consentCheckbox?.focus();
+  }
+
+  // Ticking the checkbox opens the notice; it only stays ticked after "I Agree".
+  consentCheckbox?.addEventListener("click", (event) => {
+    if (!consentModal) return;
+    if (consentCheckbox.checked) {
+      event.preventDefault();
+      consentCheckbox.checked = false;
+      openConsentModal();
+    }
+  });
+
+  consentDialog?.addEventListener("scroll", checkScrolledToBottom, { passive: true });
+  window.addEventListener("resize", checkScrolledToBottom);
+  consentClose?.addEventListener("click", () => closeConsentModal(false, "close_button"));
+  consentBackdrop?.addEventListener("click", () => closeConsentModal(false, "backdrop"));
+  consentAgree?.addEventListener("click", () => closeConsentModal(true, "agree_button"));
+
+
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+    if (event.key !== "Escape") return;
+    // Consent modal sits on top of the booking form — it closes first.
+    if (consentModal?.classList.contains("is-open")) {
+      closeConsentModal(false, "escape_key");
+    } else if (modal.classList.contains("is-open")) {
       closeModal();
     }
   });
@@ -774,6 +889,7 @@ if (menuToggle && mainNav) {
     }
 
     alert("Your appointment request has been submitted.");
+    window.trackEvent?.("booking_submitted", {});
     form.reset();
     closeModal();
   });

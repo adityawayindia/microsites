@@ -9,11 +9,15 @@
 //    can't be expressed as a plain click listener (consent toggles, file
 //    uploads, form submissions).
 window.trackEvent = function trackEvent(eventName, params) {
-  if (typeof gtag !== "function") return;
-  gtag("event", eventName, {
-    page_path: window.location.pathname,
-    ...params,
-  });
+  if (typeof gtag === "function") {
+    gtag("event", eventName, {
+      page_path: window.location.pathname,
+      ...params,
+    });
+  }
+  if (typeof clarity === "function") {
+    clarity("event", eventName);
+  }
 };
 
 document.addEventListener("click", (event) => {

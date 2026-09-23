@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_ID_MICROSITE_UROLOGY_2");
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DDLFELHEW"></script>
   <script>
@@ -86,6 +95,7 @@
         <a href="#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
         <a href="#testimonials" data-ga-event="nav_link_click" data-ga-label="Testimonials">Testimonials</a>
         <a href="#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
+        <a href="#faq" data-ga-event="nav_link_click" data-ga-label="FAQ">FAQ</a>
         <a href="blog.html" data-ga-event="nav_link_click" data-ga-label="Blog">Blog</a>
       </nav>
 
@@ -596,6 +606,80 @@
     <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">&times;</button>
   </div>
 
+  <!-- ====== FAQ SECTION ====== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <p class="faq-subtitle">
+          Answers to the questions patients ask most before their first visit.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item is-active">
+          <button type="button" class="faq-question" aria-expanded="true">
+            <span>What conditions do you treat?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>We diagnose and treat the full range of urological conditions, including kidney stones, prostate disorders, urinary tract infections, incontinence, and male infertility, using the latest minimally invasive techniques.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Do I need a referral to book a consultation?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>No referral is required. You can book a clinic visit or an online consultation directly through this website, and we'll guide you on any further steps after your first appointment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>What should I bring to my first appointment?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Please bring any prior test reports, scans, or prescriptions related to your condition, a valid ID, and a list of medications you're currently taking so we can review your history thoroughly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Do you offer online consultations?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Yes. Online consultations are available for follow-ups, report reviews, and initial assessments — simply select "Online Consultation" when booking your appointment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Is emergency care available?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>For urgent urological issues such as severe pain, inability to urinate, or heavy bleeding, please visit the nearest emergency room immediately. For non-emergency concerns, book the earliest available slot and we'll prioritize your case.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ====== BOOKING MODAL ====== -->
   <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
@@ -713,6 +797,48 @@
       </form>
     </div>
   </div>
+
+  <!-- ====== PATIENT CONSENT MODAL ====== -->
+  <div class="booking-modal consent-modal" id="consentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="consentModalTitle">
+    <div class="booking-modal-backdrop" id="consentModalBackdrop"></div>
+    <div class="booking-modal-dialog consent-modal-dialog" role="document">
+      <div class="booking-modal-header consent-modal-header">
+        <button class="booking-modal-close" id="consentModalClose" aria-label="Close consent notice">&times;</button>
+        <h2 class="consent-modal-title" id="consentModalTitle">Patient Consent &amp; Data Privacy</h2>
+      </div>
+
+      <div class="consent-modal-body">
+        <p>By submitting this form, I consent to <strong>digidr.app</strong> collecting and processing the personal and health information provided by me, including my <strong>name, phone number, email address, appointment details, symptoms/reason for consultation, and uploaded medical reports</strong>, for scheduling, managing, and facilitating my consultation with the doctor.</p>
+
+        <h3>How we protect your information</h3>
+        <ul>
+          <li>Your personal and health information will be <strong>kept secure and confidential</strong> using appropriate safeguards.</li>
+          <li>Your information will <strong>not be sold or shared for marketing or unrelated purposes</strong>.</li>
+          <li>Information may be shared only where necessary to facilitate the requested healthcare service, with my authorisation, or where required or permitted by applicable law.</li>
+          <li>Medical reports and health information will be handled only for legitimate healthcare and related service purposes.</li>
+        </ul>
+
+        <h3>Your rights</h3>
+        <p>Subject to applicable law and necessary medical-record retention requirements, you may request <strong>access, correction, deletion, or withdrawal of consent</strong> regarding your personal information.</p>
+
+        <h3>Questions or Complaints</h3>
+        <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
+        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> &mdash;</p>
+
+        <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
+
+        <p class="consent-modal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms &amp; Conditions</a></p>
+      </div>
+
+      <div class="consent-modal-footer" id="consentModalFooter">
+        <p class="consent-scroll-hint" id="consentScrollHint"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Please read the full notice to continue</p>
+        <button type="button" class="booking-submit-btn consent-agree-btn" id="consentAgreeBtn" disabled>
+          <span class="consent-agree-label" id="consentAgreeLabel">I Agree</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
 
   <!-- ====== FOOTER ====== -->
   <footer class="site-footer">

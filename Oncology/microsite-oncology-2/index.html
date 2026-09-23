@@ -1,7 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER_MICROSITE_ONCOLOGY_2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PLACEHOLDER_MICROSITE_ONCOLOGY_2');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_ID_MICROSITE_ONCOLOGY_2");
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Arjun Mehta | Medical Oncology</title>
@@ -55,6 +74,7 @@
         <a href="#contact-us">Contact</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
         <a href="blog.html">Blog</a>
       </nav>
 
@@ -594,6 +614,80 @@
     </button>
   </div>
 
+  <!-- ====== FAQ SECTION ====== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <p class="faq-subtitle">
+          Answers to the questions patients ask most before their first visit.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item is-active">
+          <button type="button" class="faq-question" aria-expanded="true">
+            <span>What conditions do you treat?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>We diagnose and treat a wide range of cancers, offering personalized treatment plans that may include chemotherapy, radiation, surgery, and supportive care, tailored to each patient's diagnosis and stage.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Do I need a referral to book a consultation?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>No referral is required. You can book a clinic visit or an online consultation directly through this website, and we'll guide you on any further steps after your first appointment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>What should I bring to my first appointment?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Please bring any prior biopsy reports, scans, or pathology results related to your condition, a valid ID, and a list of medications you're currently taking so we can review your history thoroughly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Do you offer online consultations?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Yes. Online consultations are available for follow-ups, report reviews, and initial assessments — simply select "Online Consultation" when booking your appointment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Is emergency care available?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>For urgent oncology-related issues such as severe pain, high fever during treatment, or uncontrolled bleeding, please visit the nearest emergency room immediately. For non-emergency concerns, book the earliest available slot and we'll prioritize your case.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
     <div class="booking-modal-dialog" role="document">
@@ -712,6 +806,48 @@
     </div>
   </div>
 
+  <!-- ====== PATIENT CONSENT MODAL ====== -->
+  <div class="booking-modal consent-modal" id="consentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="consentModalTitle">
+    <div class="booking-modal-backdrop" id="consentModalBackdrop"></div>
+    <div class="booking-modal-dialog consent-modal-dialog" role="document">
+      <div class="booking-modal-header consent-modal-header">
+        <button class="booking-modal-close" id="consentModalClose" aria-label="Close consent notice">&times;</button>
+        <h2 class="consent-modal-title" id="consentModalTitle">Patient Consent &amp; Data Privacy</h2>
+      </div>
+
+      <div class="consent-modal-body">
+        <p>By submitting this form, I consent to <strong>digidr.app</strong> collecting and processing the personal and health information provided by me, including my <strong>name, phone number, email address, appointment details, symptoms/reason for consultation, and uploaded medical reports</strong>, for scheduling, managing, and facilitating my consultation with the doctor.</p>
+
+        <h3>How we protect your information</h3>
+        <ul>
+          <li>Your personal and health information will be <strong>kept secure and confidential</strong> using appropriate safeguards.</li>
+          <li>Your information will <strong>not be sold or shared for marketing or unrelated purposes</strong>.</li>
+          <li>Information may be shared only where necessary to facilitate the requested healthcare service, with my authorisation, or where required or permitted by applicable law.</li>
+          <li>Medical reports and health information will be handled only for legitimate healthcare and related service purposes.</li>
+        </ul>
+
+        <h3>Your rights</h3>
+        <p>Subject to applicable law and necessary medical-record retention requirements, you may request <strong>access, correction, deletion, or withdrawal of consent</strong> regarding your personal information.</p>
+
+        <h3>Questions or Complaints</h3>
+        <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
+        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> &mdash;</p>
+
+        <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
+
+        <p class="consent-modal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms &amp; Conditions</a></p>
+      </div>
+
+      <div class="consent-modal-footer" id="consentModalFooter">
+        <p class="consent-scroll-hint" id="consentScrollHint"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Please read the full notice to continue</p>
+        <button type="button" class="booking-submit-btn consent-agree-btn" id="consentAgreeBtn" disabled>
+          <span class="consent-agree-label" id="consentAgreeLabel">I Agree</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
   <footer class="site-footer">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Footer navigation">
@@ -762,6 +898,7 @@
 
   <script src="./script/banner-module.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="script/analytics.js"></script>
   <script src="script/index.js"></script>
   <script src="./script/chatbot.js" defer></script>
 </body>

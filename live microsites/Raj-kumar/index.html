@@ -5,6 +5,15 @@
 <html lang="en">
 
 <head>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_ID_RAJ_KUMAR");
+  </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYX1G4KGPS"></script>
     <script>
@@ -897,6 +906,48 @@
             </form>
         </div>
     </div>
+
+  <!-- ====== PATIENT CONSENT MODAL ====== -->
+  <div class="booking-modal consent-modal" id="consentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="consentModalTitle">
+    <div class="booking-modal-backdrop" id="consentModalBackdrop"></div>
+    <div class="booking-modal-dialog consent-modal-dialog" role="document">
+      <div class="booking-modal-header consent-modal-header">
+        <button class="booking-modal-close" id="consentModalClose" aria-label="Close consent notice">&times;</button>
+        <h2 class="consent-modal-title" id="consentModalTitle">Patient Consent &amp; Data Privacy</h2>
+      </div>
+
+      <div class="consent-modal-body">
+        <p>By submitting this form, I consent to <strong>digidr.app</strong> collecting and processing the personal and health information provided by me, including my <strong>name, phone number, email address, appointment details, symptoms/reason for consultation, and uploaded medical reports</strong>, for scheduling, managing, and facilitating my consultation with the doctor.</p>
+
+        <h3>How we protect your information</h3>
+        <ul>
+          <li>Your personal and health information will be <strong>kept secure and confidential</strong> using appropriate safeguards.</li>
+          <li>Your information will <strong>not be sold or shared for marketing or unrelated purposes</strong>.</li>
+          <li>Information may be shared only where necessary to facilitate the requested healthcare service, with my authorisation, or where required or permitted by applicable law.</li>
+          <li>Medical reports and health information will be handled only for legitimate healthcare and related service purposes.</li>
+        </ul>
+
+        <h3>Your rights</h3>
+        <p>Subject to applicable law and necessary medical-record retention requirements, you may request <strong>access, correction, deletion, or withdrawal of consent</strong> regarding your personal information.</p>
+
+        <h3>Questions or Complaints</h3>
+        <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
+        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> &mdash;</p>
+
+        <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
+
+        <p class="consent-modal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms &amp; Conditions</a></p>
+      </div>
+
+      <div class="consent-modal-footer" id="consentModalFooter">
+        <p class="consent-scroll-hint" id="consentScrollHint"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Please read the full notice to continue</p>
+        <button type="button" class="booking-submit-btn consent-agree-btn" id="consentAgreeBtn" disabled>
+          <span class="consent-agree-label" id="consentAgreeLabel">I Agree</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
 
     <!-- ===== FOOTER ===== -->
     <footer class="site-footer">

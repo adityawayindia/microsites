@@ -2283,3 +2283,254 @@ background: var(--bg-2);
   .alt-header .alt-brand-role { display: none; }
   .alt-cta-btn { padding: 8px 10px; }
 }
+
+/* ============================================================
+   FAQ SECTION — universal .faq-* classes, gallery(--bg) ↔ FAQ(--bg-3)
+   alternation per AGENTS.md §2 branded-band pattern. Accordion state
+   is class-driven (.faq-item.is-active); JS below only toggles it.
+   ============================================================ */
+.faq-section {
+  padding: 10px 0;
+  background: var(--bg-3);
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
+  background-size: 18px 18px;
+}
+
+.faq-header {
+  text-align: center;
+  margin: 0 auto 40px;
+  max-width: 700px;
+}
+
+.faq-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--sky-dark, var(--brand-dark, var(--text)));
+  margin: 10px 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.faq-subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  min-width: 0;
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item.is-active {
+  border-color: var(--sky, var(--brand, var(--primary)));
+  box-shadow: 0 4px 16px rgba(8, 18, 32, 0.08);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.faq-question span {
+  min-width: 0;
+  flex: 1;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--sky, var(--brand, var(--primary)));
+  background: var(--sky-light, var(--brand-light, var(--bg-3)));
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.faq-item.is-active .faq-icon {
+  transform: rotate(180deg);
+  background: var(--sky, var(--brand, var(--primary)));
+  color: #fff;
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.faq-item.is-active .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq-answer-inner > p {
+  min-width: 0;
+  margin: 0;
+  padding: 0 22px 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+@media (max-width: 900px) {
+  .faq-title {
+    font-size: 30px;
+  }
+
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 17px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 18px 18px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-question {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 14px 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .faq-title {
+    font-size: 38px;
+  }
+}
+
+/* ============================================================
+   PATIENT CONSENT MODAL
+   Reuses the .booking-modal shell; swapped in when the consent
+   checkbox is clicked and swapped back out on close / "I Agree".
+   Fonts inherit from the page; colours follow this microsite's
+   existing booking-modal palette.
+   ============================================================ */
+.consent-modal-header { padding: 20px 32px 16px; margin-bottom: 0; }
+.consent-modal-title {
+  font-family: inherit; font-size: 26px; font-weight: 700; line-height: 1.3;
+  color: var(--text-2); margin: 0; padding-right: 44px;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+
+.consent-modal-body { padding: 20px 32px 8px; min-width: 0; }
+.consent-modal-body p,
+.consent-modal-body li {
+  font-size: 18px; line-height: 1.6; margin: 0 0 14px;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+.consent-modal-body h3 {
+  font-family: inherit; font-size: 20px; font-weight: 700; line-height: 1.35;
+  color: var(--text-2); margin: 22px 0 10px;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+.consent-modal-body ul { margin: 0 0 14px; padding-left: 22px; }
+.consent-modal-body li { margin-bottom: 8px; }
+.consent-modal-body strong { color: var(--text-2); }
+.consent-contact {
+  background: rgba(0, 0, 0, 0.04); border-radius: 10px; padding: 14px 16px;
+}
+.consent-modal-links { font-style: italic; }
+.consent-modal-links a {
+  font-size: 18px; color: var(--coral);
+  text-decoration: underline; text-underline-offset: 2px;
+}
+
+/* Sticky action bar. Background inherits so tinted dialogs stay correct. */
+.consent-modal-footer {
+  position: sticky; bottom: 0; z-index: 5;
+  background: inherit;
+  padding: 16px 32px 24px;
+  border-top: 1.5px solid rgba(0, 0, 0, 0.10);
+  border-radius: 0 0 20px 20px;
+}
+
+/* Agree button is gated on reading: disabled until the notice is scrolled
+   through. The label always reads "I Agree"; the hint above carries the
+   instruction. */
+.consent-agree-btn { width: 100%; margin-top: 0 !important; }
+.consent-agree-btn span { color: #ffffff; }
+.consent-agree-btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+.consent-agree-btn[disabled] span { color: #ffffff; }
+
+.consent-scroll-hint {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 0 0 10px; font-size: 16px; font-weight: 600; line-height: 1.4;
+  color: var(--coral); text-align: center; min-width: 0;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+.consent-scroll-hint i { flex-shrink: 0; animation: consentBounce 1.4s ease-in-out infinite; }
+.consent-modal-footer.is-read .consent-scroll-hint { display: none; }
+
+@keyframes consentBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent-scroll-hint i { animation: none; }
+}
+
+@media (max-width: 640px) {
+  .consent-modal-header { padding: 16px 18px 12px; }
+  .consent-modal-title { font-size: 22px; padding-right: 40px; }
+  .consent-modal-body { padding: 16px 18px 8px; }
+  .consent-modal-body p, .consent-modal-body li { font-size: 17px; }
+  .consent-modal-body h3 { font-size: 19px; }
+  .consent-modal-body ul { padding-left: 20px; }
+  .consent-modal-footer { padding: 14px 18px 20px; }
+  .consent-scroll-hint { font-size: 15px; }
+}

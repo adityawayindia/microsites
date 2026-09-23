@@ -1,13 +1,24 @@
+// Mirrors a GA4 event into Microsoft Clarity's custom-event API.
+function trackClarityEvent(eventName) {
+  if (typeof clarity === "function") {
+    clarity("event", eventName);
+  }
+}
+
 // GA4 generic click tracking — any element with data-ga-event is tracked
 // automatically, including nested icons/spans, via event delegation.
 document.addEventListener("click", (event) => {
   const el = event.target.closest("[data-ga-event]");
-  if (!el || typeof gtag !== "function") return;
+  if (!el) return;
 
-  gtag("event", el.getAttribute("data-ga-event"), {
-    label: el.getAttribute("data-ga-label") || el.textContent.trim().slice(0, 60),
-    page_path: window.location.pathname,
-  });
+  const eventName = el.getAttribute("data-ga-event");
+  if (typeof gtag === "function") {
+    gtag("event", eventName, {
+      label: el.getAttribute("data-ga-label") || el.textContent.trim().slice(0, 60),
+      page_path: window.location.pathname,
+    });
+  }
+  trackClarityEvent(eventName);
 });
 
 // Always start fresh on load/refresh: reset scroll position and strip any
@@ -315,124 +326,277 @@ if (menuToggle && mainNav) {
   });
 })();
 
-// Social Media Carousel
+// Facebook Posts Carousel — live embeds from the DigiDr social feed API.
+// Cards hold Facebook SDK embeds, which must never be cloned (a cloned embed
+// renders blank) nor re-parented (that reloads the iframe). So the DOM is built
+// once and left alone: paging only changes the container's scrollLeft, which
+// the browser handles natively without touching any card.
 (function () {
-  const track = document.getElementById("socialMediaTrack");
+  const DOCTOR_SLUG = "dhara-sharma";
+  const API_BASE = "https://digidrapi.digidr.app";
+  const FB_GRAPH_VERSION = "v23.0"; // Deprecated versions render blank, not errors — bump periodically.
+  const MAX_CARDS = 5;
+  const MAX_POST_AGE_DAYS = 30;
+  const POSTS_PER_ACCOUNT = 10;
+
+  const section = document.getElementById("social-media");
   const carousel = document.getElementById("socialMediaCarousel");
-  const dotsContainer = document.getElementById("socialCarouselDots");
+  const track = document.getElementById("socialMediaTrack");
   const prevBtn = document.querySelector(".social-carousel-prev");
   const nextBtn = document.querySelector(".social-carousel-next");
-  const cards = track ? track.querySelectorAll(".social-post-card") : [];
-  const totalCards = cards.length;
 
-  if (!track || totalCards === 0) return;
+  if (!section || !carousel || !track) return;
 
-  const AUTO_INTERVAL = 5000;
-  let currentIndex = 0;
-  let autoTimer = null;
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  function getCardsPerView() {
-    const w = window.innerWidth;
-    if (w <= 640) return 1;
-    if (w <= 900) return 2;
-    return 3;
+  // The section is always visible. When there are no posts to show — empty feed,
+  // API failure, or an unset slug — it renders an explicit message rather than
+  // an empty band.
+  function showEmptyState() {
+    track.innerHTML = "";
+    carousel.classList.add("is-empty");
+    const msg = document.createElement("p");
+    msg.className = "social-media-empty";
+    msg.textContent = "Posts are taking a moment to load. Visit our Facebook page for the latest updates.";
+    track.appendChild(msg);
+    if (prevBtn) prevBtn.hidden = true;
+    if (nextBtn) nextBtn.hidden = true;
   }
 
-  function getMaxIndex() {
-    return Math.max(0, totalCards - getCardsPerView());
+  if (!DOCTOR_SLUG.trim()) {
+    showEmptyState();
+    return;
   }
 
-  function goTo(index) {
-    currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
-    const targetCard = cards[currentIndex];
-    const offset = targetCard ? -targetCard.offsetLeft : 0;
-    track.style.transform = `translateX(${offset}px)`;
-    setActiveDot();
-    resetAutoPlay();
+  function fetchJson(url) {
+    const attempt = () => fetch(url, { credentials: "omit" }).then((r) => {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    });
+    // One retry — short network blips are common on mobile.
+    return attempt().catch(
+      () => new Promise((res) => setTimeout(res, 800)).then(attempt)
+    );
   }
 
-  // Rebuilds the dot buttons — only needed on init/resize, when the dot
-  // count itself can change. Calling this from goTo() on every click was
-  // tearing down and re-creating the whole row each time, causing a brief
-  // reflow that nudged mobile scroll position after tapping prev/next.
-  function buildDots() {
-    if (!dotsContainer) return;
-    dotsContainer.innerHTML = "";
-    const maxIndex = getMaxIndex();
-    for (let i = 0; i <= maxIndex; i++) {
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.className = "carousel-dot" + (i === currentIndex ? " active" : "");
-      dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-      dot.addEventListener("click", () => goTo(i));
-      dotsContainer.appendChild(dot);
+  function isVideoPermalink(url) {
+    return /\/videos\//i.test(url);
+  }
+
+  function isRecent(createdAt) {
+    const t = Date.parse(createdAt);
+    if (isNaN(t)) return false; // Fail closed — unknown age is treated as stale.
+    return (Date.now() - t) / 86400000 <= MAX_POST_AGE_DAYS;
+  }
+
+  function fetchDoctorPosts(slug) {
+    const url = API_BASE + "/api/MicrositeSocialFeed/" +
+      encodeURIComponent(slug) + "?limit=" + POSTS_PER_ACCOUNT;
+
+    return fetchJson(url).then((data) => {
+      if (!data || data.success === false || !Array.isArray(data.feeds)) return [];
+
+      const entries = [];
+      data.feeds.forEach((feed) => {
+        if (!feed || feed.platform !== "facebook" || !Array.isArray(feed.posts)) return;
+        feed.posts.forEach((post) => {
+          if (!post || !post.permalink) return;
+          if (isVideoPermalink(post.permalink)) return;
+          if (!isRecent(post.createdAt)) return;
+          entries.push({
+            accountName: (feed.accountName || "").trim(),
+            permalink: post.permalink,
+            createdAt: post.createdAt || ""
+          });
+        });
+      });
+
+      entries.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      return entries.slice(0, MAX_CARDS);
+    }).catch(() => []);
+  }
+
+  let fbSdkPromise = null;
+  function loadFbSdk() {
+    if (fbSdkPromise) return fbSdkPromise;
+    fbSdkPromise = new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = "https://connect.facebook.net/en_US/sdk.js";
+      s.async = true;
+      s.defer = true;
+      s.crossOrigin = "anonymous";
+      s.onload = () => {
+        if (!window.FB) return reject(new Error("FB missing"));
+        // xfbml:false — parsing is triggered manually once the cards exist.
+        window.FB.init({ xfbml: false, version: FB_GRAPH_VERSION });
+        resolve(window.FB);
+      };
+      s.onerror = () => reject(new Error("SDK blocked"));
+      document.body.appendChild(s);
+    });
+    return fbSdkPromise;
+  }
+
+  function embedWidth() {
+    const raw = getComputedStyle(carousel).getPropertyValue("--post-card-width");
+    return parseInt(raw, 10) || 300;
+  }
+
+  // The SDK reports success even when the embed is empty: with the plugin
+  // iframe blocked (tracker blockers, third-party-cookie restrictions), it
+  // still sets fb-xfbml-state="rendered", fires xfbml.render, AND removes the
+  // nested fallback blockquote — leaving a 0px iframe in a blank card. So a
+  // card only counts as loaded if its iframe actually has height; otherwise we
+  // swap in our own link card, which the SDK cannot strip.
+  function settleCard(card) {
+    if (card.dataset.settled) return;
+
+    const frame = card.querySelector("iframe");
+    if (frame && frame.getBoundingClientRect().height > 40) {
+      card.dataset.settled = "1";
+      card.classList.add("is-loaded");
+      return;
     }
+    if (!card.dataset.deadline || Date.now() < +card.dataset.deadline) return;
+
+    card.dataset.settled = "1";
+    card.classList.add("is-loaded", "is-fallback");
+    card.textContent = "";
+
+    const link = document.createElement("a");
+    link.className = "social-post-fallback";
+    link.href = card.dataset.permalink || "#";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+
+    const icon = document.createElement("i");
+    icon.className = "fa-brands fa-facebook";
+    icon.setAttribute("aria-hidden", "true");
+
+    const label = document.createElement("span");
+    label.textContent = card.dataset.account
+      ? "View this post from " + card.dataset.account + " on Facebook"
+      : "View this post on Facebook";
+
+    link.append(icon, label);
+    card.appendChild(link);
   }
 
-  function setActiveDot() {
-    if (!dotsContainer) return;
-    dotsContainer.querySelectorAll(".carousel-dot").forEach((dot, i) => {
-      dot.classList.toggle("active", i === currentIndex);
+  function settleAll() {
+    track.querySelectorAll(".social-post-card").forEach(settleCard);
+  }
+
+  // Poll briefly: a blocked embed never fires an event we could listen for.
+  function watchCards() {
+    const deadline = Date.now() + 6000;
+    track.querySelectorAll(".social-post-card").forEach((card) => {
+      card.dataset.deadline = String(deadline);
+    });
+    const timer = setInterval(() => {
+      settleAll();
+      const pending = track.querySelectorAll(".social-post-card:not([data-settled])");
+      if (!pending.length) clearInterval(timer);
+    }, 400);
+  }
+
+  function buildCard(entry, width) {
+    const card = document.createElement("article");
+    card.className = "social-post-card";
+    card.dataset.permalink = entry.permalink;
+    if (entry.accountName) card.dataset.account = entry.accountName;
+
+    const embed = document.createElement("div");
+    embed.className = "fb-post";
+    embed.setAttribute("data-href", entry.permalink);
+    embed.setAttribute("data-width", String(width));
+    embed.setAttribute("data-show-text", "true");
+
+    // Visible if the SDK is blocked by an ad blocker or cookie restrictions.
+    const fallback = document.createElement("blockquote");
+    fallback.className = "fb-xfbml-parse-ignore";
+    fallback.setAttribute("cite", entry.permalink);
+    const link = document.createElement("a");
+    link.href = entry.permalink;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = entry.accountName
+      ? "View this post from " + entry.accountName + " on Facebook"
+      : "View this post on Facebook";
+    fallback.appendChild(link);
+
+    embed.appendChild(fallback);
+    card.appendChild(embed);
+    return card;
+  }
+
+  function initPaging() {
+    if (!prevBtn || !nextBtn) return;
+
+    function stepSize() {
+      const card = track.firstElementChild;
+      if (!card) return carousel.clientWidth;
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      const span = card.offsetWidth + gap;
+      const perPage = Math.max(1, Math.floor(carousel.clientWidth / span));
+      return span * perPage;
+    }
+
+    function syncButtons() {
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth - 1;
+      prevBtn.disabled = carousel.scrollLeft <= 0;
+      nextBtn.disabled = carousel.scrollLeft >= maxScroll;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: -stepSize(), behavior: "smooth" });
+    });
+    nextBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: stepSize(), behavior: "smooth" });
+    });
+
+    carousel.addEventListener("scroll", syncButtons, { passive: true });
+    window.addEventListener("resize", syncButtons);
+    syncButtons();
+  }
+
+  function start() {
+    fetchDoctorPosts(DOCTOR_SLUG).then((entries) => {
+      if (!entries.length) {
+        showEmptyState();
+        return;
+      }
+
+      const width = embedWidth();
+      const frag = document.createDocumentFragment();
+      entries.forEach((entry) => frag.appendChild(buildCard(entry, width)));
+      track.appendChild(frag);
+
+      watchCards();
+
+      return loadFbSdk().then((FB) => {
+        FB.Event.subscribe("xfbml.render", settleAll);
+        FB.XFBML.parse(track, settleAll);
+        initPaging();
+      }).catch(() => {
+        // SDK never loaded — settle immediately into link cards.
+        track.querySelectorAll(".social-post-card").forEach((card) => {
+          card.dataset.deadline = "0";
+        });
+        settleAll();
+        initPaging();
+      });
     });
   }
 
-  function resetAutoPlay() {
-    if (autoTimer) clearInterval(autoTimer);
-    autoTimer = setInterval(() => {
-      const max = getMaxIndex();
-      if (currentIndex >= max) {
-        goTo(0);
-      } else {
-        goTo(currentIndex + 1);
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        obs.disconnect();
+        start();
       }
-    }, AUTO_INTERVAL);
+    }, { rootMargin: "400px 0px" });
+    io.observe(section);
+  } else {
+    start();
   }
-
-  function stopAutoPlay() {
-    if (autoTimer) {
-      clearInterval(autoTimer);
-      autoTimer = null;
-    }
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
-  }
-
-  const carouselWrap = carousel?.closest(".social-media-carousel-wrap");
-  const touchTarget = carouselWrap || carousel || track;
-
-  touchTarget.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-    stopAutoPlay();
-  }, { passive: true });
-
-  touchTarget.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) goTo(currentIndex + 1);
-      else goTo(currentIndex - 1);
-    }
-    resetAutoPlay();
-  }, { passive: true });
-
-  touchTarget.addEventListener("mousedown", () => stopAutoPlay());
-  touchTarget.addEventListener("mouseup", () => resetAutoPlay());
-  touchTarget.addEventListener("mouseleave", () => resetAutoPlay());
-
-  window.addEventListener("resize", () => {
-    goTo(Math.min(currentIndex, getMaxIndex()));
-    buildDots();
-  });
-
-  goTo(0);
-  buildDots();
 })();
 
 // Booking Modal & Form Validation
@@ -451,14 +615,18 @@ if (menuToggle && mainNav) {
     if (consentCheckbox && submitBtnEl) {
         submitBtnEl.disabled = !consentCheckbox.checked;
 
-        consentCheckbox.addEventListener("change", () => {
+        consentCheckbox.addEventListener("change", (event) => {
             submitBtnEl.disabled = !consentCheckbox.checked;
+            // Programmatic syncs from the consent modal are reported by that
+            // flow's own events — don't log them as user checkbox clicks.
+            if (!event.isTrusted) return;
             if (typeof gtag === "function") {
                 gtag("event", "consent_checkbox_click", {
                     checked: consentCheckbox.checked,
                     page_path: window.location.pathname,
                 });
             }
+            trackClarityEvent("consent_checkbox_click");
         });
 
         // Intercept disabled property sets to respect consent checkbox state
@@ -513,8 +681,114 @@ if (menuToggle && mainNav) {
   closeBtn?.addEventListener("click", closeModal);
   backdrop?.addEventListener("click", closeModal);
 
+  /* ---- Patient Consent modal --------------------------------------------
+     Swaps places with the booking modal: opening it hides the booking form
+     (entered data is preserved, the form is never reset) and closing it or
+     clicking "I Agree" brings the booking form straight back. */
+  const consentModal = document.getElementById("consentModal");
+  const consentClose = document.getElementById("consentModalClose");
+  const consentBackdrop = document.getElementById("consentModalBackdrop");
+  const consentAgree = document.getElementById("consentAgreeBtn");
+  const consentFooter = document.getElementById("consentModalFooter");
+  const consentDialog = consentModal?.querySelector(".consent-modal-dialog");
+
+  // GA4 + Clarity helper for the consent flow. Mirrors the shape used by the
+  // delegated data-ga-event tracker, which can't cover these (the Agree button
+  // starts disabled, and open/scroll/close aren't clicks on a tagged element).
+  function trackConsentEvent(eventName, params) {
+    if (typeof gtag === "function") {
+      gtag("event", eventName, {
+        page_path: window.location.pathname,
+        ...params,
+      });
+    }
+    trackClarityEvent(eventName);
+  }
+
+  // Button label always reads "I Agree" — only its disabled state changes.
+  // The "Please read the full notice to continue" hint carries the instruction.
+  // The dialog itself is the scroller (overflow-y: auto); the body is static.
+  function markAsRead() {
+    if (!consentAgree) return;
+    consentAgree.disabled = false;
+    consentFooter?.classList.add("is-read");
+    trackConsentEvent("consent_scrolled_to_bottom");
+  }
+
+  function checkScrolledToBottom() {
+    if (!consentDialog || !consentAgree || !consentAgree.disabled) return;
+    const remaining =
+      consentDialog.scrollHeight - consentDialog.scrollTop - consentDialog.clientHeight;
+    // 8px slack absorbs sub-pixel rounding and zoom levels.
+    if (remaining <= 8) markAsRead();
+  }
+
+  function resetConsentGate() {
+    if (!consentAgree) return;
+    consentAgree.disabled = true;
+    consentFooter?.classList.remove("is-read");
+  }
+
+  function openConsentModal() {
+    if (!consentModal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    consentModal.classList.add("is-open");
+    consentModal.setAttribute("aria-hidden", "false");
+    setBodyScroll(true);
+    resetConsentGate();
+    if (consentDialog) consentDialog.scrollTop = 0;
+    // If the notice is short enough to need no scrolling, unlock immediately.
+    requestAnimationFrame(checkScrolledToBottom);
+    consentClose?.focus();
+    trackConsentEvent("consent_modal_open");
+  }
+
+  function closeConsentModal(agreed, method) {
+    if (!consentModal) return;
+    // Captured before the gate resets, so we can see whether people who
+    // dismissed the notice had actually read to the end.
+    const hadRead = consentAgree ? !consentAgree.disabled : false;
+    consentModal.classList.remove("is-open");
+    consentModal.setAttribute("aria-hidden", "true");
+    trackConsentEvent(agreed ? "consent_agreed" : "consent_dismissed", {
+      method: method || "unknown",
+      scrolled_to_bottom: hadRead,
+    });
+    if (consentCheckbox) {
+      // Consent is granted only via "I Agree" — any other exit leaves it unticked.
+      consentCheckbox.checked = !!agreed;
+      consentCheckbox.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+    // Return to the appointment form with all entered data intact.
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    setBodyScroll(true);
+    consentCheckbox?.focus();
+  }
+
+  // Ticking the checkbox opens the notice; it only stays ticked after "I Agree".
+  consentCheckbox?.addEventListener("click", (event) => {
+    if (!consentModal) return;
+    if (consentCheckbox.checked) {
+      event.preventDefault();
+      consentCheckbox.checked = false;
+      openConsentModal();
+    }
+  });
+
+  consentDialog?.addEventListener("scroll", checkScrolledToBottom, { passive: true });
+  window.addEventListener("resize", checkScrolledToBottom);
+  consentClose?.addEventListener("click", () => closeConsentModal(false, "close_button"));
+  consentBackdrop?.addEventListener("click", () => closeConsentModal(false, "backdrop"));
+  consentAgree?.addEventListener("click", () => closeConsentModal(true, "agree_button"));
+
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+    if (event.key !== "Escape") return;
+    // Consent modal sits on top of the booking form — it closes first.
+    if (consentModal?.classList.contains("is-open")) {
+      closeConsentModal(false, "escape_key");
+    } else if (modal.classList.contains("is-open")) {
       closeModal();
     }
   });
@@ -695,8 +969,11 @@ if (menuToggle && mainNav) {
     if (form.report) {
       form.report.addEventListener("change", () => {
         renderReportPreview(form.report.files[0]);
-        if (form.report.files[0] && typeof gtag === "function") {
-          gtag("event", "report_uploaded", { page_path: window.location.pathname });
+        if (form.report.files[0]) {
+          if (typeof gtag === "function") {
+            gtag("event", "report_uploaded", { page_path: window.location.pathname });
+          }
+          trackClarityEvent("report_uploaded");
         }
       });
     }
@@ -947,6 +1224,7 @@ if (menuToggle && mainNav) {
         page_path: window.location.pathname,
       });
     }
+    trackClarityEvent("booking_submitted");
 
     isSubmitting = false;
   });
@@ -1130,4 +1408,28 @@ if (menuToggle && mainNav) {
   }
 
   window.addEventListener("resize", debounce(function () { initReadMore(); }, 200));
+})();
+
+/* FAQ accordion — universal .faq-item / .faq-question / .faq-answer */
+(function () {
+  var faqList = document.querySelector(".faq-list");
+  if (!faqList) return;
+
+  faqList.addEventListener("click", function (e) {
+    var btn = e.target.closest(".faq-question");
+    if (!btn) return;
+
+    var item = btn.closest(".faq-item");
+    var isActive = item.classList.contains("is-active");
+
+    faqList.querySelectorAll(".faq-item.is-active").forEach(function (openItem) {
+      if (openItem !== item) {
+        openItem.classList.remove("is-active");
+        openItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+      }
+    });
+
+    item.classList.toggle("is-active", !isActive);
+    btn.setAttribute("aria-expanded", String(!isActive));
+  });
 })();

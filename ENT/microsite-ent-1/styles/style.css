@@ -119,6 +119,9 @@ p, li, span, a, button, label {
 .process-step-marker,
 .contact-item,
 .testimonial-card,
+.social-media-carousel-wrap,
+.social-media-carousel,
+.social-post-card,
 .gallery-item,
 .footer-col,
 .booking-field,
@@ -143,7 +146,8 @@ aside,
 .philosophy-pillar,
 .philosophy-badge,
 .contact-item,
-.testimonial-card {
+.testimonial-card,
+.social-post-card {
   height: auto !important;
   min-height: fit-content;
   max-width: 100%;
@@ -193,6 +197,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .philosophy-title,
 .process-title,
 .testimonials-title,
+.social-media-title,
 .gallery-title {
   font-size: 34px;
   font-weight: 800;
@@ -206,6 +211,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .philosophy-subtitle,
 .process-subtitle,
 .testimonials-subtitle,
+.social-media-subtitle,
 .gallery-subtitle {
   font-size: 18px;
   color: var(--muted);
@@ -230,7 +236,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .services-kicker,
 .philosophy-kicker,
 .process-kicker,
-.testimonials-kicker {
+.testimonials-kicker,
+.social-media-kicker {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -250,13 +257,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .philosophy-kicker    { --kicker-bg: var(--amber-light); --kicker-fg: var(--amber-dark); }
 .process-kicker       { --kicker-bg: var(--sky-light);   --kicker-fg: var(--sky-dark); }
 .testimonials-kicker  { --kicker-bg: var(--amber-light); --kicker-fg: var(--amber-dark); }
+.social-media-kicker  { --kicker-bg: var(--teal-light);  --kicker-fg: var(--teal-dark); }
 
 /* The global reset colours bare <span>/<i>; force them back to the pill's
    own foreground so the label text can never disappear into the fill. */
 .about-kicker i, .services-kicker i, .philosophy-kicker i,
-.process-kicker i, .testimonials-kicker i,
+.process-kicker i, .testimonials-kicker i, .social-media-kicker i,
 .about-kicker span, .services-kicker span, .philosophy-kicker span,
-.process-kicker span, .testimonials-kicker span {
+.process-kicker span, .testimonials-kicker span, .social-media-kicker span {
   color: inherit;
 }
 
@@ -1596,6 +1604,220 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .gallery-lightbox-prev:hover { transform: translateY(-50%) scale(1.1) translateX(-2px); }
 .gallery-lightbox-next:hover { transform: translateY(-50%) scale(1.1) translateX(2px); }
 
+/* ============================================================
+   SOCIAL MEDIA — live Facebook post embeds.
+   White band between the mint Services and sand Philosophy
+   sections, keeping the alternating-band rhythm intact.
+   Always visible: with no posts to show it renders an explicit
+   message rather than collapsing.
+   ============================================================ */
+.social-media-section {
+  padding: 10px 0;
+  background: var(--surface);
+}
+
+.social-media-empty {
+  width: 100%;
+  margin: 0;
+  padding: 48px 24px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--muted);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-media-carousel.is-empty { overflow-x: hidden; }
+
+.social-media-header { text-align: center; margin: 0 auto 48px; max-width: 700px; }
+.social-media-subtitle { margin-left: auto; margin-right: auto; }
+
+.social-media-carousel-wrap {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 56px;
+  min-width: 0;
+}
+
+/* --post-card-width is read by the JS to size the SDK embed (data-width),
+   so the iframe Facebook builds always matches the real card width. */
+.social-media-carousel {
+  --post-card-width: 310px;
+  --post-card-height: 530px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.social-media-carousel::-webkit-scrollbar { display: none; }
+
+.social-media-track {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+/* Every card is locked to one height (--post-card-height). Facebook sizes its
+   iframe to the post's own content, which varies wildly — a long post reported
+   ~3700px here, and because the track is sized by its tallest child, that one
+   post stretched the whole section into a page-long scroll. The card clips to a
+   fixed box and the embed scrolls inside it, so card height is independent of
+   post length. Height is NOT auto here, which deliberately departs from the
+   global auto-height rule: the content is a fixed-size cross-origin iframe, not
+   text that needs room to wrap. */
+.social-post-card {
+  flex: 0 0 var(--post-card-width);
+  min-width: 0;
+  max-width: 100%;
+  height: var(--post-card-height) !important;
+  min-height: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+/* Skeleton shimmer behind the embed, so the card reads as loading rather than
+   as a blank box during the second or two before Facebook paints its iframe. */
+.social-post-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg,
+    var(--bg-2) 30%, var(--surface-2) 50%, var(--bg-2) 70%);
+  background-size: 220% 100%;
+  animation: social-post-shimmer 1.4s ease-in-out infinite;
+  z-index: 0;
+}
+.social-post-card.is-loaded::before { display: none; }
+
+@keyframes social-post-shimmer {
+  from { background-position: 180% 0; }
+  to   { background-position: -80% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-post-card::before { animation: none; }
+}
+
+.social-post-card {
+  position: relative;
+}
+
+/* The embed scrolls within the fixed-height card instead of expanding it. */
+.social-post-card .fb-post {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+/* The SDK writes fixed inline widths onto its own wrappers; cap them so a
+   card can never push its siblings out of the track. */
+.social-post-card .fb-post,
+.social-post-card .fb-post span,
+.social-post-card .fb-post iframe {
+  max-width: 100% !important;
+}
+
+/* Shown when the embed is blocked or never paints — a real link card in place
+   of a blank box, built by the JS because the SDK strips the nested fallback. */
+.social-post-fallback {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+  background: var(--bg-2);
+}
+.social-post-fallback i {
+  font-size: 34px;
+  color: var(--sky);
+}
+.social-post-fallback span {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--sky-dark);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-post-fallback:hover span { color: var(--amber-dark); }
+.social-post-fallback:hover i { color: var(--amber); }
+
+/* Fallback link shown when the SDK is blocked — never an empty box. */
+.social-post-card .fb-xfbml-parse-ignore {
+  margin: 0;
+  padding: 20px;
+}
+.social-post-card .fb-xfbml-parse-ignore a {
+  font-size: 18px;
+  color: var(--sky-dark);
+  font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-post-card .fb-xfbml-parse-ignore a:hover { color: var(--amber-dark); }
+
+.social-carousel-prev,
+.social-carousel-next {
+  border: 2px solid var(--sky);
+  color: var(--sky);
+}
+/* .carousel-btn sets display:flex, which would otherwise defeat [hidden]. */
+.social-carousel-prev[hidden],
+.social-carousel-next[hidden] { display: none; }
+.social-carousel-prev:hover,
+.social-carousel-next:hover {
+  border-color: var(--amber);
+}
+
+.social-carousel-prev:disabled,
+.social-carousel-next:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .social-media-carousel { --post-card-width: 300px; --post-card-height: 515px; }
+}
+
+@media (min-width: 641px) and (max-width: 1100px) {
+  .social-media-carousel { --post-card-width: 290px; --post-card-height: 505px; }
+}
+
+@media (max-width: 900px) {
+  /* Pin prev/next below the track rather than floating them over the
+     cards, matching the testimonials carousel's mobile treatment. */
+  .social-media-carousel-wrap {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "carousel carousel"
+      "prev next";
+    justify-items: center;
+    row-gap: 18px;
+  }
+  #socialMediaCarousel { grid-area: carousel; width: 100%; min-width: 0; }
+  .social-carousel-prev { grid-area: prev; position: static; transform: none; justify-self: end; margin-right: 8px; }
+  .social-carousel-next { grid-area: next; position: static; transform: none; justify-self: start; margin-left: 8px; }
+  .social-carousel-prev:hover,
+  .social-carousel-next:hover { transform: none; }
+}
+
 @media (max-width: 768px) {
   /* Pin prev/next to a row below the image instead of floating
      beside it at mid-screen height. */
@@ -1844,9 +2066,69 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .booking-upload-preview-remove:hover { background: hsl(0, 72%, 94%); color: #dc2626; }
 
-.booking-consent-field { display: flex !important; flex-direction: row !important; align-items: center; gap: 10px; }
-.booking-consent-field input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--amber); cursor: pointer; }
-.booking-consent-field label { font-size: 16px; color: var(--sky-dark); cursor: pointer; max-width: none; }
+.booking-consent-field { display: flex !important; flex-direction: row !important; align-items: flex-start; gap: 10px; }
+.booking-consent-field input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; margin-top: 3px; accent-color: var(--amber); cursor: pointer; }
+.booking-consent-field label {
+  font-size: 16px; line-height: 1.55; color: var(--sky-dark); cursor: pointer; max-width: none; min-width: 0;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+
+/* ============================================================
+   PATIENT CONSENT MODAL
+   Reuses .booking-modal shell; swapped in when the consent
+   checkbox is clicked and swapped back out on close / "I Agree".
+   ============================================================ */
+.consent-modal-header { padding: 20px 32px 16px; margin-bottom: 0; }
+.consent-modal-title {
+  font-family: var(--font-heading); font-size: 26px; font-weight: 700;
+  color: var(--sky-dark); margin: 0; padding-right: 40px;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+
+.consent-modal-body { padding: 20px 32px 8px; }
+.consent-modal-body p,
+.consent-modal-body li { font-size: 18px; line-height: 1.6; color: var(--text); margin: 0 0 14px; }
+.consent-modal-body h3 {
+  font-family: var(--font-heading); font-size: 20px; font-weight: 700;
+  color: var(--sky-dark); margin: 22px 0 10px;
+}
+.consent-modal-body ul { margin: 0 0 14px; padding-left: 22px; }
+.consent-modal-body li { margin-bottom: 8px; }
+.consent-modal-body strong { color: var(--sky-dark); }
+.consent-contact { background: var(--bg-3); border-radius: var(--radius-sm); padding: 14px 16px; }
+.consent-modal-links { font-style: italic; }
+.consent-modal-links a { font-size: 18px; color: var(--amber); text-decoration: underline; text-underline-offset: 2px; }
+.consent-modal-links a:hover { color: var(--amber-dark); }
+
+.consent-modal-footer {
+  position: sticky; bottom: 0; z-index: 5;
+  background: var(--surface);
+  padding: 16px 32px 24px;
+  border-top: 2px solid var(--border);
+  border-radius: 0 0 20px 20px;
+}
+/* Agree button is gated on reading: it stays disabled, showing
+   "Scroll to bottom", until the notice has been scrolled through. */
+.consent-agree-btn { width: 100%; }
+.consent-agree-btn span { color: #ffffff; }
+.consent-agree-btn[disabled] span { color: hsl(155, 10%, 42%); }
+
+/* Hint arrow shown while the notice still has content below the fold */
+.consent-scroll-hint {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 0 0 10px; font-size: 16px; font-weight: 600; color: var(--amber);
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+.consent-scroll-hint i { animation: consentBounce 1.4s ease-in-out infinite; }
+.consent-modal-footer.is-read .consent-scroll-hint { display: none; }
+
+@keyframes consentBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent-scroll-hint i { animation: none; }
+}
 
 .booking-submit-btn {
   width: 100%; padding: 14px; border: none; border-radius: var(--radius-pill);
@@ -1930,6 +2212,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .booking-modal-close { right: 10px; }
   /* keep both tabs on one line within the narrower dialog */
   .booking-tab { padding: 10px 12px; white-space: nowrap; }
+
+  .consent-modal-header { padding: 16px 18px 12px; }
+  .consent-modal-title { font-size: 22px; }
+  .consent-modal-body { padding: 16px 18px 8px; }
+  .consent-modal-body h3 { font-size: 19px; }
+  .consent-modal-footer { padding: 14px 18px 20px; }
 }
 
 /* ============================================================
@@ -2321,6 +2609,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .philosophy-title,
   .process-title,
   .testimonials-title,
+  .social-media-title,
   .gallery-title { font-size: 30px; }
 }
 
@@ -2724,5 +3013,174 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
   .cta-btn {
     padding: 8px 10px;
+  }
+}
+
+/* ============================================================
+   FAQ SECTION — universal .faq-* classes, gallery(--bg) ↔ FAQ(--bg-3)
+   alternation per AGENTS.md §2 branded-band pattern. Accordion state
+   is class-driven (.faq-item.is-active); JS below only toggles it.
+   ============================================================ */
+.faq-section {
+  padding: 10px 0;
+  background: var(--bg-3);
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
+  background-size: 18px 18px;
+}
+
+.faq-header {
+  text-align: center;
+  margin: 0 auto 40px;
+  max-width: 700px;
+}
+
+.faq-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--sky-dark, var(--brand-dark, var(--text)));
+  margin: 10px 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.faq-subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  min-width: 0;
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item.is-active {
+  border-color: var(--sky, var(--brand, var(--primary)));
+  box-shadow: 0 4px 16px rgba(8, 18, 32, 0.08);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.faq-question span {
+  min-width: 0;
+  flex: 1;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--sky, var(--brand, var(--primary)));
+  background: var(--sky-light, var(--brand-light, var(--bg-3)));
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.faq-item.is-active .faq-icon {
+  transform: rotate(180deg);
+  background: var(--sky, var(--brand, var(--primary)));
+  color: #fff;
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.faq-item.is-active .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq-answer-inner > p {
+  min-width: 0;
+  margin: 0;
+  padding: 0 22px 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+@media (max-width: 900px) {
+  .faq-title {
+    font-size: 30px;
+  }
+
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 17px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 18px 18px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-question {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .faq-answer-inner > p {
+    padding: 0 14px 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .faq-title {
+    font-size: 38px;
   }
 }
