@@ -95,6 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 p, li, span, a, button, label {
   line-height: 1.6;
   color: var(--text);
+  font-weight: 500;
 }
 
 .about-section p,
@@ -491,7 +492,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* Ink on the dark viewport. */
 .hero-section .hero-title { color: #ffffff; }
 .hero-section .hero-credentials { color: hsl(199 40% 90%); }
-.hero-section .hero-reg-id { color: hsl(205 22% 76%); }
+.hero-section .hero-reg-id { color: hsl(199 40% 90%); }
 .hero-section .languages { color: hsl(205 22% 78%); }
 .hero-section .languages strong { color: #ffffff; }
 
@@ -651,10 +652,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 .hero-reg-id {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-mono);
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -2248,6 +2248,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 @media (max-width: 980px) {
   .hero-layout { grid-template-columns: 1fr; text-align: center; padding-top: 32px; padding-bottom: 40px; gap: 40px; }
   .hero-content { align-items: center; }
+  .hero-credentials,
+  .hero-reg-id { text-align: left; align-self: stretch; }
   .hero-visual { order: -1; margin-bottom: 40px; min-height: 340px; }
   .hero-portrait-frame { max-width: 264px; }
   .hero-visual::after { display: none; }

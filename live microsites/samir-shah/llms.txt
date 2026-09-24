@@ -1,0 +1,21 @@
+# NOTE: llms.txt (see llmstxt.org) only takes effect at the domain root
+# (digidr.app/llms.txt). This file is a per-microsite draft — backend team
+# must merge every microsite's entry into ONE combined llms.txt served at
+# digidr.app/llms.txt, one line per doctor under the "Doctors" section below.
+# This is a live, deployed microsite — slug below is the real resolved slug
+# (matches the hardcoded Clarity 'microsite' tag in index.html), not a placeholder.
+# {{full_name}}/{{speciality}} remain templated below since index.html itself
+# has not had them resolved yet.
+
+# Dr. {{full_name}}
+
+> Dr. {{full_name}}, {{speciality}}, on DigiDr. Book a consultation online.
+
+- Specialty: {{speciality}}
+- Book a consultation: https://digidr.app/dr-samir-shah/#booking-modal
+
+## Pages
+
+- [Profile](https://digidr.app/dr-samir-shah/): Dr. {{full_name}}'s profile — about, services, care philosophy, consultation journey, testimonials, and practice gallery.
+- [Privacy Policy](https://digidr.app/dr-samir-shah/privacy-policy.html)
+- [Terms of Service](https://digidr.app/dr-samir-shah/terms-of-service.html)

@@ -938,6 +938,9 @@ Each specialty lives in its own folder, one subfolder per microsite variant:
   blog-detail.html
   privacy-policy.html
   terms-of-service.html
+  robots.txt           ← SEO draft, see §29
+  sitemap.xml           ← SEO draft, see §29
+  llms.txt              ← LLM-discovery draft, see §29
   styles/
     style.css        ← ALL CSS lives here, no inline layout styles
     chatbot.css       ← chatbot widget styles (§13), separate file
@@ -1477,3 +1480,48 @@ Working order for building a new microsite from this file alone:
     4/5/6/7 (§6, §10, §23); Read More with both a short and long bio (§24); form-field
     and chatbot fonts actually match the site font, not the browser default (§11, §13);
     check for the known gotchas (§26) on every third-party widget and colored button.
+13. Add `robots.txt`, `sitemap.xml`, and `llms.txt` at the microsite folder root (§29).
+
+---
+
+## 29. robots.txt, sitemap.xml & llms.txt (Per-Microsite Draft, Mandatory)
+
+Every microsite folder root ships three plain-text/XML files, copy-pasted from an
+existing microsite (e.g. `ENT/microsite-ent-1/`) and adjusted only where noted below.
+These are **drafts**, not final production files: at 1000+ microsites there is no
+per-microsite domain — every microsite is served as a path under one shared domain
+(`digidr.app/{{slug}}/`), and `robots.txt`/`sitemap.xml`/`llms.txt` only take effect
+when served at that domain's root. The backend team is responsible for merging every
+microsite's draft into one combined file served at `digidr.app/robots.txt`,
+`digidr.app/sitemap.xml`, and `digidr.app/llms.txt`.
+
+- Base domain is **`digidr.app`** — never invent a different domain or a
+  per-microsite subdomain.
+- Use the **`{{slug}}`** placeholder in place of the real slug, exactly like
+  `index.html`/`privacy-policy.html`/etc. — the backend's template resolver applies to
+  every served file, not just HTML pages, so `robots.txt`/`sitemap.xml`/`llms.txt`
+  render with the real slug the same way `data-slug="{{slug}}"` does. **Exception:**
+  already-deployed live microsites (`live microsites/<name>/`) hardcode the real
+  resolved slug instead, matching the same live-site exception already documented for
+  the Clarity `microsite` tag (§27) — because the backend does not yet re-render those
+  pages from source.
+- **Do not list `blog.html`/`blog-detail.html`** in `sitemap.xml` or `llms.txt` while
+  blog pages remain disabled repo-wide — add them back only once blog pages are
+  re-enabled.
+- `llms.txt` follows the [llmstxt.org](https://llmstxt.org) convention: an H1 with the
+  doctor's name, a one-line blockquote summary, then an `## Pages` section linking the
+  profile, privacy policy, and terms of service.
+- Every file carries a top comment explaining the draft/merge caveat above — keep that
+  comment intact when copying to a new microsite so it isn't lost.
+- **robots.txt:**
+  ```
+  User-agent: *
+  Allow: /
+
+  Sitemap: https://digidr.app/sitemap.xml
+  ```
+- **sitemap.xml:** one `<url>` per live page (home, privacy policy, terms of service —
+  no blog while disabled), `changefreq`/`priority` per the existing examples
+  (home: monthly/1.0, legal pages: yearly/0.3).
+- **llms.txt:** pull `{{full_name}}`/`{{speciality}}` from the same placeholders already
+  used in `index.html`'s `<title>`/meta tags — don't invent new copy.

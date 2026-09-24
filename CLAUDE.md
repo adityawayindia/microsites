@@ -10,6 +10,7 @@ Each specialty lives in its own folder (`<Specialty>/microsite-<specialty>-<n>/`
 identical structure:
 ```
 index.html, blog.html, blog-detail.html, privacy-policy.html, terms-of-service.html
+robots.txt, sitemap.xml, llms.txt   ← per-microsite drafts, see AGENTS.md §29
 styles/style.css   ← all CSS lives here, no inline layout styles
 script/index.js    ← all JS lives here
 assets/            ← images/media

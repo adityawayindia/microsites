@@ -2,15 +2,23 @@
     /* ── Config ── */
     var BOT_NAME = 'Assistant';
     var BOT_ICON = 'https://storage.googleapis.com/microsite_buck/microsite-ent-1/assets/chatbot-icon.svg';
+    var API_BASE = 'https://digidrapi.digidr.app';
 
     var WELCOME_MSG = "Hi there! 👋 I'm your Assistant. How can I help you today?";
+
+    var SUGGESTIONS = [
+        'What services do you offer?',
+        'How to get started?',
+        'Pricing plans',
+        'Book a demo'
+    ];
 
     /* ── Inject CSS ── */
     (function injectCSS() {
         if (document.getElementById('chatbot-css')) return;
         var link = document.createElement('link');
-        link.id   = 'chatbot-css';
-        link.rel  = 'stylesheet';
+        link.id = 'chatbot-css';
+        link.rel = 'stylesheet';
         link.href = './styles/chatbot.css';
         document.head.appendChild(link);
     })();
@@ -39,46 +47,47 @@
     var widgetHTML =
         '<div class="chatbot-fab-wrap" id="chatbotFabWrap">' +
 
-            '<div class="chatbot-backdrop" id="chatbotBackdrop" aria-hidden="true"></div>' +
+        '<div class="chatbot-backdrop" id="chatbotBackdrop" aria-hidden="true"></div>' +
 
-            /* Chat window */
-            '<div class="chatbot-window" id="chatbotWindow" style="display:none;" role="dialog" aria-modal="true" aria-label="' + BOT_NAME + ' chat window">' +
+        /* Chat window */
+        '<div class="chatbot-window" id="chatbotWindow" style="display:none;" role="dialog" aria-modal="true" aria-label="' + BOT_NAME + ' chat window">' +
 
-                /* Header */
-                '<div class="chatbot-header">' +
-                    '<div class="chatbot-header-avatar">' +
-                        '<img src="' + BOT_ICON + '" alt="' + BOT_NAME + '">' +
-                    '</div>' +
-                    '<div class="chatbot-header-info">' +
-                        '<p class="chatbot-header-name">' + BOT_NAME + '</p>' +
-                    '</div>' +
-                    '<button type="button" class="chatbot-header-close" id="chatbotCloseBtn" aria-label="Close chat">' +
-                        '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
-                    '</button>' +
-                '</div>' +
+        /* Header */
+        '<div class="chatbot-header">' +
+        '<div class="chatbot-header-avatar">' +
+        '<img src="' + BOT_ICON + '" alt="' + BOT_NAME + '">' +
+        '</div>' +
+        '<div class="chatbot-header-info">' +
+        '<p class="chatbot-header-name">' + BOT_NAME + '</p>' +
+        '</div>' +
+        '<button type="button" class="chatbot-header-close" id="chatbotCloseBtn" aria-label="Close chat">' +
+        /* This microsite loads Font Awesome, not Material Symbols */
+        '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
+        '</button>' +
+        '</div>' +
 
-                /* Messages */
-                '<div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite" aria-label="Chat messages"></div>' +
+        /* Messages */
+        '<div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite" aria-label="Chat messages"></div>' +
 
-                /* Input */
-                '<div class="chatbot-input-area">' +
-                    '<div class="chatbot-input-wrap">' +
-                        '<textarea class="chatbot-input" id="chatbotInput" placeholder="Type your message…" rows="1" aria-label="Type your message"></textarea>' +
-                    '</div>' +
-                    '<button class="chatbot-send-btn" id="chatbotSendBtn" aria-label="Send message" disabled>' + svgSend() + '</button>' +
-                '</div>' +
+        /* Input */
+        '<div class="chatbot-input-area">' +
+        '<div class="chatbot-input-wrap">' +
+        '<textarea class="chatbot-input" id="chatbotInput" placeholder="Type your message…" rows="1" aria-label="Type your message"></textarea>' +
+        '</div>' +
+        '<button class="chatbot-send-btn" id="chatbotSendBtn" aria-label="Send message" disabled>' + svgSend() + '</button>' +
+        '</div>' +
 
-                /* Footer */
-                '<div class="chatbot-footer">Informational only. Not medical advice.<br>Consult your doctor.</div>' +
+        /* Footer */
+        '<div class="chatbot-footer">Informational only, not medical advice.<br>Consult your doctor</div>' +
 
-            '</div>' +
+        '</div>' +
 
-            /* FAB */
-            '<button class="chatbot-fab" id="chatbotFab" aria-label="Open Assistant" aria-expanded="false" aria-controls="chatbotWindow">' +
-                '<img class="chatbot-fab-logo" src="' + BOT_ICON + '" alt="" aria-hidden="true">' +
-                '<span class="chatbot-fab-text">Ask Doctor</span>' +
-                '<span class="chatbot-badge" id="chatbotBadge" aria-label="1 new message">1</span>' +
-            '</button>' +
+        /* FAB */
+        '<button class="chatbot-fab" id="chatbotFab" aria-label="Open Assistant" aria-expanded="false" aria-controls="chatbotWindow">' +
+        '<img class="chatbot-fab-logo" src="' + BOT_ICON + '" alt="" aria-hidden="true">' +
+        '<span class="chatbot-fab-text">Ask Doctor</span>' +
+        '<span class="chatbot-badge" id="chatbotBadge" aria-label="1 new message">1</span>' +
+        '</button>' +
 
         '</div>';
 
@@ -93,19 +102,19 @@
     }
 
     /* ── DOM References ── */
-    var wrap        = document.getElementById('chatbotFabWrap');
-    var fab         = document.getElementById('chatbotFab');
-    var closeBtn    = document.getElementById('chatbotCloseBtn');
-    var backdrop    = document.getElementById('chatbotBackdrop');
-    var window_     = document.getElementById('chatbotWindow');
-    var messagesEl  = document.getElementById('chatbotMessages');
-    var inputEl     = document.getElementById('chatbotInput');
-    var sendBtn     = document.getElementById('chatbotSendBtn');
-    var suggWrap    = document.getElementById('chatbotSuggestionsWrap');
+    var wrap = document.getElementById('chatbotFabWrap');
+    var fab = document.getElementById('chatbotFab');
+    var closeBtn = document.getElementById('chatbotCloseBtn');
+    var backdrop = document.getElementById('chatbotBackdrop');
+    var window_ = document.getElementById('chatbotWindow');
+    var messagesEl = document.getElementById('chatbotMessages');
+    var inputEl = document.getElementById('chatbotInput');
+    var sendBtn = document.getElementById('chatbotSendBtn');
+    var suggWrap = document.getElementById('chatbotSuggestionsWrap');
     var suggestions = document.getElementById('chatbotSuggestions');
-    var suggPrev    = document.getElementById('chatbotSuggPrev');
-    var suggNext    = document.getElementById('chatbotSuggNext');
-    var badge       = document.getElementById('chatbotBadge');
+    var suggPrev = document.getElementById('chatbotSuggPrev');
+    var suggNext = document.getElementById('chatbotSuggNext');
+    var badge = document.getElementById('chatbotBadge');
 
     var isOpen = false;
     var hasOpened = false;
@@ -120,14 +129,14 @@
             msgEl.innerHTML =
                 '<div class="chatbot-msg-avatar"><img src="' + BOT_ICON + '" alt="bot"></div>' +
                 '<div>' +
-                    '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
-                    '<div class="chatbot-msg-time">' + getTime() + '</div>' +
+                '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
+                '<div class="chatbot-msg-time">' + getTime() + '</div>' +
                 '</div>';
         } else {
             msgEl.innerHTML =
                 '<div>' +
-                    '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
-                    '<div class="chatbot-msg-time">' + getTime() + '</div>' +
+                '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
+                '<div class="chatbot-msg-time">' + getTime() + '</div>' +
                 '</div>';
         }
 
@@ -201,6 +210,7 @@
         }, 220);
     }
 
+    /* ── Send message → real MicrositeChat API call ── */
     function sendMessage(text) {
         text = text.trim();
         if (!text) return;
@@ -213,15 +223,38 @@
         inputEl.style.height = 'auto';
         sendBtn.disabled = true;
 
-        /* Simulate typing → placeholder for AI integration */
+        var slug = document.body.dataset.slug || '';
+
         showTyping();
-        setTimeout(function () {
-            hideTyping();
-            addMessage(
-                "Thanks for your message! Our team will get back to you shortly. For immediate assistance, please call or visit our support page.",
-                'bot'
-            );
-        }, 1200);
+
+        var formData = new FormData();
+        formData.append('Message', text);
+
+        fetch(API_BASE + '/api/MicrositeChat?slug=' + encodeURIComponent(slug), {
+            method: 'POST',
+            body: formData
+        })
+            .then(function (res) {
+                if (!res.ok) {
+                    throw new Error('MicrositeChat request failed: ' + res.status);
+                }
+                return res.json();
+            })
+            .then(function (data) {
+                hideTyping();
+                var reply =
+                    (data && (data.reply || data.message || data.answer || data.response)) ||
+                    "Thanks for your message! Our team will get back to you shortly. For immediate assistance, please call or visit our support page.";
+                addMessage(reply, 'bot');
+            })
+            .catch(function (err) {
+                console.error('MicrositeChat error:', err);
+                hideTyping();
+                addMessage(
+                    "Sorry, I'm having trouble responding right now. Please call or visit our support page for immediate assistance.",
+                    'bot'
+                );
+            });
     }
 
     /* ── Auto-resize textarea ── */
@@ -257,41 +290,7 @@
     });
 
     /* ── Suggestion chips ── */
-    if (suggestions) {
-        suggestions.addEventListener('click', function (e) {
-            var chip = e.target.closest('.chatbot-suggestion-chip');
-            if (!chip) return;
-            sendMessage(chip.textContent);
-        });
-    }
-
-    /* ── Suggestion chips: left/right arrow scroll + swipe ── */
-    function updateSuggArrows() {
-        if (!suggPrev || !suggNext) return;
-        var maxScroll = suggestions.scrollWidth - suggestions.clientWidth;
-        var atStart = suggestions.scrollLeft <= 6;
-        var atEnd = suggestions.scrollLeft >= maxScroll - 6;
-
-        suggPrev.disabled = atStart;
-        suggNext.disabled = atEnd || maxScroll <= 6;
-
-        /* Hide the whole arrow row when there's nothing to scroll (e.g. wide window) */
-        if (suggWrap) suggWrap.classList.toggle('chatbot-suggestions-wrap--no-scroll', maxScroll <= 1);
-    }
-
-    function scrollSuggestions(direction) {
-        var chip = suggestions.querySelector('.chatbot-suggestion-chip');
-        var step = chip ? chip.getBoundingClientRect().width + 8 : 160;
-        suggestions.scrollBy({ left: direction * step * 2, behavior: 'smooth' });
-    }
-
-    if (suggPrev && suggNext) {
-        suggPrev.addEventListener('click', function () { scrollSuggestions(-1); });
-        suggNext.addEventListener('click', function () { scrollSuggestions(1); });
-        suggestions.addEventListener('scroll', updateSuggArrows, { passive: true });
-        window.addEventListener('resize', updateSuggArrows);
-        updateSuggArrows();
-    }
+    
 
     /* ── Close on Escape ── */
     document.addEventListener('keydown', function (e) {

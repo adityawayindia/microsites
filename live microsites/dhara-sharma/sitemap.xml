@@ -4,31 +4,24 @@
   (digidr.app/sitemap.xml). This file is a per-microsite draft listing only
   this doctor's pages — backend team must merge every microsite's <url>
   entries into ONE combined sitemap.xml served at digidr.app/sitemap.xml.
-  Path below assumes this microsite is served at digidr.app/REPLACE-WITH-SLUG/
+  This is a live, deployed microsite — slug below is the real resolved slug
+  (matches the hardcoded Clarity 'microsite' tag in index.html), not a placeholder.
+  Blog pages are intentionally omitted: blog.html/blog-detail.html are
+  currently disabled on this microsite.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://digidr.app/REPLACE-WITH-SLUG/</loc>
+    <loc>https://digidr.app/dhara-sharma/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://digidr.app/REPLACE-WITH-SLUG/blog.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://digidr.app/REPLACE-WITH-SLUG/blog-detail.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://digidr.app/REPLACE-WITH-SLUG/privacy-policy.html</loc>
+    <loc>https://digidr.app/dhara-sharma/privacy-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://digidr.app/REPLACE-WITH-SLUG/terms-of-service.html</loc>
+    <loc>https://digidr.app/dhara-sharma/terms-of-service.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

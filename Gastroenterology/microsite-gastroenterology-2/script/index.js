@@ -1,3 +1,47 @@
+const API_BASE = "https://digidrapi.digidr.app";
+//const API_BASE = "https://localhost:7088";
+async function compressImage(file) {
+
+    console.log("compressImage started");
+
+    const bitmap = await createImageBitmap(file);
+
+    console.log("bitmap created");
+
+    let width = bitmap.width;
+    let height = bitmap.height;
+
+    const maxWidth = 800;
+    const maxHeight = 800;
+
+    if (width > maxWidth || height > maxHeight) {
+        const ratio = Math.min(maxWidth / width, maxHeight / height);
+        width = Math.round(width * ratio);
+        height = Math.round(height * ratio);
+    }
+
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(bitmap, 0, 0, width, height);
+
+    const blob = await new Promise(resolve =>
+        canvas.toBlob(resolve, "image/jpeg", 0.5)
+    );
+
+    return new File(
+        [blob],
+        file.name.replace(/\.[^/.]+$/, "") + ".jpg",
+        { type: "image/jpeg" }
+    );
+}
+
+function blobToFile(blob, fileName) {
+    return new File([blob], fileName, { type: "image/jpeg" });
+}
+
 // Always start fresh on load/refresh: reset scroll position and strip any
 // URL hash left over from in-page nav so a reload never resumes mid-page.
 if ("scrollRestoration" in history) {
@@ -25,36 +69,6 @@ document.addEventListener("click", (event) => {
   event.preventDefault();
   targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
 });
-
-async function compressImage(file) {
-    const bitmap = await createImageBitmap(file);
-    let width = bitmap.width;
-    let height = bitmap.height;
-    const maxWidth = 800;
-    const maxHeight = 800;
-
-    if (width > maxWidth || height > maxHeight) {
-        const ratio = Math.min(maxWidth / width, maxHeight / height);
-        width = Math.round(width * ratio);
-        height = Math.round(height * ratio);
-    }
-
-    const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(bitmap, 0, 0, width, height);
-
-    const blob = await new Promise(resolve =>
-        canvas.toBlob(resolve, "image/jpeg", 0.5)
-    );
-
-    return new File(
-        [blob],
-        file.name.replace(/\.[^/.]+$/, "") + ".jpg",
-        { type: "image/jpeg" }
-    );
-}
 
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
@@ -280,7 +294,195 @@ if (menuToggle && mainNav) {
   });
 })();
 
-// Booking Modal (frontend demo ? no API)
+// Booking date picker (moved out of the testimonials carousel IIFE — it has
+// nothing to do with testimonials, and previously crashed on load because it
+// referenced a `form` variable that didn't exist in that scope)
+
+let iti = null;
+let phoneUtilsReady = false;
+
+function initPhonePlugin() {
+    const form = document.getElementById("bookingForm");
+    const phoneInputEl = form?.phone;
+    if (!phoneInputEl || !window.intlTelInput) return;
+
+    iti = window.intlTelInput(phoneInputEl, {
+        initialCountry: "in",
+        countryOrder: ["in"],
+        separateDialCode: true,
+        loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
+    });
+
+    iti.promise.then(() => { phoneUtilsReady = true; }).catch(() => { });
+
+    form.addEventListener("reset", () => {
+        iti?.setNumber("");
+        iti?.setSelectedCountry("in");
+    });
+}
+
+initPhonePlugin();
+
+(function initDatePicker() {
+    const form = document.getElementById("bookingForm");
+    const trigger = document.getElementById("preferredDateText");
+    const hiddenInput = document.getElementById("preferredDate");
+    const field = document.getElementById("preferredDateField");
+    const calendar = document.getElementById("preferredDateCalendar");
+    if (!form || !trigger || !hiddenInput || !field || !calendar) return;
+
+    const titleEl = calendar.querySelector("[data-cal-title]");
+    const gridEl = calendar.querySelector("[data-cal-grid]");
+    const prevBtn = calendar.querySelector("[data-cal-prev]");
+    const nextBtn = calendar.querySelector("[data-cal-next]");
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const BOOKING_WINDOW_DAYS = 30;
+    const maxBookableDate = new Date(today);
+    maxBookableDate.setDate(maxBookableDate.getDate() + BOOKING_WINDOW_DAYS);
+
+    let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selectedDate = null;
+
+    const doctorId = form.dataset.userid;
+    let availableDays = null;
+
+    async function loadAvailableDays(type) {
+        try {
+            const res = await fetch(`${API_BASE}/api/Patient_Appointment/getavailabledays?userid=${doctorId}&type=${type}`);
+            const days = await res.json();
+            availableDays = new Set((days || []).map(d => d.toLowerCase()));
+        } catch (err) {
+            console.warn("Failed to load available days:", err.message);
+            availableDays = null;
+        }
+        render();
+    }
+
+    // booking-modal IIFE calls this whenever the clinic/online tab changes
+    window.__onAppointmentTypeChange = loadAvailableDays;
+    loadAvailableDays("offline");
+
+    function pad(n) { return String(n).padStart(2, "0"); }
+    function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
+    function formatDisplay(d) { return `${pad(d.getDate())} ${monthNames[d.getMonth()].slice(0, 3)} ${d.getFullYear()}`; }
+    function isSameDay(a, b) {
+        return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    }
+
+    function render() {
+        if (!titleEl || !gridEl) return;
+        titleEl.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
+        gridEl.innerHTML = "";
+
+        const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+        const startOffset = firstDay.getDay();
+        const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+
+        for (let i = 0; i < startOffset; i++) {
+            const spacer = document.createElement("span");
+            spacer.className = "booking-calendar-day booking-calendar-day--empty";
+            gridEl.appendChild(spacer);
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const cellDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "booking-calendar-day";
+            btn.textContent = String(day);
+
+            const dayName = cellDate.toLocaleDateString("en-US", { weekday: "long" }).toLowerCase();
+            const isUnconfiguredDay = availableDays && availableDays.size > 0 && !availableDays.has(dayName);
+
+            const isOutsideWindow = cellDate > maxBookableDate;
+
+            if (cellDate < today || isUnconfiguredDay) {
+                btn.disabled = true;
+                btn.classList.add("is-disabled");
+            }
+            if (isSameDay(cellDate, today)) btn.classList.add("is-today");
+            if (isSameDay(cellDate, selectedDate)) btn.classList.add("is-selected");
+
+            btn.addEventListener("click", () => {
+                selectedDate = cellDate;
+                hiddenInput.value = formatISO(cellDate);
+                trigger.value = formatDisplay(cellDate);
+                hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
+                close();
+            });
+
+            gridEl.appendChild(btn);
+        }
+        if (nextBtn) {
+            const firstOfNextMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+            nextBtn.disabled = firstOfNextMonth > maxBookableDate;
+            nextBtn.classList.toggle("is-disabled", nextBtn.disabled);
+        }
+        // Also stop navigating before the current month
+        if (prevBtn) {
+            const lastOfPrevMonth = new Date(viewDate.getFullYear(), viewDate.getMonth(), 0);
+            prevBtn.disabled = lastOfPrevMonth < new Date(today.getFullYear(), today.getMonth(), 1);
+            prevBtn.classList.toggle("is-disabled", prevBtn.disabled);
+        }
+    }
+
+    prevBtn?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (prevBtn.disabled) return; // NEW guard
+        viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
+        render();
+    });
+
+    nextBtn?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (nextBtn.disabled) return; // NEW guard
+        viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+        render();
+    });
+
+    function open() {
+        calendar.hidden = false;
+        field.classList.add("is-open");
+        render();
+        document.addEventListener("click", onOutsideClick);
+    }
+
+    function close() {
+        calendar.hidden = true;
+        field.classList.remove("is-open");
+        document.removeEventListener("click", onOutsideClick);
+    }
+
+    function onOutsideClick(event) {
+        if (!field.contains(event.target)) close();
+    }
+
+    trigger.addEventListener("click", () => {
+        calendar.hidden ? open() : close();
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !calendar.hidden) close();
+    });
+
+    //document.addEventListener("keydown", (event) => {
+    //    if (event.key === "Escape" && !calendar.hidden) close();
+    //});
+
+    form.addEventListener("reset", () => {
+        selectedDate = null;
+        trigger.value = "";
+        hiddenInput.value = "";
+        viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+        close();
+    });
+})();
+
+// Booking Modal & Form Validation
 (function () {
     const modal = document.getElementById("bookingModal");
     const dialog = modal?.querySelector(".booking-modal-dialog");
@@ -288,7 +490,11 @@ if (menuToggle && mainNav) {
     const closeBtn = document.getElementById("bookingModalClose");
     const form = document.getElementById("bookingForm");
 
-    // Consent checkbox logic
+    // Guard BEFORE touching form.dataset — previously this bailout ran too
+    // late (after several form.dataset.* reads), so a page missing the
+    // booking modal/form would throw instead of quietly skipping this IIFE.
+    if (!modal || !dialog || !form) return;
+
     const consentCheckbox = document.getElementById("consentCheckbox");
     const submitBtnEl = document.getElementById("submitBtn") || form.querySelector(".booking-submit-btn");
 
@@ -300,7 +506,6 @@ if (menuToggle && mainNav) {
             // Programmatic syncs from the consent modal are reported by that
             // flow's own events — don't log them as user checkbox clicks.
             if (!event.isTrusted) return;
-            window.trackEvent?.("consent_checkbox_click", { checked: consentCheckbox.checked });
         });
 
         // Intercept disabled property sets to respect consent checkbox state
@@ -322,35 +527,73 @@ if (menuToggle && mainNav) {
         }
     }
 
+    const doctorId = form.dataset.userid;
+    const clinicName = form.dataset.clinicname;
+    const clinicAddress = form.dataset.address;
+    // Bug fix: the HTML only sets data-district (there is no data-city
+    // attribute), so this used to always read as `undefined` and rendered
+    // literally as "undefined" in the offline booking confirmation message.
+    const clinicDistrict = form.dataset.district;
+    const clinicState = form.dataset.state;
+    const clinicPincode = form.dataset.pincode;
     const clinicTab = document.getElementById("clinicVisitTab");
     const onlineTab = document.getElementById("onlineConsultTab");
     const openTriggers = document.querySelectorAll(".cta-btn");
 
+    let isOnlineAvailable = true;
+    let isOfflineAvailable = true;
     let compressedFile = null;
-    let appointmentType = "offline";
 
-    if (!modal || !dialog || !form) return;
+    (async () => {
+        try {
 
-    // Country-code phone field (intl-tel-input v29.2.2)
-    let iti = null;
-    let phoneUtilsReady = false;
+            const response = await fetch(`${API_BASE}/api/Patient_Appointment/getappointment?userid=${doctorId}`);
 
-    if (form.phone && window.intlTelInput) {
-        iti = window.intlTelInput(form.phone, {
-            initialCountry: "in",
-            countryOrder: ["in"],
-            separateDialCode: true,
-            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
-        });
-        iti.promise.then(() => { phoneUtilsReady = true; });
-    }
+            if (!response.ok) {
+                console.warn(`Appointment API returned ${response.status}, using defaults`);
+                return;
+            }
 
-    // Full Name: letters/spaces/apostrophes/hyphens only, sanitized live
-    form.fullName?.addEventListener("input", () => {
-        const el = form.fullName;
-        const sanitized = el.value.replace(/[^A-Za-z\s.'-]/g, "");
-        if (sanitized !== el.value) el.value = sanitized;
-    });
+            const data = await response.json();
+
+            isOnlineAvailable = data.online ?? true;
+            isOfflineAvailable = data.offline ?? true;
+
+            // hide online tab
+            if (!isOnlineAvailable && onlineTab) {
+                onlineTab.style.display = "none";
+            }
+
+            // hide offline tab
+            if (!isOfflineAvailable && clinicTab) {
+                clinicTab.style.display = "none";
+            }
+
+            // auto select available tab
+            if (isOnlineAvailable && !isOfflineAvailable) {
+                appointmentType = "online";
+                setActiveTab("online");
+                window.__onAppointmentTypeChange?.(appointmentType);
+            }
+
+            if (isOfflineAvailable && !isOnlineAvailable) {
+                appointmentType = "offline";
+                setActiveTab("clinic");
+                window.__onAppointmentTypeChange?.(appointmentType);
+            }
+
+            // Hide all book appointment buttons if both are unavailable
+            if (!isOnlineAvailable && !isOfflineAvailable) {
+                document.querySelectorAll(".cta-btn").forEach(btn => {
+                    btn.style.display = "none";
+                });
+            }
+
+        } catch (err) {
+            console.warn("Failed to fetch appointment availability:", err.message);
+            // Keep defaults if API fails - don't break the page
+        }
+    })();
 
     function setBodyScroll(disable) {
         document.body.style.overflow = disable ? "hidden" : "";
@@ -497,20 +740,56 @@ if (menuToggle && mainNav) {
 
     function setActiveTab(active) {
         if (!clinicTab || !onlineTab) return;
-        const isClinic = active === "clinic";
-        clinicTab.classList.toggle("is-active", isClinic);
-        onlineTab.classList.toggle("is-active", !isClinic);
-        clinicTab.setAttribute("aria-selected", String(isClinic));
-        onlineTab.setAttribute("aria-selected", String(!isClinic));
-        appointmentType = isClinic ? "offline" : "online";
+        if (active === "clinic") {
+            clinicTab.classList.add("is-active");
+            onlineTab.classList.remove("is-active");
+            clinicTab.setAttribute("aria-selected", "true");
+            onlineTab.setAttribute("aria-selected", "false");
+        } else {
+            clinicTab.classList.remove("is-active");
+            onlineTab.classList.add("is-active");
+            clinicTab.setAttribute("aria-selected", "false");
+            onlineTab.setAttribute("aria-selected", "true");
+        }
     }
 
-    clinicTab?.addEventListener("click", () => setActiveTab("clinic"));
-    onlineTab?.addEventListener("click", () => setActiveTab("online"));
+    // Fix: previously these two tabs each had TWO click listeners attached
+    // (one set here, an identical second set further down) which both called
+    // setActiveTab redundantly. Consolidated into a single listener per tab
+    // that both switches the UI and updates appointmentType.
+    let appointmentType = "offline";
+
+    clinicTab?.addEventListener("click", () => {
+        setActiveTab("clinic");
+        appointmentType = "offline";
+        window.__onAppointmentTypeChange?.(appointmentType);
+    });
+    onlineTab?.addEventListener("click", () => {
+        setActiveTab("online");
+        appointmentType = "online";
+        window.__onAppointmentTypeChange?.(appointmentType);
+    });
+
+    function markFieldState(name, hasError) {
+        const field = form[name];
+        const fieldElement = Array.isArray(field) ? field[0] : field;
+        if (!fieldElement) return;
+        fieldElement.classList.toggle("is-invalid", hasError);
+        fieldElement.setAttribute("aria-invalid", hasError ? "true" : "false");
+        if (name === "preferredDate") {
+            const displayField = document.getElementById("preferredDateText");
+            if (displayField) {
+                displayField.classList.toggle("is-invalid", hasError);
+                displayField.setAttribute("aria-invalid", hasError ? "true" : "false");
+            }
+        }
+    }
 
     function showError(name, message) {
         const errorEl = form.querySelector(`.booking-error[data-error-for="${name}"]`);
-        if (errorEl) errorEl.textContent = message || "";
+        if (errorEl) {
+            errorEl.textContent = message || "";
+        }
     }
 
     function clearErrors() {
@@ -519,160 +798,62 @@ if (menuToggle && mainNav) {
         });
     }
 
+    form.fullName?.addEventListener("input", () => {
+        const el = form.fullName;
+        const sanitized = el.value.replace(/[^A-Za-z\s.'-]/g, "");
+        if (sanitized !== el.value) el.value = sanitized;
+    });
+
     function validateEmail(value) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(value);
     }
 
     function validatePhone(value) {
-        if (iti && phoneUtilsReady) {
-            return iti.isValidNumber();
-        }
-        const digits = value.replace(/[\s\-().+]/g, "");
-        return /^[0-9]{4,15}$/.test(digits);
-    }
-
-    function validateFullName(value) {
-        return /^[A-Za-z\s.'-]+$/.test(value);
+        const phoneRegex = /^\+?[0-9\s-]{7,10}$/;
+        return phoneRegex.test(value);
     }
 
     function validateDateNotPast(value) {
         if (!value) return false;
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        return new Date(value) >= today;
+        const chosen = new Date(value);
+        return chosen >= today;
     }
 
     const preferredDateInput = document.getElementById("preferredDate");
+    const preferredTimeSelect = document.getElementById("preferredTime");
     const reportInput = document.getElementById("report");
     const filePreviewDiv = document.getElementById("filePreview");
     const bookingLoader = document.getElementById("bookingLoader");
     const submitBtn = document.getElementById("submitBtn");
 
-    // Custom modern date picker (replaces native browser calendar)
-    (function initDatePicker() {
-        const trigger = document.getElementById("preferredDateText");
-        const hiddenInput = document.getElementById("preferredDate");
-        const field = document.getElementById("preferredDateField");
-        const calendar = document.getElementById("preferredDateCalendar");
-        if (!trigger || !hiddenInput || !field || !calendar) return;
-
-        const titleEl = calendar.querySelector("[data-cal-title]");
-        const gridEl = calendar.querySelector("[data-cal-grid]");
-        const prevBtn = calendar.querySelector("[data-cal-prev]");
-        const nextBtn = calendar.querySelector("[data-cal-next]");
-        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
+    if (preferredDateInput) {
         const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
-        let selectedDate = null;
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const dd = String(today.getDate()).padStart(2, "0");
+        preferredDateInput.setAttribute("min", `${yyyy}-${mm}-${dd}`);
+    }
 
-        function pad(n) { return String(n).padStart(2, "0"); }
-        function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
-        function formatDisplay(d) { return `${pad(d.getDate())} ${monthNames[d.getMonth()].slice(0, 3)} ${d.getFullYear()}`; }
-        function isSameDay(a, b) {
-            return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
-        }
-
-        function render() {
-            if (!titleEl || !gridEl) return;
-            titleEl.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
-            gridEl.innerHTML = "";
-
-            const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
-            const startOffset = firstDay.getDay();
-            const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
-
-            for (let i = 0; i < startOffset; i++) {
-                const spacer = document.createElement("span");
-                spacer.className = "booking-calendar-day booking-calendar-day--empty";
-                gridEl.appendChild(spacer);
-            }
-
-            for (let day = 1; day <= daysInMonth; day++) {
-                const cellDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
-                const btn = document.createElement("button");
-                btn.type = "button";
-                btn.className = "booking-calendar-day";
-                btn.textContent = String(day);
-
-                if (cellDate < today) {
-                    btn.disabled = true;
-                    btn.classList.add("is-disabled");
-                }
-                if (isSameDay(cellDate, today)) btn.classList.add("is-today");
-                if (isSameDay(cellDate, selectedDate)) btn.classList.add("is-selected");
-
-                btn.addEventListener("click", () => {
-                    selectedDate = cellDate;
-                    hiddenInput.value = formatISO(cellDate);
-                    trigger.value = formatDisplay(cellDate);
-                    hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
-                    close();
-                });
-
-                gridEl.appendChild(btn);
-            }
-        }
-
-        function open() {
-            calendar.hidden = false;
-            field.classList.add("is-open");
-            render();
-            document.addEventListener("click", onOutsideClick);
-        }
-
-        function close() {
-            calendar.hidden = true;
-            field.classList.remove("is-open");
-            document.removeEventListener("click", onOutsideClick);
-        }
-
-        function onOutsideClick(event) {
-            if (!field.contains(event.target)) close();
-        }
-
-        trigger.addEventListener("click", () => {
-            calendar.hidden ? open() : close();
-        });
-
-        prevBtn?.addEventListener("click", (event) => {
-            event.stopPropagation();
-            viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
-            render();
-        });
-
-        nextBtn?.addEventListener("click", (event) => {
-            event.stopPropagation();
-            viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
-            render();
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && !calendar.hidden) close();
-        });
-
-        form.addEventListener("reset", () => {
-            selectedDate = null;
-            trigger.value = "";
-            hiddenInput.value = "";
-            viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
-            close();
-        });
-    })();
-
+    // FILE PREVIEW
     reportInput?.addEventListener("change", (e) => {
         const file = e.target.files[0];
         filePreviewDiv.innerHTML = "";
         compressedFile = null;
-        if (!file) return;
 
-        window.trackEvent?.("report_uploaded", {});
+        if (!file) return;
 
         const isImage = file.type.startsWith("image/");
         const isPdf = file.type === "application/pdf";
 
+        window.trackEvent?.("report_uploaded", {
+            file_type: isPdf ? "pdf" : isImage ? "image" : "other"
+        });
+
         if (isImage) {
+            // Show compression status
             filePreviewDiv.innerHTML = `
                 <div class="preview-container">
                     <div style="text-align: center; padding: 20px;">
@@ -683,19 +864,39 @@ if (menuToggle && mainNav) {
 
             (async function () {
                 try {
+                    // Compress the image
+                    console.time("compression");
+
                     compressedFile = await compressImage(file);
+
+                    console.timeEnd("compression");
+
+                    if (!compressedFile) {
+                        throw new Error("Compression failed");
+                    }
+
+                    const fileName = file.name;
+                    const originalSizeKB = (file.size / 1024).toFixed(2);
+                    const compressedSizeKB = (compressedFile.size / 1024).toFixed(2);
+                    const compressionPercent = Math.round(
+                        ((file.size - compressedFile.size) / file.size) * 100
+                    );
+
+                    // Create preview from compressed blob
                     const previewReader = new FileReader();
                     previewReader.onload = (event) => {
                         filePreviewDiv.innerHTML = `
                         <div class="preview-container">
                             <img src="${event.target.result}" alt="Preview" class="preview-image" />
                             <div class="preview-info">
-                                <p class="preview-name">${file.name}</p>
-                                <p class="preview-size">${(compressedFile.size / 1024).toFixed(2)} KB</p>
+                                <p class="preview-name">${fileName}</p>
+                                <p class="preview-size">${compressedSizeKB} KB</p>
                             </div>
-                        </div>`;
+                        </div>
+                    `;
                     };
                     previewReader.readAsDataURL(compressedFile);
+
                 } catch (err) {
                     console.error("Compression error:", err);
                     filePreviewDiv.innerHTML = `
@@ -703,52 +904,106 @@ if (menuToggle && mainNav) {
                         <div style="text-align: center; padding: 20px; color: #f44336;">
                             <p>Error compressing image. Please try another file.</p>
                         </div>
-                    </div>`;
+                    </div>
+                `;
                 }
             })();
+
         } else if (isPdf) {
-            compressedFile = file;
+            // PDFs are not compressed, just show preview
+            const fileSize = (file.size / 1024).toFixed(2);
+            compressedFile = file; // Use original PDF
+
             filePreviewDiv.innerHTML = `
                 <div class="preview-container">
-                    <div class="preview-pdf"><i class="fa-solid fa-file-pdf"></i></div>
+                    <div class="preview-pdf">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
                     <div class="preview-info">
                         <p class="preview-name">${file.name}</p>
-                        <p class="preview-size">${(file.size / 1024).toFixed(2)} KB</p>
+                        <p class="preview-size">${fileSize} KB</p>
                     </div>
-                </div>`;
+                </div>
+            `;
+        }
+    });
+
+    // LOAD SLOTS API
+    preferredDateInput?.addEventListener("change", async () => {
+
+        const selectedDate = preferredDateInput.value;
+
+        if (!selectedDate) return;
+
+        try {
+
+            const formData = new FormData();
+
+            formData.append("UserId", doctorId);
+            formData.append("Date", selectedDate);
+            formData.append("Type", appointmentType);
+
+            const response = await fetch(`${API_BASE}/api/Patient_Appointment/getslots`, {
+                method: "POST",
+                body: formData
+            });
+            console.log(response);
+
+            const slots = await response.json();
+
+            preferredTimeSelect.innerHTML =
+                `<option value="">Select Time Slot</option>`;
+
+            if (!slots || slots.length === 0) {
+
+                preferredTimeSelect.innerHTML =
+                    `<option value="">No Slots Available</option>`;
+
+                return;
+            }
+
+            slots.forEach(slot => {
+                preferredTimeSelect.innerHTML +=
+                    `<option value="${slot.id}" data-label="${slot.label}">${slot.label}</option>`;
+            });
+
+        } catch (err) {
+
+            console.error(err);
+
         }
     });
 
     let isSubmitting = false;
 
     form.addEventListener("submit", async (event) => {
+
         event.preventDefault();
-        if (isSubmitting) return;
+
+        if (isSubmitting) {
+            return;
+        }
 
         clearErrors();
-
-        if (iti) {
-            await iti.promise;
-        }
 
         const fullName = form.fullName.value.trim();
         const email = form.email.value.trim();
         const phone = form.phone.value.trim();
-        const fullPhone = phone;
         const preferredDate = form.preferredDate.value;
         const preferredTime = form.preferredTime.value;
+        const selectedTimeOption = preferredTimeSelect.selectedOptions[0];
+        const preferredTimeLabel = selectedTimeOption ? selectedTimeOption.dataset.label : "";
         const reason = form.reason.value.trim();
-        const report = form.report.value.trim();
+        //const report = form.report.value.trim();
+        const consentGiven = form.consentCheckbox.checked;
 
         let isValid = true;
 
         if (!fullName) {
             showError("fullName", "Please enter your full name.");
             isValid = false;
-        } else if (!validateFullName(fullName)) {
-            showError("fullName", "Name should contain only letters.");
-            isValid = false;
         }
+
         if (!email) {
             showError("email", "Please enter your email address.");
             isValid = false;
@@ -756,13 +1011,15 @@ if (menuToggle && mainNav) {
             showError("email", "Please enter a valid email address.");
             isValid = false;
         }
+
         if (!phone) {
             showError("phone", "Please enter your phone number.");
             isValid = false;
-        } else if (!validatePhone(phone)) {
+        } else if (iti && phoneUtilsReady && !iti.isValidNumber()) {
             showError("phone", "Please enter a valid phone number.");
             isValid = false;
         }
+
         if (!preferredDate) {
             showError("preferredDate", "Please select a preferred date.");
             isValid = false;
@@ -770,12 +1027,27 @@ if (menuToggle && mainNav) {
             showError("preferredDate", "Date cannot be in the past.");
             isValid = false;
         }
+
         if (!preferredTime) {
             showError("preferredTime", "Please select a time slot.");
             isValid = false;
         }
+
         if (!reason || reason.length < 10) {
             showError("reason", "Please provide a brief description (min 10 characters).");
+            isValid = false;
+        }
+
+        //if (!report || report.length == 0) {
+        //    showError("report", "Please provide a image");
+        //    isValid = false;
+        //}
+
+        // Bug fix: the form has `novalidate`, so the native `required` on the
+        // consent checkbox was never enforced and nothing here checked it —
+        // users could submit without consenting. Now actually validated.
+        if (!consentGiven) {
+            showError("consentCheckbox", "Please provide consent to proceed.");
             isValid = false;
         }
 
@@ -787,61 +1059,173 @@ if (menuToggle && mainNav) {
         filePreviewDiv.style.display = "none";
         bookingLoader.setAttribute("aria-hidden", "false");
 
-        await new Promise((resolve) => setTimeout(resolve, 900));
+        try {
+            const formData = new FormData();
 
-        const msg = appointmentType === "online"
-            ? "Your online consultation has been booked successfully. (Demo mode)"
-            : "Your clinic appointment has been booked successfully at Hope Cancer Care Centre. (Demo mode)";
+            formData.append("DoctorId", doctorId);
+            formData.append("FullName", fullName);
+            formData.append("Phone", phone);
+            formData.append("Email", email);
+            formData.append("Date", preferredDate);
+            formData.append("Type", appointmentType);
 
-        showPopup(msg, true);
-        window.trackEvent?.("booking_submitted", { appointment_type: appointmentType });
-        form.reset();
-        if (iti) {
-            iti.setNumber("");
-            iti.setSelectedCountry("in");
+            const dayName = new Date(preferredDate).toLocaleDateString("en-US", { weekday: "long" });
+
+            formData.append("Day", dayName);
+            formData.append("SlotId", preferredTime);
+            formData.append("Time", preferredTimeLabel);
+            formData.append("Reason", reason);
+
+            // Use compressed file if available
+            if (compressedFile) {
+                formData.append("Upload", compressedFile);
+            }
+
+            const response = await fetch(`${API_BASE}/api/Patient_Appointment/patient_appointment`, {
+                method: "POST",
+                body: formData
+            });
+
+            let result;
+            let rawText = await response.text();
+
+            try {
+                result = JSON.parse(rawText);
+            } catch {
+                result = null;
+            }
+
+            const appointmentTypeResult = result?.type;
+            const addressMessage = result?.message;
+
+            if (appointmentTypeResult === "online") {
+                const meetLink = result?.meetLink;
+                const msg = meetLink
+                    ? `Your appointment is confirmed.<br/><br/>Please join 5 minutes before your scheduled time. Check your email for details.`
+                    : "Your online consultation has been booked successfully.";
+                showPopup(msg, true);
+                window.__trackBookingSuccess?.("online");
+            } else if (appointmentTypeResult === "offline") {
+                const locationHtml = `
+        <strong>Appointment Location:</strong><br/>
+        ${clinicName || ""}<br/>
+        ${clinicAddress || ""}<br/>
+        ${clinicDistrict || ""}${clinicState ? ", " + clinicState : ""}${clinicPincode ? " – " + clinicPincode : ""}
+    `;
+                const msg = `Hello ${fullName},<br/><br/>
+    Your Appointment is Confirmed!<br/><br/>
+    ${locationHtml}<br/><br/>
+    Confirmation details have been sent to your registered email<br/>
+    Please arrive 15 minutes before your scheduled appointment to complete any necessary check-in.
+`;
+                showPopup(msg, true);
+                window.__trackBookingSuccess?.("offline");
+            } else if (!response.ok) {
+                showPopup(addressMessage || "Something went wrong while booking your appointment.", false);
+                return;
+            }
+
+            form.reset();
+            filePreviewDiv.innerHTML = "";
+            clearErrors();
+            compressedFile = null;
+            closeModal();
+
+        } catch (err) {
+            console.error(err);
+            alert("Something went wrong.");
+
         }
-        filePreviewDiv.innerHTML = "";
-        clearErrors();
-        compressedFile = null;
-        closeModal();
-
-        isSubmitting = false;
-        submitBtn.disabled = false;
-        submitBtn.style.display = "block";
-        filePreviewDiv.style.display = "block";
-        bookingLoader.setAttribute("aria-hidden", "true");
+        finally {
+            isSubmitting = false;
+            submitBtn.disabled = false;
+            submitBtn.style.display = "block";
+            filePreviewDiv.style.display = "block";
+            bookingLoader.setAttribute("aria-hidden", "true");
+        }
     });
 
     function showPopup(message, success = true) {
+
+        // Remove existing popup if any
         document.getElementById("customPopup")?.remove();
 
         const popup = document.createElement("div");
+
         popup.id = "customPopup";
+
         popup.innerHTML = `
     <div style="
-        position:fixed; top:0; left:0; width:100%; height:100%;
-        background:rgba(0,0,0,.5); display:flex; justify-content:center;
-        align-items:center; z-index:999999;">
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,.5);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        z-index:999999;
+    ">
         <div style="
-            background:#fff; width:380px; max-width:90%; border-radius:12px;
-            padding:30px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,.3);
-            font-family:Sora,sans-serif;">
-            <div style="font-size:65px; margin-bottom:15px; color:${success ? "#0f766e" : "#dc3545"};">
+            background:#fff;
+            width:800px;
+            max-width:90%;
+            border-radius:12px;
+            padding:30px;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(0,0,0,.3);
+            animation:popupScale .25s ease;
+            font-family:Arial,sans-serif;
+        ">
+
+            <div style="
+                font-size:65px;
+                margin-bottom:15px;
+                color:${success ? "#28a745" : "#dc3545"};
+            ">
                 <i class="fa-solid ${success ? "fa-circle-check" : "fa-circle-xmark"}"></i>
             </div>
-            <h2 style="margin:0 0 15px; color:#142824;">${success ? "Success" : "Error"}</h2>
-            <p style="margin:0 0 25px; color:#5a6f6a; line-height:1.5;">${message}</p>
-            <button id="popupOkBtn" style="
-                background:${success ? "#0f766e" : "#dc3545"}; color:#fff; border:none;
-                padding:10px 35px; border-radius:999px; cursor:pointer; font-size:16px;">
+
+            <h2 style="
+                margin:0 0 15px;
+                color:#333;
+            ">
+                ${success ? "Success" : "Error"}
+            </h2>
+
+            <p style="
+                margin:0 0 25px;
+                color:#666;
+                line-height:1.5;
+            ">
+                ${message}
+            </p>
+
+            <button id="popupOkBtn"
+                style="
+                    background:${success ? "#28a745" : "#dc3545"};
+                    color:#fff;
+                    border:none;
+                    padding:10px 35px;
+                    border-radius:6px;
+                    cursor:pointer;
+                    font-size:15px;
+                ">
                 OK
             </button>
+
         </div>
-    </div>`;
+    </div>
+    `;
 
         document.body.appendChild(popup);
-        document.getElementById("popupOkBtn").onclick = () => popup.remove();
+
+        document.getElementById("popupOkBtn").onclick = () => {
+            popup.remove();
+        };
     }
+
 })();
 
 /* ==========================================================================
@@ -1007,5 +1391,75 @@ if (menuToggle && mainNav) {
 
     item.classList.toggle("is-active", !isActive);
     btn.setAttribute("aria-expanded", String(!isActive));
+  });
+})();
+
+// DigiDr Stat Counter
+// Counts each [data-counter] element up from 0 to the number in its own text
+// (e.g. "15", "15+", "20k+", "20,000+"), keeping the suffix and commas.
+// The real value is in the HTML, so it shows without JS; text that doesn't
+// start with a number is left alone. Runs once, when the stat scrolls into
+// view. With prefers-reduced-motion the final value is shown straight away.
+(function () {
+  var els = document.querySelectorAll("[data-counter]");
+  if (!els.length) return;
+
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+  var DURATION = 1600;
+
+  function parse(el) {
+    var text = el.textContent.trim();
+    var match = text.match(/^(\d[\d,]*(?:\.\d+)?)(.*)$/);
+    if (!match) return null;
+    var numText = match[1];
+    var target = parseFloat(numText.replace(/,/g, ""));
+    if (!isFinite(target)) return null;
+    return {
+      target: target,
+      suffix: match[2],
+      commas: numText.indexOf(",") !== -1,
+      decimals: (numText.split(".")[1] || "").length,
+      original: text
+    };
+  }
+
+  function format(value, info) {
+    var text = info.decimals ? value.toFixed(info.decimals) : String(Math.round(value));
+    if (info.commas) {
+      var parts = text.split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      text = parts.join(".");
+    }
+    return text + info.suffix;
+  }
+
+  function animate(el, info) {
+    var start = null;
+    function step(now) {
+      if (start === null) start = now;
+      var progress = Math.min((now - start) / DURATION, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = progress < 1 ? format(info.target * eased, info) : info.original;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      animate(entry.target, entry.target.__digidrCounter);
+    });
+  }, { threshold: 0.4 });
+
+  els.forEach(function (el) {
+    var info = parse(el);
+    if (!info) return;
+    el.__digidrCounter = info;
+    el.textContent = format(0, info);
+    observer.observe(el);
   });
 })();

@@ -28,26 +28,26 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | Dr. Vikram Rao Diagnostic Imaging</title>
-  <meta name="description" content="Privacy policy for Dr. Vikram Rao's diagnostic imaging practice, covering how patient and website data is collected, used, and protected." />
+  <title>Privacy Policy | Dr. {{full_name}} Diagnostic Imaging</title>
+  <meta name="description" content="Privacy policy for Dr. {{full_name}}'s diagnostic imaging practice, covering how patient and website data is collected, used, and protected." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230b1a2c'/%3E%3Cg fill='none' stroke='%2322d3ee' stroke-width='3' stroke-linecap='round'%3E%3Ccircle cx='32' cy='32' r='16' stroke-dasharray='4 6'/%3E%3Cpath d='M32 15v11M32 38v11M15 32h11M38 32h11'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='4.5' fill='%2322d3ee'/%3E%3C/svg%3E" />
   <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href="https://www.example.com/radiology-1/privacy-policy.html" /><!-- TODO: replace with live production domain before launch -->
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Dr. Vikram Rao Diagnostic Imaging" />
-  <meta property="og:title" content="Privacy Policy | Dr. Vikram Rao Diagnostic Imaging" />
-  <meta property="og:description" content="Privacy policy for Dr. Vikram Rao's diagnostic imaging practice, covering how patient and website data is collected, used, and protected." />
+  <meta property="og:site_name" content="Dr. {{full_name}} Diagnostic Imaging" />
+  <meta property="og:title" content="Privacy Policy | Dr. {{full_name}} Diagnostic Imaging" />
+  <meta property="og:description" content="Privacy policy for Dr. {{full_name}}'s diagnostic imaging practice, covering how patient and website data is collected, used, and protected." />
   <meta property="og:url" content="https://www.example.com/radiology-1/privacy-policy.html" />
-  <meta property="og:image" content="https://www.example.com/radiology-1/assets/dr-arjun-mehta.jpg" />
+  <meta property="og:image" content="{{profile}}" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy Policy | Dr. Vikram Rao Diagnostic Imaging" />
-  <meta name="twitter:description" content="Privacy policy for Dr. Vikram Rao's diagnostic imaging practice, covering how patient and website data is collected, used, and protected." />
-  <meta name="twitter:image" content="https://www.example.com/radiology-1/assets/dr-arjun-mehta.jpg" />
+  <meta name="twitter:title" content="Privacy Policy | Dr. {{full_name}} Diagnostic Imaging" />
+  <meta name="twitter:description" content="Privacy policy for Dr. {{full_name}}'s diagnostic imaging practice, covering how patient and website data is collected, used, and protected." />
+  <meta name="twitter:image" content="{{profile}}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -61,11 +61,11 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
-  <link rel="stylesheet" href="./styles/legal.css" />
+  <link rel="stylesheet" href="{{path}}/styles/style.css" />
+  <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+  <link rel="stylesheet" href="{{path}}/styles/legal.css" />
 </head>
-<body>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
   <main class="legal-page">
     <section class="blog-detail-section legal-section">
       <div class="container">
@@ -81,11 +81,11 @@
             We respect patient privacy and handle personal information with care, transparency, and
             appropriate safeguards.
           </p>
-          <p class="legal-effective-date"><strong>Effective Date:</strong> [Insert Date]</p>
+          <p class="legal-effective-date"><strong>Effective Date:</strong> {{date}}</p>
 
           <div class="blog-detail-content">
             <p>
-              This Privacy Policy explains how <strong>[Doctor/Clinic Name]</strong> ("we", "our", "us")
+              This Privacy Policy explains how <strong>Dr. {{full_name}}</strong> ("we", "our", "us")
               collects, uses, stores, and protects personal information when you use this website and
               related consultation or appointment services.
             </p>
@@ -163,10 +163,10 @@
 
             <h2>11) Contact Us</h2>
             <div class="legal-contact-card">
-              <p><strong>[Doctor/Clinic Name]</strong></p>
-              <p>Email: [Insert Email]</p>
-              <p>Phone: [Insert Phone Number]</p>
-              <p>Address: [Insert Clinic Address]</p>
+              <p><strong>Dr. {{full_name}}</strong></p>
+              <p>Email: <a href="mailto:{{email}}">{{email}}</a></p>
+              <p>Phone: <a href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a></p>
+              <p>Address: {{clinicname}}, {{address}}, {{district}}, {{state}} - {{pincode}}</p>
             </div>
           </div>
         </article>
@@ -186,30 +186,29 @@
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-x" aria-label="X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website">
-            <i class="fa-solid fa-globe"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+          {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
         </div>
       </div>
 
@@ -219,12 +218,12 @@
         <a href="terms-of-service.html">Terms of Service</a>
       </div>
 
-      <p class="footer-copy">[Doctor/Clinic Name]. All rights reserved</p>
+      <p class="footer-copy">Dr. {{full_name}}. All rights reserved</p>
     </div>
   </footer>
 
-  <script src="./script/analytics.js"></script>
-  <script src="./script/index.js"></script>
-  <script src="./script/chatbot.js" defer></script>
+  <script src="{{path}}/script/analytics.js"></script>
+  <script src="{{path}}/script/index.js"></script>
+  <script src="{{path}}/script/chatbot.js" defer></script>
 </body>
 </html>

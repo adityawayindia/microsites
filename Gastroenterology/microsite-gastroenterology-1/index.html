@@ -29,23 +29,23 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Arjun Mehta | Gastroenterologist & Hepatologist</title>
-  <meta name="description" content="Dr. Arjun Mehta is a board-certified gastroenterologist and hepatologist offering comprehensive digestive and liver care." />
+  <title>Dr. {{full_name}} | {{speciality}}</title>
+  <meta name="description" content="Dr. {{full_name}} is a board-certified gastroenterologist and hepatologist offering comprehensive digestive and liver care." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dr. Arjun Mehta | Gastroenterologist" />
-  <meta property="og:description" content="Dr. Arjun Mehta, Gastroenterologist." />
-  <meta property="og:image" content="assets/dr-arjun-mehta.jpg" />
+  <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta property="og:image" content="{{profile}}" />
   <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:alt" content="Dr. Arjun Mehta, Gastroenterologist" />
+  <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dr. Arjun Mehta | Gastroenterologist" />
-  <meta name="twitter:description" content="Dr. Arjun Mehta, Gastroenterologist." />
-  <meta name="twitter:image" content="assets/dr-arjun-mehta.jpg" />
+  <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta name="twitter:image" content="{{profile}}" />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2314453d'/%3E%3Cpath d='M12 32h8l4-11 6 22 5-16 3 5h14' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,22 +56,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
-  <link rel="stylesheet" href="styles/style.css" />
-  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+  <link rel="stylesheet" href="{{path}}/styles/style.css" />
+  <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
 </head>
 
-<body>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
   <header class="site-header">
     <div class="container navbar">
-      <a href="index.html" class="brand" aria-label="Dr. Arjun Mehta">
+      <a href="index.html" class="brand" aria-label="Dr. {{full_name}}">
         <span class="avatar" aria-hidden="true">
-          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" />
+          <img src="{{profile}}" alt="Dr. {{full_name}}" />
         </span>
         <span class="brand-text">
-          <span class="brand-name">Dr. Arjun Mehta</span>
-          <span class="brand-role">Gastroenterologist</span>
+          <span class="brand-name">Dr. {{full_name}}</span>
+          <span class="brand-role">{{speciality}}</span>
         </span>
       </a>
 
@@ -89,7 +89,9 @@
         <a href="#testimonials">Testimonials</a>
         <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
+        {{#hasBlog}}
         <a href="blog.html">Blog</a>
+        {{/hasBlog}}
       </nav>
 
       <a href="#" class="cta-btn">
@@ -112,22 +114,24 @@
             - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
             - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
+{{#has_banner}}
     <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule" data-banner-active="true"
-      data-banner-start="2026-08-11T00:00:00+05:30" data-banner-end="2026-08-15T23:59:59+05:30"
-      aria-label="Main Clinic Banner" data-banner-src="assets/gastro-independence-banner.svg" data-banner-src-mobile=""
-      data-banner-alt="Gastroenterology Independence Day care banner" data-banner-href="#">
+      data-banner-start="{{banner_start}}" data-banner-end="{{banner_end}}"
+      aria-label="Main Clinic Banner" data-banner-src="{{banner_src}}" data-banner-src-mobile="{{banner_src_mobile}}"
+      data-banner-alt="{{banner_alt}}" data-banner-href="#">
       <div class="container digidr-banner-container single-image-banner-container">
         <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
           <div class="digidr-banner-wrap single-image-banner-wrap">
             <picture>
-              <source media="(max-width: 768px)" srcset="assets/gastro-independence-banner.svg" />
-              <img src="assets/gastro-independence-banner.svg" alt="Gastroenterology Independence Day care banner"
+              <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
+              <img src="{{banner_src}}" alt="{{banner_alt}}"
                 class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
             </picture>
           </div>
         </a>
       </div>
     </div>
+    {{/has_banner}}
     <!-- END OF MODULAR BANNER MODULE -->
     <div class="hero-mesh" aria-hidden="true"></div>
     <!-- Floating Gastroenterology Theme SVGs -->
@@ -188,47 +192,51 @@
           Gastroenterology
         </div>
 
-        <h1 class="hero-title">Dr. Arjun Mehta</h1>
-        <p class="hero-subtitle"><i class="fa-solid fa-user-graduate"></i> <strong>Qualification:</strong> MD, DM (Gastroenterology) · Board Certified Gastroenterologist</p>
-        <p class="mic"><i class="fa-solid fa-id-card"></i> <strong>MCI Regd No:</strong> MCI-GI-2012-73892</p>
+        <h1 class="hero-title">Dr. {{full_name}}</h1>
+        <p class="hero-subtitle"><i class="fa-solid fa-user-graduate"></i> <strong>Qualification:</strong> {{awards}} &middot; {{education}}</p>
+        {{#hasmic}}<p class="mic"><i class="fa-solid fa-id-card"></i> <strong>MCI Regd No:</strong> {{mci}}</p>{{/hasmic}}
 
         <div class="hero-stats-grid">
           <article class="hero-stat-box">
             <i class="fa-solid fa-award"></i>
-            <strong>12+ Years</strong>
+            <strong data-counter>{{experience}}</strong>
             <span>Experience</span>
           </article>
           <article class="hero-stat-box">
             <i class="fa-solid fa-users"></i>
-            <strong>9,400+</strong>
+            <strong data-counter>{{totalpatient}}</strong>
             <span>Patients Treated</span>
           </article>
           <article class="hero-stat-box">
             <i class="fa-solid fa-star"></i>
-            <strong>99%</strong>
+            <strong data-counter>99%</strong>
             <span>Patient Rating</span>
           </article>
         </div>
 
         <p class="languages">
-          <i class="fa-solid fa-language"></i> <strong>Language:</strong> English, Hindi, Kannada
+          <i class="fa-solid fa-language"></i> <strong>Language:</strong> {{languages}}
         </p>
 
         <div class="hero-actions">
           <a href="#contact-us" class="contact-btn">Contact Now</a>
           <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social social-facebook" aria-label="Facebook Page"><i
-                class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i
-                class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="social social-instagram" aria-label="Instagram"><i
-                class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i
-                class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" class="social social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-            <a href="https://wa.me/918045678901" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            {{#hasFacebookPage}}<a href="{{facebookpage}}" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+            {{#noFacebook}}<span class="social social-facebook is-disabled" aria-label="Facebook Page not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebook}}
+            {{#hasFacebook}}<a href="{{facebook}}" class="social social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+            {{#noFacebook}}<span class="social social-facebook-alt is-disabled" aria-label="Facebook Profile not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+            {{#hasInstagram}}<a href="{{instagram}}" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+            {{#noInstagram}}<span class="social social-instagram is-disabled" aria-label="Instagram not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+            {{#hasTwitter}}<a href="{{twitter}}" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+            {{#noTwitter}}<span class="social social-x is-disabled" aria-label="X not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+            {{#hasLinkedin}}<a href="{{linkedin}}" class="social social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+            {{#noLinkedin}}<span class="social social-linkedin is-disabled" aria-label="LinkedIn not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+            {{#hasWebsite}}<a href="{{website}}" class="social social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+            {{#noWebsite}}<span class="social social-website is-disabled" aria-label="Website not linked" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+            {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+            {{#noWhatsapp}}<span class="social social-whatsapp is-disabled" aria-label="WhatsApp not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+            {{#hasYoutube}}<a href="{{youtube}}" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+            {{#noYoutube}}<span class="social social-youtube is-disabled" aria-label="YouTube not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
           </div>
         </div>
       </div>
@@ -251,7 +259,7 @@
       <!-- Profile Image Shifted Here -->
       <div class="about-visual">
         <div class="about-portrait-frame">
-          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" class="about-image" />
+          <img src="{{profile}}" alt="Dr. {{full_name}}" class="about-image" />
         </div>
       </div>
 
@@ -259,7 +267,10 @@
       <div class="about-content">
         <div class="about-intro">
           <p class="about-kicker"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> About the Specialist</p>
-          <h2 class="about-title">Gut health. Advanced diagnostics. Compassionate healing.</h2>
+          <h2 class="about-title">
+            {{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}
+          {{#no_about_section_title}}Gut health. Advanced diagnostics. Compassionate healing.{{/no_about_section_title}}
+          </h2>
           <!-- <p class="about-subtitle">
             Expert clinical care for digestive disorders, liver diseases, and diagnostic endoscopy solutions.
           </p> -->
@@ -268,14 +279,7 @@
         <div class="about-story-new read-more-wrap">
           <div class="read-more-content">
             <p>
-              Dr. Arjun Mehta is a board-certified Gastroenterologist with over 12 years of experience in diagnosing and
-              treating complex digestive disorders, liver conditions, and inflammatory bowel diseases. He specializes in
-              advanced diagnostic endoscopy, colonoscopy, and personalized gut health therapies.
-            </p>
-            <p>
-              Recognized for his patient-centered approach and advanced clinical expertise, Dr. Mehta works closely with
-              multidisciplinary medical teams to provide evidence-based care tailored to each patient's lifestyle and
-              wellness goals.
+              {{introduction}}
             </p>
           </div>
           <button type="button" class="read-more-btn" aria-expanded="false">
@@ -292,73 +296,28 @@
       <div class="services-header">
         <p class="services-kicker"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Gastroenterology Services
         </p>
-        <h2 class="services-title">Comprehensive Digestive Care</h2>
+        <h2 class="services-title">
+          {{#has_service_section_title}}{{service_section_title}}{{/has_service_section_title}}
+          {{#no_service_section_title}}Comprehensive Digestive Care{{/no_service_section_title}}
+        </h2>
         <p class="services-subtitle">
-          Advanced diagnostic procedures, medical therapies, and targeted dietary guidance for overall gut health.
+          {{#has_service_section_subtitle}}{{service_section_subtitle}}{{/has_service_section_subtitle}}
+          {{#no_service_section_subtitle}}Advanced diagnostic procedures, medical therapies, and targeted dietary guidance for overall gut health.{{/no_service_section_subtitle}}
         </p>
       </div>
 
       <div class="services-grid-new">
+        {{#services}}
         <article class="service-card-new">
           <div class="service-icon-wrap" aria-hidden="true">
             <i class="fa-solid fa-pills"></i>
           </div>
           <div class="service-body-new">
-            <h3>Endoscopy &amp; Colonoscopy</h3>
-            <p>Advanced diagnostic and therapeutic procedures to examine the digestive tract, detect polyps, and prevent
-              colon cancer.</p>
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
           </div>
         </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true">
-            <i class="fa-solid fa-pills"></i>
-          </div>
-          <div class="service-body-new">
-            <h3>GERD &amp; Acid Reflux</h3>
-            <p>Effective management strategies for chronic heartburn, gastroesophageal reflux disease, and swallowing
-              disorders.</p>
-          </div>
-        </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true">
-            <i class="fa-solid fa-pills"></i>
-          </div>
-          <div class="service-body-new">
-            <h3>Irritable Bowel Syndrome (IBS)</h3>
-            <p>Personalized gut therapies, stress management plans, and food sensitivity assessments to alleviate
-              chronic IBS symptoms.</p>
-          </div>
-        </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true">
-            <i class="fa-solid fa-pills"></i>
-          </div>
-          <div class="service-body-new">
-            <h3>IBD Management</h3>
-            <p>Expert clinical care and advanced medical therapies for Crohn's disease, ulcerative colitis, and systemic
-              inflammation.</p>
-          </div>
-        </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true">
-            <i class="fa-solid fa-pills"></i>
-          </div>
-          <div class="service-body-new">
-            <h3>Liver &amp; Gallbladder Care</h3>
-            <p>Comprehensive evaluations and treatments for fatty liver, hepatitis, cirrhosis, and gallbladder disease.
-            </p>
-          </div>
-        </article>
-        <article class="service-card-new">
-          <div class="service-icon-wrap" aria-hidden="true">
-            <i class="fa-solid fa-pills"></i>
-          </div>
-          <div class="service-body-new">
-            <h3>Digestive Wellness &amp; Diet</h3>
-            <p>Custom nutritional consulting, microbiome health guidance, and dietary planning for optimal digestion and
-              vitality.</p>
-          </div>
-        </article>
+        {{/services}}
       </div>
     </div>
   </section>
@@ -369,7 +328,7 @@
       <!-- Left: Visual Column -->
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo"
+          <img src="https://storage.googleapis.com/microsite_buck/microsite-gastroenterology-1/assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo"
             loading="lazy" />
         </div>
       </div>
@@ -377,33 +336,55 @@
       <div class="philosophy-content">
         <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Gastroenterology Philosophy
         </p>
-        <h2 class="about-title">Digestive Health & Metabolic Wellness</h2>
+        <h2 class="about-title">
+          {{#has_philosophy_section_title}}{{philosophy_section_title}}{{/has_philosophy_section_title}}
+          {{#no_philosophy_section_title}}Digestive Health & Metabolic Wellness{{/no_philosophy_section_title}}
+        </h2>
         <p class="about-subtitle">
-          Focused on comprehensive gastrointestinal care, gut microbiota balance, and liver health.
+          {{#has_philosophy_section_subtitle}}{{philosophy_section_subtitle}}{{/has_philosophy_section_subtitle}}
+          {{#no_philosophy_section_subtitle}}Focused on comprehensive gastrointestinal care, gut microbiota balance, and liver health.{{/no_philosophy_section_subtitle}}
         </p>
         <div class="philosophy-pillars">
 
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-bacteria"></i></div>
             <div class="pillar-text">
-              <h3>Accurate Gut Diagnostics</h3>
-              <p>Advanced evaluation for acid reflux, IBS, fatty liver, and digestive disorders.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_1}}{{philosophy_section_pillar_text_1}}{{/has_philosophy_section_pillar_text_1}}
+          {{#no_philosophy_section_pillar_text_1}}Accurate Gut Diagnostics{{/no_philosophy_section_pillar_text_1}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_1}}{{philosophy_section_pillar_subtext_1}}{{/has_philosophy_section_pillar_subtext_1}}
+          {{#no_philosophy_section_pillar_subtext_1}}Advanced evaluation for acid reflux, IBS, fatty liver, and digestive disorders.{{/no_philosophy_section_pillar_subtext_1}}
+              </p>
             </div>
           </div>
 
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-stethoscope"></i></div>
             <div class="pillar-text">
-              <h3>Evidence-Based Care</h3>
-              <p>Science-backed therapeutic protocols tailored to your metabolic profile.</p>
+              <h3>
+                {{#has_philosophy_section_pillor_text_2}}{{philosophy_section_pillor_text_2}}{{/has_philosophy_section_pillor_text_2}}
+                {{#no_philosophy_section_pillor_text_2}}Evidence-Based Care{{/no_philosophy_section_pillor_text_2}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_piller_subtext_2}}{{philosophy_section_piller_subtext_2}}{{/has_philosophy_section_piller_subtext_2}}
+                {{#no_philosophy_section_piller_subtext_2}}Science-backed therapeutic protocols tailored to your metabolic profile.{{/no_philosophy_section_piller_subtext_2}}
+              </p>
             </div>
           </div>
 
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-apple-whole"></i></div>
             <div class="pillar-text">
-              <h3>Nutritional & Gut Support</h3>
-              <p>Integrated guidance on clinical nutrition, food tolerances, and gut recovery.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_3}}{{philosophy_section_pillar_text_3}}{{/has_philosophy_section_pillar_text_3}}
+          {{#no_philosophy_section_pillar_text_3}}Nutritional & Gut Support{{/no_philosophy_section_pillar_text_3}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_3}}{{philosophy_section_pillar_subtext_3}}{{/has_philosophy_section_pillar_subtext_3}}
+          {{#no_philosophy_section_pillar_subtext_3}}Integrated guidance on clinical nutrition, food tolerances, and gut recovery.{{/no_philosophy_section_pillar_subtext_3}}
+              </p>
             </div>
           </div>
         </div>
@@ -415,9 +396,13 @@
     <div class="container">
       <div class="process-header">
         <p class="about-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
-        <h2 class="about-title" style="text-align: center;">Your Digestive Care Journey</h2>
+        <h2 class="about-title" style="text-align: center;">
+          {{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}
+          {{#no_process_section_about_title}}Your Digestive Care Journey{{/no_process_section_about_title}}
+        </h2>
         <p class="about-subtitle" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
-          A systematic process for accurate diagnosis and effective digestive relief.
+          {{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}
+          {{#no_process_section_about_subtitle}}A systematic process for accurate diagnosis and effective digestive relief.{{/no_process_section_about_subtitle}}
         </p>
       </div>
 
@@ -437,8 +422,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">01</span>
-              <h3>Appointment Booking</h3>
-              <p>Schedule a consultation and share dietary logs or previous diagnostic tests.</p>
+              <h3>
+                {{#has_process_section_step_body_text_1}}{{process_section_step_body_text_1}}{{/has_process_section_step_body_text_1}}
+          {{#no_process_section_step_body_text_1}}Appointment Booking{{/no_process_section_step_body_text_1}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_1}}{{process_section_step_body_subtext_1}}{{/has_process_section_step_body_subtext_1}}
+          {{#no_process_section_step_body_subtext_1}}Schedule a consultation and share dietary logs or previous diagnostic tests.{{/no_process_section_step_body_subtext_1}}
+              </p>
             </div>
           </div>
 
@@ -454,8 +445,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">02</span>
-              <h3>Clinical Evaluation</h3>
-              <p>Detailed discussion of digestive symptoms, abdominal check, and lab review.</p>
+              <h3>
+                {{#has_process_section_step_body_text_2}}{{process_section_step_body_text_2}}{{/has_process_section_step_body_text_2}}
+          {{#no_process_section_step_body_text_2}}Clinical Evaluation{{/no_process_section_step_body_text_2}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_2}}{{process_section_step_body_subtext_2}}{{/has_process_section_step_body_subtext_2}}
+          {{#no_process_section_step_body_subtext_2}}Detailed discussion of digestive symptoms, abdominal check, and lab review.{{/no_process_section_step_body_subtext_2}}
+              </p>
             </div>
           </div>
 
@@ -471,8 +468,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">03</span>
-              <h3>Tailored Care Blueprint</h3>
-              <p>Prescription management, dietary modification, and diagnostic referrals.</p>
+              <h3>
+                {{#has_process_section_step_body_text_3}}{{process_section_step_body_text_3}}{{/has_process_section_step_body_text_3}}
+          {{#no_process_section_step_body_text_3}}Tailored Care Blueprint{{/no_process_section_step_body_text_3}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_3}}{{process_section_step_body_subtext_3}}{{/has_process_section_step_body_subtext_3}}
+          {{#no_process_section_step_body_subtext_3}}Prescription management, dietary modification, and diagnostic referrals.{{/no_process_section_step_body_subtext_3}}
+              </p>
             </div>
           </div>
 
@@ -488,8 +491,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">04</span>
-              <h3>Recovery & Monitoring</h3>
-              <p>Follow-up evaluation, symptom tracking, and long-term gut care.</p>
+              <h3>
+                {{#has_process_section_step_body_text_4}}{{process_section_step_body_text_4}}{{/has_process_section_step_body_text_4}}
+          {{#no_process_section_step_body_text_4}}Recovery & Monitoring{{/no_process_section_step_body_text_4}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_4}}{{process_section_step_body_subtext_4}}{{/has_process_section_step_body_subtext_4}}
+          {{#no_process_section_step_body_subtext_4}}Follow-up evaluation, symptom tracking, and long-term gut care.{{/no_process_section_step_body_subtext_4}}
+              </p>
             </div>
           </div>
         </div>
@@ -510,7 +519,8 @@
           Get in Touch</h2>
         <p class="contact-subtitle"
           style="margin: 0 auto; font-size: 16px; color: var(--muted, #334155); max-width: 600px; line-height: 1.6; text-align: center;">
-          Have questions or want to schedule an appointment? Reach out to our team directly.</p>
+          {{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}
+          {{#no_contact_us_subtitle}}Have questions or want to schedule an appointment? Reach out to our team directly.{{/no_contact_us_subtitle}}</p>
       </div>
       <div class="contact-layout-new">
         <aside class="contact-card-new contact-card-new--info">
@@ -521,9 +531,9 @@
               <div>
                 <h4>Address</h4>
                 <p>
-                  <strong>Metro Gastro &amp; Liver Clinic,</strong><br />
-                  3rd Floor, City General Hospital, 100 Feet Road,<br />
-                  Indiranagar, Bengaluru, Karnataka 560038
+                  <strong>{{clinicname}},</strong><br />
+                  {{address}}, {{district}},<br />
+                  {{city}}, {{state}} {{pincode}}
                 </p>
               </div>
             </div>
@@ -538,8 +548,8 @@
               <div>
                 <h4>Phone &amp; Email</h4>
                 <p>
-                  <a href="tel:+918045678901">+91-8045678901</a><br />
-                  <a href="mailto:dr.arjun@metro-gastro.care">dr.arjun@metro-gastro.care</a>
+                  <a href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+                  <a href="mailto:{{email}}">{{email}}</a>
                 </p>
               </div>
             </div>
@@ -554,10 +564,13 @@
       <div class="testimonials-header">
         <p class="testimonials-kicker"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Patient Experiences
         </p>
-        <h2 class="testimonials-title">Patient Testimonials</h2>
+        <h2 class="testimonials-title">
+          {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
+          {{#no_testimonial_title}}Patient Testimonials{{/no_testimonial_title}}
+        </h2>
         <p class="testimonials-subtitle">
-          Feedback from patients who received specialized treatment and care under our specialist for digestive and
-          liver health.
+          {{#has_testimonial_subtitle}}{{testimonial_subtitle}}{{/has_testimonial_subtitle}}
+          {{#no_testimonial_subtitle}}Feedback from patients who received specialized treatment and care under our specialist for digestive and liver health.{{/no_testimonial_subtitle}}
         </p>
       </div>
 
@@ -571,66 +584,20 @@
 
         <div class="testimonials-carousel" id="testimonialsCarousel">
           <div class="testimonials-track" id="testimonialsTrack">
+            {{#testimonials}}
             <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"Dr. Mehta diagnosed my chronic acid reflux after years of discomfort. His
-                personalized dietary advice and treatment plan changed my life."</p>
+              <p class="testimonial-quote">"{{comment}}"</p>
               <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
-                  alt="Rohan Mehta" class="testimonial-avatar" />
+                <img src="{{profile_picture}}" alt="{{patient_name}}" class="testimonial-avatar" />
                 <div>
-                  <h3 class="testimonial-name">Rohan Mehta</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <h3 class="testimonial-name">{{patient_name}}</h3>
+                  <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
+                    {{stars_html}}
                   </div>
                 </div>
               </div>
             </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"His professionalism during my preventive colonoscopy was outstanding. He
-                explained everything clearly and made me feel completely at ease."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
-                  alt="Sneha Reddy" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Sneha Reddy</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"Exceptional care for my mother's liver condition. Dr. Mehta is
-                knowledgeable, compassionate, and extremely detailed in his explanations."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80"
-                  alt="Amit Joshi" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Amit Joshi</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"A very systematic approach to managing my IBS. He doesn't just write
-                prescriptions; he focuses on long-term gut health and nutrition."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
-                  alt="Kavya Nair" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Kavya Nair</h3>
-                  <div class="testimonial-stars" aria-label="4 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
+            {{/testimonials}}
           </div>
         </div>
 
@@ -643,37 +610,23 @@
     <div class="container">
       <div class="gallery-header">
         <p class="gallery-kicker"><i class="fa-solid fa-hospital" aria-hidden="true"></i> Practice Gallery</p>
-        <h2 class="gallery-title">A Look Inside My Practice</h2>
+        <h2 class="gallery-title">
+          {{#has_gallery_section_title}}{{gallery_section_title}}{{/has_gallery_section_title}}
+          {{#no_gallery_section_title}}A Look Inside My Practice{{/no_gallery_section_title}}
+        </h2>
         <p class="gallery-subtitle">
-          A glimpse into our Gastroenterology clinic, consultation rooms, and diagnostic facilities.
+          {{#has_gallery_section_subtitle}}{{gallery_section_subtitle}}{{/has_gallery_section_subtitle}}
+          {{#no_gallery_section_subtitle}}A glimpse into our Gastroenterology clinic, consultation rooms, and diagnostic facilities.{{/no_gallery_section_subtitle}}
         </p>
       </div>
 
       <div class="gallery-grid">
-        <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/gallery-placeholder.svg" alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
+          {{#images}}
+          <figure class="gallery-item">
+              <img src="{{image}}" alt="Inside the clinic" />
+              <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          {{/images}}
       </div>
     </div>
   </section>
@@ -780,7 +733,7 @@
         </div>
       </div>
 
-      <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
+      <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
         <div class="booking-form-row">
           <div class="booking-field">
             <label for="fullName">Full Name</label>
@@ -832,11 +785,6 @@
             <div class="booking-select-wrap">
               <select id="preferredTime" name="preferredTime" required>
                 <option value="">Select Time Slot</option>
-                <option value="10:00 AM">10:00 AM</option>
-                <option value="11:30 AM">11:30 AM</option>
-                <option value="02:00 PM">02:00 PM</option>
-                <option value="04:30 PM">04:30 PM</option>
-                <option value="06:00 PM">06:00 PM</option>
               </select>
               <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
             </div>
@@ -935,41 +883,88 @@
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i
-              class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i
-              class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i
-              class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i
-              class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i
-              class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i
-              class="fa-solid fa-globe"></i></a>
-          <a href="https://wa.me/918045678901" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i
-              class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i
-              class="fa-brands fa-youtube"></i></a>
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+          {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
         </div>
       </div>
 
       <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
         <span class="footer-divider">|</span>
-        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="/{{slug}}/terms-of-service">Terms of Service</a>
       </div>
 
-      <p class="footer-copy"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Dr. Arjun Mehta. All rights
+      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
+        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+        <span class="footer-visitor-badge-label">No. of Visitor:</span>
+        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
+      </div>
+
+      <p class="footer-copy"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Dr. {{full_name}}. All rights
         reserved</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
-  <script src="script/analytics.js"></script>
-  <script src="script/index.js"></script>
-  <script src="./script/banner-module.js"></script>
-  <script src="./script/chatbot.js" defer></script>
+  <script src="{{path}}/script/analytics.js"></script>
+  <script src="{{path}}/script/index.js"></script>
+  <script src="{{path}}/script/banner-module.js"></script>
+  <script src="{{path}}/script/chatbot.js" defer></script>
+
+  <!-- Same as the live sites: hide the testimonials section (and its nav
+       links) when the backend sends no testimonials. -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("testimonialsTrack");
+
+      if (!track || track.children.length === 0) {
+        document.getElementById("testimonials")?.remove();
+
+        document
+          .querySelectorAll('a[href="#testimonials"]')
+          .forEach(x => x.remove());
+      }
+    });
+  </script>
+
+  <!-- Same as the live sites: record this visit and show the real visitor count. -->
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 
 </html>
