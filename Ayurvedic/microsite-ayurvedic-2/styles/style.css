@@ -6032,3 +6032,62 @@ select {
   .consent-modal-footer { padding: 14px 18px 20px; }
   .consent-scroll-hint { font-size: 15px; }
 }
+
+/* Social icon tooltips (hero + footer) — shows the label, or "Not Enabled"
+   on disabled icons, from each icon's data-tooltip (same as the live sites). */
+.social,
+.footer-social-icon {
+    position: relative;
+}
+
+.social::after,
+.footer-social-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--text);
+    color: var(--white);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 5px 11px;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 20;
+}
+
+.social::before,
+.footer-social-icon::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--text);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+    z-index: 20;
+}
+
+.social:hover::after,
+.social:hover::before,
+.social:focus-visible::after,
+.social:focus-visible::before,
+.footer-social-icon:hover::after,
+.footer-social-icon:hover::before,
+.footer-social-icon:focus-visible::after,
+.footer-social-icon:focus-visible::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}

@@ -1,7 +1,7 @@
 (function () {
     /* ── Config ── */
     var BOT_NAME = 'Assistant';
-    var BOT_ICON = './assets/chatbot-icon.svg';
+    var BOT_ICON = 'https://storage.googleapis.com/microsite_buck/microsite-ent-1/assets/chatbot-icon.svg';
 
     var WELCOME_MSG = "Hi there! 👋 I'm your Assistant. How can I help you today?";
 

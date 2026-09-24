@@ -28,26 +28,26 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service | Dr. Arjun Mehta Pediatric Care</title>
-  <meta name="description" content="Terms of service governing use of Dr. Arjun Mehta's pediatric care website and appointment booking services." />
+  <title>Terms of Service | Dr. {{full_name}}</title>
+  <meta name="description" content="Terms of Service for the practice of Dr. {{full_name}}, {{speciality}}." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231e3a55'/%3E%3Cpath d='M32 46s-16-9.5-16-21a9 9 0 0 1 16-5.6A9 9 0 0 1 48 25c0 11.5-16 21-16 21z' fill='%23fff'/%3E%3C/svg%3E" />
   <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://www.example.com/pediatrician-3/terms-of-service.html" /><!-- TODO: replace with live production domain before launch -->
+  <link rel="canonical" href="https://www.example.com/{{slug}}/terms-of-service.html" /><!-- TODO: replace with live production domain before launch -->
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Dr. Arjun Mehta Pediatric Care" />
-  <meta property="og:title" content="Terms of Service | Dr. Arjun Mehta Pediatric Care" />
-  <meta property="og:description" content="Terms of service governing use of Dr. Arjun Mehta's pediatric care website and appointment booking services." />
-  <meta property="og:url" content="https://www.example.com/pediatrician-3/terms-of-service.html" />
-  <meta property="og:image" content="https://www.example.com/pediatrician-3/assets/dr-arjun-mehta.jpg" />
+  <meta property="og:site_name" content="Dr. {{full_name}}" />
+  <meta property="og:title" content="Terms of Service | Dr. {{full_name}}" />
+  <meta property="og:description" content="Terms of Service for the practice of Dr. {{full_name}}, {{speciality}}." />
+  <meta property="og:url" content="https://www.example.com/{{slug}}/terms-of-service.html" />
+  <meta property="og:image" content="{{profile}}" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Terms of Service | Dr. Arjun Mehta Pediatric Care" />
-  <meta name="twitter:description" content="Terms of service governing use of Dr. Arjun Mehta's pediatric care website and appointment booking services." />
-  <meta name="twitter:image" content="https://www.example.com/pediatrician-3/assets/dr-arjun-mehta.jpg" />
+  <meta name="twitter:title" content="Terms of Service | Dr. {{full_name}}" />
+  <meta name="twitter:description" content="Terms of Service for the practice of Dr. {{full_name}}, {{speciality}}." />
+  <meta name="twitter:image" content="{{profile}}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -61,11 +61,11 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
-  <link rel="stylesheet" href="./styles/legal.css" />
+  <link rel="stylesheet" href="{{path}}/styles/style.css" />
+  <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+  <link rel="stylesheet" href="{{path}}/styles/legal.css" />
 </head>
-<body>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
   <main class="legal-page">
     <section class="blog-detail-section legal-section">
       <div class="container">
@@ -80,12 +80,12 @@
           <p class="legal-lead">
             These terms describe how visitors may use this website and clarify medical-service limitations.
           </p>
-          <p class="legal-effective-date"><strong>Effective Date:</strong> [Insert Date]</p>
+          <p class="legal-effective-date"><strong>Effective Date:</strong> {{date}}</p>
 
           <div class="blog-detail-content">
             <p>
               These Terms of Service ("Terms") govern your use of the website and services provided by
-              <strong>[Doctor/Clinic Name]</strong> ("we", "our", "us"). By using this website, you agree
+              <strong>Dr. {{full_name}}</strong> ("we", "our", "us"). By using this website, you agree
               to these Terms.
             </p>
 
@@ -126,7 +126,7 @@
             <h2>6) Intellectual Property</h2>
             <p>
               Unless stated otherwise, all website content (text, graphics, branding, and layout) belongs to
-              [Doctor/Clinic Name] and is protected by applicable intellectual property laws. Reproduction or
+              Dr. {{full_name}} and is protected by applicable intellectual property laws. Reproduction or
               commercial use requires prior written permission.
             </p>
 
@@ -139,7 +139,7 @@
 
             <h2>8) Limitation of Liability</h2>
             <p>
-              To the extent permitted by law, [Doctor/Clinic Name] is not liable for any direct, indirect,
+              To the extent permitted by law, Dr. {{full_name}} is not liable for any direct, indirect,
               incidental, or consequential losses arising from use of this website, reliance on its content, or
               inability to access services.
             </p>
@@ -164,10 +164,10 @@
 
             <h2>12) Contact Details</h2>
             <div class="legal-contact-card">
-              <p><strong>[Doctor/Clinic Name]</strong></p>
-              <p>Email: [Insert Email]</p>
-              <p>Phone: [Insert Phone Number]</p>
-              <p>Address: [Insert Clinic Address]</p>
+              <p><strong>Dr. {{full_name}}</strong></p>
+              <p>Email: <a href="mailto:{{email}}">{{email}}</a></p>
+              <p>Phone: <a href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a></p>
+              <p>Address: {{clinicname}}, {{address}}, {{district}}, {{state}} - {{pincode}}</p>
             </div>
           </div>
         </article>
@@ -187,45 +187,44 @@
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-x" aria-label="X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website">
-            <i class="fa-solid fa-globe"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+          {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
         </div>
       </div>
 
       <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
         <span class="footer-divider">|</span>
-        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="/{{slug}}/terms-of-service">Terms of Service</a>
       </div>
 
-      <p class="footer-copy">[Doctor/Clinic Name]. All rights reserved</p>
+      <p class="footer-copy">Dr. {{full_name}}. All rights reserved</p>
     </div>
   </footer>
 
-  <script src="./script/analytics.js"></script>
-  <script src="./script/index.js"></script>
-  <script src="./script/chatbot.js" defer></script>
+  <script src="{{path}}/script/analytics.js"></script>
+  <script src="{{path}}/script/index.js"></script>
+  <script src="{{path}}/script/chatbot.js" defer></script>
 </body>
 </html>

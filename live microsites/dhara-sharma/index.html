@@ -259,8 +259,8 @@
                     {{#hasWebsite}}<a href="{{website}}" class="social " aria-label="Website" data-tooltip="Website" data-ga-event="social_website_click" data-ga-label="Hero"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
                     {{#noWebsite}}<span class="social  is-disabled" aria-label="Website not linked" aria-disabled="true" data-tooltip="Not Enabled" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
 
-                    {{#hasWhatsapp}}<a href="{{whatsapp}}" class="social " aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Hero"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
-                    {{#noWhatsapp}}<span class="social is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+                    {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social " aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Hero"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+                    {{#noWhatsapp}}<span class="social  is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
 
                     {{#hasYoutube}}<a href="{{youtube}}" class="social " aria-label="YouTube" data-tooltip="YouTube" data-ga-event="social_youtube_click" data-ga-label="Hero"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
                     {{#noYoutube}}<span class="social is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
@@ -807,7 +807,7 @@
 
         <h3>Questions or Complaints</h3>
         <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
-        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> &mdash;</p>
+        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> <a href="mailto:{{email}}">{{email}}</a></p>
 
         <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
 
@@ -855,7 +855,7 @@
                         {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
                         {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="social_website_click" data-ga-label="Footer"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
                         {{#noWebsite}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
-                        {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+                        {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
                         {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
                         {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
                         {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}

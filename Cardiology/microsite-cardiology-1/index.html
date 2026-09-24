@@ -28,23 +28,22 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dr. Arjun Mehta — Cardiologist | HeartCare Clinic Pune</title>
-    <meta name="description" content="Dr. Arjun Mehta is a board-certified Interventional Cardiologist with 18+ years of experience in Pune. Book a consultation today at HeartCare Clinic." />
+    <title>Dr. {{full_name}} | {{speciality}}</title>
+    <meta name="description" content="Dr. {{full_name}}, {{speciality}}. Book a consultation online." />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Dr. Arjun Mehta | Cardiologist" />
-    <meta property="og:description" content="Dr. Arjun Mehta, Cardiologist." />
-    <meta property="og:image" content="assets/dr-arjun-mehta.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:alt" content="Dr. Arjun Mehta, Cardiologist" />
+    <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
+    <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
+    <meta property="og:image" content="{{profile}}" />
+    <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Dr. Arjun Mehta | Cardiologist" />
-    <meta name="twitter:description" content="Dr. Arjun Mehta, Cardiologist." />
-    <meta name="twitter:image" content="assets/dr-arjun-mehta.png" />
+    <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
+    <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
+    <meta name="twitter:image" content="{{profile}}" />
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23d9000f'/%3E%3Cpath d='M32 46s-16-9.5-16-21a9 9 0 0 1 16-5.6A9 9 0 0 1 48 25c0 11.5-16 21-16 21z' fill='%23fff'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,19 +55,21 @@
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/banner-module.css" />
-  <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+  <link rel="stylesheet" href="{{path}}/styles/style.css" />
+  <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
 </head>
-<body data-micrositeid="cardiology-001">
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
   <header class="site-header">
     <div class="container navbar">
-      <a href="#" class="brand" aria-label="Dr. Arjun Mehta">
+      <a href="/{{slug}}" class="brand" aria-label="Dr. {{full_name}}">
         <span class="avatar" aria-hidden="true">
-          <img src="assets/dr-arjun-mehta.png" alt="Dr. Arjun Mehta" />
+          <img src="{{profile}}" alt="Dr. {{full_name}}" />
         </span>
         <span class="brand-text">
-            <span class="brand-name">Dr. Arjun Mehta</span>
-            <span class="brand-role">Cardiologist</span>
+            <span class="brand-name">Dr. {{full_name}}</span>
+            <span class="brand-role">{{speciality}}</span>
         </span>
       </a>
 
@@ -85,7 +86,9 @@
           <a href="#testimonials">Testimonials</a>
           <a href="#gallery">Gallery</a>
           <a href="#faq">FAQ</a>
-          <a href="blog.html">Blog</a>
+          {{#hasBlog}}
+          <a href="/{{slug}}/blog">Blog</a>
+          {{/hasBlog}}
       </nav>
 
       <a href="#" class="cta-btn">
@@ -108,26 +111,27 @@
             - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
             - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
-    <div 
-      class="digidr-banner-module single-image-banner-section" 
+    {{#has_banner}}
+    <div
+      class="digidr-banner-module single-image-banner-section"
       id="digidrBannerModule"
       data-banner-active="true"
-      data-banner-start="2026-08-11T00:00:00+05:30"
-      data-banner-end="2026-08-15T23:59:59+05:30"
+      data-banner-start="{{banner_start}}"
+      data-banner-end="{{banner_end}}"
       aria-label="Main Clinic Banner"
-      data-banner-src="assets/cardiology-independence-banner.svg"
-      data-banner-src-mobile=""
-      data-banner-alt="Cardiology Independence Day heart-care banner"
+      data-banner-src="{{banner_src}}"
+      data-banner-src-mobile="{{banner_src_mobile}}"
+      data-banner-alt="{{banner_alt}}"
       data-banner-href="#"
     >
       <div class="container digidr-banner-container single-image-banner-container">
         <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
           <div class="digidr-banner-wrap single-image-banner-wrap">
             <picture>
-              <source media="(max-width: 768px)" srcset="assets/cardiology-independence-banner.svg" />
+              <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
               <img
-                src="assets/cardiology-independence-banner.svg"
-                alt="Cardiology Independence Day heart-care banner"
+                src="{{banner_src}}"
+                alt="{{banner_alt}}"
                 class="digidr-banner-img single-image-banner-img"
                 id="digidrBannerImg"
                 loading="eager"
@@ -137,6 +141,7 @@
         </a>
       </div>
     </div>
+    {{/has_banner}}
     <!-- END OF MODULAR BANNER MODULE -->
     <div class="container hero-layout">
         <div class="hero-content">
@@ -145,45 +150,62 @@
                 Expert Cardiologist
             </div>
 
-            <h1 class="hero-title">Dr. Arjun Mehta</h1>
-            <p class="hero-subtitle">MD, DM (Cardiology) &middot; Board Certified Interventional Cardiologist</p>
-            <p class="mic">MCI Registration Number: MCI-CARD-2010-58241</p>
+            <h1 class="hero-title">Dr. {{full_name}}</h1>
+            <p class="hero-subtitle">{{awards}},{{education}}</p>
+            {{#hasmic}}
+            <p class="mic">MCI Regd. No.: {{mci}}</p>
+            {{/hasmic}}
 
             <div class="hero-stats">
                 <article class="stat-card">
-                    <h3>18+</h3>
+                    <h3><span data-counter>{{experience}}</span></h3>
                     <p>Years Of Experience</p>
                 </article>
                 <article class="stat-card">
-                    <h3>12,000+</h3>
+                    <h3 data-counter>{{totalpatient}}</h3>
                     <p>Patients Treated</p>
                 </article>
                 <article class="stat-card">
-                    <h3>97%</h3>
+                    <h3 data-counter>97%</h3>
                     <p>Patient Rating</p>
                 </article>
             </div>
 
             <p class="languages">
-                <strong>Language Proficiency:</strong> English &bull; Hindi &bull; Marathi
+                <strong>Language Proficiency:</strong> {{languages}}
             </p>
 
             <div class="social-links" aria-label="Social media links">
-                <a href="https://facebook.com/drarjunmehta" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-                <span class="social social-facebook-alt is-disabled" aria-label="Facebook Profile not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>
-                <a href="https://instagram.com/drarjunmehta" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <span class="social social-x is-disabled" aria-label="X not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>
-                <a href="https://linkedin.com/in/drarjunmehta" class="social social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <span class="social social-website is-disabled" aria-label="Website not linked" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>
-                <a href="https://wa.me/919876543210" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <span class="social social-youtube is-disabled" aria-label="YouTube not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>
+                {{#hasFacebookPage}}<a href="{{facebookpage}}" class="social social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="hero_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+                {{#noFacebookPage}}<span class="social social-facebook is-disabled" aria-label="Facebook page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+                {{#hasFacebook}}<a href="{{facebook}}" class="social social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="hero_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+                {{#noFacebook}}<span class="social social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+                {{#hasInstagram}}<a href="{{instagram}}" class="social social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="hero_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+                {{#noInstagram}}<span class="social social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+                {{#hasTwitter}}<a href="{{twitter}}" class="social social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="hero_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+                {{#noTwitter}}<span class="social social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+                {{#hasLinkedin}}<a href="{{linkedin}}" class="social social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="hero_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+                {{#noLinkedin}}<span class="social social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+                {{#hasWebsite}}<a href="{{website}}" class="social social-website" aria-label="Website" data-tooltip="Website" data-ga-event="hero_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+                {{#noWebsite}}<span class="social social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+                {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="hero_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+                {{#noWhatsapp}}<span class="social social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+                {{#hasYoutube}}<a href="{{youtube}}" class="social social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="hero_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+                {{#noYoutube}}<span class="social social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
             </div>
 
             <a href="#contact-us" class="contact-btn">Contact Now</a>
         </div>
 
       <div class="hero-image-wrap">
-        <img src="assets/dr-arjun-mehta.png" alt="Dr. Arjun Mehta - Cardiologist" class="hero-image" />
+        <img src="{{profile}}" alt="Dr. {{full_name}}" class="hero-image" />
       </div>
     </div>
   </section>
@@ -196,21 +218,19 @@
                 <i class="fa-solid fa-heart-circle-plus"></i>
                 About Our Practice
             </span>
-            <h2 class="about-title">Trusted Cardiologist Expertise</h2>
+            <h2 class="about-title">
+              {{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}
+              {{#no_about_section_title}}Trusted Cardiologist Expertise{{/no_about_section_title}}
+            </h2>
           <p class="about-subtitle">
-            Clinical experience with compassionate, patient-first care.
+            {{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}
+            {{#no_about_section_subtitle}}Clinical experience with compassionate, patient-first care.{{/no_about_section_subtitle}}
           </p>
 
           <div class="about-description read-more-wrap">
             <div class="read-more-content">
               <p>
-                Dr. Arjun Mehta is a distinguished Interventional Cardiologist with over 18 years of clinical and academic excellence. He completed his MD in Internal Medicine from AIIMS New Delhi and his DM in Cardiology from KEM Hospital, Mumbai, before completing advanced fellowship training in Interventional Cardiology at the Cleveland Clinic, USA.
-              </p>
-              <p style="margin-top:12px;">
-                Dr. Mehta specialises in the diagnosis and management of complex coronary artery disease, heart failure, arrhythmias, and hypertension. He has performed over 5,000 coronary angiographies and 3,000 percutaneous coronary interventions, earning recognition as one of Pune's most sought-after cardiac specialists. His patient-centric approach combining cutting-edge diagnostics with empathetic communication has made him a trusted name in cardiovascular medicine across Maharashtra.
-              </p>
-              <p style="margin-top:12px;">
-                Dr. Mehta is an active member of the Cardiological Society of India (CSI), the American College of Cardiology (ACC), and the European Society of Cardiology (ESC). He regularly publishes research on preventive cardiology and speaks at national and international cardiac conferences.
+                {{introduction}}
               </p>
             </div>
             <button type="button" class="read-more-btn" aria-expanded="false">
@@ -230,103 +250,91 @@
           <i class="fa-solid fa-heart-pulse"></i>
           Specialized Services
         </span>
-        <h2 class="services-title">Comprehensive Cardiac Care</h2>
+        <h2 class="services-title">
+          {{#has_service_section_title}}{{service_section_title}}{{/has_service_section_title}}
+          {{#no_service_section_title}}Comprehensive Cardiac Care{{/no_service_section_title}}
+        </h2>
         <p class="services-subtitle">
-          Offering A Complete Range Of Services With State-Of-The-Art Technology And Personalized Treatment Plans.
+          {{#has_service_section_subtitle}}{{service_section_subtitle}}{{/has_service_section_subtitle}}
+          {{#no_service_section_subtitle}}Offering A Complete Range Of Services With State-Of-The-Art Technology And Personalized Treatment Plans.{{/no_service_section_subtitle}}
         </p>
       </div>
 
       <div class="services-grid">
+          {{#services}}
           <article class="service-card">
               <div class="service-icon">
                   <i class="fa-solid fa-heart-pulse"></i>
               </div>
-              <h3 class="service-card-title">Echocardiography</h3>
-              <p class="service-card-desc">Complete cardiac ultrasound imaging to assess heart structure, valve function, and blood flow with exceptional precision.</p>
+              <h3 class="service-card-title">{{title}}</h3>
+              <p class="service-card-desc">{{description}}</p>
           </article>
-
-          <article class="service-card">
-              <div class="service-icon">
-                  <i class="fa-solid fa-circle-nodes"></i>
-              </div>
-              <h3 class="service-card-title">Coronary Angiography</h3>
-              <p class="service-card-desc">Advanced X-ray imaging to visualise coronary arteries and detect blockages, guiding timely and effective interventions.</p>
-          </article>
-
-          <article class="service-card">
-              <div class="service-icon">
-                  <i class="fa-solid fa-person-running"></i>
-              </div>
-              <h3 class="service-card-title">Cardiac Stress Test</h3>
-              <p class="service-card-desc">Evaluation of heart performance under controlled physical stress to detect coronary artery disease and assess cardiac fitness.</p>
-          </article>
-
-          <article class="service-card">
-              <div class="service-icon">
-                  <i class="fa-solid fa-gauge-high"></i>
-              </div>
-              <h3 class="service-card-title">Hypertension Management</h3>
-              <p class="service-card-desc">Comprehensive blood pressure monitoring paired with personalised lifestyle and pharmacological treatment strategies.</p>
-          </article>
-
-          <article class="service-card">
-              <div class="service-icon">
-                  <i class="fa-solid fa-hospital"></i>
-              </div>
-              <h3 class="service-card-title">Heart Failure Treatment</h3>
-              <p class="service-card-desc">Expert management of acute and chronic heart failure using the latest evidence-based protocols and device therapies.</p>
-          </article>
-
-          <article class="service-card">
-              <div class="service-icon">
-                  <i class="fa-solid fa-wave-square"></i>
-              </div>
-              <h3 class="service-card-title">Arrhythmia Management</h3>
-              <p class="service-card-desc">Diagnosis and treatment of irregular heart rhythms including palpitations, atrial fibrillation, and ventricular arrhythmias.</p>
-          </article>
+          {{/services}}
       </div>
     </div>
   </section>
 
-  
+
   <section class="philosophy-section" id="philosophy">
     <div class="container philosophy-layout">
       <!-- Left: Visual Column -->
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo" loading="lazy" />
+          <img src="https://storage.googleapis.com/microsite_buck/microsite-cardiology-1/assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo" loading="lazy" />
         </div>
       </div>
       <!-- Right: Content Column -->
       <div class="philosophy-content">
         <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Cardiac Philosophy</p>
-        <h2 class="about-title">Precision Cardiac Care & Heart Longevity</h2>
+        <h2 class="about-title">
+          {{#has_philosophy_section_title}}{{philosophy_section_title}}{{/has_philosophy_section_title}}
+          {{#no_philosophy_section_title}}Precision Cardiac Care & Heart Longevity{{/no_philosophy_section_title}}
+        </h2>
         <p class="about-subtitle">
-          Dedicated to advanced cardiovascular health, early prevention, and personalized heart care.
+          {{#has_philosophy_section_subtitle}}{{philosophy_section_subtitle}}{{/has_philosophy_section_subtitle}}
+          {{#no_philosophy_section_subtitle}}Dedicated to advanced cardiovascular health, early prevention, and personalized heart care.{{/no_philosophy_section_subtitle}}
         </p>
         <div class="philosophy-pillars">
 
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-heart-pulse"></i></div>
             <div class="pillar-text">
-              <h3>Early Risk Detection</h3>
-              <p>Identifying cardiovascular risks early using modern diagnostic and imaging tools.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_1}}{{philosophy_section_pillar_text_1}}{{/has_philosophy_section_pillar_text_1}}
+                {{#no_philosophy_section_pillar_text_1}}Early Risk Detection{{/no_philosophy_section_pillar_text_1}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_1}}{{philosophy_section_pillar_subtext_1}}{{/has_philosophy_section_pillar_subtext_1}}
+                {{#no_philosophy_section_pillar_subtext_1}}Identifying cardiovascular risks early using modern diagnostic and imaging tools.{{/no_philosophy_section_pillar_subtext_1}}
+              </p>
             </div>
           </div>
 
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-stethoscope"></i></div>
             <div class="pillar-text">
-              <h3>Evidence-Based Cardiology</h3>
-              <p>Applying clinical guidelines to manage hypertension, cholesterol, and arterial health.</p>
+              <h3>
+                {{#has_philosophy_section_pillor_text_2}}{{philosophy_section_pillor_text_2}}{{/has_philosophy_section_pillor_text_2}}
+                {{#no_philosophy_section_pillor_text_2}}Evidence-Based Cardiology{{/no_philosophy_section_pillor_text_2}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_piller_subtext_2}}{{philosophy_section_piller_subtext_2}}{{/has_philosophy_section_piller_subtext_2}}
+                {{#no_philosophy_section_piller_subtext_2}}Applying clinical guidelines to manage hypertension, cholesterol, and arterial health.{{/no_philosophy_section_piller_subtext_2}}
+              </p>
             </div>
           </div>
 
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
             <div class="pillar-text">
-              <h3>Comprehensive Rehabilitation</h3>
-              <p>Guiding patients through lifestyle adjustments, stress care, and cardiac recovery.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_3}}{{philosophy_section_pillar_text_3}}{{/has_philosophy_section_pillar_text_3}}
+                {{#no_philosophy_section_pillar_text_3}}Comprehensive Rehabilitation{{/no_philosophy_section_pillar_text_3}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_3}}{{philosophy_section_pillar_subtext_3}}{{/has_philosophy_section_pillar_subtext_3}}
+                {{#no_philosophy_section_pillar_subtext_3}}Guiding patients through lifestyle adjustments, stress care, and cardiac recovery.{{/no_philosophy_section_pillar_subtext_3}}
+              </p>
             </div>
           </div>
         </div>
@@ -338,9 +346,13 @@
     <div class="container">
       <div class="process-header">
         <p class="about-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
-        <h2 class="about-title" style="text-align: center;">Your Cardiac Care Pathway</h2>
+        <h2 class="about-title" style="text-align: center;">
+          {{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}
+          {{#no_process_section_about_title}}Your Cardiac Care Pathway{{/no_process_section_about_title}}
+        </h2>
         <p class="about-subtitle" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
-          A structured, patient-first approach to diagnostic accuracy and long-term heart wellness.
+          {{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}
+          {{#no_process_section_about_subtitle}}A structured, patient-first approach to diagnostic accuracy and long-term heart wellness.{{/no_process_section_about_subtitle}}
         </p>
       </div>
 
@@ -359,8 +371,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">01</span>
-              <h3>Appointment Booking</h3>
-              <p>Schedule your appointment and share relevant cardiac history and reports.</p>
+              <h3>
+                {{#has_process_section_step_body_text_1}}{{process_section_step_body_text_1}}{{/has_process_section_step_body_text_1}}
+                {{#no_process_section_step_body_text_1}}Appointment Booking{{/no_process_section_step_body_text_1}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_1}}{{process_section_step_body_subtext_1}}{{/has_process_section_step_body_subtext_1}}
+                {{#no_process_section_step_body_subtext_1}}Schedule your appointment and share relevant cardiac history and reports.{{/no_process_section_step_body_subtext_1}}
+              </p>
             </div>
           </div>
 
@@ -375,8 +393,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">02</span>
-              <h3>Heart Examination</h3>
-              <p>Vitals check, ECG/Echo review, and detailed clinical evaluation.</p>
+              <h3>
+                {{#has_process_section_step_body_text_2}}{{process_section_step_body_text_2}}{{/has_process_section_step_body_text_2}}
+                {{#no_process_section_step_body_text_2}}Heart Examination{{/no_process_section_step_body_text_2}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_2}}{{process_section_step_body_subtext_2}}{{/has_process_section_step_body_subtext_2}}
+                {{#no_process_section_step_body_subtext_2}}Vitals check, ECG/Echo review, and detailed clinical evaluation.{{/no_process_section_step_body_subtext_2}}
+              </p>
             </div>
           </div>
 
@@ -391,8 +415,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">03</span>
-              <h3>Personalized Care Plan</h3>
-              <p>Targeted prescription, risk management, and dietary guidance.</p>
+              <h3>
+                {{#has_process_section_step_body_text_3}}{{process_section_step_body_text_3}}{{/has_process_section_step_body_text_3}}
+                {{#no_process_section_step_body_text_3}}Personalized Care Plan{{/no_process_section_step_body_text_3}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_3}}{{process_section_step_body_subtext_3}}{{/has_process_section_step_body_subtext_3}}
+                {{#no_process_section_step_body_subtext_3}}Targeted prescription, risk management, and dietary guidance.{{/no_process_section_step_body_subtext_3}}
+              </p>
             </div>
           </div>
 
@@ -407,8 +437,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">04</span>
-              <h3>Ongoing Cardiac Tracking</h3>
-              <p>Regular progress reviews, diagnostic follow-ups, and dosage adjustments.</p>
+              <h3>
+                {{#has_process_section_step_body_text_4}}{{process_section_step_body_text_4}}{{/has_process_section_step_body_text_4}}
+                {{#no_process_section_step_body_text_4}}Ongoing Cardiac Tracking{{/no_process_section_step_body_text_4}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_4}}{{process_section_step_body_subtext_4}}{{/has_process_section_step_body_subtext_4}}
+                {{#no_process_section_step_body_subtext_4}}Regular progress reviews, diagnostic follow-ups, and dosage adjustments.{{/no_process_section_step_body_subtext_4}}
+              </p>
             </div>
           </div>
         </div>
@@ -422,7 +458,8 @@
         <div class="contact-header">
           <h2>Contact Us</h2>
           <p>
-              Take The First Step Towards Better Heart Health. Schedule A Consultation With Our Specialist Today.
+              {{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}
+              {{#no_contact_us_subtitle}}Take The First Step Towards Better Heart Health. Schedule A Consultation With Our Specialist Today.{{/no_contact_us_subtitle}}
           </p>
         </div>
 
@@ -432,7 +469,7 @@
               <i class="fa-solid fa-location-dot"></i>
             </div>
             <h3>Address</h3>
-            <p><strong>HeartCare Clinic,</strong><br />204 Cardiac Tower, MG Road, Pune, Maharashtra - 411001</p>
+            <p><strong>{{clinicname}}</strong><br />{{address}}, {{district}}, {{state}} - {{pincode}}</p>
           </article>
 
           <article class="contact-item contact-item--pink">
@@ -441,8 +478,8 @@
             </div>
             <h3>Contact Information</h3>
             <p>
-                <a href="tel:+919876543210">+91-98765-43210</a><br />
-                <a href="mailto:dr.arjun@heartcareclinic.in">dr.arjun@heartcareclinic.in</a>
+                <a href="tel:+{{code}}{{phone}}" data-ga-event="contact_phone_click" data-ga-label="+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+                <a href="mailto:{{email}}" data-ga-event="contact_email_click" data-ga-label="{{email}}">{{email}}</a>
             </p>
           </article>
         </div>
@@ -457,9 +494,13 @@
           <i class="fa-solid fa-heart-pulse"></i>
           Testimonials
         </span>
-        <h2 class="testimonials-title">What Our Patients Say</h2>
+        <h2 class="testimonials-title">
+          {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
+          {{#no_testimonial_title}}What Our Patients Say{{/no_testimonial_title}}
+        </h2>
         <p class="testimonials-subtitle">
-            Read Testimonials From Patients Who Have Experienced Exceptional Care Under Our Specialist's Guidance.
+            {{#has_testimonial_subtitle}}{{testimonial_subtitle}}{{/has_testimonial_subtitle}}
+            {{#no_testimonial_subtitle}}Read Testimonials From Patients Who Have Experienced Exceptional Care Under Our Specialist's Guidance.{{/no_testimonial_subtitle}}
         </p>
       </div>
 
@@ -474,50 +515,16 @@
         <div class="testimonials-carousel" id="testimonialsCarousel">
             <div class="testimonials-track" id="testimonialsTrack">
 
+                {{#testimonials}}
                 <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-ramesh/100/100" alt="Ramesh Kumar" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Ramesh Kumar</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <img src="{{profile_picture}}" alt="{{patient_name}}" class="testimonial-avatar" />
+                    <h3 class="testimonial-name">{{patient_name}}</h3>
+                    <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
+                        {{stars_html}}
                     </div>
-                    <p class="testimonial-quote">"Dr. Mehta's expertise saved my life during my cardiac emergency. His calm demeanour and precise treatment plan gave me hope when I needed it most. I am forever grateful."</p>
+                    <p class="testimonial-quote">"{{comment}}"</p>
                 </article>
-
-                <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-priya/100/100" alt="Priya Sharma" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Priya Sharma</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"After years of unexplained chest pain, Dr. Mehta correctly diagnosed my condition in just one visit. His thorough approach and genuine compassion are truly unmatched."</p>
-                </article>
-
-                <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-sunita/100/100" alt="Sunita Patel" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Sunita Patel</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"The echocardiography and follow-up care Dr. Mehta provided was exceptional. He explained every step clearly and made me feel completely at ease throughout the process."</p>
-                </article>
-
-                <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-vikram/100/100" alt="Vikram Singh" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Vikram Singh</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"Dr. Mehta managed my hypertension beautifully. Within three months my blood pressure was completely under control. Highly recommend him to anyone with heart concerns."</p>
-                </article>
-
-                <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-anita/100/100" alt="Anita Desai" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Anita Desai</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"World-class cardiology care right here in Pune. Dr. Mehta's dedication to his patients is evident in every consultation. A truly exceptional and caring doctor."</p>
-                </article>
+                {{/testimonials}}
 
             </div>
         </div>
@@ -530,31 +537,22 @@
   <section class="gallery-section" id="gallery">
     <div class="container">
       <div class="gallery-header">
-        <h2 class="gallery-title">A Look Inside My Practice</h2>
+        <h2 class="gallery-title">
+          {{#has_gallery_section_title}}{{gallery_section_title}}{{/has_gallery_section_title}}
+          {{#no_gallery_section_title}}A Look Inside My Practice{{/no_gallery_section_title}}
+        </h2>
         <p class="gallery-subtitle">
-            A glimpse into our modern Cardiology clinic, patient areas, and advanced cardiac treatment facilities.
+            {{#has_gallery_section_subtitle}}{{gallery_section_subtitle}}{{/has_gallery_section_subtitle}}
+            {{#no_gallery_section_subtitle}}A glimpse into our modern Cardiology clinic, patient areas, and advanced cardiac treatment facilities.{{/no_gallery_section_subtitle}}
         </p>
       </div>
 
       <div class="gallery-grid">
+          {{#images}}
           <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Cardiac Catheterisation Lab" />
+              <img src="{{image}}" alt="Inside the clinic" />
           </figure>
-          <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80" alt="Echocardiography Suite" />
-          </figure>
-          <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Cardiac ICU" />
-          </figure>
-          <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Consultation Room" />
-          </figure>
-          <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&q=80" alt="Reception and Waiting Area" />
-          </figure>
-          <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Cardiac Monitoring Station" />
-          </figure>
+          {{/images}}
       </div>
     </div>
   </section>
@@ -662,7 +660,7 @@
         </div>
       </div>
 
-      <form id="bookingForm" class="booking-form" novalidate data-userid="cardiology-001">
+      <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
           <div class="booking-form-row">
               <div class="booking-field">
                   <label for="fullName">Full Name</label>
@@ -735,7 +733,7 @@
               <p class="booking-error" data-error-for="report"></p>
           </div>
 
-          
+
           <div class="booking-field booking-consent-field">
               <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
               <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
@@ -778,7 +776,7 @@
 
         <h3>Questions or Complaints</h3>
         <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
-        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> &mdash;</p>
+        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> <a href="mailto:{{email}}">{{email}}</a></p>
 
         <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
 
@@ -808,29 +806,86 @@
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          <a href="https://facebook.com/drarjunmehta" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-          <span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook Profile not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>
-          <a href="https://instagram.com/drarjunmehta" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>
-          <a href="https://linkedin.com/in/drarjunmehta" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>
-          <a href="https://wa.me/919876543210" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+          {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
         </div>
       </div>
 
       <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
         <span class="footer-divider">|</span>
-        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="/{{slug}}/terms-of-service">Terms of Service</a>
       </div>
 
-      <p class="footer-copy">Dr. Arjun Mehta. All rights reserved</p>
+      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
+        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+        <span class="footer-visitor-badge-label">No. of Visitor:</span>
+        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
+      </div>
+
+      <p class="footer-copy">Dr. {{full_name}}. All rights reserved</p>
     </div>
   </footer>
 
-  <script src="./script/banner-module.js"></script>
-  <script src="script/analytics.js"></script>
-  <script src="script/index.js"></script>
+  <script src="{{path}}/script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="{{path}}/script/analytics.js"></script>
+  <script src="{{path}}/script/index.js"></script>
+  <script src="{{path}}/script/chatbot.js" defer></script>
+
+  <!-- Same as the live sites: hide the testimonials section (and its nav
+       links) when the backend sends no testimonials. -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("testimonialsTrack");
+
+      if (!track || track.children.length === 0) {
+        document.getElementById("testimonials")?.remove();
+
+        document
+          .querySelectorAll('a[href="#testimonials"]')
+          .forEach(x => x.remove());
+      }
+    });
+  </script>
+
+  <!-- Same as the live sites: record this visit and show the real visitor count. -->
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 </html>

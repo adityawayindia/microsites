@@ -29,23 +29,22 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Arjun Mehta | Ayurvedic</title>
-  <meta name="description" content="Dr. Arjun Mehta is a board-certified Ayurvedic physician offering comprehensive holistic care." />
+  <title>Dr. {{full_name}} | {{speciality}}</title>
+  <meta name="description" content="Dr. {{full_name}}, {{speciality}}. Book a consultation online." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dr. Arjun Mehta | Ayurvedic Physician" />
-  <meta property="og:description" content="Dr. Arjun Mehta, Ayurvedic Physician." />
-  <meta property="og:image" content="assets/dr-arjun-mehta.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:alt" content="Dr. Arjun Mehta, Ayurvedic Physician" />
+  <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta property="og:image" content="{{profile}}" />
+  <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dr. Arjun Mehta | Ayurvedic Physician" />
-  <meta name="twitter:description" content="Dr. Arjun Mehta, Ayurvedic Physician." />
-  <meta name="twitter:image" content="assets/dr-arjun-mehta.jpg" />
+  <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta name="twitter:image" content="{{profile}}" />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23c25918'/%3E%3Cpath d='M32 46s-16-9.5-16-21a9 9 0 0 1 16-5.6A9 9 0 0 1 48 25c0 11.5-16 21-16 21z' fill='%23fff'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,22 +54,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
-  <link rel="stylesheet" href="styles/style.css" />
-  <link rel="stylesheet" href="styles/chatbot.css" id="chatbot-css" />
+  <link rel="stylesheet" href="{{path}}/styles/style.css" />
+  <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
 </head>
 
-<body>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
   <header class="site-header">
     <div class="container navbar">
-      <a href="index.html" class="brand" aria-label="Dr. Arjun Mehta">
+      <a href="/{{slug}}" class="brand" aria-label="Dr. {{full_name}}">
         <span class="avatar" aria-hidden="true">
-          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" />
+          <img src="{{profile}}" alt="Dr. {{full_name}}" />
         </span>
         <span class="brand-text">
-          <span class="brand-name">Dr. Arjun Mehta</span>
-          <span class="brand-role">Ayurvedic</span>
+          <span class="brand-name">Dr. {{full_name}}</span>
+          <span class="brand-role">{{speciality}}</span>
         </span>
       </a>
 
@@ -88,7 +87,9 @@
         <a href="#testimonials">Testimonials</a>
         <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
-        <a href="blog.html">Blog</a>
+        {{#hasBlog}}
+        <a href="/{{slug}}/blog">Blog</a>
+        {{/hasBlog}}
       </nav>
 
       <a href="#" class="cta-btn">
@@ -111,22 +112,25 @@
             - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
             - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
-    <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule" data-banner-active="true"
-      data-banner-start="2026-08-11T00:00:00+05:30" data-banner-end="2026-08-15T23:59:59+05:30"
-      aria-label="Main Clinic Banner" data-banner-src="assets/ayurvedic-independence-banner.svg"
-      data-banner-src-mobile="" data-banner-alt="Ayurvedic Independence Day wellness banner" data-banner-href="#">
+    {{#has_banner}}
+    <div class="digidr-banner-module single-image-banner-section" id="digidrBannerModule"
+      aria-label="Main Clinic Banner" data-banner-active="true" data-banner-start="{{banner_start}}"
+      data-banner-end="{{banner_end}}" data-banner-src="{{banner_src}}"
+      data-banner-src-mobile="{{banner_src_mobile}}" data-banner-alt="{{banner_alt}}"
+      data-banner-href="#">
       <div class="container digidr-banner-container single-image-banner-container">
         <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
           <div class="digidr-banner-wrap single-image-banner-wrap">
             <picture>
-              <source media="(max-width: 768px)" srcset="assets/ayurvedic-independence-banner.svg" />
-              <img src="assets/ayurvedic-independence-banner.svg" alt="Ayurvedic Independence Day wellness banner"
+              <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
+              <img src="{{banner_src}}" alt="{{banner_alt}}"
                 class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
             </picture>
           </div>
         </a>
       </div>
     </div>
+    {{/has_banner}}
     <!-- END OF MODULAR BANNER MODULE -->
     <div class="hero-mesh" aria-hidden="true"></div>
     <div class="hero-floating-leaves" aria-hidden="true">
@@ -147,7 +151,7 @@
       <div class="hero-visual">
         <div class="hero-visual-blob" aria-hidden="true"></div>
         <div class="hero-portrait">
-          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" class="hero-image" />
+          <img src="{{profile}}" alt="Dr. {{full_name}}" class="hero-image" />
         </div>
       </div>
 
@@ -157,51 +161,63 @@
           Expert Ayurvedic Care
         </div>
 
-        <h1 class="hero-title">Dr. Arjun Mehta</h1>
+        <h1 class="hero-title">Dr. {{full_name}}</h1>
         <p class="hero-subtitle"><i class="fa-solid fa-user-doctor" aria-hidden="true"
-            style="margin-right: 6px; color: var(--button);"></i>BAMS, MD (Ayurveda) · National Institute of Ayurveda
+            style="margin-right: 6px; color: var(--button);"></i>{{awards}},{{education}}
         </p>
+        {{#hasmic}}
         <p class="mic"><i class="fa-solid fa-id-card" aria-hidden="true"
-            style="margin-right: 6px; color: var(--button);"></i>MCI Registration Number: KA-AY-2014-48217</p>
+            style="margin-right: 6px; color: var(--button);"></i>MCI Regd. No.: {{mci}}</p>
+        {{/hasmic}}
 
         <div class="hero-stats-grid">
           <article class="hero-stat-box">
             <i class="fa-solid fa-award"></i>
-            <strong>12+ Years</strong>
+            <strong><span data-counter>{{experience}}</span> Years</strong>
             <span>Experience</span>
           </article>
           <article class="hero-stat-box">
             <i class="fa-solid fa-users"></i>
-            <strong>8,200+</strong>
+            <strong data-counter>{{totalpatient}}</strong>
             <span>Patients Treated</span>
           </article>
           <article class="hero-stat-box">
             <i class="fa-solid fa-star"></i>
-            <strong>98%</strong>
+            <strong data-counter>98%</strong>
             <span>Patient Rating</span>
           </article>
         </div>
 
         <p class="languages">
           <i class="fa-solid fa-language" aria-hidden="true"
-            style="margin-right: 6px; color: var(--button);"></i><strong>Language Proficiency:</strong> English, Hindi,
-          Kannada
+            style="margin-right: 6px; color: var(--button);"></i><strong>Language Proficiency:</strong> {{languages}}
         </p>
 
         <div class="hero-actions">
           <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social social-facebook" aria-label="Facebook Page"><i
-                class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i
-                class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="social social-instagram" aria-label="Instagram"><i
-                class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i
-                class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" class="social social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-            <a href="#" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            {{#hasFacebookPage}}<a href="{{facebookpage}}" class="social social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="hero_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+            {{#noFacebookPage}}<span class="social social-facebook is-disabled" aria-label="Facebook page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+            {{#hasFacebook}}<a href="{{facebook}}" class="social social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="hero_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+            {{#noFacebook}}<span class="social social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+            {{#hasInstagram}}<a href="{{instagram}}" class="social social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="hero_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+            {{#noInstagram}}<span class="social social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+            {{#hasTwitter}}<a href="{{twitter}}" class="social social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="hero_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+            {{#noTwitter}}<span class="social social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+            {{#hasLinkedin}}<a href="{{linkedin}}" class="social social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="hero_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+            {{#noLinkedin}}<span class="social social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+            {{#hasWebsite}}<a href="{{website}}" class="social social-website" aria-label="Website" data-tooltip="Website" data-ga-event="hero_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+            {{#noWebsite}}<span class="social social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+            {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="hero_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+            {{#noWhatsapp}}<span class="social social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+            {{#hasYoutube}}<a href="{{youtube}}" class="social social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="hero_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+            {{#noYoutube}}<span class="social social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
           </div>
         </div>
       </div>
@@ -212,23 +228,20 @@
     <div class="container">
       <div class="about-intro">
         <p class="about-kicker"><i class="fa-solid fa-leaf" aria-hidden="true"></i> About the doctor</p>
-        <h2 class="about-title">Authentic healing. Lasting wellness.</h2>
+        <h2 class="about-title">
+          {{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}
+          {{#no_about_section_title}}Authentic healing. Lasting wellness.{{/no_about_section_title}}
+        </h2>
         <p class="about-subtitle">
-          Personalized Ayurvedic consultations and therapies designed to restore balance and promote natural health.
+          {{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}
+          {{#no_about_section_subtitle}}Personalized Ayurvedic consultations and therapies designed to restore balance and promote natural health.{{/no_about_section_subtitle}}
         </p>
       </div>
 
       <div class="about-story-new read-more-wrap" style="max-width: 880px; margin: 40px auto 0;">
         <div class="read-more-content">
         <p>
-          Dr. Arjun Mehta is an Ayurvedic physician with over 12 years of experience in clinical practice,
-          Panchakarma therapies, and constitutional (Prakriti) analysis. He specializes in chronic disease management,
-          lifestyle modifications, and natural herb-based care plans tailored to each individual.
-        </p>
-        <p>
-          Recognized for his thorough approach and clear treatment plans, Dr. Mehta helps patients manage
-          long-term health concerns—ranging from metabolic disorders to musculoskeletal pain—with systematic,
-          evidence-based Ayurvedic practices.
+          {{introduction}}
         </p>
         </div>
         <button type="button" class="read-more-btn" aria-expanded="false">
@@ -253,73 +266,28 @@
     <div class="container">
       <div class="services-header">
         <p class="services-kicker"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Ayurvedic Therapies</p>
-        <h2 class="services-title">Methodical Ayurvedic Care</h2>
+        <h2 class="services-title">
+          {{#has_service_section_title}}{{service_section_title}}{{/has_service_section_title}}
+          {{#no_service_section_title}}Methodical Ayurvedic Care{{/no_service_section_title}}
+        </h2>
         <p class="services-subtitle">
-          From purification therapies and therapeutic massages to targeted pain management and dietary plans.
+          {{#has_service_section_subtitle}}{{service_section_subtitle}}{{/has_service_section_subtitle}}
+          {{#no_service_section_subtitle}}From purification therapies and therapeutic massages to targeted pain management and dietary plans.{{/no_service_section_subtitle}}
         </p>
       </div>
 
       <div class="services-grid">
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <i class="fa-solid fa-mortar-pestle"></i>
-          </div>
-          <div class="service-body">
-            <h3 class="service-card-title">Panchakarma Detox</h3>
-            <p class="service-card-desc">Traditional purification therapies to cleanse body systems and restore
-              metabolic balance.</p>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <i class="fa-solid fa-hands-holding"></i>
-          </div>
-          <div class="service-body">
-            <h3 class="service-card-title">Abhyanga Massage</h3>
-            <p class="service-card-desc">Full-body therapeutic massage using warm herbal oils tailored to your body
-              type.</p>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <i class="fa-solid fa-droplet"></i>
-          </div>
-          <div class="service-body">
-            <h3 class="service-card-title">Shirodhara Therapy</h3>
-            <p class="service-card-desc">Continuous pouring of warm herbal oil on the forehead to relieve stress and
-              improve sleep quality.</p>
-          </div>
-        </article>
+        {{#services}}
         <article class="service-card">
           <div class="service-icon" aria-hidden="true">
             <i class="fa-solid fa-leaf"></i>
           </div>
           <div class="service-body">
-            <h3 class="service-card-title">Diet &amp; Lifestyle Consultation</h3>
-            <p class="service-card-desc">Personalized dietary regimens and daily routine guidance based on
-              constitutional analysis.</p>
+            <h3 class="service-card-title">{{title}}</h3>
+            <p class="service-card-desc">{{description}}</p>
           </div>
         </article>
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <i class="fa-solid fa-kit-medical"></i>
-          </div>
-          <div class="service-body">
-            <h3 class="service-card-title">Chronic Pain Management</h3>
-            <p class="service-card-desc">Targeted herbal therapies and poultices for joint, muscular, and back pain
-              relief.</p>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-          </div>
-          <div class="service-body">
-            <h3 class="service-card-title">Skin &amp; Hair Wellness</h3>
-            <p class="service-card-desc">Natural Ayurvedic therapies and herbal applications for hair and skin
-              conditions.</p>
-          </div>
-        </article>
+        {{/services}}
       </div>
     </div>
   </section>
@@ -330,40 +298,62 @@
       <!-- Left: Visual Column -->
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo"
+          <img src="https://storage.googleapis.com/microsite_buck/microsite-ayurvedic-2/assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo"
             loading="lazy" />
         </div>
       </div>
       <!-- Right: Content Column -->
       <div class="philosophy-content">
         <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Ayurvedic Philosophy</p>
-        <h2 class="about-title">Holistic Balance & Natural Healing</h2>
+        <h2 class="about-title">
+          {{#has_philosophy_section_title}}{{philosophy_section_title}}{{/has_philosophy_section_title}}
+          {{#no_philosophy_section_title}}Holistic Balance & Natural Healing{{/no_philosophy_section_title}}
+        </h2>
         <p class="about-subtitle">
-          We believe in root-cause healing that restores harmony between mind, body, and nature.
+          {{#has_philosophy_section_subtitle}}{{philosophy_section_subtitle}}{{/has_philosophy_section_subtitle}}
+          {{#no_philosophy_section_subtitle}}We believe in root-cause healing that restores harmony between mind, body, and nature.{{/no_philosophy_section_subtitle}}
         </p>
         <div class="philosophy-pillars">
 
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-leaf"></i></div>
             <div class="pillar-text">
-              <h3>Dosha Balance & Vitality</h3>
-              <p>Restoring natural constitutional equilibrium through personalized herbal and lifestyle therapies.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_1}}{{philosophy_section_pillar_text_1}}{{/has_philosophy_section_pillar_text_1}}
+                {{#no_philosophy_section_pillar_text_1}}Dosha Balance & Vitality{{/no_philosophy_section_pillar_text_1}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_1}}{{philosophy_section_pillar_subtext_1}}{{/has_philosophy_section_pillar_subtext_1}}
+                {{#no_philosophy_section_pillar_subtext_1}}Restoring natural constitutional equilibrium through personalized herbal and lifestyle therapies.{{/no_philosophy_section_pillar_subtext_1}}
+              </p>
             </div>
           </div>
 
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
             <div class="pillar-text">
-              <h3>Natural & Herbal Remedies</h3>
-              <p>Utilizing pure, time-tested botanical formulations and authentic Ayurvedic principles.</p>
+              <h3>
+                {{#has_philosophy_section_pillor_text_2}}{{philosophy_section_pillor_text_2}}{{/has_philosophy_section_pillor_text_2}}
+                {{#no_philosophy_section_pillor_text_2}}Natural & Herbal Remedies{{/no_philosophy_section_pillor_text_2}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_piller_subtext_2}}{{philosophy_section_piller_subtext_2}}{{/has_philosophy_section_piller_subtext_2}}
+                {{#no_philosophy_section_piller_subtext_2}}Utilizing pure, time-tested botanical formulations and authentic Ayurvedic principles.{{/no_philosophy_section_piller_subtext_2}}
+              </p>
             </div>
           </div>
 
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-seedling"></i></div>
             <div class="pillar-text">
-              <h3>Mindful Wellness Guidance</h3>
-              <p>Empowering patients with dietary routines and preventive habits for enduring vitality.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_3}}{{philosophy_section_pillar_text_3}}{{/has_philosophy_section_pillar_text_3}}
+                {{#no_philosophy_section_pillar_text_3}}Mindful Wellness Guidance{{/no_philosophy_section_pillar_text_3}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_3}}{{philosophy_section_pillar_subtext_3}}{{/has_philosophy_section_pillar_subtext_3}}
+                {{#no_philosophy_section_pillar_subtext_3}}Empowering patients with dietary routines and preventive habits for enduring vitality.{{/no_philosophy_section_pillar_subtext_3}}
+              </p>
             </div>
           </div>
         </div>
@@ -383,9 +373,13 @@
     <div class="container">
       <div class="process-header">
         <p class="about-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
-        <h2 class="about-title" style="text-align: center;">Your Holistic Healing Journey</h2>
+        <h2 class="about-title" style="text-align: center;">
+          {{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}
+          {{#no_process_section_about_title}}Your Holistic Healing Journey{{/no_process_section_about_title}}
+        </h2>
         <p class="about-subtitle" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
-          A thoughtful, 4-step Ayurvedic care process designed to restore balance and long-term health.
+          {{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}
+          {{#no_process_section_about_subtitle}}A thoughtful, 4-step Ayurvedic care process designed to restore balance and long-term health.{{/no_process_section_about_subtitle}}
         </p>
       </div>
 
@@ -405,8 +399,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">01</span>
-              <h3>Prakriti Assessment</h3>
-              <p>Consultation to determine your unique bodily constitution and active imbalances.</p>
+              <h3>
+                {{#has_process_section_step_body_text_1}}{{process_section_step_body_text_1}}{{/has_process_section_step_body_text_1}}
+                {{#no_process_section_step_body_text_1}}Prakriti Assessment{{/no_process_section_step_body_text_1}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_1}}{{process_section_step_body_subtext_1}}{{/has_process_section_step_body_subtext_1}}
+                {{#no_process_section_step_body_subtext_1}}Consultation to determine your unique bodily constitution and active imbalances.{{/no_process_section_step_body_subtext_1}}
+              </p>
             </div>
           </div>
 
@@ -422,8 +422,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">02</span>
-              <h3>Clinical Exam</h3>
-              <p>Pulse assessment, lifestyle evaluation, and diagnostic review.</p>
+              <h3>
+                {{#has_process_section_step_body_text_2}}{{process_section_step_body_text_2}}{{/has_process_section_step_body_text_2}}
+                {{#no_process_section_step_body_text_2}}Clinical Exam{{/no_process_section_step_body_text_2}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_2}}{{process_section_step_body_subtext_2}}{{/has_process_section_step_body_subtext_2}}
+                {{#no_process_section_step_body_subtext_2}}Pulse assessment, lifestyle evaluation, and diagnostic review.{{/no_process_section_step_body_subtext_2}}
+              </p>
             </div>
           </div>
 
@@ -439,8 +445,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">03</span>
-              <h3>Custom Care Blueprint</h3>
-              <p>Tailored Ayurvedic formulation, Panchakarma advice, and dietary plan.</p>
+              <h3>
+                {{#has_process_section_step_body_text_3}}{{process_section_step_body_text_3}}{{/has_process_section_step_body_text_3}}
+                {{#no_process_section_step_body_text_3}}Custom Care Blueprint{{/no_process_section_step_body_text_3}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_3}}{{process_section_step_body_subtext_3}}{{/has_process_section_step_body_subtext_3}}
+                {{#no_process_section_step_body_subtext_3}}Tailored Ayurvedic formulation, Panchakarma advice, and dietary plan.{{/no_process_section_step_body_subtext_3}}
+              </p>
             </div>
           </div>
 
@@ -456,8 +468,14 @@
             </div>
             <div class="step-body">
               <span class="step-number">04</span>
-              <h3>Rejuvenation & Follow-up</h3>
-              <p>Continuous progress tracking, seasonal health adjustments, and wellness support.</p>
+              <h3>
+                {{#has_process_section_step_body_text_4}}{{process_section_step_body_text_4}}{{/has_process_section_step_body_text_4}}
+                {{#no_process_section_step_body_text_4}}Rejuvenation & Follow-up{{/no_process_section_step_body_text_4}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_4}}{{process_section_step_body_subtext_4}}{{/has_process_section_step_body_subtext_4}}
+                {{#no_process_section_step_body_subtext_4}}Continuous progress tracking, seasonal health adjustments, and wellness support.{{/no_process_section_step_body_subtext_4}}
+              </p>
             </div>
           </div>
         </div>
@@ -478,7 +496,8 @@
           Get in Touch</h2>
         <p class="contact-subtitle"
           style="margin: 0 auto; font-size: 16px; color: var(--muted, #334155); max-width: 600px; line-height: 1.6; text-align: center;">
-          Have questions or want to schedule an appointment? Reach out to our team directly.</p>
+          {{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}
+          {{#no_contact_us_subtitle}}Have questions or want to schedule an appointment? Reach out to our team directly.{{/no_contact_us_subtitle}}</p>
       </div>
       <div class="contact-layout-new">
         <aside class="contact-card-new contact-card-new--info">
@@ -489,9 +508,9 @@
               <div>
                 <h4>Address</h4>
                 <p>
-                  <strong>AyurLife Wellness Clinic,</strong><br />
-                  42, 100 Feet Road, Indiranagar,<br />
-                  Bengaluru, Karnataka 560038
+                  <strong>{{clinicname}}</strong><br />
+                  {{address}}<br />
+                  {{district}}, {{state}} - {{pincode}}
                 </p>
               </div>
             </div>
@@ -506,8 +525,8 @@
               <div>
                 <h4>Phone &amp; Email</h4>
                 <p>
-                  <a href="tel:+918045678901">+91-8045678901</a><br />
-                  <a href="mailto:dr.arjun@ayurlife.care">dr.arjun@ayurlife.care</a>
+                  <a href="tel:+{{code}}{{phone}}" data-ga-event="contact_phone_click" data-ga-label="+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+                  <a href="mailto:{{email}}" data-ga-event="contact_email_click" data-ga-label="{{email}}">{{email}}</a>
                 </p>
               </div>
             </div>
@@ -529,9 +548,13 @@
     <div class="container">
       <div class="testimonials-header">
         <p class="testimonials-kicker"><i class="fa-solid fa-heart" aria-hidden="true"></i> Patient Experiences</p>
-        <h2 class="testimonials-title">Patient Experiences</h2>
+        <h2 class="testimonials-title">
+          {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
+          {{#no_testimonial_title}}Patient Experiences{{/no_testimonial_title}}
+        </h2>
         <p class="testimonials-subtitle">
-          Real experiences from people who completed personalized Ayurvedic treatment plans under our specialist's care.
+          {{#has_testimonial_subtitle}}{{testimonial_subtitle}}{{/has_testimonial_subtitle}}
+          {{#no_testimonial_subtitle}}Real experiences from people who completed personalized Ayurvedic treatment plans under our specialist's care.{{/no_testimonial_subtitle}}
         </p>
       </div>
 
@@ -545,66 +568,20 @@
 
         <div class="testimonials-carousel" id="testimonialsCarousel">
           <div class="testimonials-track" id="testimonialsTrack">
+            {{#testimonials}}
             <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"Managed to find lasting relief from chronic lower back pain after completing
-                a structured Panchakarma treatment plan."</p>
+              <p class="testimonial-quote">"{{comment}}"</p>
               <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
-                  alt="Rohan Mehta" class="testimonial-avatar" />
+                <img src="{{profile_picture}}" alt="{{patient_name}}" class="testimonial-avatar" />
                 <div>
-                  <h3 class="testimonial-name">Rohan Mehta</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <h3 class="testimonial-name">{{patient_name}}</h3>
+                  <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
+                    {{stars_html}}
                   </div>
                 </div>
               </div>
             </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"The dietary changes and herbal advice helped resolve my long-term acid
-                reflux. Highly professional clinic."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
-                  alt="Sneha Reddy" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Sneha Reddy</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"Consulted for my father's osteoarthritis. The specialized knee treatments
-                and therapies greatly improved his mobility."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80"
-                  alt="Amit Joshi" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Amit Joshi</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"Very methodical approach. Dr. Mehta explained the root causes clearly and
-                suggested practical lifestyle adjustments."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
-                  alt="Kavya Nair" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Kavya Nair</h3>
-                  <div class="testimonial-stars" aria-label="4 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
+            {{/testimonials}}
           </div>
         </div>
 
@@ -617,43 +594,23 @@
     <div class="container">
       <div class="gallery-header">
         <p class="gallery-kicker"><i class="fa-solid fa-camera" aria-hidden="true"></i> Photo gallery</p>
-        <h2 class="gallery-title">A Look Inside My Practice</h2>
+        <h2 class="gallery-title">
+          {{#has_gallery_section_title}}{{gallery_section_title}}{{/has_gallery_section_title}}
+          {{#no_gallery_section_title}}A Look Inside My Practice{{/no_gallery_section_title}}
+        </h2>
         <p class="gallery-subtitle">
-          A glimpse into our Ayurvedic clinic, treatment spaces, and holistic wellness environment.
+          {{#has_gallery_section_subtitle}}{{gallery_section_subtitle}}{{/has_gallery_section_subtitle}}
+          {{#no_gallery_section_subtitle}}A glimpse into our Ayurvedic clinic, treatment spaces, and holistic wellness environment.{{/no_gallery_section_subtitle}}
         </p>
       </div>
 
       <div class="gallery-grid">
+        {{#images}}
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80"
-            alt="Gallery image" />
+          <img src="{{image}}" alt="Inside the clinic" />
           <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
         </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80"
-            alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=600&q=80"
-            alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80"
-            alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1447078806655-40579c2520d6?auto=format&fit=crop&w=600&q=80"
-            alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80"
-            alt="Gallery image" />
-          <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-        </figure>
+        {{/images}}
       </div>
     </div>
   </section>
@@ -760,7 +717,7 @@
         </div>
       </div>
 
-      <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
+      <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
         <div class="booking-form-row">
           <div class="booking-field">
             <label for="fullName">Full Name</label>
@@ -812,11 +769,6 @@
             <div class="booking-select-wrap">
               <select id="preferredTime" name="preferredTime" required>
                 <option value="">Select Time Slot</option>
-                <option value="10:00 AM">10:00 AM</option>
-                <option value="11:30 AM">11:30 AM</option>
-                <option value="02:00 PM">02:00 PM</option>
-                <option value="04:30 PM">04:30 PM</option>
-                <option value="06:00 PM">06:00 PM</option>
               </select>
               <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
             </div>
@@ -885,7 +837,7 @@
 
         <h3>Questions or Complaints</h3>
         <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
-        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> &mdash;</p>
+        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> <a href="mailto:{{email}}">{{email}}</a></p>
 
         <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
 
@@ -915,48 +867,90 @@
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i
-              class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i
-              class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i
-              class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i
-              class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i
-              class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i
-              class="fa-solid fa-globe"></i></a>
-          <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i
-              class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i
-              class="fa-brands fa-youtube"></i></a>
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+          {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
         </div>
       </div>
 
-      <div class="footer-visitor-badge">
-        <i class="fa-solid fa-users"></i>
-        <span>No. of Visitor: <strong>2,600</strong></span>
+      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
+        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+        <span class="footer-visitor-badge-label">No. of Visitor:</span>
+        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
       </div>
 
       <div class="footer-bottom-row">
         <div class="footer-links">
-          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
           <span class="footer-divider">|</span>
-          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="/{{slug}}/terms-of-service">Terms of Service</a>
         </div>
         <span class="footer-dot-sep">&bull;</span>
-        <p class="footer-copy"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Dr. Arjun Mehta. All rights reserved
+        <p class="footer-copy"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Dr. {{full_name}}. All rights reserved
         </p>
       </div>
     </div>
   </footer>
 
-  <script src="./script/banner-module.js"></script>
+  <script src="{{path}}/script/banner-module.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
-  <script src="script/analytics.js"></script>
-  <script src="script/index.js"></script>
-  <script src="script/chatbot.js" defer></script>
+  <script src="{{path}}/script/analytics.js"></script>
+  <script src="{{path}}/script/index.js"></script>
+  <script src="{{path}}/script/chatbot.js" defer></script>
+
+  <!-- Same as the live sites: hide the testimonials section (and its nav
+       links) when the backend sends no testimonials. -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("testimonialsTrack");
+
+      if (!track || track.children.length === 0) {
+        document.getElementById("testimonials")?.remove();
+
+        document
+          .querySelectorAll('a[href="#testimonials"]')
+          .forEach(x => x.remove());
+      }
+    });
+  </script>
+
+  <!-- Same as the live sites: record this visit and show the real visitor count. -->
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 
 </html>

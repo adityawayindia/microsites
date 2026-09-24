@@ -28,26 +28,26 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Arjun Mehta | Child Wellness & Pediatric Care Specialist</title>
-  <meta name="description" content="Compassionate pediatric care by Dr. Arjun Mehta focused on your child's health, growth, development, nutrition, and overall well-being." />
+  <title>Dr. {{full_name}} | {{speciality}}</title>
+  <meta name="description" content="Compassionate pediatric care by Dr. {{full_name}} focused on your child's health, growth, development, nutrition, and overall well-being." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23f05a28'/%3E%3Cpath d='M32 46s-16-9.5-16-21a9 9 0 0 1 16-5.6A9 9 0 0 1 48 25c0 11.5-16 21-16 21z' fill='%23fff'/%3E%3C/svg%3E" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.example.com/pediatrician-2/" /><!-- TODO: replace with live production domain before launch -->
+  <link rel="canonical" href="https://www.example.com/{{slug}}/" /><!-- TODO: replace with live production domain before launch -->
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dr. Arjun Mehta | Pediatrician" />
-  <meta property="og:description" content="Dr. Arjun Mehta, Pediatrician." />
-  <meta property="og:image" content="assets/dr-arjun-mehta.jpg" />
+  <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta property="og:image" content="{{profile}}" />
   <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:alt" content="Dr. Arjun Mehta, Pediatrician" />
+  <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dr. Arjun Mehta | Pediatrician" />
-  <meta name="twitter:description" content="Dr. Arjun Mehta, Pediatrician." />
-  <meta name="twitter:image" content="assets/dr-arjun-mehta.jpg" />
+  <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta name="twitter:image" content="{{profile}}" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -62,44 +62,44 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+  <link rel="stylesheet" href="{{path}}/styles/style.css" />
+  <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Physician",
-    "name": "Dr. Arjun Mehta",
-    "medicalSpecialty": "Pediatric",
-    "image": "https://www.example.com/pediatrician-2/assets/dr-arjun-mehta.jpg",
-    "url": "https://www.example.com/pediatrician-2/",
-    "telephone": "+91-9068935571",
-    "email": "dr.mehta@minneasotahospitals.com",
+    "name": "Dr. {{full_name}}",
+    "medicalSpecialty": "{{speciality}}",
+    "image": "{{profile}}",
+    "url": "https://www.example.com/{{slug}}/",
+    "telephone": "+{{code}}-{{phone}}",
+    "email": "{{email}}",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "1800 Orchids Lane, Walt Disney World, Bay Lake",
-      "addressLocality": "Orlando",
-      "addressRegion": "FL",
-      "postalCode": "32805",
-      "addressCountry": "US"
+      "streetAddress": "{{address}}",
+      "addressLocality": "{{city}}",
+      "addressRegion": "{{state}}",
+      "postalCode": "{{pincode}}",
+      "addressCountry": "IN"
     }
   }
   </script>
 </head>
-<body>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
   <!-- ====== HEADER ====== -->
   <header class="alt-header">
     <div class="container alt-navbar">
-      <a href="#" class="alt-brand" aria-label="Dr. Arjun Mehta">
+      <a href="#" class="alt-brand" aria-label="Dr. {{full_name}}">
         <span class="alt-avatar">
-          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" />
+          <img src="{{profile}}" alt="Dr. {{full_name}}" />
         </span>
         <span class="alt-brand-text">
-          <span class="alt-brand-name" title="Dr. Arjun Mehta">Dr. Arjun Mehta</span>
-          <span class="alt-brand-role">Pediatrician</span>
+          <span class="alt-brand-name" title="Dr. {{full_name}}">Dr. {{full_name}}</span>
+          <span class="alt-brand-role">{{speciality}}</span>
         </span>
       </a>
 
@@ -110,7 +110,9 @@
         <a href="#testimonials">Testimonials</a>
         <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
+        {{#hasBlog}}
         <a href="blog.html">Blog</a>
+        {{/hasBlog}}
       </nav>
 
       <div class="alt-nav-actions">
@@ -128,6 +130,7 @@
 
   <!-- ====== HERO ====== -->
   <section class="alt-hero" id="home">
+{{#has_banner}}
     <!-- ==========================================================================
          DIGIDR MODULAR BANNER MODULE (Hero Banner)
          ==========================================================================
@@ -140,26 +143,26 @@
             - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
             - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
-    <div 
-      class="digidr-banner-module single-image-banner-section" 
+    <div
+      class="digidr-banner-module single-image-banner-section"
       id="digidrBannerModule"
       data-banner-active="true"
-      data-banner-start="2026-08-11T00:00:00+05:30"
-      data-banner-end="2026-08-15T23:59:59+05:30"
+      data-banner-start="{{banner_start}}"
+      data-banner-end="{{banner_end}}"
       aria-label="Main Clinic Banner"
-      data-banner-src="assets/pedia_banner-1.jpeg"
-      data-banner-src-mobile="assets/pedia_independence_mobile.png"
-      data-banner-alt="Pediatric Care Banner"
+      data-banner-src="{{banner_src}}"
+      data-banner-src-mobile="{{banner_src_mobile}}"
+      data-banner-alt="{{banner_alt}}"
       data-banner-href="#"
     >
       <div class="container digidr-banner-container single-image-banner-container">
         <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
           <div class="digidr-banner-wrap single-image-banner-wrap">
             <picture>
-              <source media="(max-width: 768px)" srcset="assets/pedia_independence_mobile.png" />
+              <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
               <img
-                src="assets/pedia_banner-1.jpeg" 
-                alt="Dr. Arjun Mehta Pediatric Care Banner"
+                src="{{banner_src}}"
+                alt="{{banner_alt}}"
                 class="digidr-banner-img single-image-banner-img"
                 id="digidrBannerImg"
                 loading="eager"
@@ -170,6 +173,7 @@
       </div>
     </div>
     <!-- END OF MODULAR BANNER MODULE -->
+{{/has_banner}}
     <div class="alt-hero-bg-pattern" aria-hidden="true"></div>
 
     <div class="container alt-hero-inner">
@@ -184,7 +188,7 @@
         Growing Healthy,<br /><span class="alt-heading-accent">Happy Children</span>
       </h1>
       <p class="alt-hero-subtext">
-        Compassionate pediatric care focused on your child's health, growth, development, nutrition, and overall well-being.
+        {{introduction}}
       </p>
       <div class="alt-hero-actions">
         <a href="#services" class="alt-btn-ghost">Explore Pediatric Care</a>
@@ -211,14 +215,22 @@
     <div class="alt-hero-social-strip">
       <span class="alt-social-label">Follow for child health tips:</span>
       <div class="alt-social-pills">
-        <a href="#" class="alt-social-pill sp-fb" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" class="alt-social-pill sp-fb-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" class="alt-social-pill sp-ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="alt-social-pill sp-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" class="alt-social-pill sp-li" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" class="alt-social-pill sp-web" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-        <a href="#" class="alt-social-pill sp-yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" class="alt-social-pill sp-wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        {{#hasFacebookPage}}<a href="{{facebookpage}}" class="alt-social-pill sp-fb" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+        {{#noFacebook}}<span class="alt-social-pill sp-fb is-disabled" aria-label="Facebook Page not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebook}}
+        {{#hasFacebook}}<a href="{{facebook}}" class="alt-social-pill sp-fb-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+        {{#noFacebook}}<span class="alt-social-pill sp-fb-alt is-disabled" aria-label="Facebook Profile not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+        {{#hasInstagram}}<a href="{{instagram}}" class="alt-social-pill sp-ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+        {{#noInstagram}}<span class="alt-social-pill sp-ig is-disabled" aria-label="Instagram not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+        {{#hasTwitter}}<a href="{{twitter}}" class="alt-social-pill sp-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+        {{#noTwitter}}<span class="alt-social-pill sp-x is-disabled" aria-label="X not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+        {{#hasLinkedin}}<a href="{{linkedin}}" class="alt-social-pill sp-li" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+        {{#noLinkedin}}<span class="alt-social-pill sp-li is-disabled" aria-label="LinkedIn not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+        {{#hasWebsite}}<a href="{{website}}" class="alt-social-pill sp-web" aria-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+        {{#noWebsite}}<span class="alt-social-pill sp-web is-disabled" aria-label="Website not linked" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+        {{#hasYoutube}}<a href="{{youtube}}" class="alt-social-pill sp-yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+        {{#noYoutube}}<span class="alt-social-pill sp-yt is-disabled" aria-label="YouTube not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+        {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="alt-social-pill sp-wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+        {{#noWhatsapp}}<span class="alt-social-pill sp-wa is-disabled" aria-label="WhatsApp not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
       </div>
     </div>
   </section>
@@ -228,7 +240,7 @@
     <div class="container alt-about-grid">
       <div class="alt-about-visual">
         <div class="alt-about-img-card">
-          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta portrait" />
+          <img src="{{profile}}" alt="Dr. {{full_name}} portrait" />
         </div>
       </div>
 
@@ -236,9 +248,12 @@
         <span class="alt-section-chip chip-teal">
           <i class="fa-solid fa-user-doctor"></i> About My Practice
         </span>
-        <h2 class="alt-section-title">Dedicated to Your Child's Health &amp; Well-Being</h2>
-        <p class="alt-about-qualification"><i class="fa-solid fa-graduation-cap"></i> MBBS, MD (Pediatrics) &middot; Fellowship in Neonatal &amp; Child Health</p>
-        <p class="alt-about-reg"><i class="fa-solid fa-id-card"></i> MCI Regd. No. 48213</p>
+        <h2 class="alt-section-title">
+          {{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}
+        {{#no_about_section_title}}Dedicated to Your Child's Health &amp; Well-Being{{/no_about_section_title}}
+        </h2>
+        <p class="alt-about-qualification"><i class="fa-solid fa-graduation-cap"></i> {{awards}} &middot; {{education}}</p>
+        {{#hasmic}}<p class="alt-about-reg"><i class="fa-solid fa-id-card"></i> MCI Regd. No. {{mci}}</p>{{/hasmic}}
         <br>
         <!-- <p class="alt-about-lead">
           Providing thoughtful, evidence-based pediatric care with a child-friendly and family-first approach.
@@ -246,10 +261,7 @@
         <div class="read-more-wrap">
           <div class="read-more-content">
             <p class="alt-about-body">
-              Every Child Deserves Expert Care. Every Parent Deserves Peace of Mind.
-            </p>
-            <p class="alt-about-body">
-              From newborns to adolescents, our approach focuses on healthy growth, preventing health problems, identifying concerns early, and helping parents make informed decisions at every stage of childhood.
+              {{introduction}}
             </p>
           </div>
           <button type="button" class="read-more-btn" aria-expanded="false">
@@ -260,15 +272,15 @@
 
         <div class="alt-about-stats" aria-label="Doctor highlights">
           <div class="alt-stat-orb alt-stat-orb--yellow">
-            <span class="alt-stat-num">20+</span>
+            <span class="alt-stat-num" data-counter>{{experience}}</span>
             <span class="alt-stat-lbl">Years Experience</span>
           </div>
           <div class="alt-stat-orb alt-stat-orb--mint">
-            <span class="alt-stat-num">8k+</span>
+            <span class="alt-stat-num" data-counter>{{totalpatient}}</span>
             <span class="alt-stat-lbl">Happy Patients</span>
           </div>
           <div class="alt-stat-orb alt-stat-orb--coral">
-            <span class="alt-stat-num">95%</span>
+            <span class="alt-stat-num" data-counter>95%</span>
             <span class="alt-stat-lbl">Parent Satisfaction</span>
           </div>
         </div>
@@ -278,9 +290,7 @@
         <div class="alt-hero-langs">
           <span class="alt-hero-langs-label"><i class="fa-solid fa-language"></i> Languages known</span>
           <span class="alt-hero-langs-chips">
-            <span class="alt-hero-lang-chip">English</span>
-            <span class="alt-hero-lang-chip">Hindi</span>
-            <span class="alt-hero-lang-chip">Odia</span>
+            <span class="alt-hero-lang-chip">{{languages}}</span>
           </span>
         </div>
 
@@ -309,58 +319,26 @@
         <span class="alt-section-chip chip-teal">
           <i class="fa-solid fa-heart"></i> Specialized Services
         </span>
-        <h2 class="alt-section-title">Comprehensive Pediatric Care</h2>
-        <p class="alt-services-sub">Complete pediatric care covering preventive health, childhood illnesses, growth, development, nutrition, and wellness.</p>
+        <h2 class="alt-section-title">
+          {{#has_service_section_title}}{{service_section_title}}{{/has_service_section_title}}
+        {{#no_service_section_title}}Comprehensive Pediatric Care{{/no_service_section_title}}
+        </h2>
+        <p class="alt-services-sub">
+          {{#has_service_section_subtitle}}{{service_section_subtitle}}{{/has_service_section_subtitle}}
+        {{#no_service_section_subtitle}}Complete pediatric care covering preventive health, childhood illnesses, growth, development, nutrition, and wellness.{{/no_service_section_subtitle}}
+        </p>
       </div>
 
       <div class="alt-bento-grid">
+        {{#services}}
         <article class="alt-bento-card bento-c1">
           <div class="bento-header">
-            <div class="bento-icon-band"><i class="fa-solid fa-baby"></i></div>
-            <h3>Newborn &amp; Infant Care</h3>
+            <div class="bento-icon-band"><i class="fa-solid fa-child-reaching"></i></div>
+            <h3>{{title}}</h3>
           </div>
-          <p>Support for newborn and infant health, feeding, nutrition, growth, development, and early childhood concerns.</p>
+          <p>{{description}}</p>
         </article>
-
-        <article class="alt-bento-card bento-c2">
-          <div class="bento-header">
-            <div class="bento-icon-band"><i class="fa-solid fa-syringe"></i></div>
-            <h3>Vaccination &amp; Immunization</h3>
-          </div>
-          <p>Age-appropriate vaccination guidance and immunization support to help protect your child from preventable diseases.</p>
-        </article>
-
-        <article class="alt-bento-card bento-c3">
-          <div class="bento-header">
-            <div class="bento-icon-band"><i class="fa-solid fa-thermometer"></i></div>
-            <h3>Common Childhood Illnesses</h3>
-          </div>
-          <p>Care for common childhood illnesses, infections, allergies, fever, cough, and seasonal health concerns.</p>
-        </article>
-
-        <article class="alt-bento-card bento-c4">
-          <div class="bento-header">
-            <div class="bento-icon-band"><i class="fa-solid fa-lungs"></i></div>
-            <h3>Child Health Consultation</h3>
-          </div>
-          <p>Consultations for common childhood concerns, preventive health, growth, development, and overall well-being.</p>
-        </article>
-
-        <article class="alt-bento-card bento-c5">
-          <div class="bento-header">
-            <div class="bento-icon-band"><i class="fa-solid fa-apple-whole"></i></div>
-            <h3>Growth &amp; Development Monitoring</h3>
-          </div>
-          <p>Regular monitoring of growth, developmental milestones, nutrition, and overall child health.</p>
-        </article>
-
-        <article class="alt-bento-card bento-c6">
-          <div class="bento-header">
-            <div class="bento-icon-band"><i class="fa-solid fa-user-group"></i></div>
-            <h3>Child Nutrition &amp; Wellness</h3>
-          </div>
-          <p>Practical guidance on nutrition, healthy habits, sleep, immunity, and overall child wellness.</p>
-        </article>
+        {{/services}}
       </div>
     </div>
   </section>
@@ -372,31 +350,53 @@
         <span class="alt-section-chip chip-teal">
           <i class="fa-solid fa-heart-pulse"></i> Pediatric Philosophy
         </span>
-        <h2 class="alt-section-title light">Nurturing Care for Healthy, Growing Children</h2>
+        <h2 class="alt-section-title light">
+          {{#has_philosophy_section_title}}{{philosophy_section_title}}{{/has_philosophy_section_title}}
+        {{#no_philosophy_section_title}}Nurturing Care for Healthy, Growing Children{{/no_philosophy_section_title}}
+        </h2>
         <p class="alt-philosophy-sub">
-          Dedicated to comprehensive child health, growth tracking, and compassionate pediatric care that puts children first.
+          {{#has_philosophy_section_subtitle}}{{philosophy_section_subtitle}}{{/has_philosophy_section_subtitle}}
+        {{#no_philosophy_section_subtitle}}Dedicated to comprehensive child health, growth tracking, and compassionate pediatric care that puts children first.{{/no_philosophy_section_subtitle}}
         </p>
 
         <div class="alt-pillars">
           <div class="alt-pillar">
             <div class="alt-pillar-icon pi-yellow"><i class="fa-solid fa-child-reaching"></i></div>
             <div class="alt-pillar-text">
-              <h3>Growth &amp; Development</h3>
-              <p>Monitoring your child's physical growth, developmental milestones, nutrition, and overall well-being.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_1}}{{philosophy_section_pillar_text_1}}{{/has_philosophy_section_pillar_text_1}}
+        {{#no_philosophy_section_pillar_text_1}}Growth &amp; Development{{/no_philosophy_section_pillar_text_1}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_1}}{{philosophy_section_pillar_subtext_1}}{{/has_philosophy_section_pillar_subtext_1}}
+        {{#no_philosophy_section_pillar_subtext_1}}Monitoring your child's physical growth, developmental milestones, nutrition, and overall well-being.{{/no_philosophy_section_pillar_subtext_1}}
+              </p>
             </div>
           </div>
           <div class="alt-pillar">
             <div class="alt-pillar-icon pi-teal"><i class="fa-solid fa-syringe"></i></div>
             <div class="alt-pillar-text">
-              <h3>Preventive &amp; Compassionate Care</h3>
-              <p>Routine check-ups, vaccination guidance, preventive care, and early attention to health concerns.</p>
+              <h3>
+                {{#has_philosophy_section_pillor_text_2}}{{philosophy_section_pillor_text_2}}{{/has_philosophy_section_pillor_text_2}}
+                {{#no_philosophy_section_pillor_text_2}}Preventive &amp; Compassionate Care{{/no_philosophy_section_pillor_text_2}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_piller_subtext_2}}{{philosophy_section_piller_subtext_2}}{{/has_philosophy_section_piller_subtext_2}}
+                {{#no_philosophy_section_piller_subtext_2}}Routine check-ups, vaccination guidance, preventive care, and early attention to health concerns.{{/no_philosophy_section_piller_subtext_2}}
+              </p>
             </div>
           </div>
           <div class="alt-pillar">
             <div class="alt-pillar-icon pi-coral"><i class="fa-solid fa-heart"></i></div>
             <div class="alt-pillar-text">
-              <h3>Parent Guidance &amp; Support</h3>
-              <p>Helping parents make confident decisions about nutrition, sleep, immunity, development, and everyday child health.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_3}}{{philosophy_section_pillar_text_3}}{{/has_philosophy_section_pillar_text_3}}
+        {{#no_philosophy_section_pillar_text_3}}Parent Guidance &amp; Support{{/no_philosophy_section_pillar_text_3}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_3}}{{philosophy_section_pillar_subtext_3}}{{/has_philosophy_section_pillar_subtext_3}}
+        {{#no_philosophy_section_pillar_subtext_3}}Helping parents make confident decisions about nutrition, sleep, immunity, development, and everyday child health.{{/no_philosophy_section_pillar_subtext_3}}
+              </p>
             </div>
           </div>
         </div>
@@ -404,7 +404,7 @@
 
       <div class="alt-philosophy-visual">
         <div class="alt-philosophy-img-wrap">
-          <img src="assets/pediatric-philosophy-workspace.png" alt="Pediatric care philosophy workspace with stethoscope and child toys" loading="lazy" />
+          <img src="https://storage.googleapis.com/microsite_buck/microsite-pediatrician-2/assets/pediatric-philosophy-workspace.png" alt="Pediatric care philosophy workspace with stethoscope and child toys" loading="lazy" />
         </div>
         <div class="alt-philosophy-float-badge">
           <i class="fa-solid fa-shield-heart"></i>
@@ -421,8 +421,14 @@
         <span class="alt-section-chip chip-teal">
           <i class="fa-solid fa-route"></i> Consultation Journey
         </span>
-        <h2 class="alt-section-title">Consultation Journey</h2>
-        <p class="alt-journey-sub">Nurturing Care for Healthy, Growing Children.</p>
+        <h2 class="alt-section-title">
+          {{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}
+        {{#no_process_section_about_title}}Consultation Journey{{/no_process_section_about_title}}
+        </h2>
+        <p class="alt-journey-sub">
+          {{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}
+        {{#no_process_section_about_subtitle}}Nurturing Care for Healthy, Growing Children.{{/no_process_section_about_subtitle}}
+        </p>
       </div>
 
       <div class="alt-journey-steps">
@@ -436,8 +442,14 @@
             <i class="fa-solid fa-calendar-check"></i>
           </div>
           <span class="alt-step-num">01</span>
-          <h3>Book an Appointment</h3>
-          <p>Choose a convenient time for a clinic or online consultation.</p>
+          <h3>
+            {{#has_process_section_step_body_text_1}}{{process_section_step_body_text_1}}{{/has_process_section_step_body_text_1}}
+        {{#no_process_section_step_body_text_1}}Book an Appointment{{/no_process_section_step_body_text_1}}
+          </h3>
+          <p>
+            {{#has_process_section_step_body_subtext_1}}{{process_section_step_body_subtext_1}}{{/has_process_section_step_body_subtext_1}}
+        {{#no_process_section_step_body_subtext_1}}Choose a convenient time for a clinic or online consultation.{{/no_process_section_step_body_subtext_1}}
+          </p>
         </div>
 
         <div class="alt-step">
@@ -448,8 +460,14 @@
             <i class="fa-solid fa-child-reaching"></i>
           </div>
           <span class="alt-step-num">02</span>
-          <h3>Understand Your Child's Needs</h3>
-          <p>A detailed consultation to understand symptoms, health history, growth, and developmental concerns.</p>
+          <h3>
+            {{#has_process_section_step_body_text_2}}{{process_section_step_body_text_2}}{{/has_process_section_step_body_text_2}}
+        {{#no_process_section_step_body_text_2}}Understand Your Child's Needs{{/no_process_section_step_body_text_2}}
+          </h3>
+          <p>
+            {{#has_process_section_step_body_subtext_2}}{{process_section_step_body_subtext_2}}{{/has_process_section_step_body_subtext_2}}
+        {{#no_process_section_step_body_subtext_2}}A detailed consultation to understand symptoms, health history, growth, and developmental concerns.{{/no_process_section_step_body_subtext_2}}
+          </p>
         </div>
 
         <div class="alt-step">
@@ -460,8 +478,14 @@
             <i class="fa-solid fa-clipboard-user"></i>
           </div>
           <span class="alt-step-num">03</span>
-          <h3>Personalised Care Plan</h3>
-          <p>Receive clear guidance on treatment, medication, nutrition, vaccination, or further evaluation as appropriate.</p>
+          <h3>
+            {{#has_process_section_step_body_text_3}}{{process_section_step_body_text_3}}{{/has_process_section_step_body_text_3}}
+        {{#no_process_section_step_body_text_3}}Personalised Care Plan{{/no_process_section_step_body_text_3}}
+          </h3>
+          <p>
+            {{#has_process_section_step_body_subtext_3}}{{process_section_step_body_subtext_3}}{{/has_process_section_step_body_subtext_3}}
+        {{#no_process_section_step_body_subtext_3}}Receive clear guidance on treatment, medication, nutrition, vaccination, or further evaluation as appropriate.{{/no_process_section_step_body_subtext_3}}
+          </p>
         </div>
 
         <div class="alt-step">
@@ -472,8 +496,14 @@
             <i class="fa-solid fa-circle-check"></i>
           </div>
           <span class="alt-step-num">04</span>
-          <h3>Ongoing Support</h3>
-          <p>Follow-up care and guidance to support your child's health and development.</p>
+          <h3>
+            {{#has_process_section_step_body_text_4}}{{process_section_step_body_text_4}}{{/has_process_section_step_body_text_4}}
+        {{#no_process_section_step_body_text_4}}Ongoing Support{{/no_process_section_step_body_text_4}}
+          </h3>
+          <p>
+            {{#has_process_section_step_body_subtext_4}}{{process_section_step_body_subtext_4}}{{/has_process_section_step_body_subtext_4}}
+        {{#no_process_section_step_body_subtext_4}}Follow-up care and guidance to support your child's health and development.{{/no_process_section_step_body_subtext_4}}
+          </p>
         </div>
       </div>
     </div>
@@ -486,16 +516,19 @@
         <i class="fa-solid fa-phone-volume"></i> Get In Touch
       </span>
       <h2 class="alt-section-title">Let's Take Care of Your Child's Health</h2>
-      <p class="alt-contact-sub">Book a consultation for your child's health, growth, development, vaccination, nutrition, or any current health concern.</p>
+      <p class="alt-contact-sub">
+        {{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}
+        {{#no_contact_us_subtitle}}Book a consultation for your child's health, growth, development, vaccination, nutrition, or any current health concern.{{/no_contact_us_subtitle}}
+      </p>
 
       <div class="alt-contact-card">
         <div class="alt-contact-item acc-yellow">
           <div class="acc-icon"><i class="fa-solid fa-location-dot"></i></div>
           <h3>Clinic Address</h3>
           <p>
-            <strong>Building No. 1800</strong><br />
-            Orchids Lane, Walt Disney World, Bay Lake<br />
-            Orlando, FL 32805
+            <strong>{{clinicname}}</strong><br />
+            {{address}}, {{district}}<br />
+            {{city}}, {{state}} - {{pincode}}
           </p>
         </div>
 
@@ -505,8 +538,8 @@
           <div class="acc-icon"><i class="fa-solid fa-phone"></i></div>
           <h3>Contact Information</h3>
           <p>
-            <a href="tel:+919068935571">+91-9068935571</a><br />
-            <a href="mailto:dr.mehta@minneasotahospitals.com">dr.mehta@minneasota<wbr>hospitals.com</a>
+            <a href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+            <a href="mailto:{{email}}">{{email}}</a>
           </p>
         </div>
       </div>
@@ -521,8 +554,14 @@
         <span class="alt-section-chip chip-teal">
           <i class="fa-solid fa-stethoscope"></i> Testimonials
         </span>
-        <h2 class="alt-section-title light">What Parents Say</h2>
-        <p class="alt-testi-sub">Hear from parents and families who have experienced our approach to pediatric care.</p>
+        <h2 class="alt-section-title light">
+          {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
+          {{#no_testimonial_title}}What Parents Say{{/no_testimonial_title}}
+        </h2>
+        <p class="alt-testi-sub">
+          {{#has_testimonial_subtitle}}{{testimonial_subtitle}}{{/has_testimonial_subtitle}}
+          {{#no_testimonial_subtitle}}Hear from parents and families who have experienced our approach to pediatric care.{{/no_testimonial_subtitle}}
+        </p>
       </div>
 
       <div class="alt-testi-carousel-wrap">
@@ -535,65 +574,19 @@
 
         <div class="alt-testi-carousel" id="testimonialsCarousel">
           <div class="alt-testi-track testimonials-track" id="testimonialsTrack">
-            <article class="alt-testi-card testimonial-card">
-              <div class="alt-testi-quote-mark">"</div>
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="James Pattinson" class="alt-testi-avatar" />
-              <h3 class="alt-testi-name">James Pattinson</h3>
-              <div class="alt-testi-stars" aria-label="4 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-              </div>
-              <p class="alt-testi-quote">"Dr. Mehta provided exceptional care for my son during a difficult fever episode. His expertise and compassionate approach made all the difference. Highly recommend!"</p>
-            </article>
 
+            {{#testimonials}}
             <article class="alt-testi-card testimonial-card">
               <div class="alt-testi-quote-mark">"</div>
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop" alt="Greg Stuart" class="alt-testi-avatar" />
-              <h3 class="alt-testi-name">Greg Stuart</h3>
-              <div class="alt-testi-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <img src="{{profile_picture}}" alt="{{patient_name}}" class="alt-testi-avatar" />
+              <h3 class="alt-testi-name">{{patient_name}}</h3>
+              <div class="alt-testi-stars" aria-label="{{rating}} out of 5 stars">
+                {{stars_html}}
               </div>
-              <p class="alt-testi-quote">"Outstanding experience from start to finish. Dr. Mehta explained everything clearly and took time to address all my concerns. The entire team was professional and caring. Five stars!"</p>
+              <p class="alt-testi-quote">"{{comment}}"</p>
             </article>
+            {{/testimonials}}
 
-            <article class="alt-testi-card testimonial-card">
-              <div class="alt-testi-quote-mark">"</div>
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop" alt="Trevor Mitchell" class="alt-testi-avatar" />
-              <h3 class="alt-testi-name">Trevor Mitchell</h3>
-              <div class="alt-testi-stars" aria-label="3 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-              </div>
-              <p class="alt-testi-quote">"Good care overall. Dr. Mehta helped manage my child's recurring infections effectively. The follow-up process was thorough and the team very responsive."</p>
-            </article>
-
-            <article class="alt-testi-card testimonial-card">
-              <div class="alt-testi-quote-mark">"</div>
-              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop" alt="Maria Rodriguez" class="alt-testi-avatar" />
-              <h3 class="alt-testi-name">Maria Rodriguez</h3>
-              <div class="alt-testi-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p class="alt-testi-quote">"After my daughter's diagnosis, Dr. Mehta's guidance was invaluable. He genuinely cares about long-term health. I feel confident and well-supported every visit."</p>
-            </article>
-
-            <article class="alt-testi-card testimonial-card">
-              <div class="alt-testi-quote-mark">"</div>
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop" alt="David Chen" class="alt-testi-avatar" />
-              <h3 class="alt-testi-name">David Chen</h3>
-              <div class="alt-testi-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p class="alt-testi-quote">"The best pediatrician we've consulted. Dr. Mehta's diagnostic skills are remarkable. He identified the issue quickly and guided us with clarity. Forever grateful."</p>
-            </article>
-
-            <article class="alt-testi-card testimonial-card">
-              <div class="alt-testi-quote-mark">"</div>
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Emily Watson" class="alt-testi-avatar" />
-              <h3 class="alt-testi-name">Emily Watson</h3>
-              <div class="alt-testi-stars" aria-label="4 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-              </div>
-              <p class="alt-testi-quote">"Professional, knowledgeable, and kind. Dr. Mehta made every appointment a reassuring experience. The clinic runs smoothly and appointments are always on time."</p>
-            </article>
           </div>
         </div>
 
@@ -606,29 +599,22 @@
   <section class="alt-gallery" id="gallery">
     <div class="container">
       <div class="alt-gallery-header">
-        <h2 class="alt-section-title">A Look Inside My Practice</h2>
-        <p class="alt-gallery-sub">Take a glimpse at our clinic, consultation space, and child-friendly environment.</p>
+        <h2 class="alt-section-title">
+          {{#has_gallery_section_title}}{{gallery_section_title}}{{/has_gallery_section_title}}
+          {{#no_gallery_section_title}}A Look Inside My Practice{{/no_gallery_section_title}}
+        </h2>
+        <p class="alt-gallery-sub">
+          {{#has_gallery_section_subtitle}}{{gallery_section_subtitle}}{{/has_gallery_section_subtitle}}
+          {{#no_gallery_section_subtitle}}Take a glimpse at our clinic, consultation space, and child-friendly environment.{{/no_gallery_section_subtitle}}
+        </p>
       </div>
 
       <div class="alt-gallery-grid">
-        <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Modern clinic exterior" loading="lazy" />
-        </figure>
-        <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Clinic reception and waiting area" loading="lazy" />
-        </figure>
-        <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" alt="Clinic consultation room" loading="lazy" />
-        </figure>
-        <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80" alt="Clinic corridor and seating" loading="lazy" />
-        </figure>
-        <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="Diagnostic equipment area" loading="lazy" />
-        </figure>
-        <figure class="alt-gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=80" alt="Treatment room" loading="lazy" />
-        </figure>
+          {{#images}}
+          <figure class="alt-gallery-item gallery-item">
+              <img src="{{image}}" alt="Inside the clinic" loading="lazy" />
+          </figure>
+          {{/images}}
       </div>
     </div>
   </section>
@@ -729,7 +715,7 @@
         </div>
       </div>
 
-      <form id="bookingForm" class="booking-form" novalidate>
+      <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
         <div class="booking-form-row">
           <div class="booking-field">
             <label for="fullName">Full Name</label>
@@ -778,12 +764,6 @@
             <div class="booking-select-wrap">
               <select id="preferredTime" name="preferredTime" required>
                 <option value="">Select Time Slot</option>
-                <option value="09:00-10:00">09:00 - 10:00 AM</option>
-                <option value="10:00-11:00">10:00 - 11:00 AM</option>
-                <option value="11:00-12:00">11:00 - 12:00 PM</option>
-                <option value="14:00-15:00">02:00 - 03:00 PM</option>
-                <option value="15:00-16:00">03:00 - 04:00 PM</option>
-                <option value="16:00-17:00">04:00 - 05:00 PM</option>
               </select>
               <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
             </div>
@@ -804,6 +784,7 @@
             <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
             <span class="booking-upload-help">(JPEG, PNG, PDF supported)</span>
           </div>
+          <div class="booking-file-preview" id="filePreview"></div>
           <p class="booking-error" data-error-for="report"></p>
         </div>
 
@@ -813,6 +794,11 @@
         </div>
 
         <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
+
+        <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+          <div class="loader-spinner"></div>
+          <p>Booking your appointment...</p>
+        </div>
       </form>
     </div>
   </div>
@@ -842,7 +828,7 @@
 
         <h3>Questions or Complaints</h3>
         <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
-        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> &mdash;</p>
+        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> <a href="mailto:{{email}}">{{email}}</a></p>
 
         <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
 
@@ -865,25 +851,40 @@
       <div class="alt-footer-brand-col">
         <a href="#" class="alt-footer-brand">
           <span class="alt-avatar">
-            <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" />
+            <img src="{{profile}}" alt="Dr. {{full_name}}" />
           </span>
           <span class="alt-brand-text">
-            <span class="alt-brand-name">Dr. Arjun Mehta</span>
-            <span class="alt-brand-role">Pediatrician</span>
+            <span class="alt-brand-name">Dr. {{full_name}}</span>
+            <span class="alt-brand-role">{{speciality}}</span>
           </span>
         </a>
         <p class="alt-footer-tagline">Compassionate Pediatric Care for Growing Families.</p>
         <div class="alt-footer-social-wrap">
           <span class="alt-footer-social-label">Follow me on:</span>
           <div class="alt-footer-social">
-            <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-            <a href="#" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+            {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+            {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+            {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+            {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+            {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+            {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+            {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+            {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+            {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+            {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+            {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+            {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+            {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+            {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+            {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
           </div>
         </div>
       </div>
@@ -903,28 +904,62 @@
         <div class="alt-footer-links-group">
           <h4>Legal</h4>
           <nav class="alt-footer-nav-horizontal">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
+            <a href="/{{slug}}/terms-of-service">Terms of Service</a>
           </nav>
         </div>
 
-        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
           <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
           <span class="footer-visitor-badge-label">No. of Visitor:</span>
-          <span class="footer-visitor-badge-count">500</span>
+          <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
         </div>
       </div>
     </div>
 
     <div class="alt-footer-bottom">
-      <p>&copy; 2026 Dr. Arjun Mehta. All rights reserved.</p>
+      <p>&copy; 2026 Dr. {{full_name}}. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="./script/banner-module.js"></script>
+  <script src="{{path}}/script/banner-module.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
-  <script src="./script/analytics.js"></script>
-  <script src="./script/index.js"></script>
-  <script src="./script/chatbot.js" defer></script>
+  <script src="{{path}}/script/analytics.js"></script>
+  <script src="{{path}}/script/index.js"></script>
+  <script src="{{path}}/script/chatbot.js" defer></script>
+
+  <!-- Same as the live sites: hide the testimonials section (and its nav
+       links) when the backend sends no testimonials. -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("testimonialsTrack");
+
+      if (!track || track.children.length === 0) {
+        document.getElementById("testimonials")?.remove();
+
+        document
+          .querySelectorAll('a[href="#testimonials"]')
+          .forEach(x => x.remove());
+      }
+    });
+  </script>
+
+  <!-- Same as the live sites: record this visit and show the real visitor count. -->
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 </html>

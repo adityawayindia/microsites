@@ -1,16 +1,24 @@
 (function () {
     /* ── Config ── */
     var BOT_NAME = 'Assistant';
-    var BOT_ICON = 'assets/chatbot-icon.svg';
+    var BOT_ICON = 'https://storage.googleapis.com/microsite_buck/microsite-ent-1/assets/chatbot-icon.svg';
+    var API_BASE = 'https://digidrapi.digidr.app';
 
-    var WELCOME_MSG = "Namaste! 👋 I'm Dr. Arjun's Ayurvedic Care Assistant. How can I help you today?";
+    var WELCOME_MSG = "Hi there! 👋 I'm your Assistant. How can I help you today?";
+
+    var SUGGESTIONS = [
+        'What services do you offer?',
+        'How to get started?',
+        'Pricing plans',
+        'Book a demo'
+    ];
 
     /* ── Inject CSS ── */
     (function injectCSS() {
         if (document.getElementById('chatbot-css')) return;
         var link = document.createElement('link');
-        link.id   = 'chatbot-css';
-        link.rel  = 'stylesheet';
+        link.id = 'chatbot-css';
+        link.rel = 'stylesheet';
         link.href = './styles/chatbot.css';
         document.head.appendChild(link);
     })();
@@ -39,46 +47,47 @@
     var widgetHTML =
         '<div class="chatbot-fab-wrap" id="chatbotFabWrap">' +
 
-            '<div class="chatbot-backdrop" id="chatbotBackdrop" aria-hidden="true"></div>' +
+        '<div class="chatbot-backdrop" id="chatbotBackdrop" aria-hidden="true"></div>' +
 
-            /* Chat window */
-            '<div class="chatbot-window" id="chatbotWindow" style="display:none;" role="dialog" aria-modal="true" aria-label="' + BOT_NAME + ' chat window">' +
+        /* Chat window */
+        '<div class="chatbot-window" id="chatbotWindow" style="display:none;" role="dialog" aria-modal="true" aria-label="' + BOT_NAME + ' chat window">' +
 
-                /* Header */
-                '<div class="chatbot-header">' +
-                    '<div class="chatbot-header-avatar">' +
-                        '<img src="' + BOT_ICON + '" alt="' + BOT_NAME + '">' +
-                    '</div>' +
-                    '<div class="chatbot-header-info">' +
-                        '<p class="chatbot-header-name">' + BOT_NAME + '</p>' +
-                    '</div>' +
-                    '<button type="button" class="chatbot-header-close" id="chatbotCloseBtn" aria-label="Close chat">' +
-                        '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
-                    '</button>' +
-                '</div>' +
+        /* Header */
+        '<div class="chatbot-header">' +
+        '<div class="chatbot-header-avatar">' +
+        '<img src="' + BOT_ICON + '" alt="' + BOT_NAME + '">' +
+        '</div>' +
+        '<div class="chatbot-header-info">' +
+        '<p class="chatbot-header-name">' + BOT_NAME + '</p>' +
+        '</div>' +
+        '<button type="button" class="chatbot-header-close" id="chatbotCloseBtn" aria-label="Close chat">' +
+        /* This microsite loads Font Awesome, not Material Symbols */
+        '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
+        '</button>' +
+        '</div>' +
 
-                /* Messages */
-                '<div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite" aria-label="Chat messages"></div>' +
+        /* Messages */
+        '<div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite" aria-label="Chat messages"></div>' +
 
-                /* Input */
-                '<div class="chatbot-input-area">' +
-                    '<div class="chatbot-input-wrap">' +
-                        '<textarea class="chatbot-input" id="chatbotInput" placeholder="Type your message…" rows="1" aria-label="Type your message"></textarea>' +
-                    '</div>' +
-                    '<button class="chatbot-send-btn" id="chatbotSendBtn" aria-label="Send message" disabled>' + svgSend() + '</button>' +
-                '</div>' +
+        /* Input */
+        '<div class="chatbot-input-area">' +
+        '<div class="chatbot-input-wrap">' +
+        '<textarea class="chatbot-input" id="chatbotInput" placeholder="Type your message…" rows="1" aria-label="Type your message"></textarea>' +
+        '</div>' +
+        '<button class="chatbot-send-btn" id="chatbotSendBtn" aria-label="Send message" disabled>' + svgSend() + '</button>' +
+        '</div>' +
 
-                /* Footer */
-                '<div class="chatbot-footer">Informational only. Not medical advice.<br>Consult your doctor.</div>' +
+        /* Footer */
+        '<div class="chatbot-footer">Informational only, not medical advice.<br>Consult your doctor</div>' +
 
-            '</div>' +
+        '</div>' +
 
-            /* FAB */
-            '<button class="chatbot-fab" id="chatbotFab" aria-label="Open Assistant" aria-expanded="false" aria-controls="chatbotWindow">' +
-                '<img class="chatbot-fab-logo" src="' + BOT_ICON + '" alt="" aria-hidden="true">' +
-                '<span class="chatbot-fab-text">Ask Doctor</span>' +
-                '<span class="chatbot-badge" id="chatbotBadge" aria-label="1 new message">1</span>' +
-            '</button>' +
+        /* FAB */
+        '<button class="chatbot-fab" id="chatbotFab" aria-label="Open Assistant" aria-expanded="false" aria-controls="chatbotWindow">' +
+        '<img class="chatbot-fab-logo" src="' + BOT_ICON + '" alt="" aria-hidden="true">' +
+        '<span class="chatbot-fab-text">Ask Doctor</span>' +
+        '<span class="chatbot-badge" id="chatbotBadge" aria-label="1 new message">1</span>' +
+        '</button>' +
 
         '</div>';
 
@@ -93,25 +102,26 @@
     }
 
     /* ── DOM References ── */
-    var wrap        = document.getElementById('chatbotFabWrap');
-    var fab         = document.getElementById('chatbotFab');
-    var closeBtn    = document.getElementById('chatbotCloseBtn');
-    var backdrop    = document.getElementById('chatbotBackdrop');
-    var window_     = document.getElementById('chatbotWindow');
-    var messagesEl  = document.getElementById('chatbotMessages');
-    var inputEl     = document.getElementById('chatbotInput');
-    var sendBtn     = document.getElementById('chatbotSendBtn');
-    var suggWrap    = document.getElementById('chatbotSuggestionsWrap');
+    var wrap = document.getElementById('chatbotFabWrap');
+    var fab = document.getElementById('chatbotFab');
+    var closeBtn = document.getElementById('chatbotCloseBtn');
+    var backdrop = document.getElementById('chatbotBackdrop');
+    var window_ = document.getElementById('chatbotWindow');
+    var messagesEl = document.getElementById('chatbotMessages');
+    var inputEl = document.getElementById('chatbotInput');
+    var sendBtn = document.getElementById('chatbotSendBtn');
+    var suggWrap = document.getElementById('chatbotSuggestionsWrap');
     var suggestions = document.getElementById('chatbotSuggestions');
-    var suggPrev    = document.getElementById('chatbotSuggPrev');
-    var suggNext    = document.getElementById('chatbotSuggNext');
-    var badge       = document.getElementById('chatbotBadge');
+    var suggPrev = document.getElementById('chatbotSuggPrev');
+    var suggNext = document.getElementById('chatbotSuggNext');
+    var badge = document.getElementById('chatbotBadge');
 
     var isOpen = false;
     var hasOpened = false;
 
     /* ── Helpers ── */
     function addMessage(text, sender) {
+        /* sender: 'bot' | 'user' */
         var msgEl = document.createElement('div');
         msgEl.className = 'chatbot-msg ' + sender;
 
@@ -119,14 +129,14 @@
             msgEl.innerHTML =
                 '<div class="chatbot-msg-avatar"><img src="' + BOT_ICON + '" alt="bot"></div>' +
                 '<div>' +
-                    '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
-                    '<div class="chatbot-msg-time">' + getTime() + '</div>' +
+                '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
+                '<div class="chatbot-msg-time">' + getTime() + '</div>' +
                 '</div>';
         } else {
             msgEl.innerHTML =
                 '<div>' +
-                    '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
-                    '<div class="chatbot-msg-time">' + getTime() + '</div>' +
+                '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
+                '<div class="chatbot-msg-time">' + getTime() + '</div>' +
                 '</div>';
         }
 
@@ -169,6 +179,7 @@
         window_.style.display = 'flex';
         window_.classList.remove('is-closing');
 
+        /* Chip widths are 0 while the window is display:none */
         if (typeof updateSuggArrows === 'function') updateSuggArrows();
 
         if (!hasOpened) {
@@ -177,7 +188,10 @@
             addMessage(WELCOME_MSG, 'bot');
         }
 
+        /* Hide badge */
         if (badge) badge.style.display = 'none';
+
+        /* Focus input after animation */
         setTimeout(function () { inputEl.focus(); }, 330);
     }
 
@@ -196,10 +210,12 @@
         }, 220);
     }
 
+    /* ── Send message → real MicrositeChat API call ── */
     function sendMessage(text) {
         text = text.trim();
         if (!text) return;
 
+        /* Hide suggestions after first interaction */
         if (suggWrap) suggWrap.style.display = 'none';
 
         addMessage(text, 'user');
@@ -207,14 +223,38 @@
         inputEl.style.height = 'auto';
         sendBtn.disabled = true;
 
+        var slug = document.body.dataset.slug || '';
+
         showTyping();
-        setTimeout(function () {
-            hideTyping();
-            addMessage(
-                "Thank you for contacting Dr. Arjun Mehta's clinic. Our team will get back to you shortly. For appointments, you can also use the 'Book Appointment' button on our page.",
-                'bot'
-            );
-        }, 1200);
+
+        var formData = new FormData();
+        formData.append('Message', text);
+
+        fetch(API_BASE + '/api/MicrositeChat?slug=' + encodeURIComponent(slug), {
+            method: 'POST',
+            body: formData
+        })
+            .then(function (res) {
+                if (!res.ok) {
+                    throw new Error('MicrositeChat request failed: ' + res.status);
+                }
+                return res.json();
+            })
+            .then(function (data) {
+                hideTyping();
+                var reply =
+                    (data && (data.reply || data.message || data.answer || data.response)) ||
+                    "Thanks for your message! Our team will get back to you shortly. For immediate assistance, please call or visit our support page.";
+                addMessage(reply, 'bot');
+            })
+            .catch(function (err) {
+                console.error('MicrositeChat error:', err);
+                hideTyping();
+                addMessage(
+                    "Sorry, I'm having trouble responding right now. Please call or visit our support page for immediate assistance.",
+                    'bot'
+                );
+            });
     }
 
     /* ── Auto-resize textarea ── */
@@ -224,7 +264,7 @@
         inputEl.style.height = Math.min(inputEl.scrollHeight, 100) + 'px';
     });
 
-    /* ── Send on Enter ── */
+    /* ── Send on Enter (Shift+Enter for newline) ── */
     inputEl.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
@@ -237,21 +277,20 @@
         if (!isOpen) openChat();
     });
 
-    if (closeBtn) closeBtn.addEventListener('click', closeChat);
-    if (backdrop) backdrop.addEventListener('click', closeChat);
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeChat);
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', closeChat);
+    }
 
     sendBtn.addEventListener('click', function () {
         sendMessage(inputEl.value);
     });
 
     /* ── Suggestion chips ── */
-    if (suggestions) {
-        suggestions.addEventListener('click', function (e) {
-            var chip = e.target.closest('.chatbot-suggestion-chip');
-            if (!chip) return;
-            sendMessage(chip.textContent);
-        });
-    }
+    
 
     /* ── Close on Escape ── */
     document.addEventListener('keydown', function (e) {

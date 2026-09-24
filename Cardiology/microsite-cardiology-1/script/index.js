@@ -402,6 +402,195 @@ if (menuToggle && mainNav) {
 })();
 
 // Booking Modal & Form Validation
+// Booking date picker (moved out of the testimonials carousel IIFE — it has
+// nothing to do with testimonials, and previously crashed on load because it
+// referenced a `form` variable that didn't exist in that scope)
+
+let iti = null;
+let phoneUtilsReady = false;
+
+function initPhonePlugin() {
+    const form = document.getElementById("bookingForm");
+    const phoneInputEl = form?.phone;
+    if (!phoneInputEl || !window.intlTelInput) return;
+
+    iti = window.intlTelInput(phoneInputEl, {
+        initialCountry: "in",
+        countryOrder: ["in"],
+        separateDialCode: true,
+        loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
+    });
+
+    iti.promise.then(() => { phoneUtilsReady = true; }).catch(() => { });
+
+    form.addEventListener("reset", () => {
+        iti?.setNumber("");
+        iti?.setSelectedCountry("in");
+    });
+}
+
+initPhonePlugin();
+
+(function initDatePicker() {
+    const form = document.getElementById("bookingForm");
+    const trigger = document.getElementById("preferredDateText");
+    const hiddenInput = document.getElementById("preferredDate");
+    const field = document.getElementById("preferredDateField");
+    const calendar = document.getElementById("preferredDateCalendar");
+    if (!form || !trigger || !hiddenInput || !field || !calendar) return;
+
+    const titleEl = calendar.querySelector("[data-cal-title]");
+    const gridEl = calendar.querySelector("[data-cal-grid]");
+    const prevBtn = calendar.querySelector("[data-cal-prev]");
+    const nextBtn = calendar.querySelector("[data-cal-next]");
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const BOOKING_WINDOW_DAYS = 30;
+    const maxBookableDate = new Date(today);
+    maxBookableDate.setDate(maxBookableDate.getDate() + BOOKING_WINDOW_DAYS);
+
+    let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selectedDate = null;
+
+    const doctorId = form.dataset.userid;
+    let availableDays = null;
+
+    async function loadAvailableDays(type) {
+        try {
+            const res = await fetch(`${API_BASE}/api/Patient_Appointment/getavailabledays?userid=${doctorId}&type=${type}`);
+            const days = await res.json();
+            availableDays = new Set((days || []).map(d => d.toLowerCase()));
+        } catch (err) {
+            console.warn("Failed to load available days:", err.message);
+            availableDays = null;
+        }
+        render();
+    }
+
+    // booking-modal IIFE calls this whenever the clinic/online tab changes
+    window.__onAppointmentTypeChange = loadAvailableDays;
+    loadAvailableDays("offline");
+
+    function pad(n) { return String(n).padStart(2, "0"); }
+    function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
+    function formatDisplay(d) { return `${pad(d.getDate())} ${monthNames[d.getMonth()].slice(0, 3)} ${d.getFullYear()}`; }
+    function isSameDay(a, b) {
+        return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    }
+
+    function render() {
+        if (!titleEl || !gridEl) return;
+        titleEl.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
+        gridEl.innerHTML = "";
+
+        const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+        const startOffset = firstDay.getDay();
+        const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+
+        for (let i = 0; i < startOffset; i++) {
+            const spacer = document.createElement("span");
+            spacer.className = "booking-calendar-day booking-calendar-day--empty";
+            gridEl.appendChild(spacer);
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const cellDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "booking-calendar-day";
+            btn.textContent = String(day);
+
+            const dayName = cellDate.toLocaleDateString("en-US", { weekday: "long" }).toLowerCase();
+            const isUnconfiguredDay = availableDays && availableDays.size > 0 && !availableDays.has(dayName);
+
+            const isOutsideWindow = cellDate > maxBookableDate;
+
+            if (cellDate < today || isUnconfiguredDay) {
+                btn.disabled = true;
+                btn.classList.add("is-disabled");
+            }
+            if (isSameDay(cellDate, today)) btn.classList.add("is-today");
+            if (isSameDay(cellDate, selectedDate)) btn.classList.add("is-selected");
+
+            btn.addEventListener("click", () => {
+                selectedDate = cellDate;
+                hiddenInput.value = formatISO(cellDate);
+                trigger.value = formatDisplay(cellDate);
+                hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
+                close();
+            });
+
+            gridEl.appendChild(btn);
+        }
+        if (nextBtn) {
+            const firstOfNextMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+            nextBtn.disabled = firstOfNextMonth > maxBookableDate;
+            nextBtn.classList.toggle("is-disabled", nextBtn.disabled);
+        }
+        // Also stop navigating before the current month
+        if (prevBtn) {
+            const lastOfPrevMonth = new Date(viewDate.getFullYear(), viewDate.getMonth(), 0);
+            prevBtn.disabled = lastOfPrevMonth < new Date(today.getFullYear(), today.getMonth(), 1);
+            prevBtn.classList.toggle("is-disabled", prevBtn.disabled);
+        }
+    }
+
+    prevBtn?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (prevBtn.disabled) return; // NEW guard
+        viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
+        render();
+    });
+
+    nextBtn?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (nextBtn.disabled) return; // NEW guard
+        viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+        render();
+    });
+
+    function open() {
+        calendar.hidden = false;
+        field.classList.add("is-open");
+        render();
+        document.addEventListener("click", onOutsideClick);
+    }
+
+    function close() {
+        calendar.hidden = true;
+        field.classList.remove("is-open");
+        document.removeEventListener("click", onOutsideClick);
+    }
+
+    function onOutsideClick(event) {
+        if (!field.contains(event.target)) close();
+    }
+
+    trigger.addEventListener("click", () => {
+        calendar.hidden ? open() : close();
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !calendar.hidden) close();
+    });
+
+    //document.addEventListener("keydown", (event) => {
+    //    if (event.key === "Escape" && !calendar.hidden) close();
+    //});
+
+    form.addEventListener("reset", () => {
+        selectedDate = null;
+        trigger.value = "";
+        hiddenInput.value = "";
+        viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+        close();
+    });
+})();
+
+// Booking Modal & Form Validation
 (function () {
     const modal = document.getElementById("bookingModal");
     const dialog = modal?.querySelector(".booking-modal-dialog");
@@ -409,7 +598,11 @@ if (menuToggle && mainNav) {
     const closeBtn = document.getElementById("bookingModalClose");
     const form = document.getElementById("bookingForm");
 
-    // Consent checkbox logic
+    // Guard BEFORE touching form.dataset — previously this bailout ran too
+    // late (after several form.dataset.* reads), so a page missing the
+    // booking modal/form would throw instead of quietly skipping this IIFE.
+    if (!modal || !dialog || !form) return;
+
     const consentCheckbox = document.getElementById("consentCheckbox");
     const submitBtnEl = document.getElementById("submitBtn") || form.querySelector(".booking-submit-btn");
 
@@ -443,12 +636,17 @@ if (menuToggle && mainNav) {
     }
 
     const doctorId = form.dataset.userid;
+    const clinicName = form.dataset.clinicname;
+    const clinicAddress = form.dataset.address;
+    // Bug fix: the HTML only sets data-district (there is no data-city
+    // attribute), so this used to always read as `undefined` and rendered
+    // literally as "undefined" in the offline booking confirmation message.
+    const clinicDistrict = form.dataset.district;
+    const clinicState = form.dataset.state;
+    const clinicPincode = form.dataset.pincode;
     const clinicTab = document.getElementById("clinicVisitTab");
     const onlineTab = document.getElementById("onlineConsultTab");
-    //let isOnlineAvailable = true;
-    //let isOfflineAvailable = true;
     const openTriggers = document.querySelectorAll(".cta-btn");
-
 
     let isOnlineAvailable = true;
     let isOfflineAvailable = true;
@@ -483,11 +681,13 @@ if (menuToggle && mainNav) {
             if (isOnlineAvailable && !isOfflineAvailable) {
                 appointmentType = "online";
                 setActiveTab("online");
+                window.__onAppointmentTypeChange?.(appointmentType);
             }
 
             if (isOfflineAvailable && !isOnlineAvailable) {
                 appointmentType = "offline";
                 setActiveTab("clinic");
+                window.__onAppointmentTypeChange?.(appointmentType);
             }
 
             // Hide all book appointment buttons if both are unavailable
@@ -502,9 +702,6 @@ if (menuToggle && mainNav) {
             // Keep defaults if API fails - don't break the page
         }
     })();
-
-
-    if (!modal || !dialog || !form) return;
 
     function setBodyScroll(disable) {
         document.body.style.overflow = disable ? "hidden" : "";
@@ -664,8 +861,37 @@ if (menuToggle && mainNav) {
         }
     }
 
-    clinicTab?.addEventListener("click", () => setActiveTab("clinic"));
-    onlineTab?.addEventListener("click", () => setActiveTab("online"));
+    // Fix: previously these two tabs each had TWO click listeners attached
+    // (one set here, an identical second set further down) which both called
+    // setActiveTab redundantly. Consolidated into a single listener per tab
+    // that both switches the UI and updates appointmentType.
+    let appointmentType = "offline";
+
+    clinicTab?.addEventListener("click", () => {
+        setActiveTab("clinic");
+        appointmentType = "offline";
+        window.__onAppointmentTypeChange?.(appointmentType);
+    });
+    onlineTab?.addEventListener("click", () => {
+        setActiveTab("online");
+        appointmentType = "online";
+        window.__onAppointmentTypeChange?.(appointmentType);
+    });
+
+    function markFieldState(name, hasError) {
+        const field = form[name];
+        const fieldElement = Array.isArray(field) ? field[0] : field;
+        if (!fieldElement) return;
+        fieldElement.classList.toggle("is-invalid", hasError);
+        fieldElement.setAttribute("aria-invalid", hasError ? "true" : "false");
+        if (name === "preferredDate") {
+            const displayField = document.getElementById("preferredDateText");
+            if (displayField) {
+                displayField.classList.toggle("is-invalid", hasError);
+                displayField.setAttribute("aria-invalid", hasError ? "true" : "false");
+            }
+        }
+    }
 
     function showError(name, message) {
         const errorEl = form.querySelector(`.booking-error[data-error-for="${name}"]`);
@@ -679,6 +905,12 @@ if (menuToggle && mainNav) {
             el.textContent = "";
         });
     }
+
+    form.fullName?.addEventListener("input", () => {
+        const el = form.fullName;
+        const sanitized = el.value.replace(/[^A-Za-z\s.'-]/g, "");
+        if (sanitized !== el.value) el.value = sanitized;
+    });
 
     function validateEmail(value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -698,22 +930,6 @@ if (menuToggle && mainNav) {
         return chosen >= today;
     }
 
-    let appointmentType = "offline";
-
-    if (clinicTab) {
-        clinicTab.addEventListener("click", () => {
-            setActiveTab("clinic");
-            appointmentType = "offline";
-        });
-    }
-
-    if (onlineTab) {
-        onlineTab.addEventListener("click", () => {
-            setActiveTab("online");
-            appointmentType = "online";
-        });
-    }
-
     const preferredDateInput = document.getElementById("preferredDate");
     const preferredTimeSelect = document.getElementById("preferredTime");
     const reportInput = document.getElementById("report");
@@ -721,118 +937,13 @@ if (menuToggle && mainNav) {
     const bookingLoader = document.getElementById("bookingLoader");
     const submitBtn = document.getElementById("submitBtn");
 
-    // Custom modern date picker (replaces native browser calendar)
-    (function initDatePicker() {
-        const trigger = document.getElementById("preferredDateText");
-        const hiddenInput = document.getElementById("preferredDate");
-        const field = document.getElementById("preferredDateField");
-        const calendar = document.getElementById("preferredDateCalendar");
-        if (!trigger || !hiddenInput || !field || !calendar) return;
-
-        const titleEl = calendar.querySelector("[data-cal-title]");
-        const gridEl = calendar.querySelector("[data-cal-grid]");
-        const prevBtn = calendar.querySelector("[data-cal-prev]");
-        const nextBtn = calendar.querySelector("[data-cal-next]");
-        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
+    if (preferredDateInput) {
         const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
-        let selectedDate = null;
-
-        function pad(n) { return String(n).padStart(2, "0"); }
-        function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
-        function formatDisplay(d) { return `${pad(d.getDate())} ${monthNames[d.getMonth()].slice(0, 3)} ${d.getFullYear()}`; }
-        function isSameDay(a, b) {
-            return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
-        }
-
-        function render() {
-            if (!titleEl || !gridEl) return;
-            titleEl.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
-            gridEl.innerHTML = "";
-
-            const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
-            const startOffset = firstDay.getDay();
-            const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
-
-            for (let i = 0; i < startOffset; i++) {
-                const spacer = document.createElement("span");
-                spacer.className = "booking-calendar-day booking-calendar-day--empty";
-                gridEl.appendChild(spacer);
-            }
-
-            for (let day = 1; day <= daysInMonth; day++) {
-                const cellDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
-                const btn = document.createElement("button");
-                btn.type = "button";
-                btn.className = "booking-calendar-day";
-                btn.textContent = String(day);
-
-                if (cellDate < today) {
-                    btn.disabled = true;
-                    btn.classList.add("is-disabled");
-                }
-                if (isSameDay(cellDate, today)) btn.classList.add("is-today");
-                if (isSameDay(cellDate, selectedDate)) btn.classList.add("is-selected");
-
-                btn.addEventListener("click", () => {
-                    selectedDate = cellDate;
-                    hiddenInput.value = formatISO(cellDate);
-                    trigger.value = formatDisplay(cellDate);
-                    hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
-                    close();
-                });
-
-                gridEl.appendChild(btn);
-            }
-        }
-
-        function open() {
-            calendar.hidden = false;
-            field.classList.add("is-open");
-            render();
-            document.addEventListener("click", onOutsideClick);
-        }
-
-        function close() {
-            calendar.hidden = true;
-            field.classList.remove("is-open");
-            document.removeEventListener("click", onOutsideClick);
-        }
-
-        function onOutsideClick(event) {
-            if (!field.contains(event.target)) close();
-        }
-
-        trigger.addEventListener("click", () => {
-            calendar.hidden ? open() : close();
-        });
-
-        prevBtn?.addEventListener("click", (event) => {
-            event.stopPropagation();
-            viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
-            render();
-        });
-
-        nextBtn?.addEventListener("click", (event) => {
-            event.stopPropagation();
-            viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
-            render();
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && !calendar.hidden) close();
-        });
-
-        form.addEventListener("reset", () => {
-            selectedDate = null;
-            trigger.value = "";
-            hiddenInput.value = "";
-            viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
-            close();
-        });
-    })();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const dd = String(today.getDate()).padStart(2, "0");
+        preferredDateInput.setAttribute("min", `${yyyy}-${mm}-${dd}`);
+    }
 
     // FILE PREVIEW
     reportInput?.addEventListener("change", (e) => {
@@ -844,6 +955,10 @@ if (menuToggle && mainNav) {
 
         const isImage = file.type.startsWith("image/");
         const isPdf = file.type === "application/pdf";
+
+        window.trackEvent?.("report_uploaded", {
+            file_type: isPdf ? "pdf" : isImage ? "image" : "other"
+        });
 
         if (isImage) {
             // Show compression status
@@ -956,9 +1071,8 @@ if (menuToggle && mainNav) {
             }
 
             slots.forEach(slot => {
-
                 preferredTimeSelect.innerHTML +=
-                    `<option value="${slot}">${slot}</option>`;
+                    `<option value="${slot.id}" data-label="${slot.label}">${slot.label}</option>`;
             });
 
         } catch (err) {
@@ -985,8 +1099,11 @@ if (menuToggle && mainNav) {
         const phone = form.phone.value.trim();
         const preferredDate = form.preferredDate.value;
         const preferredTime = form.preferredTime.value;
+        const selectedTimeOption = preferredTimeSelect.selectedOptions[0];
+        const preferredTimeLabel = selectedTimeOption ? selectedTimeOption.dataset.label : "";
         const reason = form.reason.value.trim();
-        const report = form.report.value.trim();
+        //const report = form.report.value.trim();
+        const consentGiven = form.consentCheckbox.checked;
 
         let isValid = true;
 
@@ -1006,7 +1123,7 @@ if (menuToggle && mainNav) {
         if (!phone) {
             showError("phone", "Please enter your phone number.");
             isValid = false;
-        } else if (!validatePhone(phone)) {
+        } else if (iti && phoneUtilsReady && !iti.isValidNumber()) {
             showError("phone", "Please enter a valid phone number.");
             isValid = false;
         }
@@ -1029,6 +1146,19 @@ if (menuToggle && mainNav) {
             isValid = false;
         }
 
+        //if (!report || report.length == 0) {
+        //    showError("report", "Please provide a image");
+        //    isValid = false;
+        //}
+
+        // Bug fix: the form has `novalidate`, so the native `required` on the
+        // consent checkbox was never enforced and nothing here checked it —
+        // users could submit without consenting. Now actually validated.
+        if (!consentGiven) {
+            showError("consentCheckbox", "Please provide consent to proceed.");
+            isValid = false;
+        }
+
         if (!isValid) return;
 
         isSubmitting = true;
@@ -1047,12 +1177,11 @@ if (menuToggle && mainNav) {
             formData.append("Date", preferredDate);
             formData.append("Type", appointmentType);
 
-            const dayName = new Date(preferredDate)
-                .toLocaleDateString("en-US", { weekday: "long" });
+            const dayName = new Date(preferredDate).toLocaleDateString("en-US", { weekday: "long" });
 
             formData.append("Day", dayName);
-
-            formData.append("Time", preferredTime);
+            formData.append("SlotId", preferredTime);
+            formData.append("Time", preferredTimeLabel);
             formData.append("Reason", reason);
 
             // Use compressed file if available
@@ -1078,29 +1207,31 @@ if (menuToggle && mainNav) {
             const addressMessage = result?.message;
 
             if (appointmentTypeResult === "online") {
-                showPopup("Your online consultation has been booked successfully.", true);
+                const meetLink = result?.meetLink;
+                const msg = meetLink
+                    ? `Your appointment is confirmed.<br/><br/>Please join 5 minutes before your scheduled time. Check your email for details.`
+                    : "Your online consultation has been booked successfully.";
+                showPopup(msg, true);
                 window.__trackBookingSuccess?.("online");
             } else if (appointmentTypeResult === "offline") {
-                const msg = addressMessage
-                    ? `Your appointment has been booked successfully at ${addressMessage}.`
-                    : "Your appointment has been booked successfully.";
+                const locationHtml = `
+        <strong>Appointment Location:</strong><br/>
+        ${clinicName || ""}<br/>
+        ${clinicAddress || ""}<br/>
+        ${clinicDistrict || ""}${clinicState ? ", " + clinicState : ""}${clinicPincode ? " – " + clinicPincode : ""}
+    `;
+                const msg = `Hello ${fullName},<br/><br/>
+    Your Appointment is Confirmed!<br/><br/>
+    ${locationHtml}<br/><br/>
+    Confirmation details have been sent to your registered email<br/>
+    Please arrive 15 minutes before your scheduled appointment to complete any necessary check-in.
+`;
                 showPopup(msg, true);
                 window.__trackBookingSuccess?.("offline");
+            } else if (!response.ok) {
+                showPopup(addressMessage || "Something went wrong while booking your appointment.", false);
+                return;
             }
-
-            // Hide loader
-            //if (!response.ok) {
-            //    showPopup(result, false);
-            //    return;
-            //}
-
-            //if (result == "online") {
-            //    showPopup(result, true);
-            //}
-
-            //else if (result == "offline") {
-            //    showPopup(result, true);
-            //}
 
             form.reset();
             filePreviewDiv.innerHTML = "";
@@ -1146,7 +1277,7 @@ if (menuToggle && mainNav) {
     ">
         <div style="
             background:#fff;
-            width:380px;
+            width:800px;
             max-width:90%;
             border-radius:12px;
             padding:30px;
@@ -1187,7 +1318,7 @@ if (menuToggle && mainNav) {
                     padding:10px 35px;
                     border-radius:6px;
                     cursor:pointer;
-                    font-size:16px;
+                    font-size:15px;
                 ">
                 OK
             </button>
@@ -1442,5 +1573,75 @@ if (menuToggle && mainNav) {
 
     item.classList.toggle("is-active", !isActive);
     btn.setAttribute("aria-expanded", String(!isActive));
+  });
+})();
+
+// DigiDr Stat Counter
+// Counts each [data-counter] element up from 0 to the number in its own text
+// (e.g. "15", "15+", "20k+", "20,000+"), keeping the suffix and commas.
+// The real value is in the HTML, so it shows without JS; text that doesn't
+// start with a number is left alone. Runs once, when the stat scrolls into
+// view. With prefers-reduced-motion the final value is shown straight away.
+(function () {
+  var els = document.querySelectorAll("[data-counter]");
+  if (!els.length) return;
+
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+  var DURATION = 1600;
+
+  function parse(el) {
+    var text = el.textContent.trim();
+    var match = text.match(/^(\d[\d,]*(?:\.\d+)?)(.*)$/);
+    if (!match) return null;
+    var numText = match[1];
+    var target = parseFloat(numText.replace(/,/g, ""));
+    if (!isFinite(target)) return null;
+    return {
+      target: target,
+      suffix: match[2],
+      commas: numText.indexOf(",") !== -1,
+      decimals: (numText.split(".")[1] || "").length,
+      original: text
+    };
+  }
+
+  function format(value, info) {
+    var text = info.decimals ? value.toFixed(info.decimals) : String(Math.round(value));
+    if (info.commas) {
+      var parts = text.split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      text = parts.join(".");
+    }
+    return text + info.suffix;
+  }
+
+  function animate(el, info) {
+    var start = null;
+    function step(now) {
+      if (start === null) start = now;
+      var progress = Math.min((now - start) / DURATION, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = progress < 1 ? format(info.target * eased, info) : info.original;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      animate(entry.target, entry.target.__digidrCounter);
+    });
+  }, { threshold: 0.4 });
+
+  els.forEach(function (el) {
+    var info = parse(el);
+    if (!info) return;
+    el.__digidrCounter = info;
+    el.textContent = format(0, info);
+    observer.observe(el);
   });
 })();

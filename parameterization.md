@@ -62,7 +62,7 @@ pages.
 ### Loops
 | Loop | Fields |
 |---|---|
-| `{{#services}}` | `icon`, `title`, `description` |
+| `{{#services}}` | `title`, `description` (see note below — `icon` dropped) |
 | `{{#testimonials}}` | `patient_name`, `comment`, `profile_picture`, `rating`, `stars_html` |
 | `{{#images}}` | `image` |
 | `{{#blog}}` | `id`, `subject`, `blogimages`, `created` |
@@ -113,9 +113,19 @@ are extra.
 **Class-name compatibility.** Placeholders are plain text substitution, so they work
 with any class name or HTML structure. No placeholder is used inside an `id`. The
 exceptions:
-1. **`{{icon}}` is part of a class name:** `class="fa-solid {{icon}}"` in the services
-   loop. Templates must keep exactly that pattern and load a Font Awesome version
-   that has the icons the backend sends.
+1. **`{{icon}}` — dropped from the services loop (decision update).** The services
+   loop used to receive a per-service `icon` field (`class="fa-solid {{icon}}"`),
+   meaning the backend had to supply a matching Font Awesome class for every service
+   row. **Changed:** every template now hardcodes one fixed Font Awesome icon for the
+   whole Services section, chosen per specialty (e.g. Ayurvedic → `fa-leaf`,
+   Dentist → `fa-tooth`, Cardiology → `fa-heart-pulse` — see the codebase's own
+   specialty→icon mapping, not duplicated here). The `{{#services}}` loop is now
+   `title` + `description` only. This means the backend team can add/remove services
+   freely without ever supplying an icon — the template icon is fixed at build time,
+   not sent per row. Confirmed and applied to Ayurvedic-1/2 (the only two templates
+   that had already parameterized `{{icon}}`); the other templates were hardcoded
+   per-card icons before this change and are now hardcoded to one shared icon
+   instead, so no loop field was ever removed there.
 2. **`{{stars_html}}` is backend-generated HTML** inside
    `<div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">`. Its
    classes aren't known (probably `<i class="fa-solid fa-star">`). Each template's
@@ -153,8 +163,9 @@ full URL (it's used as `<img src="{{profile}}">`), so this should be `"{{profile
 | 8 | Technology section | Kept as hardcoded content in **Intensivist-1 only**. Not added to any other microsite. |
 | 9 | Swapped Facebook links in live sites | Fix the 4 swapped `href` values (see §3). |
 | 10 | JavaScript | Only three JS changes are in scope now: the stat counter (§4), `chatbot.js` (§4a) and the booking code in `index.js` (§4b). Analytics, banner and `auto-open-modal.js` wait for the backend team (§5). |
-| 11 | `chatbot.js` `BOT_ICON` | Hardcoded per template (its own GCS folder), **not** a placeholder. |
+| 11 | `chatbot.js` `BOT_ICON` | Hardcoded literal, **not** a placeholder. One shared URL (`.../microsite-ent-1/assets/chatbot-icon.svg`) across all 21 non-live templates — no longer per-template GCS folder. Live sites unchanged, still per-site. |
 | 12 | Live sites and the JS | The 6 live sites already match §4a and §4b exactly. Only the stat counter (§4) changes live JS, and only on dhara-sharma. |
+| 13 | Services `{{icon}}` | Dropped from the `{{#services}}` loop. One fixed Font Awesome icon per specialty, hardcoded in the template — not sent per service by the backend. Loop is now `title` + `description` only. |
 
 ---
 
@@ -299,28 +310,35 @@ others. Whitespace doesn't matter.
   the shared script; harmless (the icon markup itself, `fa-solid fa-xmark`, is
   consistent) and kept as-is since every template already loads Font Awesome.
 
-### Decision: `BOT_ICON` stays a hardcoded per-microsite constant
-Not parameterized as a placeholder. Each microsite's `script/chatbot.js` keeps its
-own literal `BOT_ICON` URL, matching current live behavior exactly — set once per
-microsite when the file is added, the same way it already works on all 6 live sites.
-`BOT_NAME`, `API_BASE`, and `WELCOME_MSG` are also literals (not placeholders),
-copied verbatim from the code below.
+### Decision (updated): `BOT_ICON` is now one shared URL across all templates
+Superseded the original per-template-GCS-folder convention below. The backend team
+confirmed a single shared icon asset for all templates:
+`https://storage.googleapis.com/microsite_buck/microsite-ent-1/assets/chatbot-icon.svg`
+(hosted under the `microsite-ent-1` folder, but used by every template regardless of
+its own specialty/folder — it is not swapped per template anymore).
+
+Still a hardcoded literal, not a `{{placeholder}}` — every template's
+`script/chatbot.js` has this exact same `BOT_ICON` line now, verbatim, with no
+per-template substitution needed. `BOT_NAME`, `API_BASE`, and `WELCOME_MSG` are also
+literals (not placeholders), copied verbatim from the code below.
+
+**Live sites are unchanged and out of scope for this update.** The 6 live sites (table
+above) and the two `(live)` urology folders still use their own existing per-site GCS
+`BOT_ICON` paths (e.g. `microsite-ayurvedic-1`, `microsite-dentist-2`, etc.) — those
+were deliberately left alone, not migrated to the shared URL. Only the 21 non-live
+templates (all specialty folders + `Default Template`) were switched to the shared
+URL.
 
 ### Exact code to implement in every microsite's `script/chatbot.js`
 
-Copy verbatim. The only line to change per microsite is `BOT_ICON` (line 4). Set it
-to the chatbot icon in that template's own GCS folder, using the template's folder
-name exactly as it appears in the repo:
-`https://storage.googleapis.com/microsite_buck/<template-folder>/assets/chatbot-icon.svg`
-(e.g. `Dentist/microsite-dentist-2/` → `microsite_buck/microsite-dentist-2/...`).
-The value shown below (`microsite-pediatrician-1`) is samir-shah's; don't copy it
-into other templates.
+Copy verbatim, including the `BOT_ICON` line — it is now identical across every
+template, nothing to swap per microsite.
 
 ```javascript
 (function () {
     /* ── Config ── */
     var BOT_NAME = 'Assistant';
-    var BOT_ICON = 'https://storage.googleapis.com/microsite_buck/microsite-pediatrician-1/assets/chatbot-icon.svg';
+    var BOT_ICON = 'https://storage.googleapis.com/microsite_buck/microsite-ent-1/assets/chatbot-icon.svg';
     var API_BASE = 'https://digidrapi.digidr.app';
 
     var WELCOME_MSG = "Hi there! 👋 I'm your Assistant. How can I help you today?";
@@ -684,8 +702,9 @@ At the end of `<body>`, with the other scripts:
 - **No `#chatbot-mount` element.** No live page has one.
 
 ### Chatbot rollout checklist (per template)
-- [ ] `script/chatbot.js` = the exact code above, with `BOT_ICON` set to this
-      template's own folder.
+- [x] `script/chatbot.js` = the exact code above, `BOT_ICON` set to the shared URL
+      (`.../microsite-ent-1/assets/chatbot-icon.svg`) — same on every template, no
+      per-template substitution needed. Done for all 21 non-live templates.
 - [ ] `styles/chatbot.css` exists (copy it from a live site if the template has
       none; don't redesign it).
 - [ ] The `chatbot-css` link in `<head>` and the `chatbot.js` script tag at the end
@@ -1126,30 +1145,67 @@ Open questions for the backend team:
 
 ---
 
-## 5a. WhatsApp link (to review tomorrow)
+## 5a. WhatsApp link (resolved)
 
-**Live sites:** every WhatsApp icon (42 across all live sites) uses
-`href="{{whatsapp}}"` with no `https://wa.me/` prefix. So the backend sends the
-**entire link**, not just the phone number. The icon is inside the
-`{{#hasWhatsapp}}` / `{{#noWhatsapp}}` pair, like the other social icons.
+**`{{whatsapp}}` is confirmed: a bare number, no country code** (e.g. `9876543210`,
+not `+919876543210` or a full `wa.me` link). Confirmed by the backend team
+(2026-09-24).
 
-**Templates:**
-- 116 WhatsApp icons use `href="#"`.
-- 4 in Cardiology-1 (`index.html`, `blog.html`, `blog-detail.html`) use a hardcoded
-  `https://wa.me/<number>`.
+**Decision: WhatsApp is its own field, not derived from `{{phone}}`.** A doctor's
+WhatsApp number is a separate contact channel — potentially different from their
+clinic phone, or absent entirely (hence `{{hasWhatsapp}}`/`{{noWhatsapp}}` existing
+as their own flag pair, same as every other social link). Do not build the WhatsApp
+link from `{{code}}{{phone}}`.
 
-**Planned rule:** match the live sites, replacing both kinds above:
+**The rule, everywhere a WhatsApp icon appears (hero, footer, on every page type):**
 ```html
-{{#hasWhatsapp}}<a href="{{whatsapp}}" …><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+{{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" …><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
 {{#noWhatsapp}}<span class="… is-disabled" … data-tooltip="Not Enabled">…</span>{{/noWhatsapp}}
 ```
+`91` is hardcoded (India) — `{{whatsapp}}` carries no country code, and there is no
+separate placeholder for one. If a future doctor is outside India this will need
+revisiting; not a concern for the current roster.
 
-**Open question for the backend team:** is `{{whatsapp}}` a full link (e.g.
-`https://wa.me/919876543210`) or only a number?
-- **Full link:** keep `href="{{whatsapp}}"` (the current live pattern).
-- **Number only:** both live sites and templates must use
-  `href="https://wa.me/{{whatsapp}}"`, and the live WhatsApp links are currently
-  broken.
+**What was actually found on the 6 live sites (corrects this section's earlier,
+wrong claim that all 42 live WhatsApp icons use `{{whatsapp}}`):** the live sites
+are **internally inconsistent** between page types —
+- `index.html` (hero + footer, all 6 sites, 12 icons): unconditional
+  `href="https://wa.me/{{code}}{{phone}}"` — no `{{#hasWhatsapp}}`/`{{#noWhatsapp}}`
+  gating at all, and built from the clinic phone, not a WhatsApp number. This is a
+  bug matching the one found and fixed in the Ayurvedic-1 template (§6/checklist) —
+  **still present on live sites, not yet fixed there.**
+- `privacy-policy.html`, `terms-of-service.html`, `blog.html`, `blog-detail.html`
+  (all 6 sites, 30 icons): already `{{#hasWhatsapp}}<a href="{{whatsapp}}">…`,
+  matching the "own field" decision above, but missing the `https://wa.me/` prefix
+  now that `{{whatsapp}}` is confirmed to be a bare number — currently broken links.
+- One stray `href="#"` on dhara-sharma's `index.html` (unclear whether that's a third
+  inconsistency or a copy-paste leftover — not yet investigated).
+
+**Rollout:**
+- [x] Every template converted so far (Ayurvedic-1, Ayurvedic-2): `index.html`,
+      `privacy-policy.html`, `terms-of-service.html` — WhatsApp icon wrapped in
+      `{{#hasWhatsapp}}`/`{{#noWhatsapp}}`, `href="https://wa.me/91{{whatsapp}}"`.
+      Blog pages are out of scope (disabled, see the blog-pages decision). Apply the
+      same rule to every template converted from here on.
+- [x] Live sites (done 2026-09-24): all 6 `index.html` files fixed — dropped the
+      unconditional `https://wa.me/{{code}}{{phone}}` construction (which also had
+      no has/no gating), replaced with `{{#hasWhatsapp}}<a
+      href="https://wa.me/91{{whatsapp}}">…{{/hasWhatsapp}}` +
+      `{{#noWhatsapp}}<span …>…{{/noWhatsapp}}`, matching each site's own existing
+      class names and `data-ga-label` style. All 6 sites' `privacy-policy.html` and
+      `terms-of-service.html`, plus 5 of 6 sites' `blog.html`/`blog-detail.html`
+      (already `{{#hasWhatsapp}}<a href="{{whatsapp}}">`), got the `https://wa.me/91`
+      prefix added.
+- [ ] **dhara-sharma's `blog.html`/`blog-detail.html`: not fixed, needs separate
+      work.** Every social icon on these two pages (all 8, not just WhatsApp) is
+      hardcoded `href="#"` with no `{{#has*}}`/`{{#no*}}` gating at all — the whole
+      footer social row on those two pages was never parameterized, unlike every
+      other page on every other live site. Out of scope for this WhatsApp fix since
+      it's not WhatsApp-specific; needs its own pass matching the rest of that
+      site's markup.
+- [x] dhara-sharma's `index.html` stray `href="#"` WhatsApp icon (line 242,
+      investigated): it's inside an HTML comment (dead scaffold markup, never
+      rendered), not a second live icon. No action needed.
 
 ---
 
@@ -1171,7 +1227,9 @@ For each `<Specialty>/microsite-*/` folder:
       hardcoded.
 - [ ] Banner block wrapped in `{{#has_banner}}` with the banner fields.
 - [ ] About: title and subtitle has_/no_ pairs, `{{introduction}}`.
-- [ ] Services: title and subtitle pairs, cards become a `{{#services}}` loop.
+- [ ] Services: title and subtitle pairs, cards become a `{{#services}}` loop
+      (`title` + `description` only — no `{{icon}}` field; icon is one fixed
+      Font Awesome class per specialty, hardcoded in the template markup).
 - [ ] Philosophy: title, subtitle and 3 pillar pairs (keep the backend spellings).
 - [ ] Process: title, subtitle and 4 step pairs.
 - [ ] Contact: `contact_us_subtitle` pair, `{{clinicname}}`, `{{address}}`,
