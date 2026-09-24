@@ -5,9 +5,10 @@ Plan for converting every specialty template into a Mustache-style template, usi
 (`live microsites/*` and `microsite-urology-* (live)`).
 
 > Status: plan finalized, no files edited yet.
-> **JavaScript is out of scope for now, with one exception: the stat counter (§4).**
-> Apart from the counter, do not modify any `script/*.js` file until the backend
-> team's actual code is available.
+> **JavaScript is out of scope for now, with three exceptions: the stat counter (§4),
+> the chatbot widget (§4a), and the booking/appointment code (§4b).** Apart from
+> those three, do not modify any `script/*.js` file until the backend team's actual
+> code is available for the rest (analytics/banner — see §5).
 
 ---
 
@@ -119,14 +120,16 @@ exceptions:
    `<div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">`. Its
    classes aren't known (probably `<i class="fa-solid fa-star">`). Each template's
    CSS must style it. **To confirm with the backend team.**
-3. **The live JS needs specific ids and classes.** This matters for the deferred
-   JavaScript phase:
+3. **The live JS needs specific ids and classes.** This matters for the JavaScript
+   work (§4a, §4b now; the rest later, §5):
    - `index.js`: `#bookingForm`, `#bookingModal`, `#preferredDate`,
+     `#preferredTime`, `#clinicVisitTab`, `#onlineConsultTab`, `.cta-btn`,
      `#testimonialsTrack`, `.testimonial-card`, `.faq-item`, `.read-more-*`,
      `.social:not(.is-disabled)`, `[data-cal-*]`, and others.
    - `banner-module.js`: `#digidrBannerImg` / `.digidr-banner-img`,
      `#digidrBannerLink`.
-   - `chatbot.js`: `#chatbot-mount` and the `chatbot*` ids.
+   - `chatbot.js`: needs no page markup except `<link id="chatbot-css">` (see §4a).
+     It creates all its own `chatbot*` elements.
 
    Template markup must match these hooks once the JS is brought over.
 
@@ -143,13 +146,15 @@ full URL (it's used as `<img src="{{profile}}">`), so this should be `"{{profile
 | 1 | Doctor name outside the FAQ | Every hardcoded name ("Dr. Arjun Mehta", "Dr. Mehta", "Dr. Kapoor", …) becomes `Dr. {{full_name}}`, matching the live sites. There is no surname placeholder. |
 | 2 | FAQ section | **Left exactly as it is** in each specialty template, hardcoded names included. The real questions and answers will be provided later. |
 | 3 | Third hero stat | Stays **hardcoded per microsite** (e.g. 98%, 24h, 97%). |
-| 4 | Stat counters | Counter added to **all templates and live dhara-sharma** (see §4). **In scope now**; it is the only JavaScript change allowed. |
+| 4 | Stat counters | Counter added to **all templates and live dhara-sharma** (see §4). **In scope now.** |
 | 5 | Made-up social-media sections | **Comment out** `<section id="social-media">` in ENT-1, Neurology-1 and Pediatrician-1, plus any nav or footer links pointing to `#social-media`. Not worked on further for now. |
 | 6 | Section kickers / small labels | Kept **as they are in each microsite** (no placeholder exists). |
 | 7 | Facebook | Both flags kept: `hasFacebook` → `{{facebook}}` (profile), `hasFacebookPage` → `{{facebookpage}}` (page), each with its `no*` state. |
 | 8 | Technology section | Kept as hardcoded content in **Intensivist-1 only**. Not added to any other microsite. |
 | 9 | Swapped Facebook links in live sites | Fix the 4 swapped `href` values (see §3). |
-| 10 | JavaScript | **Not touched for now**, except for the stat counter (§4). Everything else will be done once the backend team's code is available (see §5). |
+| 10 | JavaScript | Only three JS changes are in scope now: the stat counter (§4), `chatbot.js` (§4a) and the booking code in `index.js` (§4b). Analytics, banner and `auto-open-modal.js` wait for the backend team (§5). |
+| 11 | `chatbot.js` `BOT_ICON` | Hardcoded per template (its own GCS folder), **not** a placeholder. |
+| 12 | Live sites and the JS | The 6 live sites already match §4a and §4b exactly. Only the stat counter (§4) changes live JS, and only on dhara-sharma. |
 
 ---
 
@@ -172,7 +177,7 @@ every Facebook link on both sites maps `hasFacebookPage` → `{{facebookpage}}` 
 
 ---
 
-## 4. Stat counters (in scope: the only JavaScript change allowed now)
+## 4. Stat counters (in scope)
 
 ### Current state
 | Group | Microsites |
@@ -214,8 +219,9 @@ instead of the rendered text. So `{{experience}}` = 22 would display as "15+", a
   for that marker first, so it is never added twice.
 - In the 7 templates with the old counter, remove only the old
   `// Animated Stat Counters` IIFE. Change nothing else in the file.
-- Do not touch the booking, analytics, banner or chatbot code, or any other script
-  file (§5).
+- Do not touch the analytics or banner code, or any other script file (§5). (Booking
+  and `chatbot.js` are handled separately — §4b and §4a — since they're now also in
+  scope, but are distinct files/tasks from the counter.)
 - Test with `15`, `15+`, `20k+`, `20,000+`, an empty value and a non-numeric value,
   and with reduced motion turned on.
 
@@ -229,9 +235,853 @@ instead of the rendered text. So `{{experience}}` = 22 would display as "15+", a
 
 ---
 
-## 5. JavaScript: deferred until the backend code is available
+## 4a. Chatbot widget (in scope: promoted from §5, confirmed with the backend team)
 
-What the repo shows, for reference only (**do not implement yet**):
+The backend team provided the actual `chatbot.js`. It is **in scope now**, alongside
+the stat counter (§4) and the booking code (§4b).
+
+**Checked against all 6 live sites (script-verified):** the code block below matches
+every live `script/chatbot.js` line for line, apart from the `BOT_ICON` line.
+The only other difference is whitespace: the blank line under
+`/* ── Suggestion chips ── */` has 4 trailing spaces on samir-shah and none on the
+others. Whitespace doesn't matter.
+
+### What's confirmed
+- **Only `BOT_ICON` differs per site.** `BOT_NAME` (`'Assistant'`), `API_BASE`,
+  `WELCOME_MSG` and all logic are the same on every live site. `BOT_ICON` points at
+  the chatbot icon in the GCS folder of the **template the site was built from**:
+
+  | Live site | `BOT_ICON` folder |
+  |---|---|
+  | Raj-kumar | `microsite-intensivist-2` |
+  | anurag-choudhury | `microsite-general-medicine-1` |
+  | deepak-dabkara | `microsite-oncology-1` |
+  | dhara-sharma | `microsite-ent-1` |
+  | samir-shah | `microsite-pediatrician-1` |
+  | samiran-das | `microsite-dentist-2` |
+
+- **Structure:** a self-contained IIFE. Its `injectCSS()` adds
+  `<link id="chatbot-css" href="./styles/chatbot.css">` **only if no element with id
+  `chatbot-css` exists yet**. It builds the widget as an HTML string and puts it in
+  place of a `#chatbot-mount` element if one exists; otherwise it appends it to the
+  end of `<body>`.
+- **How the live pages actually use it (verified on all 5 pages of all 6 sites):**
+  - Every page links the stylesheet itself, in `<head>`:
+    `<link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />`.
+    Because the `id` is already there, `injectCSS()` does nothing. **This link is
+    required**: `injectCSS()` uses `./styles/chatbot.css`, which ignores `{{path}}`
+    and would point to the wrong place once the backend serves the page.
+  - Every page loads the script at the end of `<body>`:
+    `<script src="{{path}}/script/chatbot.js" defer></script>`.
+  - **No live page has a `#chatbot-mount` element.** The widget is always appended
+    to `<body>`. Don't add a mount element.
+- **Send flow:** `sendMessage()` posts `FormData` (`Message`) to `POST
+  {API_BASE}/api/MicrositeChat?slug={document.body.dataset.slug}` — a **new endpoint**
+  not previously listed in this plan's API summary (only booking + analytics were
+  known before). Reads the JSON response's `reply`/`message`/`answer`/`response`
+  field (first non-empty one wins) as the bot's reply, with a generic fallback string
+  if none of those are present or the request fails.
+- **Other behavior:** typing indicator, auto-resizing textarea, Enter-to-send
+  (Shift+Enter for newline), Escape/outside-click/close-button to close, a
+  scroll-collapse effect on the floating action button, and a "Today" divider +
+  welcome message shown once per page load (`hasOpened` guard).
+- **Known incompleteness, carried over as-is:** the script declares and reads
+  `SUGGESTIONS`, `suggWrap`, `suggestions`, `suggPrev`, `suggNext`, and calls
+  `updateSuggArrows()` (guarded with `typeof === 'function'`, so it silently no-ops),
+  but the `/* ── Suggestion chips ── */` section that would render and wire them up is
+  empty in every live site. **Decision: implement the file exactly as confirmed,
+  including this gap** — do not add chip-rendering code that doesn't exist live.
+  Still confirm with the backend team (open question 5 below) whether this is an
+  intentional disable or a future feature, but that answer does not block rolling out
+  this file as-is now.
+- **Icon comment quirk:** the close button's icon comment says *"This microsite loads
+  Font Awesome, not Material Symbols"* — a leftover per-site authoring note baked into
+  the shared script; harmless (the icon markup itself, `fa-solid fa-xmark`, is
+  consistent) and kept as-is since every template already loads Font Awesome.
+
+### Decision: `BOT_ICON` stays a hardcoded per-microsite constant
+Not parameterized as a placeholder. Each microsite's `script/chatbot.js` keeps its
+own literal `BOT_ICON` URL, matching current live behavior exactly — set once per
+microsite when the file is added, the same way it already works on all 6 live sites.
+`BOT_NAME`, `API_BASE`, and `WELCOME_MSG` are also literals (not placeholders),
+copied verbatim from the code below.
+
+### Exact code to implement in every microsite's `script/chatbot.js`
+
+Copy verbatim. The only line to change per microsite is `BOT_ICON` (line 4). Set it
+to the chatbot icon in that template's own GCS folder, using the template's folder
+name exactly as it appears in the repo:
+`https://storage.googleapis.com/microsite_buck/<template-folder>/assets/chatbot-icon.svg`
+(e.g. `Dentist/microsite-dentist-2/` → `microsite_buck/microsite-dentist-2/...`).
+The value shown below (`microsite-pediatrician-1`) is samir-shah's; don't copy it
+into other templates.
+
+```javascript
+(function () {
+    /* ── Config ── */
+    var BOT_NAME = 'Assistant';
+    var BOT_ICON = 'https://storage.googleapis.com/microsite_buck/microsite-pediatrician-1/assets/chatbot-icon.svg';
+    var API_BASE = 'https://digidrapi.digidr.app';
+
+    var WELCOME_MSG = "Hi there! 👋 I'm your Assistant. How can I help you today?";
+
+    var SUGGESTIONS = [
+        'What services do you offer?',
+        'How to get started?',
+        'Pricing plans',
+        'Book a demo'
+    ];
+
+    /* ── Inject CSS ── */
+    (function injectCSS() {
+        if (document.getElementById('chatbot-css')) return;
+        var link = document.createElement('link');
+        link.id = 'chatbot-css';
+        link.rel = 'stylesheet';
+        link.href = './styles/chatbot.css';
+        document.head.appendChild(link);
+    })();
+
+    /* ── Build HTML ── */
+    function svgSend() {
+        return '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>';
+    }
+
+    function escHtml(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function getTime() {
+        var d = new Date();
+        var h = d.getHours(), m = d.getMinutes();
+        var ampm = h >= 12 ? 'PM' : 'AM';
+        h = h % 12 || 12;
+        return h + ':' + (m < 10 ? '0' : '') + m + ' ' + ampm;
+    }
+
+    var widgetHTML =
+        '<div class="chatbot-fab-wrap" id="chatbotFabWrap">' +
+
+        '<div class="chatbot-backdrop" id="chatbotBackdrop" aria-hidden="true"></div>' +
+
+        /* Chat window */
+        '<div class="chatbot-window" id="chatbotWindow" style="display:none;" role="dialog" aria-modal="true" aria-label="' + BOT_NAME + ' chat window">' +
+
+        /* Header */
+        '<div class="chatbot-header">' +
+        '<div class="chatbot-header-avatar">' +
+        '<img src="' + BOT_ICON + '" alt="' + BOT_NAME + '">' +
+        '</div>' +
+        '<div class="chatbot-header-info">' +
+        '<p class="chatbot-header-name">' + BOT_NAME + '</p>' +
+        '</div>' +
+        '<button type="button" class="chatbot-header-close" id="chatbotCloseBtn" aria-label="Close chat">' +
+        /* This microsite loads Font Awesome, not Material Symbols */
+        '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
+        '</button>' +
+        '</div>' +
+
+        /* Messages */
+        '<div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite" aria-label="Chat messages"></div>' +
+
+        /* Input */
+        '<div class="chatbot-input-area">' +
+        '<div class="chatbot-input-wrap">' +
+        '<textarea class="chatbot-input" id="chatbotInput" placeholder="Type your message…" rows="1" aria-label="Type your message"></textarea>' +
+        '</div>' +
+        '<button class="chatbot-send-btn" id="chatbotSendBtn" aria-label="Send message" disabled>' + svgSend() + '</button>' +
+        '</div>' +
+
+        /* Footer */
+        '<div class="chatbot-footer">Informational only, not medical advice.<br>Consult your doctor</div>' +
+
+        '</div>' +
+
+        /* FAB */
+        '<button class="chatbot-fab" id="chatbotFab" aria-label="Open Assistant" aria-expanded="false" aria-controls="chatbotWindow">' +
+        '<img class="chatbot-fab-logo" src="' + BOT_ICON + '" alt="" aria-hidden="true">' +
+        '<span class="chatbot-fab-text">Ask Doctor</span>' +
+        '<span class="chatbot-badge" id="chatbotBadge" aria-label="1 new message">1</span>' +
+        '</button>' +
+
+        '</div>';
+
+    /* ── Mount ── */
+    var mount = document.getElementById('chatbot-mount');
+    if (mount) {
+        mount.outerHTML = widgetHTML;
+    } else {
+        var div = document.createElement('div');
+        div.innerHTML = widgetHTML;
+        document.body.appendChild(div.firstElementChild);
+    }
+
+    /* ── DOM References ── */
+    var wrap = document.getElementById('chatbotFabWrap');
+    var fab = document.getElementById('chatbotFab');
+    var closeBtn = document.getElementById('chatbotCloseBtn');
+    var backdrop = document.getElementById('chatbotBackdrop');
+    var window_ = document.getElementById('chatbotWindow');
+    var messagesEl = document.getElementById('chatbotMessages');
+    var inputEl = document.getElementById('chatbotInput');
+    var sendBtn = document.getElementById('chatbotSendBtn');
+    var suggWrap = document.getElementById('chatbotSuggestionsWrap');
+    var suggestions = document.getElementById('chatbotSuggestions');
+    var suggPrev = document.getElementById('chatbotSuggPrev');
+    var suggNext = document.getElementById('chatbotSuggNext');
+    var badge = document.getElementById('chatbotBadge');
+
+    var isOpen = false;
+    var hasOpened = false;
+
+    /* ── Helpers ── */
+    function addMessage(text, sender) {
+        /* sender: 'bot' | 'user' */
+        var msgEl = document.createElement('div');
+        msgEl.className = 'chatbot-msg ' + sender;
+
+        if (sender === 'bot') {
+            msgEl.innerHTML =
+                '<div class="chatbot-msg-avatar"><img src="' + BOT_ICON + '" alt="bot"></div>' +
+                '<div>' +
+                '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
+                '<div class="chatbot-msg-time">' + getTime() + '</div>' +
+                '</div>';
+        } else {
+            msgEl.innerHTML =
+                '<div>' +
+                '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
+                '<div class="chatbot-msg-time">' + getTime() + '</div>' +
+                '</div>';
+        }
+
+        messagesEl.appendChild(msgEl);
+        scrollToBottom();
+    }
+
+    function showTyping() {
+        var el = document.createElement('div');
+        el.className = 'chatbot-typing';
+        el.id = 'chatbotTyping';
+        el.innerHTML =
+            '<div class="chatbot-msg-avatar"><img src="' + BOT_ICON + '" alt="bot"></div>' +
+            '<div class="chatbot-typing-dots"><span></span><span></span><span></span></div>';
+        messagesEl.appendChild(el);
+        scrollToBottom();
+    }
+
+    function hideTyping() {
+        var el = document.getElementById('chatbotTyping');
+        if (el) el.remove();
+    }
+
+    function scrollToBottom() {
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function addDivider(label) {
+        var el = document.createElement('div');
+        el.className = 'chatbot-divider';
+        el.textContent = label;
+        messagesEl.appendChild(el);
+    }
+
+    function openChat() {
+        isOpen = true;
+        wrap.classList.add('is-open');
+        fab.setAttribute('aria-expanded', 'true');
+        if (backdrop) backdrop.setAttribute('aria-hidden', 'false');
+        window_.style.display = 'flex';
+        window_.classList.remove('is-closing');
+
+        /* Chip widths are 0 while the window is display:none */
+        if (typeof updateSuggArrows === 'function') updateSuggArrows();
+
+        if (!hasOpened) {
+            hasOpened = true;
+            addDivider('Today');
+            addMessage(WELCOME_MSG, 'bot');
+        }
+
+        /* Hide badge */
+        if (badge) badge.style.display = 'none';
+
+        /* Focus input after animation */
+        setTimeout(function () { inputEl.focus(); }, 330);
+    }
+
+    function closeChat() {
+        isOpen = false;
+        wrap.classList.remove('is-open');
+        fab.setAttribute('aria-expanded', 'false');
+        fab.setAttribute('aria-label', 'Open Assistant');
+        if (backdrop) backdrop.setAttribute('aria-hidden', 'true');
+        window_.classList.add('is-closing');
+
+        setTimeout(function () {
+            window_.style.display = 'none';
+            window_.classList.remove('is-closing');
+            if (fab && fab.focus) fab.focus();
+        }, 220);
+    }
+
+    /* ── Send message → real MicrositeChat API call ── */
+    function sendMessage(text) {
+        text = text.trim();
+        if (!text) return;
+
+        /* Hide suggestions after first interaction */
+        if (suggWrap) suggWrap.style.display = 'none';
+
+        addMessage(text, 'user');
+        inputEl.value = '';
+        inputEl.style.height = 'auto';
+        sendBtn.disabled = true;
+
+        var slug = document.body.dataset.slug || '';
+
+        showTyping();
+
+        var formData = new FormData();
+        formData.append('Message', text);
+
+        fetch(API_BASE + '/api/MicrositeChat?slug=' + encodeURIComponent(slug), {
+            method: 'POST',
+            body: formData
+        })
+            .then(function (res) {
+                if (!res.ok) {
+                    throw new Error('MicrositeChat request failed: ' + res.status);
+                }
+                return res.json();
+            })
+            .then(function (data) {
+                hideTyping();
+                var reply =
+                    (data && (data.reply || data.message || data.answer || data.response)) ||
+                    "Thanks for your message! Our team will get back to you shortly. For immediate assistance, please call or visit our support page.";
+                addMessage(reply, 'bot');
+            })
+            .catch(function (err) {
+                console.error('MicrositeChat error:', err);
+                hideTyping();
+                addMessage(
+                    "Sorry, I'm having trouble responding right now. Please call or visit our support page for immediate assistance.",
+                    'bot'
+                );
+            });
+    }
+
+    /* ── Auto-resize textarea ── */
+    inputEl.addEventListener('input', function () {
+        sendBtn.disabled = !inputEl.value.trim();
+        inputEl.style.height = 'auto';
+        inputEl.style.height = Math.min(inputEl.scrollHeight, 100) + 'px';
+    });
+
+    /* ── Send on Enter (Shift+Enter for newline) ── */
+    inputEl.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            if (!sendBtn.disabled) sendMessage(inputEl.value);
+        }
+    });
+
+    /* ── Button events ── */
+    fab.addEventListener('click', function () {
+        if (!isOpen) openChat();
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeChat);
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', closeChat);
+    }
+
+    sendBtn.addEventListener('click', function () {
+        sendMessage(inputEl.value);
+    });
+
+    /* ── Suggestion chips ── */
+    
+
+    /* ── Close on Escape ── */
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && isOpen) closeChat();
+    });
+
+    /* ── Close on outside click ── */
+    document.addEventListener('click', function (e) {
+        if (isOpen && !wrap.contains(e.target)) {
+            closeChat();
+        }
+    });
+
+    /* ── Collapse/Expand FAB on scroll ── */
+    function initScrollCollapse() {
+        if (!fab) return;
+        var lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        var ticking = false;
+        var threshold = 10;
+
+        function onScroll() {
+            var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScrollY <= 50) {
+                fab.classList.remove('is-collapsed');
+                lastScrollY = currentScrollY;
+                ticking = false;
+                return;
+            }
+
+            var diff = currentScrollY - lastScrollY;
+            if (Math.abs(diff) >= threshold) {
+                if (diff > 0) {
+                    fab.classList.add('is-collapsed');
+                } else {
+                    fab.classList.remove('is-collapsed');
+                }
+                lastScrollY = currentScrollY;
+            }
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(onScroll);
+                ticking = true;
+            }
+        }, { passive: true });
+    }
+
+    initScrollCollapse();
+
+})();
+```
+
+### Required markup (all 5 pages of every template, copied from the live sites)
+In `<head>`:
+```html
+<link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+```
+At the end of `<body>`, with the other scripts:
+```html
+<script src="{{path}}/script/chatbot.js" defer></script>
+```
+- Keep `id="chatbot-css"` on the link. It stops `injectCSS()` from adding a second
+  link with the wrong (`./`) path.
+- `<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">` (already required
+  by §1 "System"). `sendMessage()` reads `document.body.dataset.slug`.
+- Font Awesome must be loaded (for `fa-solid fa-xmark`). Every template already
+  loads it.
+- **No `#chatbot-mount` element.** No live page has one.
+
+### Chatbot rollout checklist (per template)
+- [ ] `script/chatbot.js` = the exact code above, with `BOT_ICON` set to this
+      template's own folder.
+- [ ] `styles/chatbot.css` exists (copy it from a live site if the template has
+      none; don't redesign it).
+- [ ] The `chatbot-css` link in `<head>` and the `chatbot.js` script tag at the end
+      of `<body>` on all 5 pages, both with `{{path}}`.
+- [ ] `<body data-slug="{{slug}}">` is present.
+- [ ] No suggestion-chip code added. Ship the file as it is.
+- [ ] **Live sites: nothing to do.** All 6 already match this section exactly.
+
+---
+
+## 4b. Booking/appointment code (in scope: promoted from §5, confirmed with the backend team)
+
+The backend team provided the actual booking/appointment JS. It is **in scope now**,
+alongside the stat counter (§4) and the chatbot widget (§4a).
+
+**Checked against all 6 live sites (script-verified):** every code line of the block
+below is already in the `script/index.js` of all 6 live sites, including the
+consent-checkbox check. The only lines not found live are the 4 section labels
+(`//Available days section`, `// Appointment section`, `//Slots section`,
+`//Patient appointment section`). The backend team added those to mark the pieces;
+they're optional. **The live sites need no booking changes. This rollout is for the
+templates only.**
+
+The rest of each live `index.js` differs from site to site (250–500 lines between any
+two). This section covers only the booking pieces, not the whole file.
+
+### Where this code goes: 4 pieces, not one block
+Unlike `chatbot.js` (§4a), this is **not a self-contained file or IIFE**. Don't paste
+it as one top-level block. The 4 pieces sit in two IIFEs in `script/index.js`
+(line numbers from `live microsites/samiran-das/script/index.js`, the reference file):
+
+| Piece | Goes inside | samiran-das lines |
+|---|---|---|
+| 1. `loadAvailableDays` | `initDatePicker` IIFE, straight after `const doctorId = form.dataset.userid; let availableDays = null;`. Followed by `window.__onAppointmentTypeChange = loadAvailableDays; loadAvailableDays("offline");` | ~236–253 |
+| 2. Appointment availability | Booking-modal IIFE, straight after the `doctorId` / `clinic*` / tab declarations and `let isOnlineAvailable`, `isOfflineAvailable`, `compressedFile` | ~615–681 |
+| 3. Slots `change` handler | Booking-modal IIFE, after `preferredDateInput` / `preferredTimeSelect` are declared (~904–905) | ~1011–1053 |
+| 4. `let isSubmitting` + submit handler | Booking-modal IIFE, after the slots handler | ~1056–1226 |
+
+The pieces use variables and functions the two IIFEs declare themselves: `form`,
+`doctorId`, `availableDays`, `render()`, `clinicName`, `clinicAddress`,
+`clinicDistrict`, `clinicState`, `clinicPincode`, `clinicTab`, `onlineTab`,
+`isOnlineAvailable`, `isOfflineAvailable`, `appointmentType`, `setActiveTab()`,
+`preferredDateInput`, `preferredTimeSelect`, `submitBtn`, `filePreviewDiv`,
+`bookingLoader`, `iti`, `phoneUtilsReady`, `compressedFile`, `showError()`,
+`clearErrors()`, `validateEmail()`, `validateDateNotPast()`, `showPopup()`,
+`closeModal()`, plus the top-level `API_BASE`. For a template with no booking
+integration, copy the whole date-picker and booking-modal IIFEs from samiran-das
+(they include all of these), then compare the 4 pieces against the block below.
+
+### The 4 pieces
+1. **Available days** — `loadAvailableDays(type)`: `GET
+   getavailabledays?userid=${doctorId}&type=${type}`, populates `availableDays` (a
+   lowercased `Set`), then calls `render()`. On failure, falls back to
+   `availableDays = null` and logs a warning (doesn't break the page). Lives in the
+   date-picker IIFE, not the booking-modal IIFE — it's assigned to
+   `window.__onAppointmentTypeChange` and invoked once up front with `"offline"`.
+2. **Appointment availability (IIFE, runs on load)**: `GET
+   getappointment?userid=${doctorId}` → `{ online, offline }` (both default `true` if
+   missing). Hides the online/offline tab whose flag is `false`; if only one mode is
+   available, auto-selects it via `setActiveTab()` and fires
+   `window.__onAppointmentTypeChange?.(appointmentType)`; if neither is available,
+   hides every `.cta-btn`. Non-OK response or fetch failure: logs a warning and keeps
+   the default (both shown).
+3. **Slots** — on `preferredDateInput` `change`: `POST getslots` with `FormData`
+   (`UserId`, `Date`, `Type`), populates `#preferredTime` `<option>`s from the JSON
+   array (`slot.id` / `slot.label`), or shows "No Slots Available" if the array is
+   empty/missing.
+4. **Booking submit** — `form.submit` handler: client-side validation (name, email,
+   phone via `iti.isValidNumber()` gated on `phoneUtilsReady`, date not in the past,
+   time slot chosen, reason ≥10 chars, **consent checkbox required**), then `POST
+   patient_appointment` with `FormData` (`DoctorId`, `FullName`, `Phone`, `Email`,
+   `Date`, `Type`, `Day` (computed weekday name), `SlotId`, `Time`, `Reason`, and
+   `Upload` if a compressed file exists). Response `type` field (`"online"` /
+   `"offline"`) drives a different success popup (`meetLink`-aware for online;
+   clinic name/address/district/state/pincode for offline via
+   `window.__trackBookingSuccess?.(type)`). Uses an `isSubmitting` guard to block
+   double-submits, and a `finally` block that always re-enables the submit button and
+   hides the loader.
+
+**Consent check — required in every template:** the booking form has `novalidate`,
+so the browser never enforces `required` on the consent checkbox. The
+`if (!consentGiven)` block in piece 4 is the only thing that stops a booking without
+consent. All 6 live sites already have it. Every template must have it too.
+
+### Exact code (the 4 pieces, verbatim from the backend team)
+
+```javascript
+//Available days section
+async function loadAvailableDays(type) {
+        try {
+            const res = await fetch(`${API_BASE}/api/Patient_Appointment/getavailabledays?userid=${doctorId}&type=${type}`);
+            const days = await res.json();
+            availableDays = new Set((days || []).map(d => d.toLowerCase()));
+        } catch (err) {
+            console.warn("Failed to load available days:", err.message);
+            availableDays = null;
+        }
+        render();
+    }
+
+// Appointment section
+(async () => {
+        try {
+
+            const response = await fetch(`${API_BASE}/api/Patient_Appointment/getappointment?userid=${doctorId}`);
+
+            if (!response.ok) {
+                console.warn(`Appointment API returned ${response.status}, using defaults`);
+                return;
+            }
+
+            const data = await response.json();
+
+            isOnlineAvailable = data.online ?? true;
+            isOfflineAvailable = data.offline ?? true;
+
+            // hide online tab
+            if (!isOnlineAvailable && onlineTab) {
+                onlineTab.style.display = "none";
+            }
+
+            // hide offline tab
+            if (!isOfflineAvailable && clinicTab) {
+                clinicTab.style.display = "none";
+            }
+
+            // auto select available tab
+            if (isOnlineAvailable && !isOfflineAvailable) {
+                appointmentType = "online";
+                setActiveTab("online");
+                window.__onAppointmentTypeChange?.(appointmentType);
+            }
+
+            if (isOfflineAvailable && !isOnlineAvailable) {
+                appointmentType = "offline";
+                setActiveTab("clinic");
+                window.__onAppointmentTypeChange?.(appointmentType);
+            }
+
+            // Hide all book appointment buttons if both are unavailable
+            if (!isOnlineAvailable && !isOfflineAvailable) {
+                document.querySelectorAll(".cta-btn").forEach(btn => {
+                    btn.style.display = "none";
+                });
+            }
+
+        } catch (err) {
+            console.warn("Failed to fetch appointment availability:", err.message);
+            // Keep defaults if API fails - don't break the page
+        }
+    })();
+
+
+//Slots section
+preferredDateInput?.addEventListener("change", async () => {
+
+        const selectedDate = preferredDateInput.value;
+
+        if (!selectedDate) return;
+
+        try {
+
+            const formData = new FormData();
+
+            formData.append("UserId", doctorId);
+            formData.append("Date", selectedDate);
+            formData.append("Type", appointmentType);
+
+            const response = await fetch(`${API_BASE}/api/Patient_Appointment/getslots`, {
+                method: "POST",
+                body: formData
+            });
+            console.log(response);
+
+            const slots = await response.json();
+
+            preferredTimeSelect.innerHTML =
+                `<option value="">Select Time Slot</option>`;
+
+            if (!slots || slots.length === 0) {
+
+                preferredTimeSelect.innerHTML =
+                    `<option value="">No Slots Available</option>`;
+
+                return;
+            }
+
+            slots.forEach(slot => {
+                preferredTimeSelect.innerHTML +=
+                    `<option value="${slot.id}" data-label="${slot.label}">${slot.label}</option>`;
+            });
+
+        } catch (err) {
+
+            console.error(err);
+
+        }
+    });
+
+
+//Patient appointment section
+
+let isSubmitting = false;
+
+    form.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        if (isSubmitting) {
+            return;
+        }
+
+        clearErrors();
+
+        const fullName = form.fullName.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone.value.trim();
+        const preferredDate = form.preferredDate.value;
+        const preferredTime = form.preferredTime.value;
+        const selectedTimeOption = preferredTimeSelect.selectedOptions[0];
+        const preferredTimeLabel = selectedTimeOption ? selectedTimeOption.dataset.label : "";
+        const reason = form.reason.value.trim();
+        //const report = form.report.value.trim();
+        const consentGiven = form.consentCheckbox.checked;
+
+        let isValid = true;
+
+        if (!fullName) {
+            showError("fullName", "Please enter your full name.");
+            isValid = false;
+        }
+
+        if (!email) {
+            showError("email", "Please enter your email address.");
+            isValid = false;
+        } else if (!validateEmail(email)) {
+            showError("email", "Please enter a valid email address.");
+            isValid = false;
+        }
+
+        if (!phone) {
+            showError("phone", "Please enter your phone number.");
+            isValid = false;
+        } else if (iti && phoneUtilsReady && !iti.isValidNumber()) {
+            showError("phone", "Please enter a valid phone number.");
+            isValid = false;
+        }
+
+        if (!preferredDate) {
+            showError("preferredDate", "Please select a preferred date.");
+            isValid = false;
+        } else if (!validateDateNotPast(preferredDate)) {
+            showError("preferredDate", "Date cannot be in the past.");
+            isValid = false;
+        }
+
+        if (!preferredTime) {
+            showError("preferredTime", "Please select a time slot.");
+            isValid = false;
+        }
+
+        if (!reason || reason.length < 10) {
+            showError("reason", "Please provide a brief description (min 10 characters).");
+            isValid = false;
+        }
+
+        //if (!report || report.length == 0) {
+        //    showError("report", "Please provide a image");
+        //    isValid = false;
+        //}
+
+        // Bug fix: the form has `novalidate`, so the native `required` on the
+        // consent checkbox was never enforced and nothing here checked it —
+        // users could submit without consenting. Now actually validated.
+        if (!consentGiven) {
+            showError("consentCheckbox", "Please provide consent to proceed.");
+            isValid = false;
+        }
+
+        if (!isValid) return;
+
+        isSubmitting = true;
+        submitBtn.disabled = true;
+        submitBtn.style.display = "none";
+        filePreviewDiv.style.display = "none";
+        bookingLoader.setAttribute("aria-hidden", "false");
+
+        try {
+            const formData = new FormData();
+
+            formData.append("DoctorId", doctorId);
+            formData.append("FullName", fullName);
+            formData.append("Phone", phone);
+            formData.append("Email", email);
+            formData.append("Date", preferredDate);
+            formData.append("Type", appointmentType);
+
+            const dayName = new Date(preferredDate).toLocaleDateString("en-US", { weekday: "long" });
+
+            formData.append("Day", dayName);
+            formData.append("SlotId", preferredTime);
+            formData.append("Time", preferredTimeLabel);
+            formData.append("Reason", reason);
+
+            // Use compressed file if available
+            if (compressedFile) {
+                formData.append("Upload", compressedFile);
+            }
+
+            const response = await fetch(`${API_BASE}/api/Patient_Appointment/patient_appointment`, {
+                method: "POST",
+                body: formData
+            });
+
+            let result;
+            let rawText = await response.text();
+
+            try {
+                result = JSON.parse(rawText);
+            } catch {
+                result = null;
+            }
+
+            const appointmentTypeResult = result?.type;
+            const addressMessage = result?.message;
+
+            if (appointmentTypeResult === "online") {
+                const meetLink = result?.meetLink;
+                const msg = meetLink
+                    ? `Your appointment is confirmed.<br/><br/>Please join 5 minutes before your scheduled time. Check your email for details.`
+                    : "Your online consultation has been booked successfully.";
+                showPopup(msg, true);
+                window.__trackBookingSuccess?.("online");
+            } else if (appointmentTypeResult === "offline") {
+                const locationHtml = `
+        <strong>Appointment Location:</strong><br/>
+        ${clinicName || ""}<br/>
+        ${clinicAddress || ""}<br/>
+        ${clinicDistrict || ""}${clinicState ? ", " + clinicState : ""}${clinicPincode ? " – " + clinicPincode : ""}
+    `;
+                const msg = `Hello ${fullName},<br/><br/>
+    Your Appointment is Confirmed!<br/><br/>
+    ${locationHtml}<br/><br/>
+    Confirmation details have been sent to your registered email<br/>
+    Please arrive 15 minutes before your scheduled appointment to complete any necessary check-in.
+`;
+                showPopup(msg, true);
+                window.__trackBookingSuccess?.("offline");
+            } else if (!response.ok) {
+                showPopup(addressMessage || "Something went wrong while booking your appointment.", false);
+                return;
+            }
+
+            form.reset();
+            filePreviewDiv.innerHTML = "";
+            clearErrors();
+            compressedFile = null;
+            closeModal();
+
+        } catch (err) {
+            console.error(err);
+            alert("Something went wrong.");
+
+        }
+        finally {
+            isSubmitting = false;
+            submitBtn.disabled = false;
+            submitBtn.style.display = "block";
+            filePreviewDiv.style.display = "block";
+            bookingLoader.setAttribute("aria-hidden", "true");
+        }
+    });
+```
+
+### Booking rollout checklist (per template)
+- [ ] `script/index.js` has the date-picker IIFE and the booking-modal IIFE with every
+      variable and function listed above. The 26 templates with no booking
+      integration copy both IIFEs from samiran-das.
+- [ ] The 4 pieces are in the places given in the table above and match the code
+      block line for line (the 4 section-label comments are optional).
+- [ ] The `if (!consentGiven)` check is present.
+- [ ] The booking form has `data-userid`, `data-clinicname`, `data-address`,
+      `data-district`, `data-state` and `data-pincode` (§1 "System"). All 6 live
+      sites have these.
+- [ ] Cardiology-1: it already has part of this (no `getavailabledays`, no
+      booking-form data attributes, see §5). Add only what's missing.
+- [ ] Don't touch analytics or banner code (still deferred, §5). Chatbot is its own
+      file (§4a).
+- [ ] **Live sites: nothing to do.** All 6 already contain every line.
+
+---
+
+## 5. JavaScript: analytics, banner and auto-open-modal (deferred)
+
+What the repo shows. The booking and chatbot parts are now in §4b and §4a. Everything
+else here is reference only (**do not implement yet**):
 
 - All 6 live `index.js` files share the same backend integration:
   - `API_BASE = "https://digidrapi.digidr.app"`
@@ -247,15 +1097,32 @@ What the repo shows, for reference only (**do not implement yet**):
   |---|---|
   | `analytics.js` | 3 versions across the live sites |
   | `banner-module.js` | Identical on 5 live sites; dhara-sharma's matches the template |
-  | `chatbot.js` | Different on every live site, probably per-doctor settings |
+  | `chatbot.js` | Confirmed identical on every live site except `BOT_ICON` — now in scope, see §4a |
   | `auto-open-modal.js` | Present everywhere but **not loaded by any HTML page** |
 
+**Booking/appointment code:** promoted to in-scope — see §4b. **Chatbot:** promoted
+to in-scope — see §4a.
+
+**Still not covered:** `MicrositeAnalytics/analytics/track`, `banner-module.js`, and
+`auto-open-modal.js` — the open questions below about those still stand.
+
 Open questions for the backend team:
-1. Is the repo copy of the live JS the same as what's deployed?
+1. Is the repo copy of the live JS the same as what's deployed? *(For booking and
+   `chatbot.js`, the backend team's code matches the repo copy on all 6 live sites.
+   Still open for analytics, banner and auto-open-modal.)*
 2. Does the backend add any scripts to the page when it renders it? For example, is
    that how `auto-open-modal.js` gets loaded?
-3. What differs per site in `chatbot.js`?
+3. ~~What differs per site in `chatbot.js`?~~ **Answered — see §4a:** only `BOT_ICON`
+   (a per-microsite asset URL). Everything else — including the incomplete
+   suggestion-chip wiring — is identical across all 6 live sites.
 4. Which request and response fields do the booking and analytics APIs require?
+   *(Answered for booking — see §4b; answered for chat (`api/MicrositeChat?slug=`,
+   `FormData.Message` → `{reply|message|answer|response}`) — see §4a; analytics still
+   open.)*
+5. Is the empty "Suggestion chips" section in `chatbot.js` an intentional disable or
+   an unfinished feature to complete later? (See §4a.)
+6. ~~Does the live `index.js` already have the consent-checkbox fix?~~ **Answered:**
+   yes, on all 6 live sites (see §4b).
 
 ---
 
@@ -331,4 +1198,10 @@ For each `<Specialty>/microsite-*/` folder:
 
 **Counter:** complete the counter checklist in §4.
 
-**Do not touch:** `script/*.js`, except for the counter IIFE (see §4 and §5).
+**Chatbot:** complete the chatbot rollout checklist in §4a.
+
+**Booking:** complete the booking rollout checklist in §4b.
+
+**Do not touch:** `script/*.js`, except for the counter IIFE (§4), `chatbot.js`
+(§4a), and the booking-modal splice (§4b) — analytics, banner, and
+`auto-open-modal.js` stay deferred (§5).
