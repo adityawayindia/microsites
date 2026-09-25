@@ -27,26 +27,26 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Arjun Mehta | Urologist — Precision Urology & Kidney Care Clinic</title>
-  <meta name="description" content="Board-certified urological care from Dr. Arjun Mehta — kidney stone treatment, prostate health, urologic oncology, and minimally invasive surgery for men and women." />
+  <title>Dr. {{full_name}} | {{speciality}} — Precision Urology &amp; Kidney Care Clinic</title>
+  <meta name="description" content="Board-certified urological care from Dr. {{full_name}} — kidney stone treatment, prostate health, urologic oncology, and minimally invasive surgery for men and women." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23103a5c'/%3E%3Cpath d='M20 18h10a10 10 0 0 1 10 10v10a10 10 0 0 1-10 10H26a6 6 0 0 1-6-6V18z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Ccircle cx='24' cy='24' r='2.4' fill='%23fff'/%3E%3C/svg%3E" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.example.com/urologist-1/" /><!-- TODO: replace with live production domain before launch -->
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dr. Arjun Mehta | Urologist" />
-  <meta property="og:description" content="Dr. Arjun Mehta, Urologist." />
-  <meta property="og:image" content="assets/dr-arjun-mehta.jpg" />
+  <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta property="og:image" content="{{profile}}" />
   <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:alt" content="Dr. Arjun Mehta, Urologist" />
+  <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dr. Arjun Mehta | Urologist" />
-  <meta name="twitter:description" content="Dr. Arjun Mehta, Urologist." />
-  <meta name="twitter:image" content="assets/dr-arjun-mehta.jpg" />
+  <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
+  <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
+  <meta name="twitter:image" content="{{profile}}" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,44 +54,44 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./styles/banner-module.css" />
+  <link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+  <link rel="stylesheet" href="{{path}}/styles/style.css" />
+  <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Physician",
-    "name": "Dr. Arjun Mehta",
+    "name": "Dr. {{full_name}}",
     "medicalSpecialty": "Urology",
-    "image": "https://www.example.com/urologist-1/assets/dr-arjun-mehta.jpg",
+    "image": "{{profile}}",
     "url": "https://www.example.com/urologist-1/",
-    "telephone": "+91-9068935571",
-    "email": "dr.mehta@wayindiahospitals.com",
+    "telephone": "+{{code}}-{{phone}}",
+    "email": "{{email}}",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "1800 Orchids Lane, Walt Disney World, Bay Lake",
-      "addressLocality": "Orlando",
-      "addressRegion": "FL",
-      "postalCode": "32805",
-      "addressCountry": "US"
+      "streetAddress": "{{address}}",
+      "addressLocality": "{{city}}",
+      "addressRegion": "{{state}}",
+      "postalCode": "{{pincode}}",
+      "addressCountry": "IN"
     }
   }
   </script>
 </head>
-<body>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
   <!-- ====== HEADER ====== -->
   <header class="site-header">
     <div class="container navbar">
-      <a href="#" class="brand" aria-label="Dr. Arjun Mehta">
+      <a href="#" class="brand" aria-label="Dr. {{full_name}}">
         <span class="avatar">
-          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" />
+          <img src="{{profile}}" alt="Dr. {{full_name}}" />
         </span>
         <span class="brand-text">
-          <span class="brand-name" title="Dr. Arjun Mehta">Dr. Arjun Mehta</span>
-          <span class="brand-role">Urologist</span>
+          <span class="brand-name" title="Dr. {{full_name}}">Dr. {{full_name}}</span>
+          <span class="brand-role">{{speciality}}</span>
         </span>
       </a>
 
@@ -99,10 +99,11 @@
         <a href="#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
         <a href="#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
         <a href="#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
-        <a href="#testimonials" data-ga-event="nav_link_click" data-ga-label="Testimonials">Testimonials</a>
         <a href="#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
         <a href="#faq" data-ga-event="nav_link_click" data-ga-label="FAQ">FAQ</a>
+        {{#hasBlog}}
         <a href="blog.html" data-ga-event="nav_link_click" data-ga-label="Blog">Blog</a>
+        {{/hasBlog}}
       </nav>
 
       <div class="nav-actions">
@@ -132,26 +133,27 @@
             - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
             - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
+    {{#has_banner}}
     <div
       class="digidr-banner-module single-image-banner-section"
       id="digidrBannerModule"
-      data-banner-active="false"
-      data-banner-start="2026-01-01T00:00:00+05:30"
-      data-banner-end="2027-12-31T23:59:59+05:30"
+      data-banner-active="true"
+      data-banner-start="{{banner_start}}"
+      data-banner-end="{{banner_end}}"
       aria-label="Main Clinic Banner"
-      data-banner-src="assets/pedia_banner-1.jpeg"
-      data-banner-src-mobile="assets/pedia_independence_mobile.png"
-      data-banner-alt="Urology Care Banner"
+      data-banner-src="{{banner_src}}"
+      data-banner-src-mobile="{{banner_src_mobile}}"
+      data-banner-alt="{{banner_alt}}"
       data-banner-href="#"
     >
       <div class="container digidr-banner-container single-image-banner-container">
         <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
           <div class="digidr-banner-wrap single-image-banner-wrap">
             <picture>
-              <source media="(max-width: 768px)" srcset="assets/pedia_independence_mobile.png" />
+              <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
               <img
-                src="assets/pedia_banner-1.jpeg"
-                alt="Dr. Arjun Mehta Urology Care Banner"
+                src="{{banner_src}}"
+                alt="{{banner_alt}}"
                 class="digidr-banner-img single-image-banner-img"
                 id="digidrBannerImg"
                 loading="eager"
@@ -161,40 +163,51 @@
         </a>
       </div>
     </div>
+    {{/has_banner}}
     <!-- END OF MODULAR BANNER MODULE -->
 
     <div class="hero-mesh" aria-hidden="true"></div>
+    <div class="hero-liquid" aria-hidden="true">
+      <span class="hero-bubble"></span><span class="hero-bubble"></span><span class="hero-bubble"></span>
+      <span class="hero-bubble"></span><span class="hero-bubble"></span><span class="hero-bubble"></span>
+      <div class="hero-liquid-wave hero-liquid-wave--back"></div>
+      <div class="hero-liquid-wave hero-liquid-wave--mid"></div>
+      <div class="hero-liquid-wave hero-liquid-wave--front"></div>
+    </div>
 
     <div class="container hero-layout">
       <div class="hero-content">
         <p class="expert-badge">
           <span class="expert-badge-pulse" aria-hidden="true"></span>
-          Consultant Urologist
+          {{speciality}}
         </p>
 
-        <h1 class="hero-title">Dr. Arjun Mehta</h1>
-        <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MS (Urology) &middot; Fellowship in Uro-Oncology &amp; Endourology</p>
-        <p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. 57492</p>
+        <h1 class="hero-title">Dr. {{full_name}}</h1>
+        <p class="hero-tagline">Kidney, Bladder &amp; Prostate Care</p>
+        <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{awards}},{{education}}</p>
+        {{#hasmic}}
+        <p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No.: {{mci}}</p>
+        {{/hasmic}}
 
         <div class="hero-stats-grid">
           <article class="hero-stat-box">
             <i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i>
-            <strong class="stat-card-num" data-count-to="18" data-suffix="+">18+</strong>
+            <strong class="stat-card-num" data-counter>{{experience}}</strong>
             <span>Years of Experience</span>
           </article>
           <article class="hero-stat-box">
             <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
-            <strong class="stat-card-num" data-count-to="12" data-suffix="k+">12k+</strong>
+            <strong class="stat-card-num" data-counter>{{totalpatient}}</strong>
             <span>Patients Treated</span>
           </article>
           <article class="hero-stat-box">
-            <i class="fa-solid fa-droplet" aria-hidden="true"></i>
-            <strong class="stat-card-num" data-count-to="97" data-suffix="%">97%</strong>
+            <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+            <strong class="stat-card-num" data-counter>97%</strong>
             <span>Patient Satisfaction</span>
           </article>
         </div>
 
-        <p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Languages:</strong> English &bull; Hindi &bull; Odia</p>
+        <p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Languages:</strong> {{languages}}</p>
 
         <!-- <div class="hero-actions">
           <a href="#contact-us" class="hero-cta-secondary">
@@ -204,28 +217,45 @@
         </div> -->
 
         <div class="social-links" aria-label="Social media links">
-          <a href="#" class="social" aria-label="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Hero"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social" aria-label="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Hero"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="social" aria-label="Instagram" data-ga-event="social_instagram_click" data-ga-label="Hero"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="social" aria-label="X" data-ga-event="social_x_click" data-ga-label="Hero"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="social" aria-label="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Hero"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="social" aria-label="Website" data-ga-event="social_website_click" data-ga-label="Hero"><i class="fa-solid fa-globe"></i></a>
-          <a href="https://wa.me/919068935571" class="social" aria-label="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Hero"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" class="social" aria-label="YouTube" data-ga-event="social_youtube_click" data-ga-label="Hero"><i class="fa-brands fa-youtube"></i></a>
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="social" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Hero"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="social is-disabled" aria-label="Facebook page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+          {{#hasFacebook}}<a href="{{facebook}}" class="social" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Hero"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="social is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasInstagram}}<a href="{{instagram}}" class="social" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="social_instagram_click" data-ga-label="Hero"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="social is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+          {{#hasTwitter}}<a href="{{twitter}}" class="social" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="social_x_click" data-ga-label="Hero"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="social is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="social" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Hero"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="social is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+          {{#hasWebsite}}<a href="{{website}}" class="social" aria-label="Website" data-tooltip="Website" data-ga-event="social_website_click" data-ga-label="Hero"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="social is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+          {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Hero"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="social is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+          {{#hasYoutube}}<a href="{{youtube}}" class="social" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="social_youtube_click" data-ga-label="Hero"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="social is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
         </div>
       </div>
 
       <div class="hero-visual">
         <div class="hero-visual-blob" aria-hidden="true"></div>
         <div class="hero-portrait">
-          <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta, board-certified urologist, portrait" class="hero-image" />
+          <img src="{{profile}}" alt="Dr. {{full_name}}, {{speciality}}, portrait" class="hero-image" />
+        </div>
+        <!-- Kidney icon: Pinhead "kidneys" (CC0) -->
+        <div class="hero-specialty-badge" aria-hidden="true">
+          <span class="hero-specialty-badge-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" aria-hidden="true" focusable="false" viewBox="0 0 15 15"><path fill="currentColor" d="m5.77 6.76l-.48-.01l.3-.9c.09-.29.19-.6.26-.9c.11-.46.24-1.19.06-1.87c-.11-.39-.33-.83-.78-1.16c-.44-.32-.93-.42-1.35-.42c-1.76 0-2.7 1.5-3.1 2.37C.23 4.85 0 5.99 0 6.68c0 .73.25 1.7.57 2.47c.17.39.4.83.7 1.2c.25.3.82.9 1.72.9c.33 0 .7-.08 1.04-.3c.33-.21.54-.49.68-.74c.23-.45.28-.93.29-1.2l.02-.22l.01-.54h.47c.05 0 .09 0 .12.01v4.49a.749.749 0 1 0 1.5 0l.01-4.7c0-.11 0-.32-.06-.51a1 1 0 0 0-.22-.41c-.12-.13-.26-.21-.39-.26c-.22-.08-.48-.1-.69-.11m4.21 2.03l-.01-.54H9.5c-.05 0-.09 0-.12.01v4.49a.749.749 0 1 1-1.5 0v-4.7c-.01-.11-.01-.32.05-.51c.03-.13.1-.27.22-.41c.12-.13.26-.21.39-.26c.22-.08.48-.1.69-.11l.48-.01l-.3-.9c-.09-.29-.19-.6-.26-.9c-.11-.46-.24-1.19-.06-1.87c.11-.39.33-.83.78-1.16c.44-.32.93-.42 1.35-.42c1.76 0 2.7 1.5 3.1 2.37c.45.98.68 2.12.68 2.81c0 .73-.25 1.7-.57 2.47c-.17.39-.4.83-.7 1.2c-.25.3-.82.9-1.72.9c-.33 0-.7-.08-1.04-.3c-.33-.21-.54-.49-.68-.74c-.23-.45-.28-.93-.29-1.2z"/></svg>
+          </span>
         </div>
       </div>
     </div>
-
-    <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,0 C240,40 480,80 720,80 C960,80 1200,40 1440,0 L1440,90 L0,90 Z"></path>
-    </svg>
   </section>
 
   <!-- ====== ABOUT — executive, icon-free typography ====== -->
@@ -234,30 +264,24 @@
       <div class="about-aside">
         <div class="about-photo-glow" aria-hidden="true"></div>
         <div class="about-photo-frame">
-          <img src="assets/about-photo.png" alt="Doctor examining an anatomical kidney model during a urology consultation at Dr. Arjun Mehta's practice" loading="lazy" />
+          <img src="https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/about-photo.png" alt="Doctor examining an anatomical kidney model during a urology consultation at Dr. {{full_name}}'s practice" loading="lazy" />
         </div>
       </div>
 
       <div class="about-content">
         <span class="about-kicker">About the Practice</span>
-        <h2 class="about-title">Precise, Compassionate Urological Care</h2>
+        <h2 class="about-title">
+          {{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}
+          {{#no_about_section_title}}Precise, Compassionate Urological Care{{/no_about_section_title}}
+        </h2>
         <p class="about-description">
-          Combining advanced surgical training with an unhurried, patient-first approach to every consultation.
+          {{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}
+          {{#no_about_section_subtitle}}Combining advanced surgical training with an unhurried, patient-first approach to every consultation.{{/no_about_section_subtitle}}
         </p>
         <div class="read-more-wrap">
           <div class="read-more-content">
             <p>
-              Dr. Arjun Mehta is a board-certified urologist specializing in the diagnosis and treatment of kidney,
-              bladder, and prostate conditions in both men and women. He manages kidney stones, urinary tract
-              infections, prostate enlargement, urologic cancers, and male infertility with a calm, evidence-based
-              approach. Trained at leading institutions in India and abroad, Dr. Mehta blends surgical precision
-              with clear communication for every patient.
-            </p>
-            <p>
-              He takes time to explain every diagnosis and treatment option, so patients feel informed and in
-              control of their care. Beyond treatment, Dr. Mehta is committed to minimally invasive and robotic
-              techniques that reduce recovery time&mdash;helping patients return to their daily lives faster, with
-              less pain and better long-term outcomes.
+              {{introduction}}
             </p>
           </div>
           <button type="button" class="read-more-btn" aria-expanded="false" data-ga-event="read_more_click">
@@ -277,48 +301,24 @@
         <span class="services-kicker">
           <i class="fa-solid fa-droplet" aria-hidden="true"></i> Specialized Services
         </span>
-        <h2 class="services-title">Comprehensive Urological Care</h2>
+        <h2 class="services-title">
+          {{#has_service_section_title}}{{service_section_title}}{{/has_service_section_title}}
+          {{#no_service_section_title}}Comprehensive Urological Care{{/no_service_section_title}}
+        </h2>
         <p class="services-subtitle">
-          Offering a complete range of urological healthcare services with personalized treatment and preventive guidance.
+          {{#has_service_section_subtitle}}{{service_section_subtitle}}{{/has_service_section_subtitle}}
+          {{#no_service_section_subtitle}}Offering a complete range of urological healthcare services with personalized treatment and preventive guidance.{{/no_service_section_subtitle}}
         </p>
       </div>
 
       <div class="services-grid">
+        {{#services}}
         <article class="service-card">
           <div class="service-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
-          <h3>Kidney Stone Treatment</h3>
-          <p>Advanced diagnosis and removal of kidney and ureteric stones, including lithotripsy and minimally invasive procedures.</p>
+          <h3>{{title}}</h3>
+          <p>{{description}}</p>
         </article>
-
-        <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
-          <h3>Prostate &amp; BPH Care</h3>
-          <p>Evaluation and treatment for enlarged prostate, urinary symptoms, and prostate health screening.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
-          <h3>Urologic Oncology</h3>
-          <p>Comprehensive diagnosis and treatment planning for cancers of the kidney, bladder, and prostate.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
-          <h3>Minimally Invasive &amp; Robotic Surgery</h3>
-          <p>Laparoscopic and robot-assisted procedures for faster recovery and reduced surgical risk.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
-          <h3>UTI &amp; Bladder Health</h3>
-          <p>Diagnosis and management of recurrent infections, incontinence, and overactive bladder.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
-          <h3>Male Infertility &amp; Sexual Health</h3>
-          <p>Confidential evaluation and treatment for male infertility, erectile dysfunction, and related concerns.</p>
-        </article>
+        {{/services}}
       </div>
     </div>
   </section>
@@ -330,31 +330,53 @@
         <span class="philosophy-kicker">
           <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Care Philosophy
         </span>
-        <h2 class="philosophy-title">A Precise Approach to Every Diagnosis</h2>
+        <h2 class="philosophy-title">
+          {{#has_philosophy_section_title}}{{philosophy_section_title}}{{/has_philosophy_section_title}}
+          {{#no_philosophy_section_title}}A Precise Approach to Every Diagnosis{{/no_philosophy_section_title}}
+        </h2>
         <p class="philosophy-subtitle">
-          Dedicated to accurate diagnosis, minimally invasive treatment, and dignified urological care.
+          {{#has_philosophy_section_subtitle}}{{philosophy_section_subtitle}}{{/has_philosophy_section_subtitle}}
+          {{#no_philosophy_section_subtitle}}Dedicated to accurate diagnosis, minimally invasive treatment, and dignified urological care.{{/no_philosophy_section_subtitle}}
         </p>
 
         <div class="philosophy-pillars">
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
             <div>
-              <h3>Precision Diagnosis</h3>
-              <p>Advanced imaging and lab evaluation to identify the exact cause before treatment begins.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_1}}{{philosophy_section_pillar_text_1}}{{/has_philosophy_section_pillar_text_1}}
+                {{#no_philosophy_section_pillar_text_1}}Precision Diagnosis{{/no_philosophy_section_pillar_text_1}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_1}}{{philosophy_section_pillar_subtext_1}}{{/has_philosophy_section_pillar_subtext_1}}
+                {{#no_philosophy_section_pillar_subtext_1}}Advanced imaging and lab evaluation to identify the exact cause before treatment begins.{{/no_philosophy_section_pillar_subtext_1}}
+              </p>
             </div>
           </div>
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-book-medical" aria-hidden="true"></i></div>
             <div>
-              <h3>Minimally Invasive Care</h3>
-              <p>Preference for laparoscopic and endoscopic techniques to reduce pain and recovery time.</p>
+              <h3>
+                {{#has_philosophy_section_pillor_text_2}}{{philosophy_section_pillor_text_2}}{{/has_philosophy_section_pillor_text_2}}
+                {{#no_philosophy_section_pillor_text_2}}Minimally Invasive Care{{/no_philosophy_section_pillor_text_2}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_piller_subtext_2}}{{philosophy_section_piller_subtext_2}}{{/has_philosophy_section_piller_subtext_2}}
+                {{#no_philosophy_section_piller_subtext_2}}Preference for laparoscopic and endoscopic techniques to reduce pain and recovery time.{{/no_philosophy_section_piller_subtext_2}}
+              </p>
             </div>
           </div>
           <div class="philosophy-pillar">
             <div class="pillar-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
             <div>
-              <h3>Patient Dignity</h3>
-              <p>Sensitive, confidential consultations that respect every patient's comfort and privacy.</p>
+              <h3>
+                {{#has_philosophy_section_pillar_text_3}}{{philosophy_section_pillar_text_3}}{{/has_philosophy_section_pillar_text_3}}
+                {{#no_philosophy_section_pillar_text_3}}Patient Dignity{{/no_philosophy_section_pillar_text_3}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_3}}{{philosophy_section_pillar_subtext_3}}{{/has_philosophy_section_pillar_subtext_3}}
+                {{#no_philosophy_section_pillar_subtext_3}}Sensitive, confidential consultations that respect every patient's comfort and privacy.{{/no_philosophy_section_pillar_subtext_3}}
+              </p>
             </div>
           </div>
         </div>
@@ -363,7 +385,7 @@
       <div class="philosophy-visual">
         <div class="philosophy-img-glow" aria-hidden="true"></div>
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-photo.jpg" alt="Urologist reviewing a live endoscopic camera feed during a minimally invasive urology procedure" loading="lazy" />
+          <img src="https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/philosophy-photo.jpg" alt="Urologist reviewing a live endoscopic camera feed during a minimally invasive urology procedure" loading="lazy" />
         </div>
       </div>
     </div>
@@ -377,9 +399,13 @@
         <span class="process-kicker">
           <i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey
         </span>
-        <h2 class="process-title" style="text-align:center;">Your Care Journey</h2>
+        <h2 class="process-title" style="text-align:center;">
+          {{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}
+          {{#no_process_section_about_title}}Your Care Journey{{/no_process_section_about_title}}
+        </h2>
         <p class="process-subtitle" style="text-align:center; max-width:700px; margin:0 auto;">
-          A clear, reassuring 4-step process for complete urological care.
+          {{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}
+          {{#no_process_section_about_subtitle}}A clear, reassuring 4-step process for complete urological care.{{/no_process_section_about_subtitle}}
         </p>
       </div>
 
@@ -392,8 +418,14 @@
             </svg>
             <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
           </div>
-          <h3>Appointment Booking</h3>
-          <p>Book online or by phone for a clinic visit or online consultation.</p>
+          <h3>
+            {{#has_process_section_step_body_text_1}}{{process_section_step_body_text_1}}{{/has_process_section_step_body_text_1}}
+            {{#no_process_section_step_body_text_1}}Appointment Booking{{/no_process_section_step_body_text_1}}
+          </h3>
+          <p>
+            {{#has_process_section_step_body_subtext_1}}{{process_section_step_body_subtext_1}}{{/has_process_section_step_body_subtext_1}}
+            {{#no_process_section_step_body_subtext_1}}Book online or by phone for a clinic visit or online consultation.{{/no_process_section_step_body_subtext_1}}
+          </p>
         </div>
 
         <div class="process-step">
@@ -404,8 +436,14 @@
             </svg>
             <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
           </div>
-          <h3>Diagnostic Evaluation</h3>
-          <p>Thorough clinical examination, imaging, and lab tests to confirm diagnosis.</p>
+          <h3>
+            {{#has_process_section_step_body_text_2}}{{process_section_step_body_text_2}}{{/has_process_section_step_body_text_2}}
+            {{#no_process_section_step_body_text_2}}Diagnostic Evaluation{{/no_process_section_step_body_text_2}}
+          </h3>
+          <p>
+            {{#has_process_section_step_body_subtext_2}}{{process_section_step_body_subtext_2}}{{/has_process_section_step_body_subtext_2}}
+            {{#no_process_section_step_body_subtext_2}}Thorough clinical examination, imaging, and lab tests to confirm diagnosis.{{/no_process_section_step_body_subtext_2}}
+          </p>
         </div>
 
         <div class="process-step">
@@ -416,8 +454,14 @@
             </svg>
             <i class="fa-solid fa-clipboard-user" aria-hidden="true"></i>
           </div>
-          <h3>Personalized Treatment Plan</h3>
-          <p>Clear guidance on medical, surgical, or minimally invasive treatment options.</p>
+          <h3>
+            {{#has_process_section_step_body_text_3}}{{process_section_step_body_text_3}}{{/has_process_section_step_body_text_3}}
+            {{#no_process_section_step_body_text_3}}Personalized Treatment Plan{{/no_process_section_step_body_text_3}}
+          </h3>
+          <p>
+            {{#has_process_section_step_body_subtext_3}}{{process_section_step_body_subtext_3}}{{/has_process_section_step_body_subtext_3}}
+            {{#no_process_section_step_body_subtext_3}}Clear guidance on medical, surgical, or minimally invasive treatment options.{{/no_process_section_step_body_subtext_3}}
+          </p>
         </div>
 
         <div class="process-step">
@@ -428,8 +472,14 @@
             </svg>
             <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
           </div>
-          <h3>Recovery &amp; Follow-Up</h3>
-          <p>Post-procedure monitoring, routine follow-ups, and long-term wellness support.</p>
+          <h3>
+            {{#has_process_section_step_body_text_4}}{{process_section_step_body_text_4}}{{/has_process_section_step_body_text_4}}
+            {{#no_process_section_step_body_text_4}}Recovery &amp; Follow-Up{{/no_process_section_step_body_text_4}}
+          </h3>
+          <p>
+            {{#has_process_section_step_body_subtext_4}}{{process_section_step_body_subtext_4}}{{/has_process_section_step_body_subtext_4}}
+            {{#no_process_section_step_body_subtext_4}}Post-procedure monitoring, routine follow-ups, and long-term wellness support.{{/no_process_section_step_body_subtext_4}}
+          </p>
         </div>
       </div>
     </div>
@@ -441,7 +491,10 @@
       <div class="contact-card">
         <div class="contact-header">
           <h2>Contact Us</h2>
-          <p>Get expert urological care you can trust. Schedule a consultation with our specialist today.</p>
+          <p>
+            {{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}
+            {{#no_contact_us_subtitle}}Get expert urological care you can trust. Schedule a consultation with our specialist today.{{/no_contact_us_subtitle}}
+          </p>
         </div>
 
         <div class="contact-grid">
@@ -449,10 +502,9 @@
             <div class="contact-item-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
             <h3>Address</h3>
             <p>
-              <strong>Building Number: 1800</strong><br />
-              Street Name: Orchids Lane<br />
-              Street Address: Walt Disney World, Bay Lake<br />
-              State: FL &middot; City: Orlando &middot; 32805
+              <strong>{{clinicname}}</strong><br />
+              {{address}}<br />
+              {{district}}, {{state}} - {{pincode}}
             </p>
           </div>
 
@@ -462,20 +514,22 @@
             <div class="contact-item-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
             <h3>Contact Information</h3>
             <p>
-              <a href="tel:+919068935571" data-ga-event="phone_number_click">+91-9068935571</a><br />
-              <a href="mailto:dr.mehta@wayindiahospitals.com" data-ga-event="email_click">dr.mehta@wayindia<wbr />hospitals.com</a>
+              <a href="tel:+{{code}}{{phone}}" data-ga-event="phone_number_click">+{{code}}-{{phone}}</a><br />
+              <a href="mailto:{{email}}" data-ga-event="email_click">{{email}}</a>
             </p>
           </div>
         </div>
 
         <!-- <div class="contact-cta-wrap">
-          <a href="tel:+919068935571" class="contact-btn">
+          <a href="tel:+{{code}}{{phone}}" class="contact-btn">
             <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Clinic
           </a>
         </div> -->
       </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
 
   <!-- ====== TESTIMONIALS ====== -->
   <section class="testimonials-section" id="testimonials">
@@ -485,9 +539,13 @@
         <span class="testimonials-kicker">
           <i class="fa-solid fa-droplet" aria-hidden="true"></i> Testimonials
         </span>
-        <h2 class="testimonials-title">What Our Patients Say</h2>
+        <h2 class="testimonials-title">
+          {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
+          {{#no_testimonial_title}}What Our Patients Say{{/no_testimonial_title}}
+        </h2>
         <p class="testimonials-subtitle">
-          Read testimonials from patients who have experienced precise, compassionate urological care under our specialist's guidance.
+          {{#has_testimonial_subtitle}}{{testimonial_subtitle}}{{/has_testimonial_subtitle}}
+          {{#no_testimonial_subtitle}}Read testimonials from patients who have experienced precise, compassionate urological care under our specialist's guidance.{{/no_testimonial_subtitle}}
         </p>
       </div>
 
@@ -501,54 +559,16 @@
 
         <div class="testimonials-carousel" id="testimonialsCarousel">
           <div class="testimonials-track testimonials-track" id="testimonialsTrack">
+            {{#testimonials}}
             <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="James Pattinson" class="testimonial-avatar" />
-              <h3>James Pattinson</h3>
-              <div class="testimonial-stars" aria-label="4 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <img src="{{profile_picture}}" alt="{{patient_name}}" class="testimonial-avatar" />
+              <h3>{{patient_name}}</h3>
+              <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
+                {{stars_html}}
               </div>
-              <p>"Dr. Mehta diagnosed my kidney stone quickly and explained every option clearly. The minimally invasive procedure had me back on my feet within days. Highly recommend."</p>
+              <p>"{{comment}}"</p>
             </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop" alt="Greg Stuart" class="testimonial-avatar" />
-              <h3>Greg Stuart</h3>
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"Outstanding experience from start to finish. Dr. Mehta explained my prostate treatment options clearly and took time to address all my concerns. Five stars!"</p>
-            </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop" alt="Trevor Mitchell" class="testimonial-avatar" />
-              <h3>Trevor Mitchell</h3>
-              <div class="testimonial-stars" aria-label="3 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-              </div>
-              <p>"Good care overall. Dr. Mehta helped manage my recurring UTIs effectively. The follow-up process was thorough. Would recommend for urology consultations."</p>
-            </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop" alt="Maria Rodriguez" class="testimonial-avatar" />
-              <h3>Maria Rodriguez</h3>
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"After my diagnosis, Dr. Mehta's guidance was invaluable. He genuinely cares about his patients' long-term health. I feel confident and well-supported."</p>
-            </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop" alt="David Chen" class="testimonial-avatar" />
-              <h3>David Chen</h3>
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"The best urologist I've consulted. Dr. Mehta's diagnostic skills are remarkable. He identified the issue quickly and guided me clearly. Forever grateful for his expertise."</p>
-            </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Emily Watson" class="testimonial-avatar" />
-              <h3>Emily Watson</h3>
-              <div class="testimonial-stars" aria-label="4 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-              </div>
-              <p>"Professional, knowledgeable, and kind. Dr. Mehta made every appointment stress-free. The clinic runs smoothly and appointments are always on time."</p>
-            </article>
+            {{/testimonials}}
           </div>
         </div>
 
@@ -561,31 +581,22 @@
   <section class="gallery-section" id="gallery">
     <div class="container">
       <div class="gallery-header">
-        <h2 class="gallery-title">A Look Inside My Practice</h2>
+        <h2 class="gallery-title">
+          {{#has_gallery_section_title}}{{gallery_section_title}}{{/has_gallery_section_title}}
+          {{#no_gallery_section_title}}A Look Inside My Practice{{/no_gallery_section_title}}
+        </h2>
         <p class="gallery-subtitle">
-          A glimpse into our urology clinic, consultation rooms, and diagnostic facilities.
+          {{#has_gallery_section_subtitle}}{{gallery_section_subtitle}}{{/has_gallery_section_subtitle}}
+          {{#no_gallery_section_subtitle}}A glimpse into our urology clinic, consultation rooms, and diagnostic facilities.{{/no_gallery_section_subtitle}}
         </p>
       </div>
 
       <div class="gallery-grid">
+        {{#images}}
         <figure class="gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1400&q=80" alt="Modern clinic exterior" loading="lazy" />
+          <img src="{{image}}" alt="Inside the urology clinic" loading="lazy" />
         </figure>
-        <figure class="gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80" alt="Clinic reception and waiting area" loading="lazy" />
-        </figure>
-        <figure class="gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1400&q=80" alt="Clinic consultation room" loading="lazy" />
-        </figure>
-        <figure class="gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=80" alt="Clinic corridor and seating" loading="lazy" />
-        </figure>
-        <figure class="gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1400&q=80" alt="Diagnostic equipment area" loading="lazy" />
-        </figure>
-        <figure class="gallery-item gallery-item">
-          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1400&q=80" alt="Treatment room" loading="lazy" />
-        </figure>
+        {{/images}}
       </div>
     </div>
   </section>
@@ -686,7 +697,7 @@
         </div>
       </div>
 
-      <form id="bookingForm" class="booking-form" novalidate>
+      <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
         <div class="booking-form-row">
           <div class="booking-field">
             <label for="fullName">Full Name</label>
@@ -736,12 +747,6 @@
             <div class="booking-select-wrap">
               <select id="preferredTime" name="preferredTime" required>
                 <option value="">Select Time Slot</option>
-                <option value="09:00-10:00">09:00 - 10:00 AM</option>
-                <option value="10:00-11:00">10:00 - 11:00 AM</option>
-                <option value="11:00-12:00">11:00 - 12:00 PM</option>
-                <option value="14:00-15:00">02:00 - 03:00 PM</option>
-                <option value="15:00-16:00">03:00 - 04:00 PM</option>
-                <option value="16:00-17:00">04:00 - 05:00 PM</option>
               </select>
               <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
             </div>
@@ -839,25 +844,40 @@
       <div class="footer-brand-col">
         <a href="#" class="brand">
           <span class="avatar">
-            <img src="assets/dr-arjun-mehta.jpg" alt="Dr. Arjun Mehta" />
+            <img src="{{profile}}" alt="Dr. {{full_name}}" />
           </span>
           <span class="brand-text">
-            <span class="brand-name">Dr. Arjun Mehta</span>
-            <span class="brand-role">Board-Certified Urologist</span>
+            <span class="brand-name">Dr. {{full_name}}</span>
+            <span class="brand-role">Board-Certified {{speciality}}</span>
           </span>
         </a>
         <p class="footer-tagline">Precise, minimally invasive urological care for every patient.</p>
         <div class="footer-social-wrap">
           <span class="footer-social-label">Follow me on:</span>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Footer"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Footer"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" aria-label="Instagram" data-ga-event="social_instagram_click" data-ga-label="Footer"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="X" data-ga-event="social_x_click" data-ga-label="Footer"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Footer"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Website" data-ga-event="social_website_click" data-ga-label="Footer"><i class="fa-solid fa-globe"></i></a>
-            <a href="https://wa.me/919068935571" aria-label="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" aria-label="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer"><i class="fa-brands fa-youtube"></i></a>
+            {{#hasFacebookPage}}<a href="{{facebookpage}}" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Footer"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+            {{#noFacebookPage}}<span class="is-disabled" aria-label="Facebook page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+            {{#hasFacebook}}<a href="{{facebook}}" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Footer"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+            {{#noFacebook}}<span class="is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+            {{#hasInstagram}}<a href="{{instagram}}" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="social_instagram_click" data-ga-label="Footer"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+            {{#noInstagram}}<span class="is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+            {{#hasTwitter}}<a href="{{twitter}}" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="social_x_click" data-ga-label="Footer"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+            {{#noTwitter}}<span class="is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+            {{#hasLinkedin}}<a href="{{linkedin}}" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Footer"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+            {{#noLinkedin}}<span class="is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+            {{#hasWebsite}}<a href="{{website}}" aria-label="Website" data-tooltip="Website" data-ga-event="social_website_click" data-ga-label="Footer"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+            {{#noWebsite}}<span class="is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+            {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+            {{#noWhatsapp}}<span class="is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+            {{#hasYoutube}}<a href="{{youtube}}" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+            {{#noYoutube}}<span class="is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
           </div>
         </div>
       </div>
@@ -869,7 +889,6 @@
             <a href="#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
             <a href="#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
             <a href="#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
-            <a href="#testimonials" data-ga-event="footer_nav_link_click" data-ga-label="Testimonials">Testimonials</a>
             <a href="#gallery" data-ga-event="footer_nav_link_click" data-ga-label="Gallery">Gallery</a>
             <a href="#faq" data-ga-event="footer_nav_link_click" data-ga-label="FAQ">FAQ</a>
           </nav>
@@ -892,14 +911,14 @@
     </div>
 
     <div class="footer-bottom-row">
-      <p>&copy; 2026 Dr. Arjun Mehta. All rights reserved.</p>
+      <p>&copy; 2026 Dr. {{full_name}}. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="./script/banner-module.js"></script>
+  <script src="{{path}}/script/banner-module.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
-  <script src="./script/analytics.js"></script>
-  <script src="./script/index.js"></script>
-  <script src="./script/chatbot.js" defer></script>
+  <script src="{{path}}/script/analytics.js"></script>
+  <script src="{{path}}/script/index.js"></script>
+  <script src="{{path}}/script/chatbot.js" defer></script>
 </body>
 </html>

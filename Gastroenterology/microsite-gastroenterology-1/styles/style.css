@@ -131,7 +131,7 @@ body {
 .testimonials-section,
 .social-media-section,
 .gallery-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
 }
 
@@ -681,7 +681,7 @@ margin-bottom: 0;
   background:
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(46, 196, 182, 0.1), transparent 55%),
     linear-gradient(180deg, #f3faf8 0%, #e8f5f2 100%);
-  padding: 10px 0;
+  padding: 20px 0;
   position: relative;
   overflow: hidden;
 }
@@ -866,7 +866,7 @@ margin-bottom: 0;
 
 @media (max-width: 900px) {
   .about-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .about-layout {
@@ -891,7 +891,7 @@ margin-bottom: 0;
 .services-section {
   position: relative;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 20px 0;
   background:
     radial-gradient(ellipse 60% 50% at 50% 0%, rgba(46, 196, 182, 0.14), transparent 60%),
     linear-gradient(180deg, #eaf7f4 0%, #f3faf8 45%, #ffffff 100%);
@@ -1074,7 +1074,7 @@ margin-bottom: 0;
 
 /* Contact Section — light split panel */
 .contact-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 100%);
 }
 
@@ -1242,7 +1242,7 @@ margin-bottom: 0;
 .testimonials-section {
   background:
     linear-gradient(180deg, #f3faf8 0%, #ffffff 45%, #eaf7f4 100%);
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .testimonials-header {
@@ -1744,7 +1744,7 @@ margin-bottom: 0;
 
 /* Gallery Section — uniform card grid */
 .gallery-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
 }
 
@@ -2553,7 +2553,7 @@ margin-bottom: 0;
 
 @media (max-width: 640px) {
   .contact-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 100%);
 }
 
@@ -2682,7 +2682,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .contact-card {
@@ -2886,7 +2886,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .services-header {
@@ -2931,7 +2931,7 @@ margin-bottom: 0;
   .testimonials-section {
   background:
     linear-gradient(180deg, #f3faf8 0%, #ffffff 45%, #eaf7f4 100%);
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
   .testimonials-header {
@@ -2968,7 +2968,7 @@ margin-bottom: 0;
 }
 
   .gallery-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
 }
 
@@ -2987,7 +2987,7 @@ margin-bottom: 0;
   }
 
   .social-media-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .social-media-header {
@@ -3003,7 +3003,7 @@ margin-bottom: 0;
   }
 
   .gallery-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
 }
 
@@ -3812,7 +3812,7 @@ margin-bottom: 0;
 
 /* ===== Dentist about redesign ===== */
 .about-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f3faf8 55%, #eaf7f4 100%);
   position: relative;
   overflow: hidden;
@@ -5815,7 +5815,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background-color: var(--bg);
   position: relative;
   overflow: hidden;
@@ -5912,7 +5912,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background-color: rgba(0, 0, 0, 0.02);
 }
 
@@ -7335,7 +7335,7 @@ label.booking-upload-btn:hover,
    (.faq-item.is-active); JS only toggles it.
    ============================================================ */
 .faq-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--bg);
   background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
   background-size: 18px 18px;

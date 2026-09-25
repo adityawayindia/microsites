@@ -2290,7 +2290,7 @@ background: var(--bg-2);
    is class-driven (.faq-item.is-active); JS below only toggles it.
    ============================================================ */
 .faq-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--bg-3);
   background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
   background-size: 18px 18px;
@@ -2533,4 +2533,17 @@ background: var(--bg-2);
   .consent-modal-body ul { padding-left: 20px; }
   .consent-modal-footer { padding: 14px 18px 20px; }
   .consent-scroll-hint { font-size: 15px; }
+}
+
+/* Section vertical rhythm — AGENTS.md §19: every top-level section 20px 0 */
+section.alt-about,
+section.alt-services,
+section.alt-philosophy,
+section.alt-journey,
+section.alt-contact,
+section.alt-testimonials,
+section.alt-gallery,
+section.faq-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

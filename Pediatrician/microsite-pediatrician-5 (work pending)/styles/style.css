@@ -1712,7 +1712,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    is class-driven (.faq-item.is-active); JS below only toggles it.
    ============================================================ */
 .faq-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--bg-3);
   background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
   background-size: 18px 18px;
@@ -1955,4 +1955,17 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .consent-modal-body ul { padding-left: 20px; }
   .consent-modal-footer { padding: 14px 18px 20px; }
   .consent-scroll-hint { font-size: 15px; }
+}
+
+/* Section vertical rhythm — AGENTS.md §19: every top-level section 20px 0 */
+section.peds5-about,
+section.peds5-services,
+section.peds5-philosophy,
+section.peds5-journey,
+section.peds5-contact,
+section.peds5-testimonials,
+section.peds5-gallery,
+section.faq-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

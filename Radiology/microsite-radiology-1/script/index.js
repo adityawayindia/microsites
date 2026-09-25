@@ -1095,7 +1095,10 @@ if (menuToggle && mainNav) {
         btn.className = "booking-calendar-day";
         btn.textContent = String(day);
 
-        if (cellDate < today) {
+        const dayName = cellDate.toLocaleDateString("en-US", { weekday: "long" }).toLowerCase();
+        const isUnconfiguredDay = availableDays && availableDays.size > 0 && !availableDays.has(dayName);
+
+        if (cellDate < today || isUnconfiguredDay) {
           btn.disabled = true;
           btn.classList.add("is-disabled");
         }

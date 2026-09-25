@@ -666,7 +666,7 @@ margin-bottom: 0;
   background:
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(42, 157, 143, 0.1), transparent 55%),
     linear-gradient(180deg, #f4f7f9 0%, #eef3f7 100%);
-  padding: 10px 0;
+  padding: 20px 0;
   position: relative;
   overflow: hidden;
 }
@@ -851,7 +851,7 @@ margin-bottom: 0;
 
 @media (max-width: 900px) {
   .about-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .about-layout {
@@ -878,7 +878,7 @@ margin-bottom: 0;
     radial-gradient(ellipse 70% 55% at 8% 12%, rgba(42, 157, 143, 0.1), transparent 55%),
     radial-gradient(ellipse 55% 50% at 92% 88%, rgba(26, 82, 118, 0.08), transparent 50%),
     linear-gradient(165deg, #e8f0f5 0%, #eef4f7 42%, #e4edf3 100%);
-  padding: 10px 0;
+  padding: 20px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1066,7 +1066,7 @@ margin-bottom: 0;
 
 /* Contact Section — light split panel */
 .contact-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background:
     radial-gradient(ellipse 50% 80% at 0% 50%, rgba(42, 157, 143, 0.1), transparent 50%),
     linear-gradient(135deg, #f4f7f9 0%, #eef3f7 45%, #e8e2d8 100%);
@@ -1239,7 +1239,7 @@ margin-bottom: 0;
 .testimonials-section {
   background:
     linear-gradient(180deg, #f4f7f9 0%, #ffffff 40%, #f7f5f1 100%);
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .testimonials-header {
@@ -1740,7 +1740,7 @@ margin-bottom: 0;
 /* Gallery Section — uniform card grid */
 .gallery-section {
   background: #ffffff;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .gallery-header {
@@ -2474,7 +2474,7 @@ margin-bottom: 0;
 
 @media (max-width: 640px) {
   .contact-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .contact-card {
@@ -2591,7 +2591,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .contact-card {
@@ -2773,7 +2773,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .services-header {
@@ -2817,7 +2817,7 @@ margin-bottom: 0;
   }
 
   .testimonials-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .testimonials-header {
@@ -2839,7 +2839,7 @@ margin-bottom: 0;
   }
 
   .gallery-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .gallery-grid {
@@ -2857,7 +2857,7 @@ margin-bottom: 0;
   }
 
   .social-media-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .social-media-header {
@@ -2873,7 +2873,7 @@ margin-bottom: 0;
   }
 
   .gallery-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .gallery-header {
@@ -3676,7 +3676,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background-color: var(--bg);
   position: relative;
   overflow: hidden;
@@ -3773,7 +3773,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background-color: rgba(0, 0, 0, 0.02);
 }
 
@@ -4330,7 +4330,7 @@ select {
    (.faq-item.is-active); JS only toggles it.
    ============================================================ */
 .faq-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--bg);
   background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
   background-size: 18px 18px;
@@ -4573,4 +4573,255 @@ select {
   .consent-modal-body ul { padding-left: 20px; }
   .consent-modal-footer { padding: 14px 18px 20px; }
   .consent-scroll-hint { font-size: 15px; }
+}
+
+/* ==========================================================================
+   Hero — orthopedic X-ray line-art layer
+   ========================================================================== */
+.hero-structure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.13;
+  background-repeat: no-repeat;
+  background-image:
+    /* Spine column — right edge */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='760' viewBox='0 0 120 760' fill='none' stroke='%23e8f1f6' stroke-width='2'%3E%3Cpath d='M60 0v760' stroke-dasharray='4 8'/%3E%3Cg id='v'%3E%3Crect x='30' y='10' width='60' height='38' rx='12'/%3E%3Cpath d='M30 29H8M90 29h22M50 48v10M70 48v10'/%3E%3C/g%3E%3Cuse href='%23v' y='62'/%3E%3Cuse href='%23v' y='124'/%3E%3Cuse href='%23v' y='186'/%3E%3Cuse href='%23v' y='248'/%3E%3Cuse href='%23v' y='310'/%3E%3Cuse href='%23v' y='372'/%3E%3Cuse href='%23v' y='434'/%3E%3Cuse href='%23v' y='496'/%3E%3Cuse href='%23v' y='558'/%3E%3Cuse href='%23v' y='620'/%3E%3Cuse href='%23v' y='682'/%3E%3C/svg%3E"),
+    /* Knee joint — femur / patella / tibia */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='420' viewBox='0 0 260 420' fill='none' stroke='%232a9d8f' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M100 0v150c0 18-30 22-34 48-3 22 16 30 34 22 12-6 18-6 30-6s18 0 30 6c18 8 37 0 34-22-4-26-34-30-34-48V0'/%3E%3Cellipse cx='130' cy='192' rx='20' ry='24'/%3E%3Cpath d='M70 242c10-8 40-10 60-10s50 2 60 10c8 6 4 20-10 24-10 3-18 12-18 26v128M88 262c-6 10-12 18-12 28v130M112 268v152'/%3E%3C/svg%3E"),
+    /* Long bone — floating accent */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='70' viewBox='0 0 220 70' fill='none' stroke='%23e8f1f6' stroke-width='2.5'%3E%3Cpath d='M40 25h140M40 45h140M40 25a14 14 0 1 0-12 10 14 14 0 1 0 12 10M180 25a14 14 0 1 1 12 10 14 14 0 1 1-12 10'/%3E%3C/svg%3E");
+  background-position:
+    right 2% top -40px,
+    right 30% bottom -60px,
+    left 44% top 6%;
+  background-size: 110px auto, 240px auto, 180px auto;
+}
+
+/* Soft X-ray glow behind the text column */
+.hero-atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 38% 55% at 78% 45%, rgba(232, 241, 246, 0.07), transparent 70%);
+}
+
+@media (max-width: 900px) {
+  .hero-structure::after {
+    opacity: 0.08;
+    background-position: right -20px top -40px, right -40px bottom -80px, left 60% top 2%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-atmosphere { animation: none; }
+}
+
+/* ==========================================================================
+   Footer alignment — everything centred on one axis
+   ========================================================================== */
+.footer-social-wrap {
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-social {
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.footer-nav {
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 28px;
+  row-gap: 8px;
+}
+
+.footer-visitor-badge {
+  align-self: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 14px;
+}
+
+.footer-inner > * + .footer-links {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: min(560px, 100%);
+}
+
+/* ==========================================================================
+   Section rhythm — neutral / brand-tint / deep-brand bands
+   ========================================================================== */
+.about-section,
+.philosophy-section,
+.contact-section,
+.gallery-section {
+  background: #ffffff;
+}
+
+.services-section,
+.testimonials-section,
+.faq-section {
+  background:
+    radial-gradient(ellipse 45% 60% at 100% 0%, rgba(42, 157, 143, 0.14), transparent 60%),
+    radial-gradient(ellipse 40% 55% at 0% 100%, rgba(26, 82, 118, 0.12), transparent 60%),
+    #e3eef5;
+}
+
+.about-section,
+.services-section,
+.philosophy-section,
+.contact-section,
+.testimonials-section,
+.gallery-section,
+.faq-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Faint orthopedic watermark in a corner of every light band */
+.about-section::after,
+.services-section::after,
+.philosophy-section::after,
+.contact-section::after,
+.testimonials-section::after,
+.gallery-section::after,
+.faq-section::after {
+  content: "";
+  position: absolute;
+  inset: auto -40px -40px auto;
+  width: 260px;
+  height: 260px;
+  border: 0;
+  border-radius: 0;
+  transform: rotate(-24deg);
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 70' fill='none' stroke='%231a5276' stroke-width='5'%3E%3Cpath d='M40 25h140M40 45h140M40 25a14 14 0 1 0-12 10 14 14 0 1 0 12 10M180 25a14 14 0 1 1 12 10 14 14 0 1 1-12 10'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.services-section::after,
+.testimonials-section::after,
+.faq-section::after {
+  inset: -40px auto auto -40px;
+  transform: rotate(28deg);
+}
+.about-section > *,
+.services-section > *,
+.philosophy-section > *,
+.contact-section > *,
+.testimonials-section > *,
+.gallery-section > *,
+.faq-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Consultation Journey — deep brand band, echoes the hero */
+.process-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 50% 70% at 85% 20%, rgba(42, 157, 143, 0.25), transparent 60%),
+    linear-gradient(115deg, #0d141c 0%, #152433 40%, #1a5276 100%);
+}
+.process-section .about-kicker { color: #9fe3da; }
+.process-section .about-kicker i { color: #9fe3da; }
+.process-section .about-title { color: #ffffff !important; }
+.process-section .about-subtitle { color: #d6e4ee !important; }
+.process-section .step-body h3 { color: #ffffff; }
+.process-section .step-body p { color: #d6e4ee; }
+.process-section .process-timeline-line { background: rgba(232, 241, 246, 0.25); }
+
+/* Centre headings inside centred section headers */
+.process-header .about-title,
+.faq-header h2,
+.testimonials-header h2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.process-header .about-kicker,
+.testimonials-header .testimonials-kicker,
+.faq-header [class*="kicker"] {
+  justify-content: center;
+}
+
+/* Kickers as tinted pills */
+.about-kicker,
+.services-kicker,
+.contact-kicker,
+.testimonials-kicker,
+.gallery-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(42, 157, 143, 0.12);
+  border: 1px solid rgba(42, 157, 143, 0.3);
+  width: fit-content;
+}
+.process-section .about-kicker {
+  background: rgba(159, 227, 218, 0.12);
+  border-color: rgba(159, 227, 218, 0.35);
+}
+.process-header .about-kicker { margin-left: auto; margin-right: auto; }
+
+/* Cards: brand-coloured top edge + lift */
+.service-card {
+  border-top: 4px solid var(--button);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.service-card:hover {
+  border-top-color: var(--accent-warm);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(15, 28, 40, 0.12);
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-card, .service-card:hover { transition: none; transform: none; }
+}
+
+/* Journey band — step numbers & rings visible on dark */
+.process-section .step-number {
+  background: rgba(159, 227, 218, 0.16);
+  border: 1px solid rgba(159, 227, 218, 0.45);
+  color: #9fe3da;
+}
+.process-section .step-circle-ring,
+.process-section .process-step:hover .step-circle-ring {
+  color: #9fe3da;
+  opacity: 1;
+}
+
+/* Section spacing — roomier bands (hero & footer excluded) */
+.about-section,
+.services-section,
+.philosophy-section,
+.process-section,
+.contact-section,
+.testimonials-section,
+.gallery-section,
+.faq-section {
+  padding: 20px 0;
+}
+@media (max-width: 640px) {
+  .about-section,
+  .services-section,
+  .philosophy-section,
+  .process-section,
+  .contact-section,
+  .testimonials-section,
+  .gallery-section,
+  .faq-section {
+    padding: 20px 0;
+  }
 }

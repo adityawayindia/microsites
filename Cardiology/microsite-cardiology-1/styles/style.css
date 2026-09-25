@@ -493,7 +493,7 @@ margin-bottom: 0;
 /* About Section */
 .about-section {
   background: #ffffff;
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -555,14 +555,14 @@ margin-bottom: 0;
 
 @media (max-width: 900px) {
   .about-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 }
 
 /* Services Section */
 .services-section {
   background: #fdf5f5;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .services-header {
@@ -650,7 +650,7 @@ margin-bottom: 0;
 
 /* Contact Section */
 .contact-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
   position: relative;
 }
@@ -768,7 +768,7 @@ margin-bottom: 0;
 /* Testimonials Section */
 .testimonials-section {
   background: #fdf5f5;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .testimonials-header {
@@ -1238,7 +1238,7 @@ margin-bottom: 0;
 /* Gallery Section */
 .gallery-section {
   background: var(--button-light);
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .gallery-header {
@@ -1957,7 +1957,7 @@ margin-bottom: 0;
 
 @media (max-width: 640px) {
   .contact-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .contact-card {
@@ -2060,7 +2060,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .testimonial-card {
@@ -2212,7 +2212,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .services-header {
@@ -2240,7 +2240,7 @@ margin-bottom: 0;
   }
 
   .testimonials-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .testimonials-header {
@@ -2269,7 +2269,7 @@ margin-bottom: 0;
   }
 
   .social-media-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .social-media-header {
@@ -2285,7 +2285,7 @@ margin-bottom: 0;
   }
 
   .gallery-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .gallery-header {
@@ -3078,7 +3078,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background-color: var(--bg);
   position: relative;
   overflow: hidden;
@@ -3175,7 +3175,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background-color: rgba(0, 0, 0, 0.02);
 }
 
@@ -3732,7 +3732,7 @@ select {
    (.faq-item.is-active); JS only toggles it.
    ============================================================ */
 .faq-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
   background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
   background-size: 18px 18px;

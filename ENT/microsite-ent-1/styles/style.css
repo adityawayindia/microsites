@@ -1109,7 +1109,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — image-left credential card, connected-rail pillars right
    ============================================================ */
 .philosophy-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--bg-3);
 }
 
@@ -1425,7 +1425,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    ============================================================ */
 .testimonials-section {
   position: relative;
-  padding: 10px 0;
+  padding: 20px 0;
   overflow: hidden;
   background-image:
     radial-gradient(ellipse 65% 55% at 12% 15%, hsla(8, 72%, 50%, 0.18), transparent 60%),
@@ -1612,7 +1612,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    message rather than collapsing.
    ============================================================ */
 .social-media-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--surface);
 }
 
@@ -2805,7 +2805,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
 
   .contact-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 }
 
@@ -3022,7 +3022,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    is class-driven (.faq-item.is-active); JS below only toggles it.
    ============================================================ */
 .faq-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--bg-3);
   background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
   background-size: 18px 18px;
@@ -3183,4 +3183,18 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .faq-title {
     font-size: 38px;
   }
+}
+
+/* Section vertical rhythm — AGENTS.md §19: every top-level section 20px 0 */
+section.about-section,
+section.services-section,
+section.social-media-section,
+section.philosophy-section,
+section.process-section,
+section.contact-section,
+section.testimonials-section,
+section.gallery-section,
+section.faq-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

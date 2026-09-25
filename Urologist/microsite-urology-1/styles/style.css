@@ -124,6 +124,7 @@ p, li, span, a, button, label {
 
 /* Rule 3: Parent Container Auto-Height Expansion */
 .hero-title,
+.hero-tagline,
 .hero-credentials,
 .hero-reg-id,
 .hero-stat-box,
@@ -439,24 +440,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     radial-gradient(circle at 82% 68%, hsl(182 52% 45% / 0.14), transparent 24%);
 }
 
-/* Faint droplet motif — same repeating watermark used on the sibling
-   urology microsite's hero, tinted light for visibility on this dark
-   navy surface. */
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='96' viewBox='0 0 72 96'%3E%3Cpath d='M36 8c11 16 18 27 18 37a18 18 0 1 1-36 0c0-10 7-21 18-37Z' fill='none' stroke='%23e6f4f1' stroke-width='1.4'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 72px 96px;
-  background-position: 0 0;
-  opacity: 0.12;
-  mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 30%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 30%, transparent 78%);
-}
-
 .hero-layout {
   position: relative;
   z-index: 2;
@@ -514,6 +497,16 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   line-height: 1.05;
   color: #ffffff;
   margin: 0 0 12px;
+  white-space: normal;
+}
+
+.hero-tagline {
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 600;
+  color: hsl(182 45% 84%);
+  margin: 0 0 14px;
+  overflow-wrap: break-word;
+  word-break: break-word;
   white-space: normal;
 }
 
@@ -705,6 +698,37 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   height: auto;
 }
 
+/* Floating specialty badge pinned to the portrait's lower-left corner —
+   icon-only urology cue in place of a background pattern. */
+.hero-specialty-badge {
+  position: absolute;
+  z-index: 3;
+  left: max(0px, calc(50% - 250px));
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  height: auto !important;
+  min-height: fit-content;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 18px;
+  border-left: 4px solid hsl(182 55% 38%);
+  box-shadow: 0 18px 40px hsl(210 60% 4% / 0.45);
+  text-align: left;
+}
+
+.hero-specialty-badge-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: hsl(182 50% 92%);
+  color: hsl(182 60% 26%);
+}
+
 .hero-image {
   width: 100%;
   height: 100%;
@@ -712,6 +736,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   object-position: center top;
 }
 
+/* Hero bottom edge is now straight — wave SVG removed from index.html. */
 .hero-wave {
   position: relative;
   z-index: 2;
@@ -888,7 +913,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    PHILOSOPHY — light split panel
    ============================================================ */
 .philosophy-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--bg-3);
 }
 
@@ -936,6 +961,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .philosophy-pillar:nth-child(3) .pillar-icon { --accent: var(--amber-dark); }
 .philosophy-pillar h3 { font-size: 18px; color: var(--sky-dark); margin: 0 0 6px; }
 .philosophy-pillar p { font-size: 18px; color: var(--muted); margin: 0; }
+@media (max-width: 640px) {
+  .philosophy-pillars { margin-top: 16px; }
+  .philosophy-pillar { gap: 14px; padding: 12px 0; }
+  .philosophy-pillar h3 { margin-bottom: 4px; }
+  .philosophy-pillar p { line-height: 1.5; }
+}
 
 .philosophy-visual { position: relative; min-width: 0; display: flex; justify-content: center; }
 .philosophy-img-glow {
@@ -1073,7 +1104,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-section { padding: 10px 0; background: var(--bg); }
+.contact-section { padding: 10px 0; background: var(--bg); border-bottom: 1px solid var(--border); }
+
+.section-divider {
+  height: 1px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(to right, transparent, var(--border) 15%, var(--border) 85%, transparent);
+}
 
 .contact-card {
   background: var(--surface);
@@ -1582,17 +1620,18 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .booking-consent-field input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--amber); cursor: pointer; }
 .booking-consent-field label { font-size: 16px; color: var(--sky-dark); cursor: pointer; max-width: none; }
 
+
 .booking-submit-btn {
   width: 100%; padding: 14px; border: none; border-radius: var(--radius-pill);
-  background: var(--sky-dark);
+  background: var(--amber); /* matches header .cta-btn */
   /* AGENTS.md §11/§15: the submit button is the modal's primary CTA —
      18px per the unified button scale, not the 16px form-control size. */
-  color: #ffffff; font-size: 18px; font-weight: 700;
+  color: var(--sky-dark); font-size: 18px; font-weight: 700;
   cursor: pointer; transition: opacity 0.2s ease, transform 0.2s ease;
   font-family: inherit;
 }
-.booking-submit-btn:hover:not([disabled]) { opacity: 0.92; transform: translateY(-2px); }
-.booking-submit-btn[disabled] { background: hsl(205, 40%, 80%); cursor: not-allowed; }
+.booking-submit-btn:hover:not([disabled]) { background: var(--amber-dark); transform: translateY(-2px); }
+.booking-submit-btn[disabled] { background: var(--amber); opacity: 0.55; cursor: not-allowed; }
 
 /* Booking loader — shown over the form while the (demo) submit is in flight */
 .booking-loader {
@@ -1923,6 +1962,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .hero-stats-grid { grid-template-columns: 1fr 1fr; }
   .hero-stat-box:last-child { grid-column: 1 / -1; }
   .hero-visual { flex-direction: column; flex-wrap: wrap; gap: 10px; }
+  .hero-specialty-badge { position: relative; left: auto; bottom: auto; margin-top: -36px; }
 }
 
 @media (max-width: 900px) {
@@ -2231,7 +2271,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   }
 
   .contact-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 }
 
@@ -2447,7 +2487,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    is class-driven (.faq-item.is-active); JS below only toggles it.
    ============================================================ */
 .faq-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--bg-3);
   background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
   background-size: 18px 18px;
@@ -2660,9 +2700,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    through. The label always reads "I Agree"; the hint above carries the
    instruction. */
 .consent-agree-btn { width: 100%; margin-top: 0 !important; }
-.consent-agree-btn span { color: #ffffff; }
+.consent-agree-btn span { color: var(--sky-dark); }
 .consent-agree-btn[disabled] { opacity: 0.55; cursor: not-allowed; }
-.consent-agree-btn[disabled] span { color: #ffffff; }
+.consent-agree-btn[disabled] span { color: var(--sky-dark); }
 
 .consent-scroll-hint {
   display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -2690,4 +2730,227 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .consent-modal-body ul { padding-left: 20px; }
   .consent-modal-footer { padding: 14px 18px 20px; }
   .consent-scroll-hint { font-size: 15px; }
+}
+
+/* Section vertical rhythm — AGENTS.md §19: every top-level section 20px 0 */
+section.about-section,
+section.services-section,
+section.philosophy-section,
+section.process-section,
+section.contact-section,
+section.testimonials-section,
+section.gallery-section,
+section.faq-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Gallery follows Testimonials — trimmed top padding to close the gap. */
+section.gallery-section { padding-top: 0; }
+section.faq-section { padding-top: 0; }
+
+/* ============================================================
+   HERO — animated "liquid" background
+   Three translucent wave bands drift horizontally at different
+   speeds along the bottom of the hero, with a few small bubbles
+   rising through them. Only transforms are animated (GPU-friendly),
+   everything sits behind the hero content (z-index 1 < 2).
+   ============================================================ */
+.hero-liquid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 62%;
+  min-height: 300px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-liquid-wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  max-width: none;
+  background: linear-gradient(180deg, hsl(182 60% 55% / 0.35), hsl(206 70% 45% / 0.15));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='120' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C240 10 480 10 720 60 S1200 110 1440 60 V120 H0Z'/%3E%3C/svg%3E") repeat-x 0 100% / 50% 100%;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='120' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C240 10 480 10 720 60 S1200 110 1440 60 V120 H0Z'/%3E%3C/svg%3E") repeat-x 0 100% / 50% 100%;
+  animation: heroWaveDrift 18s linear infinite;
+  will-change: transform;
+}
+
+.hero-liquid-wave--back  { height: 88%; opacity: 0.45; animation-duration: 26s; animation-direction: reverse; }
+.hero-liquid-wave--mid   { height: 62%; opacity: 0.6;  animation-duration: 19s; }
+.hero-liquid-wave--front { height: 38%; opacity: 0.8;  animation-duration: 13s; }
+
+@keyframes heroWaveDrift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.hero-bubble {
+  position: absolute;
+  bottom: -20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid hsl(182 60% 80% / 0.55);
+  background: radial-gradient(circle at 35% 30%, hsl(0 0% 100% / 0.35), transparent 70%);
+  opacity: 0;
+  animation: heroBubbleRise 11s ease-in infinite;
+}
+.hero-bubble:nth-child(1) { left: 8%;  animation-delay: 0s; }
+.hero-bubble:nth-child(2) { left: 22%; width: 8px;  height: 8px;  animation-delay: 3.5s; animation-duration: 9s; }
+.hero-bubble:nth-child(3) { left: 41%; width: 16px; height: 16px; animation-delay: 6s;   animation-duration: 13s; }
+.hero-bubble:nth-child(4) { left: 57%; width: 9px;  height: 9px;  animation-delay: 1.5s; }
+.hero-bubble:nth-child(5) { left: 74%; width: 14px; height: 14px; animation-delay: 8s;   animation-duration: 12s; }
+.hero-bubble:nth-child(6) { left: 91%; width: 7px;  height: 7px;  animation-delay: 4.5s; animation-duration: 8s; }
+
+@keyframes heroBubbleRise {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  15%  { opacity: 0.9; }
+  50%  { transform: translate3d(14px, -110px, 0); }
+  85%  { opacity: 0.6; }
+  100% { transform: translate3d(-8px, -230px, 0); opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .hero-liquid { height: 38%; min-height: 200px; }
+  .hero-bubble:nth-child(n+4) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-liquid-wave,
+  .hero-bubble { animation: none; }
+}
+
+
+/* Footer brand: undo the compact mobile header's .brand/.brand-text overrides
+   so the name + role stay above the tagline, stacked on two lines. */
+@media (max-width: 1030px) {
+  .site-footer .brand { order: 0; flex: 0 0 auto; }
+  .site-footer .brand-text { display: flex; flex-direction: column; }
+  .site-footer .brand-name,
+  .site-footer .brand-role { display: block; white-space: normal; overflow-wrap: break-word; }
+}
+
+/* ============================================================
+   SOCIAL ICONS — disabled ({{#no*}}) state + tooltips
+   Backend renders a <span class="… is-disabled" data-tooltip="Not Enabled">
+   for each unlinked network, and an <a data-tooltip="Name"> for linked ones.
+   ============================================================ */
+/* Index footer row uses unclassed children — give disabled <span>s the same box as the <a>s. */
+.footer-social > span {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  background: hsla(0,0%,100%,0.10);
+  color: #fff;
+}
+
+/* Dim the glyph + surface rather than the whole element: element-level
+   opacity would also fade the ::after tooltip that says "Not Enabled". */
+.social.is-disabled,
+.footer-social .is-disabled {
+  cursor: not-allowed;
+}
+.social.is-disabled,
+.social.is-disabled:hover {
+  background: hsl(210 45% 22% / 0.35);
+  border-color: hsl(200 40% 45% / 0.15);
+  color: hsl(200 30% 82%);
+  transform: none;
+}
+.footer-social > span.is-disabled,
+.footer-social > span.is-disabled:hover,
+.footer-social-icon.is-disabled,
+.footer-social-icon.is-disabled:hover {
+  background: hsla(0,0%,100%,0.06);
+  color: #fff;
+  transform: none;
+  box-shadow: none;
+}
+.social.is-disabled > i,
+.footer-social .is-disabled > i { opacity: 0.4; }
+
+.social,
+.footer-social > a,
+.footer-social > span,
+.footer-social-icon {
+  position: relative;
+}
+
+.social::after,
+.footer-social > a::after,
+.footer-social > span::after,
+.footer-social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--text);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap; /* fixed short labels ("Not Enabled", network names), not dynamic content */
+  padding: 5px 11px;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 20;
+}
+
+.social::before,
+.footer-social > a::before,
+.footer-social > span::before,
+.footer-social-icon::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--text);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+  z-index: 20;
+}
+
+.social:hover::after,
+.social:hover::before,
+.social:focus-visible::after,
+.social:focus-visible::before,
+.footer-social > a:hover::after,
+.footer-social > a:hover::before,
+.footer-social > a:focus-visible::after,
+.footer-social > a:focus-visible::before,
+.footer-social > span:hover::after,
+.footer-social > span:hover::before,
+.footer-social-icon:hover::after,
+.footer-social-icon:hover::before,
+.footer-social-icon:focus-visible::after,
+.footer-social-icon:focus-visible::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* The arrow must not pick up the bubble's translateY. */
+.social:hover::before,
+.social:focus-visible::before,
+.footer-social > a:hover::before,
+.footer-social > a:focus-visible::before,
+.footer-social > span:hover::before,
+.footer-social-icon:hover::before,
+.footer-social-icon:focus-visible::before {
+  transform: translateX(-50%);
 }

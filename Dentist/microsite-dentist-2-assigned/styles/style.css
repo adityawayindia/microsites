@@ -129,7 +129,7 @@ body {
 .testimonials-section,
 .social-media-section,
 .gallery-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
 }
 
@@ -677,7 +677,7 @@ margin-bottom: 0;
   background:
     radial-gradient(ellipse 40% 60% at 0% 100%, rgba(255, 107, 91, 0.1), transparent 55%),
     linear-gradient(180deg, #f5f7fb 0%, #eef1f8 100%);
-  padding: 10px 0;
+  padding: 20px 0;
   position: relative;
   overflow: hidden;
 }
@@ -862,7 +862,7 @@ margin-bottom: 0;
 
 @media (max-width: 900px) {
   .about-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .about-layout {
@@ -887,7 +887,7 @@ margin-bottom: 0;
 .services-section {
   position: relative;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 20px 0;
   background:
     radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255, 107, 91, 0.14), transparent 60%),
     linear-gradient(180deg, #eef1f8 0%, #f5f7fb 45%, #ffffff 100%);
@@ -1092,7 +1092,7 @@ margin-bottom: 0;
 
 /* Contact Section — light split panel */
 .contact-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
 }
 
@@ -1261,7 +1261,7 @@ margin-bottom: 0;
 .testimonials-section {
   background:
     linear-gradient(180deg, #f5f7fb 0%, #ffffff 45%, #eef1f8 100%);
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .testimonials-header {
@@ -1480,7 +1480,7 @@ margin-bottom: 0;
 /* Social Media Section */
 .social-media-section {
   background: #ffffff;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .social-media-header {
@@ -1770,7 +1770,7 @@ margin-bottom: 0;
 
 /* Gallery Section — uniform card grid */
 .gallery-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
 }
 
@@ -2698,7 +2698,7 @@ margin-bottom: 0;
 
 @media (max-width: 640px) {
   .contact-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
 }
 
@@ -2913,7 +2913,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .contact-card {
@@ -3122,7 +3122,7 @@ margin-bottom: 0;
   }
 
   .services-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .services-header {
@@ -3168,7 +3168,7 @@ margin-bottom: 0;
   .testimonials-section {
   background:
     linear-gradient(180deg, #f5f7fb 0%, #ffffff 45%, #eef1f8 100%);
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
   .testimonials-header {
@@ -3205,7 +3205,7 @@ margin-bottom: 0;
 }
 
   .gallery-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
 }
 
@@ -3224,7 +3224,7 @@ margin-bottom: 0;
   }
 
   .social-media-section {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .social-media-header {
@@ -3240,7 +3240,7 @@ margin-bottom: 0;
   }
 
   .gallery-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #ffffff;
 }
 
@@ -4012,7 +4012,7 @@ margin-bottom: 0;
 
 /* ===== Dentist about redesign ===== */
 .about-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 55%, #eef1f8 100%);
   position: relative;
   overflow: hidden;
@@ -4764,7 +4764,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Care Philosophy */
 .philosophy-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background-color: var(--bg);
   position: relative;
   overflow: hidden;
@@ -4861,7 +4861,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
 
 /* Section: Consultation Journey */
 .process-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background:
     radial-gradient(ellipse 62% 50% at 50% 0%, rgba(255, 107, 91, 0.14), transparent 60%),
     linear-gradient(180deg, #f5f7fb 0%, #fafbfe 42%, #ffffff 100%);
@@ -5381,7 +5381,7 @@ small:not(.booking-modal *) {
    (.faq-item.is-active); JS only toggles it.
    ============================================================ */
 .faq-section {
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--bg);
   background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px); /* FAQ dotted background */
   background-size: 18px 18px;

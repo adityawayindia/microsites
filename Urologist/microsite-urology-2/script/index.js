@@ -1,6 +1,8 @@
 // GA4 tracking lives in script/analytics.js (window.trackEvent + the
 // data-ga-event click delegation). Loaded before this file on every page.
 
+const API_BASE = "https://digidrapi.digidr.app";
+
 // Always start fresh on load/refresh: reset scroll position and strip any
 // URL hash left over from in-page nav so a reload never resumes mid-page.
 if ("scrollRestoration" in history) {
@@ -58,50 +60,6 @@ if (menuToggle && mainNav) {
     });
   });
 }
-
-// Animated Stat Counters
-(function () {
-  const statEls = document.querySelectorAll(".stat-card-num[data-count-to]");
-  if (!statEls.length) return;
-
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const DURATION = 1400;
-
-  function animateCount(el) {
-    const target = parseFloat(el.getAttribute("data-count-to"));
-    const suffix = el.getAttribute("data-suffix") || "";
-    if (isNaN(target)) return;
-
-    if (prefersReducedMotion) {
-      el.textContent = target + suffix;
-      return;
-    }
-
-    const start = performance.now();
-    function tick(now) {
-      const progress = Math.min((now - start) / DURATION, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(target * eased);
-      el.textContent = current + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCount(entry.target);
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-
-  statEls.forEach((el) => observer.observe(el));
-})();
 
 // Testimonials Carousel
 (function () {
@@ -460,6 +418,70 @@ if (menuToggle && mainNav) {
 
   if (!modal || !dialog || !form) return;
 
+  const doctorId = form.dataset.userid;
+  const clinicName = form.dataset.clinicname;
+  const clinicAddress = form.dataset.address;
+  const clinicDistrict = form.dataset.district;
+  const clinicState = form.dataset.state;
+  const clinicPincode = form.dataset.pincode;
+
+  let appointmentType = "offline";
+  let isOnlineAvailable = true;
+  let isOfflineAvailable = true;
+  let compressedFile = null;
+
+  // Appointment section
+  (async () => {
+    try {
+
+      const response = await fetch(`${API_BASE}/api/Patient_Appointment/getappointment?userid=${doctorId}`);
+
+      if (!response.ok) {
+        console.warn(`Appointment API returned ${response.status}, using defaults`);
+        return;
+      }
+
+      const data = await response.json();
+
+      isOnlineAvailable = data.online ?? true;
+      isOfflineAvailable = data.offline ?? true;
+
+      // hide online tab
+      if (!isOnlineAvailable && onlineTab) {
+        onlineTab.style.display = "none";
+      }
+
+      // hide offline tab
+      if (!isOfflineAvailable && clinicTab) {
+        clinicTab.style.display = "none";
+      }
+
+      // auto select available tab
+      if (isOnlineAvailable && !isOfflineAvailable) {
+        appointmentType = "online";
+        setActiveTab("online");
+        window.__onAppointmentTypeChange?.(appointmentType);
+      }
+
+      if (isOfflineAvailable && !isOnlineAvailable) {
+        appointmentType = "offline";
+        setActiveTab("clinic");
+        window.__onAppointmentTypeChange?.(appointmentType);
+      }
+
+      // Hide all book appointment buttons if both are unavailable
+      if (!isOnlineAvailable && !isOfflineAvailable) {
+        document.querySelectorAll(".cta-btn").forEach(btn => {
+          btn.style.display = "none";
+        });
+      }
+
+    } catch (err) {
+      console.warn("Failed to fetch appointment availability:", err.message);
+      // Keep defaults if API fails - don't break the page
+    }
+  })();
+
   function setBodyScroll(disable) {
     document.body.style.overflow = disable ? "hidden" : "";
   }
@@ -619,8 +641,16 @@ if (menuToggle && mainNav) {
     }
   }
 
-  clinicTab?.addEventListener("click", () => setActiveTab("clinic"));
-  onlineTab?.addEventListener("click", () => setActiveTab("online"));
+  clinicTab?.addEventListener("click", () => {
+    setActiveTab("clinic");
+    appointmentType = "offline";
+    window.__onAppointmentTypeChange?.(appointmentType);
+  });
+  onlineTab?.addEventListener("click", () => {
+    setActiveTab("online");
+    appointmentType = "online";
+    window.__onAppointmentTypeChange?.(appointmentType);
+  });
 
   const fieldValidators = {
     fullName(value) {
@@ -779,9 +809,11 @@ if (menuToggle && mainNav) {
 
     if (form.report) {
       form.report.addEventListener("change", () => {
-        renderReportPreview(form.report.files[0]);
+        const file = form.report.files[0] || null;
+        compressedFile = file;
+        renderReportPreview(file);
 
-        if (form.report.files[0]) {
+        if (file) {
           window.trackEvent("report_uploaded");
         }
       });
@@ -791,6 +823,7 @@ if (menuToggle && mainNav) {
     if (removeBtn) {
       removeBtn.addEventListener("click", () => {
         form.report.value = "";
+        compressedFile = null;
         renderReportPreview(null);
         validateField("report");
       });
@@ -866,6 +899,55 @@ if (menuToggle && mainNav) {
   bindRealtimeValidation();
   setA11yAttributes();
 
+  const preferredDateInput = form.preferredDate;
+  const preferredTimeSelect = form.preferredTime;
+
+  //Slots section
+  preferredDateInput?.addEventListener("change", async () => {
+
+    const selectedDate = preferredDateInput.value;
+
+    if (!selectedDate) return;
+
+    try {
+
+      const formData = new FormData();
+
+      formData.append("UserId", doctorId);
+      formData.append("Date", selectedDate);
+      formData.append("Type", appointmentType);
+
+      const response = await fetch(`${API_BASE}/api/Patient_Appointment/getslots`, {
+        method: "POST",
+        body: formData
+      });
+      console.log(response);
+
+      const slots = await response.json();
+
+      preferredTimeSelect.innerHTML =
+        `<option value="">Select Time Slot</option>`;
+
+      if (!slots || slots.length === 0) {
+
+        preferredTimeSelect.innerHTML =
+          `<option value="">No Slots Available</option>`;
+
+        return;
+      }
+
+      slots.forEach(slot => {
+        preferredTimeSelect.innerHTML +=
+          `<option value="${slot.id}" data-label="${slot.label}">${slot.label}</option>`;
+      });
+
+    } catch (err) {
+
+      console.error(err);
+
+    }
+  });
+
   // Custom modern date picker (replaces native browser calendar)
   (function initDatePicker() {
     const trigger = document.getElementById("preferredDateText");
@@ -884,6 +966,26 @@ if (menuToggle && mainNav) {
     today.setHours(0, 0, 0, 0);
     let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
     let selectedDate = null;
+
+    //Available days section
+    const doctorId = form.dataset.userid;
+    let availableDays = null;
+
+    async function loadAvailableDays(type) {
+      try {
+        const res = await fetch(`${API_BASE}/api/Patient_Appointment/getavailabledays?userid=${doctorId}&type=${type}`);
+        const days = await res.json();
+        availableDays = new Set((days || []).map(d => d.toLowerCase()));
+      } catch (err) {
+        console.warn("Failed to load available days:", err.message);
+        availableDays = null;
+      }
+      render();
+    }
+
+    // booking-modal IIFE calls this whenever the clinic/online tab changes
+    window.__onAppointmentTypeChange = loadAvailableDays;
+    loadAvailableDays("offline");
 
     function pad(n) { return String(n).padStart(2, "0"); }
     function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
@@ -914,7 +1016,10 @@ if (menuToggle && mainNav) {
         btn.className = "booking-calendar-day";
         btn.textContent = String(day);
 
-        if (cellDate < today) {
+        const dayName = cellDate.toLocaleDateString("en-US", { weekday: "long" }).toLowerCase();
+        const isUnconfiguredDay = availableDays && availableDays.size > 0 && !availableDays.has(dayName);
+
+        if (cellDate < today || isUnconfiguredDay) {
           btn.disabled = true;
           btn.classList.add("is-disabled");
         }
@@ -988,6 +1093,7 @@ if (menuToggle && mainNav) {
 
   let isSubmitting = false;
 
+  //Patient appointment section
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (isSubmitting) return;
@@ -999,37 +1105,122 @@ if (menuToggle && mainNav) {
 
     const fieldsToValidate = ["fullName", "email", "phone", "preferredDate", "preferredTime", "reason", "report"];
     const invalidFields = fieldsToValidate.filter((name) => !validateField(name));
-    const isValid = invalidFields.length === 0;
+    let isValid = invalidFields.length === 0;
+
+    // Bug fix: the form has `novalidate`, so the native `required` on the
+    // consent checkbox was never enforced and nothing here checked it —
+    // users could submit without consenting. Now actually validated.
+    const consentGiven = form.consentCheckbox.checked;
+    if (!consentGiven) {
+      showError("consentCheckbox", "Please provide consent to proceed.");
+      isValid = false;
+    }
 
     if (!isValid) {
-      const firstInvalid = form[invalidFields[0]];
+      const firstInvalid = form[invalidFields[0] || "consentCheckbox"];
       const firstInvalidElement = Array.isArray(firstInvalid) ? firstInvalid[0] : firstInvalid;
       firstInvalidElement?.focus();
       return;
     }
 
+    const fullName = form.fullName.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const preferredDate = form.preferredDate.value;
+    const preferredTime = form.preferredTime.value;
+    const selectedTimeOption = preferredTimeSelect.selectedOptions[0];
+    const preferredTimeLabel = selectedTimeOption ? selectedTimeOption.dataset.label : "";
+    const reason = form.reason.value.trim();
+
     isSubmitting = true;
+    submitBtnEl.disabled = true;
     submitBtnEl.style.display = "none";
     bookingLoader?.setAttribute("aria-hidden", "false");
 
-    await new Promise((resolve) => setTimeout(resolve, 900));
+    try {
+      const formData = new FormData();
 
-    const isOnline = onlineTab?.classList.contains("is-active");
-    const msg = isOnline
-      ? "Your online consultation has been booked successfully. (Demo mode)"
-      : "Your clinic appointment has been booked successfully. (Demo mode)";
+      formData.append("DoctorId", doctorId);
+      formData.append("FullName", fullName);
+      formData.append("Phone", phone);
+      formData.append("Email", email);
+      formData.append("Date", preferredDate);
+      formData.append("Type", appointmentType);
 
-    bookingLoader?.setAttribute("aria-hidden", "true");
-    submitBtnEl.style.display = "block";
+      const dayName = new Date(preferredDate).toLocaleDateString("en-US", { weekday: "long" });
 
-    form.reset();
-    renderReportPreview(null);
-    closeModal();
-    showBookingPopup(msg, true);
+      formData.append("Day", dayName);
+      formData.append("SlotId", preferredTime);
+      formData.append("Time", preferredTimeLabel);
+      formData.append("Reason", reason);
 
-    window.trackEvent("booking_submitted", { appointment_type: isOnline ? "online" : "clinic" });
+      // Use compressed file if available
+      if (compressedFile) {
+        formData.append("Upload", compressedFile);
+      }
 
-    isSubmitting = false;
+      const response = await fetch(`${API_BASE}/api/Patient_Appointment/patient_appointment`, {
+        method: "POST",
+        body: formData
+      });
+
+      let result;
+      let rawText = await response.text();
+
+      try {
+        result = JSON.parse(rawText);
+      } catch {
+        result = null;
+      }
+
+      const appointmentTypeResult = result?.type;
+      const addressMessage = result?.message;
+
+      if (appointmentTypeResult === "online") {
+        const meetLink = result?.meetLink;
+        const msg = meetLink
+          ? `Your appointment is confirmed.<br/><br/>Please join 5 minutes before your scheduled time. Check your email for details.`
+          : "Your online consultation has been booked successfully.";
+        showBookingPopup(msg, true);
+        window.__trackBookingSuccess?.("online");
+      } else if (appointmentTypeResult === "offline") {
+        const locationHtml = `
+        <strong>Appointment Location:</strong><br/>
+        ${clinicName || ""}<br/>
+        ${clinicAddress || ""}<br/>
+        ${clinicDistrict || ""}${clinicState ? ", " + clinicState : ""}${clinicPincode ? " – " + clinicPincode : ""}
+    `;
+        const msg = `Hello ${fullName},<br/><br/>
+    Your Appointment is Confirmed!<br/><br/>
+    ${locationHtml}<br/><br/>
+    Confirmation details have been sent to your registered email<br/>
+    Please arrive 15 minutes before your scheduled appointment to complete any necessary check-in.
+`;
+        showBookingPopup(msg, true);
+        window.__trackBookingSuccess?.("offline");
+      } else if (!response.ok) {
+        showBookingPopup(addressMessage || "Something went wrong while booking your appointment.", false);
+        return;
+      }
+
+      form.reset();
+      renderReportPreview(null);
+      clearErrors();
+      compressedFile = null;
+      closeModal();
+
+      window.trackEvent("booking_submitted", { appointment_type: appointmentType === "online" ? "online" : "clinic" });
+
+    } catch (err) {
+      console.error(err);
+      showBookingPopup("Something went wrong.", false);
+
+    } finally {
+      isSubmitting = false;
+      submitBtnEl.disabled = false;
+      submitBtnEl.style.display = "block";
+      bookingLoader?.setAttribute("aria-hidden", "true");
+    }
   });
 
   function showBookingPopup(message, success = true) {
@@ -1234,5 +1425,75 @@ if (menuToggle && mainNav) {
 
     item.classList.toggle("is-active", !isActive);
     btn.setAttribute("aria-expanded", String(!isActive));
+  });
+})();
+
+// DigiDr Stat Counter
+// Counts each [data-counter] element up from 0 to the number in its own text
+// (e.g. "15", "15+", "20k+", "20,000+"), keeping the suffix and commas.
+// The real value is in the HTML, so it shows without JS; text that doesn't
+// start with a number is left alone. Runs once, when the stat scrolls into
+// view. With prefers-reduced-motion the final value is shown straight away.
+(function () {
+  var els = document.querySelectorAll("[data-counter]");
+  if (!els.length) return;
+
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+  var DURATION = 1600;
+
+  function parse(el) {
+    var text = el.textContent.trim();
+    var match = text.match(/^(\d[\d,]*(?:\.\d+)?)(.*)$/);
+    if (!match) return null;
+    var numText = match[1];
+    var target = parseFloat(numText.replace(/,/g, ""));
+    if (!isFinite(target)) return null;
+    return {
+      target: target,
+      suffix: match[2],
+      commas: numText.indexOf(",") !== -1,
+      decimals: (numText.split(".")[1] || "").length,
+      original: text
+    };
+  }
+
+  function format(value, info) {
+    var text = info.decimals ? value.toFixed(info.decimals) : String(Math.round(value));
+    if (info.commas) {
+      var parts = text.split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      text = parts.join(".");
+    }
+    return text + info.suffix;
+  }
+
+  function animate(el, info) {
+    var start = null;
+    function step(now) {
+      if (start === null) start = now;
+      var progress = Math.min((now - start) / DURATION, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = progress < 1 ? format(info.target * eased, info) : info.original;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      animate(entry.target, entry.target.__digidrCounter);
+    });
+  }, { threshold: 0.4 });
+
+  els.forEach(function (el) {
+    var info = parse(el);
+    if (!info) return;
+    el.__digidrCounter = info;
+    el.textContent = format(0, info);
+    observer.observe(el);
   });
 })();
