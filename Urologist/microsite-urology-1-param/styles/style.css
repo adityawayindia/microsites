@@ -440,6 +440,46 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
     radial-gradient(circle at 82% 68%, hsl(182 52% 45% / 0.14), transparent 24%);
 }
 
+/* Subtle floating kidney line icons behind the hero copy */
+.hero-kidneys {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-kidney {
+  position: absolute;
+  max-width: none;
+  fill: none;
+  stroke: hsl(182 60% 75%);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.12;
+  animation: heroKidneyFloat 14s ease-in-out infinite;
+}
+
+.hero-kidney--1 { width: 72px; height: 72px; top: 12%; left: 3%; animation-duration: 16s; }
+.hero-kidney--2 { width: 44px; height: 44px; top: 30%; left: 44%; animation-delay: -4s; transform: rotate(18deg); }
+.hero-kidney--3 { width: 56px; height: 56px; top: 86%; left: 22%; animation-duration: 18s; animation-delay: -8s; }
+.hero-kidney--4 { width: 36px; height: 36px; top: 78%; left: 6%; animation-delay: -2s; }
+.hero-kidney--5 { width: 40px; height: 40px; top: 52%; left: 51%; animation-duration: 20s; animation-delay: -11s; }
+
+@keyframes heroKidneyFloat {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50% { translate: 8px -18px; rotate: 10deg; }
+}
+
+@media (max-width: 640px) {
+  .hero-kidney--2, .hero-kidney--5 { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kidney { animation: none; }
+}
+
 .hero-layout {
   position: relative;
   z-index: 2;
@@ -1731,9 +1771,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .site-footer .brand .avatar { border-color: var(--amber); }
 .footer-tagline { font-size: 18px; color: hsl(204, 30%, 85%); margin: 0; max-width: 340px; text-align: left; line-height: 1.4; }
 
-.footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
+.footer-social-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
 .footer-social-label { font-size: 18px; font-weight: 600; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.01em; }
-.footer-social { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; max-width: 344px; min-width: 0; }
+.footer-social { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 14px; max-width: 386px; min-width: 0; }
 .footer-social a {
   width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
@@ -2015,11 +2055,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   /* Gallery stays 2-column down to the smallest widths per §10 — the
      ≤1100px span-6 rules above already apply and don't need resetting. */
   .footer-inner { grid-template-columns: 1fr; justify-content: start; justify-items: start; }
-  /* Scoped to the plain (unclassed-icon) footer-social row used on this
-     page — .footer-social is also reused on privacy-policy.html /
-     terms-of-service.html with larger .footer-social-icon children, which
-     must keep its own flex layout untouched. */
-  .footer-social:not(:has(.footer-social-icon)) {
+  .footer-social {
     display: grid;
     grid-template-columns: repeat(4, 36px);
     justify-content: flex-start;
@@ -2074,202 +2110,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   .gallery-title { font-size: 30px; }
 }
 
-/* ============================================================
-   LEGAL PAGE FOOTER (site-footer) — privacy-policy / terms-of-service
-   AGENTS.md §12: one .site-footer spec for every page — this block
-   used to re-declare .site-footer background/padding/border-top with
-   different values than the marketing footer above, and because it
-   appears later in the cascade it silently overrode padding/border-top
-   sitewide (including on index.html). Fixed by dropping the duplicate
-   .site-footer redeclaration; .legal-footer-inner below (unique to the
-   legal pages) carries its own layout without touching .site-footer.
-   ============================================================ */
-.legal-footer-inner {
-  /* AGENTS.md §2: one container width sitewide (1480px) — this used to be
-     a separate min(1240px, 92%) legal-page-only width, the exact bug
-     called out in the spec. */
-  width: min(1480px, 92%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto auto;
-  align-items: start;
-  column-gap: 32px;
-  row-gap: 0;
-  min-width: 0;
-}
-
-.legal-footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  justify-self: start;
-  grid-column: 1;
-  grid-row: 1;
-  min-width: 0;
-}
-
-.legal-footer-nav a {
-  color: #e2e8f0;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.legal-footer-nav a:hover {
-  color: var(--amber);
-}
-
-.footer-social-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  min-width: 0;
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: center;
-}
-
-.footer-social-label {
-  font-size: 18px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 0.01em;
-}
-
-.footer-social {
-  /* Capped to exactly 8 icons per row (8 * 36px icon + 7 * 14px gap =
-     386px) so a 9th+ icon added later wraps to a new row instead of
-     growing the row indefinitely, even when the container has room. */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 14px;
-  max-width: 386px;
-  min-width: 0;
-}
-
-.footer-social-icon {
-  /* AGENTS.md §12: social icons are 36px everywhere — this legal-page
-     variant previously shipped 42px, the exact deviation the spec flags. */
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: #ffffff;
-  text-decoration: none;
-  background: hsla(0,0%,100%,0.10);
-  border: 1px solid rgba(255,255,255,0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.footer-social-icon:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
-}
-
-.footer-social-facebook { background: #1877f2; }
-.footer-social-facebook-alt { background: #0d5cd7; }
-.footer-social-website { background: #64748b; }
-.footer-social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
-.footer-social-x { background: #000000; }
-.footer-social-linkedin { background: #0a66c2; }
-.footer-social-whatsapp { background: #1bd741; }
-.footer-social-youtube { background: #ff0000; }
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  font-size: 18px;
-  color: hsl(204, 30%, 82%);
-  grid-column: 3;
-  grid-row: 1;
-  justify-self: end;
-  min-width: 0;
-}
-
-.footer-links a {
-  color: #dbe3f3;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: var(--amber);
-}
-
-.footer-divider {
-  color: #64748b;
-}
-
-.footer-copy {
-  margin: 0;
-  font-size: 18px;
-  color: hsl(204, 30%, 70%);
-  letter-spacing: 0.01em;
-  grid-column: 1 / -1;
-  grid-row: 2;
-  text-align: center;
-  padding-top: 24px;
-  margin-top: 12px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-@media (max-width: 900px) {
-  .legal-footer-inner {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    justify-items: center;
-    gap: 20px;
-  }
-
-  .legal-footer-nav {
-    justify-self: center;
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .footer-social-wrap {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .footer-links {
-    justify-self: center;
-    justify-content: center;
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .footer-copy {
-    grid-column: 1;
-    grid-row: auto;
-    margin-top: 0;
-  }
-}
-
 @media (max-width: 640px) {
-  .legal-footer-nav {
-    gap: 16px;
-    font-size: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .footer-links {
-    font-size: 18px;
-  }
-
   .contact-section {
     padding: 20px 0;
   }
@@ -2864,9 +2705,7 @@ section.faq-section { padding-top: 0; }
   transform: none;
 }
 .footer-social > span.is-disabled,
-.footer-social > span.is-disabled:hover,
-.footer-social-icon.is-disabled,
-.footer-social-icon.is-disabled:hover {
+.footer-social > span.is-disabled:hover {
   background: hsla(0,0%,100%,0.06);
   color: #fff;
   transform: none;
@@ -2877,15 +2716,13 @@ section.faq-section { padding-top: 0; }
 
 .social,
 .footer-social > a,
-.footer-social > span,
-.footer-social-icon {
+.footer-social > span {
   position: relative;
 }
 
 .social::after,
 .footer-social > a::after,
-.footer-social > span::after,
-.footer-social-icon::after {
+.footer-social > span::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: calc(100% + 10px);
@@ -2910,8 +2747,7 @@ section.faq-section { padding-top: 0; }
 
 .social::before,
 .footer-social > a::before,
-.footer-social > span::before,
-.footer-social-icon::before {
+.footer-social > span::before {
   content: "";
   position: absolute;
   bottom: calc(100% + 1px);
@@ -2935,11 +2771,7 @@ section.faq-section { padding-top: 0; }
 .footer-social > a:focus-visible::after,
 .footer-social > a:focus-visible::before,
 .footer-social > span:hover::after,
-.footer-social > span:hover::before,
-.footer-social-icon:hover::after,
-.footer-social-icon:hover::before,
-.footer-social-icon:focus-visible::after,
-.footer-social-icon:focus-visible::before {
+.footer-social > span:hover::before {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -2949,8 +2781,6 @@ section.faq-section { padding-top: 0; }
 .social:focus-visible::before,
 .footer-social > a:hover::before,
 .footer-social > a:focus-visible::before,
-.footer-social > span:hover::before,
-.footer-social-icon:hover::before,
-.footer-social-icon:focus-visible::before {
+.footer-social > span:hover::before {
   transform: translateX(-50%);
 }

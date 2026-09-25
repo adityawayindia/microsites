@@ -37,8 +37,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
   <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
-  <meta property="og:image" content="{{profile}}" />
-  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image" content="https://storage.googleapis.com/digidr/urology_og.png" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
   <meta property="og:locale" content="en_US" />
 
@@ -46,7 +46,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
   <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
-  <meta name="twitter:image" content="{{profile}}" />
+  <meta name="twitter:image" content="https://storage.googleapis.com/digidr/urology_og.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -167,6 +167,20 @@
     <!-- END OF MODULAR BANNER MODULE -->
 
     <div class="hero-mesh" aria-hidden="true"></div>
+    <div class="hero-kidneys" aria-hidden="true">
+      <svg width="0" height="0" style="position:absolute">
+        <symbol id="hero-kidney-icon" viewBox="0 0 64 64">
+          <path d="M34 6C18 4 8 18 8 36s10 24 22 22c9-1 12-8 8-14-3-5-5-8-5-13s3-9 6-12c4-7 2-12-5-13Z"/>
+          <path d="M38 27c-4 2-6 4-6 6s2 4 6 6"/>
+          <path d="M38 33c6 1 10 8 11 18 1 6 0 9-1 11"/>
+        </symbol>
+      </svg>
+      <svg class="hero-kidney hero-kidney--1"><use href="#hero-kidney-icon"/></svg>
+      <svg class="hero-kidney hero-kidney--2"><use href="#hero-kidney-icon"/></svg>
+      <svg class="hero-kidney hero-kidney--3"><use href="#hero-kidney-icon"/></svg>
+      <svg class="hero-kidney hero-kidney--4"><use href="#hero-kidney-icon"/></svg>
+      <svg class="hero-kidney hero-kidney--5"><use href="#hero-kidney-icon"/></svg>
+    </div>
     <div class="hero-liquid" aria-hidden="true">
       <span class="hero-bubble"></span><span class="hero-bubble"></span><span class="hero-bubble"></span>
       <span class="hero-bubble"></span><span class="hero-bubble"></span><span class="hero-bubble"></span>
@@ -902,20 +916,15 @@
           </nav>
         </div>
 
-        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
           <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
           <span class="footer-visitor-badge-label">No. of Visitor:</span>
-          <span class="footer-visitor-badge-count">500</span>
+          <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom-row">
-      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
-        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
-        <span class="footer-visitor-badge-label">No. of Visitor:</span>
-        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
-      </div>
       <p>&copy; 2026 Dr. {{full_name}}. All rights reserved.</p>
     </div>
   </footer>
