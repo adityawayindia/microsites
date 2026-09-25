@@ -840,7 +840,7 @@
 
         <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
 
-        <p class="consent-modal-links"><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms &amp; Conditions</a></p>
+        <p class="consent-modal-links"><a href="/{{slug}}/privacy-policy">Privacy Policy</a> | <a href="/{{slug}}/terms-of-service">Terms &amp; Conditions</a></p>
       </div>
 
       <div class="consent-modal-footer" id="consentModalFooter">
@@ -863,7 +863,7 @@
           </span>
           <span class="brand-text">
             <span class="brand-name">Dr. {{full_name}}</span>
-            <span class="brand-role">Board-Certified {{speciality}}</span>
+            <span class="brand-role">{{speciality}}</span>
           </span>
         </a>
         <p class="footer-tagline">Precise, minimally invasive urological care for every patient.</p>
@@ -911,8 +911,8 @@
         <div class="footer-links-group">
           <h4>Legal</h4>
           <nav class="footer-nav">
-            <a href="privacy-policy.html" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
-            <a href="terms-of-service.html" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
+            <a href="/{{slug}}/privacy-policy" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
+            <a href="/{{slug}}/terms-of-service" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
           </nav>
         </div>
 
@@ -925,6 +925,11 @@
     </div>
 
     <div class="footer-bottom-row">
+      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
+        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+        <span class="footer-visitor-badge-label">No. of Visitor:</span>
+        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
+      </div>
       <p>&copy; 2026 Dr. {{full_name}}. All rights reserved.</p>
     </div>
   </footer>
@@ -934,5 +939,39 @@
   <script src="{{path}}/script/analytics.js"></script>
   <script src="{{path}}/script/index.js"></script>
   <script src="{{path}}/script/chatbot.js" defer></script>
+
+  <!-- Same as the live sites: hide the testimonials section (and its nav
+       links) when the backend sends no testimonials. -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("testimonialsTrack");
+
+      if (!track || track.children.length === 0) {
+        document.getElementById("testimonials")?.remove();
+
+        document
+          .querySelectorAll('a[href="#testimonials"]')
+          .forEach(x => x.remove());
+      }
+    });
+  </script>
+
+  <!-- Same as the live sites: record this visit and show the real visitor count. -->
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 </html>

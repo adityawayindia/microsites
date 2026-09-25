@@ -771,6 +771,20 @@ At the end of `<body>`, with the other scripts:
 - [ ] `<body data-slug="{{slug}}">` is present.
 - [ ] No suggestion-chip code added. Ship the file as it is.
 - [ ] **Live sites: nothing to do.** All 6 already match this section exactly.
+- [ ] **Send icon visible.** `chatbot.js` hardcodes `stroke="white"` on the send
+      icon. If the template styles `.chatbot-send-btn` with a white background, add
+      this to `styles/chatbot.css` (don't edit `chatbot.js`):
+      `.chatbot-send-btn svg path { stroke: currentColor; }`. Added 2026-09-25 to
+      Cardiology-1, Pediatrician-2/3/4, Radiology-1 and Urology-1/2. Ayurvedic-1/2
+      and Gastroenterology-1/2 use a coloured button, so white is already correct.
+
+**Open issue — backend chat replies (not a template bug):** replies from
+`api/MicrositeChat` can contain unfilled placeholders, e.g. *"Welcome to Dr.
+[Doctor's Last Name]'s profile page"*, plus junk contact text. The template only
+shows `WELCOME_MSG` itself; everything after that is the API reply printed verbatim,
+so `{{full_name}}` can't be used there. Backend team to fix by passing the doctor's
+real details for the slug into the chat prompt. Don't patch it client-side in
+`chatbot.js`.
 
 ---
 
@@ -1204,6 +1218,59 @@ Open questions for the backend team:
 
 ---
 
+## 5b. Empty-testimonials cleanup + visitor counter (in scope, `index.html` only)
+
+Two inline scripts go at the end of `index.html`, before `</body>`, verbatim:
+
+```html
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("testimonialsTrack");
+
+        if (!track || track.children.length === 0) {
+            document.getElementById("testimonials")?.remove();
+
+            document
+                .querySelectorAll('a[href="#testimonials"]')
+                .forEach(x => x.remove());
+        }
+    });
+</script>
+
+<script>
+    (function () {
+        const micrositeId = document.body.dataset.micrositeid;
+        const el = document.getElementById("visitorCount");
+        if (!micrositeId || !el) return;
+
+        fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+            method: "POST"
+        })
+            .then(res => res.ok ? res.json() : Promise.reject(res.status))
+            .then(data => {
+                el.textContent = data.visitorCount.toLocaleString();
+            })
+            .catch(err => console.error("Visitor count error:", err));
+    })();
+</script>
+```
+
+Requirements:
+- The testimonials section has `id="testimonials"` and its track has
+  `id="testimonialsTrack"` (the testimonial loop renders cards directly inside it).
+- `<body data-micrositeid="{{micrositeId}}" ...>`.
+- A footer element with `id="visitorCount"` (e.g. the `.footer-visitor-badge` markup
+  used in Cardiology-1).
+
+- The old localStorage visitor placeholder in `script/index.js` must return early
+  when `.footer-visitor-badge` already exists, or it overwrites the real count.
+
+Status (2026-09-25): present in all 11 parameterized templates. Radiology-1 and
+Urology-1/2 were added last: badge at the top of `.footer-bottom-row`, placeholder
+JS switched to the early-return guard.
+
+---
+
 ## 5a. WhatsApp link (resolved)
 
 **`{{whatsapp}}` is confirmed: a bare number, no country code** (e.g. `9876543210`,
@@ -1279,6 +1346,14 @@ For each `<Specialty>/microsite-*/` folder:
 - [ ] Header, hero and footer social rows: all 8 `has*` / `no*` pairs, with the
       correct Facebook mapping.
 - [ ] `{{#hasBlog}}` around the Blog nav link.
+- [ ] Every doctor-name brand block (header, and the footer where it repeats the
+      name) has `{{speciality}}` directly after `Dr. {{full_name}}`, with no
+      hardcoded prefix such as "Board-Certified". Footers that only have the
+      "Dr. {{full_name}}. All rights reserved" line don't need it.
+- [ ] Privacy/Terms links (footer **and** the booking consent modal
+      `.consent-modal-links`) use `/{{slug}}/privacy-policy` and
+      `/{{slug}}/terms-of-service` — never bare `privacy-policy.html` /
+      `terms-of-service.html`.
 
 **index.html**
 - [ ] Hero: `{{profile}}`, `{{awards}},{{education}}`, `{{#hasmic}}{{mci}}`,

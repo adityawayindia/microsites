@@ -922,6 +922,7 @@ a given specialty, never invent a new spelling/casing for the same specialty:
 | `microsite-oncology` | Oncology | `oncology` |
 | `microsite-orthopedics` | Orthopedics | `orthopedics` |
 | `microsite-pediatrician` | Pediatrics | `pediatrician` |
+| `microsite-plastic-surgery` | Plastic & Cosmetic Surgery | `plastic-surgery` |
 | `microsite-radiology` | Radiology | `radiology` |
 | `microsite-urology` | Urology | `urology` |
 

@@ -787,13 +787,13 @@ if (menuToggle && mainNav) {
             background:#fff; width:380px; max-width:90%; border-radius:12px;
             padding:30px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,.3);
             font-family:Sora,sans-serif;">
-            <div style="font-size:65px; margin-bottom:15px; color:${success ? "#0f766e" : "#dc3545"};">
+            <div style="font-size:65px; margin-bottom:15px; color:${success ? "#92400e" : "#dc3545"};">
                 <i class="fa-solid ${success ? "fa-circle-check" : "fa-circle-xmark"}"></i>
             </div>
-            <h2 style="margin:0 0 15px; color:#142824;">${success ? "Success" : "Error"}</h2>
+            <h2 style="margin:0 0 15px; color:#14132e;">${success ? "Success" : "Error"}</h2>
             <p style="margin:0 0 25px; color:#5a6f6a; line-height:1.5;">${message}</p>
             <button id="popupOkBtn" style="
-                background:${success ? "#0f766e" : "#dc3545"}; color:#fff; border:none;
+                background:${success ? "#92400e" : "#dc3545"}; color:#fff; border:none;
                 padding:10px 35px; border-radius:999px; cursor:pointer; font-size:16px;">
                 OK
             </button>

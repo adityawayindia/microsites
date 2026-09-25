@@ -1,0 +1,18 @@
+# NOTE: llms.txt (see llmstxt.org) only takes effect at the domain root
+# (digidr.app/llms.txt). This file is a per-microsite draft — backend team
+# must merge every microsite's entry into ONE combined llms.txt served at
+# digidr.app/llms.txt, one line per doctor under the "Doctors" section below.
+# Path below assumes this microsite is served at digidr.app/{{slug}}/
+
+# Dr. Vikram Malhotra
+
+> Dr. Vikram Malhotra, Plastic & Cosmetic Surgeon, on DigiDr. Book a consultation online.
+
+- Specialty: Plastic, Aesthetic & Reconstructive Surgery
+- Book a consultation: https://digidr.app/{{slug}}/#booking-modal
+
+## Pages
+
+- [Profile](https://digidr.app/{{slug}}/): Dr. Vikram Malhotra's profile — about, services, care philosophy, consultation journey, testimonials, and practice gallery.
+- [Privacy Policy](https://digidr.app/{{slug}}/privacy-policy.html)
+- [Terms of Service](https://digidr.app/{{slug}}/terms-of-service.html)

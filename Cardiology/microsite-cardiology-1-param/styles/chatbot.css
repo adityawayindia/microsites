@@ -672,6 +672,12 @@
     margin-left: 2px;
 }
 
+/* chatbot.js hardcodes stroke="white" on the send icon; this button is white,
+   so draw the icon in the button text colour instead. */
+.chatbot-send-btn svg path {
+    stroke: currentColor;
+}
+
 /* ── Footer ── */
 .chatbot-footer {
     text-align: center;
