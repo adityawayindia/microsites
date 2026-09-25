@@ -4,11 +4,67 @@ Plan for converting every specialty template into a Mustache-style template, usi
 **only the placeholders that already exist in the live microsites**
 (`live microsites/*` and `microsite-urology-* (live)`).
 
-> Status: plan finalized, no files edited yet.
+> Status: plan finalized; conversion in progress — 11 of 27 templates done (see §0).
 > **JavaScript is out of scope for now, with three exceptions: the stat counter (§4),
 > the chatbot widget (§4a), and the booking/appointment code (§4b).** Apart from
 > those three, do not modify any `script/*.js` file until the backend team's actual
 > code is available for the rest (analytics/banner — see §5).
+
+---
+
+## 0. Conversion status
+
+**Naming convention:** once a template is fully parameterized, its folder gets the
+suffix `-param` (e.g. `Urologist/microsite-urology-1` →
+`Urologist/microsite-urology-1-param`). A folder without `-param` has not been
+converted yet. Rename in the same commit that finishes the conversion.
+
+The suffix is a **repo folder name only**. GCS asset URLs inside the pages
+(`https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/…`) point
+at the bucket folder, which is not renamed — leave those URLs unchanged.
+
+### Done (11)
+| Template folder | Notes |
+|---|---|
+| `Ayurvedic/microsite-ayurvedic-1-param` | |
+| `Ayurvedic/microsite-ayurvedic-2-param` | |
+| `Cardiology/microsite-cardiology-1-param` | |
+| `Gastroenterology/microsite-gastroenterology-1-param` | |
+| `Gastroenterology/microsite-gastroenterology-2-param` | |
+| `Pediatrician/microsite-pediatrician-2-param` | |
+| `Pediatrician/microsite-pediatrician-3-param` | |
+| `Pediatrician/microsite-pediatrician-4-param` | |
+| `Radiology/microsite-radiology-1-param` | Calendar now honours `availableDays`; demo time slots removed (2026-09-25). |
+| `Urologist/microsite-urology-1-param` | Done 2026-09-25. |
+| `Urologist/microsite-urology-2-param` | Done 2026-09-25. Own hero layout (`uro-hero-*`); rest of the page matches Urology-1. |
+
+### Not started (16)
+Default Template, Dentist-1, Dentist-2-assigned, ENT-1, ENT-2, General Medicine-1,
+General Medicine-2-assigned, Homeopathy, Intensivist-1, Intensivist-2-assigned,
+Neurology-1, Oncology-1-assigned, Oncology-2, Orthopedics-1,
+Pediatrician-1-assigned, Pediatrician-5 (work pending).
+
+### Conventions settled while converting (apply to every remaining template)
+- **Calendar must use `availableDays`.** Piece 1 of §4b only loads the days; the
+  date-picker `render()` must also disable days not in the set, as samiran-das does:
+  `const isUnconfiguredDay = availableDays && availableDays.size > 0 && !availableDays.has(dayName);`
+  then `if (cellDate < today || isUnconfiguredDay)`. Loading without this lets
+  patients pick days the doctor doesn't work.
+- **Remove demo `<option>`s from `#preferredTime`.** Keep only
+  `<option value="">Select Time Slot</option>`; the slots API fills the rest. Demo
+  values would otherwise be submitted as a `SlotId` if the slots call fails.
+- **Template-owned images** (About/Philosophy photos, etc.) use the GCS bucket URL
+  for that template, not relative `assets/` paths (which break under `{{path}}`
+  serving). `{{path}}` stays for CSS/JS only.
+- **Disabled-social CSS:** if a template has no `.is-disabled` / `data-tooltip`
+  styling for social icons, add it (dim the icon glyph and surface, not the whole
+  element, so the "Not Enabled" tooltip stays readable).
+- **Hero MCI line:** `MCI Regd. No.: {{mci}}` inside `{{#hasmic}}`.
+- **Blog pages:** stay commented out; not converted (only the nav link is wrapped in
+  `{{#hasBlog}}`).
+- **Verify each template** by rendering it with sample data (long name, `15+`,
+  `20,000+`, some `has*`/`no*` flags each way, some `has_`/`no_` section texts each
+  way) and checking no `{{…}}` is left and every section opens/closes in balance.
 
 ---
 
@@ -704,7 +760,10 @@ At the end of `<body>`, with the other scripts:
 ### Chatbot rollout checklist (per template)
 - [x] `script/chatbot.js` = the exact code above, `BOT_ICON` set to the shared URL
       (`.../microsite-ent-1/assets/chatbot-icon.svg`) — same on every template, no
-      per-template substitution needed. Done for all 21 non-live templates.
+      per-template substitution needed. **Correction (2026-09-25):** this was
+      marked done for all 21 non-live templates, but Urology-1/2 still had the old
+      demo `chatbot.js` until their conversion. Check the file on every template
+      as part of its conversion rather than assuming it's done.
 - [ ] `styles/chatbot.css` exists (copy it from a live site if the template has
       none; don't redesign it).
 - [ ] The `chatbot-css` link in `<head>` and the `chatbot.js` script tag at the end
