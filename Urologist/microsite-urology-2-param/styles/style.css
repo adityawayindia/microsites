@@ -1280,8 +1280,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
 /* Leftover-row centering (AGENTS.md §23, same mechanism as Services §6) —
    copied verbatim, class name swapped to .gallery-item. Do not reorder. */
+/* Lone leftover stays item-sized (span 4) and centred, not widened, so
+   every gallery tile is the same size. */
 .gallery-item:last-child:nth-child(3n + 1) {
-  grid-column: 3 / span 8;
+  grid-column: 5 / span 4;
 }
 .gallery-item:nth-last-child(2):nth-child(3n + 1) {
   grid-column: 3 / span 4;
@@ -1301,8 +1303,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .gallery-lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 600; }
 .gallery-lightbox.is-open { display: flex; }
 .gallery-lightbox-backdrop { position: absolute; inset: 0; background: var(--overlay-backdrop); }
-.gallery-lightbox-content { position: relative; margin: 0; max-width: min(1100px, 92vw); max-height: 82vh; max-height: 82dvh; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); z-index: 1; }
-.gallery-lightbox-content img { width: 100%; height: 100%; display: block; object-fit: contain; background: #f8f9fa; }
+.gallery-lightbox-content { position: relative; margin: 0; aspect-ratio: 4 / 3; width: min(1100px, 92vw, calc(82vh * 4 / 3)); width: min(1100px, 92vw, calc(82dvh * 4 / 3)); max-width: none; max-height: 82vh; max-height: 82dvh; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); z-index: 1; }
+.gallery-lightbox-content img { width: 100%; height: 100%; display: block; object-fit: cover; background: #f8f9fa; }
 .gallery-lightbox-close {
   position: absolute; top: 16px; right: 20px; z-index: 2;
   width: 40px; height: 40px; border-radius: 999px; border: none;
@@ -1344,7 +1346,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 @media (max-width: 768px) {
   /* Pin prev/next to a row below the image instead of floating
      beside it at mid-screen height. */
-  .gallery-lightbox-content { max-height: 68vh; max-height: 68dvh; }
+  .gallery-lightbox-content { width: min(92vw, calc(68vh * 4 / 3)); width: min(92vw, calc(68dvh * 4 / 3)); max-height: 68vh; max-height: 68dvh; }
 
   .gallery-lightbox-nav {
     top: auto;

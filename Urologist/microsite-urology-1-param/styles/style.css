@@ -1331,10 +1331,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   min-width: 0;
 }
 
-/* Final row holds ONE leftover item (total ≡ 1 mod 3): widen it to two
-   item-widths (span 8 = 2x4 tracks + the gap between) and centre it. */
+/* Final row holds ONE leftover item (total ≡ 1 mod 3): keep it at normal
+   item width (span 4) and centre it — gallery tiles stay uniform in size. */
 .gallery-item:last-child:nth-child(3n + 1) {
-  grid-column: 3 / span 8;
+  grid-column: 5 / span 4;
 }
 
 /* Final row holds TWO leftover items (total ≡ 2 mod 3): keep both at
@@ -1366,8 +1366,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .gallery-lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 600; }
 .gallery-lightbox.is-open { display: flex; }
 .gallery-lightbox-backdrop { position: absolute; inset: 0; background: var(--overlay-backdrop); }
-.gallery-lightbox-content { position: relative; margin: 0; max-width: min(1100px, 92vw); max-height: 82vh; max-height: 82dvh; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); z-index: 1; }
-.gallery-lightbox-content img { width: 100%; height: 100%; display: block; object-fit: contain; background: #f8f9fa; }
+.gallery-lightbox-content { position: relative; margin: 0; aspect-ratio: 4 / 3; width: min(1100px, 92vw, calc(82vh * 4 / 3)); width: min(1100px, 92vw, calc(82dvh * 4 / 3)); max-width: none; max-height: 82vh; max-height: 82dvh; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); z-index: 1; }
+.gallery-lightbox-content img { width: 100%; height: 100%; display: block; object-fit: cover; background: #f8f9fa; }
 .gallery-lightbox-close {
   position: absolute; top: 16px; right: 20px; z-index: 2;
   width: 40px; height: 40px; border-radius: 999px; border: none;
@@ -1409,7 +1409,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 @media (max-width: 768px) {
   /* Pin prev/next to a row below the image instead of floating
      beside it at mid-screen height. */
-  .gallery-lightbox-content { max-height: 68vh; max-height: 68dvh; }
+  .gallery-lightbox-content { width: min(92vw, calc(68vh * 4 / 3)); width: min(92vw, calc(68dvh * 4 / 3)); max-height: 68vh; max-height: 68dvh; }
 
   .gallery-lightbox-nav {
     top: auto;
@@ -1978,7 +1978,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   /* AGENTS.md §10: gallery drops to 2 per row (span 6) at ≤1100px, same
      12-track mechanism as Services, and a lone leftover item re-centres
      at column 4. Gallery never collapses to 1-column (unlike Services). */
-  .gallery-item {
+  .gallery-item,
+  .gallery-item:last-child:nth-child(3n + 1),
+  .gallery-item:nth-last-child(2):nth-child(3n + 1),
+  .gallery-item:last-child:nth-child(3n + 2) {
     grid-column: span 6;
   }
   .gallery-item:last-child:nth-child(odd) {
