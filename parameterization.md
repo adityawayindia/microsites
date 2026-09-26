@@ -59,6 +59,11 @@ Pediatrician-1-assigned, Pediatrician-5 (work pending).
 - **Disabled-social CSS:** if a template has no `.is-disabled` / `data-tooltip`
   styling for social icons, add it (dim the icon glyph and surface, not the whole
   element, so the "Not Enabled" tooltip stays readable).
+- **Page links use `{{slug}}`, no `.html`.** Every relative link to another page
+  (nav, logo, footer, legal-page back button, consent modal, Blog link) is
+  `/{{slug}}/<page-name>`, e.g. `/{{slug}}`, `/{{slug}}/#services`,
+  `/{{slug}}/privacy-policy`, `/{{slug}}/terms-of-service`, `/{{slug}}/blog`.
+  See the §6 checklist item.
 - **Hero MCI line:** `MCI Regd. No.: {{mci}}` inside `{{#hasmic}}`.
 - **Blog pages:** stay commented out; not converted (only the nav link is wrapped in
   `{{#hasBlog}}`).
@@ -1350,10 +1355,12 @@ For each `<Specialty>/microsite-*/` folder:
       name) has `{{speciality}}` directly after `Dr. {{full_name}}`, with no
       hardcoded prefix such as "Board-Certified". Footers that only have the
       "Dr. {{full_name}}. All rights reserved" line don't need it.
-- [ ] Privacy/Terms links (footer **and** the booking consent modal
-      `.consent-modal-links`) use `/{{slug}}/privacy-policy` and
-      `/{{slug}}/terms-of-service` — never bare `privacy-policy.html` /
-      `terms-of-service.html`.
+- [ ] Every relative link to another page (nav, logo, footer, the legal pages'
+      back button, the booking consent modal `.consent-modal-links`, Blog nav link)
+      uses `/{{slug}}/<page>` with no `.html`: `/{{slug}}`, `/{{slug}}/#about`,
+      `/{{slug}}/privacy-policy`, `/{{slug}}/terms-of-service`, `/{{slug}}/blog`.
+      Never a bare `index.html` / `privacy-policy.html` / `terms-of-service.html` /
+      `blog.html`. Same-page `#anchor` links on index.html stay as they are.
 
 **index.html**
 - [ ] Hero: `{{profile}}`, `{{awards}},{{education}}`, `{{#hasmic}}{{mci}}`,
