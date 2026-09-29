@@ -4,7 +4,7 @@ Plan for converting every specialty template into a Mustache-style template, usi
 **only the placeholders that already exist in the live microsites**
 (`live microsites/*` and `microsite-urology-* (live)`).
 
-> Status: plan finalized; conversion in progress — 11 of 27 templates done (see §0).
+> Status: plan finalized; conversion in progress — 13 of 29 templates done (see §0).
 > **JavaScript is out of scope for now, with three exceptions: the stat counter (§4),
 > the chatbot widget (§4a), and the booking/appointment code (§4b).** Apart from
 > those three, do not modify any `script/*.js` file until the backend team's actual
@@ -23,7 +23,7 @@ The suffix is a **repo folder name only**. GCS asset URLs inside the pages
 (`https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/…`) point
 at the bucket folder, which is not renamed — leave those URLs unchanged.
 
-### Done (11)
+### Done (13)
 | Template folder | Notes |
 |---|---|
 | `Ayurvedic/microsite-ayurvedic-1-param` | |
@@ -31,6 +31,8 @@ at the bucket folder, which is not renamed — leave those URLs unchanged.
 | `Cardiology/microsite-cardiology-1-param` | |
 | `Gastroenterology/microsite-gastroenterology-1-param` | |
 | `Gastroenterology/microsite-gastroenterology-2-param` | |
+| `General Physician/microsite-general-physician-1` | Done 2026-09-29. **Folder rename to `-param` still pending** (folder was locked by another process). Services tag pills dropped (loop is title + description only); philosophy image uses the byte-identical `microsite-general-medicine-1` bucket copy. |
+| `General Physician/microsite-general-physician-2` | Done 2026-09-29. Same conversion as General Physician-1 (identical JS; blue-theme CSS). **Folder rename to `-param` still pending** (folder locked). |
 | `Pediatrician/microsite-pediatrician-2-param` | |
 | `Pediatrician/microsite-pediatrician-3-param` | |
 | `Pediatrician/microsite-pediatrician-4-param` | |

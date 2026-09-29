@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER_MICROSITE_GENERAL_MEDICINE_1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PLACEHOLDER_MICROSITE_GENERAL_MEDICINE_1');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ymqvcvdc4v");
+  </script>
+  <script>
+    if (typeof clarity === "function") {
+      clarity('set', 'microsite', '{{slug}}');
+      clarity('set', 'specialty', 'general-medicine');
+    }
+  </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. {{full_name}} | {{speciality}}</title>
+    <meta name="description" content="Dr. {{full_name}}, {{speciality}}, offering comprehensive primary care, chronic disease management, and preventive health services." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f766e'/%3E%3Cpath d='M12 32h8l4-11 6 22 5-16 3 5h14' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
+    <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
+    <meta property="og:image" content="{{profile}}" />
+    <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
+    <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
+    <meta name="twitter:image" content="{{profile}}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+  <link rel="stylesheet" href="{{path}}/styles/style.css" />
+  <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+</head>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="/{{slug}}" class="brand" aria-label="Dr. {{full_name}}">
+        <span class="avatar" aria-hidden="true">
+          <img
+            src="{{profile}}"
+            alt="Dr. {{full_name}}"
+          />
+        </span>
+        <span class="brand-text">
+            <span class="brand-name" title="Dr. {{full_name}}">Dr. {{full_name}}</span>
+            <span class="brand-role" title="{{speciality}}">{{speciality}}</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact-us">Contact</a>
+          <a href="#gallery">Gallery</a>
+          <!-- <a href="#faq">FAQ</a> -->
+          {{#hasBlog}}
+          <a href="/{{slug}}/blog">Blog</a>
+          {{/hasBlog}}
+      </nav>
+
+      <a href="#" class="cta-btn">
+        <span class="cta-text-desktop">Book Appointment</span>
+        <span class="cta-text-mobile">Appointment</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero-section hero-section--v2">
+    <!-- ==========================================================================
+         DIGIDR MODULAR BANNER MODULE (Hero Banner)
+         ==========================================================================
+         Backend Integration Guide:
+                   1. Server-Side Rendering (PHP/Node/Python):
+             - Update 'data-banner-src' or <img> 'src' attribute dynamically.
+             - Set 'data-banner-active="false"' to hide banner if no active image.
+             - Set 'data-banner-href="URL"' to turn image into a clickable link.
+          2. Programmatic Client API:
+            - Call DigiDrBanner.setBanner({ src: '...', href: '...', active: true })
+            - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
+         ========================================================================== -->
+    {{#has_banner}}
+    <div
+      class="digidr-banner-module single-image-banner-section"
+      id="digidrBannerModule"
+      data-banner-active="true"
+      data-banner-start="{{banner_start}}"
+      data-banner-end="{{banner_end}}"
+      aria-label="Main Clinic Banner"
+      data-banner-src="{{banner_src}}"
+      data-banner-src-mobile="{{banner_src_mobile}}"
+      data-banner-alt="{{banner_alt}}"
+      data-banner-href="#"
+    >
+      <div class="container digidr-banner-container single-image-banner-container">
+        <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+          <div class="digidr-banner-wrap single-image-banner-wrap">
+            <picture>
+              <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
+              <img
+                src="{{banner_src}}"
+                alt="{{banner_alt}}"
+                class="digidr-banner-img single-image-banner-img"
+                id="digidrBannerImg"
+                loading="eager"
+              />
+            </picture>
+          </div>
+        </a>
+      </div>
+    </div>
+    {{/has_banner}}
+    <!-- END OF MODULAR BANNER MODULE -->
+    <!-- Animated hero background layer -->
+    <div class="hero-bg-accent" aria-hidden="true">
+
+
+      <!-- Floating medical cross icons (in theme color) -->
+      <span class="hero-float-cross hero-float-cross--1" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="12" y="2" width="8" height="28" rx="2" fill="var(--button)" opacity="0.2"/><rect x="2" y="12" width="28" height="8" rx="2" fill="var(--button)" opacity="0.2"/></svg>
+      </span>
+      <span class="hero-float-cross hero-float-cross--2" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="12" y="2" width="8" height="28" rx="2" fill="var(--accent)" opacity="0.15"/><rect x="2" y="12" width="28" height="8" rx="2" fill="var(--accent)" opacity="0.15"/></svg>
+      </span>
+      <span class="hero-float-cross hero-float-cross--3" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="12" y="2" width="8" height="28" rx="2" fill="var(--button)" opacity="0.15"/><rect x="2" y="12" width="28" height="8" rx="2" fill="var(--button)" opacity="0.15"/></svg>
+      </span>
+      <span class="hero-float-cross hero-float-cross--4" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="12" y="2" width="8" height="28" rx="2" fill="var(--accent)" opacity="0.15"/><rect x="2" y="12" width="28" height="8" rx="2" fill="var(--accent)" opacity="0.15"/></svg>
+      </span>
+
+      <!-- Floating Medicine Pills SVGs (Capsules & Tablets - Repositioned) -->
+      <span class="hero-float-pill hero-float-pill--1" aria-hidden="true">
+        <!-- Capsule Pill 1 (Vertical, Top Half Filled) -->
+        <svg viewBox="0 0 40 70" fill="none">
+          <path d="M5 20 C5 11.7 11.7 5 20 5 C28.3 5 35 11.7 35 20 V35 H5 Z" fill="var(--button)" opacity="0.35"/>
+          <rect x="5" y="5" width="30" height="60" rx="15" stroke="var(--button)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="5" y1="35" x2="35" y2="35" stroke="var(--button)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <span class="hero-float-pill hero-float-pill--2" aria-hidden="true">
+        <!-- Round Tablet Pill (Left Half Filled) -->
+        <svg viewBox="0 0 50 50" fill="none">
+          <path d="M25 5 A20 20 0 0 0 25 45 Z" fill="var(--button)" opacity="0.3"/>
+          <circle cx="25" cy="25" r="20" stroke="var(--button)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="25" y1="5" x2="25" y2="45" stroke="var(--button)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <span class="hero-float-pill hero-float-pill--3" aria-hidden="true">
+        <!-- Rotated Capsule Pill 2 (Top/Right Half Filled) -->
+        <svg viewBox="0 0 40 70" fill="none" style="transform: rotate(45deg);">
+          <path d="M5 20 C5 11.7 11.7 5 20 5 C28.3 5 35 11.7 35 20 V35 H5 Z" fill="var(--accent)" opacity="0.35"/>
+          <rect x="5" y="5" width="30" height="60" rx="15" stroke="var(--accent)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="5" y1="35" x2="35" y2="35" stroke="var(--accent)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <span class="hero-float-pill hero-float-pill--4" aria-hidden="true">
+        <!-- Oval Capsule Pill (Left Half Filled) -->
+        <svg viewBox="0 0 70 40" fill="none">
+          <path d="M20 5 C11.7 5 5 11.7 5 20 C5 28.3 11.7 35 20 35 H35 V5 Z" fill="var(--button)" opacity="0.35"/>
+          <rect x="5" y="5" width="60" height="30" rx="15" stroke="var(--button)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="35" y1="5" x2="35" y2="35" stroke="var(--button)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <!-- Animated dot-grid overlay -->
+      <div class="hero-dot-grid"></div>
+    </div>
+
+    <div class="container hero-v2-layout">
+
+      <!-- Left: Text Panel -->
+      <div class="hero-v2-content">
+        <div class="hero-v2-topbar">
+          <span class="hero-v2-badge">
+            <i class="fa-solid fa-kit-medical"></i>
+            {{speciality}}
+          </span>
+          {{#hasmic}}
+          <span class="hero-v2-reg">MCI Regd. No.: {{mci}}</span>
+          {{/hasmic}}
+        </div>
+
+        <h1 class="hero-v2-title">Dr. <span class="hero-v2-title-accent">{{full_name}}</span></h1>
+        <p class="hero-v2-subtitle">{{awards}},{{education}}</p>
+
+        <p class="hero-v2-languages">
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          <span class="hero-v2-lang-tag">{{languages}}</span>
+        </p>
+
+        <!-- Stats Row -->
+        <div class="hero-v2-stats">
+          <div class="hero-v2-stat">
+            <strong data-counter>{{experience}}</strong>
+            <span>Years<br>Experience</span>
+          </div>
+          <div class="hero-v2-stat-divider" aria-hidden="true"></div>
+          <div class="hero-v2-stat">
+            <strong data-counter>{{totalpatient}}</strong>
+            <span>Patients<br>Treated</span>
+          </div>
+          <div class="hero-v2-stat-divider" aria-hidden="true"></div>
+          <div class="hero-v2-stat">
+            <strong data-counter>98%</strong>
+            <span>Patient<br>Rating</span>
+          </div>
+        </div>
+
+        <!-- CTA + Socials -->
+        <!-- <div class="hero-v2-actions">
+          <a href="#contact-us" class="hero-v2-cta">
+            <i class="fa-solid fa-calendar-check"></i>
+            Book Appointment
+          </a>
+          <a href="#contact-us" class="hero-v2-cta-secondary">Contact Now</a>
+        </div> -->
+
+        <div class="social-links hero-v2-socials" aria-label="Social media links">
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="social social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="social social-facebook is-disabled" aria-label="Facebook page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+          {{#hasFacebook}}<a href="{{facebook}}" class="social social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="social social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasInstagram}}<a href="{{instagram}}" class="social social-instagram" aria-label="Instagram" data-tooltip="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="social social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+          {{#hasTwitter}}<a href="{{twitter}}" class="social social-x" aria-label="X" data-tooltip="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="social social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="social social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="social social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+          {{#hasWebsite}}<a href="{{website}}" class="social social-website" aria-label="Website" data-tooltip="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="social social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+          {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="social social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+          {{#hasYoutube}}<a href="{{youtube}}" class="social social-youtube" aria-label="YouTube" data-tooltip="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="social social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+        </div>
+      </div>
+
+      <!-- Right: Portrait Panel -->
+      <div class="hero-v2-visual">
+        <div class="hero-v2-portrait-frame">
+          <img
+            src="{{profile}}"
+            alt="Dr. {{full_name}}, {{speciality}}, portrait"
+            class="hero-v2-photo"
+          />
+          <!-- Floating credential chips -->
+          <div class="hero-v2-chip hero-v2-chip--top">
+            <i class="fa-solid fa-award"></i>
+            <span>Board Certified</span>
+          </div>
+          <div class="hero-v2-chip hero-v2-chip--bottom">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Trusted Physician</span>
+          </div>
+        </div>
+        <!-- Decorative dots pattern -->
+        <div class="hero-v2-dots" aria-hidden="true"></div>
+      </div>
+
+    </div>
+
+    <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 C240,40 480,80 720,80 C960,80 1200,40 1440,0 L1440,90 L0,90 Z" fill="var(--bg)"></path>
+    </svg>
+  </section>
+
+
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-intro">
+        <p class="about-kicker"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> About the Physician</p>
+        <h2 class="about-title">
+          {{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}
+          {{#no_about_section_title}}Comprehensive care. Preventive healing. Wellness for life.{{/no_about_section_title}}
+        </h2>
+        <p class="about-subtitle">
+          {{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}
+          {{#no_about_section_subtitle}}Personalized health management, chronic condition control, and diagnostic excellence for your long-term wellness.{{/no_about_section_subtitle}}
+        </p>
+      </div>
+
+      <div class="about-story-new read-more-wrap" style="max-width: 880px; margin: 40px auto 0;">
+        <div class="read-more-content">
+          <p>
+              {{introduction}}
+          </p>
+        </div>
+        <button type="button" class="read-more-btn" aria-expanded="false">
+          <span>Read More</span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <section class="services-section" id="services">
+    <!-- Services Section Background Decorations -->
+    <div class="services-bg-accent" aria-hidden="true">
+      <!-- Single Heart Line (ECG) -->
+      <svg class="services-ecg-svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <polyline
+          class="ecg-line ecg-line--1"
+          points="0,60 120,60 140,60 160,15 175,100 190,60 215,60 270,60 290,60 310,20 325,95 340,60 370,60 480,60 500,60 520,15 535,100 550,60 580,60 690,60 710,60 730,20 745,95 760,60 790,60 900,60 920,60 940,15 955,100 970,60 1000,60 1110,60 1130,60 1150,20 1165,95 1180,60 1210,60 1320,60 1340,60 1360,15 1375,100 1390,60 1440,60"
+          fill="none"
+          stroke="var(--button)"
+          stroke-width="2"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          opacity="0.25"
+        />
+      </svg>
+      <!-- Floating Pill (Top Left) -->
+      <span class="services-float-pill services-float-pill--1">
+        <svg viewBox="0 0 40 70" fill="none">
+          <path d="M5 20 C5 11.7 11.7 5 20 5 C28.3 5 35 11.7 35 20 V35 H5 Z" fill="var(--button)" opacity="0.4"/>
+          <rect x="5" y="5" width="30" height="60" rx="15" stroke="var(--button)" stroke-width="3" fill="none"/>
+          <line x1="5" y1="35" x2="35" y2="35" stroke="var(--button)" stroke-width="2.5"/>
+        </svg>
+      </span>
+      <!-- Floating Pill (Bottom Right) -->
+      <span class="services-float-pill services-float-pill--2">
+        <svg viewBox="0 0 50 50" fill="none">
+          <path d="M25 5 A20 20 0 0 0 25 45 Z" fill="var(--accent)" opacity="0.35"/>
+          <circle cx="25" cy="25" r="20" stroke="var(--accent)" stroke-width="3" fill="none"/>
+          <line x1="25" y1="5" x2="25" y2="45" stroke="var(--accent)" stroke-width="2.5"/>
+        </svg>
+      </span>
+    </div>
+
+    <div class="container">
+      <div class="services-header">
+        <p class="services-kicker"><i class="fa-solid fa-house-medical" aria-hidden="true"></i> General Physician Services</p>
+        <h2 class="services-title">
+          {{#has_service_section_title}}{{service_section_title}}{{/has_service_section_title}}
+          {{#no_service_section_title}}Comprehensive Clinical Care{{/no_service_section_title}}
+        </h2>
+        <p class="services-subtitle">
+          {{#has_service_section_subtitle}}{{service_section_subtitle}}{{/has_service_section_subtitle}}
+          {{#no_service_section_subtitle}}Personalized primary care, preventive screenings, chronic disease management, and family health wellness.{{/no_service_section_subtitle}}
+        </p>
+      </div>
+
+      <div class="services-grid-new">
+          {{#services}}
+          <article class="service-card-new">
+              <div class="service-card-top">
+                <div class="service-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>
+              </div>
+              <div class="service-body-new">
+                <h3>{{title}}</h3>
+                <p>{{description}}</p>
+              </div>
+          </article>
+          {{/services}}
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="philosophy-section" id="philosophy">
+    <div class="container philosophy-layout">
+      <!-- Left: Visual Column -->
+      <div class="philosophy-visual">
+        <div class="philosophy-img-frame">
+          <img src="https://storage.googleapis.com/microsite_buck/microsite-general-medicine-1/assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo" loading="lazy" />
+        </div>
+      </div>
+      <!-- Right: Content Column -->
+      <div class="philosophy-content">
+        <p class="about-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Healthcare Philosophy</p>
+        <h2 class="about-title">
+          {{#has_philosophy_section_title}}{{philosophy_section_title}}{{/has_philosophy_section_title}}
+          {{#no_philosophy_section_title}}Comprehensive Care for Lifelong Wellness{{/no_philosophy_section_title}}
+        </h2>
+        <p class="about-subtitle">
+          {{#has_philosophy_section_subtitle}}{{philosophy_section_subtitle}}{{/has_philosophy_section_subtitle}}
+          {{#no_philosophy_section_subtitle}}Dedicated to primary healthcare, early disease detection, and chronic condition management.{{/no_philosophy_section_subtitle}}
+        </p>
+        <div class="philosophy-pillars">
+
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="pillar-text">
+              <h3>
+                {{#has_philosophy_section_pillar_text_1}}{{philosophy_section_pillar_text_1}}{{/has_philosophy_section_pillar_text_1}}
+                {{#no_philosophy_section_pillar_text_1}}Preventive Health Focus{{/no_philosophy_section_pillar_text_1}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_1}}{{philosophy_section_pillar_subtext_1}}{{/has_philosophy_section_pillar_subtext_1}}
+                {{#no_philosophy_section_pillar_subtext_1}}Catching risk factors early through routine health checks and screening protocols.{{/no_philosophy_section_pillar_subtext_1}}
+              </p>
+            </div>
+          </div>
+
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-stethoscope"></i></div>
+            <div class="pillar-text">
+              <h3>
+                {{#has_philosophy_section_pillor_text_2}}{{philosophy_section_pillor_text_2}}{{/has_philosophy_section_pillor_text_2}}
+                {{#no_philosophy_section_pillor_text_2}}Holistic Clinical Assessment{{/no_philosophy_section_pillor_text_2}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_piller_subtext_2}}{{philosophy_section_piller_subtext_2}}{{/has_philosophy_section_piller_subtext_2}}
+                {{#no_philosophy_section_piller_subtext_2}}Evaluating overall physical, metabolic, and lifestyle factors for full-body health.{{/no_philosophy_section_piller_subtext_2}}
+              </p>
+            </div>
+          </div>
+
+          <div class="philosophy-pillar">
+            <div class="pillar-icon"><i class="fa-solid fa-comments"></i></div>
+            <div class="pillar-text">
+              <h3>
+                {{#has_philosophy_section_pillar_text_3}}{{philosophy_section_pillar_text_3}}{{/has_philosophy_section_pillar_text_3}}
+                {{#no_philosophy_section_pillar_text_3}}Empathetic Patient Care{{/no_philosophy_section_pillar_text_3}}
+              </h3>
+              <p>
+                {{#has_philosophy_section_pillar_subtext_3}}{{philosophy_section_pillar_subtext_3}}{{/has_philosophy_section_pillar_subtext_3}}
+                {{#no_philosophy_section_pillar_subtext_3}}Clear, transparent guidance to help you take active control of your wellness.{{/no_philosophy_section_pillar_subtext_3}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="process-header">
+        <p class="about-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
+        <h2 class="about-title" style="text-align: center;">
+          {{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}
+          {{#no_process_section_about_title}}Your Consultation Journey{{/no_process_section_about_title}}
+        </h2>
+        <p class="about-subtitle" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+          {{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}
+          {{#no_process_section_about_subtitle}}A streamlined, 4-step consultation process for complete primary health support.{{/no_process_section_about_subtitle}}
+        </p>
+      </div>
+
+      <div class="process-steps-wrap">
+        <div class="process-timeline-line" aria-hidden="true"></div>
+        <div class="process-grid">
+
+          <div class="process-step">
+            <div class="step-visual-wrap">
+              <div class="step-circle">
+                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+                </svg>
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="step-body">
+              <span class="step-number">01</span>
+              <h3>
+                {{#has_process_section_step_body_text_1}}{{process_section_step_body_text_1}}{{/has_process_section_step_body_text_1}}
+                {{#no_process_section_step_body_text_1}}Appointment Booking{{/no_process_section_step_body_text_1}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_1}}{{process_section_step_body_subtext_1}}{{/has_process_section_step_body_subtext_1}}
+                {{#no_process_section_step_body_subtext_1}}Book online or via phone. Option to upload medical reports beforehand to prepare.{{/no_process_section_step_body_subtext_1}}
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-visual-wrap">
+              <div class="step-circle">
+                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+                </svg>
+                <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="step-body">
+              <span class="step-number">02</span>
+              <h3>
+                {{#has_process_section_step_body_text_2}}{{process_section_step_body_text_2}}{{/has_process_section_step_body_text_2}}
+                {{#no_process_section_step_body_text_2}}Clinical Evaluation{{/no_process_section_step_body_text_2}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_2}}{{process_section_step_body_subtext_2}}{{/has_process_section_step_body_subtext_2}}
+                {{#no_process_section_step_body_subtext_2}}Discuss your medical history, check key vitals, and evaluate active symptoms.{{/no_process_section_step_body_subtext_2}}
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-visual-wrap">
+              <div class="step-circle">
+                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+                </svg>
+                <i class="fa-solid fa-file-medical" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="step-body">
+              <span class="step-number">03</span>
+              <h3>
+                {{#has_process_section_step_body_text_3}}{{process_section_step_body_text_3}}{{/has_process_section_step_body_text_3}}
+                {{#no_process_section_step_body_text_3}}Personalized Care Blueprint{{/no_process_section_step_body_text_3}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_3}}{{process_section_step_body_subtext_3}}{{/has_process_section_step_body_subtext_3}}
+                {{#no_process_section_step_body_subtext_3}}Receive a custom plan covering prescriptions, diagnostics, and lifestyle advice.{{/no_process_section_step_body_subtext_3}}
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-visual-wrap">
+              <div class="step-circle">
+                <svg class="step-circle-ring" viewBox="0 0 136 136" aria-hidden="true">
+                  <circle cx="68" cy="68" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round" />
+                </svg>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="step-body">
+              <span class="step-number">04</span>
+              <h3>
+                {{#has_process_section_step_body_text_4}}{{process_section_step_body_text_4}}{{/has_process_section_step_body_text_4}}
+                {{#no_process_section_step_body_text_4}}Follow-up &amp; Support{{/no_process_section_step_body_text_4}}
+              </h3>
+              <p>
+                {{#has_process_section_step_body_subtext_4}}{{process_section_step_body_subtext_4}}{{/has_process_section_step_body_subtext_4}}
+                {{#no_process_section_step_body_subtext_4}}Track clinical progress, review diagnostics, and adjust dosage for recovery.{{/no_process_section_step_body_subtext_4}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact-us">
+    <div class="container">
+                  <div class="contact-header" style="text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+        <p class="contact-kicker" style="margin: 0; font-size: 16px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--deep, var(--text, #0f172a)); display: inline-flex; align-items: center; gap: 8px; justify-content: center;"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</p>
+        <h2 class="contact-title" style="margin: 10px auto 12px; font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; color: var(--deep, var(--text, #0f172a)); letter-spacing: -0.03em; line-height: 1.25; text-align: center; max-width: none;">Get in Touch</h2>
+        <p class="contact-subtitle" style="margin: 0 auto; font-size: 16px; color: var(--muted, #334155); max-width: 600px; line-height: 1.6; text-align: center;">
+          {{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}
+          {{#no_contact_us_subtitle}}Have questions or want to schedule an appointment? Reach out to our team directly.{{/no_contact_us_subtitle}}
+        </p>
+      </div>
+      <div class="contact-layout-new">
+        <aside class="contact-card-new contact-card-new--info contact-card-new--address">
+          <h3>Clinic Location</h3>
+          <div class="contact-list-new">
+            <div class="contact-item-new">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Address</h4>
+                <p>
+                    <strong>{{clinicname}}</strong><br />
+                    {{address}}<br />
+                    {{district}}, {{state}} - {{pincode}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+
+
+        <aside class="contact-card-new contact-card-new--reach">
+          <h3>Reach Us</h3>
+          <div class="contact-list-new">
+            <div class="contact-item-new">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <h4>Phone &amp; Email</h4>
+                <p>
+                    <a href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+                    <a href="mailto:{{email}}">{{email}}</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-cta-wrap">
+            <a href="#" class="cta-btn">Book Appointment</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="testimonials-header-left">
+          <p class="testimonials-kicker"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Patient Experiences</p>
+          <h2 class="testimonials-title">
+            {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
+            {{#no_testimonial_title}}Patient Experiences{{/no_testimonial_title}}
+          </h2>
+          <p class="testimonials-subtitle">
+              {{#has_testimonial_subtitle}}{{testimonial_subtitle}}{{/has_testimonial_subtitle}}
+              {{#no_testimonial_subtitle}}Feedback from patients and families who received primary care under our specialist.{{/no_testimonial_subtitle}}
+          </p>
+        </div>
+        <div class="testimonials-controls">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="testimonials-carousel-wrap">
+
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+            <div class="testimonials-track" id="testimonialsTrack">
+                {{#testimonials}}
+                <article class="testimonial-card testimonial-card-new">
+                    <p class="testimonial-quote">"{{comment}}"</p>
+                    <div class="testimonial-footer">
+                      <img src="{{profile_picture}}" alt="{{patient_name}}" class="testimonial-avatar" />
+                      <div>
+                        <h3 class="testimonial-name">{{patient_name}}</h3>
+                        <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
+                            {{stars_html}}
+                        </div>
+                      </div>
+                    </div>
+                </article>
+                {{/testimonials}}
+            </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <p class="gallery-kicker"><i class="fa-solid fa-hospital" aria-hidden="true"></i> Practice Gallery</p>
+        <h2 class="gallery-title">
+          {{#has_gallery_section_title}}{{gallery_section_title}}{{/has_gallery_section_title}}
+          {{#no_gallery_section_title}}A Look Inside My Practice{{/no_gallery_section_title}}
+        </h2>
+        <p class="gallery-subtitle">
+            {{#has_gallery_section_subtitle}}{{gallery_section_subtitle}}{{/has_gallery_section_subtitle}}
+            {{#no_gallery_section_subtitle}}A glimpse into our General Physician clinic, consultation rooms, and patient care facilities.{{/no_gallery_section_subtitle}}
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+          {{#images}}
+          <figure class="gallery-item">
+              <img src="{{image}}" alt="Inside the clinic" loading="lazy" />
+              <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </figure>
+          {{/images}}
+      </div>
+    </div>
+  </section>
+
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div>
+    <figure class="gallery-lightbox-content">
+      <img src="" alt="Enlarged gallery image" id="galleryLightboxImage" />
+    </figure>
+    <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">
+      &times;
+    </button>
+  </div>
+
+  <!-- ====== FAQ SECTION ====== -->
+  <!-- FAQ temporarily disabled
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <p class="faq-subtitle">
+          Answers to the questions patients ask most before their first visit.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item is-active">
+          <button type="button" class="faq-question" aria-expanded="true">
+            <span>What conditions do you treat?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>We provide comprehensive care for common illnesses, chronic disease management (diabetes, hypertension, thyroid), preventive health check-ups, and general wellness concerns for adults of all ages.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Do I need a referral to book a consultation?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>No referral is required. You can book a clinic visit or an online consultation directly through this website, and we'll guide you on any further steps after your first appointment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>What should I bring to my first appointment?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Please bring any prior test reports, scans, or prescriptions related to your condition, a valid ID, and a list of medications you're currently taking so we can review your history thoroughly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Do you offer online consultations?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Yes. Online consultations are available for follow-ups, report reviews, and initial assessments — simply select "Online Consultation" when booking your appointment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Is emergency care available?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>For urgent medical issues such as chest pain, severe breathlessness, or high fever with confusion, please visit the nearest emergency room immediately. For non-emergency concerns, book the earliest available slot and we'll prioritize your case.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+    <div class="booking-modal-dialog" role="document">
+      <div class="booking-modal-header">
+        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">
+          &times;
+        </button>
+
+        <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
+            Clinic Visit
+          </button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">
+            Online Consultation
+          </button>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required />
+                  <p class="booking-error" data-error-for="fullName"></p>
+              </div>
+              <div class="booking-field">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" inputmode="numeric" required />
+                  <p class="booking-error" data-error-for="phone"></p>
+              </div>
+          </div>
+
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                  <p class="booking-error" data-error-for="email"></p>
+              </div>
+              <div class="booking-field booking-field--date">
+                  <label for="preferredDateText">Preferred Date</label>
+                  <div class="booking-datepicker" id="preferredDateField">
+                      <div class="booking-input-with-icon">
+                          <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+                      </div>
+                      <input type="hidden" id="preferredDate" name="preferredDate" />
+                      <div class="booking-calendar" id="preferredDateCalendar" hidden>
+                          <div class="booking-calendar-header">
+                              <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                              <span class="booking-calendar-title" data-cal-title></span>
+                              <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+                          </div>
+                          <div class="booking-calendar-weekdays">
+                              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                          </div>
+                          <div class="booking-calendar-grid" data-cal-grid></div>
+                      </div>
+                  </div>
+                  <p class="booking-error" data-error-for="preferredDate"></p>
+              </div>
+          </div>
+
+          <div class="booking-form-row">
+              <div class="booking-field">
+                  <label for="preferredTime">Preferred Time</label>
+                  <div class="booking-select-wrap">
+                      <select id="preferredTime" name="preferredTime" required>
+                          <option value="">Select Time Slot</option>
+                      </select>
+                      <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+                  </div>
+                  <p class="booking-error" data-error-for="preferredTime"></p>
+              </div>
+          </div>
+
+          <div class="booking-field">
+              <label for="reason">Reason For Visit</label>
+              <textarea id="reason" name="reason" rows="3" placeholder="Please describe your symptoms or reason for consultation..." required></textarea>
+              <p class="booking-error" data-error-for="reason"></p>
+          </div>
+
+          <div class="booking-field booking-field--file">
+              <label for="report">Upload Report</label>
+              <div class="booking-upload-row">
+                  <label class="booking-upload-btn" for="report">Upload</label>
+                  <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
+                  <span class="booking-upload-help">(JPEG, PNG file formats supported)</span>
+              </div>
+              <div class="booking-file-preview" id="filePreview"></div>
+              <p class="booking-error" data-error-for="report"></p>
+          </div>
+
+          
+          <div class="booking-field booking-consent-field">
+              <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          </div>
+
+<button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
+              Book Appointment
+          </button>
+
+          <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+              <div class="loader-spinner"></div>
+              <p>Booking your appointment...</p>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====== PATIENT CONSENT MODAL ====== -->
+  <div class="booking-modal consent-modal" id="consentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="consentModalTitle">
+    <div class="booking-modal-backdrop" id="consentModalBackdrop"></div>
+    <div class="booking-modal-dialog consent-modal-dialog" role="document">
+      <div class="booking-modal-header consent-modal-header">
+        <button class="booking-modal-close" id="consentModalClose" aria-label="Close consent notice">&times;</button>
+        <h2 class="consent-modal-title" id="consentModalTitle">Patient Consent &amp; Data Privacy</h2>
+      </div>
+
+      <div class="consent-modal-body">
+        <p>By submitting this form, I consent to <strong>digidr.app</strong> collecting and processing the personal and health information provided by me, including my <strong>name, phone number, email address, appointment details, symptoms/reason for consultation, and uploaded medical reports</strong>, for scheduling, managing, and facilitating my consultation with the doctor.</p>
+
+        <h3>How we protect your information</h3>
+        <ul>
+          <li>Your personal and health information will be <strong>kept secure and confidential</strong> using appropriate safeguards.</li>
+          <li>Your information will <strong>not be sold or shared for marketing or unrelated purposes</strong>.</li>
+          <li>Information may be shared only where necessary to facilitate the requested healthcare service, with my authorisation, or where required or permitted by applicable law.</li>
+          <li>Medical reports and health information will be handled only for legitimate healthcare and related service purposes.</li>
+        </ul>
+
+        <h3>Your rights</h3>
+        <p>Subject to applicable law and necessary medical-record retention requirements, you may request <strong>access, correction, deletion, or withdrawal of consent</strong> regarding your personal information.</p>
+
+        <h3>Questions or Complaints</h3>
+        <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
+        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> <a href="mailto:{{email}}">{{email}}</a></p>
+
+        <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
+
+        <p class="consent-modal-links"><a href="/{{slug}}/privacy-policy">Privacy Policy</a> | <a href="/{{slug}}/terms-of-service">Terms &amp; Conditions</a></p>
+      </div>
+
+      <div class="consent-modal-footer" id="consentModalFooter">
+        <p class="consent-scroll-hint" id="consentScrollHint"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Please read the full notice to continue</p>
+        <button type="button" class="booking-submit-btn consent-agree-btn" id="consentAgreeBtn" disabled>
+          <span class="consent-agree-label" id="consentAgreeLabel">I Agree</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact-us">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+      </nav>
+
+      <div class="footer-social-wrap">
+        <span class="footer-social-label">Follow me on:</span>
+        <div class="footer-social" aria-label="Footer social links">
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+          {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+        </div>
+      </div>
+
+      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
+        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+        <span class="footer-visitor-badge-label">No. of Visitor:</span>
+        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
+      </div>
+
+      <div class="footer-links">
+        <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="/{{slug}}/terms-of-service">Terms of Service</a>
+      </div>
+
+      <p class="footer-copy"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Dr. {{full_name}}. All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="{{path}}/script/banner-module.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="{{path}}/script/analytics.js"></script>
+  <script src="{{path}}/script/index.js"></script>
+  <script src="{{path}}/script/chatbot.js" defer></script>
+
+  <!-- Same as the live sites: hide the testimonials section (and its nav
+       links) when the backend sends no testimonials. -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("testimonialsTrack");
+
+      if (!track || track.children.length === 0) {
+        document.getElementById("testimonials")?.remove();
+
+        document
+          .querySelectorAll('a[href="#testimonials"]')
+          .forEach(x => x.remove());
+      }
+    });
+  </script>
+
+  <!-- Same as the live sites: record this visit and show the real visitor count. -->
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
+</body>
+</html>
+
