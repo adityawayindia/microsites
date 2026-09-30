@@ -2420,3 +2420,120 @@ section.faq-section {
     grid-column: 4 / span 6;
   }
 }
+
+/* ============================================================
+   SOCIAL ICONS — disabled ({{#no*}}) state + tooltips
+   Backend renders a <span class="… is-disabled" data-tooltip="Not Enabled">
+   for each unlinked network, and an <a data-tooltip="Name"> for linked ones.
+   Covers the hero row (.peds2-social), the index footer row
+   (.peds2-footer-social) and the legal-page footer row (.footer-social).
+   ============================================================ */
+/* Index footer: give disabled <span>s the same round box as the <a>s. */
+.peds2-footer-social > span {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+}
+
+/* Dim the glyph + surface rather than the whole element: element-level
+   opacity would also fade the ::after tooltip that says "Not Enabled". */
+.peds2-social.is-disabled,
+.peds2-footer-social .is-disabled,
+.footer-social .is-disabled {
+  cursor: not-allowed;
+}
+.peds2-social.is-disabled,
+.peds2-social.is-disabled:hover {
+  background: var(--bg-2);
+  border-color: var(--border-light);
+  color: var(--muted);
+  transform: none;
+}
+.peds2-footer-social > span.is-disabled,
+.peds2-footer-social > span.is-disabled:hover,
+.footer-social > span.is-disabled,
+.footer-social > span.is-disabled:hover {
+  background: hsla(0,0%,100%,0.06);
+  color: #fff;
+  transform: none;
+  box-shadow: none;
+}
+.peds2-social.is-disabled > i,
+.peds2-footer-social .is-disabled > i,
+.footer-social .is-disabled > i { opacity: 0.4; }
+
+.peds2-social[data-tooltip],
+.peds2-footer-social > [data-tooltip],
+.footer-social > [data-tooltip] {
+  position: relative;
+}
+
+.peds2-social[data-tooltip]::after,
+.peds2-footer-social > [data-tooltip]::after,
+.footer-social > [data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--text);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap; /* fixed short labels ("Not Enabled", network names), not dynamic content */
+  padding: 5px 11px;
+  border-radius: 8px;
+  border: 1px solid hsla(0,0%,100%,0.18);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 20;
+}
+
+.peds2-social[data-tooltip]::before,
+.peds2-footer-social > [data-tooltip]::before,
+.footer-social > [data-tooltip]::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--text);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+  z-index: 20;
+}
+
+.peds2-social[data-tooltip]:hover::after,
+.peds2-social[data-tooltip]:hover::before,
+.peds2-social[data-tooltip]:focus-visible::after,
+.peds2-social[data-tooltip]:focus-visible::before,
+.peds2-footer-social > [data-tooltip]:hover::after,
+.peds2-footer-social > [data-tooltip]:hover::before,
+.peds2-footer-social > [data-tooltip]:focus-visible::after,
+.peds2-footer-social > [data-tooltip]:focus-visible::before,
+.footer-social > [data-tooltip]:hover::after,
+.footer-social > [data-tooltip]:hover::before,
+.footer-social > [data-tooltip]:focus-visible::after,
+.footer-social > [data-tooltip]:focus-visible::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* The arrow must not pick up the bubble's translateY. */
+.peds2-social[data-tooltip]:hover::before,
+.peds2-social[data-tooltip]:focus-visible::before,
+.peds2-footer-social > [data-tooltip]:hover::before,
+.peds2-footer-social > [data-tooltip]:focus-visible::before,
+.footer-social > [data-tooltip]:hover::before,
+.footer-social > [data-tooltip]:focus-visible::before {
+  transform: translateX(-50%);
+}

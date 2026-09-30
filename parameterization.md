@@ -34,8 +34,8 @@ at the bucket folder, which is not renamed — leave those URLs unchanged.
 | `General Physician/microsite-general-physician-1` | Done 2026-09-29. **Folder rename to `-param` still pending** (folder was locked by another process). Services tag pills dropped (loop is title + description only); philosophy image uses the byte-identical `microsite-general-medicine-1` bucket copy. |
 | `General Physician/microsite-general-physician-2` | Done 2026-09-29. Same conversion as General Physician-1 (identical JS; blue-theme CSS). **Folder rename to `-param` still pending** (folder locked). |
 | `Pediatrician/microsite-pediatrician-2-param` | |
-| `Pediatrician/microsite-pediatrician-3-param` | |
-| `Pediatrician/microsite-pediatrician-4-param` | |
+| `Pediatrician/microsite-pediatrician-3-param` | Re-verified 2026-09-29 and fixed: hero Facebook Page disabled icon was gated on `noFacebook` (now `noFacebookPage`); footer + legal-page WhatsApp now `https://wa.me/91{{whatsapp}}`; Blog nav link now `/{{slug}}/blog`; MCI line colon; `{{awards}},{{education}}`; contact address in the §6 pattern; legal canonical/`og:url` without `.html`; disabled-social + tooltip CSS added (hero spans now carry `data-tooltip`). |
+| `Pediatrician/microsite-pediatrician-4-param` | Re-verified 2026-09-29; same fixes as Pediatrician-3 (cloned markup). |
 | `Radiology/microsite-radiology-1-param` | Calendar now honours `availableDays`; demo time slots removed (2026-09-25). |
 | `Urologist/microsite-urology-1-param` | Done 2026-09-25. |
 | `Urologist/microsite-urology-2-param` | Done 2026-09-25. Own hero layout (`uro-hero-*`); rest of the page matches Urology-1. |

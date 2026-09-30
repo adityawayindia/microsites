@@ -103,7 +103,7 @@
         <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
         {{#hasBlog}}
-        <a href="blog.html">Blog</a>
+        <a href="/{{slug}}/blog">Blog</a>
         {{/hasBlog}}
       </nav>
 
@@ -177,8 +177,8 @@
         </span>
 
         <h1 class="peds2-hero-title">Dr. {{full_name}}</h1>
-        <p class="peds2-hero-role"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{awards}} &middot; {{education}}</p>
-        {{#hasmic}}<p class="peds2-hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. {{mci}}</p>{{/hasmic}}
+        <p class="peds2-hero-role"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{awards}},{{education}}</p>
+        {{#hasmic}}<p class="peds2-hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No.: {{mci}}</p>{{/hasmic}}
 
         <p class="peds2-hero-subtitle">
           {{introduction}}
@@ -193,22 +193,22 @@
         </div>
 
         <div class="peds2-hero-social" aria-label="Social media links">
-          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="peds2-social" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
-          {{#noFacebook}}<span class="peds2-social is-disabled" aria-label="Facebook Page not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebook}}
-          {{#hasFacebook}}<a href="{{facebook}}" class="peds2-social" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
-          {{#noFacebook}}<span class="peds2-social is-disabled" aria-label="Facebook Profile not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
-          {{#hasInstagram}}<a href="{{instagram}}" class="peds2-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
-          {{#noInstagram}}<span class="peds2-social is-disabled" aria-label="Instagram not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
-          {{#hasTwitter}}<a href="{{twitter}}" class="peds2-social" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
-          {{#noTwitter}}<span class="peds2-social is-disabled" aria-label="X not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
-          {{#hasLinkedin}}<a href="{{linkedin}}" class="peds2-social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
-          {{#noLinkedin}}<span class="peds2-social is-disabled" aria-label="LinkedIn not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
-          {{#hasWebsite}}<a href="{{website}}" class="peds2-social" aria-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
-          {{#noWebsite}}<span class="peds2-social is-disabled" aria-label="Website not linked" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
-          {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="peds2-social" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
-          {{#noWhatsapp}}<span class="peds2-social is-disabled" aria-label="WhatsApp not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
-          {{#hasYoutube}}<a href="{{youtube}}" class="peds2-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
-          {{#noYoutube}}<span class="peds2-social is-disabled" aria-label="YouTube not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="peds2-social" aria-label="Facebook Page" data-tooltip="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#noFacebookPage}}<span class="peds2-social is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+          {{#hasFacebook}}<a href="{{facebook}}" class="peds2-social" aria-label="Facebook Profile" data-tooltip="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="peds2-social is-disabled" aria-label="Facebook Profile not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+          {{#hasInstagram}}<a href="{{instagram}}" class="peds2-social" aria-label="Instagram" data-tooltip="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#noInstagram}}<span class="peds2-social is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+          {{#hasTwitter}}<a href="{{twitter}}" class="peds2-social" aria-label="X" data-tooltip="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#noTwitter}}<span class="peds2-social is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="peds2-social" aria-label="LinkedIn" data-tooltip="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#noLinkedin}}<span class="peds2-social is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+          {{#hasWebsite}}<a href="{{website}}" class="peds2-social" aria-label="Website" data-tooltip="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#noWebsite}}<span class="peds2-social is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+          {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="peds2-social" aria-label="WhatsApp" data-tooltip="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#noWhatsapp}}<span class="peds2-social is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+          {{#hasYoutube}}<a href="{{youtube}}" class="peds2-social" aria-label="YouTube" data-tooltip="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#noYoutube}}<span class="peds2-social is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
         </div>
       </div>
 
@@ -521,8 +521,8 @@
             <h3>Address</h3>
             <p>
               <strong>{{clinicname}}</strong><br />
-              {{address}}, {{district}}<br />
-              {{state}} &middot; {{city}} &middot; {{pincode}}
+              {{address}}<br />
+              {{district}}, {{state}} - {{pincode}}
             </p>
           </article>
 
@@ -869,7 +869,7 @@
             {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
             {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
 
-            {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+            {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
             {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
 
             {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
