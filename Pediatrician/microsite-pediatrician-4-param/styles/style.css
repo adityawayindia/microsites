@@ -2422,3 +2422,125 @@ section.faq-section {
 .footer-social > [data-tooltip]:focus-visible::before {
   transform: translateX(-50%);
 }
+
+/* ==========================================================================
+   Booking loader — hidden until the submit handler flips aria-hidden to
+   "false". Previously unstyled, so "Booking your appointment..." showed
+   permanently under the submit button.
+   ========================================================================== */
+.booking-loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 800;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.booking-loader[aria-hidden="false"] { display: flex; }
+
+.booking-loader p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.loader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--border-light);
+  border-top-color: var(--button);
+  border-radius: 50%;
+  animation: bookingLoaderSpin 0.8s linear infinite;
+}
+
+@keyframes bookingLoaderSpin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-spinner { animation-duration: 2.4s; }
+}
+
+/* Footer brand: speciality always sits on its own line under the name. The
+   ≤1030px header rule sets .peds4-brand-text to display:block globally, which
+   pulled the footer role inline next to the name on mobile. */
+.peds4-footer-brand .peds4-brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.peds4-footer-brand .peds4-brand-name,
+.peds4-footer-brand .peds4-brand-role {
+  display: block;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ==========================================================================
+   Mobile spacing tidy-up (≤640px): desktop hero padding and the 420px
+   philosophy photo left large empty bands on phones; justified bio text
+   opened wide word gaps on narrow columns.
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* On phones the stat cluster no longer overlaps the hero (margin-top: 20px
+     above), so the hero only needs a small bottom pad. */
+  .peds4-hero-grid { padding-top: 24px; padding-bottom: 12px; gap: 24px; }
+  .peds4-stat-cluster { margin-top: 12px; }
+  .peds4-about-content p { text-align: left; }
+  .peds4-philosophy-photo,
+  .peds4-philosophy-photo img { min-height: 260px; }
+}
+
+/* Long single-word surnames (e.g. 15+ letters) broke mid-word at 36px Poppins. */
+@media (max-width: 400px) {
+  .peds4-hero-title { font-size: 31px; }
+}
+
+/* ==========================================================================
+   Long doctor names wrap instead of truncating / overflowing.
+   Desktop header: full name on up to two lines (header grows to fit) instead
+   of the old 15ch ellipsis. ≤1030px keeps its own 2-line clamp rules.
+   ========================================================================== */
+@media (min-width: 1031px) {
+  .peds4-brand { min-width: 0; flex: 0 1 auto; }
+  .peds4-header .peds4-brand-name {
+    display: block;
+    max-width: 22ch;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.25;
+  }
+}
+
+.peds4-hero-title {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* Single-column hero (tablet/mobile): already text-centred at ≤980px; the
+   qualification + MCI rows are flex, so centre them explicitly too. */
+@media (max-width: 980px) {
+  /* Plain centred text line with an inline icon — as a flex row the wrapped
+     text became one wide block and drifted away from the icon. */
+  .peds4-hero-role { display: block; }
+  .peds4-hero-role i { margin: 0 8px 0 0; }
+  .peds4-hero-reg { display: flex; justify-content: center; }
+}
+
+/* Lifeline background (hero + services): the circles/lines were almost
+   invisible — slightly darker tint and a gentler fade so they read. */
+.peds4-hero-bg {
+  filter: hue-rotate(140deg) saturate(6) brightness(0.45) contrast(2.6);
+  mask-image: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0.7));
+}

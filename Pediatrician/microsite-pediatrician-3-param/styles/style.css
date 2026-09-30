@@ -2141,7 +2141,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .faq-title {
   font-size: 34px;
   font-weight: 800;
-  color: var(--sky-dark, var(--brand-dark, var(--text)));
+  color: var(--navy-dark);
   margin: 10px 0 12px;
   letter-spacing: -0.02em;
 }
@@ -2174,7 +2174,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 .faq-item.is-active {
-  border-color: var(--sky, var(--brand, var(--primary)));
+  border-color: var(--navy);
   box-shadow: 0 4px 16px rgba(8, 18, 32, 0.08);
 }
 
@@ -2205,8 +2205,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .faq-icon {
   flex-shrink: 0;
-  color: var(--sky, var(--brand, var(--primary)));
-  background: var(--sky-light, var(--brand-light, var(--bg-3)));
+  color: var(--navy);
+  background: var(--navy-light);
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -2219,7 +2219,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 
 .faq-item.is-active .faq-icon {
   transform: rotate(180deg);
-  background: var(--sky, var(--brand, var(--primary)));
+  background: var(--navy);
   color: #fff;
 }
 
@@ -2536,4 +2536,199 @@ section.faq-section {
 .footer-social > [data-tooltip]:hover::before,
 .footer-social > [data-tooltip]:focus-visible::before {
   transform: translateX(-50%);
+}
+
+/* ==========================================================================
+   Booking loader — hidden until the submit handler flips aria-hidden to
+   "false". Previously unstyled, so "Booking your appointment..." showed
+   permanently under the submit button.
+   ========================================================================== */
+.booking-loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 800;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.booking-loader[aria-hidden="false"] { display: flex; }
+
+.booking-loader p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.loader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--border-light);
+  border-top-color: var(--button);
+  border-radius: 50%;
+  animation: bookingLoaderSpin 0.8s linear infinite;
+}
+
+@keyframes bookingLoaderSpin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-spinner { animation-duration: 2.4s; }
+}
+
+/* Footer brand: speciality always sits on its own line under the name. The
+   ≤1030px header rule sets .peds2-brand-text to display:block globally, which
+   pulled the footer role inline next to the name on mobile. */
+.peds2-footer-brand .peds2-brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.peds2-footer-brand .peds2-brand-name,
+.peds2-footer-brand .peds2-brand-role {
+  display: block;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ==========================================================================
+   Mobile spacing tidy-up (≤640px): desktop hero padding and the 420px
+   philosophy photo left large empty bands on phones; justified bio text
+   opened wide word gaps on narrow columns.
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* 40px top keeps the floating "Parent Satisfaction" badge clear of the header. */
+  .peds2-hero-grid { padding-top: 40px; padding-bottom: 28px; gap: 24px; }
+  .peds2-hero-actions { margin-bottom: 20px; }
+  .peds2-about-content p { text-align: left; }
+  .peds2-philosophy-photo,
+  .peds2-philosophy-photo img { min-height: 260px; }
+}
+
+/* ==========================================================================
+   Long doctor names wrap instead of truncating / overflowing.
+   Desktop header: full name on up to two lines (header grows to fit) instead
+   of the old 15ch ellipsis. ≤1030px keeps its own 2-line clamp rules.
+   ========================================================================== */
+@media (min-width: 1031px) {
+  .peds2-brand { min-width: 0; flex: 0 1 auto; }
+  .peds2-header .peds2-brand-name {
+    display: block;
+    max-width: 22ch;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.25;
+  }
+}
+
+.peds2-hero-title {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* Single-column hero (tablet/mobile): centre every hero element. */
+@media (max-width: 980px) {
+  .peds2-hero-copy { text-align: center; }
+  /* Plain centred text line with an inline icon — as a flex row the wrapped
+     text became one wide block and drifted away from the icon. */
+  .peds2-hero-role { display: block; }
+  .peds2-hero-role i { margin: 0 8px 0 0; }
+  .peds2-hero-reg { display: flex; justify-content: center; }
+  .peds2-hero-badgelist,
+  .peds2-hero-actions,
+  .peds2-hero-social { justify-content: center; }
+}
+
+/* Hero background circle: the 92%-lightness sage tint faded into the cream
+   hero and was barely visible — deeper sage, still soft and decorative. */
+.peds2-hero-blob-bg {
+  background: radial-gradient(circle at 30% 30%, hsla(152, 38%, 72%, 0.45), hsla(152, 38%, 80%, 0.18) 55%, transparent 72%);
+}
+
+/* Hero backdrop decoration — the flat cream gradient read as empty.
+   ::before = soft navy dot grid fading out from behind the copy.
+   ::after  = peach corner glow + a few outline rings / dots in the brand
+   peach & sage. All purely decorative, low-contrast, behind content. */
+.peds2-hero::before,
+.peds2-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.peds2-hero::before {
+  background-image: radial-gradient(hsla(218, 55%, 22%, 0.16) 1.5px, transparent 1.7px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 65% at 10% 40%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 65% at 10% 40%, #000 0%, transparent 75%);
+}
+
+.peds2-hero::after {
+  background:
+    radial-gradient(circle at 4% 92%, hsla(18, 88%, 64%, 0.22) 0, hsla(18, 88%, 64%, 0.08) 170px, transparent 280px);
+}
+
+/* Floating toys in the hero's left/right gutters (markup: .peds2-hero-toys).
+   Positioned only in the outer margins so they never sit on the copy or the
+   portrait; hidden once the gutters get too narrow. */
+.peds2-hero-toys {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.peds2-hero-toys span {
+  position: absolute;
+  font-size: 30px;
+  line-height: 1;
+  opacity: 0.55;
+  filter: saturate(0.85);
+  animation: pedsToyFloat 6s ease-in-out infinite;
+}
+/* Tops stay ≤70%: the bottom ~15% of .peds2-hero is the navy stat ribbon. */
+.peds2-hero-toys span:nth-child(1) { left: 2.5%; top: 18%; transform: rotate(-12deg); }
+.peds2-hero-toys span:nth-child(2) { left: 4.5%; top: 35%; font-size: 26px; animation-delay: -1.5s; }
+.peds2-hero-toys span:nth-child(3) { left: 1.5%; top: 52%; animation-delay: -3s; }
+.peds2-hero-toys span:nth-child(4) { left: 5%; top: 68%; font-size: 24px; animation-delay: -4.5s; }
+.peds2-hero-toys span:nth-child(5) { right: 2.5%; top: 14%; animation-delay: -2s; }
+.peds2-hero-toys span:nth-child(6) { right: 1.5%; top: 30%; font-size: 26px; animation-delay: -3.5s; }
+.peds2-hero-toys span:nth-child(7) { right: 3.5%; top: 52%; animation-delay: -1s; }
+.peds2-hero-toys span:nth-child(8) { right: 1.5%; top: 68%; font-size: 24px; animation-delay: -5s; }
+
+@keyframes pedsToyFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .peds2-hero-toys span { animation: none; }
+}
+/* Gutters around the 1440–1600px container only exist on wide screens. */
+@media (max-width: 1360px) {
+  .peds2-hero-toys { display: none; }
+}
+
+@media (max-width: 980px) {
+  /* Single column: centre the dot grid behind the stacked copy and
+     drop the mid-page ring that would sit on top of the portrait. */
+  .peds2-hero::before {
+    -webkit-mask-image: radial-gradient(ellipse 90% 45% at 50% 60%, #000 0%, transparent 75%);
+    mask-image: radial-gradient(ellipse 90% 45% at 50% 60%, #000 0%, transparent 75%);
+  }
+  .peds2-hero::after {
+    background:
+      radial-gradient(circle at 0% 55%, hsla(18, 88%, 64%, 0.20) 0, hsla(18, 88%, 64%, 0.07) 120px, transparent 200px);
+  }
 }

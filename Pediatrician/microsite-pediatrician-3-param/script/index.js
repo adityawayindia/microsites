@@ -87,10 +87,30 @@ if (menuToggle && mainNav) {
     const clickedToggle = menuToggle.contains(target);
 
     if (!clickedInsideNav && !clickedToggle && mainNav.classList.contains("open")) {
-      mainNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
+      closeMenu();
     }
   });
+
+  // Close the mobile menu once a nav link is tapped — the in-page scroll
+  // handler above swallows the navigation, so without this the dropdown
+  // stayed open over the page after every tap.
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mainNav.classList.contains("open")) closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1030 && mainNav.classList.contains("open")) closeMenu();
+  });
+}
+
+function closeMenu() {
+  if (!menuToggle || !mainNav) return;
+  mainNav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
 }
 
 // Testimonials Carousel
@@ -1589,6 +1609,14 @@ initPhonePlugin();
     var btn = wrap.querySelector(".read-more-btn");
     var content = wrap.querySelector(".read-more-content");
     if (!btn || !content) return;
+
+    // Once expanded the content is no longer clamped, so scrollHeight equals
+    // clientHeight — re-checking then (mobile fires resize on every address-bar
+    // show/hide) would hide the button and strand the bio open.
+    if (wrap.classList.contains("is-expanded")) {
+      btn.style.display = "";
+      return;
+    }
 
     var isTruncated = content.scrollHeight > content.clientHeight + 2;
     btn.style.display = isTruncated ? "" : "none";

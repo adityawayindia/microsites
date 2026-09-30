@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER_MICROSITE_PEDIATRICIAN_4"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RV8MSXW5Z2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-PLACEHOLDER_MICROSITE_PEDIATRICIAN_4');
+    gtag('config', 'G-RV8MSXW5Z2');
   </script>
 
   <!-- Microsoft Clarity -->
@@ -92,7 +92,7 @@
         </span>
         <span class="peds4-brand-text">
           <span class="peds4-brand-name" title="Dr. {{full_name}}">Dr. {{full_name}}</span>
-          <span class="peds4-brand-role">{{speciality}}</span>
+          <span class="peds4-brand-role">Pediatrician</span>
         </span>
       </a>
 
@@ -101,7 +101,7 @@
         <a href="#services">Services</a>
         <a href="#contact-us">Contact</a>
         <a href="#gallery">Gallery</a>
-        <a href="#faq">FAQ</a>
+        <!-- <a href="#faq">FAQ</a> -->
         {{#hasBlog}}
         <a href="/{{slug}}/blog">Blog</a>
         {{/hasBlog}}
@@ -186,10 +186,6 @@
         <h1 class="peds4-hero-title">Dr. {{full_name}}</h1>
         <p class="peds4-hero-role"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{awards}},{{education}}</p>
         {{#hasmic}}<p class="peds4-hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No.: {{mci}}</p>{{/hasmic}}
-
-        <p class="peds4-hero-subtitle">
-          {{introduction}}
-        </p>
 
         <ul class="peds4-hero-facts" aria-label="Practice highlights">
           <li><span class="peds4-fact-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></span>Languages Known: {{languages}}</li>
@@ -594,7 +590,8 @@
     <button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">&times;</button>
   </div>
 
-  <!-- ====== FAQ SECTION ====== -->
+  <!-- ====== FAQ SECTION (disabled — remove the comment wrapper to re-enable) ====== -->
+  <!--
   <section class="faq-section" id="faq">
     <div class="container">
       <div class="faq-header">
@@ -667,6 +664,7 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- ====== BOOKING MODAL ====== -->
   <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
@@ -821,7 +819,7 @@
           </span>
           <span class="peds4-brand-text">
             <span class="peds4-brand-name">Dr. {{full_name}}</span>
-            <span class="peds4-brand-role">{{speciality}}</span>
+            <span class="peds4-brand-role">Pediatrician</span>
           </span>
         </a>
         <p class="peds4-footer-tagline">Evidence-based pediatric care for growing families.</p>
@@ -862,7 +860,6 @@
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#contact-us">Contact</a>
-            <a href="#testimonials">Testimonials</a>
             <a href="#gallery">Gallery</a>
           </nav>
         </div>
