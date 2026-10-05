@@ -178,7 +178,7 @@
                   </div>
                   <h1 class="hero-title">Dr. {{full_name}}</h1>
                   <p class="hero-subtitle">
-                      <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{awards}},{{education}}
+                      <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Qualification: {{awards}},{{education}}
                   </p>
                   {{#hasmic}}
                   <p class="hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No.: {{mci}}</p>
@@ -224,11 +224,11 @@
                       </article>
                       <article class="hero-stat-card">
                           <p class="hero-stat-value">{{totalpatient}}</p>
-                          <small class="hero-stat-label">Patients Treated</small>
+                          <small class="hero-stat-label">Patients Consulted</small>
                       </article>
                       <article class="hero-stat-card">
                           <p class="hero-stat-value">95%</p>
-                          <small class="hero-stat-label">Patient Rating</small>
+                          <small class="hero-stat-label">Positive Feedback</small>
                       </article>
                   </div>
               </div>
@@ -858,7 +858,7 @@
 
         <h3>Questions or Complaints</h3>
         <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
-        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> <a href="mailto:{{email}}">{{email}}</a></p>
+        <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> <a href="mailto:info@digidr.app">info@digidr.app</a></p>
 
         <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
 
@@ -923,7 +923,7 @@
               </div>
           </div>
 
-          <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 0">
+          <div class="footer-visitor-badge" role="status">
               <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
               <span class="footer-visitor-badge-label">No. of Visitor:</span>
               <span class="footer-visitor-badge-count" id="visitorCount">0</span>
@@ -931,6 +931,7 @@
 
           <p class="footer-copy">Dr. {{full_name}}. All rights reserved</p>
       </div>
+      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
   </footer>
 
   <script src="{{path}}/script/banner-module.js"></script>
