@@ -168,10 +168,10 @@
                 <div class="footer-social-wrap">
                     <span class="footer-social-label">Follow me on:</span>
                     <div class="footer-social" aria-label="Footer social links">
-                        {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="social_facebook_click" data-ga-label="Footer"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+                        {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Footer"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
                         {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
 
-                        {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="social_facebook_click" data-ga-label="Footer"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+                        {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Footer"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
                         {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
 
                         {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="social_instagram_click" data-ga-label="Footer"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
@@ -202,10 +202,9 @@
                         <a href="/{{slug}}/#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
                         <a href="/{{slug}}/#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
                         <a href="/{{slug}}/#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
-                        {{#testimonials}}
                         <a href="/{{slug}}/#testimonials" data-ga-event="footer_nav_link_click" data-ga-label="Testimonials">Testimonials</a>
-                        {{/testimonials}}
                         <a href="/{{slug}}/#gallery" data-ga-event="footer_nav_link_click" data-ga-label="Gallery">Gallery</a>
+                        <a href="/{{slug}}/#faq" data-ga-event="footer_nav_link_click" data-ga-label="FAQ">FAQ</a>
                     </nav>
                 </div>
 
