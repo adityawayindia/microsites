@@ -1653,10 +1653,18 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .social-media-carousel::-webkit-scrollbar { display: none; }
 
+/* Centred while the posts fit; scrolls (via the carousel) once they don't.
+   max-width: none beats the global div { max-width: 100% } reset — without it
+   the track is capped at the carousel width and centring pushes the first
+   cards off the left edge, where they can never be scrolled to. */
 .social-media-track {
   display: flex;
   gap: 30px;
   align-items: flex-start;
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+  justify-content: center;
 }
 /* Every card is locked to one height (--post-card-height). Facebook sizes its
    iframe to the post's own content, which varies wildly (one long post

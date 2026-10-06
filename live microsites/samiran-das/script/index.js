@@ -65,6 +65,25 @@ if (menuToggle && mainNav) {
     });
 }
 
+// In-page anchor links: smooth-scroll without writing #section to the address bar,
+// and close the mobile menu once a nav link is chosen.
+document.addEventListener("click", (event) => {
+    const link = event.target instanceof Element ? event.target.closest('a[href^="#"]') : null;
+    if (!link) return;
+    const hash = link.getAttribute("href");
+    if (!hash || hash.length < 2) return;
+    let section = null;
+    try { section = document.querySelector(hash); } catch (e) { return; }
+    if (!section) return;
+
+    event.preventDefault();
+    if (menuToggle && mainNav && mainNav.classList.contains("open")) {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    }
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 // Testimonials Carousel
 (function () {
     const track = document.getElementById("testimonialsTrack");
@@ -1405,6 +1424,7 @@ initPhonePlugin();
         var content = wrap.querySelector(".read-more-content");
         if (!btn || !content) return;
 
+        if (wrap.classList.contains("is-expanded")) { btn.style.display = ""; return; }
         var isTruncated = content.scrollHeight > content.clientHeight + 2;
         btn.style.display = isTruncated ? "" : "none";
     }
@@ -1474,4 +1494,325 @@ initPhonePlugin();
       questionBtn.setAttribute('aria-expanded', 'true');
     }
   });
-})();
+})();
+
+// Facebook Posts Carousel — live embeds from the DigiDr social feed API.
+// Cards hold Facebook SDK embeds, which must never be cloned (a cloned embed
+// renders blank) nor re-parented (that reloads the iframe). So the DOM is built
+// once and left alone: paging only changes the container's scrollLeft, which
+// the browser handles natively without touching any card.
+(function () {
+    // Slug comes from <body data-slug="{{slug}}"> — only HTML pages are templated.
+    // An unreplaced "{{slug}}" counts as unset, so the section is hidden.
+    const RAW_SLUG = (document.body.dataset.slug || "").trim();
+    const DOCTOR_SLUG = RAW_SLUG.includes("{{") ? "" : RAW_SLUG;
+    const API_BASE = "https://digidrapi.digidr.app";
+    const FB_GRAPH_VERSION = "v23.0"; // Deprecated versions render blank, not errors — bump periodically.
+    const MAX_CARDS = 5;
+    const MAX_POST_AGE_DAYS = 30;
+    const POSTS_PER_ACCOUNT = 10;
+    const FEED_TIMEOUT_MS = 7000; // No answer by then → section stays hidden, even if a reply arrives later.
+
+    const section = document.getElementById("social-media");
+    const carousel = document.getElementById("socialMediaCarousel");
+    const track = document.getElementById("socialMediaTrack");
+    const prevBtn = document.querySelector(".social-carousel-prev");
+    const nextBtn = document.querySelector(".social-carousel-next");
+
+    if (!section || !carousel || !track) return;
+
+    // The section only shows when the doctor has posts to display. No connected
+    // feed, no qualifying posts, an API failure, an unset slug or no answer within
+    // FEED_TIMEOUT_MS all hide the whole section, so the page flows straight on.
+    function hideSection() {
+        section.hidden = true;
+        section.style.display = "none"; // Templates may set display on <section>, beating [hidden].
+    }
+
+    if (!DOCTOR_SLUG) {
+        hideSection();
+        return;
+    }
+
+    function fetchJson(url) {
+        const attempt = () => fetch(url, { credentials: "omit" }).then((r) => {
+            if (!r.ok) throw new Error("HTTP " + r.status);
+            return r.json();
+        });
+        // One retry — short network blips are common on mobile.
+        return attempt().catch(
+            () => new Promise((res) => setTimeout(res, 800)).then(attempt)
+        );
+    }
+
+    function isVideoPermalink(url) {
+        return /\/videos\//i.test(url);
+    }
+
+    function isRecent(createdAt) {
+        const t = Date.parse(createdAt);
+        if (isNaN(t)) return false; // Fail closed — unknown age is treated as stale.
+        return (Date.now() - t) / 86400000 <= MAX_POST_AGE_DAYS;
+    }
+
+    function fetchDoctorPosts(slug) {
+        const url = API_BASE + "/api/MicrositeSocialFeed/" +
+            encodeURIComponent(slug) + "?limit=" + POSTS_PER_ACCOUNT;
+
+        return fetchJson(url).then((data) => {
+            if (!data || data.success === false || !Array.isArray(data.feeds)) return [];
+
+            const entries = [];
+            data.feeds.forEach((feed) => {
+                if (!feed || feed.platform !== "facebook" || !Array.isArray(feed.posts)) return;
+                feed.posts.forEach((post) => {
+                    if (!post || !post.permalink) return;
+                    if (isVideoPermalink(post.permalink)) return;
+                    if (!isRecent(post.createdAt)) return;
+                    entries.push({
+                        accountName: (feed.accountName || "").trim(),
+                        permalink: post.permalink,
+                        createdAt: post.createdAt || ""
+                    });
+                });
+            });
+
+            entries.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            return entries.slice(0, MAX_CARDS);
+        }).catch(() => []);
+    }
+
+    let fbSdkPromise = null;
+    function loadFbSdk() {
+        if (fbSdkPromise) return fbSdkPromise;
+        fbSdkPromise = new Promise((resolve, reject) => {
+            const s = document.createElement("script");
+            s.src = "https://connect.facebook.net/en_US/sdk.js";
+            s.async = true;
+            s.defer = true;
+            s.crossOrigin = "anonymous";
+            s.onload = () => {
+                if (!window.FB) return reject(new Error("FB missing"));
+                // xfbml:false — parsing is triggered manually once the cards exist.
+                window.FB.init({ xfbml: false, version: FB_GRAPH_VERSION });
+                resolve(window.FB);
+            };
+            s.onerror = () => reject(new Error("SDK blocked"));
+            document.body.appendChild(s);
+        });
+        return fbSdkPromise;
+    }
+
+    function embedWidth() {
+        const raw = getComputedStyle(carousel).getPropertyValue("--post-card-width");
+        return parseInt(raw, 10) || 300;
+    }
+
+    // The SDK reports success even when the embed is empty: with the plugin
+    // iframe blocked (tracker blockers, third-party-cookie restrictions), it
+    // still sets fb-xfbml-state="rendered", fires xfbml.render, AND removes the
+    // nested fallback blockquote — leaving a 0px iframe in a blank card. So a
+    // card only counts as loaded if its iframe actually has height; otherwise we
+    // swap in our own link card, which the SDK cannot strip.
+    function settleCard(card) {
+        if (card.dataset.settled) return;
+
+        const frame = card.querySelector("iframe");
+        if (frame && frame.getBoundingClientRect().height > 40) {
+            card.dataset.settled = "1";
+            card.classList.add("is-loaded");
+            return;
+        }
+        if (!card.dataset.deadline || Date.now() < +card.dataset.deadline) return;
+
+        card.dataset.settled = "1";
+        card.classList.add("is-loaded", "is-fallback");
+        card.textContent = "";
+
+        const link = document.createElement("a");
+        link.className = "social-post-fallback";
+        link.href = card.dataset.permalink || "#";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        const icon = document.createElement("i");
+        icon.className = "fa-brands fa-facebook";
+        icon.setAttribute("aria-hidden", "true");
+
+        const label = document.createElement("span");
+        label.textContent = card.dataset.account
+            ? "View this post from " + card.dataset.account + " on Facebook"
+            : "View this post on Facebook";
+
+        link.append(icon, label);
+        card.appendChild(link);
+    }
+
+    function settleAll() {
+        track.querySelectorAll(".social-post-card").forEach(settleCard);
+    }
+
+    // Poll briefly: a blocked embed never fires an event we could listen for.
+    function watchCards() {
+        const deadline = Date.now() + 6000;
+        track.querySelectorAll(".social-post-card").forEach((card) => {
+            card.dataset.deadline = String(deadline);
+        });
+        const timer = setInterval(() => {
+            settleAll();
+            const pending = track.querySelectorAll(".social-post-card:not([data-settled])");
+            if (!pending.length) clearInterval(timer);
+        }, 400);
+    }
+
+    // Skeleton that mirrors a Facebook post (avatar + name, image, text lines).
+    // Used for placeholder cards while the feed loads, and layered behind each
+    // real embed until its iframe paints; hidden via .is-loaded, never moved.
+    function buildSkeleton() {
+        const skel = document.createElement("div");
+        skel.className = "social-post-skeleton";
+        skel.setAttribute("aria-hidden", "true");
+        skel.innerHTML =
+            '<div class="sk-head"><span class="sk sk-avatar"></span>' +
+            '<span class="sk-lines"><span class="sk sk-line sk-w60"></span>' +
+            '<span class="sk sk-line sk-w40"></span></span></div>' +
+            '<span class="sk sk-media"></span>' +
+            '<span class="sk sk-line"></span>' +
+            '<span class="sk sk-line sk-w80"></span>';
+        return skel;
+    }
+
+    function showSkeletons() {
+        track.innerHTML = "";
+        track.setAttribute("aria-busy", "true");
+        for (let i = 0; i < 3; i++) {
+            const card = document.createElement("div");
+            card.className = "social-post-card is-placeholder";
+            card.appendChild(buildSkeleton());
+            track.appendChild(card);
+        }
+    }
+
+    function buildCard(entry, width) {
+        const card = document.createElement("article");
+        card.className = "social-post-card";
+        card.dataset.permalink = entry.permalink;
+        if (entry.accountName) card.dataset.account = entry.accountName;
+
+        const embed = document.createElement("div");
+        embed.className = "fb-post";
+        embed.setAttribute("data-href", entry.permalink);
+        embed.setAttribute("data-width", String(width));
+        embed.setAttribute("data-show-text", "true");
+
+        // Visible if the SDK is blocked by an ad blocker or cookie restrictions.
+        const fallback = document.createElement("blockquote");
+        fallback.className = "fb-xfbml-parse-ignore";
+        fallback.setAttribute("cite", entry.permalink);
+        const link = document.createElement("a");
+        link.href = entry.permalink;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = entry.accountName
+            ? "View this post from " + entry.accountName + " on Facebook"
+            : "View this post on Facebook";
+        fallback.appendChild(link);
+
+        embed.appendChild(fallback);
+        card.appendChild(buildSkeleton());
+        card.appendChild(embed);
+        return card;
+    }
+
+    function initPaging() {
+        if (!prevBtn || !nextBtn) return;
+
+        function stepSize() {
+            const card = track.firstElementChild;
+            if (!card) return carousel.clientWidth;
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            const span = card.offsetWidth + gap;
+            const perPage = Math.max(1, Math.floor(carousel.clientWidth / span));
+            return span * perPage;
+        }
+
+        function syncButtons() {
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth - 1;
+            prevBtn.disabled = carousel.scrollLeft <= 0;
+            nextBtn.disabled = carousel.scrollLeft >= maxScroll;
+        }
+
+        prevBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: -stepSize(), behavior: "smooth" });
+        });
+        nextBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: stepSize(), behavior: "smooth" });
+        });
+
+        carousel.addEventListener("scroll", syncButtons, { passive: true });
+        window.addEventListener("resize", syncButtons);
+        syncButtons();
+    }
+
+    function embedPosts() {
+        watchCards();
+        loadFbSdk().then((FB) => {
+            FB.Event.subscribe("xfbml.render", settleAll);
+            FB.XFBML.parse(track, settleAll);
+            initPaging();
+        }).catch(() => {
+            // SDK never loaded — settle immediately into link cards.
+            track.querySelectorAll(".social-post-card").forEach((card) => {
+                card.dataset.deadline = "0";
+            });
+            settleAll();
+            initPaging();
+        });
+    }
+
+    function renderPosts(entries) {
+        const width = embedWidth();
+        const frag = document.createDocumentFragment();
+        entries.forEach((entry) => frag.appendChild(buildCard(entry, width)));
+        track.innerHTML = ""; // drop the placeholder skeletons
+        track.appendChild(frag);
+        track.removeAttribute("aria-busy");
+
+        // The Facebook SDK (and the paint watchdog) still wait until the section
+        // nears the viewport; only the small feed request runs at page load.
+        if ("IntersectionObserver" in window) {
+            const io = new IntersectionObserver((seen, obs) => {
+                if (seen.some((e) => e.isIntersecting)) {
+                    obs.disconnect();
+                    embedPosts();
+                }
+            }, { rootMargin: "400px 0px" });
+            io.observe(section);
+        } else {
+            embedPosts();
+        }
+    }
+
+    // The feed is fetched at page load, not when the section scrolls into view,
+    // so a doctor without posts has the section hidden before the visitor gets
+    // there — it never collapses under them mid-read.
+    showSkeletons();
+
+    let decided = false;
+    const timeout = setTimeout(() => {
+        if (decided) return;
+        decided = true;
+        hideSection();
+    }, FEED_TIMEOUT_MS);
+
+    fetchDoctorPosts(DOCTOR_SLUG).then((entries) => {
+        if (decided) return; // Late reply — the section is already hidden.
+        decided = true;
+        clearTimeout(timeout);
+        if (!entries.length) {
+            hideSection();
+            return;
+        }
+        renderPosts(entries);
+    });
+})();

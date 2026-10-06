@@ -65,6 +65,25 @@ if (menuToggle && mainNav) {
     });
 }
 
+// In-page anchor links: smooth-scroll without writing #section to the address bar,
+// and close the mobile menu once a nav link is chosen.
+document.addEventListener("click", (event) => {
+    const link = event.target instanceof Element ? event.target.closest('a[href^="#"]') : null;
+    if (!link) return;
+    const hash = link.getAttribute("href");
+    if (!hash || hash.length < 2) return;
+    let section = null;
+    try { section = document.querySelector(hash); } catch (e) { return; }
+    if (!section) return;
+
+    event.preventDefault();
+    if (menuToggle && mainNav && mainNav.classList.contains("open")) {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    }
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 // Testimonials Carousel
 (function () {
     const track = document.getElementById("testimonialsTrack");
@@ -574,7 +593,7 @@ initPhonePlugin();
 // the browser handles natively without touching any card.
 (function () {
     // Slug comes from <body data-slug="{{slug}}"> — only HTML pages are templated.
-    // An unreplaced "{{slug}}" counts as unset, so the section shows its empty state.
+    // An unreplaced "{{slug}}" counts as unset, so the section is hidden.
     const RAW_SLUG = (document.body.dataset.slug || "").trim();
     const DOCTOR_SLUG = RAW_SLUG.includes("{{") ? "" : RAW_SLUG;
     const API_BASE = "https://digidrapi.digidr.app";
@@ -582,6 +601,7 @@ initPhonePlugin();
     const MAX_CARDS = 5;
     const MAX_POST_AGE_DAYS = 30;
     const POSTS_PER_ACCOUNT = 10;
+    const FEED_TIMEOUT_MS = 7000; // No answer by then → section stays hidden, even if a reply arrives later.
 
     const section = document.getElementById("social-media");
     const carousel = document.getElementById("socialMediaCarousel");
@@ -591,23 +611,16 @@ initPhonePlugin();
 
     if (!section || !carousel || !track) return;
 
-    // The section is always visible. When there are no posts to show — empty feed,
-    // API failure, or an unset slug — it renders an explicit message rather than
-    // an empty band.
-    function showEmptyState() {
-        track.innerHTML = "";
-        carousel.classList.add("is-empty");
-        track.removeAttribute("aria-busy");
-        const msg = document.createElement("p");
-        msg.className = "social-media-empty";
-        msg.textContent = "Posts are taking a moment to load. Follow me on social media for the latest updates.";
-        track.appendChild(msg);
-        if (prevBtn) prevBtn.hidden = true;
-        if (nextBtn) nextBtn.hidden = true;
+    // The section only shows when the doctor has posts to display. No connected
+    // feed, no qualifying posts, an API failure, an unset slug or no answer within
+    // FEED_TIMEOUT_MS all hide the whole section, so the page flows straight on.
+    function hideSection() {
+        section.hidden = true;
+        section.style.display = "none"; // Templates may set display on <section>, beating [hidden].
     }
 
-    if (!DOCTOR_SLUG.trim()) {
-        showEmptyState();
+    if (!DOCTOR_SLUG) {
+        hideSection();
         return;
     }
 
@@ -831,50 +844,67 @@ initPhonePlugin();
         syncButtons();
     }
 
-    function start() {
-        fetchDoctorPosts(DOCTOR_SLUG).then((entries) => {
-            if (!entries.length) {
-                showEmptyState();
-                return;
-            }
-
-            const width = embedWidth();
-            const frag = document.createDocumentFragment();
-            entries.forEach((entry) => frag.appendChild(buildCard(entry, width)));
-            track.innerHTML = ""; // drop the placeholder skeletons
-            track.appendChild(frag);
-            track.removeAttribute("aria-busy");
-
-            watchCards();
-
-            return loadFbSdk().then((FB) => {
-                FB.Event.subscribe("xfbml.render", settleAll);
-                FB.XFBML.parse(track, settleAll);
-                initPaging();
-            }).catch(() => {
-                // SDK never loaded — settle immediately into link cards.
-                track.querySelectorAll(".social-post-card").forEach((card) => {
-                    card.dataset.deadline = "0";
-                });
-                settleAll();
-                initPaging();
+    function embedPosts() {
+        watchCards();
+        loadFbSdk().then((FB) => {
+            FB.Event.subscribe("xfbml.render", settleAll);
+            FB.XFBML.parse(track, settleAll);
+            initPaging();
+        }).catch(() => {
+            // SDK never loaded — settle immediately into link cards.
+            track.querySelectorAll(".social-post-card").forEach((card) => {
+                card.dataset.deadline = "0";
             });
+            settleAll();
+            initPaging();
         });
     }
 
+    function renderPosts(entries) {
+        const width = embedWidth();
+        const frag = document.createDocumentFragment();
+        entries.forEach((entry) => frag.appendChild(buildCard(entry, width)));
+        track.innerHTML = ""; // drop the placeholder skeletons
+        track.appendChild(frag);
+        track.removeAttribute("aria-busy");
+
+        // The Facebook SDK (and the paint watchdog) still wait until the section
+        // nears the viewport; only the small feed request runs at page load.
+        if ("IntersectionObserver" in window) {
+            const io = new IntersectionObserver((seen, obs) => {
+                if (seen.some((e) => e.isIntersecting)) {
+                    obs.disconnect();
+                    embedPosts();
+                }
+            }, { rootMargin: "400px 0px" });
+            io.observe(section);
+        } else {
+            embedPosts();
+        }
+    }
+
+    // The feed is fetched at page load, not when the section scrolls into view,
+    // so a doctor without posts has the section hidden before the visitor gets
+    // there — it never collapses under them mid-read.
     showSkeletons();
 
-    if ("IntersectionObserver" in window) {
-        const io = new IntersectionObserver((entries, obs) => {
-            if (entries.some((e) => e.isIntersecting)) {
-                obs.disconnect();
-                start();
-            }
-        }, { rootMargin: "400px 0px" });
-        io.observe(section);
-    } else {
-        start();
-    }
+    let decided = false;
+    const timeout = setTimeout(() => {
+        if (decided) return;
+        decided = true;
+        hideSection();
+    }, FEED_TIMEOUT_MS);
+
+    fetchDoctorPosts(DOCTOR_SLUG).then((entries) => {
+        if (decided) return; // Late reply — the section is already hidden.
+        decided = true;
+        clearTimeout(timeout);
+        if (!entries.length) {
+            hideSection();
+            return;
+        }
+        renderPosts(entries);
+    });
 })();
 
 // Booking Modal & Form Validation
@@ -1709,6 +1739,7 @@ initPhonePlugin();
         var content = wrap.querySelector(".read-more-content");
         if (!btn || !content) return;
 
+        if (wrap.classList.contains("is-expanded")) { btn.style.display = ""; return; }
         var isTruncated = content.scrollHeight > content.clientHeight + 2;
         btn.style.display = isTruncated ? "" : "none";
     }

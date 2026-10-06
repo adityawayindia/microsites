@@ -61,6 +61,21 @@ const url = API_BASE + '/api/MicrositeSocialFeed/' +
     encodeURIComponent(DOCTOR_SLUG) + '?limit=' + POSTS_PER_ACCOUNT;
 ```
 
+**On the DigiDr live microsites** the slug comes from the page, never a
+hardcoded string: only the HTML pages are templated (see
+`parameterization.md`), so a literal `{{slug}}` inside `script/index.js` would
+never be replaced. Read it from `<body data-slug="{{slug}}">` instead, and
+treat an unreplaced placeholder as unset:
+
+```js
+const RAW_SLUG = (document.body.dataset.slug || "").trim();
+const DOCTOR_SLUG = RAW_SLUG.includes("{{") ? "" : RAW_SLUG;
+```
+
+The slug is the microsite's real URL slug, which often differs from the
+folder name (e.g. `Raj-kumar` → `drraj`, `deepak-dabkara` → `deepak-dabkara-3`,
+`samir-shah` → `dr-samir-shah`). `GET /api/MicrositeSocialFeed` lists them all.
+
 Since there's only one doctor, "one post per owner" no longer applies —
 instead, show that doctor's **N most recent qualifying posts** (across all
 their connected Facebook accounts, if they have more than one).
@@ -68,8 +83,8 @@ their connected Facebook accounts, if they have more than one).
 ## Core rules
 
 1. **No doctor-list step — the slug is given, not discovered.**
-   Do not call the list endpoint at all. Fail fast (show the empty-state
-   fallback) if `DOCTOR_SLUG` is unset/blank, rather than silently calling
+   Do not call the list endpoint at all. Fail fast (hide the section — see
+   rule 11) if `DOCTOR_SLUG` is unset/blank, rather than silently calling
    an API with an empty slug.
 
 2. **Cap the number of cards shown at once.**
@@ -153,7 +168,11 @@ their connected Facebook accounts, if they have more than one).
    the carousel is about to be used, and only once (`fbSdkPromise` memoized).
    Loading is deferred until the carousel nears the viewport via
    `IntersectionObserver` (`rootMargin: '400px 0px'`), so it doesn't cost
-   anything on pages/users who never scroll to it.
+   anything on pages/users who never scroll to it. The paint watchdog
+   (`watchCards()`) starts with the SDK, not when the cards are built —
+   otherwise its deadline would expire before a slow scroller ever reaches the
+   section and every card would turn into a fallback link.
+   Only the SDK is lazy: the small feed request runs at page load (rule 11).
 
 8. **Pin the Graph API version explicitly, and don't let it go stale.**
    ```js
@@ -178,12 +197,23 @@ their connected Facebook accounts, if they have more than one).
     blocked (ad blockers, cookie restrictions), the fallback link is what's
     left visible instead of an empty box.
 
-11. **Retry the data fetch once, but fail to an empty state, not a crash.**
+11. **Show the section only when there are posts; otherwise hide it entirely.**
+    - The feed is fetched **at page load** (not when the section scrolls into
+      view), so the show/hide decision is normally made before the visitor
+      gets there and the section never collapses under them mid-read.
     - `fetchJson` retries a failed request once after a short delay
       (network blips are common on mobile).
-    - If the fetch ultimately fails, or the doctor has zero qualifying
-      posts after filtering, show a text fallback ("Posts are taking a
-      moment to load...") instead of an empty section.
+    - Wait up to **`FEED_TIMEOUT_MS = 7000`** (7 s) for an answer, showing the
+      skeleton cards meanwhile.
+    - **Hide the whole section** (`hideSection()`: `hidden` + inline
+      `display: none`, since templates may set `display` on `<section>`) when:
+      the slug is unset, no Facebook feed is connected, the feed has zero
+      qualifying posts after filtering (all videos / older than
+      `MAX_POST_AGE_DAYS`), the API fails, or there is no answer within 7 s.
+    - The decision is **final**: a reply that arrives after the 7 s timeout is
+      ignored and the section stays hidden (no late pop-in / layout shift).
+    - There is no "Posts are taking a moment to load…" empty-state message any
+      more — a doctor without posts simply has no social section.
 
 12. **Read the embed width from CSS, not a hardcoded constant.**
     ```js
@@ -206,17 +236,87 @@ their connected Facebook accounts, if they have more than one).
     }
     ```
 
+14. **Card look is fixed — every microsite must match `dhara-sharma` exactly.**
+    The section header (kicker, `h2`, subtitle), the prev/next buttons and the
+    section band colour follow each microsite's own palette, but the **cards
+    themselves are identical everywhere**. Never remap these values to the
+    local theme:
+
+    | Property | Value |
+    |---|---|
+    | Card size (desktop, >1100px) | `--post-card-width: 300px; --post-card-height: 400px` |
+    | Card size (tablet, 641–1100px) | `300px × 400px` |
+    | Card size (mobile, ≤640px) | `280px × 375px` (Facebook's embed floor is ~250px) |
+    | Gap between cards | `30px` |
+    | Corner radius | `24px` |
+    | Surface | `#ffffff` |
+    | Border | `1px solid hsl(155, 18%, 85%)` |
+    | Shadow | `0 4px 18px hsla(168, 40%, 18%, 0.10)` |
+    | Overflow | `hidden` on the card **and** on `.fb-post` — the post is **clipped, never scrolled** |
+    | Bottom fade | `44px` linear-gradient, transparent → `#ffffff` (skipped on fallback cards) |
+
+    The card height is deliberately fixed (`height: var(--post-card-height)
+    !important`), overriding the global auto-height rule: Facebook sizes its
+    iframe to the post's content (one long post measured ~3700px), so an
+    auto-height card would stretch the whole row. Do **not** add an inner
+    scrollbar (it traps swipes on mobile inside a horizontal carousel) and do
+    **not** add a "View on Facebook" button over the card.
+
+15. **Skeleton loading — never a blank card or an empty band.**
+    Loading is shown in two phases, both using the same skeleton that mirrors a
+    Facebook post (round 44px avatar + two name lines, a large image block,
+    two text lines), shimmering between `hsl(150, 24%, 94%)` and
+    `hsl(150, 25%, 99%)`:
+
+    1. **Before the API responds:** `showSkeletons()` fills the track with 3
+       placeholder cards (`.social-post-card.is-placeholder`) and sets
+       `aria-busy="true"` on the track. It runs at init, together with the
+       feed request, and stays up for at most 7 s (rule 11) before the
+       section either shows its posts or is hidden.
+    2. **After the cards are built, until Facebook paints:** each real card
+       gets the same skeleton (`buildSkeleton()`) as an absolutely positioned
+       layer *behind* the `.fb-post` (`z-index: 0`). It is hidden with
+       `.social-post-card.is-loaded .social-post-skeleton { display: none; }`
+       when the card settles — the card DOM is still built once and never
+       cloned or re-parented (rule 6).
+
+    `renderPosts()` clears the placeholders (`track.innerHTML = ""`)
+    immediately before inserting the real cards and removes `aria-busy`.
+    Skeletons are `aria-hidden="true"`, and the shimmer animation is disabled
+    under `prefers-reduced-motion: reduce`.
+
+16. **Integrating into a microsite whose CSS has a global reset — gotchas.**
+    - The DigiDr global reset sets `div { max-width: 100% }`. The track uses
+      `width: max-content; min-width: 100%; justify-content: center` (centred
+      while the posts fit), so it **must** also set `max-width: none` —
+      otherwise the track is capped at the carousel width and centring pushes
+      the first cards off the left edge, where they can never be scrolled to.
+    - Several older templates still carry CSS for a removed mock social section
+      (`.social-post-card` hover lift, flex layout, `.social-media-carousel {
+      overflow: hidden }`) and an old "Social Media Carousel" JS IIFE. Append
+      the widget CSS at the **end** of `style.css`, scope card rules under
+      `.social-media-section`, and reset `transform`/`transition`/hover. The
+      old IIFE is harmless (it exits when the track has no cards at load).
+    - Give the prev/next buttons their own class (`.social-carousel-btn`)
+      instead of reusing the testimonials `.carousel-btn`, whose rules differ
+      per template.
+    - Facebook embeds don't load from `file://` (unique origin) — test over
+      `http(s)`.
+
 ## Order of operations (summary)
 
-1. `IntersectionObserver` fires → `start()`.
-2. Validate `DOCTOR_SLUG` is set → call the per-doctor API directly
+1. At page load: validate `DOCTOR_SLUG` (unset → hide the section, stop).
+2. Show 3 skeleton placeholder cards (`aria-busy="true"`), start the 7 s
+   timeout, and call the per-doctor API directly
    (`/api/MicrositeSocialFeed/{slug}`) — no list API involved.
 3. Flatten posts across all of that doctor's Facebook accounts → drop
    videos → drop stale posts → sort newest-first → slice to `MAX_CARDS`.
-4. If empty, show the fallback message; otherwise build DOM for each card
-   (embed div + fallback link), insert once.
-5. Lazy-load Facebook SDK (memoized) → `FB.init` with a pinned version →
-   `FB.XFBML.parse(container)`.
+4. Zero posts, API failure or the 7 s timeout → hide the section (final).
+   Otherwise clear the placeholders and build DOM for each card (skeleton
+   layer + embed div + fallback link), insert once.
+5. `IntersectionObserver` sees the section near the viewport → start the paint
+   watchdog → lazy-load Facebook SDK (memoized) → `FB.init` with a pinned
+   version → `FB.XFBML.parse(container)`.
 6. Init manual carousel paging (container-level scroll only, cards untouched).
 
 ## Porting checklist
@@ -231,5 +331,16 @@ their connected Facebook accounts, if they have more than one).
 - [ ] Pin `FB_GRAPH_VERSION` and note it needs periodic bumping.
 - [ ] Never clone/re-parent a card holding a parsed `.fb-post` embed.
 - [ ] Always include the `fb-xfbml-parse-ignore` fallback link.
-- [ ] Fail to an explicit empty/fallback state — never a blank section —
-      on missing slug, API failure, or zero qualifying posts.
+- [ ] Hide the whole section — never a blank or empty band — on missing
+      slug, no connected feed, zero qualifying posts, API failure, or no
+      answer within 7 s; a late reply must not bring it back (rule 11).
+- [ ] Fetch the feed at page load; keep only the SDK behind
+      `IntersectionObserver`.
+- [ ] Slug read from `<body data-slug="{{slug}}">`, not hardcoded in the JS.
+- [ ] Cards match the fixed `dhara-sharma` spec (rule 14) — 300×400 /
+      280×375, 24px radius, clipped with the 44px fade, no inner scroll.
+- [ ] Skeleton loading in both phases (rule 15); test with a slow network.
+- [ ] Track has `max-width: none` (rule 16); test with 5 posts, not just 2 —
+      the clipping bug is invisible when the posts fit.
+- [ ] Verify over `http(s)` at 1440px and 390px: cards render, Next pages
+      the carousel, no horizontal page overflow.
