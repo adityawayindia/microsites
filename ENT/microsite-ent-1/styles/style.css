@@ -1643,8 +1643,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 /* --post-card-width is read by the JS to size the SDK embed (data-width),
    so the iframe Facebook builds always matches the real card width. */
 .social-media-carousel {
-  --post-card-width: 310px;
-  --post-card-height: 530px;
+  --post-card-width: 300px;
+  --post-card-height: 400px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
@@ -1655,18 +1655,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 
 .social-media-track {
   display: flex;
-  gap: 22px;
+  gap: 30px;
   align-items: flex-start;
 }
-
 /* Every card is locked to one height (--post-card-height). Facebook sizes its
-   iframe to the post's own content, which varies wildly — a long post reported
-   ~3700px here, and because the track is sized by its tallest child, that one
-   post stretched the whole section into a page-long scroll. The card clips to a
-   fixed box and the embed scrolls inside it, so card height is independent of
-   post length. Height is NOT auto here, which deliberately departs from the
-   global auto-height rule: the content is a fixed-size cross-origin iframe, not
-   text that needs room to wrap. */
+   iframe to the post's own content, which varies wildly (one long post
+   reported ~3700px), so the card clips the embed instead of growing or
+   scrolling. Height is NOT auto here, which deliberately departs from the
+   global auto-height rule: the content is a fixed-size cross-origin iframe. */
 .social-post-card {
   flex: 0 0 var(--post-card-width);
   min-width: 0;
@@ -1675,24 +1671,41 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   min-height: 0;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--shadow-card);
 }
 
-/* Skeleton shimmer behind the embed, so the card reads as loading rather than
-   as a blank box during the second or two before Facebook paints its iframe. */
-.social-post-card::before {
-  content: "";
+/* Skeleton loading state: placeholder cards before the feed arrives, then the
+   same skeleton behind each embed until Facebook paints its iframe. */
+.social-post-skeleton {
   position: absolute;
   inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface);
+}
+.social-post-card.is-loaded .social-post-skeleton { display: none; }
+
+.social-post-skeleton .sk {
+  display: block;
+  border-radius: 8px;
   background: linear-gradient(100deg,
     var(--bg-2) 30%, var(--surface-2) 50%, var(--bg-2) 70%);
   background-size: 220% 100%;
   animation: social-post-shimmer 1.4s ease-in-out infinite;
-  z-index: 0;
 }
-.social-post-card.is-loaded::before { display: none; }
+.social-post-skeleton .sk-head { display: flex; align-items: center; gap: 12px; }
+.social-post-skeleton .sk-avatar { flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%; }
+.social-post-skeleton .sk-lines { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.social-post-skeleton .sk-line { height: 12px; width: 100%; }
+.social-post-skeleton .sk-w80 { width: 80%; }
+.social-post-skeleton .sk-w60 { width: 60%; }
+.social-post-skeleton .sk-w40 { width: 40%; }
+.social-post-skeleton .sk-media { flex: 1 1 auto; min-height: 0; border-radius: 12px; }
 
 @keyframes social-post-shimmer {
   from { background-position: 180% 0; }
@@ -1700,21 +1713,32 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .social-post-card::before { animation: none; }
+  .social-post-skeleton .sk { animation: none; }
 }
 
 .social-post-card {
   position: relative;
 }
 
-/* The embed scrolls within the fixed-height card instead of expanding it. */
+/* The embed is clipped by the fixed-height card — no scrolling. */
 .social-post-card .fb-post {
   position: relative;
   z-index: 1;
   height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: thin;
+  overflow: hidden;
+}
+
+/* Bottom fade makes the cut look deliberate. */
+.social-post-card:not(.is-fallback)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 44px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--surface) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* The SDK writes fixed inline widths onto its own wrappers; cap them so a
@@ -1791,11 +1815,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 @media (max-width: 640px) {
-  .social-media-carousel { --post-card-width: 300px; --post-card-height: 515px; }
+  .social-media-carousel { --post-card-width: 280px; --post-card-height: 375px; }
 }
 
 @media (min-width: 641px) and (max-width: 1100px) {
-  .social-media-carousel { --post-card-width: 290px; --post-card-height: 505px; }
+  .social-media-carousel { --post-card-width: 300px; --post-card-height: 400px; }
 }
 
 @media (max-width: 900px) {

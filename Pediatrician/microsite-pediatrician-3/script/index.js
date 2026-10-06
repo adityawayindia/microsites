@@ -1753,3 +1753,158 @@ initPhonePlugin();
     observer.observe(el);
   });
 })();
+
+// Facebook Posts Widget — single doctor, per FACEBOOK_WIDGET_LOGIC.md.
+// Cards hold live Facebook embeds, which must never be cloned (a cloned embed
+// renders blank) nor re-parented (that reloads the iframe). So the DOM is built
+// once and left alone: paging only changes the container's scrollLeft.
+(function () {
+  var carousel = document.getElementById("fbPostsCarousel");
+  var emptyEl = document.getElementById("fbPostsEmpty");
+  if (!carousel) return;
+
+  var API_BASE = "https://digidrapi.digidr.app";
+  var DOCTOR_SLUG = (document.body.getAttribute("data-slug") || "").trim();
+  var MAX_CARDS = 5;
+  var MAX_POST_AGE_DAYS = 30;
+  var POSTS_PER_ACCOUNT = 10;
+  var FB_GRAPH_VERSION = "v23.0"; // bump periodically: stale versions render blank embeds
+  var fbSdkPromise = null;
+
+  function showEmpty() { if (emptyEl) emptyEl.hidden = false; }
+
+  function fetchJson(url, retried) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).catch(function (err) {
+      if (retried) throw err;
+      return new Promise(function (res) { setTimeout(res, 1200); })
+        .then(function () { return fetchJson(url, true); });
+    });
+  }
+
+  function isVideoPermalink(url) { return /\/videos\//i.test(url); }
+
+  function isRecent(createdAt) {
+    var t = Date.parse(createdAt);
+    if (isNaN(t)) return false;
+    return Date.now() - t <= MAX_POST_AGE_DAYS * 86400000;
+  }
+
+  function fetchDoctorPosts(slug) {
+    var url = API_BASE + "/api/MicrositeSocialFeed/" +
+      encodeURIComponent(slug) + "?limit=" + POSTS_PER_ACCOUNT;
+    return fetchJson(url).then(function (data) {
+      if (!data || data.success === false || !Array.isArray(data.feeds)) return [];
+      var entries = [];
+      data.feeds.forEach(function (feed) {
+        if (!feed || feed.platform !== "facebook" || !Array.isArray(feed.posts)) return;
+        feed.posts.forEach(function (post) {
+          if (!post || !post.permalink) return;
+          if (isVideoPermalink(post.permalink)) return;
+          if (!isRecent(post.createdAt)) return;
+          entries.push({ permalink: post.permalink, createdAt: post.createdAt || "" });
+        });
+      });
+      entries.sort(function (a, b) { return new Date(b.createdAt) - new Date(a.createdAt); });
+      return entries.slice(0, MAX_CARDS);
+    }).catch(function () { return []; });
+  }
+
+  function cardWidth() {
+    var raw = parseInt(getComputedStyle(carousel).getPropertyValue("--post-card-width"), 10);
+    var w = raw > 0 ? raw : 300;
+    return Math.min(w, Math.max(240, window.innerWidth - 48));
+  }
+
+  function buildCards(posts) {
+    var width = cardWidth();
+    var frag = document.createDocumentFragment();
+    posts.forEach(function (post) {
+      var card = document.createElement("div");
+      card.className = "fb-post-card";
+      var embed = document.createElement("div");
+      embed.className = "fb-post";
+      embed.setAttribute("data-href", post.permalink);
+      embed.setAttribute("data-width", String(width));
+      embed.setAttribute("data-show-text", "true");
+      var bq = document.createElement("blockquote");
+      bq.className = "fb-xfbml-parse-ignore";
+      bq.setAttribute("cite", post.permalink);
+      var a = document.createElement("a");
+      a.href = post.permalink;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = "View this post on Facebook";
+      bq.appendChild(a);
+      embed.appendChild(bq);
+      card.appendChild(embed);
+      frag.appendChild(card);
+    });
+    carousel.appendChild(frag);
+  }
+
+  function loadFbSdk() {
+    if (fbSdkPromise) return fbSdkPromise;
+    fbSdkPromise = new Promise(function (resolve, reject) {
+      if (window.FB) { resolve(window.FB); return; }
+      window.fbAsyncInit = function () {
+        window.FB.init({ xfbml: false, version: FB_GRAPH_VERSION });
+        resolve(window.FB);
+      };
+      var s = document.createElement("script");
+      s.src = "https://connect.facebook.net/en_US/sdk.js";
+      s.async = true;
+      s.defer = true;
+      s.crossOrigin = "anonymous";
+      s.onerror = reject;
+      document.body.appendChild(s);
+    });
+    return fbSdkPromise;
+  }
+
+  function initPaging() {
+    var prev = document.querySelector(".fb-carousel-prev");
+    var next = document.querySelector(".fb-carousel-next");
+    var items = carousel.querySelectorAll(".fb-post-card");
+    if (!prev || !next || !items.length) return;
+
+    function stepSize() {
+      var gap = parseFloat(getComputedStyle(carousel).columnGap) || 0;
+      var span = items[0].offsetWidth + gap;
+      var perPage = Math.max(1, Math.floor(carousel.clientWidth / span));
+      return span * perPage;
+    }
+    function update() {
+      var maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      prev.hidden = next.hidden = maxScroll <= 2;
+      prev.disabled = carousel.scrollLeft <= 2;
+      next.disabled = carousel.scrollLeft >= maxScroll - 2;
+    }
+    prev.addEventListener("click", function () { carousel.scrollLeft -= stepSize(); });
+    next.addEventListener("click", function () { carousel.scrollLeft += stepSize(); });
+    carousel.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
+  function start() {
+    if (!DOCTOR_SLUG) { showEmpty(); return; }
+    fetchDoctorPosts(DOCTOR_SLUG).then(function (posts) {
+      if (!posts.length) { showEmpty(); return; }
+      buildCards(posts);
+      initPaging();
+      loadFbSdk().then(function (FB) { FB.XFBML.parse(carousel); }).catch(function () {});
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); start(); }
+    }, { rootMargin: "400px 0px" });
+    io.observe(carousel);
+  } else {
+    start();
+  }
+})();

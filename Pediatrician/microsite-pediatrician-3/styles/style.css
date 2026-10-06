@@ -2738,3 +2738,78 @@ section.faq-section {
       radial-gradient(circle at 0% 55%, hsla(18, 88%, 64%, 0.20) 0, hsla(18, 88%, 64%, 0.07) 120px, transparent 200px);
   }
 }
+
+/* ==========================================================================
+   SOCIAL MEDIA — Facebook post embed carousel
+   Card size is fixed by design (375 x 500) so live embeds line up evenly;
+   overflow is clipped with a bottom fade.
+   ========================================================================== */
+.peds2-social-feed { padding: 64px 0; background: var(--navy-light); }
+.peds2-social-feed .peds2-section-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
+.peds2-social-feed .peds2-section-subtitle { margin-left: auto; margin-right: auto; }
+
+.fb-carousel-wrap { display: flex; align-items: center; justify-content: center; gap: 12px; min-width: 0; }
+.fb-carousel {
+  --post-card-width: 375;
+  display: flex;
+  justify-content: safe center;
+  column-gap: 32px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 12px 4px 20px;
+  min-width: 0;
+  max-width: 100%;
+}
+.fb-carousel::-webkit-scrollbar { display: none; }
+
+.fb-post-card {
+  flex: 0 0 auto;
+  width: 375px;
+  max-width: calc(100vw - 48px);
+  height: 500px !important;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  scroll-snap-align: start;
+}
+.fb-post-card::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 56px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+  pointer-events: none;
+}
+/* Global reset's max-width: 100% can squash the SDK iframe (AGENTS.md §25) */
+.fb-post-card .fb-post,
+.fb-post-card .fb-post span,
+.fb-post-card .fb-post iframe { max-width: none; }
+.fb-post-card blockquote { margin: 0; padding: 24px; }
+.fb-post-card blockquote a { color: var(--navy); font-weight: 600; overflow-wrap: break-word; word-break: break-word; }
+
+.fb-carousel-btn {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--navy);
+  background: #fff;
+  color: var(--navy);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.fb-carousel-btn:hover:not(:disabled) { background: var(--navy); color: #fff; }
+.fb-carousel-btn:disabled { opacity: 0.35; cursor: default; }
+.fb-carousel-btn[hidden] { display: none; }
+
+.fb-carousel-empty { text-align: center; font-size: 18px; color: var(--navy-dark); }
+
+@media (max-width: 640px) {
+  .fb-carousel-btn { display: none !important; }
+  .fb-carousel { column-gap: 16px; justify-content: flex-start; }
+}

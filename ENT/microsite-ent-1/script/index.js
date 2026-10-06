@@ -353,9 +353,10 @@ if (menuToggle && mainNav) {
   function showEmptyState() {
     track.innerHTML = "";
     carousel.classList.add("is-empty");
+    track.removeAttribute("aria-busy");
     const msg = document.createElement("p");
     msg.className = "social-media-empty";
-    msg.textContent = "Posts are taking a moment to load. Visit our Facebook page for the latest updates.";
+    msg.textContent = "Posts are taking a moment to load. Follow me on social media for the latest updates.";
     track.appendChild(msg);
     if (prevBtn) prevBtn.hidden = true;
     if (nextBtn) nextBtn.hidden = true;
@@ -497,6 +498,34 @@ if (menuToggle && mainNav) {
     }, 400);
   }
 
+  // Skeleton that mirrors a Facebook post (avatar + name, image, text lines).
+  // Used for placeholder cards while the feed loads, and layered behind each
+  // real embed until its iframe paints; hidden via .is-loaded, never moved.
+  function buildSkeleton() {
+    const skel = document.createElement("div");
+    skel.className = "social-post-skeleton";
+    skel.setAttribute("aria-hidden", "true");
+    skel.innerHTML =
+      '<div class="sk-head"><span class="sk sk-avatar"></span>' +
+      '<span class="sk-lines"><span class="sk sk-line sk-w60"></span>' +
+      '<span class="sk sk-line sk-w40"></span></span></div>' +
+      '<span class="sk sk-media"></span>' +
+      '<span class="sk sk-line"></span>' +
+      '<span class="sk sk-line sk-w80"></span>';
+    return skel;
+  }
+
+  function showSkeletons() {
+    track.innerHTML = "";
+    track.setAttribute("aria-busy", "true");
+    for (let i = 0; i < 3; i++) {
+      const card = document.createElement("div");
+      card.className = "social-post-card is-placeholder";
+      card.appendChild(buildSkeleton());
+      track.appendChild(card);
+    }
+  }
+
   function buildCard(entry, width) {
     const card = document.createElement("article");
     card.className = "social-post-card";
@@ -523,6 +552,7 @@ if (menuToggle && mainNav) {
     fallback.appendChild(link);
 
     embed.appendChild(fallback);
+    card.appendChild(buildSkeleton());
     card.appendChild(embed);
     return card;
   }
@@ -567,7 +597,9 @@ if (menuToggle && mainNav) {
       const width = embedWidth();
       const frag = document.createDocumentFragment();
       entries.forEach((entry) => frag.appendChild(buildCard(entry, width)));
+      track.innerHTML = ""; // drop the placeholder skeletons
       track.appendChild(frag);
+      track.removeAttribute("aria-busy");
 
       watchCards();
 
@@ -585,6 +617,8 @@ if (menuToggle && mainNav) {
       });
     });
   }
+
+  showSkeletons();
 
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries, obs) => {
