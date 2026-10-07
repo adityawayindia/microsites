@@ -72,6 +72,25 @@ if (menuToggle && mainNav) {
   });
 }
 
+// In-page anchor links: smooth-scroll without writing #section to the address bar,
+// and close the mobile menu once a nav link is chosen.
+document.addEventListener("click", (event) => {
+    const link = event.target instanceof Element ? event.target.closest('a[href^="#"]') : null;
+    if (!link) return;
+    const hash = link.getAttribute("href");
+    if (!hash || hash.length < 2) return;
+    let section = null;
+    try { section = document.querySelector(hash); } catch (e) { return; }
+    if (!section) return;
+
+    event.preventDefault();
+    if (menuToggle && mainNav && mainNav.classList.contains("open")) {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    }
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 // Animated Stat Counters
 (function () {
   const statEls = document.querySelectorAll(".stat-card-num[data-count-to]");
@@ -1402,6 +1421,7 @@ if (menuToggle && mainNav) {
     var content = wrap.querySelector(".read-more-content");
     if (!btn || !content) return;
 
+    if (wrap.classList.contains("is-expanded")) { btn.style.display = ""; return; }
     var isTruncated = content.scrollHeight > content.clientHeight + 2;
     btn.style.display = isTruncated ? "" : "none";
   }
