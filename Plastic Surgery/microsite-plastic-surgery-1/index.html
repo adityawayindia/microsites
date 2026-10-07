@@ -50,7 +50,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -80,7 +80,7 @@
   }
   </script>
 </head>
-<body>
+<body data-micrositeid="{{micrositeId}}" data-slug="dhara-sharma">
 
   <!-- ====== HEADER ====== -->
   <header class="site-header">
@@ -91,7 +91,7 @@
         </span>
         <span class="brand-text">
           <span class="brand-name" title="Dr. Vikram Malhotra">Dr. Vikram Malhotra</span>
-          <span class="brand-role">Plastic &amp; Cosmetic Surgeon</span>
+          <span class="brand-role">Plastic Surgeon</span>
         </span>
       </a>
 
@@ -120,7 +120,7 @@
     </div>
   </header>
 
-  <!-- ====== HERO — midnight & champagne, facial-proportion contour markings ====== -->
+  <!-- ====== HERO — midnight & champagne ====== -->
   <section class="hero-section" id="home">
     <!-- ==========================================================================
          DIGIDR MODULAR BANNER MODULE (Hero Banner)
@@ -165,28 +165,16 @@
     </div>
     <!-- END OF MODULAR BANNER MODULE -->
 
-    <div class="hero-mesh" aria-hidden="true"></div>
-
     <div class="container hero-layout">
       <div class="hero-content">
         <p class="expert-badge">
           <span class="expert-badge-pulse" aria-hidden="true"></span>
-          Aesthetic &amp; Reconstructive Plastic Surgery
+          Reconstructive Plastic Surgery
         </p>
 
         <h1 class="hero-title">Dr. Vikram Malhotra</h1>
-        <p class="hero-tagline">Refined results. <em>Natural proportions.</em></p>
         <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MS (General Surgery), MCh (Plastic &amp; Reconstructive Surgery)</p>
         <p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No. 64318</p>
-
-        <ul class="hero-procedures" aria-label="Signature procedures">
-          <li>Rhinoplasty</li>
-          <li>Facial Contouring</li>
-          <li>Liposuction</li>
-          <li>Gynecomastia</li>
-          <li>Hair Restoration</li>
-          <li>Scar Revision</li>
-        </ul>
 
         <div class="hero-stats-grid">
           <article class="hero-stat-box">
@@ -208,17 +196,6 @@
 
         <p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Languages:</strong> English &bull; Hindi &bull; Marathi</p>
 
-        <div class="hero-actions">
-          <a href="#" class="hero-book-btn" data-open-booking data-ga-event="book_appointment_click" data-ga-label="Hero">
-            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-            <span>Book a Consultation</span>
-          </a>
-          <a href="#services" class="hero-cta-secondary" data-ga-event="hero_procedures_click">
-            <span>Explore Procedures</span>
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
         <div class="social-links" aria-label="Social media links">
           <a href="#" class="social" aria-label="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Hero"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="social" aria-label="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Hero"><i class="fa-brands fa-facebook"></i></a>
@@ -232,45 +209,11 @@
       </div>
 
       <div class="hero-visual">
-        <!-- Decorative facial-proportion study: profile contour, golden-ratio arcs
-             and dashed pre-operative marking lines (pure SVG, no text content). -->
-        <svg class="hero-contour" viewBox="0 0 520 620" aria-hidden="true" focusable="false">
-          <g class="hc-grid">
-            <line x1="0" y1="150" x2="520" y2="150" />
-            <line x1="0" y1="270" x2="520" y2="270" />
-            <line x1="0" y1="390" x2="520" y2="390" />
-            <line x1="0" y1="480" x2="520" y2="480" />
-          </g>
-          <circle class="hc-arc" cx="260" cy="310" r="236" />
-          <circle class="hc-arc hc-arc--inner" cx="260" cy="310" r="146" />
-          <circle class="hc-arc hc-arc--small" cx="260" cy="310" r="90" />
-          <path class="hc-profile" d="M392 40 C 402 92, 396 132, 402 168 C 408 204, 424 232, 440 268 C 452 294, 452 304, 434 310 C 424 314, 422 322, 426 334 C 430 346, 420 354, 420 362 C 424 372, 428 384, 416 396 C 406 406, 408 418, 402 432 C 392 454, 360 466, 330 470 C 304 474, 290 500, 286 540 L 282 600" />
-          <path class="hc-mark" d="M402 168 L 458 150" />
-          <path class="hc-mark" d="M440 268 L 488 262" />
-          <path class="hc-mark" d="M402 432 L 470 470" />
-          <path class="hc-mark hc-mark--curve" d="M300 470 C 330 430, 380 420, 402 432" />
-          <g class="hc-cross">
-            <path d="M452 144 l12 12 M464 144 l-12 12" />
-            <path d="M482 256 l12 12 M494 256 l-12 12" />
-            <path d="M464 464 l12 12 M476 464 l-12 12" />
-          </g>
-          <g class="hc-dots">
-            <circle cx="402" cy="168" r="4" />
-            <circle cx="440" cy="268" r="4" />
-            <circle cx="420" cy="362" r="4" />
-            <circle cx="402" cy="432" r="4" />
-          </g>
-        </svg>
-
         <div class="hero-visual-blob" aria-hidden="true"></div>
         <div class="hero-portrait">
           <img src="assets/dr-vikram-malhotra.jpg" alt="Dr. Vikram Malhotra, plastic and cosmetic surgeon, portrait" class="hero-image" />
         </div>
 
-        <div class="hero-float hero-float--top">
-          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-          <span>Board-Certified Plastic Surgeon</span>
-        </div>
         <div class="hero-float hero-float--bottom">
           <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
           <span>Natural-Looking Results</span>
@@ -278,21 +221,11 @@
       </div>
     </div>
 
-    <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,0 C240,40 480,80 720,80 C960,80 1200,40 1440,0 L1440,90 L0,90 Z"></path>
-    </svg>
   </section>
 
   <!-- ====== ABOUT ====== -->
   <section class="about-section" id="about">
     <div class="container about-layout">
-      <div class="about-aside">
-        <div class="about-photo-glow" aria-hidden="true"></div>
-        <div class="about-photo-frame">
-          <img src="assets/about-surgeon.jpg" alt="Dr. Vikram Malhotra in his consultation room at the plastic surgery practice" loading="lazy" />
-        </div>
-      </div>
-
       <div class="about-content">
         <span class="about-kicker">About the Surgeon</span>
         <h2 class="about-title">Surgical Precision With an Artist's Eye</h2>
@@ -344,40 +277,68 @@
 
       <div class="services-grid">
         <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-face-smile" aria-hidden="true"></i></div>
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
           <h3>Rhinoplasty</h3>
           <p>Nose reshaping for improved balance and breathing, including open, closed, and revision rhinoplasty.</p>
         </article>
 
         <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
           <h3>Facial Rejuvenation</h3>
           <p>Facelift, neck lift, eyelid surgery (blepharoplasty), and chin or jawline contouring for a refreshed look.</p>
         </article>
 
         <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-person" aria-hidden="true"></i></div>
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
           <h3>Liposuction &amp; Body Contouring</h3>
           <p>Targeted fat removal and sculpting of the abdomen, flanks, arms, and thighs, including tummy tuck.</p>
         </article>
 
         <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-mars" aria-hidden="true"></i></div>
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
           <h3>Gynecomastia Surgery</h3>
           <p>Male chest reduction combining liposuction and gland excision for a flatter, firmer, more masculine contour.</p>
         </article>
 
         <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
           <h3>Hair Restoration</h3>
           <p>FUE and FUT hair transplantation with natural hairline design, plus beard and eyebrow restoration.</p>
         </article>
 
         <article class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i></div>
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
           <h3>Reconstructive &amp; Scar Surgery</h3>
           <p>Scar revision, post-burn and post-trauma reconstruction, cleft care, and hand surgery to restore form and function.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SOCIAL MEDIA — live Facebook post embeds ====== -->
+  <section class="social-media-section" id="social-media">
+    <div class="container">
+      <div class="social-media-header">
+        <span class="social-media-kicker">
+          <i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Latest Updates
+        </span>
+        <h2 class="social-media-title">From My Social Media</h2>
+        <p class="social-media-subtitle">
+          My latest posts and practical guidance, shared directly from the clinic on social media.
+        </p>
+      </div>
+
+      <div class="social-media-carousel-wrap">
+        <button type="button" class="social-carousel-btn social-carousel-prev" aria-label="Previous posts">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="social-carousel-btn social-carousel-next" aria-label="Next posts">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <div class="social-media-carousel" id="socialMediaCarousel">
+          <div class="social-media-track" id="socialMediaTrack"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -633,6 +594,9 @@
         </figure>
         <figure class="gallery-item gallery-item">
           <img src="assets/gallery-hospital.jpg" alt="Hospital building exterior and entrance" loading="lazy" />
+        </figure>
+        <figure class="gallery-item gallery-item">
+          <img src="assets/gallery-consultation-suite.jpg" alt="Bright, minimalist consultation suite and patient waiting lounge" loading="lazy" />
         </figure>
       </div>
     </div>
@@ -891,10 +855,9 @@
           </span>
           <span class="brand-text">
             <span class="brand-name">Dr. Vikram Malhotra</span>
-            <span class="brand-role">Plastic, Aesthetic &amp; Reconstructive Surgeon</span>
+            <span class="brand-role">Plastic Surgeon</span>
           </span>
         </a>
-        <p class="footer-tagline">Refined, natural-looking aesthetic and reconstructive surgery.</p>
         <div class="footer-social-wrap">
           <span class="footer-social-label">Follow me on:</span>
           <div class="footer-social">
@@ -907,6 +870,12 @@
             <a href="https://wa.me/919068935571" aria-label="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="#" aria-label="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer"><i class="fa-brands fa-youtube"></i></a>
           </div>
+        </div>
+
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
+          <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+          <span class="footer-visitor-badge-label">No. of Visitor:</span>
+          <span class="footer-visitor-badge-count">500</span>
         </div>
       </div>
 
@@ -929,19 +898,13 @@
             <a href="terms-of-service.html" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
           </nav>
         </div>
-
-        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
-          <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
-          <span class="footer-visitor-badge-label">No. of Visitor:</span>
-          <span class="footer-visitor-badge-count">500</span>
-        </div>
       </div>
     </div>
 
     <div class="footer-bottom-row">
       <p>&copy; 2026 Dr. Vikram Malhotra. All rights reserved.</p>
-    </div>
       <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+    </div>
   </footer>
 
   <script src="./script/banner-module.js"></script>
