@@ -4905,3 +4905,32 @@ select {
   .social-media-section .social-carousel-prev { grid-area: prev; position: static; transform: none; justify-self: end; margin-right: 8px; }
   .social-media-section .social-carousel-next { grid-area: next; position: static; transform: none; justify-self: start; margin-left: 8px; }
 }
+
+/* Booking modal — animated appointment-type switch */
+.booking-form.is-switching { animation: bookingFormSwap 0.3s ease; }
+@keyframes bookingFormSwap {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .booking-form.is-switching { animation: none; }
+  .booking-modal-tabs.is-positioned::before,
+  .booking-modal-tabs.is-positioned::after { transition: none; }
+}
+
+/* Sliding pill — JS sets --tab-left/-top/-width/-height, then adds .is-positioned */
+.booking-modal-tabs { position: relative; isolation: isolate; }
+.booking-modal-tabs.is-positioned::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: var(--tab-left, 0);
+  top: var(--tab-top, 0);
+  width: var(--tab-width, 0);
+  height: var(--tab-height, 0);
+  border-radius: 999px;
+  background: #6FA8DC;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.booking-modal-tabs.is-positioned .booking-tab { position: relative; z-index: 1; transition: color 0.25s ease; }
+.booking-modal-tabs.is-positioned .booking-tab.is-active { background: transparent; }

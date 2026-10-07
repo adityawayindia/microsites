@@ -219,7 +219,7 @@
         setTimeout(function () {
             hideTyping();
             addMessage(
-                "Thanks for your message! Our team will get back to you shortly. For immediate assistance, please call or visit our support page.",
+                "Thanks for your message! My team will get back to you shortly. For immediate assistance, please call or visit my support page.",
                 'bot'
             );
         }, 1200);

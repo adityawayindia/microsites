@@ -244,14 +244,14 @@
                 hideTyping();
                 var reply =
                     (data && (data.reply || data.message || data.answer || data.response)) ||
-                    "Thanks for your message! Our team will get back to you shortly. For immediate assistance, please call or visit our support page.";
+                    "Thanks for your message! My team will get back to you shortly. For immediate assistance, please call or visit my support page.";
                 addMessage(reply, 'bot');
             })
             .catch(function (err) {
                 console.error('MicrositeChat error:', err);
                 hideTyping();
                 addMessage(
-                    "Sorry, I'm having trouble responding right now. Please call or visit our support page for immediate assistance.",
+                    "Sorry, I'm having trouble responding right now. Please call or visit my support page for immediate assistance.",
                     'bot'
                 );
             });

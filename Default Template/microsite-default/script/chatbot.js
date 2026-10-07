@@ -211,7 +211,7 @@
         setTimeout(function () {
             hideTyping();
             addMessage(
-                "Thank you for contacting Dr. [Doctor Name]'s clinic. Our team will get back to you shortly. For appointments, you can also use the 'Book Appointment' button on our page.",
+                "Thank you for contacting Dr. [Doctor Name]'s clinic. My team will get back to you shortly. For appointments, you can also use the 'Book Appointment' button on my page.",
                 'bot'
             );
         }, 1200);

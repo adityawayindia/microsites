@@ -378,13 +378,16 @@ initPhonePlugin();
     //    if (event.key === "Escape" && !calendar.hidden) close();
     //});
 
-    form.addEventListener("reset", () => {
+    // Full form reset, or just the date/time pair when the appointment type is switched.
+    function clearSelectedDate() {
         selectedDate = null;
         trigger.value = "";
         hiddenInput.value = "";
         viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
         close();
-    });
+    }
+    form.addEventListener("reset", clearSelectedDate);
+    form.addEventListener("slotreset", clearSelectedDate);
 })();
 
 // Gallery Lightbox
@@ -1164,8 +1167,23 @@ initPhonePlugin();
         }
     });
 
+    // Slide the tab highlight under the active tab (measured, so it follows any tab width).
+    const tabsBar = clinicTab?.parentElement;
+    function moveTabIndicator() {
+        const current = [clinicTab, onlineTab].find((t) => t?.classList.contains("is-active"));
+        if (!tabsBar || !current || !current.offsetWidth) return;
+        tabsBar.style.setProperty("--tab-left", current.offsetLeft + "px");
+        tabsBar.style.setProperty("--tab-top", current.offsetTop + "px");
+        tabsBar.style.setProperty("--tab-width", current.offsetWidth + "px");
+        tabsBar.style.setProperty("--tab-height", current.offsetHeight + "px");
+        tabsBar.classList.add("is-positioned");
+    }
+    if (tabsBar && "ResizeObserver" in window) new ResizeObserver(moveTabIndicator).observe(tabsBar);
+    window.addEventListener("resize", moveTabIndicator);
+
     function setActiveTab(active) {
         if (!clinicTab || !onlineTab) return;
+        const alreadyActive = (active === "clinic" ? clinicTab : onlineTab).classList.contains("is-active");
         if (active === "clinic") {
             clinicTab.classList.add("is-active");
             onlineTab.classList.remove("is-active");
@@ -1176,6 +1194,19 @@ initPhonePlugin();
             onlineTab.classList.add("is-active");
             clinicTab.setAttribute("aria-selected", "false");
             onlineTab.setAttribute("aria-selected", "true");
+        }
+        moveTabIndicator();
+        if (!alreadyActive) {
+            // Available days/slots depend on the appointment type, so a date or slot chosen
+            // under the other type must not carry over. Name, phone, email etc. are kept.
+            form.dispatchEvent(new CustomEvent("slotreset"));
+            const timeSelect = document.getElementById("preferredTime");
+            if (timeSelect) timeSelect.innerHTML = '<option value="">Select Time Slot</option>';
+            showError("preferredDate", "");
+            showError("preferredTime", "");
+            form.classList.remove("is-switching");
+            void form.offsetWidth; // restart the animation
+            form.classList.add("is-switching");
         }
     }
 
