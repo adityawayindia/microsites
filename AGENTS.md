@@ -1526,3 +1526,33 @@ microsite's draft into one combined file served at `digidr.app/robots.txt`,
   (home: monthly/1.0, legal pages: yearly/0.3).
 - **llms.txt:** pull `{{full_name}}`/`{{speciality}}` from the same placeholders already
   used in `index.html`'s `<title>`/meta tags — don't invent new copy.
+
+---
+
+## 30. Social Media Carousel — Alignment & Button Visibility (Mandatory)
+
+Applies to the "From My Social Media" Facebook-embed carousel
+(`.social-media-track`, `.social-carousel-prev`/`-next`). Full widget logic lives in
+`FACEBOOK_WIDGET_LOGIC.md` (rules 16–17); this is the rule every microsite must
+follow.
+
+- **Cards fit** → centred, prev/next buttons **hidden**.
+  **Cards overflow** → left-aligned (first card beside the prev button), buttons
+  **shown**.
+- **Alignment (CSS):** `.social-media-track` uses `justify-content: safe center;` —
+  never plain `center`. Keep `width: max-content; min-width: 100%; max-width: none;`.
+- **Visibility (JS):** at the top of `syncButtons()` in `script/index.js`:
+  ```js
+  // Nothing to page through when every card already fits.
+  const fits = carousel.scrollWidth <= carousel.clientWidth + 1;
+  prevBtn.hidden = fits;
+  nextBtn.hidden = fits;
+  ```
+  Leave the existing `disabled` logic below it untouched.
+- **Required CSS** (`.carousel-btn` is `display: flex`, which would otherwise defeat
+  `[hidden]`):
+  ```css
+  .social-carousel-prev[hidden],
+  .social-carousel-next[hidden] { display: none; }
+  ```
+- Test with 2 posts and with 5+ posts, at desktop and ≤900px.

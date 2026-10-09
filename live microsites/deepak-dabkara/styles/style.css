@@ -4817,9 +4817,12 @@ select {
   width: max-content;
   min-width: 100%;
   max-width: none;
-  justify-content: center;
+  justify-content: safe center;
 }
 .social-media-carousel.is-empty .social-media-track { width: 100%; }
+/* .carousel-btn sets display:flex, which would otherwise defeat [hidden]. */
+.social-carousel-prev[hidden],
+.social-carousel-next[hidden] { display: none; }
 
 /* Every card is locked to one height (--post-card-height). Facebook sizes its
    iframe to the post's own content, which varies wildly (one long post

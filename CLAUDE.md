@@ -120,6 +120,16 @@ Practice Gallery → Booking Modal → Footer.
 - Before adding: check for the `Read More toggle` CSS comment and `DigiDrReadMore` in
   JS — skip if already present, don't duplicate.
 
+## Social media carousel (AGENTS.md §30, mandatory)
+
+- Track uses `justify-content: safe center` (never plain `center`): cards centred
+  when they fit, left-aligned when they overflow.
+- Prev/next buttons are **hidden when all cards fit** — `syncButtons()` sets
+  `prevBtn.hidden = nextBtn.hidden = (carousel.scrollWidth <= carousel.clientWidth + 1)`,
+  and the stylesheet needs `.social-carousel-prev[hidden], .social-carousel-next[hidden]
+  { display: none; }` (`.carousel-btn` is `display: flex`, which defeats `[hidden]`).
+- Test with 2 posts and 5+ posts. Copy the snippets from §30 verbatim.
+
 ## Other standards
 
 - Fully responsive 320px–1440px.

@@ -1768,6 +1768,10 @@ initPhonePlugin();
         }
 
         function syncButtons() {
+            // Nothing to page through when every card already fits.
+            const fits = carousel.scrollWidth <= carousel.clientWidth + 1;
+            prevBtn.hidden = fits;
+            nextBtn.hidden = fits;
             const maxScroll = carousel.scrollWidth - carousel.clientWidth - 1;
             prevBtn.disabled = carousel.scrollLeft <= 0;
             nextBtn.disabled = carousel.scrollLeft >= maxScroll;

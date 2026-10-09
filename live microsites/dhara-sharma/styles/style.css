@@ -1664,7 +1664,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   width: max-content;
   min-width: 100%;
   max-width: none;
-  justify-content: center;
+  justify-content: safe center;
 }
 /* Every card is locked to one height (--post-card-height). Facebook sizes its
    iframe to the post's own content, which varies wildly (one long post

@@ -287,8 +287,9 @@ their connected Facebook accounts, if they have more than one).
 
 16. **Integrating into a microsite whose CSS has a global reset — gotchas.**
     - The DigiDr global reset sets `div { max-width: 100% }`. The track uses
-      `width: max-content; min-width: 100%; justify-content: center` (centred
-      while the posts fit), so it **must** also set `max-width: none` —
+      `width: max-content; min-width: 100%; justify-content: safe center` (centred
+      while the posts fit, left-aligned once they overflow — never plain
+      `center`, see rule 17), so it **must** also set `max-width: none` —
       otherwise the track is capped at the carousel width and centring pushes
       the first cards off the left edge, where they can never be scrolled to.
     - Several older templates still carry CSS for a removed mock social section
@@ -302,6 +303,31 @@ their connected Facebook accounts, if they have more than one).
       per template.
     - Facebook embeds don't load from `file://` (unique origin) — test over
       `http(s)`.
+
+17. **Alignment and prev/next visibility follow whether the cards fit.**
+    - Posts fit the carousel → cards are **centred** and the prev/next buttons
+      are **hidden**. Posts overflow → cards are **left-aligned** (first card
+      next to the prev button) and the buttons are **shown**.
+    - Alignment is pure CSS: `.social-media-track { justify-content: safe
+      center; }`. `safe` makes the browser fall back to start alignment on
+      overflow; plain `center` must not be used.
+    - Visibility is JS, inside `syncButtons()` (runs after the SDK loads, on
+      scroll and on resize):
+      ```js
+      const fits = carousel.scrollWidth <= carousel.clientWidth + 1;
+      prevBtn.hidden = fits;
+      nextBtn.hidden = fits;
+      ```
+      The `+ 1` absorbs sub-pixel rounding. Keep the existing `disabled`
+      logic after it.
+    - `.carousel-btn` sets `display: flex`, which defeats `[hidden]`, so the
+      stylesheet must also contain:
+      ```css
+      .social-carousel-prev[hidden],
+      .social-carousel-next[hidden] { display: none; }
+      ```
+    - Test with 2 posts (centred, no buttons) **and** 5+ posts (left-aligned,
+      buttons visible), at desktop and ≤900px.
 
 ## Order of operations (summary)
 
@@ -344,3 +370,6 @@ their connected Facebook accounts, if they have more than one).
       the clipping bug is invisible when the posts fit.
 - [ ] Verify over `http(s)` at 1440px and 390px: cards render, Next pages
       the carousel, no horizontal page overflow.
+- [ ] Track uses `justify-content: safe center`, buttons hide via `hidden` when
+      the cards fit, and the `[hidden]` CSS rule is present (rule 17); test with
+      2 posts and with 5+.
