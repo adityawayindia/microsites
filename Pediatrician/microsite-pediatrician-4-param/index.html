@@ -219,22 +219,22 @@
       <div class="peds4-stat-card">
         <span class="peds4-stat-icon"><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i></span>
         <span>
-          <span class="peds4-stat-num" data-counter>{{experience}}</span>
-          <span class="peds4-stat-lbl">Years of Experience</span>
+          <span class="peds4-stat-num">{{practising_since}}</span>
+          <span class="peds4-stat-lbl">Practising since</span>
         </span>
       </div>
       <div class="peds4-stat-card">
         <span class="peds4-stat-icon"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></span>
         <span>
-          <span class="peds4-stat-num" data-counter>{{totalpatient}}</span>
-          <span class="peds4-stat-lbl">Children Treated</span>
+          <span class="peds4-stat-num">{{languages_count}}</span>
+          <span class="peds4-stat-lbl">Languages</span>
         </span>
       </div>
       <div class="peds4-stat-card">
         <span class="peds4-stat-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
         <span>
-          <span class="peds4-stat-num" data-counter>95%</span>
-          <span class="peds4-stat-lbl">Positive Feedback</span>
+          <span class="peds4-stat-num">{{consultation_modes_count}}</span>
+          <span class="peds4-stat-lbl">Consultation modes</span>
         </span>
       </div>
     </div>
@@ -492,67 +492,21 @@
 
           <div class="peds4-contact-divider"></div>
 
-          <div class="peds4-contact-item">
+          <div data-contact-info class="peds4-contact-item">
             <div class="peds4-contact-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
             <h3>Contact Information</h3>
             <p>
-              <a href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
-              <a href="mailto:{{email}}">{{email}}</a>
+              <a data-contact-phone href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+              <a data-contact-email href="mailto:{{email}}">{{email}}</a>
             </p>
           </div>
         </div>
 
         <div class="peds4-contact-cta">
-          <a href="tel:+{{code}}{{phone}}" class="peds4-btn-outline">
+          <a data-contact-phone-cta href="tel:+{{code}}{{phone}}" class="peds4-btn-outline">
             <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Clinic
           </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== TESTIMONIALS ====== -->
-  <section class="peds4-testimonials" id="testimonials">
-    <div class="peds4-hero-bg" aria-hidden="true"></div>
-    <div class="container">
-      <div class="peds4-section-header">
-        <span class="peds4-chip peds4-chip--amber">
-          <i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Testimonials
-        </span>
-        <h2 class="peds4-section-title">
-          {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
-          {{#no_testimonial_title}}What My Patients Say{{/no_testimonial_title}}
-        </h2>
-        <p class="peds4-section-subtitle">
-          {{#has_testimonial_subtitle}}{{testimonial_subtitle}}{{/has_testimonial_subtitle}}
-          {{#no_testimonial_subtitle}}Read testimonials from families who have experienced compassionate pediatric care under my guidance.{{/no_testimonial_subtitle}}
-        </p>
-      </div>
-
-      <div class="peds4-testi-carousel-wrap testimonials-carousel-wrap">
-        <button class="carousel-btn carousel-btn--prev peds4-carousel-btn" aria-label="Previous testimonials">
-          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        <button class="carousel-btn carousel-btn--next peds4-carousel-btn" aria-label="Next testimonials">
-          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-        </button>
-
-        <div class="testimonials-carousel" id="testimonialsCarousel">
-          <div class="testimonials-track peds4-testi-track" id="testimonialsTrack">
-            {{#testimonials}}
-            <article class="testimonial-card peds4-testi-card">
-              <img src="{{profile_picture}}" alt="{{patient_name}}" class="peds4-testi-avatar" />
-              <h3>{{patient_name}}</h3>
-              <div class="peds4-testi-stars" aria-label="{{rating}} out of 5 stars">
-                {{stars_html}}
-              </div>
-              <p>"{{comment}}"</p>
-            </article>
-            {{/testimonials}}
-          </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
       </div>
     </div>
   </section>
@@ -675,8 +629,9 @@
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
           <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
+        <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
@@ -754,7 +709,7 @@
 
         <div class="booking-field booking-consent-field">
           <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. {{full_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
         </div>
 
         <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
@@ -883,7 +838,7 @@
     <div class="peds4-footer-bottom">
       <p>&copy; 2026 Dr. {{full_name}}. All rights reserved.</p>
     </div>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="{{path}}/script/banner-module.js"></script>
@@ -891,22 +846,6 @@
   <script src="{{path}}/script/analytics.js"></script>
   <script src="{{path}}/script/index.js"></script>
   <script src="{{path}}/script/chatbot.js" defer></script>
-
-  <!-- Same as the live sites: hide the testimonials section (and its nav
-       links) when the backend sends no testimonials. -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const track = document.getElementById("testimonialsTrack");
-
-      if (!track || track.children.length === 0) {
-        document.getElementById("testimonials")?.remove();
-
-        document
-          .querySelectorAll('a[href="#testimonials"]')
-          .forEach(x => x.remove());
-      }
-    });
-  </script>
 
   <!-- Same as the live sites: record this visit and show the real visitor count. -->
   <script>

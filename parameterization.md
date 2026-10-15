@@ -126,7 +126,6 @@ pages.
 | Loop | Fields |
 |---|---|
 | `{{#services}}` | `title`, `description` (see note below — `icon` dropped) |
-| `{{#testimonials}}` | `patient_name`, `comment`, `profile_picture`, `rating`, `stars_html` |
 | `{{#images}}` | `image` |
 | `{{#blog}}` | `id`, `subject`, `blogimages`, `created` |
 | `blogdetails` | `blogdetails.subject`, `blogdetails.body`, `blogdetails.blogimages`, `blogdetails.created` |
@@ -151,7 +150,6 @@ fields only**. They never appear outside their loop.
 | Philosophy pillars (exactly 3) | `philosophy_section_pillar_text_1`, `philosophy_section_pillar_subtext_1`, `philosophy_section_pillor_text_2`, `philosophy_section_piller_subtext_2`, `philosophy_section_pillar_text_3`, `philosophy_section_pillar_subtext_3` |
 | Process | `process_section_about_title`, `process_section_about_subtitle` |
 | Process steps (exactly 4) | `process_section_step_body_text_1…4`, `process_section_step_body_subtext_1…4` |
-| Testimonials | `testimonial_title`, `testimonial_subtitle` |
 | Gallery | `gallery_section_title`, `gallery_section_subtitle` |
 | Contact | `contact_us_subtitle` |
 
@@ -189,15 +187,13 @@ exceptions:
    that had already parameterized `{{icon}}`); the other templates were hardcoded
    per-card icons before this change and are now hardcoded to one shared icon
    instead, so no loop field was ever removed there.
-2. **`{{stars_html}}` is backend-generated HTML** inside
-   `<div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">`. Its
-   classes aren't known (probably `<i class="fa-solid fa-star">`). Each template's
-   CSS must style it. **To confirm with the backend team.**
+2. ~~`{{stars_html}}` is backend-generated HTML~~ **Obsolete:** the Testimonials
+   section was removed from every microsite, so no testimonial loop or fields exist.
 3. **The live JS needs specific ids and classes.** This matters for the JavaScript
    work (§4a, §4b now; the rest later, §5):
    - `index.js`: `#bookingForm`, `#bookingModal`, `#preferredDate`,
      `#preferredTime`, `#clinicVisitTab`, `#onlineConsultTab`, `.cta-btn`,
-     `#testimonialsTrack`, `.testimonial-card`, `.faq-item`, `.read-more-*`,
+     `.faq-item`, `.read-more-*`,
      `.social:not(.is-disabled)`, `[data-cal-*]`, and others.
    - `banner-module.js`: `#digidrBannerImg` / `.digidr-banner-img`,
      `#digidrBannerLink`.
@@ -1225,25 +1221,12 @@ Open questions for the backend team:
 
 ---
 
-## 5b. Empty-testimonials cleanup + visitor counter (in scope, `index.html` only)
+## 5b. Visitor counter (in scope, `index.html` only)
 
-Two inline scripts go at the end of `index.html`, before `</body>`, verbatim:
+This inline script goes at the end of `index.html`, before `</body>`, verbatim
+(the old empty-testimonials cleanup script was removed along with the section):
 
 ```html
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const track = document.getElementById("testimonialsTrack");
-
-        if (!track || track.children.length === 0) {
-            document.getElementById("testimonials")?.remove();
-
-            document
-                .querySelectorAll('a[href="#testimonials"]')
-                .forEach(x => x.remove());
-        }
-    });
-</script>
-
 <script>
     (function () {
         const micrositeId = document.body.dataset.micrositeid;
@@ -1263,8 +1246,6 @@ Two inline scripts go at the end of `index.html`, before `</body>`, verbatim:
 ```
 
 Requirements:
-- The testimonials section has `id="testimonials"` and its track has
-  `id="testimonialsTrack"` (the testimonial loop renders cards directly inside it).
 - `<body data-micrositeid="{{micrositeId}}" ...>`.
 - A footer element with `id="visitorCount"` (e.g. the `.footer-visitor-badge` markup
   used in Cardiology-1).
@@ -1377,7 +1358,6 @@ For each `<Specialty>/microsite-*/` folder:
 - [ ] Process: title, subtitle and 4 step pairs.
 - [ ] Contact: `contact_us_subtitle` pair, `{{clinicname}}`, `{{address}}`,
       `{{district}}, {{state}} - {{pincode}}`, `+{{code}}-{{phone}}`, `{{email}}`.
-- [ ] Testimonials: title and subtitle pairs, cards become a `{{#testimonials}}` loop.
 - [ ] Gallery: title and subtitle pairs, images become an `{{#images}}` loop.
 - [ ] FAQ: **leave unchanged.**
 - [ ] Kickers: leave unchanged.

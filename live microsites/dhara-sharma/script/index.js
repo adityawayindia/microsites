@@ -84,121 +84,6 @@ document.addEventListener("click", (event) => {
     section.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-// Testimonials Carousel
-(function () {
-    const track = document.getElementById("testimonialsTrack");
-    const carousel = document.getElementById("testimonialsCarousel");
-    const dotsContainer = document.getElementById("carouselDots");
-    const prevBtn = document.querySelector(".carousel-btn--prev");
-    const nextBtn = document.querySelector(".carousel-btn--next");
-    const cards = track ? track.querySelectorAll(".testimonial-card") : [];
-    const totalCards = cards.length;
-
-    if (!track || totalCards === 0) return;
-
-    const AUTO_INTERVAL = 9999;
-    let currentIndex = 0;
-    let autoTimer = null;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    function getCardsPerView() {
-        const w = window.innerWidth;
-        if (w <= 640) return 1;
-        if (w <= 900) return 2;
-        return 3;
-    }
-
-    function getMaxIndex() {
-        return Math.max(0, totalCards - getCardsPerView());
-    }
-
-    function goTo(index) {
-        currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
-        const targetCard = cards[currentIndex];
-        const offset = targetCard ? -targetCard.offsetLeft : 0;
-        track.style.transform = `translateX(${offset}px)`;
-        updateDots();
-        resetAutoPlay();
-    }
-
-    function updateDots() {
-        if (!dotsContainer) return;
-        dotsContainer.innerHTML = "";
-        const maxIndex = getMaxIndex();
-        for (let i = 0; i <= maxIndex; i++) {
-            const dot = document.createElement("button");
-            dot.type = "button";
-            dot.className = "carousel-dot" + (i === currentIndex ? " active" : "");
-            dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-            dot.addEventListener("click", () => goTo(i));
-            dotsContainer.appendChild(dot);
-        }
-    }
-
-    function resetAutoPlay() {
-        if (autoTimer) clearInterval(autoTimer);
-        autoTimer = setInterval(() => {
-            const max = getMaxIndex();
-            if (currentIndex >= max) {
-                goTo(0);
-            } else {
-                goTo(currentIndex + 1);
-            }
-        }, AUTO_INTERVAL);
-    }
-
-    function stopAutoPlay() {
-        if (autoTimer) {
-            clearInterval(autoTimer);
-            autoTimer = null;
-        }
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
-    }
-    if (nextBtn) {
-        nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
-    }
-
-    const carouselWrap = carousel?.closest(".testimonials-carousel-wrap");
-    const touchTarget = carouselWrap || carousel || track;
-
-    touchTarget.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        stopAutoPlay();
-    }, { passive: true });
-
-    touchTarget.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) goTo(currentIndex + 1);
-            else goTo(currentIndex - 1);
-        }
-        resetAutoPlay();
-    }, { passive: true });
-
-    touchTarget.addEventListener("mousedown", () => stopAutoPlay());
-    touchTarget.addEventListener("mouseup", () => resetAutoPlay());
-    touchTarget.addEventListener("mouseleave", () => resetAutoPlay());
-
-    // NOTE: the date-picker init used to live here and referenced an out-of-scope
-    // `form` variable belonging to the (separate) booking-modal IIFE below, which
-    // threw a ReferenceError on every page load and silently broke this carousel's
-    // own goTo(0)/updateDots() calls further down. It now lives in its own IIFE
-    // (see initDatePicker below) and looks up the form itself.
-
-    window.addEventListener("resize", () => {
-        goTo(Math.min(currentIndex, getMaxIndex()));
-        updateDots();
-    });
-
-    goTo(0);
-    updateDots();
-})();
-
 // Booking date picker (moved out of the testimonials carousel IIFE — it has
 // nothing to do with testimonials, and previously crashed on load because it
 // referenced a `form` variable that didn't exist in that scope)
@@ -1225,6 +1110,20 @@ initPhonePlugin();
         appointmentType = "offline";
         window.__onAppointmentTypeChange?.(appointmentType);
     });
+    // Telemedicine note: hover (mouse) or tap (touch) the info icon; Esc / outside tap closes.
+    const infoIcon = document.getElementById("onlineConsultInfo");
+    const infoTip = document.getElementById("onlineConsultTip");
+    function toggleInfoTip(show) {
+      if (!infoIcon || !infoTip) return;
+      infoTip.hidden = !show;
+      infoIcon.classList.toggle("is-open", show);
+    }
+    infoIcon?.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") toggleInfoTip(true); });
+    infoIcon?.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") toggleInfoTip(false); });
+    infoIcon?.addEventListener("click", () => toggleInfoTip(infoTip.hidden));
+    document.addEventListener("click", (e) => { if (!infoIcon?.contains(e.target)) toggleInfoTip(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleInfoTip(false); });
+
     onlineTab?.addEventListener("click", () => {
         setActiveTab("online");
         appointmentType = "online";
@@ -1844,4 +1743,51 @@ initPhonePlugin();
       questionBtn.setAttribute('aria-expanded', 'true');
     }
   });
-})();
+})();
+
+/* ==========================================================================
+   Contact Information cleanup — the card shows only if the backend sends a
+   phone number or an email. Empty lines are dropped; if both are empty the
+   [data-contact-info] block is removed together with its divider, and an
+   enclosing [data-contact-card] is removed too if nothing else is left in
+   it. Call buttons marked [data-contact-phone-cta] are removed when there is
+   no phone. The single-card layout is handled in styles/style.css.
+   ========================================================================== */
+(function initContactInfoCleanup() {
+  const info = document.querySelector('[data-contact-info]');
+  if (!info) return;
+
+  const phone = info.querySelector('[data-contact-phone]');
+  const email = info.querySelector('[data-contact-email]');
+
+  // An empty phone renders as "91-" / "+91-" — require a real number after the
+  // country code ("X" allowed so template placeholders like +91-XXXXXXXXXX stay).
+  const phoneDigits = phone ? phone.textContent.split('-').slice(1).join('').replace(/[^\dXx]/g, '') : '';
+  const hasPhone = phoneDigits.length >= 6;
+  const hasEmail = !!email && /^[^\s@{}]+@[^\s@{}]+\.[^\s@{}]+$/.test(email.textContent.trim());
+
+  if (!hasPhone) {
+    document.querySelectorAll('[data-contact-phone-cta]').forEach((btn) => btn.remove());
+  }
+
+  if (hasPhone && hasEmail) return;
+
+  if (!hasPhone && !hasEmail) {
+    const card = info.closest('[data-contact-card]');
+    [info.previousElementSibling, info.nextElementSibling].forEach((el) => {
+      if (el && /divider/.test(el.className)) el.remove();
+    });
+    info.remove();
+    if (card && !card.querySelector('a, button, [data-contact-keep]')) card.remove();
+    return;
+  }
+
+  // Exactly one is missing — remove that line together with its adjoining <br>.
+  const missing = hasPhone ? email : phone;
+  if (!missing) return;
+  const next = missing.nextElementSibling;
+  const prev = missing.previousElementSibling;
+  if (next && next.tagName === 'BR') next.remove();
+  else if (prev && prev.tagName === 'BR') prev.remove();
+  missing.remove();
+})();

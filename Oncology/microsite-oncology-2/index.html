@@ -182,16 +182,16 @@
 
       <div class="hero-stats hero-stats-strip">
         <article class="stat-card">
-          <h3 data-count-to="18" data-suffix="+">0</h3>
-          <p>Years In Oncology</p>
+          <h3>{{practising_since}}</h3>
+          <p>Practising since</p>
         </article>
         <article class="stat-card">
-          <h3 data-count-to="12000" data-suffix="+">0</h3>
-          <p>Cancer Patients Treated</p>
+          <h3>{{languages_count}}</h3>
+          <p>Languages</p>
         </article>
         <article class="stat-card">
-          <h3 data-count-to="95" data-suffix="%">0</h3>
-          <p>Positive Feedback</p>
+          <h3>{{consultation_modes_count}}</h3>
+          <p>Consultation modes</p>
         </article>
       </div>
     </div>
@@ -461,15 +461,15 @@
             </div>
           </article>
 
-          <article class="contact-item">
+          <article data-contact-info class="contact-item">
             <div class="contact-item-icon">
               <i class="fa-solid fa-phone"></i>
             </div>
             <div>
               <h3>Reach Us</h3>
               <p>
-                <a href="tel:+912245678900">+91-2245678900</a><br />
-                <a href="mailto:dr.arjun@hopecancer.care">dr.arjun@hopecancer.care</a>
+                <a data-contact-phone href="tel:+912245678900">+91-2245678900</a><br />
+                <a data-contact-email href="mailto:dr.arjun@hopecancer.care">dr.arjun@hopecancer.care</a>
               </p>
             </div>
           </article>
@@ -478,94 +478,6 @@
         <!-- <div class="contact-cta-wrap">
           <a href="#" class="cta-btn">Book Appointment</a>
         </div> -->
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="testimonials-header">
-        <p class="testimonials-kicker">Patient stories</p>
-        <h2 class="testimonials-title">Voices of hope &amp; healing</h2>
-        <p class="testimonials-subtitle">
-          Real experiences from patients who trusted me with their care.
-        </p>
-      </div>
-
-      <div class="testimonials-carousel-wrap">
-        <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <div class="testimonials-carousel" id="testimonialsCarousel">
-          <div class="testimonials-track" id="testimonialsTrack">
-            <article class="testimonial-card">
-              <p class="testimonial-quote">"Dr. Mehta explained every step of my treatment with patience and clarity. I
-                always felt informed and supported."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
-                  alt="Rajesh Iyer" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Rajesh Iyer</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <p class="testimonial-quote">"His compassionate approach made a difficult journey feel manageable. The
-                care team is outstanding."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
-                  alt="Priya Sharma" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Priya Sharma</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <p class="testimonial-quote">"From diagnosis to remission, Dr. Mehta's expertise and calm guidance gave
-                our family real hope."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80"
-                  alt="Vikram Desai" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Vikram Desai</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <p class="testimonial-quote">"Appointments are well organized and he takes time to answer every question.
-                Highly recommended."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
-                  alt="Meera Kapoor" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Meera Kapoor</h3>
-                  <div class="testimonial-stars" aria-label="4 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
       </div>
     </div>
   </section>
@@ -705,10 +617,10 @@
           <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
             Clinic Visit
           </button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">
-            Online Consultation
-          </button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">
+            Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
+        <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
@@ -796,7 +708,7 @@
 
         <div class="booking-field booking-consent-field">
           <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. Arjun Mehta and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
         </div>
 
         <button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
@@ -898,7 +810,7 @@
         <p class="footer-copy">Dr. Arjun Mehta. All rights reserved</p>
       </div>
     </div>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="./script/banner-module.js"></script>

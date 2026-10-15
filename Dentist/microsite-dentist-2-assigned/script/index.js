@@ -98,117 +98,6 @@ document.addEventListener("click", (event) => {
     section.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-// Testimonials Carousel
-(function () {
-    const track = document.getElementById("testimonialsTrack");
-    const carousel = document.getElementById("testimonialsCarousel");
-    const dotsContainer = document.getElementById("carouselDots");
-    const prevBtn = document.querySelector(".carousel-btn--prev");
-    const nextBtn = document.querySelector(".carousel-btn--next");
-    const cards = track ? track.querySelectorAll(".testimonial-card") : [];
-    const totalCards = cards.length;
-
-    if (!track || totalCards === 0) return;
-
-    const AUTO_INTERVAL = 4000;
-    let currentIndex = 0;
-    let autoTimer = null;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    function getCardsPerView() {
-        const w = window.innerWidth;
-        if (w <= 900) return 1;
-        return 2;
-    }
-
-    function getMaxIndex() {
-        return Math.max(0, totalCards - getCardsPerView());
-    }
-
-    function goTo(index, { restartAuto = true } = {}) {
-        const max = getMaxIndex();
-        currentIndex = ((index % (max + 1)) + (max + 1)) % (max + 1);
-        const targetCard = cards[currentIndex];
-        const offset = targetCard ? -targetCard.offsetLeft : 0;
-        track.style.transform = `translateX(${offset}px)`;
-        updateDots();
-        if (restartAuto) startAutoPlay();
-    }
-
-    function nextSlide() {
-        const max = getMaxIndex();
-        goTo(currentIndex >= max ? 0 : currentIndex + 1);
-    }
-
-    function updateDots() {
-        if (!dotsContainer) return;
-        dotsContainer.innerHTML = "";
-        const maxIndex = getMaxIndex();
-        for (let i = 0; i <= maxIndex; i++) {
-            const dot = document.createElement("button");
-            dot.type = "button";
-            dot.className = "carousel-dot" + (i === currentIndex ? " active" : "");
-            dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-            dot.addEventListener("click", () => goTo(i));
-            dotsContainer.appendChild(dot);
-        }
-    }
-
-    function startAutoPlay() {
-        stopAutoPlay();
-        if (getMaxIndex() < 1) return;
-        autoTimer = setInterval(nextSlide, AUTO_INTERVAL);
-    }
-
-    function stopAutoPlay() {
-        if (autoTimer) {
-            clearInterval(autoTimer);
-            autoTimer = null;
-        }
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
-    }
-    if (nextBtn) {
-        nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
-    }
-
-    const carouselWrap = carousel?.closest(".testimonials-carousel-wrap");
-    const touchTarget = carouselWrap || carousel || track;
-
-    touchTarget.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        stopAutoPlay();
-    }, { passive: true });
-
-    touchTarget.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) goTo(currentIndex + 1);
-            else goTo(currentIndex - 1);
-        } else {
-            startAutoPlay();
-        }
-    }, { passive: true });
-
-    touchTarget.addEventListener("mouseenter", stopAutoPlay);
-    touchTarget.addEventListener("mouseleave", startAutoPlay);
-
-    window.addEventListener("resize", () => {
-        goTo(Math.min(currentIndex, getMaxIndex()), { restartAuto: true });
-    });
-
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden) stopAutoPlay();
-        else startAutoPlay();
-    });
-
-    goTo(0);
-})();
-
 // Gallery Lightbox
 (function () {
   const lightbox = document.getElementById("galleryLightbox");
@@ -504,6 +393,20 @@ document.addEventListener("click", (event) => {
     }
 
     clinicTab?.addEventListener("click", () => setActiveTab("clinic"));
+    // Telemedicine note: hover (mouse) or tap (touch) the info icon; Esc / outside tap closes.
+    const infoIcon = document.getElementById("onlineConsultInfo");
+    const infoTip = document.getElementById("onlineConsultTip");
+    function toggleInfoTip(show) {
+      if (!infoIcon || !infoTip) return;
+      infoTip.hidden = !show;
+      infoIcon.classList.toggle("is-open", show);
+    }
+    infoIcon?.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") toggleInfoTip(true); });
+    infoIcon?.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") toggleInfoTip(false); });
+    infoIcon?.addEventListener("click", () => toggleInfoTip(infoTip.hidden));
+    document.addEventListener("click", (e) => { if (!infoIcon?.contains(e.target)) toggleInfoTip(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleInfoTip(false); });
+
     onlineTab?.addEventListener("click", () => setActiveTab("online"));
 
     function showError(name, message) {
@@ -1039,4 +942,51 @@ document.addEventListener("click", (event) => {
     item.classList.toggle("is-active", !isActive);
     btn.setAttribute("aria-expanded", String(!isActive));
   });
+})();
+
+/* ==========================================================================
+   Contact Information cleanup — the card shows only if the backend sends a
+   phone number or an email. Empty lines are dropped; if both are empty the
+   [data-contact-info] block is removed together with its divider, and an
+   enclosing [data-contact-card] is removed too if nothing else is left in
+   it. Call buttons marked [data-contact-phone-cta] are removed when there is
+   no phone. The single-card layout is handled in styles/style.css.
+   ========================================================================== */
+(function initContactInfoCleanup() {
+  const info = document.querySelector('[data-contact-info]');
+  if (!info) return;
+
+  const phone = info.querySelector('[data-contact-phone]');
+  const email = info.querySelector('[data-contact-email]');
+
+  // An empty phone renders as "91-" / "+91-" — require a real number after the
+  // country code ("X" allowed so template placeholders like +91-XXXXXXXXXX stay).
+  const phoneDigits = phone ? phone.textContent.split('-').slice(1).join('').replace(/[^\dXx]/g, '') : '';
+  const hasPhone = phoneDigits.length >= 6;
+  const hasEmail = !!email && /^[^\s@{}]+@[^\s@{}]+\.[^\s@{}]+$/.test(email.textContent.trim());
+
+  if (!hasPhone) {
+    document.querySelectorAll('[data-contact-phone-cta]').forEach((btn) => btn.remove());
+  }
+
+  if (hasPhone && hasEmail) return;
+
+  if (!hasPhone && !hasEmail) {
+    const card = info.closest('[data-contact-card]');
+    [info.previousElementSibling, info.nextElementSibling].forEach((el) => {
+      if (el && /divider/.test(el.className)) el.remove();
+    });
+    info.remove();
+    if (card && !card.querySelector('a, button, [data-contact-keep]')) card.remove();
+    return;
+  }
+
+  // Exactly one is missing — remove that line together with its adjoining <br>.
+  const missing = hasPhone ? email : phone;
+  if (!missing) return;
+  const next = missing.nextElementSibling;
+  const prev = missing.previousElementSibling;
+  if (next && next.tagName === 'BR') next.remove();
+  else if (prev && prev.tagName === 'BR') prev.remove();
+  missing.remove();
 })();

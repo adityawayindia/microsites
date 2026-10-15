@@ -221,25 +221,25 @@
           <article class="hero-v2-stat">
             <div class="hero-v2-stat-top">
               <i class="fa-solid fa-user-doctor"></i>
-              <strong>12+</strong>
+              <strong>{{practising_since}}</strong>
             </div>
-            <span>Years Experience</span>
+            <span>Practising since</span>
           </article>
           <div class="hero-v2-stat-divider"></div>
           <article class="hero-v2-stat">
             <div class="hero-v2-stat-top">
               <i class="fa-solid fa-hospital-user"></i>
-              <strong>8,200+</strong>
+              <strong>{{languages_count}}</strong>
             </div>
-            <span>Patients Treated</span>
+            <span>Languages</span>
           </article>
           <div class="hero-v2-stat-divider"></div>
           <article class="hero-v2-stat">
             <div class="hero-v2-stat-top">
               <i class="fa-solid fa-circle-check"></i>
-              <strong>98%</strong>
+              <strong>{{consultation_modes_count}}</strong>
             </div>
-            <span>Positive Feedback</span>
+            <span>Consultation modes</span>
           </article>
         </div>
 
@@ -522,16 +522,16 @@
 
 
 
-        <aside class="contact-card-new contact-card-new--reach">
+        <aside data-contact-card class="contact-card-new contact-card-new--reach">
           <h3>Reach Us</h3>
           <div class="contact-list-new">
-            <div class="contact-item-new">
+            <div data-contact-info class="contact-item-new">
               <i class="fa-solid fa-phone"></i>
               <div>
                 <h4>Phone &amp; Email</h4>
                 <p>
-                  <a href="tel:+918045678901">+91-8045678901</a><br />
-                  <a href="mailto:dr.sarah@metro-generalmed.care">dr.sarah@metro-generalmed.care</a>
+                  <a data-contact-phone href="tel:+918045678901">+91-8045678901</a><br />
+                  <a data-contact-email href="mailto:dr.sarah@metro-generalmed.care">dr.sarah@metro-generalmed.care</a>
                 </p>
               </div>
             </div>
@@ -540,99 +540,6 @@
             <a href="#" class="cta-btn">Book Appointment</a>
           </div>
         </aside>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="testimonials-header">
-        <div class="testimonials-header-left">
-          <p class="testimonials-kicker"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Patient Experiences
-          </p>
-          <h2 class="testimonials-title">Patient Experiences</h2>
-          <p class="testimonials-subtitle">
-            Feedback from patients and families who received primary care from me.
-          </p>
-        </div>
-        <div class="testimonials-controls">
-          <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <div class="testimonials-carousel-wrap">
-
-        <div class="testimonials-carousel" id="testimonialsCarousel">
-          <div class="testimonials-track" id="testimonialsTrack">
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"Dr. Mehta is an exceptional physician. He accurately diagnosed my chronic
-                fatigue and helped me regain control of my hypertension within weeks."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
-                  alt="Rohan Mehta" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Rohan Mehta</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"The guidance Dr. Mehta provided for my mother's diabetes care was
-                life-changing. He is patient, extremely knowledgeable, and reassuring."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
-                  alt="Sneha Reddy" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Sneha Reddy</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"A compassionate family doctor. His quick diagnosis and effective treatment
-                of my son's seasonal fever made all the difference."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80"
-                  alt="Amit Joshi" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Amit Joshi</h3>
-                  <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card testimonial-card-new">
-              <p class="testimonial-quote">"Very systematic approach. Explained my blood work results clearly and
-                designed a realistic diet and lifestyle plan that has worked wonders."</p>
-              <div class="testimonial-footer">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
-                  alt="Kavya Nair" class="testimonial-avatar" />
-                <div>
-                  <h3 class="testimonial-name">Kavya Nair</h3>
-                  <div class="testimonial-stars" aria-label="4 out of 5 stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                      class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
       </div>
     </div>
   </section>
@@ -772,10 +679,10 @@
           <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
             Clinic Visit
           </button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">
-            Online Consultation
-          </button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">
+            Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
+        <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
@@ -863,7 +770,7 @@
         
           <div class="booking-field booking-consent-field">
               <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+              <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. Arjun Mehta and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
           </div>
 
 <button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
@@ -956,7 +863,7 @@
       <p class="footer-copy"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Dr. Arjun Mehta. All rights
         reserved</p>
     </div>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="./script/banner-module.js"></script>

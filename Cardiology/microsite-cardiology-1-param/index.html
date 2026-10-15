@@ -157,16 +157,16 @@
 
             <div class="hero-stats">
                 <article class="stat-card">
-                    <h3><span data-counter>{{experience}}</span></h3>
-                    <p>Years Of Experience</p>
+                    <h3>{{practising_since}}</h3>
+                    <p>Practising since</p>
                 </article>
                 <article class="stat-card">
-                    <h3 data-counter>{{totalpatient}}</h3>
-                    <p>Patients Treated</p>
+                    <h3>{{languages_count}}</h3>
+                    <p>Languages</p>
                 </article>
                 <article class="stat-card">
-                    <h3 data-counter>97%</h3>
-                    <p>Patient Rating</p>
+                    <h3>{{consultation_modes_count}}</h3>
+                    <p>Consultation modes</p>
                 </article>
             </div>
 
@@ -471,64 +471,17 @@
             <p><strong>{{clinicname}}</strong><br />{{address}}, {{district}}, {{state}} - {{pincode}}</p>
           </article>
 
-          <article class="contact-item contact-item--pink">
+          <article data-contact-info class="contact-item contact-item--pink">
             <div class="contact-item-icon">
               <i class="fa-solid fa-phone"></i>
             </div>
             <h3>Contact Information</h3>
             <p>
-                <a href="tel:+{{code}}{{phone}}" data-ga-event="contact_phone_click" data-ga-label="+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
-                <a href="mailto:{{email}}" data-ga-event="contact_email_click" data-ga-label="{{email}}">{{email}}</a>
+                <a data-contact-phone href="tel:+{{code}}{{phone}}" data-ga-event="contact_phone_click" data-ga-label="+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+                <a data-contact-email href="mailto:{{email}}" data-ga-event="contact_email_click" data-ga-label="{{email}}">{{email}}</a>
             </p>
           </article>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="testimonials-header">
-        <span class="testimonials-badge">
-          <i class="fa-solid fa-heart-pulse"></i>
-          Testimonials
-        </span>
-        <h2 class="testimonials-title">
-          {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
-          {{#no_testimonial_title}}What My Patients Say{{/no_testimonial_title}}
-        </h2>
-        <p class="testimonials-subtitle">
-            {{#has_testimonial_subtitle}}{{testimonial_subtitle}}{{/has_testimonial_subtitle}}
-            {{#no_testimonial_subtitle}}Read Testimonials From Patients Who Have Experienced Exceptional Care Under My Guidance.{{/no_testimonial_subtitle}}
-        </p>
-      </div>
-
-      <div class="testimonials-carousel-wrap">
-        <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <div class="testimonials-carousel" id="testimonialsCarousel">
-            <div class="testimonials-track" id="testimonialsTrack">
-
-                {{#testimonials}}
-                <article class="testimonial-card">
-                    <img src="{{profile_picture}}" alt="{{patient_name}}" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">{{patient_name}}</h3>
-                    <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
-                        {{stars_html}}
-                    </div>
-                    <p class="testimonial-quote">"{{comment}}"</p>
-                </article>
-                {{/testimonials}}
-
-            </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
       </div>
     </div>
   </section>
@@ -653,10 +606,10 @@
           <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
             Clinic Visit
           </button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">
-            Online Consultation
-          </button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">
+            Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
+        <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
@@ -735,7 +688,7 @@
 
           <div class="booking-field booking-consent-field">
               <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+              <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. {{full_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
           </div>
 
 <button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
@@ -844,7 +797,7 @@
 
       <p class="footer-copy">Dr. {{full_name}}. All rights reserved</p>
     </div>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="{{path}}/script/banner-module.js"></script>
@@ -852,22 +805,6 @@
   <script src="{{path}}/script/analytics.js"></script>
   <script src="{{path}}/script/index.js"></script>
   <script src="{{path}}/script/chatbot.js" defer></script>
-
-  <!-- Same as the live sites: hide the testimonials section (and its nav
-       links) when the backend sends no testimonials. -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const track = document.getElementById("testimonialsTrack");
-
-      if (!track || track.children.length === 0) {
-        document.getElementById("testimonials")?.remove();
-
-        document
-          .querySelectorAll('a[href="#testimonials"]')
-          .forEach(x => x.remove());
-      }
-    });
-  </script>
 
   <!-- Same as the live sites: record this visit and show the real visitor count. -->
   <script>

@@ -100,158 +100,6 @@ document.addEventListener("click", (event) => {
     section.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-// Testimonials Carousel
-(function () {
-    const track = document.getElementById("testimonialsTrack");
-    const carousel = document.getElementById("testimonialsCarousel");
-    const dotsContainer = document.getElementById("carouselDots");
-    const prevBtn = document.querySelector(".carousel-btn--prev");
-    const nextBtn = document.querySelector(".carousel-btn--next");
-    const originalCards = track ? Array.from(track.querySelectorAll(".testimonial-card")) : [];
-    const totalOriginal = originalCards.length;
-
-    if (!track || totalOriginal === 0) return;
-
-    const AUTO_INTERVAL = 4000;
-    const cardsPerView = 2; // Maximum N clones to support 2 cards per view on desktop
-    let touchStartX = 0;
-    let touchEndX = 0;
-    let autoTimer = null;
-    let isTransitioning = false;
-
-    // Clone elements at both ends to create an infinite loop
-    track.innerHTML = "";
-    const preClones = originalCards.slice(-cardsPerView).map(c => c.cloneNode(true));
-    const postClones = originalCards.slice(0, cardsPerView).map(c => c.cloneNode(true));
-
-    preClones.forEach(c => {
-        c.classList.add("clone");
-        track.appendChild(c);
-    });
-    originalCards.forEach(c => track.appendChild(c));
-    postClones.forEach(c => {
-        c.classList.add("clone");
-        track.appendChild(c);
-    });
-
-    const allCards = Array.from(track.querySelectorAll(".testimonial-card"));
-    
-    // Position start at cardsPerView (first original card)
-    let currentIndex = cardsPerView;
-
-    function updateTrackPosition(animate = true) {
-        if (!animate) {
-            track.style.transition = "none";
-        } else {
-            track.style.transition = "";
-        }
-        const targetCard = allCards[currentIndex];
-        const offset = targetCard ? -targetCard.offsetLeft : 0;
-        track.style.transform = `translateX(${offset}px)`;
-        if (!animate) {
-            track.offsetHeight; // trigger reflow
-        }
-    }
-
-    function goTo(index, { animate = true, restartAuto = true } = {}) {
-        if (isTransitioning && animate) return;
-        if (animate) isTransitioning = true;
-
-        currentIndex = index;
-        updateTrackPosition(animate);
-        updateDots();
-
-        if (restartAuto) startAutoPlay();
-    }
-
-    track.addEventListener("transitionend", () => {
-        isTransitioning = false;
-        // Jump without transition if out of bounds
-        if (currentIndex >= totalOriginal + cardsPerView) {
-            goTo(cardsPerView, { animate: false, restartAuto: false });
-        } else if (currentIndex < cardsPerView) {
-            goTo(totalOriginal + currentIndex, { animate: false, restartAuto: false });
-        }
-    });
-
-    function nextSlide() {
-        goTo(currentIndex + 1);
-    }
-
-    function updateDots() {
-        if (!dotsContainer) return;
-        dotsContainer.innerHTML = "";
-
-        // Calculate original card index corresponding to current slide
-        let activeDotIndex = (currentIndex - cardsPerView) % totalOriginal;
-        if (activeDotIndex < 0) activeDotIndex += totalOriginal;
-
-        for (let i = 0; i < totalOriginal; i++) {
-            const dot = document.createElement("button");
-            dot.type = "button";
-            dot.className = "carousel-dot" + (i === activeDotIndex ? " active" : "");
-            dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-            dot.addEventListener("click", () => {
-                goTo(i + cardsPerView);
-            });
-            dotsContainer.appendChild(dot);
-        }
-    }
-
-    function startAutoPlay() {
-        stopAutoPlay();
-        autoTimer = setInterval(nextSlide, AUTO_INTERVAL);
-    }
-
-    function stopAutoPlay() {
-        if (autoTimer) {
-            clearInterval(autoTimer);
-            autoTimer = null;
-        }
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
-    }
-    if (nextBtn) {
-        nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
-    }
-
-    const carouselWrap = carousel?.closest(".testimonials-carousel-wrap");
-    const touchTarget = carouselWrap || carousel || track;
-
-    touchTarget.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        stopAutoPlay();
-    }, { passive: true });
-
-    touchTarget.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) goTo(currentIndex + 1);
-            else goTo(currentIndex - 1);
-        } else {
-            startAutoPlay();
-        }
-    }, { passive: true });
-
-    touchTarget.addEventListener("mouseenter", stopAutoPlay);
-    touchTarget.addEventListener("mouseleave", startAutoPlay);
-
-    window.addEventListener("resize", () => {
-        updateTrackPosition(false);
-    });
-
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden) stopAutoPlay();
-        else startAutoPlay();
-    });
-
-    // Initial positioning
-    goTo(currentIndex, { animate: false });
-})();
-
 // Gallery Lightbox
 (function () {
   const lightbox = document.getElementById("galleryLightbox");
@@ -611,6 +459,20 @@ document.addEventListener("click", (event) => {
         setActiveTab("clinic");
         window.__onAppointmentTypeChange?.(appointmentType);
     });
+    // Telemedicine note: hover (mouse) or tap (touch) the info icon; Esc / outside tap closes.
+    const infoIcon = document.getElementById("onlineConsultInfo");
+    const infoTip = document.getElementById("onlineConsultTip");
+    function toggleInfoTip(show) {
+      if (!infoIcon || !infoTip) return;
+      infoTip.hidden = !show;
+      infoIcon.classList.toggle("is-open", show);
+    }
+    infoIcon?.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") toggleInfoTip(true); });
+    infoIcon?.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") toggleInfoTip(false); });
+    infoIcon?.addEventListener("click", () => toggleInfoTip(infoTip.hidden));
+    document.addEventListener("click", (e) => { if (!infoIcon?.contains(e.target)) toggleInfoTip(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleInfoTip(false); });
+
     onlineTab?.addEventListener("click", () => {
         setActiveTab("online");
         window.__onAppointmentTypeChange?.(appointmentType);
@@ -1378,4 +1240,51 @@ document.addEventListener("click", (event) => {
     el.textContent = format(0, info);
     observer.observe(el);
   });
+})();
+
+/* ==========================================================================
+   Contact Information cleanup — the card shows only if the backend sends a
+   phone number or an email. Empty lines are dropped; if both are empty the
+   [data-contact-info] block is removed together with its divider, and an
+   enclosing [data-contact-card] is removed too if nothing else is left in
+   it. Call buttons marked [data-contact-phone-cta] are removed when there is
+   no phone. The single-card layout is handled in styles/style.css.
+   ========================================================================== */
+(function initContactInfoCleanup() {
+  const info = document.querySelector('[data-contact-info]');
+  if (!info) return;
+
+  const phone = info.querySelector('[data-contact-phone]');
+  const email = info.querySelector('[data-contact-email]');
+
+  // An empty phone renders as "91-" / "+91-" — require a real number after the
+  // country code ("X" allowed so template placeholders like +91-XXXXXXXXXX stay).
+  const phoneDigits = phone ? phone.textContent.split('-').slice(1).join('').replace(/[^\dXx]/g, '') : '';
+  const hasPhone = phoneDigits.length >= 6;
+  const hasEmail = !!email && /^[^\s@{}]+@[^\s@{}]+\.[^\s@{}]+$/.test(email.textContent.trim());
+
+  if (!hasPhone) {
+    document.querySelectorAll('[data-contact-phone-cta]').forEach((btn) => btn.remove());
+  }
+
+  if (hasPhone && hasEmail) return;
+
+  if (!hasPhone && !hasEmail) {
+    const card = info.closest('[data-contact-card]');
+    [info.previousElementSibling, info.nextElementSibling].forEach((el) => {
+      if (el && /divider/.test(el.className)) el.remove();
+    });
+    info.remove();
+    if (card && !card.querySelector('a, button, [data-contact-keep]')) card.remove();
+    return;
+  }
+
+  // Exactly one is missing — remove that line together with its adjoining <br>.
+  const missing = hasPhone ? email : phone;
+  if (!missing) return;
+  const next = missing.nextElementSibling;
+  const prev = missing.previousElementSibling;
+  if (next && next.tagName === 'BR') next.remove();
+  else if (prev && prev.tagName === 'BR') prev.remove();
+  missing.remove();
 })();

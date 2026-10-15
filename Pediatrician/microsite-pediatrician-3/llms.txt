@@ -13,6 +13,6 @@
 
 ## Pages
 
-- [Profile](https://digidr.app/microsite-pediatrician-3/): Dr. Arjun Mehta's profile — about, services, care philosophy, consultation journey, testimonials, and practice gallery.
+- [Profile](https://digidr.app/microsite-pediatrician-3/): Dr. Arjun Mehta's profile — about, services, care philosophy, consultation journey, and practice gallery.
 - [Privacy Policy](https://digidr.app/microsite-pediatrician-3/privacy-policy.html)
 - [Terms of Service](https://digidr.app/microsite-pediatrician-3/terms-of-service.html)

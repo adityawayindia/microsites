@@ -329,6 +329,21 @@ aside,
 .booking-field textarea { resize: vertical; }
 .booking-error { margin: 0; font-size: 16px; color: #dc2626; min-height: 0; }
 .booking-error:empty { display: none; }
+/* Info icon beside "Online Consultation" + its tooltip (hover on desktop, tap on touch) */
+.booking-tab-info {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; margin-left: 4px; vertical-align: middle;
+  font-size: 16px; color: var(--muted); cursor: help; border-radius: 50%;
+}
+.booking-tab-info:hover, .booking-tab-info.is-open { color: var(--bronze); }
+.booking-tab-tip {
+  position: absolute; top: calc(100% + 8px); left: 32px; right: 32px; z-index: 6;
+  padding: 12px 14px; border-radius: 10px;
+  background: #1b2233; color: #fff; font-size: 16px; line-height: 1.5;
+  box-shadow: 0 8px 24px rgba(10, 25, 45, 0.25);
+  overflow-wrap: break-word; word-break: break-word; white-space: normal; min-width: 0; max-width: 100%;
+}
+.booking-tab-tip[hidden] { display: none; }
 
 .booking-select-wrap { position: relative; }
 .booking-select-wrap select { appearance: none; padding-right: 36px; }
@@ -497,7 +512,7 @@ aside,
 
 .booking-consent-field { display: flex !important; flex-direction: row !important; align-items: center; gap: 10px; }
 .booking-consent-field input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--amber); cursor: pointer; }
-.booking-consent-field label { font-size: 16px; color: var(--sky-dark); cursor: pointer; max-width: none; }
+.booking-consent-field label { font-size: 16px; font-weight: 500; color: var(--sky-dark); cursor: pointer; max-width: none; }
 
 .booking-submit-btn {
   width: 100%; padding: 14px; border: none; border-radius: var(--radius-pill);
@@ -579,9 +594,11 @@ aside,
 
 @media (max-width: 640px) {
   .booking-form-row { grid-template-columns: 1fr; }
-  .booking-modal-header { margin-bottom: 16px; padding: 16px 18px 0; }
+  .booking-modal-header { margin-bottom: 16px; padding: 6px 18px 0; }
   .booking-form { padding: 0 18px 24px; }
-  .booking-modal-close { right: 10px; }
+  /* close button gets its own row above the tabs so it never crowds the info icon */
+  .booking-modal-close { position: static; display: block; margin: 0 -8px 0 auto; width: 44px; height: 40px; }
+  .booking-tab-tip { left: 18px; right: 18px; }
   /* keep both tabs on one line within the narrower dialog */
   .booking-tab { padding: 10px 12px; white-space: nowrap; }
 }
@@ -1714,6 +1731,8 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   padding: 44px 40px;
   align-items: start;
 }
+/* Single card (Contact Information removed by JS when phone & email are empty) */
+.contact-grid:not(:has(.contact-divider)) { grid-template-columns: minmax(0, 1fr); align-content: center; }
 .contact-divider { width: 1px; align-self: stretch; background: var(--border); }
 .contact-item { min-width: 0; }
 .contact-item-icon {

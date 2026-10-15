@@ -3984,3 +3984,24 @@ footer .footer-disclaimer {
   word-break: break-word;
   white-space: normal;
 }
+
+/* Online-consultation info icon + tooltip (hover on desktop, tap on touch) */
+.booking-tab-info {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; margin-left: 4px; vertical-align: middle;
+  font-size: 16px; color: inherit; opacity: 0.75; cursor: help; border-radius: 50%;
+}
+.booking-tab-info:hover, .booking-tab-info.is-open { opacity: 1; }
+.booking-tab-tip {
+  position: absolute; top: calc(100% + 8px); left: 16px; right: 16px; z-index: 6;
+  padding: 12px 14px; border-radius: 10px;
+  background: #0f172a; color: #fff; font-size: 16px; line-height: 1.5; text-align: left;
+  box-shadow: 0 8px 24px rgba(10, 25, 45, 0.25);
+  overflow-wrap: break-word; word-break: break-word; white-space: normal; min-width: 0; max-width: 100%;
+}
+.booking-tab-tip[hidden] { display: none; }
+@media (max-width: 640px) {
+  /* close button gets its own row above the tabs so it never crowds the info icon */
+  .booking-modal-header { padding-top: 6px; }
+  .booking-modal-close { position: static; display: block; margin: 0 -8px 0 auto; width: 44px; height: 40px; }
+}

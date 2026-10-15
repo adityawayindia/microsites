@@ -196,16 +196,16 @@
       <!-- Floating stat orbs -->
       <!-- <div class="alt-hero-stats" aria-label="Doctor highlights">
         <div class="alt-stat-orb alt-stat-orb--yellow">
-          <span class="alt-stat-num">20+</span>
-          <span class="alt-stat-lbl">Years Experience</span>
+          <span class="alt-stat-num">{{practising_since}}</span>
+          <span class="alt-stat-lbl">Practising since</span>
         </div>
         <div class="alt-stat-orb alt-stat-orb--teal">
-          <span class="alt-stat-num">8k+</span>
-          <span class="alt-stat-lbl">Happy Patients</span>
+          <span class="alt-stat-num">{{languages_count}}</span>
+          <span class="alt-stat-lbl">Languages</span>
         </div>
         <div class="alt-stat-orb alt-stat-orb--coral">
-          <span class="alt-stat-num">95%</span>
-          <span class="alt-stat-lbl">Positive Feedback</span>
+          <span class="alt-stat-num">{{consultation_modes_count}}</span>
+          <span class="alt-stat-lbl">Consultation modes</span>
         </div>
       </div> -->
     </div>
@@ -271,16 +271,16 @@
 
         <div class="alt-about-stats" aria-label="Doctor highlights">
           <div class="alt-stat-orb alt-stat-orb--yellow">
-            <span class="alt-stat-num" data-counter>{{experience}}</span>
-            <span class="alt-stat-lbl">Years Experience</span>
+            <span class="alt-stat-num">{{practising_since}}</span>
+            <span class="alt-stat-lbl">Practising since</span>
           </div>
           <div class="alt-stat-orb alt-stat-orb--mint">
-            <span class="alt-stat-num" data-counter>{{totalpatient}}</span>
-            <span class="alt-stat-lbl">Happy Patients</span>
+            <span class="alt-stat-num">{{languages_count}}</span>
+            <span class="alt-stat-lbl">Languages</span>
           </div>
           <div class="alt-stat-orb alt-stat-orb--coral">
-            <span class="alt-stat-num" data-counter>95%</span>
-            <span class="alt-stat-lbl">Positive Feedback</span>
+            <span class="alt-stat-num">{{consultation_modes_count}}</span>
+            <span class="alt-stat-lbl">Consultation modes</span>
           </div>
         </div>
 
@@ -533,64 +533,16 @@
 
         <div class="alt-contact-divider"></div>
 
-        <div class="alt-contact-item acc-coral">
+        <div data-contact-info class="alt-contact-item acc-coral">
           <div class="acc-icon"><i class="fa-solid fa-phone"></i></div>
           <h3>Contact Information</h3>
           <p>
-            <a href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
-            <a href="mailto:{{email}}">{{email}}</a>
+            <a data-contact-phone href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+            <a data-contact-email href="mailto:{{email}}">{{email}}</a>
           </p>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ====== TESTIMONIALS ====== -->
-  <section class="alt-testimonials" id="testimonials">
-    <div class="container">
-      <div class="alt-testi-header">
-        <span class="alt-section-chip chip-teal">
-          <i class="fa-solid fa-stethoscope"></i> Testimonials
-        </span>
-        <h2 class="alt-section-title light">
-          {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
-          {{#no_testimonial_title}}What Parents Say{{/no_testimonial_title}}
-        </h2>
-        <p class="alt-testi-sub">
-          {{#has_testimonial_subtitle}}{{testimonial_subtitle}}{{/has_testimonial_subtitle}}
-          {{#no_testimonial_subtitle}}Hear from parents and families who have experienced my approach to pediatric care.{{/no_testimonial_subtitle}}
-        </p>
-      </div>
-
-      <div class="alt-testi-carousel-wrap">
-        <button class="alt-carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="alt-carousel-btn carousel-btn--next" aria-label="Next testimonials">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <div class="alt-testi-carousel" id="testimonialsCarousel">
-          <div class="alt-testi-track testimonials-track" id="testimonialsTrack">
-
-            {{#testimonials}}
-            <article class="alt-testi-card testimonial-card">
-              <div class="alt-testi-quote-mark">"</div>
-              <img src="{{profile_picture}}" alt="{{patient_name}}" class="alt-testi-avatar" />
-              <h3 class="alt-testi-name">{{patient_name}}</h3>
-              <div class="alt-testi-stars" aria-label="{{rating}} out of 5 stars">
-                {{stars_html}}
-              </div>
-              <p class="alt-testi-quote">"{{comment}}"</p>
-            </article>
-            {{/testimonials}}
-
-          </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
-      </div>
     </div>
   </section>
 
@@ -710,8 +662,9 @@
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
           <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
+        <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
@@ -789,7 +742,7 @@
 
         <div class="booking-field booking-consent-field">
           <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. {{full_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
         </div>
 
         <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
@@ -918,7 +871,7 @@
     <div class="alt-footer-bottom">
       <p>&copy; 2026 Dr. {{full_name}}. All rights reserved.</p>
     </div>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="{{path}}/script/banner-module.js"></script>
@@ -926,22 +879,6 @@
   <script src="{{path}}/script/analytics.js"></script>
   <script src="{{path}}/script/index.js"></script>
   <script src="{{path}}/script/chatbot.js" defer></script>
-
-  <!-- Same as the live sites: hide the testimonials section (and its nav
-       links) when the backend sends no testimonials. -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const track = document.getElementById("testimonialsTrack");
-
-      if (!track || track.children.length === 0) {
-        document.getElementById("testimonials")?.remove();
-
-        document
-          .querySelectorAll('a[href="#testimonials"]')
-          .forEach(x => x.remove());
-      }
-    });
-  </script>
 
   <!-- Same as the live sites: record this visit and show the real visitor count. -->
   <script>

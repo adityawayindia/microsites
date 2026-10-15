@@ -101,7 +101,6 @@
                 <a href="#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
                 <a href="#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
                 <a href="#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
-                <a href="#testimonials" data-ga-event="nav_link_click" data-ga-label="Testimonials">Testimonials</a>
                 <a href="#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
                 <a href="#faq" data-ga-event="nav_link_click" data-ga-label="FAQ">FAQ</a>
                 {{#hasBlog}}
@@ -215,18 +214,18 @@
                 <div class="hero-stats-grid">
                     <article class="hero-stat-box">
                         <i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i>
-                        <strong class="stat-card-num" data-count-to="15" data-suffix="+">{{experience}}</strong>
-                        <span>Years of Experience</span>
+                        <strong class="stat-card-num">{{practising_since}}</strong>
+                        <span>Practising since</span>
                     </article>
                     <article class="hero-stat-box">
                         <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
-                        <strong class="stat-card-num" data-count-to="20" data-suffix="k+">{{totalpatient}}</strong>
-                        <span>Patients Consulted</span>
+                        <strong class="stat-card-num">{{languages_count}}</strong>
+                        <span>Languages</span>
                     </article>
                     <article class="hero-stat-box">
                         <i class="fa-solid fa-ear-listen" aria-hidden="true"></i>
-                        <strong class="stat-card-num" data-count-to="98" data-suffix="%">98%</strong>
-                        <span>Positive Feedback</span>
+                        <strong class="stat-card-num">{{consultation_modes_count}}</strong>
+                        <span>Consultation modes</span>
                     </article>
                 </div>
 
@@ -521,73 +520,15 @@
 
                     <div class="contact-divider"></div>
 
-                    <div class="contact-item">
+                    <div class="contact-item" data-contact-info>
                         <div class="contact-item-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
                         <h3>Contact Information</h3>
                         <p>
-                            <a href="tel:+{{code}}{{phone}}" data-ga-event="phone_number_click">{{code}}-{{phone}}</a><br />
-                            <a href="mailto:{{email}}" data-ga-event="email_click">{{email}}</a>
+                            <a href="tel:+{{code}}{{phone}}" data-contact-phone data-ga-event="phone_number_click">{{code}}-{{phone}}</a><br />
+                            <a href="mailto:{{email}}" data-contact-email data-ga-event="email_click">{{email}}</a>
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== TESTIMONIALS ====== -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="hero-soundwave-bg" aria-hidden="true">
-            <svg viewBox="0 0 2880 400">
-                <defs>
-                    <g id="testimonialsWaveTile" fill="none" stroke="#ffffff" stroke-linecap="round">
-                        <path d="M0,200 Q120,160 240,200 Q360,240 480,200 Q600,160 720,200 Q840,240 960,200 Q1080,160 1200,200 Q1320,240 1440,200" stroke-width="2" stroke-opacity="0.07" />
-                        <path d="M0,200 Q120,140 240,200 Q360,260 480,200 Q600,140 720,200 Q840,260 960,200 Q1080,140 1200,200 Q1320,260 1440,200" stroke-width="2.3" stroke-opacity="0.09" />
-                        <path d="M0,200 Q120,120 240,200 Q360,280 480,200 Q600,120 720,200 Q840,280 960,200 Q1080,120 1200,200 Q1320,280 1440,200" stroke-width="2.6" stroke-opacity="0.11" />
-                        <path d="M0,200 Q120,100 240,200 Q360,300 480,200 Q600,100 720,200 Q840,300 960,200 Q1080,100 1200,200 Q1320,300 1440,200" stroke-width="2.9" stroke-opacity="0.13" />
-                        <path d="M0,200 Q120,80 240,200 Q360,320 480,200 Q600,80 720,200 Q840,320 960,200 Q1080,80 1200,200 Q1320,320 1440,200" stroke-width="3.2" stroke-opacity="0.15" />
-                        <path d="M0,200 Q120,60 240,200 Q360,340 480,200 Q600,60 720,200 Q840,340 960,200 Q1080,60 1200,200 Q1320,340 1440,200" stroke-width="3.5" stroke-opacity="0.18" />
-                    </g>
-                </defs>
-                <use href="#testimonialsWaveTile" x="0" />
-                <use href="#testimonialsWaveTile" x="1440" />
-            </svg>
-        </div>
-        <div class="container">
-            <div class="testimonials-header">
-                <span class="testimonials-kicker">
-                    <i class="fa-solid fa-ear-listen" aria-hidden="true"></i> Testimonials
-                </span>
-                <h2 class="testimonials-title">What My Patients Say</h2>
-                <p class="testimonials-subtitle">
-                    Read testimonials from patients who have experienced precise, attentive ENT care under my guidance.
-                </p>
-            </div>
-
-            <div class="testimonials-carousel-wrap testimonials-carousel-wrap">
-                <button type="button" class="carousel-btn carousel-btn--prev carousel-btn" aria-label="Previous testimonials">
-                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="carousel-btn carousel-btn--next carousel-btn" aria-label="Next testimonials">
-                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                </button>
-
-                <div class="testimonials-carousel" id="testimonialsCarousel">
-                    <div class="testimonials-track testimonials-track" id="testimonialsTrack">
-
-                        {{#testimonials}}
-                        <article class="testimonial-card testimonial-card">
-                            <img src="{{profile_picture}}" alt="{{patient_name}}" class="testimonial-avatar" />
-                            <h3>{{patient_name}}</h3>
-                            <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
-                                {{stars_html}}
-                            </div>
-                            <p>"{{comment}}"</p>
-                        </article>
-                        {{/testimonials}}
-                    </div>
-                </div>
-
-                <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
             </div>
         </div>
     </section>
@@ -717,8 +658,9 @@
 
                 <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
                     <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true" data-ga-event="clinic_visit_tab_click">Clinic Visit</button>
-                    <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" data-ga-event="online_consult_tab_click">Online Consultation</button>
+                    <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" data-ga-event="online_consult_tab_click" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
                 </div>
+                  <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
             </div>
 
             <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
@@ -797,7 +739,7 @@
 
                 <div class="booking-field booking-consent-field">
                     <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-                    <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+                    <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. {{full_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
                 </div>
 
                 <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
@@ -923,7 +865,7 @@
         <div class="footer-bottom-row">
             <p>&copy; 2026 Dr. {{full_name}}. <span class="footer-rights">All rights reserved.</span></p>
         </div>
-        <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+        <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
     </footer>
 
     <script src="{{path}}/script/banner-module.js"></script>
@@ -933,19 +875,6 @@
     <script src="{{path}}/script/chatbot.js" defer></script>
 </body>
 </html>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const track = document.getElementById("testimonialsTrack");
-
-        if (!track || track.children.length === 0) {
-            document.getElementById("testimonials")?.remove();
-
-            document
-                .querySelectorAll('a[href="#testimonials"]')
-                .forEach(x => x.remove());
-        }
-    });
-</script>
 
 <script>
     (function () {

@@ -99,7 +99,6 @@
         <a href="#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
         <a href="#services" data-ga-event="nav_link_click" data-ga-label="Services">Procedures</a>
         <a href="#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
-        <a href="#testimonials" data-ga-event="nav_link_click" data-ga-label="Testimonials">Testimonials</a>
         <a href="#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
         <a href="#faq" data-ga-event="nav_link_click" data-ga-label="FAQ">FAQ</a>
         <!-- Blog pages are disabled repo-wide for now; re-enable this link with blog.html.
@@ -179,18 +178,18 @@
         <div class="hero-stats-grid">
           <article class="hero-stat-box">
             <i class="fa-solid fa-award" aria-hidden="true"></i>
-            <strong class="stat-card-num" data-count-to="15" data-suffix="+">15+</strong>
-            <span>Years of Experience</span>
+            <strong class="stat-card-num">{{practising_since}}</strong>
+            <span>Practising since</span>
           </article>
           <article class="hero-stat-box">
             <i class="fa-solid fa-user-check" aria-hidden="true"></i>
-            <strong class="stat-card-num" data-count-to="8" data-suffix="k+">8k+</strong>
-            <span>Procedures Performed</span>
+            <strong class="stat-card-num">{{languages_count}}</strong>
+            <span>Languages</span>
           </article>
           <article class="hero-stat-box">
             <i class="fa-solid fa-star" aria-hidden="true"></i>
-            <strong class="stat-card-num" data-count-to="98" data-suffix="%">98%</strong>
-            <span>Positive Feedback</span>
+            <strong class="stat-card-num">{{consultation_modes_count}}</strong>
+            <span>Consultation modes</span>
           </article>
         </div>
 
@@ -477,94 +476,15 @@
 
           <div class="contact-divider"></div>
 
-          <div class="contact-item">
+          <div class="contact-item" data-contact-info>
             <div class="contact-item-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
             <h3>Contact Information</h3>
             <p>
-              <a href="tel:+919068935571" data-ga-event="phone_number_click">+91-9068935571</a><br />
-              <a href="mailto:dr.malhotra@wayindiahospitals.com" data-ga-event="email_click">dr.malhotra@wayindia<wbr />hospitals.com</a>
+              <a href="tel:+919068935571" data-contact-phone data-ga-event="phone_number_click">+91-9068935571</a><br />
+              <a href="mailto:dr.malhotra@wayindiahospitals.com" data-contact-email data-ga-event="email_click">dr.malhotra@wayindia<wbr />hospitals.com</a>
             </p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== TESTIMONIALS ====== -->
-  <section class="testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="testimonials-header">
-        <span class="testimonials-kicker">
-          <i class="fa-solid fa-quote-left" aria-hidden="true"></i> Testimonials
-        </span>
-        <h2 class="testimonials-title">What My Patients Say</h2>
-        <p class="testimonials-subtitle">
-          Real experiences from patients who trusted us with their aesthetic and reconstructive care.
-        </p>
-      </div>
-
-      <div class="testimonials-carousel-wrap testimonials-carousel-wrap">
-        <button class="carousel-btn carousel-btn--prev carousel-btn" aria-label="Previous testimonials">
-          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        <button class="carousel-btn carousel-btn--next carousel-btn" aria-label="Next testimonials">
-          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-        </button>
-
-        <div class="testimonials-carousel" id="testimonialsCarousel">
-          <div class="testimonials-track testimonials-track" id="testimonialsTrack">
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="Rohan Kapoor" class="testimonial-avatar" />
-              <h3>Rohan Kapoor</h3>
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"My rhinoplasty result is exactly what I hoped for &mdash; subtle, balanced, and my breathing is better too. Dr. Malhotra explained every step and the recovery was smoother than I expected."</p>
-            </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop" alt="Arvind Shetty" class="testimonial-avatar" />
-              <h3>Arvind Shetty</h3>
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"I had put off gynecomastia surgery for years. The consultation was completely private and respectful, and the result has genuinely changed how confident I feel."</p>
-            </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=120&h=120&fit=crop" alt="Neha Joshi" class="testimonial-avatar" />
-              <h3>Neha Joshi</h3>
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"After an accident left a visible scar on my face, Dr. Malhotra's scar revision made a remarkable difference. He was patient, honest, and incredibly skilled."</p>
-            </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop" alt="Sameer Qureshi" class="testimonial-avatar" />
-              <h3>Sameer Qureshi</h3>
-              <div class="testimonial-stars" aria-label="4 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-              </div>
-              <p>"The hair transplant hairline looks completely natural. The team kept me informed at every stage and the follow-up care was excellent."</p>
-            </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Priya Menon" class="testimonial-avatar" />
-              <h3>Priya Menon</h3>
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"Professional, reassuring, and never pushy. Dr. Malhotra recommended less than I originally asked for &mdash; and he was right. My results look refreshed, not 'done'."</p>
-            </article>
-            <article class="testimonial-card testimonial-card">
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop" alt="Karan Bhatia" class="testimonial-avatar" />
-              <h3>Karan Bhatia</h3>
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"Liposuction on my abdomen and flanks with a very smooth recovery. The clinic is spotless, well organised, and appointments always ran on time."</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
       </div>
     </div>
   </section>
@@ -694,8 +614,9 @@
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
           <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true" data-ga-event="clinic_visit_tab_click">Clinic Visit</button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" data-ga-event="online_consult_tab_click">Online Consultation</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip" data-ga-event="online_consult_tab_click">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
+        <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate>
@@ -790,7 +711,7 @@
 
         <div class="booking-field booking-consent-field">
           <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. Vikram Malhotra and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
         </div>
 
         <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
@@ -903,7 +824,7 @@
 
     <div class="footer-bottom-row">
       <p>&copy; 2026 Dr. Vikram Malhotra. All rights reserved.</p>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
     </div>
   </footer>
 

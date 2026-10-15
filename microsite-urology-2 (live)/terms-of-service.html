@@ -248,7 +248,7 @@
       <div class="footer-bottom-row">
           <p>&copy; 2026 Dr. {{full_name}}. All rights reserved.</p>
       </div>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <script src="{{path}}/script/analytics.js"></script>
@@ -256,19 +256,6 @@
     <script src="{{path}}/script/chatbot.js" defer></script>
 </body>
 </html>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const track = document.getElementById("testimonialsTrack");
-
-        if (!track || track.children.length === 0) {
-            document.getElementById("testimonials")?.remove();
-
-            document
-                .querySelectorAll('a[href="#testimonials"]')
-                .forEach(x => x.remove());
-        }
-    });
-</script>
 
 <script>
     (function () {

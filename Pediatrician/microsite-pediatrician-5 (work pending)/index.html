@@ -185,22 +185,22 @@
           <div class="peds5-stat-card">
             <span class="peds5-stat-icon"><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i></span>
             <span>
-              <span class="peds5-stat-num" data-count-to="16" data-suffix="+">0+</span>
-              <span class="peds5-stat-lbl">Years of Experience</span>
+              <span class="peds5-stat-num">{{practising_since}}</span>
+              <span class="peds5-stat-lbl">Practising since</span>
             </span>
           </div>
           <div class="peds5-stat-card">
             <span class="peds5-stat-icon"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></span>
             <span>
-              <span class="peds5-stat-num" data-count-to="7" data-suffix="k+">0k+</span>
-              <span class="peds5-stat-lbl">Children Treated</span>
+              <span class="peds5-stat-num">{{languages_count}}</span>
+              <span class="peds5-stat-lbl">Languages</span>
             </span>
           </div>
           <div class="peds5-stat-card">
             <span class="peds5-stat-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
             <span>
-              <span class="peds5-stat-num" data-count-to="97" data-suffix="%">0%</span>
-              <span class="peds5-stat-lbl">Positive Feedback</span>
+              <span class="peds5-stat-num">{{consultation_modes_count}}</span>
+              <span class="peds5-stat-lbl">Consultation modes</span>
             </span>
           </div>
         </div>
@@ -507,12 +507,12 @@
 
           <div class="peds5-contact-divider"></div>
 
-          <div class="peds5-contact-item">
+          <div data-contact-info class="peds5-contact-item">
             <div class="peds5-contact-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
             <h3>Contact Information</h3>
             <p>
-              <a href="tel:+919845123670">+91-9845123670</a><br />
-              <a href="mailto:dr.kapoor@brightbloomclinic.com">dr.kapoor@brightbloom<wbr />clinic.com</a>
+              <a data-contact-phone href="tel:+919845123670">+91-9845123670</a><br />
+              <a data-contact-email href="mailto:dr.kapoor@brightbloomclinic.com">dr.kapoor@brightbloom<wbr />clinic.com</a>
             </p>
           </div>
         </div>
@@ -522,85 +522,6 @@
             <i class="fa-solid fa-phone" aria-hidden="true"></i> <span>Call Clinic</span>
           </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== TESTIMONIALS ====== -->
-  <section class="peds5-testimonials" id="testimonials">
-    <div class="container">
-      <div class="peds5-section-header">
-        <span class="peds5-chip peds5-chip--accent">
-          <i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Testimonials
-        </span>
-        <h2 class="peds5-section-title">What My Patients Say</h2>
-        <p class="peds5-section-subtitle">
-          Read testimonials from families who have experienced compassionate pediatric care under my guidance.
-        </p>
-      </div>
-
-      <div class="peds5-testi-carousel-wrap testimonials-carousel-wrap">
-        <button class="carousel-btn carousel-btn--prev peds5-carousel-btn" aria-label="Previous testimonials">
-          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        <button class="carousel-btn carousel-btn--next peds5-carousel-btn" aria-label="Next testimonials">
-          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-        </button>
-
-        <div class="testimonials-carousel" id="testimonialsCarousel">
-          <div class="testimonials-track peds5-testi-track" id="testimonialsTrack">
-            <article class="testimonial-card peds5-testi-card">
-              <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?w=120&h=120&fit=crop" alt="Ananya Rao" class="peds5-testi-avatar" loading="lazy" />
-              <h3>Ananya Rao</h3>
-              <div class="peds5-testi-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"Dr. Kapoor diagnosed my son's recurring wheeze when three other doctors missed it. His pulmonology background made all the difference. Forever grateful."</p>
-            </article>
-            <article class="testimonial-card peds5-testi-card">
-              <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=120&h=120&fit=crop" alt="Karan Mehta" class="peds5-testi-avatar" loading="lazy" />
-              <h3>Karan Mehta</h3>
-              <div class="peds5-testi-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"Outstanding experience from start to finish. Dr. Kapoor explained everything clearly and took time to address all my concerns. Five stars!"</p>
-            </article>
-            <article class="testimonial-card peds5-testi-card">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Priya Nair" class="peds5-testi-avatar" loading="lazy" />
-              <h3>Priya Nair</h3>
-              <div class="peds5-testi-stars" aria-label="4 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-              </div>
-              <p>"Good care overall. Dr. Kapoor helped manage my daughter's recurring infections effectively. The follow-up process was thorough."</p>
-            </article>
-            <article class="testimonial-card peds5-testi-card">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop" alt="Vikram Shetty" class="peds5-testi-avatar" loading="lazy" />
-              <h3>Vikram Shetty</h3>
-              <div class="peds5-testi-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"After my son's asthma diagnosis, Dr. Kapoor's guidance was invaluable. He genuinely cares about long-term outcomes, not quick fixes."</p>
-            </article>
-            <article class="testimonial-card peds5-testi-card">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop" alt="Sneha Iyer" class="peds5-testi-avatar" loading="lazy" />
-              <h3>Sneha Iyer</h3>
-              <div class="peds5-testi-stars" aria-label="5 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p>"The best pediatrician we've consulted. His diagnostic skills are remarkable and he guided us clearly through a scary first month."</p>
-            </article>
-            <article class="testimonial-card peds5-testi-card">
-              <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=120&h=120&fit=crop" alt="Rohan Das" class="peds5-testi-avatar" loading="lazy" />
-              <h3>Rohan Das</h3>
-              <div class="peds5-testi-stars" aria-label="4 out of 5 stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-              </div>
-              <p>"Professional, knowledgeable, and kind. Every appointment felt stress-free and the clinic always runs on time."</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
       </div>
     </div>
   </section>
@@ -730,8 +651,9 @@
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
           <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">Online Consultation</button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
+        <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate>
@@ -814,7 +736,7 @@
 
         <div class="booking-field booking-consent-field">
           <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-          <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+          <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. Rohan Kapoor and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
         </div>
 
         <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Book Appointment</button>
@@ -923,7 +845,7 @@
     <div class="peds5-footer-bottom">
       <p>&copy; 2026 Dr. Rohan Kapoor. All rights reserved.</p>
     </div>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="./script/banner-module.js"></script>

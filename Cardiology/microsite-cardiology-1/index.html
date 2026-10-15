@@ -155,16 +155,16 @@
 
             <div class="hero-stats">
                 <article class="stat-card">
-                    <h3><span data-counter>18+</span></h3>
-                    <p>Years Of Experience</p>
+                    <h3>{{practising_since}}</h3>
+                    <p>Practising since</p>
                 </article>
                 <article class="stat-card">
-                    <h3 data-counter>12,000+</h3>
-                    <p>Patients Treated</p>
+                    <h3>{{languages_count}}</h3>
+                    <p>Languages</p>
                 </article>
                 <article class="stat-card">
-                    <h3 data-counter>97%</h3>
-                    <p>Patient Rating</p>
+                    <h3>{{consultation_modes_count}}</h3>
+                    <p>Consultation modes</p>
                 </article>
             </div>
 
@@ -511,100 +511,17 @@
             <p><strong>HeartCare Clinic</strong><br />204 Cardiac Tower, MG Road, Pune, Maharashtra - 411001</p>
           </article>
 
-          <article class="contact-item contact-item--pink">
+          <article data-contact-info class="contact-item contact-item--pink">
             <div class="contact-item-icon">
               <i class="fa-solid fa-phone"></i>
             </div>
             <h3>Contact Information</h3>
             <p>
-                <a href="tel:+9198765-43210" data-ga-event="contact_phone_click" data-ga-label="+9198765-43210">+91-98765-43210</a><br />
-                <a href="mailto:dr.arjun@heartcareclinic.in" data-ga-event="contact_email_click" data-ga-label="dr.arjun@heartcareclinic.in">dr.arjun@heartcareclinic.in</a>
+                <a data-contact-phone href="tel:+9198765-43210" data-ga-event="contact_phone_click" data-ga-label="+9198765-43210">+91-98765-43210</a><br />
+                <a data-contact-email href="mailto:dr.arjun@heartcareclinic.in" data-ga-event="contact_email_click" data-ga-label="dr.arjun@heartcareclinic.in">dr.arjun@heartcareclinic.in</a>
             </p>
           </article>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="testimonials-header">
-        <span class="testimonials-badge">
-          <i class="fa-solid fa-heart-pulse"></i>
-          Testimonials
-        </span>
-        <h2 class="testimonials-title">
-          
-          What My Patients Say
-        </h2>
-        <p class="testimonials-subtitle">
-            
-            Read Testimonials From Patients Who Have Experienced Exceptional Care Under My Guidance.
-        </p>
-      </div>
-
-      <div class="testimonials-carousel-wrap">
-        <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <div class="testimonials-carousel" id="testimonialsCarousel">
-            <div class="testimonials-track" id="testimonialsTrack">
-
-                
-                <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-ramesh/100/100" alt="Ramesh Kumar" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Ramesh Kumar</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"Dr. Mehta's expertise saved my life during my cardiac emergency. His calm demeanour and precise treatment plan gave me hope when I needed it most. I am forever grateful."</p>
-                </article>
-                
-                <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-priya/100/100" alt="Priya Sharma" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Priya Sharma</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"After years of unexplained chest pain, Dr. Mehta correctly diagnosed my condition in just one visit. His thorough approach and genuine compassion are truly unmatched."</p>
-                </article>
-                
-                <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-sunita/100/100" alt="Sunita Patel" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Sunita Patel</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"The echocardiography and follow-up care Dr. Mehta provided was exceptional. He explained every step clearly and made me feel completely at ease throughout the process."</p>
-                </article>
-                
-                <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-vikram/100/100" alt="Vikram Singh" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Vikram Singh</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"Dr. Mehta managed my hypertension beautifully. Within three months my blood pressure was completely under control. Highly recommend him to anyone with heart concerns."</p>
-                </article>
-                
-                <article class="testimonial-card">
-                    <img src="https://picsum.photos/seed/patient-anita/100/100" alt="Anita Desai" class="testimonial-avatar" />
-                    <h3 class="testimonial-name">Anita Desai</h3>
-                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="testimonial-quote">"World-class cardiology care right here in Pune. Dr. Mehta's dedication to his patients is evident in every consultation. A truly exceptional and caring doctor."</p>
-                </article>
-                
-
-            </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
       </div>
     </div>
   </section>
@@ -749,10 +666,10 @@
           <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
             Clinic Visit
           </button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">
-            Online Consultation
-          </button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">
+            Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
+        <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate data-userid="demo-arjun-mehta" data-address="204 Cardiac Tower, MG Road" data-clinicname="HeartCare Clinic" data-pincode="411001" data-state="Maharashtra" data-district="Pune" data-city="Pune">
@@ -831,7 +748,7 @@
 
           <div class="booking-field booking-consent-field">
               <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+              <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. Arjun Mehta and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
           </div>
 
 <button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
@@ -940,7 +857,7 @@
 
       <p class="footer-copy">Dr. Arjun Mehta. All rights reserved</p>
     </div>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="script/banner-module.js"></script>
@@ -948,22 +865,6 @@
   <script src="script/analytics.js"></script>
   <script src="script/index.js"></script>
   <script src="script/chatbot.js" defer></script>
-
-  <!-- Same as the live sites: hide the testimonials section (and its nav
-       links) when the backend sends no testimonials. -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const track = document.getElementById("testimonialsTrack");
-
-      if (!track || track.children.length === 0) {
-        document.getElementById("testimonials")?.remove();
-
-        document
-          .querySelectorAll('a[href="#testimonials"]')
-          .forEach(x => x.remove());
-      }
-    });
-  </script>
 
   <!-- Same as the live sites: record this visit and show the real visitor count. -->
   <script>

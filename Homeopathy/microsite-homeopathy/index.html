@@ -161,18 +161,18 @@
             <div class="hero-stats-grid">
                 <article class="hero-stat-box">
                     <i class="fa-solid fa-award"></i>
-                    <strong>14+ Years</strong>
-                    <span>Experience</span>
+                    <strong>{{practising_since}}</strong>
+                    <span>Practising since</span>
                 </article>
                 <article class="hero-stat-box">
                     <i class="fa-solid fa-users"></i>
-                    <strong>8,500+</strong>
-                    <span>Patients Treated</span>
+                    <strong>{{languages_count}}</strong>
+                    <span>Languages</span>
                 </article>
                 <article class="hero-stat-box">
                     <i class="fa-solid fa-star"></i>
-                    <strong>98%</strong>
-                    <span>Positive Feedback</span>
+                    <strong>{{consultation_modes_count}}</strong>
+                    <span>Consultation modes</span>
                 </article>
             </div>
 
@@ -475,97 +475,21 @@
           </div>
         </aside>
 
-        <aside class="contact-card-new contact-card-new--reach">
+        <aside data-contact-card class="contact-card-new contact-card-new--reach">
           <h3>Reach Us</h3>
           <div class="contact-list-new">
-            <div class="contact-item-new">
+            <div data-contact-info class="contact-item-new">
               <i class="fa-solid fa-phone"></i>
               <div>
                 <h4>Phone &amp; Email</h4>
                 <p>
-                    <a href="tel:+918049876543">+91-8049876543</a><br />
-                    <a href="mailto:contact@thornehomeopathy.com">contact@thornehomeopathy.com</a>
+                    <a data-contact-phone href="tel:+918049876543">+91-8049876543</a><br />
+                    <a data-contact-email href="mailto:contact@thornehomeopathy.com">contact@thornehomeopathy.com</a>
                 </p>
               </div>
             </div>
           </div>
         </aside>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="testimonials-header">
-        <p class="testimonials-kicker"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Patient Experiences</p>
-        <h2 class="testimonials-title">Patient Testimonials</h2>
-        <p class="testimonials-subtitle">
-            Feedback from patients who received specialized treatment and care from me for chronic health conditions.
-        </p>
-      </div>
-
-      <div class="testimonials-carousel-wrap">
-        <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <div class="testimonials-carousel" id="testimonialsCarousel">
-            <div class="testimonials-track" id="testimonialsTrack">
-                <article class="testimonial-card testimonial-card-new">
-                    <p class="testimonial-quote">"Dr. Mehta's constitutional treatment cured my chronic eczema after years of ineffective steroid creams. His patient care is exceptional."</p>
-                    <div class="testimonial-footer">
-                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Sneha Reddy" class="testimonial-avatar" />
-                      <div>
-                        <h3 class="testimonial-name">Sneha Reddy</h3>
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                      </div>
-                    </div>
-                </article>
-                <article class="testimonial-card testimonial-card-new">
-                    <p class="testimonial-quote">"His pediatric remedies worked wonders for my son's chronic asthma. He hasn't needed an inhaler in months, and his immunity is significantly stronger."</p>
-                    <div class="testimonial-footer">
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Rohan Mehta" class="testimonial-avatar" />
-                      <div>
-                        <h3 class="testimonial-name">Rohan Mehta</h3>
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                      </div>
-                    </div>
-                </article>
-                <article class="testimonial-card testimonial-card-new">
-                    <p class="testimonial-quote">"Exceptional care for my chronic migraine. He doesn't just treat the symptoms; he spends time understanding the root cause."</p>
-                    <div class="testimonial-footer">
-                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Amit Joshi" class="testimonial-avatar" />
-                      <div>
-                        <h3 class="testimonial-name">Amit Joshi</h3>
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                      </div>
-                    </div>
-                </article>
-                <article class="testimonial-card testimonial-card-new">
-                    <p class="testimonial-quote">"Highly recommend for hormonal imbalances. His natural treatment helped me manage my thyroid levels effectively without any side effects."</p>
-                    <div class="testimonial-footer">
-                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Kavya Nair" class="testimonial-avatar" />
-                      <div>
-                        <h3 class="testimonial-name">Kavya Nair</h3>
-                        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                      </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
       </div>
     </div>
   </section>
@@ -705,10 +629,10 @@
           <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
             Clinic Visit
           </button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false">
-            Online Consultation
-          </button>
+          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">
+            Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
+        <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
       <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
@@ -792,7 +716,7 @@
           
           <div class="booking-field booking-consent-field">
               <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-              <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+              <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. Arjun Mehta and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
           </div>
 
 <button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
@@ -880,7 +804,7 @@
 
       <p class="footer-copy"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Dr. Arjun Mehta. All rights reserved</p>
     </div>
-      <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="./script/banner-module.js"></script>

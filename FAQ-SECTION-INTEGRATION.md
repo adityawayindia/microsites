@@ -20,7 +20,7 @@ places it visually between Gallery and Footer without interfering with the booki
 (which is an overlay, not a section).
 
 Also add a nav link (`<a href="#faq">FAQ</a>`) next to the other section links in the
-header `nav` and the footer nav, matching the existing pattern for Gallery/Testimonials.
+header `nav` and the footer nav, matching the existing pattern for Gallery.
 
 ## 1. HTML — paste before the booking modal comment
 

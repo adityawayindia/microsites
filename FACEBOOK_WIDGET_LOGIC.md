@@ -299,8 +299,8 @@ their connected Facebook accounts, if they have more than one).
       `.social-media-section`, and reset `transform`/`transition`/hover. The
       old IIFE is harmless (it exits when the track has no cards at load).
     - Give the prev/next buttons their own class (`.social-carousel-btn`)
-      instead of reusing the testimonials `.carousel-btn`, whose rules differ
-      per template.
+      instead of reusing a generic `.carousel-btn` (any left over from the
+      removed testimonials carousel), whose rules differ per template.
     - Facebook embeds don't load from `file://` (unique origin) — test over
       `http(s)`.
 

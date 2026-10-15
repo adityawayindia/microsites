@@ -23,7 +23,7 @@ Text](#01-global-body-text-rule) · [0.2 Typography Size Reference](#02-typograp
 · [2. Container](#2-container--page-grid) ·
 [3. Header](#3-header--navigation) · [4. Hero](#4-hero-section) · [5. About](#5-about-section)
 · [6. Services](#6-services-section) · [7. Philosophy](#7-care-philosophy-split-screen)
-· [8. Journey](#8-consultation-journey-4-step-timeline) · [9. Testimonials](#9-testimonials-carousel)
+· [8. Journey](#8-consultation-journey-4-step-timeline) · [9. Testimonials (removed)](#9-testimonials-removed)
 · [10. Gallery](#10-practice-gallery) · [11. Booking Modal](#11-booking-modal) ·
 [12. Footer](#12-footer) · [13. Chatbot](#13-chatbot-widget) · [14. Banner Module](#14-banner-module-promotional-hero-banner)
 · [15. Buttons](#15-button-standards-unified-scale) · [16. Overlays](#16-overlay--backdrop-colors-unified)
@@ -146,12 +146,6 @@ is a lookup index, not a replacement for those sections.
 | Step `h3` | 20px |
 | Step `p` | 18px |
 
-**Testimonials (§9)**
-
-| Element | Size |
-|---|---|
-| Stars label / quote text | 18px / 18px |
-
 **Booking Modal (§11)**
 
 | Element | Size |
@@ -234,7 +228,7 @@ is a lookup index, not a replacement for those sections.
   --button-hover: var(--accent-dark);
 
   /* Radius scale — fixed structurally, not a color, applies to every microsite as-is */
-  --radius-xl: 28px;   /* cards: service, testimonial, philosophy image frame, popups */
+  --radius-xl: 28px;   /* cards: service, philosophy image frame, popups */
   --radius-lg: 20px;   /* hero-stat-box, gallery items, philosophy badge */
   --radius-md: 16px;
   --radius-sm: 12px;
@@ -530,24 +524,12 @@ the dead duplication into new sites.
 
 ---
 
-## 9. Testimonials (Carousel)
+## 9. Testimonials (removed)
 
-| Element | Value |
-|---|---|
-| Section padding | `20px 0` |
-| Carousel wrap | `max-width:1180px`, side padding `56px` (room for nav arrows) |
-| Track gap | `22px` |
-| Card width | `flex: 0 0 calc(33.333% - 15px)` (3 visible) → `50%` (2 visible) at `≤900px` → `100%` (1 visible) at `≤640px` |
-| Card | padding `28px 24px`, `--radius-xl` |
-| Avatar | `56px × 56px` circle, `2px solid var(--brand-dark)` |
-| Stars / quote text | `18px` / `18px` |
-| Nav arrow buttons | `44px × 44px` circle, `15px` glyph |
-| Dot indicators | `10px × 10px`, active state `scale(1.2)` |
-| Autoplay interval | `5000ms` |
-| Swipe threshold | `50px` |
-
-At `≤640px`, prev/next arrows relocate below the track (grid layout) rather than
-overlapping the card edges.
+**No microsite has a Testimonials section.** Do not add one, and do not add a
+"Testimonials" link to the header, mobile menu, or footer nav. The section number is kept
+only so existing cross-references (§N) stay stable. Parameterized builds must not emit
+`{{#testimonials}}`, `testimonial_title`, or `testimonial_subtitle`.
 
 ---
 
@@ -619,6 +601,23 @@ nav buttons) must carry `font-family: inherit;` so it picks up the body's font. 
 already correct in the reference implementation — keep it that way on every new field
 or button added to the form, since it's the kind of omission that's invisible in a
 design mock and only shows up once real text is typed into a live input.
+
+**Consent checkbox label (mandatory, exact wording).** Every microsite's booking modal
+— on `index.html`, `blog.html` and `blog-detail.html` alike — uses this label, verbatim:
+
+```html
+<label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. {{full_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
+```
+
+- The doctor name follows the page's own convention: `Dr. {{full_name}}` on param/live
+  builds, the site's hardcoded `Dr. <Name>` on non-param sites, `Dr. [Doctor Name]` in
+  the Default Template. Never use a name different from the one in the page's
+  `.brand-name`.
+- Do not reintroduce the old "I consent to share my provided details with the doctor."
+  wording or the longer "technology provider … corrected or erased" variant.
+- "Privacy Policy" is plain text (no link) unless a link is requested explicitly.
+- Keep the `consentCheckbox` id and the `if (!consentGiven)` validation in
+  `script/index.js` untouched — only the label text changes.
 
 ---
 
@@ -814,7 +813,7 @@ components on the same page invent their own overlay darkness.
 Apply to every microsite:
 
 1. **Local assets over hotlinked images.** ENT-1's own portrait/about/philosophy photos
-   are local (`assets/`), but its testimonial avatars and gallery photos are hotlinked
+   are local (`assets/`), but its gallery photos are hotlinked
    to Unsplash with query-string sizing (`?w=120&h=120&fit=crop`, `?w=1400&q=80`). For
    a new/edited microsite, download and serve these locally from `assets/` — hotlinking
    a third party is a Lighthouse and reliability risk (no caching control, dependent on
@@ -823,7 +822,7 @@ Apply to every microsite:
    width/height attributes or a CSS `aspect-ratio` (as gallery/about/philosophy frames
    already do) to prevent layout shift (CLS) while loading.
 3. **`loading="lazy"` on everything below the fold** (about photo, philosophy photo,
-   gallery images, testimonial avatars) — already ENT-1's practice, keep it. The hero
+   gallery images) — already ENT-1's practice, keep it. The hero
    portrait and the promotional banner image are above-the-fold and should stay
    `loading="eager"` (or omit the attribute, which defaults to eager).
 4. **Compress and size-match before upload.** Don't ship a 1400px-wide source image
@@ -848,14 +847,14 @@ Apply to every microsite:
 ENT-1's actual section order is:
 
 Header → Hero (+ optional promotional banner) → About → Services → Care Philosophy →
-Consultation Journey → **Contact** → Testimonials → Practice Gallery (+ lightbox) →
+Consultation Journey → **Contact** → Practice Gallery (+ lightbox) →
 Booking Modal → Footer
 
-(This is also stated as the canonical 11-section build list in §21.) Two things below
+(This is also stated as the canonical 10-section build list in §21.) Two things below
 extend an earlier, shorter 10-section version of this list:
 - **Contact section** (id `#contact-us`) sits between Consultation Journey and
-  Testimonials — a dedicated address/phone/email card, separate from the footer and
-  separate from the booking modal. Treat this as a mandatory 11th standard section
+  Practice Gallery — a dedicated address/phone/email card, separate from the footer and
+  separate from the booking modal. Treat this as a mandatory standard section
   going forward, positioned exactly there in the sequence. Section padding: `20px 0`,
   same as every other section per §19.
 - **Gallery lightbox** is part of the standard Gallery section, not optional — every
@@ -894,7 +893,6 @@ separate mobile override needed for this value).
 | Philosophy | **20px 0** |
 | Consultation Journey | **20px 0** |
 | Contact | **20px 0** |
-| Testimonials | **20px 0** |
 | Gallery | **20px 0** |
 
 Any section shipping a different value is a bug to fix, not a valid variant.
@@ -1015,11 +1013,10 @@ apply:
 | 4 | Services | Responsive 12-track grid of core clinical services | §6, §23 |
 | 5 | Care Philosophy | Split-screen: image + floating badge, 3 pillars with connecting rail | §7 |
 | 6 | Consultation Journey | 4-step animated timeline | §8 |
-| 7 | Contact | Dedicated address/phone/email card (mandatory 11th section) | §18.1 |
-| 8 | Testimonials | Carousel: avatar, stars, quote, autoplay + swipe | §9 |
-| 9 | Practice Gallery | Grid + lightbox, 12-track centering same as Services | §10, §23 |
-| 10 | Booking Modal | Popup form: date/time, file upload, phone input, consent | §11, §25 |
-| 11 | Footer | Branding, social links, quick/legal links, visitor badge, copyright | §12 |
+| 7 | Contact | Dedicated address/phone/email card (mandatory section) | §18.1 |
+| 8 | Practice Gallery | Grid + lightbox, 12-track centering same as Services | §10, §23 |
+| 9 | Booking Modal | Popup form: date/time, file upload, phone input, consent | §11, §25 |
+| 10 | Footer | Branding, social links, quick/legal links, visitor badge, copyright | §12 |
 
 Plus two persistent overlays present on every page load (not scroll sections):
 **Chatbot widget** (§13) and, only on the homepage hero, the optional **promotional
@@ -1080,7 +1077,7 @@ p, li, span, a, button, label {
    used as a flex/grid child to this list */
 .hero-content, .hero-visual, .hero-topbar, .hero-stats, .hero-stat, .hero-actions,
 .about-aside, .about-content, .service-card, .service-body, .contact-card,
-.contact-item, .testimonial-card, .testimonial-footer, .brand-text, .navbar,
+.contact-item, .brand-text, .navbar,
 .container, .nav-links, .nav-actions {
   min-width: 0;
 }
@@ -1088,7 +1085,7 @@ p, li, span, a, button, label {
 /* Rule 3: Parent Container Auto-Height Expansion — add every new card/badge/
    chip class to this list */
 .hero-badge, .hero-reg, .hero-title, .hero-subtitle, .hero-stats, .hero-stat,
-.hero-chip, .service-card, .testimonial-card, .contact-card, .about-story,
+.hero-chip, .service-card, .contact-card, .about-story,
 .card, article, aside {
   height: auto !important;
   min-height: fit-content;

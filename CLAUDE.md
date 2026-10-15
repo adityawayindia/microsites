@@ -17,7 +17,7 @@ assets/            ← images/media
 ```
 
 `index.html` section order: Header/Nav → Hero → About → Services → Care Philosophy
-(split-screen) → Consultation Journey (4-step timeline) → Testimonials (carousel) →
+(split-screen) → Consultation Journey (4-step timeline) →
 Practice Gallery → Booking Modal → Footer.
 
 ## Analytics — Microsoft Clarity (AGENTS.md §27, mandatory)
@@ -129,6 +129,16 @@ Practice Gallery → Booking Modal → Footer.
   and the stylesheet needs `.social-carousel-prev[hidden], .social-carousel-next[hidden]
   { display: none; }` (`.carousel-btn` is `display: flex`, which defeats `[hidden]`).
 - Test with 2 posts and 5+ posts. Copy the snippets from §30 verbatim.
+
+## Booking-modal consent label (AGENTS.md §11, mandatory)
+
+- Label text is exactly: "I agree to the Privacy Policy and consent to Dr. {{full_name}}
+  and DigiDr using my details to provide my consultation. I can withdraw consent or
+  request data deletion at info@digidr.app." — on `index.html`, `blog.html` and
+  `blog-detail.html`.
+- Doctor name matches the page's convention (`{{full_name}}` on param/live, hardcoded
+  name on non-param sites, `Dr. [Doctor Name]` in the Default Template). "Privacy
+  Policy" stays plain text unless a link is requested.
 
 ## Other standards
 

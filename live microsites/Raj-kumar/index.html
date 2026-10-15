@@ -80,7 +80,6 @@
                 <a href="#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
                 <a href="#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
                 <a href="#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
-                <a href="#testimonials" data-ga-event="nav_link_click" data-ga-label="Testimonials">Testimonials</a>
                 <a href="#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
                 <a href="#faq" data-ga-event="nav_link_click" data-ga-label="FAQ">FAQ</a>
                 {{#hasBlog}}
@@ -210,22 +209,22 @@
                 <div class="iv-hud-item">
                     <span class="iv-hud-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
                     <div>
-                        <strong class="iv-hud-num">{{experience}}</strong>
-                        <span class="iv-hud-lbl">Years Experience</span>
+                        <strong class="iv-hud-num">{{practising_since}}</strong>
+                        <span class="iv-hud-lbl">Practising since</span>
                     </div>
                 </div>
                 <div class="iv-hud-item">
                     <span class="iv-hud-icon"><i class="fa-solid fa-hospital-user" aria-hidden="true"></i></span>
                     <div>
-                        <strong class="iv-hud-num">{{totalpatient}}</strong>
-                        <span class="iv-hud-lbl">ICU Consultations</span>
+                        <strong class="iv-hud-num">{{languages_count}}</strong>
+                        <span class="iv-hud-lbl">Languages</span>
                     </div>
                 </div>
                 <div class="iv-hud-item">
                     <span class="iv-hud-icon"><i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i></span>
                     <div>
-                        <strong class="iv-hud-num">98.2%</strong>
-                        <span class="iv-hud-lbl">Positive Feedback</span>
+                        <strong class="iv-hud-num">{{consultation_modes_count}}</strong>
+                        <span class="iv-hud-lbl">Consultation modes</span>
                     </div>
                 </div>
             </div>
@@ -591,15 +590,15 @@
                     </div>
                 </article>
 
-                <article class="iv-contact-card iv-contact-card--reach">
+                <article data-contact-card class="iv-contact-card iv-contact-card--reach">
                     <h3>Reach Us</h3>
-                    <div class="iv-contact-row">
+                    <div data-contact-info class="iv-contact-row">
                         <i class="fa-solid fa-phone" aria-hidden="true"></i>
                         <div>
                             <h4>Phone &amp; Email</h4>
                             <p>
-                                <a href="tel:+{{code}}{{phone}}" data-ga-event="phone_number_click">{{code}}-{{phone}}</a><br />
-                                <a href="mailto:{{email}}" data-ga-event="email_click">{{email}}</a>
+                                <a data-contact-phone href="tel:+{{code}}{{phone}}" data-ga-event="phone_number_click">{{code}}-{{phone}}</a><br />
+                                <a data-contact-email href="mailto:{{email}}" data-ga-event="email_click">{{email}}</a>
                             </p>
                         </div>
                     </div>
@@ -610,96 +609,6 @@
     </section>
 
     <div class="iv-drip-rule" aria-hidden="true"></div>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="iv-testimonials" id="testimonials">
-        <!-- SVG Background Pattern for ICU Hexagonal Medical Matrix -->
-        <div class="iv-testimonials-bg-pattern" aria-hidden="true">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <!-- Hexagonal Matrix Pattern -->
-                    <pattern id="ivTestiHexGrid" width="60" height="104" patternUnits="userSpaceOnUse">
-                        <!-- Hex Outlines -->
-                        <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" fill="none" stroke="var(--iv)"
-                              stroke-width="1" opacity="0.09" />
-                        <path d="M 30 52 L 60 69.32 L 60 103.96 L 30 121.28 L 0 103.96 L 0 69.32 Z" fill="none"
-                              stroke="var(--saline)" stroke-width="1" opacity="0.07" />
-                        <path d="M -30 52 L 0 69.32 L 0 103.96 L -30 121.28 L -60 103.96 L -60 69.32 Z" fill="none"
-                              stroke="var(--iv-deep)" stroke-width="1" opacity="0.06" />
-
-                        <!-- Glowing Highlight Dots at Vertices/Centers -->
-                        <circle cx="30" cy="34.64" r="2.5" fill="var(--saline)" opacity="0.3"
-                                class="iv-hex-dot iv-hex-dot--pulse" />
-                        <circle cx="0" cy="17.32" r="1.8" fill="var(--iv-bright)" opacity="0.22" />
-                        <circle cx="60" cy="17.32" r="1.8" fill="var(--vital)" opacity="0.2" />
-                        <circle cx="30" cy="86.64" r="2.2" fill="var(--iv)" opacity="0.25" class="iv-hex-dot iv-hex-dot--pulse2" />
-                        <circle cx="0" cy="69.32" r="1.5" fill="var(--saline-bright)" opacity="0.2" />
-                        <circle cx="60" cy="69.32" r="1.5" fill="var(--iv-deep)" opacity="0.2" />
-                    </pattern>
-
-                    <radialGradient id="ivTestiHexGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="var(--saline)" stop-opacity="0.1" />
-                        <stop offset="60%" stop-color="var(--iv)" stop-opacity="0.05" />
-                        <stop offset="100%" stop-color="transparent" stop-opacity="0" />
-                    </radialGradient>
-                </defs>
-
-                <!-- Ambient Glow Base -->
-                <rect width="100%" height="100%" fill="url(#ivTestiHexGlow)" />
-
-                <!-- Hex Grid Fill -->
-                <rect width="100%" height="100%" fill="url(#ivTestiHexGrid)" />
-            </svg>
-        </div>
-
-        <div class="container">
-            <div class="iv-section-head iv-testi-head">
-                <span class="iv-chip iv-chip--vital">
-                    <i class="fa-solid fa-comment-medical" aria-hidden="true"></i> Patient
-                    Experiences
-                </span>
-                <h2 class="iv-title">
-                    {{#has_testimonial_title}}{{testimonial_title}}{{/has_testimonial_title}}
-                    {{#no_testimonial_title}}Families who waited out <em>the hard nights</em>{{/no_testimonial_title}}
-                </h2>
-                <p class="iv-sub">Feedback from patients and families cared for during critical hospitalisations.</p>
-            </div>
-
-            <div class="testimonials-carousel-wrap">
-                <button class="carousel-btn carousel-btn--prev" aria-label="Previous testimonials">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="carousel-btn carousel-btn--next" aria-label="Next testimonials">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-
-                <div class="testimonials-carousel" id="testimonialsCarousel">
-                    <div class="testimonials-track" id="testimonialsTrack">
-                        {{#testimonials}}
-                        <article class="testimonial-card">
-                            <span class="iv-testi-drop" aria-hidden="true"><i class="fa-solid fa-quote-right"></i></span>
-                            <p class="testimonial-quote">
-                                {{comment}}
-                            </p>
-                            <div class="testimonial-footer">
-                                <img src="{{profile_picture}}"
-                                     alt="{{patient_name}}" class="testimonial-avatar" />
-                                <div>
-                                    <h3 class="testimonial-name">{{patient_name}}</h3>
-                                    <div class="testimonial-stars" aria-label="{{rating}} out of 5 stars">
-                                        {{stars_html}}
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        {{/testimonials}}
-                    </div>
-                </div>
-
-                <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
-            </div>
-        </div>
-    </section>
 
     <!-- ===== GALLERY ===== -->
     <section class="iv-gallery" id="gallery">
@@ -839,10 +748,10 @@
                     <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true" data-ga-event="clinic_visit_tab_click">
                         Clinic Visit
                     </button>
-                    <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" data-ga-event="online_consult_tab_click">
-                        Online Consultation
-                    </button>
+                    <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" data-ga-event="online_consult_tab_click" aria-describedby="onlineConsultTip">
+                        Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
                 </div>
+                  <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
             </div>
 
             <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
@@ -926,7 +835,7 @@
 
                 <div class="booking-field booking-consent-field">
                     <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
-                    <label for="consentCheckbox">I consent to share my provided details with the doctor.</label>
+                    <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. {{full_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
                 </div>
 
                 <button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
@@ -1061,7 +970,7 @@
                 All rights reserved.
             </p>
         </div>
-        <p class="footer-disclaimer">Information on this site is for general awareness and is not a substitute for a medical consultation.</p>
+        <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
     </footer>
 
     <script src="{{path}}/script/banner-module.js"></script>
@@ -1072,20 +981,6 @@
 </body>
 
 </html>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const track = document.getElementById("testimonialsTrack");
-
-        if (!track || track.children.length === 0) {
-            document.getElementById("testimonials")?.remove();
-
-            document
-                .querySelectorAll('a[href="#testimonials"]')
-                .forEach(x => x.remove());
-        }
-    });
-</script>
 
 <script>
     (function () {
