@@ -137,6 +137,12 @@
                     <p class="iv-hero-lead">
                         {{awards}},{{education}}.
                     </p>
+                    {{#hasFellowship}}
+                    <p class="iv-hero-lead">
+                        <i class="fa-solid fa-award" aria-hidden="true"></i>
+                        Fellowship: {{fellowship}}
+                    </p>
+                    {{/hasFellowship}}
                     {{#hasmic}}
                     <p class="iv-hero-reg">
                         <i class="fa-solid fa-id-card" aria-hidden="true"></i>

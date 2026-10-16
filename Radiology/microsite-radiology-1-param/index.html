@@ -29,7 +29,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. {{full_name}} | {{speciality}} — Diagnostic &amp; Interventional Imaging</title>
-  <meta name="description" content="{{speciality}} Dr. {{full_name}} reports MRI, CT, digital X-ray, ultrasound and mammography studies, and performs image-guided interventional procedures, with clear reports returned within 24 hours." />
+  <meta name="description" content="{{speciality}} Dr. {{full_name}} reports MRI, CT, digital X-ray, ultrasound and mammography studies, and performs image-guided interventional procedures, with clear, structured reports." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230b1a2c'/%3E%3Cg fill='none' stroke='%2322d3ee' stroke-width='3' stroke-linecap='round'%3E%3Ccircle cx='32' cy='32' r='16' stroke-dasharray='4 6'/%3E%3Cpath d='M32 15v11M32 38v11M15 32h11M38 32h11'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='4.5' fill='%2322d3ee'/%3E%3C/svg%3E" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.example.com/radiology-1/" /><!-- TODO: replace with live production domain before launch -->
@@ -81,7 +81,7 @@
   }
   </script>
 </head>
-<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
+<body data-micrositeid="{{micrositeId}}" data-slug="dhara-sharma">
 
   <!-- ====== HEADER ====== -->
   <header class="site-header">
@@ -173,17 +173,14 @@
 
     <div class="container hero-layout">
       <div class="hero-content">
-        <p class="expert-badge">
-          <span class="expert-badge-pulse" aria-hidden="true"></span>
-          Diagnostic &amp; Interventional Imaging
-        </p>
-
         <h1 class="hero-title">Dr. {{full_name}}</h1>
         <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{awards}},{{education}}</p>
+        {{#hasFellowship}}
+        <p class="hero-credentials"><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
+        {{/hasFellowship}}
         {{#hasmic}}
         <p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No.: {{mci}}</p>
         {{/hasmic}}
-
         <div class="hero-stats-grid">
           <article class="hero-stat-box">
             <i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i>
@@ -241,13 +238,7 @@
         <div class="hero-portrait-frame">
           <div class="hero-portrait">
             <img src="{{profile}}" alt="Dr. {{full_name}}, radiologist, portrait" class="hero-image" />
-            <span class="hero-scan-sweep" aria-hidden="true"></span>
           </div>
-
-          <p class="hero-readout">
-            <span class="hero-readout-dot" aria-hidden="true"></span>
-            <span>MRI &middot; CT &middot; X-Ray &middot; USG</span>
-          </p>
         </div>
       </div>
     </div>
@@ -271,7 +262,7 @@
         </h2>
         <p class="about-description">
           {{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}
-          {{#no_about_section_subtitle}}A protocol-first imaging service&mdash;the right study, acquired at the lowest safe dose, reported in language your treating doctor can act on the same day.{{/no_about_section_subtitle}}
+          {{#no_about_section_subtitle}}A protocol-first imaging service&mdash;the right study, acquired at the lowest safe dose, reported in language your treating doctor can act on.{{/no_about_section_subtitle}}
         </p>
         <div class="read-more-wrap">
           <div class="read-more-content">
@@ -302,7 +293,7 @@
         </h2>
         <p class="services-subtitle">
           {{#has_service_section_subtitle}}{{service_section_subtitle}}{{/has_service_section_subtitle}}
-          {{#no_service_section_subtitle}}Every major modality under one roof, protocolled by a consultant and reported within 24 hours.{{/no_service_section_subtitle}}
+          {{#no_service_section_subtitle}}Every major modality under one roof, protocolled by a consultant and reported clearly.{{/no_service_section_subtitle}}
         </p>
       </div>
 
@@ -318,6 +309,33 @@
     </div>
   </section>
 
+    <!-- ====== SOCIAL MEDIA — live Facebook post embeds ====== -->
+    <section class="social-media-section" id="social-media">
+        <div class="container">
+            <div class="social-media-header">
+                <span class="social-media-kicker">
+                    <i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Latest Updates
+                </span>
+                <h2 class="social-media-title">From My Social Media</h2>
+                <p class="social-media-subtitle">
+                    My latest posts and practical health guidance, shared directly from the clinic on social media.
+                </p>
+            </div>
+
+            <div class="social-media-carousel-wrap">
+                <button type="button" class="carousel-btn carousel-btn--prev social-carousel-prev" aria-label="Previous posts">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="carousel-btn carousel-btn--next social-carousel-next" aria-label="Next posts">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <div class="social-media-carousel" id="socialMediaCarousel">
+                    <div class="social-media-track" id="socialMediaTrack"></div>
+                </div>
+            </div>
+        </div>
+    </section>
   <!-- ====== CARE PHILOSOPHY (image left with floating credential badge, connected-rail pillars right) ====== -->
   <section class="philosophy-section" id="philosophy">
     <div class="container philosophy-layout">
@@ -467,7 +485,7 @@
             </h3>
             <p>
               {{#has_process_section_step_body_subtext_4}}{{process_section_step_body_subtext_4}}{{/has_process_section_step_body_subtext_4}}
-              {{#no_process_section_step_body_subtext_4}}A structured report within 24 hours, shared digitally, with a sit-down review of your images on request.{{/no_process_section_step_body_subtext_4}}
+              {{#no_process_section_step_body_subtext_4}}A structured report, shared digitally, with a sit-down review of your images on request.{{/no_process_section_step_body_subtext_4}}
             </p>
           </div>
         </div>
@@ -607,12 +625,12 @@
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Is emergency or same-day imaging available?</span>
+            <span>Is emergency or urgent imaging available?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Same-day imaging is available for urgent cases where clinically appropriate — call the clinic directly to check availability for your specific scan.</p>
+              <p>Urgent imaging is available where clinically appropriate — call the clinic directly to check availability for your specific scan.</p>
             </div>
           </div>
         </div>
@@ -628,7 +646,7 @@
         <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Scan Appointment</button>
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
           <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
         <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
@@ -788,7 +806,7 @@
             <span class="brand-role">{{speciality}}</span>
           </span>
         </a>
-        <p class="footer-tagline">Protocol-led diagnostic and interventional imaging, reported within 24 hours.</p>
+        <p class="footer-tagline">Protocol-led diagnostic and interventional imaging with clear, structured reports.</p>
         <div class="footer-social-wrap">
           <span class="footer-social-label">Follow me on:</span>
           <div class="footer-social">
@@ -837,22 +855,16 @@
             <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
             <a href="/{{slug}}/terms-of-service">Terms of Service</a>
           </nav>
-        </div>
-
-        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
-          <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
-          <span class="footer-visitor-badge-label">No. of Visitor:</span>
-          <span class="footer-visitor-badge-count">500</span>
+          <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
+            <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+            <span class="footer-visitor-badge-label">No. of Visitor:</span>
+            <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom-row">
-      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
-        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
-        <span class="footer-visitor-badge-label">No. of Visitor:</span>
-        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
-      </div>
       <p>&copy; 2026 Dr. {{full_name}}. <span class="footer-rights">All rights reserved.</span></p>
     </div>
       <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>

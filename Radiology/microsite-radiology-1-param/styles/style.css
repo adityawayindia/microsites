@@ -681,11 +681,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   padding: 16px 16px 18px;
   border-radius: var(--radius-lg);
   text-align: left;
-  background: hsl(199 60% 80% / 0.07);
+  /* Opaque so the background scan line never shows through the tile. */
+  background: linear-gradient(hsl(199 60% 80% / 0.07), hsl(199 60% 80% / 0.07)), hsl(215 58% 11%);
   border: 1px solid hsl(199 60% 80% / 0.18);
   box-shadow: none;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   overflow: hidden;
   transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
   height: auto;
@@ -701,7 +700,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 .hero-stat-box:hover {
   transform: translateY(-3px);
-  background: hsl(199 60% 80% / 0.12);
+  background: linear-gradient(hsl(199 60% 80% / 0.12), hsl(199 60% 80% / 0.12)), hsl(215 58% 11%);
   border-color: hsl(188 90% 70% / 0.4);
 }
 .hero-stat-box i {
@@ -777,7 +776,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center;
   border-radius: var(--radius-sm);
-  background: hsl(199 60% 80% / 0.08);
+  background: linear-gradient(hsl(199 60% 80% / 0.08), hsl(199 60% 80% / 0.08)), hsl(215 58% 11%);
   border: 1px solid hsl(199 60% 80% / 0.2);
   box-shadow: none;
   color: hsl(199 40% 92%);
@@ -883,27 +882,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   object-position: center top;
 }
 
-/* A cyan band sweeping across the portrait, the way a slice sweeps
-   across a study on the workstation. */
-.hero-scan-sweep {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background: linear-gradient(180deg,
-    hsl(186 88% 62% / 0) 0%,
-    hsl(186 88% 62% / 0.18) 48%,
-    hsl(186 92% 74% / 0.5) 50%,
-    hsl(186 88% 62% / 0.18) 52%,
-    hsl(186 88% 62% / 0) 100%);
-  animation: heroPortraitSweep 4.6s ease-in-out infinite;
-}
-
-@keyframes heroPortraitSweep {
-  0%, 100% { transform: translateY(-100%); }
-  50%      { transform: translateY(100%); }
-}
-
 /* Modality readout under the frame — a monospaced strip naming the
    scanners this practice reports on. */
 .hero-readout {
@@ -982,7 +960,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 @media (prefers-reduced-motion: reduce) {
   .hero-float-icon,
   .hero-readout-dot { animation: none; }
-  .hero-scan-sweep { animation: none; opacity: 0.3; transform: none; }
 }
 
 /* Sections end on their own ground here, so the curved divider is retired. */
@@ -3143,3 +3120,286 @@ footer .footer-disclaimer {
   .booking-modal-header { padding-top: 6px; }
   .booking-modal-close { position: static; display: block; margin: 0 -8px 0 auto; width: 44px; height: 40px; }
 }
+
+/* ============================================================
+   SOCIAL MEDIA — live Facebook post embeds.
+   White band between the mint Services and sand Philosophy
+   sections, keeping the alternating-band rhythm intact.
+   Always visible: with no posts to show it renders an explicit
+   message rather than collapsing.
+   ============================================================ */
+.social-media-section {
+  padding: 20px 0;
+  background: var(--surface);
+}
+
+.social-media-empty {
+  width: 100%;
+  margin: 0;
+  padding: 48px 24px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--muted);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-media-carousel.is-empty { overflow-x: hidden; }
+
+.social-media-header { text-align: center; margin: 0 auto 48px; max-width: 700px; }
+.social-media-subtitle { margin-left: auto; margin-right: auto; }
+
+.social-media-carousel-wrap {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 56px;
+  min-width: 0;
+}
+
+/* --post-card-width is read by the JS to size the SDK embed (data-width),
+   so the iframe Facebook builds always matches the real card width. */
+.social-media-carousel {
+  --post-card-width: 300px;
+  --post-card-height: 400px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.social-media-carousel::-webkit-scrollbar { display: none; }
+
+/* Centred while the posts fit; scrolls (via the carousel) once they don't.
+   max-width: none beats the global div { max-width: 100% } reset — without it
+   the track is capped at the carousel width and centring pushes the first
+   cards off the left edge, where they can never be scrolled to. */
+.social-media-track {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+  justify-content: safe center;
+}
+/* Every card is locked to one height (--post-card-height). Facebook sizes its
+   iframe to the post's own content, which varies wildly (one long post
+   reported ~3700px), so the card clips the embed instead of growing or
+   scrolling. Height is NOT auto here, which deliberately departs from the
+   global auto-height rule: the content is a fixed-size cross-origin iframe. */
+.social-post-card {
+  flex: 0 0 var(--post-card-width);
+  min-width: 0;
+  max-width: 100%;
+  height: var(--post-card-height) !important;
+  min-height: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+/* Skeleton loading state: placeholder cards before the feed arrives, then the
+   same skeleton behind each embed until Facebook paints its iframe. */
+.social-post-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface);
+}
+.social-post-card.is-loaded .social-post-skeleton { display: none; }
+
+.social-post-skeleton .sk {
+  display: block;
+  border-radius: 8px;
+  background: linear-gradient(100deg,
+    var(--bg-2) 30%, var(--surface-2) 50%, var(--bg-2) 70%);
+  background-size: 220% 100%;
+  animation: social-post-shimmer 1.4s ease-in-out infinite;
+}
+.social-post-skeleton .sk-head { display: flex; align-items: center; gap: 12px; }
+.social-post-skeleton .sk-avatar { flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%; }
+.social-post-skeleton .sk-lines { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.social-post-skeleton .sk-line { height: 12px; width: 100%; }
+.social-post-skeleton .sk-w80 { width: 80%; }
+.social-post-skeleton .sk-w60 { width: 60%; }
+.social-post-skeleton .sk-w40 { width: 40%; }
+.social-post-skeleton .sk-media { flex: 1 1 auto; min-height: 0; border-radius: 12px; }
+
+@keyframes social-post-shimmer {
+  from { background-position: 180% 0; }
+  to   { background-position: -80% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-post-skeleton .sk { animation: none; }
+}
+
+.social-post-card {
+  position: relative;
+}
+
+/* The embed is clipped by the fixed-height card — no scrolling. */
+.social-post-card .fb-post {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Bottom fade makes the cut look deliberate. */
+.social-post-card:not(.is-fallback)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 44px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--surface) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* The SDK writes fixed inline widths onto its own wrappers; cap them so a
+   card can never push its siblings out of the track. */
+.social-post-card .fb-post,
+.social-post-card .fb-post span,
+.social-post-card .fb-post iframe {
+  max-width: 100% !important;
+}
+
+/* Shown when the embed is blocked or never paints — a real link card in place
+   of a blank box, built by the JS because the SDK strips the nested fallback. */
+.social-post-fallback {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+  background: var(--bg-2);
+}
+.social-post-fallback i {
+  font-size: 34px;
+  color: var(--sky);
+}
+.social-post-fallback span {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--sky-dark);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-post-fallback:hover span { color: var(--amber-dark); }
+.social-post-fallback:hover i { color: var(--amber); }
+
+/* Fallback link shown when the SDK is blocked — never an empty box. */
+.social-post-card .fb-xfbml-parse-ignore {
+  margin: 0;
+  padding: 20px;
+}
+.social-post-card .fb-xfbml-parse-ignore a {
+  font-size: 18px;
+  color: var(--sky-dark);
+  font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-post-card .fb-xfbml-parse-ignore a:hover { color: var(--amber-dark); }
+
+.social-carousel-prev,
+.social-carousel-next {
+  border: 2px solid var(--sky);
+  color: var(--sky);
+}
+/* .carousel-btn sets display:flex, which would otherwise defeat [hidden]. */
+.social-carousel-prev[hidden],
+.social-carousel-next[hidden] { display: none; }
+.social-carousel-prev:hover,
+.social-carousel-next:hover {
+  border-color: var(--amber);
+}
+
+.social-carousel-prev:disabled,
+.social-carousel-next:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .social-media-carousel { --post-card-width: 280px; --post-card-height: 375px; }
+}
+
+@media (min-width: 641px) and (max-width: 1100px) {
+  .social-media-carousel { --post-card-width: 300px; --post-card-height: 400px; }
+}
+
+@media (max-width: 900px) {
+  /* Pin prev/next below the track rather than floating them over the
+     cards, matching the testimonials carousel's mobile treatment. */
+  .social-media-carousel-wrap {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "carousel carousel"
+      "prev next";
+    justify-items: center;
+    row-gap: 18px;
+  }
+  #socialMediaCarousel { grid-area: carousel; width: 100%; min-width: 0; }
+  .social-carousel-prev { grid-area: prev; position: static; transform: none; justify-self: end; margin-right: 8px; }
+  .social-carousel-next { grid-area: next; position: static; transform: none; justify-self: start; margin-left: 8px; }
+  .social-carousel-prev:hover,
+  .social-carousel-next:hover { transform: none; }
+}
+
+@media (max-width: 768px) {
+  /* Pin prev/next to a row below the image instead of floating
+     beside it at mid-screen height. */
+  .gallery-lightbox-content { max-height: 68vh; max-height: 68dvh; }
+
+  .gallery-lightbox-nav {
+    top: auto;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    transform: none;
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+    left: 50%;
+  }
+  .gallery-lightbox-prev { transform: translateX(calc(-100% - 10px)); }
+  .gallery-lightbox-next { transform: translateX(10px); }
+  .gallery-lightbox-nav:hover { transform: translateX(calc(-100% - 10px)) scale(1.1); }
+  .gallery-lightbox-next:hover { transform: translateX(10px) scale(1.1); }
+}
+
+
+/* Social media section — heading/kicker styling to match sibling sections */
+.social-media-title { font-size: 37px; font-weight: 700; color: var(--sky-dark); margin: 14px 0 14px; letter-spacing: -0.01em; line-height: 1.15; }
+.social-media-subtitle { font-size: 18px; color: var(--muted); max-width: 640px; }
+.social-media-kicker {
+  display: inline-flex; align-items: center; gap: 9px; padding: 7px 16px;
+  border-radius: var(--radius-pill); font-size: 16px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.4;
+  border: 1px solid hsl(18 50% 78%); background: var(--amber-light); color: var(--amber-dark);
+}
+.social-media-kicker i, .social-media-kicker span { color: inherit; }
+.social-media-carousel-wrap, .social-media-carousel { min-width: 0; }
+
+/* Hide the scrollbar on the booking modal; the dialog still scrolls with wheel, touch and keyboard */
+.booking-modal-dialog { scrollbar-width: none; -ms-overflow-style: none; }
+.booking-modal-dialog::-webkit-scrollbar { display: none; }

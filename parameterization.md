@@ -36,7 +36,8 @@ at the bucket folder, which is not renamed — leave those URLs unchanged.
 | `Pediatrician/microsite-pediatrician-2-param` | |
 | `Pediatrician/microsite-pediatrician-3-param` | Re-verified 2026-09-29 and fixed: hero Facebook Page disabled icon was gated on `noFacebook` (now `noFacebookPage`); footer + legal-page WhatsApp now `https://wa.me/91{{whatsapp}}`; Blog nav link now `/{{slug}}/blog`; MCI line colon; `{{awards}},{{education}}`; contact address in the §6 pattern; legal canonical/`og:url` without `.html`; disabled-social + tooltip CSS added (hero spans now carry `data-tooltip`). |
 | `Pediatrician/microsite-pediatrician-4-param` | Re-verified 2026-09-29; same fixes as Pediatrician-3 (cloned markup). |
-| `Radiology/microsite-radiology-1-param` | Calendar now honours `availableDays`; demo time slots removed (2026-09-25). |
+| `Radiology/microsite-radiology-1-param` | Calendar now honours `availableDays`; demo time slots removed (2026-09-25). Later changes: hero scan sweep over the portrait and the hero specialty badge removed; hero stat tiles/social buttons made opaque so the background scan line cannot show through; static "500" visitor badge removed and the live badge moved under the Legal links; "within 24 hours" and "same day" wording removed from fallbacks, taglines and FAQ; new `{{#hasFellowship}}{{fellowship}}` hero line. A non-parameterized copy exists at `Radiology/microsite-radiology-1`. |
+| `Radiology/microsite-radiology-2-param` | Done 2026-10-16. Built from Radiology-1-param plus the Radiology-2 differences (fonts, light hero CSS, no About photo, shorter About fallback, philosophy photo). Disabled-social/tooltip CSS added. A non-parameterized copy exists at `Radiology/microsite-radiology-2`. |
 | `Urologist/microsite-urology-1-param` | Done 2026-09-25. |
 | `Urologist/microsite-urology-2-param` | Done 2026-09-25. Own hero layout (`uro-hero-*`); rest of the page matches Urology-1. |
 
@@ -86,6 +87,17 @@ Syntax: `{{var}}` for values, `{{#flag}}…{{/flag}}` for sections that show or 
 - `experience` and `totalpatient` are **strings**, e.g. `15` or `15+`.
 - Qualification line pattern: `{{awards}},{{education}}`.
 - Registration: `{{#hasmic}}…MCI Regd. No.: {{mci}}…{{/hasmic}}`.
+- **Fellowships (new, Radiology-1 only; placeholder is {{fellowship}}, flag is hasFellowship):**
+  `{{#hasFellowship}}…Fellowship: {{fellowship}}…{{/hasFellowship}}`. `fellowship` is
+  **one string** holding every fellowship, e.g.
+  `FACR (Fellow of the American College of Radiology), USA; EDiR (European Diploma in Radiology), Europe`.
+  Each entry already contains a comma, so the backend should separate entries with a
+  semicolon. The "Fellowship:" label is fixed template text — the backend sends the value
+  only. Rendered as a second `hero-credentials` line under the qualifications line (icon
+  `fa-award`); it wraps, so any number of entries is safe. Not in the live-site vocabulary,
+  so it is not counted in the total above.
+
+- **Privacy policy "Who We Are" line:** `Dr. {{full_name}}, {{awards}},{{education}}{{#hasmic}}, Registration No. {{mci}}, {{council}}{{/hasmic}}`.
 
 ### Clinic and contact
 `clinicname`, `address`, `city`, `district`, `state`, `pincode`, `phone`, `code`,
@@ -1257,6 +1269,11 @@ Status (2026-09-25): present in all 11 parameterized templates. Radiology-1 and
 Urology-1/2 were added last: badge at the top of `.footer-bottom-row`, placeholder
 JS switched to the early-return guard.
 
+Radiology-1 (updated): the badge now sits under the Privacy Policy / Terms of Service
+links inside the Legal column (`.footer-links-group`), not in `.footer-bottom-row`. The
+static "No. of Visitor: 500" duplicate was removed from `index.html` — only the live
+`#visitorCount` badge remains (the blog pages still carry the static one; they are disabled).
+
 ---
 
 ## 5a. WhatsApp link (resolved)
@@ -1348,7 +1365,8 @@ For each `<Specialty>/microsite-*/` folder:
 **index.html**
 - [ ] Hero: `{{profile}}`, `{{awards}},{{education}}`, `{{#hasmic}}{{mci}}`,
       `{{languages}}`, `{{experience}}`, `{{totalpatient}}`. The third stat stays
-      hardcoded.
+      hardcoded. Optional extra line (Radiology-1): `{{#hasFellowship}}Fellowship:
+      {{fellowship}}{{/hasFellowship}}`.
 - [ ] Banner block wrapped in `{{#has_banner}}` with the banner fields.
 - [ ] About: title and subtitle has_/no_ pairs, `{{introduction}}`.
 - [ ] Services: title and subtitle pairs, cards become a `{{#services}}` loop

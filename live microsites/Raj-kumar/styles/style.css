@@ -528,6 +528,10 @@ h1, h2, h3, h4 {
   margin: 18px 0 0;
 }
 
+/* Fellowship line stacks tight under the qualification line */
+.iv-hero-lead + .iv-hero-lead { margin-top: 8px; }
+.iv-hero-lead > i { color: hsl(190 84% 70%); margin-right: 6px; }
+
 .iv-hero-reg {
   display: inline-flex;
   align-items: center;
@@ -3476,3 +3480,7 @@ h1, h2, h3, h4 {
   .booking-modal-header { padding-top: 6px; }
   .booking-modal-close { position: static; display: block; margin: 0 -8px 0 auto; width: 44px; height: 40px; }
 }
+
+/* Hide the scrollbar on the booking modal; the dialog still scrolls with wheel, touch and keyboard */
+.booking-modal-dialog { scrollbar-width: none; -ms-overflow-style: none; }
+.booking-modal-dialog::-webkit-scrollbar { display: none; }

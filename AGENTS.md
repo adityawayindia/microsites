@@ -427,6 +427,8 @@ a wider CTA label than ENT-1's.
 | `.hero-layout` | grid `1.05fr 0.95fr`, `gap:56px`, `padding-top:36px`, `padding-bottom:40px` |
 | `h1` (doctor name) | `clamp(36px, 5.2vw, 58px)`, weight 800, line-height `1.05` |
 | Credentials / reg-id / languages lines | `18px` each |
+| Fellowship line (optional) | Same `hero-credentials` style as the qualifications line, directly beneath it: `fa-award` icon + `Fellowship: <value>`. One plain text node (no inner `<span>` — the global `span { color }` reset turns it black). Multiple fellowships come as one string, separated by `;`; the line wraps, never clamps. |
+| Glass/translucent hero tiles | Stat boxes and social buttons must have an **opaque** fill (tint layered over the solid hero colour) when a decorative scan line/sweep animates behind the hero — a semi-transparent tile lets the animation show through and looks like it is on top of the content. |
 | Expert/specialty badge | padding `9px 18px 9px 14px`, font `18px` (corrected — ENT-1 currently ships `16px`) |
 | Stats grid | 3 columns, `gap:14px`, `margin-bottom:22px` |
 | Stat box | padding `18px 14px`, `--radius-lg` (20px); icon `30px`; number `26px` weight 800; label `18px` (corrected — ENT-1 currently ships `16px`) |

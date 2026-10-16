@@ -179,6 +179,9 @@
                   <p class="hero-subtitle">
                       <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Qualification: {{awards}},{{education}}
                   </p>
+                  {{#hasFellowship}}
+                  <p class="hero-subtitle"><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
+                  {{/hasFellowship}}
                   {{#hasmic}}
                   <p class="hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> MCI Regd. No.: {{mci}}</p>
                   {{/hasmic}}

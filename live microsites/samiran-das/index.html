@@ -196,6 +196,9 @@
 
                 <h1 class="hero-title">Dr. {{full_name}}</h1>
                 <p class="hero-subtitle"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <strong>{{awards}},{{education}}</strong></p>
+                {{#hasFellowship}}
+                <p class="hero-subtitle"><i class="fa-solid fa-award" aria-hidden="true"></i> <strong>Fellowship: {{fellowship}}</strong></p>
+                {{/hasFellowship}}
                 {{#hasmic}}
                 <p class="hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> DCI Regd. No.: {{mci}}</p>
                 {{/hasmic}}

@@ -140,6 +140,16 @@ Practice Gallery → Booking Modal → Footer.
   name on non-param sites, `Dr. [Doctor Name]` in the Default Template). "Privacy
   Policy" stays plain text unless a link is requested.
 
+## Hero fellowship line (AGENTS.md §4, optional)
+
+- Where a doctor has fellowships, show one extra line directly under the qualifications
+  line: `<p class="hero-credentials"><i class="fa-solid fa-award"></i> Fellowship: <value></p>`
+  — same style as qualifications, plain text, **no inner `<span>`** (the global
+  `span { color }` reset turns it black).
+- Parameterized templates: `{{#hasFellowship}}…Fellowship: {{fellowship}}…{{/hasFellowship}}`.
+  `fellowship` is one string; multiple entries are separated by `;` (each entry already
+  contains commas). The "Fellowship:" label is fixed template text. Wraps, never clamped.
+
 ## Other standards
 
 - Fully responsive 320px–1440px.

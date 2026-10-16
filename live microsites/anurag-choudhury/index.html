@@ -242,6 +242,9 @@
 
                 <h1 class="hero-v2-title">Dr. {{full_name}}</h1>
                 <p class="hero-v2-subtitle">Qualification: {{awards}},{{education}}</p>
+                {{#hasFellowship}}
+                <p class="hero-v2-subtitle"><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
+                {{/hasFellowship}}
 
                 {{#hasmic}}
                 <div class="hero-v2-reg">

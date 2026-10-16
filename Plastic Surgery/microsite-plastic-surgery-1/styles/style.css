@@ -2680,3 +2680,7 @@ body.footer-in-view .chatbot-fab-wrap:not(.is-open) .chatbot-fab {
   .social-carousel-prev { grid-area: prev; position: static; transform: none; justify-self: end; margin-right: 8px; }
   .social-carousel-next { grid-area: next; position: static; transform: none; justify-self: start; margin-left: 8px; }
 }
+
+/* Hide the scrollbar on the booking modal; the dialog still scrolls with wheel, touch and keyboard */
+.booking-modal-dialog { scrollbar-width: none; -ms-overflow-style: none; }
+.booking-modal-dialog::-webkit-scrollbar { display: none; }
