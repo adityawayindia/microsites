@@ -4,15 +4,15 @@
 # digidr.app/llms.txt, one line per doctor under the "Doctors" section below.
 # Path below assumes this microsite is served at digidr.app/radiology-2/
 
-# Dr. Vikram Rao
+# Dr. Priya Nair
 
-> Dr. Vikram Rao, Consultant Radiologist, on DigiDr. Book a consultation online.
+> Dr. Priya Nair, Consultant Radiologist, on DigiDr. Book a consultation online.
 
 - Specialty: Consultant Radiologist
 - Book a consultation: https://digidr.app/radiology-2/#booking-modal
 
 ## Pages
 
-- [Profile](https://digidr.app/radiology-2/): Dr. Vikram Rao's profile — about, services, care philosophy, consultation journey, and practice gallery.
+- [Profile](https://digidr.app/radiology-2/): Dr. Priya Nair's profile — about, services, care philosophy, consultation journey, and practice gallery.
 - [Privacy Policy](https://digidr.appprivacy-policy.html)
 - [Terms of Service](https://digidr.appterms-of-service.html)
