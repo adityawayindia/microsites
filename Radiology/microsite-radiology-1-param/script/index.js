@@ -1776,3 +1776,14 @@ document.addEventListener("click", (event) => {
         renderPosts(entries);
     });
 })();
+
+/* Hero: show only the year in "Practising since"; hide the fellowship line when empty */
+(function () {
+  var since = document.querySelector('[data-practising-since]');
+  if (since) {
+    var m = since.textContent.match(/\b(?:19|20)\d{2}\b/);
+    if (m) since.textContent = m[0];
+  }
+  var fel = document.querySelector('[data-hero-fellowship]');
+  if (fel && !fel.textContent.replace(/Fellowship:/i, '').trim()) fel.hidden = true;
+})();
