@@ -5,8 +5,6 @@
   this doctor's pages — backend team must merge every microsite's <url>
   entries into ONE combined sitemap.xml served at digidr.app/sitemap.xml.
   Path below assumes this microsite is served at digidr.app/{{slug}}/
-  Blog pages are intentionally omitted: blog.html/blog-detail.html are
-  currently disabled on this microsite.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>

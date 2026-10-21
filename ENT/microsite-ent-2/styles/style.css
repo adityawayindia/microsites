@@ -785,6 +785,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   gap: 8px;
   margin: 0 0 22px;
   font-size: 18px;
+  font-weight: 700;
   color: var(--muted);
 }
 .languages i { color: var(--amber); }

@@ -36,7 +36,7 @@ at the bucket folder, which is not renamed — leave those URLs unchanged.
 | `General Physician/microsite-general-physician-1` | Done 2026-09-29. **Folder rename to `-param` still pending** (folder was locked by another process). Services tag pills dropped (loop is title + description only); philosophy image uses the byte-identical `microsite-general-medicine-1` bucket copy. |
 | `General Physician/microsite-general-physician-2` | Done 2026-09-29. Same conversion as General Physician-1 (identical JS; blue-theme CSS). **Folder rename to `-param` still pending** (folder locked). |
 | `Pediatrician/microsite-pediatrician-2-param` | |
-| `Pediatrician/microsite-pediatrician-3-param` | Re-verified 2026-09-29 and fixed: hero Facebook Page disabled icon was gated on `noFacebook` (now `noFacebookPage`); footer + legal-page WhatsApp now `https://wa.me/91{{whatsapp}}`; Blog nav link now `/{{slug}}/blog`; MCI line colon; `{{awards}},{{education}}`; contact address in the §6 pattern; legal canonical/`og:url` without `.html`; disabled-social + tooltip CSS added (hero spans now carry `data-tooltip`). |
+| `Pediatrician/microsite-pediatrician-3-param` | Re-verified 2026-09-29 and fixed: hero Facebook Page disabled icon was gated on `noFacebook` (now `noFacebookPage`); footer + legal-page WhatsApp now `https://wa.me/91{{whatsapp}}`; MCI line colon; `{{awards}},{{education}}`; contact address in the §6 pattern; legal canonical/`og:url` without `.html`; disabled-social + tooltip CSS added (hero spans now carry `data-tooltip`). |
 | `Pediatrician/microsite-pediatrician-4-param` | Re-verified 2026-09-29; same fixes as Pediatrician-3 (cloned markup). |
 | `Radiology/microsite-radiology-1-param` | Calendar now honours `availableDays`; demo time slots removed (2026-09-25). Later changes: hero scan sweep over the portrait and the hero specialty badge removed; hero stat tiles/social buttons made opaque so the background scan line cannot show through; static "500" visitor badge removed and the live badge moved under the Legal links; "within 24 hours" and "same day" wording removed from fallbacks, taglines and FAQ; new `{{#hasFellowship}}{{fellowship}}` hero line. A non-parameterized copy exists at `Radiology/microsite-radiology-1`. |
 | `Radiology/microsite-radiology-2-param` | Done 2026-10-16. Built from Radiology-1-param plus the Radiology-2 differences (fonts, light hero CSS, no About photo, shorter About fallback, philosophy photo). Disabled-social/tooltip CSS added. A non-parameterized copy exists at `Radiology/microsite-radiology-2`. |
@@ -65,13 +65,12 @@ Pediatrician-1-assigned, Pediatrician-5 (work pending).
   styling for social icons, add it (dim the icon glyph and surface, not the whole
   element, so the "Not Enabled" tooltip stays readable).
 - **Page links use `{{slug}}`, no `.html`.** Every relative link to another page
-  (nav, logo, footer, legal-page back button, consent modal, Blog link) is
+  (nav, logo, footer, legal-page back button, consent modal) is
   `/{{slug}}/<page-name>`, e.g. `/{{slug}}`, `/{{slug}}/#services`,
-  `/{{slug}}/privacy-policy`, `/{{slug}}/terms-of-service`, `/{{slug}}/blog`.
+  `/{{slug}}/privacy-policy`, `/{{slug}}/terms-of-service`.
   See the §6 checklist item.
 - **Hero MCI line:** `MCI Regd. No.: {{mci}}` inside `{{#hasmic}}`.
-- **Blog pages:** stay commented out; not converted (only the nav link is wrapped in
-  `{{#hasBlog}}`).
+- **Blog pages:** removed from every microsite; there is no Blog nav link and no `{{#hasBlog}}`.
 - **Verify each template** by rendering it with sample data (long name, `15+`,
   `20,000+`, some `has*`/`no*` flags each way, some `has_`/`no_` section texts each
   way) and checking no `{{…}}` is left and every section opens/closes in balance.
@@ -83,7 +82,7 @@ Pediatrician-1-assigned, Pediatrician-5 (work pending).
 Syntax: `{{var}}` for values, `{{#flag}}…{{/flag}}` for sections that show or hide.
 
 ### Doctor
-`full_name`, `speciality`, `specialist` (blog pages), `introduction`, `education`,
+`full_name`, `speciality`, `introduction`, `education`,
 `awards`, `experience`, `totalpatient`, `languages`, `council`, `mci`, `profile`
 
 - `experience` and `totalpatient` are **strings**, e.g. `15` or `15+`.
@@ -126,8 +125,7 @@ Syntax: `{{var}}` for values, `{{#flag}}…{{/flag}}` for sections that show or 
 | `hasWhatsapp` / `noWhatsapp` | `{{whatsapp}}` | |
 
 `has*` renders the `<a>` link. `no*` renders the disabled `<span>` ("Not Enabled"
-tooltip). Used in the header, hero and footer of index, privacy, terms and the blog
-pages.
+tooltip). Used in the header, hero and footer of index, privacy and terms.
 
 ### System
 `slug`, `path`, `micrositeId`, `userid`, `date`
@@ -147,14 +145,12 @@ pages.
 |---|---|
 | `{{#services}}` | `title`, `description` (see note below — `icon` dropped) |
 | `{{#images}}` | `image` |
-| `{{#blog}}` | `id`, `subject`, `blogimages`, `created` |
-| `blogdetails` | `blogdetails.subject`, `blogdetails.body`, `blogdetails.blogimages`, `blogdetails.created` |
 
 `title`, `description`, `rating`, `stars_html` and `profile_picture` are **loop
 fields only**. They never appear outside their loop.
 
 ### Other flags
-`{{#hasBlog}}` (Blog nav link), `{{#hasmic}}`, `{{#has_banner}}`
+`{{#hasmic}}`, `{{#has_banner}}`
 
 ### Section text with fallback (has_/no_ pairs)
 ```html
@@ -251,7 +247,7 @@ full URL (it's used as `<img src="{{profile}}">`), so this should be `"{{profile
 ## 3. Live-site Facebook fix (HTML only)
 
 The swap is **only in the hero social row of index.html**. The footer, privacy,
-terms, blog and blog-detail pages are already correct.
+terms pages are already correct.
 
 | File | Line | Flag | Current href | Change to |
 |---|---|---|---|---|
@@ -1280,7 +1276,7 @@ JS switched to the early-return guard.
 Radiology-1 (updated): the badge now sits under the Privacy Policy / Terms of Service
 links inside the Legal column (`.footer-links-group`), not in `.footer-bottom-row`. The
 static "No. of Visitor: 500" duplicate was removed from `index.html` — only the live
-`#visitorCount` badge remains (the blog pages still carry the static one; they are disabled).
+`#visitorCount` badge remains.
 
 ---
 
@@ -1313,7 +1309,7 @@ are **internally inconsistent** between page types —
   gating at all, and built from the clinic phone, not a WhatsApp number. This is a
   bug matching the one found and fixed in the Ayurvedic-1 template (§6/checklist) —
   **still present on live sites, not yet fixed there.**
-- `privacy-policy.html`, `terms-of-service.html`, `blog.html`, `blog-detail.html`
+- `privacy-policy.html`, `terms-of-service.html`
   (all 6 sites, 30 icons): already `{{#hasWhatsapp}}<a href="{{whatsapp}}">…`,
   matching the "own field" decision above, but missing the `https://wa.me/` prefix
   now that `{{whatsapp}}` is confirmed to be a bare number — currently broken links.
@@ -1323,25 +1319,14 @@ are **internally inconsistent** between page types —
 **Rollout:**
 - [x] Every template converted so far (Ayurvedic-1, Ayurvedic-2): `index.html`,
       `privacy-policy.html`, `terms-of-service.html` — WhatsApp icon wrapped in
-      `{{#hasWhatsapp}}`/`{{#noWhatsapp}}`, `href="https://wa.me/91{{whatsapp}}"`.
-      Blog pages are out of scope (disabled, see the blog-pages decision). Apply the
-      same rule to every template converted from here on.
+      `{{#hasWhatsapp}}`/`{{#noWhatsapp}}`, `href="https://wa.me/91{{whatsapp}}"`. Apply the same rule to every template converted from here on.
 - [x] Live sites (done 2026-09-24): all 6 `index.html` files fixed — dropped the
       unconditional `https://wa.me/{{code}}{{phone}}` construction (which also had
       no has/no gating), replaced with `{{#hasWhatsapp}}<a
       href="https://wa.me/91{{whatsapp}}">…{{/hasWhatsapp}}` +
       `{{#noWhatsapp}}<span …>…{{/noWhatsapp}}`, matching each site's own existing
       class names and `data-ga-label` style. All 6 sites' `privacy-policy.html` and
-      `terms-of-service.html`, plus 5 of 6 sites' `blog.html`/`blog-detail.html`
-      (already `{{#hasWhatsapp}}<a href="{{whatsapp}}">`), got the `https://wa.me/91`
-      prefix added.
-- [ ] **dhara-sharma's `blog.html`/`blog-detail.html`: not fixed, needs separate
-      work.** Every social icon on these two pages (all 8, not just WhatsApp) is
-      hardcoded `href="#"` with no `{{#has*}}`/`{{#no*}}` gating at all — the whole
-      footer social row on those two pages was never parameterized, unlike every
-      other page on every other live site. Out of scope for this WhatsApp fix since
-      it's not WhatsApp-specific; needs its own pass matching the rest of that
-      site's markup.
+      `terms-of-service.html` got the `https://wa.me/91` prefix added.
 - [x] dhara-sharma's `index.html` stray `href="#"` WhatsApp icon (line 242,
       investigated): it's inside an HTML comment (dead scaffold markup, never
       rendered), not a second live icon. No action needed.
@@ -1354,21 +1339,18 @@ For each `<Specialty>/microsite-*/` folder:
 
 **All pages**
 - [ ] Replace every hardcoded doctor name **outside the FAQ** with `Dr. {{full_name}}`.
-- [ ] Replace the specialty display text with `{{speciality}}` (blog pages:
-      `{{specialist}}`).
+- [ ] Replace the specialty display text with `{{speciality}}`.
 - [ ] Header, hero and footer social rows: all 8 `has*` / `no*` pairs, with the
       correct Facebook mapping.
-- [ ] `{{#hasBlog}}` around the Blog nav link.
 - [ ] Every doctor-name brand block (header, and the footer where it repeats the
       name) has `{{speciality}}` directly after `Dr. {{full_name}}`, with no
       hardcoded prefix such as "Board-Certified". Footers that only have the
       "Dr. {{full_name}}. All rights reserved" line don't need it.
 - [ ] Every relative link to another page (nav, logo, footer, the legal pages'
-      back button, the booking consent modal `.consent-modal-links`, Blog nav link)
+      back button, the booking consent modal `.consent-modal-links`)
       uses `/{{slug}}/<page>` with no `.html`: `/{{slug}}`, `/{{slug}}/#about`,
-      `/{{slug}}/privacy-policy`, `/{{slug}}/terms-of-service`, `/{{slug}}/blog`.
-      Never a bare `index.html` / `privacy-policy.html` / `terms-of-service.html` /
-      `blog.html`. Same-page `#anchor` links on index.html stay as they are.
+      `/{{slug}}/privacy-policy`, `/{{slug}}/terms-of-service`.
+      Never a bare `index.html` / `privacy-policy.html` / `terms-of-service.html`. Same-page `#anchor` links on index.html stay as they are.
 
 **index.html**
 - [ ] Hero: `{{profile}}`, `{{awards}},{{education}}`, `{{#hasmic}}{{mci}}`,

@@ -9,7 +9,7 @@
 Each specialty lives in its own folder (`<Specialty>/microsite-<specialty>-<n>/`) with an
 identical structure:
 ```
-index.html, blog.html, blog-detail.html, privacy-policy.html, terms-of-service.html
+index.html, privacy-policy.html, terms-of-service.html
 robots.txt, sitemap.xml, llms.txt   ← per-microsite drafts, see AGENTS.md §29
 styles/style.css   ← all CSS lives here, no inline layout styles
 script/index.js    ← all JS lives here
@@ -134,8 +134,7 @@ Practice Gallery → Booking Modal → Footer.
 
 - Label text is exactly: "I agree to the Privacy Policy and consent to Dr. {{full_name}}
   and DigiDr using my details to provide my consultation. I can withdraw consent or
-  request data deletion at info@digidr.app." — on `index.html`, `blog.html` and
-  `blog-detail.html`.
+  request data deletion at info@digidr.app." — on `index.html`.
 - Doctor name matches the page's convention (`{{full_name}}` on param/live, hardcoded
   name on non-param sites, `Dr. [Doctor Name]` in the Default Template). "Privacy
   Policy" stays plain text unless a link is requested.
@@ -156,7 +155,7 @@ Practice Gallery → Booking Modal → Footer.
 - No placeholder images — generate real ones.
 - Every page: unique `<title>`, `<meta name="description">`, single `<h1>`, semantic
   HTML5.
-- Internal links use relative paths (`blog.html`, `index.html#about`).
+- Internal links use relative paths (`privacy-policy.html`, `index.html#about`).
 - Never delete a file without explicit user approval.
 - Test every new/edited layout with long doctor names and long specialty text.
 

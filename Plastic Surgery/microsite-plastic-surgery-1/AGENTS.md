@@ -603,7 +603,7 @@ or button added to the form, since it's the kind of omission that's invisible in
 design mock and only shows up once real text is typed into a live input.
 
 **Consent checkbox label (mandatory, exact wording).** Every microsite's booking modal
-— on `index.html`, `blog.html` and `blog-detail.html` alike — uses this label, verbatim:
+— on `index.html` — uses this label, verbatim:
 
 ```html
 <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. {{full_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
@@ -771,7 +771,7 @@ scale — **every row below is a solid `--button`-background fill**:
 | Primary CTA (large) | `14px 30px` | `18px` | pill | Hero CTA, contact CTA |
 | Header/nav CTA | `9px 18px` | `18px` | pill | "Book Appointment" in header |
 | Modal/dialog primary button | `14px` (full width) | `18px` | pill | Booking submit |
-| Small/inline button | `9px 18px` | `18px` | pill | Upload button, blog "Read More" |
+| Small/inline button | `9px 18px` | `18px` | pill | Upload button |
 | Compact dialog button | `11px 34px` | `16px` | pill | Confirmation-popup OK (small secondary dialog only) |
 
 Rule of thumb: **any button whose label is meant to be read as a call-to-action uses
@@ -933,8 +933,6 @@ Each specialty lives in its own folder, one subfolder per microsite variant:
 ```
 <Specialty>/microsite-<specialty>-<n>/
   index.html
-  blog.html
-  blog-detail.html
   privacy-policy.html
   terms-of-service.html
   robots.txt           ← SEO draft, see §29
@@ -955,7 +953,7 @@ Each specialty lives in its own folder, one subfolder per microsite variant:
   `chatbot.css`/`banner-module.css` files for those two modules) — never inline
   `style="..."` for layout rules.
 - JS lives exclusively in `script/index.js` (plus `chatbot.js`/`banner-module.js`).
-- Internal links between pages use relative paths (`blog.html`, `index.html#about`),
+- Internal links between pages use relative paths (`privacy-policy.html`, `index.html#about`),
   never absolute URLs.
 - Doctor/clinic images go in `assets/`; prefer local assets over hotlinked images (§17).
 - **Never delete a file without explicit user approval.**
@@ -1024,8 +1022,7 @@ banner module** (§14).
 
 Every page also needs: a unique `<title>`, `<meta name="description">`, exactly one
 `<h1>`, and semantic HTML5 elements throughout (`<header>`, `<section>`, `<article>`,
-`<footer>`, `<nav>`) — this applies to `blog.html`, `blog-detail.html`,
-`privacy-policy.html`, and `terms-of-service.html` too, not just `index.html`.
+`<footer>`, `<nav>`) — this applies to `privacy-policy.html` and `terms-of-service.html` too, not just `index.html`.
 
 ---
 
@@ -1443,8 +1440,7 @@ every microsite loads the same project ID and self-identifies via two custom tag
   (e.g. `dentist`, `ent`, `oncology`) — never invent a new spelling for an existing
   specialty, and add new specialties to that table first (§20).
 - Apply to every page that loads Clarity (`index.html`, `privacy-policy.html`,
-  `terms-of-service.html`, and `blog.html`/`blog-detail.html` if/when blog pages are
-  re-enabled).
+  and `terms-of-service.html`).
 - This reuses Clarity's built-in Filters panel for per-site and per-specialty session
   filtering/rollups inside the one shared project — no additional dashboard setup
   required.
@@ -1503,9 +1499,6 @@ microsite's draft into one combined file served at `digidr.app/robots.txt`,
   resolved slug instead, matching the same live-site exception already documented for
   the Clarity `microsite` tag (§27) — because the backend does not yet re-render those
   pages from source.
-- **Do not list `blog.html`/`blog-detail.html`** in `sitemap.xml` or `llms.txt` while
-  blog pages remain disabled repo-wide — add them back only once blog pages are
-  re-enabled.
 - `llms.txt` follows the [llmstxt.org](https://llmstxt.org) convention: an H1 with the
   doctor's name, a one-line blockquote summary, then an `## Pages` section linking the
   profile, privacy policy, and terms of service.
@@ -1518,8 +1511,8 @@ microsite's draft into one combined file served at `digidr.app/robots.txt`,
 
   Sitemap: https://digidr.app/sitemap.xml
   ```
-- **sitemap.xml:** one `<url>` per live page (home, privacy policy, terms of service —
-  no blog while disabled), `changefreq`/`priority` per the existing examples
+- **sitemap.xml:** one `<url>` per live page (home, privacy policy, terms of service),
+  `changefreq`/`priority` per the existing examples
   (home: monthly/1.0, legal pages: yearly/0.3).
 - **llms.txt:** pull `{{full_name}}`/`{{speciality}}` from the same placeholders already
   used in `index.html`'s `<title>`/meta tags — don't invent new copy.
