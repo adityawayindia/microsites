@@ -207,9 +207,9 @@
 
                 <h1 class="hero-title">Dr. {{full_name}}</h1>
                 <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Qualification: {{awards}},{{education}}</p>
-                {{#hasFellowship}}
-                <p class="hero-credentials"><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
-                {{/hasFellowship}}
+                <!-- {{#hasFellowship}} -->
+                <p class="hero-credentials" data-hero-fellowship><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
+                <!-- {{/hasFellowship}} -->
                 {{#hasmic}}
                 <p class="hero-reg-id"><i class="fa-solid fa-id-card"></i>{{council}} Regd No:</strong> {{mci}}</p>
                 {{/hasmic}}
@@ -868,7 +868,7 @@
         <div class="footer-bottom-row">
             <p>&copy; 2026 Dr. {{full_name}}. <span class="footer-rights">All rights reserved.</span></p>
         </div>
-        <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
+        <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation.<br>In an emergency, call 112 or go to the nearest hospital.</p>
     </footer>
 
     <script src="{{path}}/script/banner-module.js"></script>

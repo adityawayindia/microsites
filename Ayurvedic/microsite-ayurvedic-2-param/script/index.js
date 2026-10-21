@@ -1755,5 +1755,5 @@ initPhonePlugin();
     if (m) el.textContent = m[0];
   });
   var fel = document.querySelector("[data-hero-fellowship]");
-  if (fel && !fel.textContent.replace(/Fellowship:/i, "").trim()) fel.hidden = true;
+  if (fel && (!fel.textContent.replace(/Fellowship:/i, "").trim() || fel.textContent.indexOf("{{") !== -1)) { fel.hidden = true; fel.style.display = "none"; }
 })();

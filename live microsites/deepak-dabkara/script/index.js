@@ -1788,3 +1788,10 @@ initPhonePlugin();
   else if (prev && prev.tagName === 'BR') prev.remove();
   missing.remove();
 })();
+
+/* Hero: hide the fellowship line when the backend sends no value (empty or unrendered tag) */
+(function () {
+  var fel = document.querySelector("[data-hero-fellowship]");
+  var fv = fel ? fel.textContent.replace(/Fellowship:/i, "").trim() : "";
+  if (fel && (!fv || fv.indexOf("{{") !== -1)) { fel.hidden = true; fel.style.display = "none"; }
+})();

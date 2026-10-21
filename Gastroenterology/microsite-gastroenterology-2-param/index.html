@@ -30,7 +30,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. {{full_name}} | {{speciality}}</title>
-  <meta name="description" content="Dr. {{full_name}} is a board-certified gastroenterologist and hepatologist offering comprehensive digestive and liver care." />
+  <meta name="description" content="Dr. {{full_name}} is a gastroenterologist and hepatologist offering comprehensive digestive and liver care." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -194,6 +194,9 @@
 
         <h1 class="hero-title">Dr. {{full_name}}</h1>
         <p class="hero-subtitle"><i class="fa-solid fa-user-graduate"></i> <strong>Qualification:</strong> {{awards}} &middot; {{education}}</p>
+        <!-- {{#hasFellowship}} -->
+        <p class="hero-subtitle" data-hero-fellowship><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
+        <!-- {{/hasFellowship}} -->
         {{#hasmic}}<p class="mic"><i class="fa-solid fa-id-card"></i> <strong>MCI Regd No:</strong> {{mci}}</p>{{/hasmic}}
 
         <div class="hero-stats-grid">
@@ -876,7 +879,7 @@
       <p class="footer-copy"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Dr. {{full_name}}. All rights
         reserved</p>
     </div>
-      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation.<br>In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="{{path}}/script/analytics.js"></script>

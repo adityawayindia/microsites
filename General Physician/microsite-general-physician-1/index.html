@@ -227,6 +227,9 @@
 
         <h1 class="hero-v2-title">Dr. <span class="hero-v2-title-accent">{{full_name}}</span></h1>
         <p class="hero-v2-subtitle">{{awards}},{{education}}</p>
+        <!-- {{#hasFellowship}} -->
+        <p class="hero-v2-subtitle" data-hero-fellowship><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
+        <!-- {{/hasFellowship}} -->
 
         <p class="hero-v2-languages">
           <i class="fa-solid fa-language" aria-hidden="true"></i>
@@ -296,10 +299,6 @@
             class="hero-v2-photo"
           />
           <!-- Floating credential chips -->
-          <div class="hero-v2-chip hero-v2-chip--top">
-            <i class="fa-solid fa-award"></i>
-            <span>Board Certified</span>
-          </div>
           <div class="hero-v2-chip hero-v2-chip--bottom">
             <i class="fa-solid fa-shield-heart"></i>
             <span>Trusted Physician</span>
@@ -955,7 +954,7 @@
 
       <p class="footer-copy"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Dr. {{full_name}}. All rights reserved</p>
     </div>
-      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation.<br>In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="{{path}}/script/banner-module.js"></script>

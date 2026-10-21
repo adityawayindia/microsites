@@ -4,7 +4,7 @@ Plan for converting every specialty template into a Mustache-style template, usi
 **only the placeholders that already exist in the live microsites**
 (`live microsites/*` and `microsite-urology-* (live)`).
 
-> Status: plan finalized; conversion in progress — 13 of 29 templates done (see §0).
+> Status: plan finalized; conversion in progress — 15 of 30 templates done (see §0).
 > **JavaScript is out of scope for now, with three exceptions: the stat counter (§4),
 > the chatbot widget (§4a), and the booking/appointment code (§4b).** Apart from
 > those three, do not modify any `script/*.js` file until the backend team's actual
@@ -23,7 +23,7 @@ The suffix is a **repo folder name only**. GCS asset URLs inside the pages
 (`https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/…`) point
 at the bucket folder, which is not renamed — leave those URLs unchanged.
 
-### Done (13)
+### Done (15)
 | Template folder | Notes |
 |---|---|
 | `Ayurvedic/microsite-ayurvedic-1-param` | |
@@ -31,6 +31,8 @@ at the bucket folder, which is not renamed — leave those URLs unchanged.
 | `Cardiology/microsite-cardiology-1-param` | |
 | `Gastroenterology/microsite-gastroenterology-1-param` | |
 | `Gastroenterology/microsite-gastroenterology-2-param` | |
+| `ENT/microsite-ent-2-param` | Done 2026-10-21. Built from ENT-2 (non-parameterized copy kept at `ENT/microsite-ent-2`). Booking/chatbot/analytics/counter JS taken from Radiology-2-param (ENT-2 had only the demo booking code); privacy/terms pages use the current Radiology-2-param legal text with ENT head/fonts/footer. Services use one fixed icon (`fa-head-side-cough`); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}`; FAQ kept as is; About/Philosophy photos use the `microsite-ent-2` GCS folder; Facebook-posts carousel JS omitted (no social-media section). Added the shared disabled-social CSS and a `form?.` null guard on the consent line so `index.js` no longer throws on the legal pages. |
+| `ENT/microsite-ent-3-param` | Done 2026-10-21. Same conversion as ENT-2-param (non-parameterized copy kept at `ENT/microsite-ent-3`): navy/rose theme, no About photo, rounded UI, dark photo hero. One fixed services icon (`fa-ear-listen`); the philosophy photo uses the byte-identical `microsite-ent-2` GCS copy (no `microsite-ent-3` bucket folder yet — upload one and repoint if wanted). Hero disabled-social CSS tuned for the dark hero. |
 | `General Physician/microsite-general-physician-1` | Done 2026-09-29. **Folder rename to `-param` still pending** (folder was locked by another process). Services tag pills dropped (loop is title + description only); philosophy image uses the byte-identical `microsite-general-medicine-1` bucket copy. |
 | `General Physician/microsite-general-physician-2` | Done 2026-09-29. Same conversion as General Physician-1 (identical JS; blue-theme CSS). **Folder rename to `-param` still pending** (folder locked). |
 | `Pediatrician/microsite-pediatrician-2-param` | |
@@ -41,8 +43,8 @@ at the bucket folder, which is not renamed — leave those URLs unchanged.
 | `Urologist/microsite-urology-1-param` | Done 2026-09-25. |
 | `Urologist/microsite-urology-2-param` | Done 2026-09-25. Own hero layout (`uro-hero-*`); rest of the page matches Urology-1. |
 
-### Not started (16)
-Default Template, Dentist-1, Dentist-2-assigned, ENT-1, ENT-2, General Medicine-1,
+### Not started (15)
+Default Template, Dentist-1, Dentist-2-assigned, ENT-1, General Medicine-1,
 General Medicine-2-assigned, Homeopathy, Intensivist-1, Intensivist-2-assigned,
 Neurology-1, Oncology-1-assigned, Oncology-2, Orthopedics-1,
 Pediatrician-1-assigned, Pediatrician-5 (work pending).
@@ -87,7 +89,13 @@ Syntax: `{{var}}` for values, `{{#flag}}…{{/flag}}` for sections that show or 
 - `experience` and `totalpatient` are **strings**, e.g. `15` or `15+`.
 - Qualification line pattern: `{{awards}},{{education}}`.
 - Registration: `{{#hasmic}}…MCI Regd. No.: {{mci}}…{{/hasmic}}`.
-- **Fellowships (new, Radiology-1 only; placeholder is {{fellowship}}, flag is hasFellowship):**
+- **Fellowships (all param and live microsites; placeholder is {{fellowship}}, flag is hasFellowship).
+  Shown ONLY when the backend sends a value:** the line is `<p data-hero-fellowship>` wrapped in
+  `<!-- {{#hasFellowship}} -->…<!-- {{/hasFellowship}} -->` (comment-wrapped so an unsupported tag never
+  leaks as text), and a small script at the end of `script/index.js` sets `hidden` plus inline `display: none` on it (the inline style is needed because classes like
+  `.hero-credentials { display: flex }` would otherwise override `hidden`) when the
+  value is empty or the `{{fellowship}}` tag came through unrendered. Never hardcode a fellowship in a
+  param/live site.
   `{{#hasFellowship}}…Fellowship: {{fellowship}}…{{/hasFellowship}}`. `fellowship` is
   **one string** holding every fellowship, e.g.
   `FACR (Fellow of the American College of Radiology), USA; EDiR (European Diploma in Radiology), Europe`.

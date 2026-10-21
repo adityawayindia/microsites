@@ -151,6 +151,9 @@
 
             <h1 class="hero-title">Dr. {{full_name}}</h1>
             <p class="hero-subtitle">{{awards}},{{education}}</p>
+            <!-- {{#hasFellowship}} -->
+            <p class="hero-subtitle" data-hero-fellowship><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
+            <!-- {{/hasFellowship}} -->
             {{#hasmic}}
             <p class="mic">MCI Regd. No.: {{mci}}</p>
             {{/hasmic}}
@@ -797,7 +800,7 @@
 
       <p class="footer-copy">Dr. {{full_name}}. All rights reserved</p>
     </div>
-      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.</p>
+      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation.<br>In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
   <script src="{{path}}/script/banner-module.js"></script>

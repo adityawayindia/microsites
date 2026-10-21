@@ -1288,3 +1288,9 @@ document.addEventListener("click", (event) => {
   else if (prev && prev.tagName === 'BR') prev.remove();
   missing.remove();
 })();
+
+/* Hero: hide the fellowship line when empty */
+(function () {
+  var fel = document.querySelector("[data-hero-fellowship]");
+  if (fel && (!fel.textContent.replace(/Fellowship:/i, "").trim() || fel.textContent.indexOf("{{") !== -1)) { fel.hidden = true; fel.style.display = "none"; }
+})();

@@ -4370,3 +4370,20 @@ footer .footer-disclaimer {
 /* Hide the scrollbar on the booking modal; the dialog still scrolls with wheel, touch and keyboard */
 .booking-modal-dialog { scrollbar-width: none; -ms-overflow-style: none; }
 .booking-modal-dialog::-webkit-scrollbar { display: none; }
+
+/* Lightbox: show each photo at its true aspect ratio. The frame shrink-wraps
+   the image (no fixed width/ratio) and the image is capped by the frame's own
+   max-height/max-width, so nothing is cropped or stretched. */
+.gallery-lightbox-content {
+  display: flex;
+  width: fit-content;
+  aspect-ratio: auto;
+  max-width: min(1100px, 92vw);
+}
+.gallery-lightbox-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: inherit;
+  object-fit: contain;
+}
