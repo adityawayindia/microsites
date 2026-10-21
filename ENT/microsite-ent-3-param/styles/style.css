@@ -3488,3 +3488,256 @@ footer .footer-disclaimer {
   color: #ffffff;
 }
 .hero-section .social.is-disabled > i { opacity: 0.35; }
+
+/* ============================================================
+   SOCIAL MEDIA — live Facebook post embeds (AGENTS.md §30,
+   FACEBOOK_WIDGET_LOGIC.md). Ported from Radiology-2; the card look
+   is fixed across microsites, only the colour tokens below are local.
+   The JS hides the whole section when there are no posts.
+   ============================================================ */
+.social-media-section {
+  --sm-brand: var(--sky); --sm-brand-dark: var(--sky-dark); --sm-accent: var(--amber); --sm-accent-dark: var(--amber-dark);
+  --sm-surface: var(--surface); --sm-surface-2: var(--surface-2); --sm-tint: var(--bg-2); --sm-border: var(--border);
+  --sm-shadow: var(--shadow-card); --sm-muted: var(--muted);
+  position: relative;
+  padding: 20px 0;
+  background: var(--surface);
+}
+.social-media-section[hidden] { display: none; }
+.social-media-header { text-align: center; margin: 0 auto 40px; max-width: 700px; }
+.social-media-header .social-media-subtitle { margin-left: auto; margin-right: auto; }
+
+.social-media-empty {
+  width: 100%;
+  margin: 0;
+  padding: 48px 24px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--sm-muted);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-media-carousel.is-empty { overflow-x: hidden; }
+
+.social-media-header { text-align: center; margin: 0 auto 48px; max-width: 700px; }
+.social-media-subtitle { margin-left: auto; margin-right: auto; }
+
+.social-media-carousel-wrap {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 56px;
+  min-width: 0;
+}
+
+/* --post-card-width is read by the JS to size the SDK embed (data-width),
+   so the iframe Facebook builds always matches the real card width. */
+.social-media-carousel {
+  --post-card-width: 300px;
+  --post-card-height: 400px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.social-media-carousel::-webkit-scrollbar { display: none; }
+
+/* Centred while the posts fit; scrolls (via the carousel) once they don't.
+   max-width: none beats the global div { max-width: 100% } reset — without it
+   the track is capped at the carousel width and centring pushes the first
+   cards off the left edge, where they can never be scrolled to. */
+.social-media-track {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+  justify-content: safe center;
+}
+/* Every card is locked to one height (--post-card-height). Facebook sizes its
+   iframe to the post's own content, which varies wildly (one long post
+   reported ~3700px), so the card clips the embed instead of growing or
+   scrolling. Height is NOT auto here, which deliberately departs from the
+   global auto-height rule: the content is a fixed-size cross-origin iframe. */
+.social-post-card {
+  flex: 0 0 var(--post-card-width);
+  min-width: 0;
+  max-width: 100%;
+  height: var(--post-card-height) !important;
+  min-height: 0;
+  background: var(--sm-surface);
+  border: 1px solid var(--sm-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--sm-shadow);
+}
+
+/* Skeleton loading state: placeholder cards before the feed arrives, then the
+   same skeleton behind each embed until Facebook paints its iframe. */
+.social-post-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--sm-surface);
+}
+.social-post-card.is-loaded .social-post-skeleton { display: none; }
+
+.social-post-skeleton .sk {
+  display: block;
+  border-radius: 8px;
+  background: linear-gradient(100deg,
+    var(--sm-tint) 30%, var(--sm-surface-2) 50%, var(--sm-tint) 70%);
+  background-size: 220% 100%;
+  animation: social-post-shimmer 1.4s ease-in-out infinite;
+}
+.social-post-skeleton .sk-head { display: flex; align-items: center; gap: 12px; }
+.social-post-skeleton .sk-avatar { flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%; }
+.social-post-skeleton .sk-lines { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.social-post-skeleton .sk-line { height: 12px; width: 100%; }
+.social-post-skeleton .sk-w80 { width: 80%; }
+.social-post-skeleton .sk-w60 { width: 60%; }
+.social-post-skeleton .sk-w40 { width: 40%; }
+.social-post-skeleton .sk-media { flex: 1 1 auto; min-height: 0; border-radius: 12px; }
+
+@keyframes social-post-shimmer {
+  from { background-position: 180% 0; }
+  to   { background-position: -80% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-post-skeleton .sk { animation: none; }
+}
+
+.social-post-card {
+  position: relative;
+}
+
+/* The embed is clipped by the fixed-height card — no scrolling. */
+.social-post-card .fb-post {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Bottom fade makes the cut look deliberate. */
+.social-post-card:not(.is-fallback)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 44px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--sm-surface) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* The SDK writes fixed inline widths onto its own wrappers; cap them so a
+   card can never push its siblings out of the track. */
+.social-post-card .fb-post,
+.social-post-card .fb-post span,
+.social-post-card .fb-post iframe {
+  max-width: 100% !important;
+}
+
+/* Shown when the embed is blocked or never paints — a real link card in place
+   of a blank box, built by the JS because the SDK strips the nested fallback. */
+.social-post-fallback {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+  background: var(--sm-tint);
+}
+.social-post-fallback i {
+  font-size: 34px;
+  color: var(--sm-brand);
+}
+.social-post-fallback span {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--sm-brand-dark);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-post-fallback:hover span { color: var(--sm-accent-dark); }
+.social-post-fallback:hover i { color: var(--sm-accent); }
+
+/* Fallback link shown when the SDK is blocked — never an empty box. */
+.social-post-card .fb-xfbml-parse-ignore {
+  margin: 0;
+  padding: 20px;
+}
+.social-post-card .fb-xfbml-parse-ignore a {
+  font-size: 18px;
+  color: var(--sm-brand-dark);
+  font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-post-card .fb-xfbml-parse-ignore a:hover { color: var(--sm-accent-dark); }
+
+.social-carousel-prev,
+.social-carousel-next {
+  border: 2px solid var(--sm-brand);
+  color: var(--sm-brand);
+}
+/* .carousel-btn sets display:flex, which would otherwise defeat [hidden]. */
+.social-carousel-prev[hidden],
+.social-carousel-next[hidden] { display: none; }
+.social-carousel-prev:hover,
+.social-carousel-next:hover {
+  border-color: var(--sm-accent);
+}
+
+.social-carousel-prev:disabled,
+.social-carousel-next:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .social-media-carousel { --post-card-width: 280px; --post-card-height: 375px; }
+}
+
+@media (min-width: 641px) and (max-width: 1100px) {
+  .social-media-carousel { --post-card-width: 300px; --post-card-height: 400px; }
+}
+
+@media (max-width: 900px) {
+  /* Pin prev/next below the track rather than floating them over the
+     cards, matching the testimonials carousel's mobile treatment. */
+  .social-media-carousel-wrap {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "carousel carousel"
+      "prev next";
+    justify-items: center;
+    row-gap: 18px;
+  }
+  #socialMediaCarousel { grid-area: carousel; width: 100%; min-width: 0; }
+  .social-carousel-prev { grid-area: prev; position: static; transform: none; justify-self: end; margin-right: 8px; }
+  .social-carousel-next { grid-area: next; position: static; transform: none; justify-self: start; margin-left: 8px; }
+  .social-carousel-prev:hover,
+  .social-carousel-next:hover { transform: none; }
+}
+
