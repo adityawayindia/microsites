@@ -49,7 +49,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet" />
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -118,8 +118,8 @@
             - Or DigiDrBanner.loadFromEndpoint('/api/v1/banner');
          ========================================================================== -->
     {{#has_banner}}
-    <div
-      class="digidr-banner-module single-image-banner-section"
+    <div 
+      class="digidr-banner-module single-image-banner-section" 
       id="digidrBannerModule"
       data-banner-active="true"
       data-banner-start="{{banner_start}}"
@@ -204,13 +204,40 @@
         </svg>
       </span>
 
+      <span class="hero-float-pill hero-float-pill--5" aria-hidden="true">
+        <!-- Capsule Pill (Left side, tilted) -->
+        <svg viewBox="0 0 40 70" fill="none" style="transform: rotate(-35deg);">
+          <path d="M5 20 C5 11.7 11.7 5 20 5 C28.3 5 35 11.7 35 20 V35 H5 Z" fill="var(--button)" opacity="0.35"/>
+          <rect x="5" y="5" width="30" height="60" rx="15" stroke="var(--button)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="5" y1="35" x2="35" y2="35" stroke="var(--button)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <span class="hero-float-pill hero-float-pill--6" aria-hidden="true">
+        <!-- Round Tablet Pill (Left side) -->
+        <svg viewBox="0 0 50 50" fill="none">
+          <path d="M25 5 A20 20 0 0 1 25 45 Z" fill="var(--accent)" opacity="0.3"/>
+          <circle cx="25" cy="25" r="20" stroke="var(--accent)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="25" y1="5" x2="25" y2="45" stroke="var(--accent)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
+      <span class="hero-float-pill hero-float-pill--7" aria-hidden="true">
+        <!-- Oval Capsule Pill (Left side) -->
+        <svg viewBox="0 0 70 40" fill="none">
+          <path d="M20 5 C11.7 5 5 11.7 5 20 C5 28.3 11.7 35 20 35 H35 V5 Z" fill="var(--button)" opacity="0.35"/>
+          <rect x="5" y="5" width="60" height="30" rx="15" stroke="var(--button)" stroke-width="3.5" fill="none" opacity="0.5"/>
+          <line x1="35" y1="5" x2="35" y2="35" stroke="var(--button)" stroke-width="3" opacity="0.5"/>
+        </svg>
+      </span>
+
       <!-- Animated dot-grid overlay -->
       <div class="hero-dot-grid"></div>
     </div>
 
     <div class="container hero-v2-layout">
 
-      <!-- Left: Text Panel -->
+      <!-- Right: Text Panel (placed via CSS order) -->
       <div class="hero-v2-content">
         <div class="hero-v2-topbar">
           <span class="hero-v2-badge">
@@ -218,7 +245,7 @@
             {{speciality}}
           </span>
           {{#hasmic}}
-          <span class="hero-v2-reg">MCI Regd. No.: {{mci}}</span>
+          <span class="hero-v2-reg">Medical Regd. No.: {{mci}}</span>
           {{/hasmic}}
         </div>
 
@@ -287,7 +314,7 @@
         </div>
       </div>
 
-      <!-- Right: Portrait Panel -->
+      <!-- Left: Portrait Panel (placed via CSS order) -->
       <div class="hero-v2-visual">
         <div class="hero-v2-portrait-frame">
           <img
@@ -482,7 +509,7 @@
         <p class="about-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
         <h2 class="about-title" style="text-align: center;">
           {{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}
-          {{#no_process_section_about_title}}Your Consultation Journey{{/no_process_section_about_title}}
+          {{#no_process_section_about_title}}From First Visit to Full Recovery{{/no_process_section_about_title}}
         </h2>
         <p class="about-subtitle" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
           {{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}
@@ -593,7 +620,7 @@
         <h2 class="contact-title" style="margin: 10px auto 12px; font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; color: var(--deep, var(--text, #0f172a)); letter-spacing: -0.03em; line-height: 1.25; text-align: center; max-width: none;">Get in Touch</h2>
         <p class="contact-subtitle" style="margin: 0 auto; font-size: 16px; color: var(--muted, #334155); max-width: 600px; line-height: 1.6; text-align: center;">
           {{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}
-          {{#no_contact_us_subtitle}}Have questions or want to schedule an appointment? Reach out to my team directly.{{/no_contact_us_subtitle}}
+          {{#no_contact_us_subtitle}}Have questions or want to schedule an appointment? Reach out to the clinic directly.{{/no_contact_us_subtitle}}
         </p>
       </div>
       <div class="contact-layout-new">
@@ -630,9 +657,6 @@
               </div>
             </div>
           </div>
-          <div class="contact-cta-wrap">
-            <a href="#" class="cta-btn">Book Appointment</a>
-          </div>
         </aside>
       </div>
     </div>
@@ -648,7 +672,7 @@
         </h2>
         <p class="gallery-subtitle">
             {{#has_gallery_section_subtitle}}{{gallery_section_subtitle}}{{/has_gallery_section_subtitle}}
-            {{#no_gallery_section_subtitle}}A glimpse into my General Physician clinic, consultation rooms, and patient care facilities.{{/no_gallery_section_subtitle}}
+            {{#no_gallery_section_subtitle}}A glimpse into the General Physician clinic, consultation rooms, and patient care facilities.{{/no_gallery_section_subtitle}}
         </p>
       </div>
 

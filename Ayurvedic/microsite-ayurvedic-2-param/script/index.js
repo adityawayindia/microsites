@@ -1006,11 +1006,11 @@ initPhonePlugin();
                 result = null;
             }
 
-            const appointmentTypeResult = result?.type;
+            const appointmentTypeResult = result?.data?.type ?? result?.type; // API now nests details under `data`
             const addressMessage = result?.message;
 
             if (appointmentTypeResult === "online") {
-                const meetLink = result?.meetLink;
+                const meetLink = result?.data?.meetLink ?? result?.meetLink;
                 const msg = meetLink
                     ? `Your appointment is confirmed.<br/><br/>Please join 5 minutes before your scheduled time. Check your email for details.`
                     : "Your online consultation has been booked successfully.";

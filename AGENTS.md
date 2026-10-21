@@ -916,6 +916,7 @@ a given specialty, never invent a new spelling/casing for the same specialty:
 | `microsite-ent` | ENT (Ear, Nose & Throat) | `ent` |
 | `microsite-gastroenterology` | Gastroenterology | `gastroenterology` |
 | `microsite-general-medicine` | General Medicine | `general-medicine` |
+| `microsite-general-physician` | General Physician | `general-medicine` |
 | `microsite-homeopathy` | Homeopathy | `homeopathy` |
 | `microsite-intensivist` | Intensivist / Critical Care | `intensivist` |
 | `microsite-neurology` | Neurology | `neurology` |
