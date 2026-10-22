@@ -1,0 +1,18 @@
+# NOTE: llms.txt (see llmstxt.org) only takes effect at the domain root
+# (digidr.app/llms.txt). This file is a per-microsite draft — backend team
+# must merge every microsite's entry into ONE combined llms.txt served at
+# digidr.app/llms.txt, one line per doctor under the "Doctors" section below.
+# Path below assumes this microsite is served at digidr.app/dr-rohan-verma/
+
+# Dr. Rohan Verma
+
+> Dr. Rohan Verma, General Physician, on DigiDr. Book a consultation online.
+
+- Specialty: General Physician
+- Book a consultation: https://digidr.app/dr-rohan-verma/#booking-modal
+
+## Pages
+
+- [Profile](https://digidr.app/dr-rohan-verma/): Dr. Rohan Verma's profile — about, services, care philosophy, consultation journey, and practice gallery.
+- [Privacy Policy](https://digidr.app/dr-rohan-verma/privacy-policy.html)
+- [Terms of Service](https://digidr.app/dr-rohan-verma/terms-of-service.html)
