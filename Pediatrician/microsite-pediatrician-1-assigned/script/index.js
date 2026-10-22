@@ -1197,3 +1197,11 @@ document.addEventListener("click", (event) => {
   else if (prev && prev.tagName === 'BR') prev.remove();
   missing.remove();
 })();
+
+/* Hero: show only the year in "Practising since" */
+(function () {
+  document.querySelectorAll("[data-practising-since]").forEach(function (el) {
+    var m = el.textContent.match(/(?:19|20)d{2}/);
+    if (m) el.textContent = m[0];
+  });
+})();

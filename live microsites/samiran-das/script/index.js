@@ -1804,3 +1804,11 @@ initPhonePlugin();
   var fv = fel ? fel.textContent.replace(/Fellowship:/i, "").trim() : "";
   if (fel && (!fv || fv.indexOf("{{") !== -1)) { fel.hidden = true; fel.style.display = "none"; }
 })();
+
+/* Hero: show only the year in "Practising since" */
+(function () {
+  document.querySelectorAll("[data-practising-since]").forEach(function (el) {
+    var m = el.textContent.match(/(?:19|20)d{2}/);
+    if (m) el.textContent = m[0];
+  });
+})();
