@@ -1613,6 +1613,23 @@ hero, every section, booking modal, consent panel, chatbot, and footer.
   section, then `history.replaceState(null, "", location.pathname + location.search)` to strip the
   hash. Apply the same behaviour to the logo link, the mobile-menu links, and the footer
   quick links. Keep each link's `href="#section"` so it still works without JavaScript.
+- **Short CTA label on phones.** The header "Book Appointment" button reads **"Appointment"** in
+  phone view. Use two spans, exactly as ENT-2 does:
+  ```html
+  <a href="#" class="cta-btn" id="openBookingBtn" data-ga-event="book_appointment_click" data-ga-label="Navbar">
+    <span class="cta-text-desktop">Book Appointment</span>
+    <span class="cta-text-mobile">Appointment</span>
+  </a>
+  ```
+  ```css
+  .cta-text-mobile { display: none; }
+  @media (max-width: <the mobile-menu breakpoint from §3.2>) {
+    .cta-text-desktop { display: none; }
+    .cta-text-mobile { display: inline; }
+  }
+  ```
+  Both spans need the explicit white text colour override from §26 (the global `span { color }`
+  reset), and the button must still fit the header without wrapping or overflow at 320px.
 
 ---
 

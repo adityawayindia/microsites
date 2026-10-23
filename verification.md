@@ -84,6 +84,11 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
    `preventDefault`, smooth `scrollIntoView`, and `history.replaceState` to strip the hash. The
    logo link and footer links must behave the same way. The header (portrait + nav + CTA) collapses
    properly on mobile: the menu opens and closes, traps nothing, and closes on link click.
+   In phone view the header Book Appointment button reads "Appointment" (two spans as in ENT-2:
+   `.cta-text-desktop` "Book Appointment" and `.cta-text-mobile` "Appointment", swapped at the
+   mobile-menu breakpoint). Check at 375px and 320px: the label is "Appointment", it is white on the
+   button (the span colour gotcha), and it does not wrap or overflow the header. On desktop it still
+   reads "Book Appointment".
 
 ## B. HERO
 3. The profile details are four separate lines, each with an icon, in this order: Qualification,
