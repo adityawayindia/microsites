@@ -1033,13 +1033,14 @@ apply:
 | 2 | Hero | Portrait, credentials, key stats (animated counters), languages, social links, CTAs | §4 |
 | 3 | About | Executive bio — no icons, premium typography, Read More toggle if long | §5, §24 |
 | 4 | Services | Responsive 12-track grid of core clinical services | §6, §23 |
-| 5 | Care Philosophy | Split-screen: image + floating badge, 3 pillars with connecting rail | §7 |
-| 6 | Consultation Journey | 4-step animated timeline | §8 |
-| 7 | Contact | Dedicated address/phone/email card (mandatory section) | §18.1 |
-| 8 | Practice Gallery | Grid + lightbox, 12-track centering same as Services | §10, §23 |
-| 9 | FAQ | Accordion of at least 5 specialty-specific questions, straight after the Gallery (`#faq`) | §39 |
-| 10 | Booking Modal | Popup form: date/time, file upload, phone input, consent | §11, §25, §37 |
-| 11 | Footer | Branding, social links, quick/legal links, visitor badge, copyright | §12, §36 |
+| 5 | Social Media widget | "From My Social Media" Facebook-posts carousel, straight after Services; hidden entirely when there are no posts (optional section) | §30, FACEBOOK_WIDGET_LOGIC.md |
+| 6 | Care Philosophy | Split-screen: image + floating badge, 3 pillars with connecting rail | §7 |
+| 7 | Consultation Journey | 4-step animated timeline | §8 |
+| 8 | Contact | Dedicated address/phone/email card (mandatory section) | §18.1 |
+| 9 | Practice Gallery | Grid + lightbox, 12-track centering same as Services | §10, §23 |
+| 10 | FAQ | Accordion of at least 5 specialty-specific questions, straight after the Gallery (`#faq`) | §39 |
+| 11 | Booking Modal | Popup form: date/time, file upload, phone input, consent | §11, §25, §37 |
+| 12 | Footer | Branding, social links, quick/legal links, visitor badge, copyright | §12, §36 |
 
 Plus two persistent overlays present on every page load (not scroll sections):
 **Chatbot widget** (§13) and, only on the homepage hero, the optional **promotional
@@ -1743,7 +1744,7 @@ The chatbot follows §13 with these additions:
 
 ## 39. Care Philosophy, Consultation Journey & FAQ: Static Sections and Default Designs
 
-**Section order.** This extends §21. The home page order is Header → Hero → About → Services →
+**Section order.** This extends §21. The home page order is Header → Hero → About → Services → Social Media widget (optional, §30) →
 Care Philosophy → Consultation Journey → Contact → Practice Gallery → **FAQ** → Booking Modal →
 Footer. The FAQ section (`#faq`) comes straight after the Gallery and gets a nav link.
 

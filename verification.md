@@ -17,7 +17,13 @@ item in this checklist that isn't marked as allowed to vary.
 and every element (header and menu, hero, all sections, booking modal, consent panel, chatbot,
 footer) must work from 320px to 1440px+ on phones, tablets and desktops. There must be no
 horizontal scroll, clipped or overlapping content, or unreadable text, and tap targets must be at
-least 44px. Check this throughout the audit, not only in section N.
+least 44px. Check this throughout the audit, not only in section R.
+
+**The checklist follows the page, top to bottom.** Sections A to N are in the order they appear
+on the home page (Header → Hero → About → Services → Social Media → Care Philosophy →
+Consultation Journey → Contact → Gallery → FAQ), followed by the Booking Modal, Footer, Chatbot
+and the legal pages. Sections O to U are the site-wide checks. Items are numbered in one running
+sequence. The Social Media and Analytics sections use their own labels (E1–E5, S1–S5).
 
 ## RULES FOR THE AUDIT
 
@@ -69,12 +75,15 @@ least 44px. Check this throughout the audit, not only in section N.
 
 ---
 
+# PART 1: PAGE SECTIONS (in page order)
+
 ## A. HEADER
 1. The header shows a circular frame with the doctor's professional portrait
    (`border-radius: 50%`, `object-fit: cover`, a real image that exists in assets/).
 2. Clicking nav links must not leave `#home`, `#about`, `#gallery` etc. in the URL. Check the JS:
    `preventDefault`, smooth `scrollIntoView`, and `history.replaceState` to strip the hash. The
-   logo link and footer links must behave the same way.
+   logo link and footer links must behave the same way. The header (portrait + nav + CTA) collapses
+   properly on mobile: the menu opens and closes, traps nothing, and closes on link click.
 
 ## B. HERO
 3. The profile details are four separate lines, each with an icon, in this order: Qualification,
@@ -87,171 +96,222 @@ least 44px. Check this throughout the audit, not only in section N.
    Website, WhatsApp, YouTube. It has `flex-wrap: wrap`, and every link has a real href and an
    aria-label.
 6. No redundant text or secondary descriptions. Remove extra taglines and duplicate paragraphs;
-   keep the h1, the profile lines, the stats, the socials and the CTA.
+   keep the h1, the profile lines, the stats, the socials and the CTA. The hero image is eager-loaded
+   and is a real image.
 
 ## C. ABOUT
 7. The Read More / Read Less toggle follows AGENTS.md §24 verbatim: 7-line clamp, auto-hides when
    the text fits. It is styled as a subtle text link or secondary element (transparent background,
    no filled button, not the primary CTA style), with a chevron.
 
-## D. CONTACT
-8. A Contact section exists with:
-   - the clinic's full address, and
-   - contact details: phone number (`tel:` link) and email address (`mailto:` link),
-   - plus a Book Appointment button that opens the modal.
-   Icons match ENT-2.
+## D. SERVICES
+8. The Services grid uses the 12-track system (AGENTS.md §23): 3 per row on desktop, 2 per row at
+   1200px and below, 1 per row at 640px and below. Test with 4, 5, 6 and 7 cards: an incomplete
+   last row must be centred.
+9. The services count and card content are real and specific to the doctor's specialty. Card
+   headings (h3) are bolder and larger than the card text, and no card is nested inside another card.
 
-## E. GALLERY
-9. The gallery is an image grid only. There are no captions, titles, overlays or descriptive text
-   on the items. Keep meaningful alt text. Images are real, not placeholders.
+## E. SOCIAL MEDIA WIDGET ("From My Social Media")
 
-## F. FOOTER
-10. The footer layout and hierarchy mirror ENT-2 exactly (column structure, order, classes).
-10a. The footer is the same on all three pages (index, privacy-policy, terms-of-service): identical
-    markup, content, links and styling, differing only where ENT-2 itself differs (for example
-    in-page anchors resolving to `index.html#...` on the legal pages). Diff the footer block across
-    the three files.
-10b. The footer is compact, exactly like ENT-2: the same height, padding, spacing, font sizes and
-    number of rows and columns. It adds no extra rows, large blocks or tall padding. Compare
-    rendered footer height against ENT-2 at 1440px, 768px and 375px. It must also stay compact on
-    mobile (stacked columns with tight spacing, no oversized gaps).
-11. There are no image credits for free or copyright-free images.
+Comes straight after Services. Reference: `ENT/microsite-ent-2` (`section.social-media-section#social-media`),
+AGENTS.md §30 and `FACEBOOK_WIDGET_LOGIC.md`. Include this section if the microsite has the
+Facebook-posts carousel. If it doesn't, it must be absent cleanly: no empty band, no dead nav link,
+no leftover carousel markup or script errors.
 
-## G. APPOINTMENT MODAL
-12. An "i" info icon sits next to the Online Consultation toggle.
-13. Hovering or focusing the icon shows a tooltip with the exact text from ENT-2. It must also work
+**E1. Placement and markup**
+- The section sits between Services and Care Philosophy, as in ENT-2, with `id="social-media"`.
+- Header: a kicker with a share icon ("Latest Updates"), an h2 ("From My Social Media") and a
+  one-line subtitle. The wording is generic and fits the specialty.
+- Structure: `.social-media-carousel-wrap` containing the prev and next buttons
+  (`.social-carousel-prev` / `.social-carousel-next`, each with an aria-label) and
+  `#socialMediaCarousel` > `#socialMediaTrack` (cards are filled in by JS).
+
+**E2. Behaviour (follows FACEBOOK_WIDGET_LOGIC.md)**
+- The doctor's slug is read from `<body data-slug>`, not hardcoded in the JS.
+- At most 5 cards are shown. Video posts are excluded, only posts from the last 30 days are shown,
+  and posts from all Facebook accounts are merged, newest first.
+- Skeleton cards show while the feed loads (3 placeholders, shimmer disabled under
+  `prefers-reduced-motion`, `aria-busy` on the track), and each real card has a skeleton behind
+  the embed until Facebook paints.
+- The whole section is hidden (no blank band, no empty-state text) when: the slug is missing, no
+  Facebook feed is connected, there are no qualifying posts, the API fails, or there is no answer
+  within 7 seconds. A late reply must not bring it back.
+- The Facebook SDK loads lazily, once. Each post is a real `<div class="fb-post">` with a
+  fallback link inside (`fb-xfbml-parse-ignore`). Cards are never cloned or re-parented.
+- Test over `http(s)`, not `file://`.
+
+**E3. Card look (identical on every microsite, never remapped to the local theme)**
+- Card size: 300 × 400px on desktop and tablet, 280 × 375px at 640px and below. Gap 30px.
+- Radius 24px, white surface, `1px solid hsl(155, 18%, 85%)` border,
+  `0 4px 18px hsla(168, 40%, 18%, 0.10)` shadow.
+- The post is clipped, never scrolled: `overflow: hidden` on the card and on `.fb-post`, a 44px fade
+  at the bottom, and a fixed card height (`height: var(--post-card-height) !important`). No inner
+  scrollbar and no "View on Facebook" button over the card.
+- The section header, buttons and background band follow the microsite's own palette.
+
+**E4. Alignment and button visibility (AGENTS.md §30)**
+- The track uses `justify-content: safe center` (never plain `center`), with
+  `width: max-content; min-width: 100%; max-width: none`.
+- `syncButtons()` sets `prevBtn.hidden` and `nextBtn.hidden` to
+  `carousel.scrollWidth <= carousel.clientWidth + 1`.
+- The stylesheet contains `.social-carousel-prev[hidden], .social-carousel-next[hidden] { display: none; }`.
+- Test with 2 posts (cards centred, no buttons) and with 5+ posts (first card left-aligned beside
+  the prev button, buttons visible, Next pages by whole visible cards) at desktop and 900px and below.
+  The first card must never be cut off at the left edge.
+
+**E5. Responsive and accessibility**
+- No horizontal page overflow at 320–1440px. Swiping inside the carousel works on touch devices.
+- Prev/next buttons are keyboard operable and at least 44px, and the section has a sensible heading
+  order (one h2).
+- No console errors if the Facebook SDK is blocked: the fallback links remain visible.
+
+## F. CARE PHILOSOPHY
+10. The section exists after Social Media (or after Services if there is no social section), with
+    `id="philosophy"`. It uses its own static design or the default ENT-2 design described in the
+    rules above (split-screen, framed photo with badge, kicker, h2, subtitle, three pillars with
+    index numbers). The wording is rewritten for the specialty with no ENT text left over, and the
+    kicker stays generic.
+
+## G. CONSULTATION JOURNEY
+11. The section exists after Care Philosophy, with `id="process"`. It uses its own static design or
+    the default ENT-2 design (decorative background layer, centred header with the "Consultation
+    Journey" kicker, h2 "What to Expect", subtitle, zig-zag timeline of exactly 4 steps with markers,
+    numbers 01–04, h3 and one sentence each). The steps and wording fit the specialty.
+
+## H. CONTACT
+12. A Contact section exists with:
+    - the clinic's full address, and
+    - contact details: phone number (`tel:` link) and email address (`mailto:` link),
+    - plus a Book Appointment button that opens the modal.
+    Icons match ENT-2.
+
+## I. GALLERY
+13. The gallery is an image grid only. There are no captions, titles, overlays or descriptive text
+    on the items. Keep meaningful alt text. Images are real, not placeholders, and below-the-fold
+    images use `loading="lazy"`. The grid is centred for 4/5/7 images, and the lightbox works.
+
+## J. FAQ
+14. The FAQ section exists straight after the Gallery, with `id="faq"` and a nav link, and at least
+    5 questions and answers that are specific to this doctor and specialty (what is treated,
+    referral, what to bring, online vs clinic visit, fees/timing only if known). Test the accordion:
+    the first item is open on load, one open at a time, keyboard operable (Enter/Space),
+    `aria-expanded` updates, and long answers wrap without overflow.
+
+# PART 1 (continued): MODAL, FOOTER, CHATBOT AND LEGAL PAGES
+
+## K. APPOINTMENT MODAL & BOOKING FORM
+15. An "i" info icon sits next to the Online Consultation toggle.
+16. Hovering or focusing the icon shows a tooltip with the exact text from ENT-2. It must also work
     on keyboard focus and on tap for mobile.
-14. Ticking the consent checkbox opens a "Patient Consent & Data Privacy" panel inside the modal.
+17. Ticking the consent checkbox opens a "Patient Consent & Data Privacy" panel inside the modal.
     The patient must scroll to the bottom before the "I agree" button enables. Clicking it closes
     the panel and leaves the checkbox ticked. Closing without agreeing leaves the checkbox unticked.
     Compare markup and JS with ENT-2.
-15. The primary brand colour is reserved for primary actions only (e.g. Submit/Review). The toggle,
+18. The primary brand colour is reserved for primary actions only (e.g. Submit/Review). The toggle,
     upload button, close button and secondary controls use neutral or outline styles.
-16. The text "Try the appointment form. This is a sample clinic; your request stays in this browser
+19. The text "Try the appointment form. This is a sample clinic; your request stays in this browser
     and is not sent." is absent (grep for "sample clinic" and "not sent").
-17. The consent label text is exactly as in CLAUDE.md, with the correct doctor name.
-
-## H. CHATBOT
-18. The chat panel layout and size are correct at 1440px, 768px and 375px. Nothing is clipped: the
-    header, avatar, message bubble, quick-reply chips (wrapping or scrolling cleanly, not cut off),
-    input and send button are all fully visible. The panel fits inside the viewport (`max-height`
-    with `overflow-y: auto` on the messages area).
-19. The footer note reads exactly: "Informational only, not medical advice." then a line break, then
-    "Consult your doctor." (two lines).
-
-## I. PRIVACY POLICY & TERMS OF SERVICE
-20. The body content of both pages is identical to ENT-2 (full text in the Appendix), with only the doctor name, clinic and
-    contact details swapped. Run a diff against ENT-2 and list any differences that aren't
-    doctor-specific data.
-21. A visible Back button or link exists on both pages (to index.html), styled like ENT-2.
-
-## J. GLOBAL REGRESSION (CLAUDE.md)
-22. Clarity snippet (project `ymqvcvdc4v`) plus microsite/specialty tags are on every page.
-23. The §22 global CSS block is present once. There is no `nowrap` on dynamic text, no fixed
-    heights on cards, `min-width: 0` on flex/grid children, and `flex-wrap` on all social rows.
-    p/li/a are 18px, with AA contrast.
-24. The Services grid uses the 12-track system (§23). The social carousel follows §30 if present.
-    Each page has a unique title and meta description, and a single h1.
-25. No broken links, no missing assets, no console errors.
-
-## K. PROJECT STRUCTURE & COMPLETENESS
-26. The folder contains exactly: index.html, privacy-policy.html, terms-of-service.html,
-    robots.txt, sitemap.xml, llms.txt, styles/style.css, script/index.js and assets/. All CSS is in
-    style.css and all JS in index.js (plus chatbot.js, banner-module.js and analytics.js). No inline
-    layout styles and no inline scripts, apart from the Clarity and GA4 snippets.
-27. The index.html section order is: Header/Nav → Hero → About → Services → Care Philosophy
-    (split-screen) → Consultation Journey (4-step timeline) → Contact → Practice Gallery → FAQ →
-    Booking Modal → Footer (the FAQ comes straight after the Gallery). Every nav link's target id
-    exists, including `#faq`. Section designs may differ from ENT-2 (see the rule above).
-27a. The FAQ section exists after the Gallery, with at least 5 questions and answers that are specific to
-    this doctor and specialty (what is treated, referral, what to bring, online vs clinic visit, fees/timing
-    only if known). Test the accordion: the first item is open on load, one open at a time, keyboard
-    operable (Enter/Space), `aria-expanded` updates, and long answers wrap without overflow.
-28. robots.txt, sitemap.xml and llms.txt follow AGENTS.md §29. URLs and doctor details match this
-    microsite, with no leftover ENT-2 or other-specialty text.
-29. No blog pages, links or files exist (blog was removed project-wide). grep for "blog" in the
-    HTML and nav.
-30. No leftover strings from the source template. grep for the old doctor name, the old specialty,
-    "ENT", "Ananya", "Heart Care Guide", "Lorem", "TODO", "example.com" and any `{{ }}` template tags.
-
-## L. CONTENT ACCURACY & SPECIALTY FIT
-31. All copy, services, FAQs, journey steps, chatbot replies and alt text match this doctor's
-    specialty. Check gender, pronouns (use "Dr." and the correct he/she), qualifications and clinic
-    details for consistency across hero, about, footer, legal pages, modal consent label, chatbot
-    and meta tags.
-32. The services count and card content are real. Test the grid with 4, 5, 6 and 7 cards: a leftover
-    row must be centred.
-33. There are no medical claims such as guaranteed cures, and no unverifiable "20+ years" claims
-    outside h1, paragraphs, list items and the footer. Sub-headings, badges and kickers stay generic.
-
-## M. BRANDING, COLOUR & LAYOUT (AGENTS.md §1.1, §2, §6, §11, §15)
-34. The colour split follows 60% neutral / 30% brand / 10% accent. The accent is used only on CTAs
-    and key links.
-35. Every text/background pair meets WCAG AA 4.5:1, including text on coloured surfaces, buttons,
-    badges, the footer and the chatbot. Compute the ratios and list the lowest three.
-36. Top-level sections alternate backgrounds (white/off-white ↔ brand tint). Section padding is
-    `20px 0` with no separate mobile override.
-37. The container is 1440–1600px wide, not 1280px, and text blocks keep a 65–75ch measure.
-38. Typography: h2 is 32–38px and bold (600+); h3 is 22px (20px at ≤480px); p, li and a are 18px
-    with dark text; badges are 16px; line-height 1.5–1.6; the 1400px media query caps at 18px.
-    Fonts are Google Fonts (Inter, Roboto or Outfit).
-39. Card h3/h4 headings are visibly bolder and larger than the card body text. No card is nested
-    inside another card.
-40. Cards, hover states and focus states are consistent. Focus rings are visible, and animations
-    respect `prefers-reduced-motion`.
-
-## N. RESPONSIVENESS & STRESS TESTS
-41. No horizontal scroll and nothing clipped at 320, 375, 768, 1024, 1440 and 1900px. Take
-    screenshots or measure `scrollWidth`.
-42. Stress test: set a very long doctor name (50+ characters), a long specialty/qualification
-    string, a long address and a long email. Nothing overflows, nothing is cut off, cards grow.
-43. The header (portrait + nav + CTA) collapses properly. The mobile menu opens and closes, traps
-    nothing, and closes on link click.
-44. Images are optimised: width/height or aspect ratio set, below-the-fold images use
-    `loading="lazy"`, the hero image is eager. No image is over about 500KB, and none is a
-    placeholder.
-
-## O. BOOKING FORM LOGIC
-45. The phone input uses intl-tel-input v29.2.2 via the jsDelivr CDN, `initialCountry: "in"`, and
+20. The consent label text is exactly as in CLAUDE.md, with the correct doctor name.
+21. The phone input uses intl-tel-input v29.2.2 via the jsDelivr CDN, `initialCountry: "in"`, and
     `iti.isValidNumber()` gated on `phoneUtilsReady`. Invalid and empty numbers show an error.
-46. The full name field accepts only letters, spaces, apostrophes and hyphens, and is sanitised
+22. The full name field accepts only letters, spaces, apostrophes and hyphens, and is sanitised
     live on input.
-47. The date picker blocks past dates. Required fields are validated. File upload accepts
+23. The date picker blocks past dates. Required fields are validated. File upload accepts
     PDF/JPG/PNG up to 5MB and shows a friendly error otherwise.
-48. Toggling Clinic visit / Online consultation updates form state and labels. The submit flow works
+24. Toggling Clinic visit / Online consultation updates form state and labels. The submit flow works
     end to end (review step → confirmation). Escape and backdrop click close the modal, focus is
     trapped inside, and focus returns to the trigger on close. The body doesn't scroll behind the
     modal.
-49. Computed-style check with `getComputedStyle`: button labels wrapped in `<span>` are white on
+25. Computed-style check with `getComputedStyle`: button labels wrapped in `<span>` are white on
     coloured buttons (the global `span { color }` reset gotcha). Nested widget inputs aren't broken
     by `.booking-field input` padding. Widget dropdowns aren't collapsed by `max-width: 100%`.
 
-## P. CHATBOT BEHAVIOUR
-50. The launcher opens and closes the panel. Quick-reply chips work and answers are on-topic for
+## L. FOOTER
+26. The footer layout and hierarchy mirror ENT-2 exactly (column structure, order, classes).
+27. The footer is the same on all three pages (index, privacy-policy, terms-of-service): identical
+    markup, content, links and styling, differing only where ENT-2 itself differs (for example
+    in-page anchors resolving to `index.html#...` on the legal pages). Diff the footer block across
+    the three files.
+28. The footer is compact, exactly like ENT-2: the same height, padding, spacing, font sizes and
+    number of rows and columns. It adds no extra rows, large blocks or tall padding. Compare
+    rendered footer height against ENT-2 at 1440px, 768px and 375px. It must also stay compact on
+    mobile (stacked columns with tight spacing, no oversized gaps).
+29. There are no image credits for free or copyright-free images.
+
+## M. CHATBOT
+30. The chat panel layout and size are correct at 1440px, 768px and 375px. Nothing is clipped: the
+    header, avatar, message bubble, quick-reply chips (wrapping or scrolling cleanly, not cut off),
+    input and send button are all fully visible. The panel fits inside the viewport (`max-height`
+    with `overflow-y: auto` on the messages area).
+31. The footer note reads exactly: "Informational only, not medical advice." then a line break, then
+    "Consult your doctor." (two lines).
+32. The launcher opens and closes the panel. Quick-reply chips work and answers are on-topic for
     this specialty. Input and send button work with Enter. The panel scrolls to the latest message,
     has a close button, and is keyboard accessible (aria-label, `aria-live` on the message area).
-51. Chatbot replies contain no leftover ENT-2 text and no real medical advice. They point to
+33. Chatbot replies contain no leftover ENT-2 text and no real medical advice. They point to
     booking or "consult your doctor".
 
-## Q. ANALYTICS, SEO & ACCESSIBILITY
-52. Clarity: the snippet is copied verbatim from AGENTS.md §27 with project ID `ymqvcvdc4v` only.
-    The `microsite` tag matches the slug and the `specialty` tag comes from the canonical §20 table.
-    No new per-site Clarity ID.
-53. Each page has a unique title and meta description, a canonical URL, Open Graph/Twitter tags, a
-    single h1 and a logical heading order. JSON-LD (Physician/MedicalBusiness) is present if ENT-2
-    has it, with correct data.
-54. Accessibility: every image has alt text (decorative ones `alt=""`), every icon-only link/button
-    has an aria-label, form fields have labels, the modal has `role="dialog"` and `aria-modal`,
-    there is a skip link if ENT-2 has one, and the page is fully keyboard navigable. Run a quick
-    axe/Lighthouse pass and report the scores.
-55. No console errors or warnings, no 404s in the network tab, no mixed content. External links
-    use `rel="noopener noreferrer"` and `target="_blank"`. Internal links are relative.
+## N. PRIVACY POLICY & TERMS OF SERVICE
+34. The body content of both pages is identical to ENT-2 (full text in the Appendix), with only the
+    doctor name, clinic and contact details swapped. Run a diff against ENT-2 and list any
+    differences that aren't doctor-specific data.
+35. A visible Back button or link exists on both pages (to index.html), styled like ENT-2.
 
-## R. WORKSPACE HYGIENE
-56. If this is a new specialty, it is added to the AGENTS.md §20 table in the same change. Folder
-    naming follows `<Specialty>/microsite-<specialty>-<n>/`.
-57. No existing files were deleted, and no other microsite was modified unintentionally
-    (`git status` / `git diff --stat`).
+---
+
+# PART 2: SITE-WIDE CHECKS
+
+## O. PROJECT STRUCTURE & COMPLETENESS
+36. The folder contains exactly: index.html, privacy-policy.html, terms-of-service.html,
+    robots.txt, sitemap.xml, llms.txt, styles/style.css, script/index.js and assets/. All CSS is in
+    style.css and all JS in index.js (plus chatbot.js, banner-module.js and analytics.js). No inline
+    layout styles and no inline scripts, apart from the Clarity and GA4 snippets.
+37. The index.html section order is: Header/Nav → Hero → About → Services → Social Media widget
+    (only if present, see section E) → Care Philosophy → Consultation Journey → Contact → Practice
+    Gallery → FAQ → Booking Modal → Footer (the FAQ comes straight after the Gallery). Every nav
+    link's target id exists, including `#faq`. Section designs may differ from ENT-2 (see the rule
+    above).
+38. robots.txt, sitemap.xml and llms.txt follow AGENTS.md §29. URLs and doctor details match this
+    microsite, with no leftover ENT-2 or other-specialty text.
+39. No blog pages, links or files exist (blog was removed project-wide). grep for "blog" in the
+    HTML and nav.
+40. No leftover strings from the source template. grep for the old doctor name, the old specialty,
+    "ENT", "Ananya", "Heart Care Guide", "Lorem", "TODO", "example.com" and any `{{ }}` template tags.
+
+## P. CONTENT ACCURACY & SPECIALTY FIT
+41. All copy, services, FAQs, journey steps, chatbot replies and alt text match this doctor's
+    specialty. Check gender, pronouns (use "Dr." and the correct he/she), qualifications and clinic
+    details for consistency across hero, about, footer, legal pages, modal consent label, chatbot
+    and meta tags.
+42. There are no medical claims such as guaranteed cures, and no unverifiable "20+ years" claims
+    outside h1, paragraphs, list items and the footer. Sub-headings, badges and kickers stay generic.
+
+## Q. BRANDING, COLOUR & LAYOUT (AGENTS.md §1.1, §2, §6, §11, §15)
+43. The colour split follows 60% neutral / 30% brand / 10% accent. The accent is used only on CTAs
+    and key links.
+44. Every text/background pair meets WCAG AA 4.5:1, including text on coloured surfaces, buttons,
+    badges, the footer and the chatbot. Compute the ratios and list the lowest three.
+45. Top-level sections alternate backgrounds (white/off-white ↔ brand tint). Section padding is
+    `20px 0` with no separate mobile override.
+46. The container is 1440–1600px wide, not 1280px, and text blocks keep a 65–75ch measure.
+47. Typography: h2 is 32–38px and bold (600+); h3 is 22px (20px at ≤480px); p, li and a are 18px
+    with dark text; badges are 16px; line-height 1.5–1.6; the 1400px media query caps at 18px.
+    Fonts are Google Fonts (Inter, Roboto or Outfit).
+48. Card h3/h4 headings are visibly bolder and larger than the card body text everywhere (services,
+    philosophy, journey, contact). No card is nested inside another card.
+49. Cards, hover states and focus states are consistent. Focus rings are visible, and animations
+    respect `prefers-reduced-motion`.
+
+## R. RESPONSIVENESS & STRESS TESTS
+50. No horizontal scroll and nothing clipped at 320, 375, 768, 1024, 1440 and 1900px. Take
+    screenshots or measure `scrollWidth`.
+51. Stress test: set a very long doctor name (50+ characters), a long specialty/qualification
+    string, a long address and a long email. Nothing overflows, nothing is cut off, cards grow.
+52. The mobile menu, modals (booking and consent), chatbot, carousel and footer all work and look
+    right at 320px and 375px, and tap targets are at least 44px.
+53. Images are optimised: width/height or aspect ratio set, below-the-fold images use
+    `loading="lazy"`, the hero image is eager. No image is over about 500KB, and none is a
+    placeholder.
 
 ## S. ANALYTICS VERIFICATION: GOOGLE ANALYTICS (GA4) + MICROSOFT CLARITY
 
@@ -267,8 +327,9 @@ index.html, and the consent/booking/upload calls in `script/index.js`).
   `clarity("event", name)`. Both calls are guarded with `typeof ... === "function"`.
 - A delegated click listener reads `data-ga-event` (and an optional `data-ga-label`, falling back to
   `aria-label`, then the first 60 characters of the text).
-- The Clarity snippet is copied verbatim from AGENTS.md §27, with project ID `ymqvcvdc4v` only. The
-  `microsite` and `specialty` tags are set right after it (see item 52), on every page.
+- Clarity: the snippet is copied verbatim from AGENTS.md §27, with project ID `ymqvcvdc4v` only, on
+  every page. The `microsite` tag matches the slug and the `specialty` tag comes from the canonical
+  §20 table, set right after the snippet. No new per-site Clarity ID.
 - No page loads GA4 or Clarity twice, and there are no console errors if an ad-blocker blocks
   either script (the guards must prevent crashes).
 
@@ -325,6 +386,27 @@ index.html, and the consent/booking/upload calls in `script/index.js`).
 Add a table: Event | Trigger | Found in code (file:line) | Fired at runtime (yes/no) | Notes. List
 events present in ENT-2 but missing here, and events here that aren't in ENT-2.
 
+## T. SEO, ACCESSIBILITY & GLOBAL REGRESSION (CLAUDE.md)
+54. The §22 global CSS block is present once. There is no `nowrap` on dynamic text, no fixed
+    heights on cards, `min-width: 0` on flex/grid children, and `flex-wrap` on all social rows.
+    p/li/a are 18px, with AA contrast.
+55. Each page has a unique title and meta description, a canonical URL, Open Graph/Twitter tags, a
+    single h1 and a logical heading order. JSON-LD (Physician/MedicalBusiness) is present if ENT-2
+    has it, with correct data.
+56. Accessibility: every image has alt text (decorative ones `alt=""`), every icon-only link/button
+    has an aria-label, form fields have labels, the modal has `role="dialog"` and `aria-modal`,
+    there is a skip link if ENT-2 has one, and the page is fully keyboard navigable. Run a quick
+    axe/Lighthouse pass and report the scores.
+57. No broken links, no missing assets, no console errors or warnings, no 404s in the network tab,
+    no mixed content. External links use `rel="noopener noreferrer"` and `target="_blank"`. Internal
+    links are relative.
+
+## U. WORKSPACE HYGIENE
+58. If this is a new specialty, it is added to the AGENTS.md §20 table in the same change. Folder
+    naming follows `<Specialty>/microsite-<specialty>-<n>/`.
+59. No existing files were deleted, and no other microsite was modified unintentionally
+    (`git status` / `git diff --stat`).
+
 ---
 
 ## OUTPUT
@@ -334,7 +416,7 @@ made. List any item you couldn't verify separately.
 
 ---
 
-## APPENDIX: REFERENCE TEXT FOR THE LEGAL PAGES (items 20 and 21)
+## APPENDIX: REFERENCE TEXT FOR THE LEGAL PAGES (items 34 and 35)
 
 This is the exact text from ENT-2. Compare the generated pages against it word for word. Allowed
 differences: replace `[Doctor/Clinic Name]` with the doctor's name, fill in the contact card
