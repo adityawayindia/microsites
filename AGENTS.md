@@ -11,6 +11,15 @@
 > Values are desktop-first unless a breakpoint is named. "Same as body" means 18px,
 > matching the sitewide `p, li, a` rule.
 
+> **Design may vary slightly; required elements may not.** A microsite's visual design (layout
+> details, spacing, imagery, section styling, wording) can differ a little from ENT-2 and from
+> the pixel values below. What must always remain is the required content and behaviour: the
+> sections and elements in §21 and §31–§43 (including the FAQ, contact, gallery, footer, booking
+> modal with its info tooltip and consent panel, chatbot, legal pages with the Back button, and
+> the GA4 and Clarity events), mobile responsiveness (§31), and the global rules (colour contrast,
+> 18px body text, no overflow). Where a design choice would remove or break a required element,
+> keep the element.
+
 > **Building a new microsite from scratch? Don't read top to bottom.** Sections 0–17
 > below are per-component pixel specs (header, hero, about, etc.) — useful once you're
 > mid-build, but not the place to start cold. Read **§20 (folder structure) → §21 (full
@@ -297,6 +306,9 @@ usage is the accepted standard** — read §1.1's "accent strictly for CTAs" as 
 icon accents, badges, and state indicators are fine and are how the 30% brand / 10%
 accent balance actually reads on the page. What is **not** acceptable: accent color as
 a full card background, a full section background, or body text color.
+
+(For the booking modal specifically, §37 is stricter: the brand colour is reserved for
+primary actions there; tabs, upload, and close use neutral or outline styling.)
 
 ---
 
@@ -756,6 +768,12 @@ the container (`data-banner-active`, `data-banner-start`/`-end` for scheduling,
 
 ## 15. Button Standards (Unified Scale)
 
+> **Superseded in part by §34 and §37 (latest rules win):** primary actions (CTAs, Submit /
+> Review, I Agree) keep the solid fill below. Secondary controls (the booking-modal tabs,
+> upload button, and close button) use neutral or outline styling, and the About Read More
+> toggle is a subtle text link. Wherever this section says "every button is solid", read it as
+> "every *primary* button is solid".
+
 **Every button uses the primary/accent color as a solid background — no outline-only or
 ghost-button variants, anywhere.** ENT-1 originally shipped one exception (the hero's
 "secondary" CTA was a transparent/outline button, filling in only on hover) — that has
@@ -852,7 +870,8 @@ Header → Hero (+ optional promotional banner) → About → Services → Care 
 Consultation Journey → **Contact** → Practice Gallery (+ lightbox) →
 Booking Modal → Footer
 
-(This is also stated as the canonical 10-section build list in §21.) Two things below
+(The canonical build list in §21 now also includes the FAQ section after the Gallery, per
+§39. Where this list and §21 differ, §21 wins.) Two things below
 extend an earlier, shorter 10-section version of this list:
 - **Contact section** (id `#contact-us`) sits between Consultation Journey and
   Practice Gallery — a dedicated address/phone/email card, separate from the footer and
@@ -949,13 +968,15 @@ Each specialty lives in its own folder, one subfolder per microsite variant:
     index.js          ← ALL JS lives here (counters, carousel, modal, grid logic, read-more)
     chatbot.js
     banner-module.js
+    analytics.js      ← GA4 + Clarity event tracking (§40), loaded before index.js
   assets/              ← images and media (doctor photo, about/philosophy photos, icons)
 ```
 
 - CSS lives exclusively in `styles/style.css` (plus the two separately-loaded
   `chatbot.css`/`banner-module.css` files for those two modules) — never inline
   `style="..."` for layout rules.
-- JS lives exclusively in `script/index.js` (plus `chatbot.js`/`banner-module.js`).
+- JS lives exclusively in `script/index.js` (plus `chatbot.js`/`banner-module.js`/`analytics.js`).
+  The only inline `<script>` blocks allowed are the Clarity and GA4 snippets in `<head>` (§27, §40).
 - Internal links between pages use relative paths (`privacy-policy.html`, `index.html#about`),
   never absolute URLs.
 - Doctor/clinic images go in `assets/`; prefer local assets over hotlinked images (§17).
@@ -1016,8 +1037,9 @@ apply:
 | 6 | Consultation Journey | 4-step animated timeline | §8 |
 | 7 | Contact | Dedicated address/phone/email card (mandatory section) | §18.1 |
 | 8 | Practice Gallery | Grid + lightbox, 12-track centering same as Services | §10, §23 |
-| 9 | Booking Modal | Popup form: date/time, file upload, phone input, consent | §11, §25 |
-| 10 | Footer | Branding, social links, quick/legal links, visitor badge, copyright | §12 |
+| 9 | FAQ | Accordion of at least 5 specialty-specific questions, straight after the Gallery (`#faq`) | §39 |
+| 10 | Booking Modal | Popup form: date/time, file upload, phone input, consent | §11, §25, §37 |
+| 11 | Footer | Branding, social links, quick/legal links, visitor badge, copyright | §12, §36 |
 
 Plus two persistent overlays present on every page load (not scroll sections):
 **Chatbot widget** (§13) and, only on the homepage hero, the optional **promotional
@@ -1478,6 +1500,17 @@ Working order for building a new microsite from this file alone:
     and chatbot fonts actually match the site font, not the browser default (§11, §13);
     check for the known gotchas (§26) on every third-party widget and colored button.
 13. Add `robots.txt`, `sitemap.xml`, and `llms.txt` at the microsite folder root (§29).
+14. Apply the mobile-responsiveness mandate (§31) while building every section, and the
+    header, hero, about, contact, and gallery content rules (§32–§35).
+15. Build the footer once and reuse it identically on all three pages, compact like ENT-2 (§36).
+16. Add the booking-modal info tooltip, consent panel, and button-colour rules (§37), and the
+    chatbot layout and two-line footer note (§38).
+17. Add the FAQ section after the Gallery and use the default Philosophy / Journey / FAQ
+    designs unless a new design is made (§39).
+18. Add GA4 + `analytics.js` and every event in §40 (on top of Clarity, §27).
+19. Copy the exact Privacy Policy and Terms of Service text, with the Back button (§41).
+20. Check content accuracy and template hygiene (§42), then run the audit in
+    `verification.md` (§43).
 
 ---
 
@@ -1549,3 +1582,512 @@ follow.
   .social-carousel-next[hidden] { display: none; }
   ```
 - Test with 2 posts and with 5+ posts, at desktop and ≤900px.
+
+---
+
+## 31. Mobile Responsiveness (Mandatory, Applies to Everything)
+
+Every microsite must be fully mobile-responsive. This covers every page (`index.html`,
+`privacy-policy.html`, `terms-of-service.html`) and every element: header and mobile menu,
+hero, every section, booking modal, consent panel, chatbot, and footer.
+
+- Works from **320px to 1440px+** on phones, tablets, and desktops (breakpoints per §0).
+- No horizontal scroll, no clipped or overlapping content, no unreadable text at any width.
+- Tap targets are at least **44px** high and wide.
+- Build mobile behaviour as you build each section, not as a final pass. Test every new
+  section at 320, 375, 768, 1024, 1440, and 1900px before moving on.
+- Stress-test with a very long doctor name (50+ characters), long qualification and specialty
+  text, a long address, and a long email: nothing may overflow, and cards must grow.
+
+---
+
+## 32. Header Additions (Portrait & Clean URLs)
+
+- **Circular portrait.** The header shows the doctor's professional portrait in a circular frame
+  (`border-radius: 50%`, `object-fit: cover`), using a real image from `assets/` (never a
+  placeholder). It reuses the header `.avatar` element (see §12 for the shared size).
+- **No hash in the URL.** Navigating with header links must not leave `#home`, `#about`,
+  `#gallery`, etc. in the address bar. In `script/index.js`, intercept nav-link clicks:
+  `preventDefault()`, scroll smoothly with `scrollIntoView({ behavior: "smooth" })` to the target
+  section, then `history.replaceState(null, "", location.pathname + location.search)` to strip the
+  hash. Apply the same behaviour to the logo link, the mobile-menu links, and the footer
+  quick links. Keep each link's `href="#section"` so it still works without JavaScript.
+
+---
+
+## 33. Hero Content Rules
+
+Keep the hero lean: no redundant text, extra taglines, or secondary descriptions. The design
+elements specified in §4 (specialty badge, floating decorative icons, stat tiles, portrait
+frame) stay as they are. Build this content:
+
+**Profile details**: four separate lines, each with its own icon, in this order:
+
+| # | Line | Notes |
+|---|---|---|
+| 1 | Qualification | graduation-cap icon |
+| 2 | **Medical Regd. No.** | label is exactly "Medical Regd. No." (never "MCI") |
+| 3 | Fellowship | optional, see the fellowship rule in §4; skip the line entirely if the doctor has none |
+| 4 | Languages | language icon |
+
+**Statistics cards**: exactly three, in this order:
+1. **Practising Since**: the year only (e.g. `2009`)
+2. **Languages**: a count
+3. **Consultation Modes**: a count
+
+All three animate as live counters as specified in §4.
+
+**Social icons**: one row, in this order, with each icon linking to a real URL and carrying an
+`aria-label`: Facebook Profile, Facebook Page, Instagram, X, LinkedIn, Website, WhatsApp,
+YouTube. The row must have `flex-wrap: wrap` (see §22).
+
+**Content cleanup**: no redundant text. Do not add extra taglines, secondary descriptions, or
+duplicate paragraphs. The hero contains the doctor name (h1), the profile lines, the stats, the
+social row, and the call-to-action buttons.
+
+---
+
+## 34. About "Read More" Styling
+
+The Read More / Read Less toggle uses the code in §24 verbatim, with this styling rule: it is
+a **subtle text link or secondary element** (transparent background, no fill, no pill, a
+chevron icon), clearly distinct from the primary call-to-action button design. It must never
+look like a primary button. Auto-hide behaviour stays as in §24.
+
+---
+
+## 35. Contact & Gallery Content Rules
+
+**Contact section** (`#contact-us`, layout per §18.1) contains exactly:
+- **Address**: the clinic's full address, shown in whatever form the doctor supplies it.
+- **Contact details**: phone number (`tel:` link) and email address (`mailto:` link).
+- **Action**: a "Book Appointment" button that opens the booking modal.
+
+No WhatsApp number or other extra contact items in this section.
+
+**Gallery section** (grid per §10): an **image grid only**. No captions, titles, or
+descriptive text overlays on any item. Keep meaningful `alt` text on every image, use real
+images (no placeholders), and keep the lightbox from §10. Free, copyright-free images need no
+image credits anywhere on the page.
+
+---
+
+## 36. Footer Consistency & Compactness
+
+- The footer follows §12 and mirrors **ENT-2** exactly in layout and hierarchy (column
+  structure, order, classes).
+- **Identical on all three pages.** The footer on `index.html`, `privacy-policy.html`, and
+  `terms-of-service.html` uses the same markup, content, links, and styling. The only allowed
+  difference is link targets that must resolve to `index.html#…` on the legal pages.
+- **Compact, exactly like ENT-2.** Same overall height, padding, spacing, font sizes, and
+  number of rows and columns. Do not add extra rows, large blocks, or tall padding. It stays
+  compact on mobile too (stacked columns, tight spacing, no oversized gaps).
+- No image credits line.
+
+---
+
+## 37. Booking Modal Additions (Info Tooltip, Consent Panel, Button Colours)
+
+These additions sit on top of §11 and §25.
+
+**Online Consultation info icon and tooltip.** Place an "i" info icon inside the Online
+Consultation tab. Hovering or keyboard-focusing it shows a tooltip with this exact text (also
+opens on tap for mobile):
+
+> Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.
+
+Use the ENT-2 markup: `.booking-tab-info` inside the tab, a `.booking-tab-tip` element with
+`role="tooltip"` and `hidden`, and `aria-describedby` on the tab.
+
+**Patient Consent & Data Privacy panel.** Ticking the consent checkbox opens a
+"Patient Consent & Data Privacy" panel inside the modal flow (`#consentModal`, markup and JS
+copied from ENT-2):
+- The panel's dialog scrolls. The **I Agree** button starts **disabled**, with the hint
+  "Please read the full notice to continue", and enables only once the patient has scrolled to the
+  bottom (8px slack).
+- Clicking **I Agree** closes the panel and returns to the booking form with the checkbox
+  ticked. Closing the panel in any other way returns to the form with the checkbox unticked.
+  Entered form data is preserved and the form is never reset.
+- The panel contains the notice sections "How we protect your information", "Your rights",
+  "Questions or Complaints" (Compliance Officer, DigiDr.app, `info@digidr.app`), the closing
+  confirmation sentence, and links to the Privacy Policy and Terms. Copy the text from ENT-2.
+
+**Button colours.** The primary brand colour is reserved for primary actions only (for
+example the Submit / Review button and I Agree). The tabs, upload button, close button, and
+other secondary controls use neutral or outline styles (see §1.1 and §1.2).
+
+**Removed text.** Do not include the demo line "Try the appointment form. This is a sample
+clinic; your request stays in this browser and is not sent." anywhere.
+
+The consent label wording stays exactly as defined in §11.
+
+---
+
+## 38. Chatbot Layout & Footer Note
+
+The chatbot follows §13 with these additions:
+- **Layout and size must be fully visible at every width** (1440, 768, and 375px). Nothing
+  clipped: header, avatar, message bubbles, quick-reply chips (wrap or scroll cleanly), input, and
+  send button. The panel stays inside the viewport (`max-height` with `overflow-y: auto` on the
+  messages area).
+- **Footer note.** The text at the bottom of the chat window is exactly two lines:
+
+  > Informational only, not medical advice.
+  > Consult your doctor.
+
+  Build it with a line break: `Informational only, not medical advice.<br>Consult your doctor.`
+- Replies are on-topic for the doctor's specialty, never give medical advice, and point visitors
+  to booking or "consult your doctor". No other doctor's or specialty's wording.
+
+---
+
+## 39. Care Philosophy, Consultation Journey & FAQ: Static Sections and Default Designs
+
+**Section order.** This extends §21. The home page order is Header → Hero → About → Services →
+Care Philosophy → Consultation Journey → Contact → Practice Gallery → **FAQ** → Booking Modal →
+Footer. The FAQ section (`#faq`) comes straight after the Gallery and gets a nav link.
+
+**Static sections with their own design.** Care Philosophy, Consultation Journey, and any
+other section can have a design of its own (layout, imagery, wording). Such a design is static,
+fixed content: it does not have to match ENT-2. It must still be present, in the correct order,
+responsive (§31), accessible, readable (AA contrast, 18px body text), consistent with the
+specialty, and free of overflow and leftover wording from another specialty.
+
+**Default designs (use these when no new design is made).** Copy the ENT-2 design and change
+only the wording for the specialty. Layout, classes, icons, element order, and counts stay.
+Kickers stay generic (no doctor names or "20+ years" claims).
+
+- **Care Philosophy**: `section.philosophy-section#philosophy`. Split-screen layout inside
+  `.container.philosophy-layout`.
+  - Left (`.philosophy-visual`): a framed photo (`.philosophy-img-frame`, lazy-loaded,
+    descriptive alt text) with a small badge on it (`.philosophy-badge`: round icon, bold line,
+    short second line).
+  - Right (`.philosophy-content`): a kicker with an icon and the text "Care Philosophy", an h2
+    title, a one-line subtitle, and **three** pillars (`.philosophy-pillar`). Each pillar has a
+    round icon with a small index number (01, 02, 03), an h3 heading, and a one-sentence
+    description.
+- **Consultation Journey**: `section.process-section#process`. A decorative background layer
+  (`.process-bg`, `aria-hidden`), then a centred header with a kicker (route icon and the text
+  "Consultation Journey"), an h2 ("What to Expect"), and a one-line subtitle. Below it, a
+  vertical alternating (zig-zag) timeline of exactly **four** steps (`.process-step`). Each step
+  has a round marker with an icon and a card with a large step number (01–04), an h3 heading,
+  and a one-sentence description. The steps are: 1) Appointment Booking, 2) a diagnostic or
+  evaluation step, 3) a personalised treatment plan, 4) recovery and follow-up.
+- **FAQ**: `section.faq-section#faq`. A header with an h2 ("Frequently Asked Questions") and a
+  one-line subtitle, then an accordion (`.faq-list`) of at least **five** questions
+  (`.faq-item`). Each item has a button (`.faq-question`: question text plus a chevron icon,
+  `aria-expanded` set) and a collapsible answer (`.faq-answer` > `.faq-answer-inner` > `p`). The
+  first item is open by default (`is-active`). Opening an item closes the others and rotates the
+  chevron, and it works with Enter/Space. Use the shared "FAQ accordion" block from ENT-2's
+  `script/index.js` unchanged. Write questions and answers specific to the doctor's specialty
+  (conditions treated, referral, what to bring, online vs clinic visit); never leave ENT wording.
+
+---
+
+## 40. Analytics: Google Analytics (GA4) + Microsoft Clarity Events
+
+Clarity follows §27. GA4 is added on top of it, using the ENT-2-param analytics setup.
+
+**Setup (every page: `index.html`, `privacy-policy.html`, `terms-of-service.html`):**
+- Add the GA4 `gtag.js` snippet in `<head>` once per page, with the microsite's own Measurement
+  ID. Never leave `G-XXXXXXXXXX` in a finished microsite.
+- Add `script/analytics.js` (copy from `ENT/microsite-ent-2-param/script/analytics.js`) and load it
+  **before** `script/index.js`. It defines `window.trackEvent(name, params)`, which sends
+  `gtag("event", …)` with `page_path` and also `clarity("event", name)`, each guarded with
+  `typeof … === "function"` so an ad-blocker never causes errors. It also installs a delegated
+  click listener for `data-ga-event` (label from `data-ga-label`, else `aria-label`, else the first
+  60 characters of the text).
+- Load GA4 and Clarity exactly once per page.
+
+**Declarative events**: add these `data-ga-event` attributes in `index.html` (give every element
+a `data-ga-label` where several elements share an event):
+
+| Element | `data-ga-event` |
+|---|---|
+| Header nav links (About, Services, Contact, Gallery, FAQ) | `nav_link_click` |
+| Header "Book Appointment" CTA, and every other Book CTA | `book_appointment_click` |
+| Hero social icons | `hero_social_link_click` |
+| About Read More button | `read_more_click` |
+| Contact phone link | `phone_number_click` |
+| Contact email link | `email_click` |
+| Booking tab: Clinic Visit | `clinic_visit_tab_click` |
+| Booking tab: Online Consultation | `online_consult_tab_click` |
+| Report upload button | `upload_report_click` |
+| Footer link columns | `footer_nav_link_click` |
+| Footer social icons | `footer_social_link_click` |
+
+**Programmatic events**: fired from `script/index.js` through `window.trackEvent?.()`
+(consent events use a small `trackConsentEvent` helper that sends the same GA4 + Clarity pair):
+
+| Event | Fires when | Params |
+|---|---|---|
+| `consent_checkbox_click` | the consent checkbox is toggled | `checked` |
+| `consent_modal_open` | the consent panel opens | none |
+| `consent_scrolled_to_bottom` | the patient reaches the bottom of the notice (once) | none |
+| `consent_agreed` / `consent_dismissed` | the panel closes via I Agree / any other way | as in ENT-2 |
+| `report_uploaded` | a valid report file is chosen | none |
+| `booking_submitted` | the booking form is submitted successfully | `appointment_type` |
+
+**Rules:** one event per action (no double-firing); disabled social icons (no link) never fire an
+event or navigate; no event may carry patient-entered data (name, phone, email, symptoms, file
+names); the legal pages load analytics too and must not throw.
+
+---
+
+## 41. Privacy Policy & Terms of Service (Exact Text)
+
+Both legal pages use the exact ENT-2 text below, with only these changes: replace
+`[Doctor/Clinic Name]` with the doctor's name, fill in the contact card (email, phone, address),
+and in Privacy Policy section 1 replace the qualification and registration details ("MBBS, MS
+(ENT), Registration No. 71934, MCI") with this doctor's own. The effective date stays
+`[Insert Date]` unless told otherwise.
+
+Page structure (both pages): a visible **"Back to Home" link** at the top of the article (arrow
+icon, links to `index.html`, class `blog-detail-back-link`), the small label "Legal Information",
+the h1 title, a lead sentence, the effective-date line, then the body. Headings are h2 and lists
+use the `legal-list` class. The contact section uses a `legal-contact-card`. Both pages use the
+shared footer (§36) and carry the Clarity and GA4 snippets (§27, §40).
+
+### 41.1 Privacy Policy text
+
+**Title (h1):** Privacy Policy
+
+**Lead:** We respect patient privacy and handle personal information with care, transparency, and
+appropriate safeguards.
+
+**Effective Date:** [Insert Date]
+
+This Privacy Policy explains how personal information is collected, used, stored, and protected when
+you use this website and its consultation and appointment services.
+
+**1) Who We Are**
+
+This is the personal microsite of **[Doctor/Clinic Name]**, MBBS, MS (ENT), Registration No. 71934,
+MCI. It is hosted on technology provided by DigiDr (digidr.app).
+
+[Doctor/Clinic Name] decides why and how your details are used for your consultation and is the Data
+Fiduciary under the Digital Personal Data Protection Act, 2023 ("DPDP Act"). DigiDr provides the
+technology and handles your details only on the doctor's instructions. DigiDr is not a healthcare
+provider.
+
+**2) Information We Collect**
+
+We may collect the following categories of information:
+- Contact details (name, email, phone number)
+- Appointment details (preferred date and time, reason for visit)
+- Documents you upload through forms (for example, reports and prescriptions)
+- Website usage data (browser type, pages viewed, device and basic analytics)
+
+Please share only what is needed for your visit. Do not upload government ID numbers or payment card
+details through the forms.
+
+**3) How We Use Your Information, and Your Consent**
+
+Your information is used to:
+- Schedule and manage appointments
+- Respond to inquiries and provide support
+- Send messages about your appointment
+- Improve the website using anonymous, combined usage data
+- Meet legal, medical, and regulatory obligations
+
+When you submit a booking or inquiry form, you consent to your details being used to arrange and
+provide your consultation. You can withdraw your consent at any time by writing to us. Withdrawal
+does not affect use made before you withdrew, and we may keep records that the law requires. We send
+no promotional messages without your separate consent. Your submitted health details are never used
+to improve the website.
+
+**4) Medical Privacy**
+
+We treat all health-related information with strict confidentiality. Any data shared through this
+website is handled with appropriate safeguards and is accessed only by authorised personnel as
+needed for care, administration, or legal compliance. DigiDr personnel can access it only where
+needed to run, secure, or support the service.
+
+**5) AI-Assisted Content**
+
+Where health education on this site is drafted with AI, it is reviewed and approved by
+[Doctor/Clinic Name] before publication and labelled as AI-assisted. Details you submit in forms or
+documents are not used to create public content.
+
+**6) Sharing of Information**
+
+We do not sell personal data and we do not use it for advertising. We may share information only when
+necessary with:
+- Authorised staff and healthcare professionals involved in your care
+- Trusted service providers, including DigiDr as the technology provider, and hosting, appointment,
+  or communication tools
+- Government or legal authorities when required by law
+
+Where a service provider stores data outside India, this is done in line with the DPDP Act.
+
+**7) Data Retention**
+
+We retain personal information only for as long as required to provide services, maintain records,
+and comply with applicable laws and medical record policies. When data is no longer needed and no law
+requires us to keep it, it is deleted or made anonymous.
+
+**8) Data Security**
+
+We use reasonable technical and organisational measures to protect personal information. However, no
+website or transmission method is completely secure, and absolute security cannot be guaranteed. If a
+personal data breach affects you, we will inform you and the Data Protection Board of India as the
+law requires.
+
+**9) Cookies and Analytics**
+
+This website may use cookies or analytics tools to understand usage patterns and improve
+functionality. You can change your browser settings to control cookie preferences.
+
+**10) Your Rights**
+
+Under the DPDP Act, you have the right to:
+- Get a summary of the personal data we hold about you
+- Correct or update your data
+- Ask for your data to be erased
+- Withdraw your consent
+- Have your grievance addressed
+- Nominate another person to exercise your rights if you die or cannot act
+
+To use any of these rights, write to [Doctor/Clinic Name] using the details below, or to DigiDr at
+info@digidr.app (mailto link). If your grievance is not resolved, you may complain to the Data
+Protection Board of India.
+
+**11) Children**
+
+If the patient is under 18, the booking must be made by a parent or lawful guardian, who gives
+consent for the child. We do not track or target children with advertising.
+
+**12) Third-Party Links**
+
+Our site may contain links to third-party platforms. We are not responsible for the privacy practices
+of external sites and recommend reviewing their policies separately.
+
+**13) Updates to This Policy**
+
+We may update this Privacy Policy periodically. The latest version will always be posted on this page
+with the effective date. For changes that affect how your details are used, we will tell you where we
+hold your contact details.
+
+**14) Contact Us**
+
+Contact card:
+- [Doctor/Clinic Name] (bold)
+- Email: [Insert Email]
+- Phone: [Insert Phone Number]
+- Address: [Insert Clinic Address]
+
+To report an error or a concern about this site, or to raise a privacy grievance with DigiDr, write to
+info@digidr.app (mailto link).
+
+### 41.2 Terms of Service text
+
+**Title (h1):** Terms of Service
+
+**Lead:** These terms describe how visitors may use this website and clarify medical-service
+limitations.
+
+**Effective Date:** [Insert Date]
+
+These Terms of Service ("Terms") govern your use of the website and services provided by
+**[Doctor/Clinic Name]** ("we", "our", "us"). By using this website, you agree to these Terms.
+
+**1) Website Purpose**
+
+This website is intended to provide general information about medical services, clinic details,
+educational content, and appointment request options.
+
+**2) No Emergency Service**
+
+This website is not an emergency platform. If you are facing a medical emergency, call local
+emergency services or visit the nearest emergency facility immediately.
+
+**3) Medical Disclaimer**
+
+Content on this website is for informational purposes only and does not replace professional medical
+advice, diagnosis, or treatment. Always consult a qualified healthcare professional for personal
+medical concerns.
+
+**4) Appointment Requests**
+
+Appointment forms and contact requests do not guarantee confirmed appointments. Confirmation is
+subject to availability and direct communication from the clinic.
+
+**5) User Responsibilities**
+
+When using this site, you agree to:
+- Provide accurate and complete information
+- Not submit false, misleading, or harmful content
+- Not attempt unauthorised access, data extraction, or misuse of website systems
+- Use the website only for lawful purposes
+
+**6) Intellectual Property**
+
+Unless stated otherwise, all website content (text, graphics, branding, and layout) belongs to
+[Doctor/Clinic Name] and is protected by applicable intellectual property laws. Reproduction or
+commercial use requires prior written permission.
+
+**7) Third-Party Tools and Links**
+
+This website may use third-party services (for example, analytics, communication tools, maps, or
+social platforms) and may contain external links. We are not responsible for third-party content,
+terms, or privacy practices.
+
+**8) Limitation of Liability**
+
+To the extent permitted by law, [Doctor/Clinic Name] is not liable for any direct, indirect,
+incidental, or consequential losses arising from use of this website, reliance on its content, or
+inability to access services.
+
+**9) Privacy**
+
+Your use of this site is also governed by our Privacy Policy. Please review it to understand how
+personal information is collected and handled.
+
+**10) Changes to Terms**
+
+We may revise these Terms from time to time. Updated terms will be posted on this page with a new
+effective date. Continued use of the website means acceptance of the revised Terms.
+
+**11) Governing Law**
+
+These Terms are governed by the laws applicable in the jurisdiction where the clinic operates, unless
+otherwise required by local regulations.
+
+**12) Contact Details**
+
+Contact card:
+- [Doctor/Clinic Name] (bold)
+- Email: [Insert Email]
+- Phone: [Insert Phone Number]
+- Address: [Insert Clinic Address]
+
+---
+
+## 42. Content Accuracy, Specialty Fit & Template Hygiene
+
+- All copy (services, FAQs, journey steps, chatbot replies, alt text, meta tags) matches the
+  doctor's specialty. Keep the doctor's name, gender and pronouns ("Dr." and the correct
+  he/she), qualification, registration number, and clinic details consistent across the hero,
+  about, footer, legal pages, booking consent label, chatbot, and meta tags.
+- No medical claims such as guaranteed cures, and no unverifiable "20+ years" claims outside the
+  h1, paragraphs, list items, and footer. Sub-headings, badges, and kickers stay generic.
+- When building from ENT-2, remove all leftover source wording: the old doctor name, "ENT",
+  "Ananya", "Heart Care Guide", "Lorem", "TODO", and "example.com" (other than the documented
+  canonical-URL TODO in a template). Every nav link target id must exist.
+- No blog pages, links, or files (blog was removed project-wide).
+- Accessibility: every image has alt text (decorative ones `alt=""`), every icon-only
+  link/button has an `aria-label`, form fields have labels, the booking and consent modals have
+  `role="dialog"` and `aria-modal`, and the page is fully keyboard navigable. External links use
+  `rel="noopener noreferrer"` and `target="_blank"`; internal links are relative.
+- No console errors, no 404s, no mixed content.
+- If the microsite is a new specialty, add it to the §20 table in the same change.
+
+---
+
+## 43. Post-Build Verification
+
+After building or editing a microsite, run the audit in [verification.md](verification.md). It
+turns the rules in this file (and in `CLAUDE.md`) into a PASS/FAIL checklist: header, hero, about,
+contact, gallery, footer, booking modal, chatbot, legal pages, global CSS, structure,
+responsiveness, booking logic, analytics events, and SEO/accessibility. Fix every FAIL before
+calling the microsite done. It is written for microsites **before** parameterization.
