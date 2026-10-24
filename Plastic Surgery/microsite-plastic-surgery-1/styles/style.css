@@ -1094,9 +1094,9 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   font-weight: 700;
   font-size: 20px;
   color: var(--ink);
-  white-space: nowrap;
+  white-space: normal; overflow-wrap: break-word; word-break: break-word;
 }
-.site-header .brand-name { display: inline-block; max-width: 18ch; overflow: hidden; text-overflow: ellipsis; vertical-align: bottom; }
+.site-header .brand-name { display: block; max-width: 100%; min-width: 0; }
 .brand-role {
   font-size: 16px;
   color: var(--bronze);
