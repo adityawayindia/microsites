@@ -401,7 +401,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
    that was the stray gap between the name and role. Set line-height
    explicitly on each span to override it. */
 .brand-name { font-family: var(--font-heading); font-weight: 600; font-size: 20px; line-height: 1.2; color: var(--sky-dark); white-space: nowrap; }
-.site-header .brand-name { display: inline-block; max-width: 15ch; overflow: hidden; text-overflow: ellipsis; vertical-align: bottom; }
+.site-header .brand-name { display: block; max-width: 100%; min-width: 0; }
 /* The role sits under the name as a small ruled caption, echoing the kickers.
    It must wrap — "ENT Specialist" in the footer is far too
    long to hold on one line at mobile widths. */

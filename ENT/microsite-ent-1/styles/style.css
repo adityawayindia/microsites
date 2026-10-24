@@ -365,8 +365,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.25; }
-.brand-name { font-family: var(--font-heading); font-weight: 700; font-size: 18px; color: var(--sky-dark); white-space: nowrap; }
-.site-header .brand-name { display: inline-block; max-width: 15ch; overflow: hidden; text-overflow: ellipsis; vertical-align: bottom; }
+.brand-name { font-family: var(--font-heading); font-weight: 700; font-size: 18px; color: var(--sky-dark); white-space: normal; overflow-wrap: break-word; word-break: break-word; }
+.site-header .brand-name { display: block; max-width: 100%; min-width: 0; }
 .brand-role { font-size: 18px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 
 .nav-links {
