@@ -385,13 +385,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   border: 2px solid #fff;
 }
 
-.brand-text { display: flex; flex-direction: column; line-height: 1.25; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
 /* The global `span { line-height: 1.6 }` reset (Rule 1.5) targets these
    spans directly, so it wins over the inherited 1.25 from .brand-text —
    that was the stray gap between the name and role. Set line-height
    explicitly on each span to override it. */
-.brand-name { font-family: var(--font-heading); font-weight: 600; font-size: 20px; line-height: 1.2; color: var(--sky-dark); white-space: nowrap; }
-.site-header .brand-name { display: inline-block; max-width: 15ch; overflow: hidden; text-overflow: ellipsis; vertical-align: bottom; }
+.brand-name { font-family: var(--font-heading); font-weight: 600; font-size: 20px; line-height: 1.2; color: var(--sky-dark); white-space: normal; overflow-wrap: break-word; word-break: break-word; }
+/* Full name must show — wrap onto a second line instead of clipping with an ellipsis. */
+.site-header .brand-name { display: block; max-width: 100%; min-width: 0; }
 /* The role sits under the name as a small ruled caption, echoing the kickers.
    It must wrap — "Consultant Radiologist" and the longer footer variant are
    far too long to hold on one line at mobile widths. */
