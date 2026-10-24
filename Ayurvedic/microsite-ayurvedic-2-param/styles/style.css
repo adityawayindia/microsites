@@ -545,7 +545,8 @@ margin-bottom: 0;
 }
 
 .social.is-disabled {
-    pointer-events: none;
+    /* keep hover alive so the "Not Enabled" tooltip shows; it is a <span>, so it is not clickable */
+    pointer-events: auto;
     cursor: not-allowed;
 }
 
