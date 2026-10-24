@@ -295,12 +295,9 @@ h1, h2, h3, h4, h5, h6, .brand-name, .logo {
 }
 
 .site-header .brand-name {
-  display: inline-block;
-  max-width: 15ch;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  vertical-align: bottom;
+  display: block;
+  max-width: 100%; min-width: 0;
+  white-space: normal; overflow-wrap: break-word; word-break: break-word;
 }
 
 .brand-role {

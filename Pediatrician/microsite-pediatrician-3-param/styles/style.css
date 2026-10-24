@@ -373,8 +373,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 .peds2-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
 .peds2-brand-text { display: flex; flex-direction: column; line-height: 1.25; }
-.peds2-brand-name { font-weight: 800; font-size: 16px; color: var(--navy-dark); white-space: nowrap; }
-.peds2-header .peds2-brand-name { display: inline-block; max-width: 15ch; overflow: hidden; text-overflow: ellipsis; vertical-align: bottom; }
+.peds2-brand-name { font-weight: 800; font-size: 16px; color: var(--navy-dark); white-space: normal; overflow-wrap: break-word; word-break: break-word; }
+.peds2-header .peds2-brand-name { display: block; max-width: 100%; min-width: 0; }
 .peds2-brand-role { font-size: 15px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 
 .peds2-nav-links {

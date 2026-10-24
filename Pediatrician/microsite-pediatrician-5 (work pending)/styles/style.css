@@ -340,12 +340,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   font-weight: 700;
   font-size: 18px;
   color: var(--brand-dark);
-  display: inline-block;
-  max-width: 15ch;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  vertical-align: bottom;
+  display: block;
+  max-width: 100%; min-width: 0;
+  white-space: normal; overflow-wrap: break-word; word-break: break-word;
 }
 .peds5-brand-role { font-size: 18px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 

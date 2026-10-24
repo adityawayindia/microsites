@@ -165,7 +165,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .alt-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .alt-brand-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); }
-.alt-header .alt-brand-name { display: inline-block; max-width: 15ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+.alt-header .alt-brand-name { display: block; max-width: 100%; min-width: 0; white-space: normal; overflow-wrap: break-word; word-break: break-word; }
 .alt-brand-role { font-size: 16px; color: #4a4a4a; font-weight: 600; }
 
 .alt-nav-links {

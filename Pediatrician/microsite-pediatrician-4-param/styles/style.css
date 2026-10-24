@@ -303,8 +303,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 }
 
 .peds4-brand-text { display: flex; flex-direction: column; line-height: 1.25; }
-.peds4-brand-name { font-family: var(--font-heading); font-weight: 700; font-size: 18px; color: var(--sky-dark); white-space: nowrap; }
-.peds4-header .peds4-brand-name { display: inline-block; max-width: 15ch; overflow: hidden; text-overflow: ellipsis; vertical-align: bottom; }
+.peds4-brand-name { font-family: var(--font-heading); font-weight: 700; font-size: 18px; color: var(--sky-dark); white-space: normal; overflow-wrap: break-word; word-break: break-word; }
+.peds4-header .peds4-brand-name { display: block; max-width: 100%; min-width: 0; }
 .peds4-brand-role { font-size: 18px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 
 .peds4-nav-links {
