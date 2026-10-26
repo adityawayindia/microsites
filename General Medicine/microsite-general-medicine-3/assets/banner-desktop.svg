@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 250" role="img" aria-label="Your family's health starts with a check-up. Book your consultation today.">
+  <defs>
+    <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f8fa"/>
+      <stop offset="1" stop-color="#d9e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="250" fill="url(#bgG)"/>
+  <circle cx="1450" cy="60" r="190" fill="#164664" opacity="0.10"/>
+  <circle cx="1330" cy="230" r="120" fill="#af2e1d" opacity="0.08"/>
+  <g transform="translate(70 70) scale(4.6)" fill="none" stroke="#164664" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 12h4l2-6 4 12 3-9 2 3h5"/>
+  </g>
+  <text x="250" y="108" font-family="'Bricolage Grotesque', Georgia, sans-serif" font-weight="700" font-size="44" fill="#0d2d45">Your family's health starts with a check-up.</text>
+  <text x="250" y="160" font-family="'Nunito Sans', 'Segoe UI', sans-serif" font-weight="600" font-size="28" fill="#164664">Book a consultation today — in clinic or online.</text>
+  <rect x="250" y="182" width="190" height="8" rx="4" fill="#af2e1d"/>
+</svg>

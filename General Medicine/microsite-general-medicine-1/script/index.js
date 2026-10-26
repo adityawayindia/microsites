@@ -198,7 +198,7 @@ document.addEventListener("click", (event) => {
 
     // Consent checkbox logic
     const consentCheckbox = document.getElementById("consentCheckbox");
-    const submitBtnEl = document.getElementById("submitBtn") || form.querySelector(".booking-submit-btn");
+    const submitBtnEl = document.getElementById("submitBtn") || form?.querySelector(".booking-submit-btn");
 
     if (consentCheckbox && submitBtnEl) {
         submitBtnEl.disabled = !consentCheckbox.checked;
@@ -768,13 +768,13 @@ document.addEventListener("click", (event) => {
             background:#fff; width:380px; max-width:90%; border-radius:12px;
             padding:30px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,.3);
             font-family:Sora,sans-serif;">
-            <div style="font-size:65px; margin-bottom:15px; color:${success ? "#0f766e" : "#dc3545"};">
+            <div style="font-size:65px; margin-bottom:15px; color:${success ? "#0f2376" : "#dc3545"};">
                 <i class="fa-solid ${success ? "fa-circle-check" : "fa-circle-xmark"}"></i>
             </div>
-            <h2 style="margin:0 0 15px; color:#142824;">${success ? "Success" : "Error"}</h2>
+            <h2 style="margin:0 0 15px; color:#141a28;">${success ? "Success" : "Error"}</h2>
             <p style="margin:0 0 25px; color:#5a6f6a; line-height:1.5;">${message}</p>
             <button id="popupOkBtn" style="
-                background:${success ? "#0f766e" : "#dc3545"}; color:#fff; border:none;
+                background:${success ? "#0f2376" : "#dc3545"}; color:#fff; border:none;
                 padding:10px 35px; border-radius:999px; cursor:pointer; font-size:16px;">
                 OK
             </button>
@@ -1003,7 +1003,7 @@ document.addEventListener("click", (event) => {
 /* Hero: show only the year in "Practising since" */
 (function () {
   document.querySelectorAll("[data-practising-since]").forEach(function (el) {
-    var m = el.textContent.match(/(?:19|20)d{2}/);
+    var m = el.textContent.match(/(?:19|20)\d{2}/);
     if (m) el.textContent = m[0];
   });
 })();
