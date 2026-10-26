@@ -61,7 +61,7 @@
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
 </head>
-<body>
+<body data-micrositeid="microsite-dentist-1">
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand" aria-label="Dr. Arjun Mehta">
@@ -820,7 +820,7 @@
         <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
           <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
           <span class="footer-visitor-badge-label">No. of Visitor:</span>
-          <span class="footer-visitor-badge-count">0</span>
+          <span class="footer-visitor-badge-count" id="visitorCount">0</span>
         </div>
       </div>
     </div>
@@ -836,6 +836,23 @@
   <script src="script/analytics.js"></script>
   <script src="script/index.js"></script>
   <script src="./script/chatbot.js" defer></script>
+  <!-- Record this visit and show the real visitor count. -->
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 </html>
 

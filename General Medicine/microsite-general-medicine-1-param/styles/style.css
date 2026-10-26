@@ -7404,3 +7404,57 @@ html, body { overflow-x: clip; }
 .brand-text, .brand-name, .brand-role { min-width: 0; overflow-wrap: break-word; word-break: break-word; white-space: normal; }
 .nav-links a { white-space: nowrap; flex-shrink: 0; }
 .hero-v2-content, .hero-v2-visual { min-width: 0; }
+
+/* ============================================================
+   Footer visitor badge — static markup now (#visitorCount, filled by
+   the live visit API), so the localStorage placeholder in index.js
+   returns early and no longer injects these styles itself.
+   ============================================================ */
+.footer-visitor-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-size: 16px;
+  line-height: 1.4;
+  max-width: 100%;
+  min-width: 0;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-visitor-badge:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.44);
+  transform: translateY(-1px);
+}
+
+.footer-visitor-badge .footer-visitor-badge-icon {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.footer-visitor-badge .footer-visitor-badge-label {
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+.footer-visitor-badge .footer-visitor-badge-count {
+  font-weight: 700;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 480px) {
+  .footer-visitor-badge {
+    padding: 9px 14px;
+    gap: 6px;
+  }
+}

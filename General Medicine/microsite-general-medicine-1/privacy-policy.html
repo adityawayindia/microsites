@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="styles/legal.css" />
   <link rel="stylesheet" href="styles/chatbot.css" id="chatbot-css" />
 </head>
-<body>
+<body data-micrositeid="microsite-general-medicine-1">
   <main class="legal-page">
     <section class="blog-detail-section legal-section">
       <div class="container">
@@ -208,6 +208,12 @@
           <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
+      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
+        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+        <span class="footer-visitor-badge-label">No. of Visitor:</span>
+        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
+      </div>
+
       <div class="footer-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <span class="footer-divider">|</span>
@@ -221,6 +227,23 @@
   <script src="script/analytics.js"></script>
   <script src="script/index.js"></script>
   <script src="script/chatbot.js" defer></script>
+  <!-- Record this visit and show the real visitor count. -->
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 </html>
 
