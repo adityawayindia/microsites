@@ -4,7 +4,7 @@ Plan for converting every specialty template into a Mustache-style template, usi
 **only the placeholders that already exist in the live microsites**
 (`live microsites/*` and `microsite-urology-* (live)`).
 
-> Status: plan finalized; conversion in progress — 16 of 30 templates done (see §0).
+> Status: plan finalized; conversion in progress — 18 of 31 templates done (see §0).
 > **JavaScript is out of scope for now, with three exceptions: the stat counter (§4),
 > the chatbot widget (§4a), and the booking/appointment code (§4b).** Apart from
 > those three, do not modify any `script/*.js` file until the backend team's actual
@@ -23,7 +23,7 @@ The suffix is a **repo folder name only**. GCS asset URLs inside the pages
 (`https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/…`) point
 at the bucket folder, which is not renamed — leave those URLs unchanged.
 
-### Done (16)
+### Done (18)
 | Template folder | Notes |
 |---|---|
 | `Ayurvedic/microsite-ayurvedic-1-param` | |
@@ -36,6 +36,8 @@ at the bucket folder, which is not renamed — leave those URLs unchanged.
 | `General Physician/microsite-general-physician-1-param` | Done 2026-09-29. Folder renamed to `-param`. Services tag pills dropped (loop is title + description only); philosophy image uses the byte-identical `microsite-general-medicine-1` bucket copy. |
 | `General Physician/microsite-general-physician-2-param` | Done 2026-09-29. Same conversion as General Physician-1 (identical JS; blue-theme CSS). Folder renamed to `-param`. |
 | `General Physician/microsite-general-physician-3-param` | Done 2026-10-21. New design (indigo / linen / pine palette, Fraunces + Figtree, arch portrait, clinic-photo journey band, split contact card), parameterized from the start; there is no non-parameterized copy. Booking/chatbot/analytics/counter JS, legal pages and the visitor counter come from ENT-2-param (head, fonts, favicon and footer retargeted). Services use one fixed icon (`fa-stethoscope`); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}`; FAQ kept as written. The About and Philosophy photos and the Journey background (CSS) are linked to the local `assets/` folder at the owner's request (not the bucket convention in the Conventions list above — if served under `{{path}}` they must be reachable at `assets/…`, otherwise repoint to the bucket). Verified by rendering with Mustache (long name / all flags on, and short name / all flags off): no unresolved tags, balanced sections, no JS errors, no overflow at 320–1440px, fellowship line hides when empty, disabled-social tooltips work. Added `html, body { overflow-x: clip }` so the hidden tooltip of the last social icon cannot cause sideways scroll. |
+| `Dentist/microsite-dentist-3-param` | Done 2026-10-26. New design (mint / pine / raspberry palette, Fraunces + Figtree, arch portrait, clinic-photo hero, rounded cards), parameterized from the non-parameterized copy kept at `Dentist/microsite-dentist-3`. Booking/chatbot/analytics/counter/banner JS and the legal-page body text come from General Physician-3-param; the legal pages keep this site's own head and footer. Services use one fixed icon (`fa-tooth`); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}` (all with `data-counter`); FAQ kept as written; contact section has a `.js-book-trigger` Book Appointment button (opens the modal and is hidden with the other CTAs when no mode is available); the Facebook-posts carousel is kept. Added the disabled-social/tooltip CSS and `html, body { overflow-x: clip }`, the send-icon `currentColor` rule, and keyboard focus for the Online Consultation info note. The About/Philosophy photos and the hero background are linked to the local `assets/` folder (as in General Physician-3-param) rather than the bucket convention. Verified by rendering with Mustache (everything on / everything off, 60+ character name): no unresolved tags, balanced sections, no overflow at 320–1440px, fellowship and MCI lines hide when empty. |
+| `Dentist/microsite-dentist-1-param` | Done 2026-10-26. Built from `Dentist/microsite-dentist-1` (non-parameterized copy kept). Booking/chatbot/analytics/counter/banner JS taken from ENT-2-param; the booking modal markup was updated to match it (report preview block, empty time-slot select, `data-city` etc.). Services use one fixed icon (`fa-tooth`); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}` (all `data-counter`); FAQ kept as written. Hero social order is FB Profile, FB Page, Instagram, X, LinkedIn, Website, WhatsApp, YouTube with has/no pairs and tooltips in hero, footer and legal footers. About/Philosophy photos are not parameterized (the philosophy image is still the local `assets/philosophy-workspace.jpg`; no bucket folder exists yet). No social-media section, no contact Book button. Disabled-social/tooltip, upload-preview and booking-popup CSS appended. Verified by rendering with Mustache (everything on / everything off, long name): no unresolved tags. Not yet checked in a browser. |
 | `Pediatrician/microsite-pediatrician-2-param` | |
 | `Pediatrician/microsite-pediatrician-3-param` | Re-verified 2026-09-29 and fixed: hero Facebook Page disabled icon was gated on `noFacebook` (now `noFacebookPage`); footer + legal-page WhatsApp now `https://wa.me/91{{whatsapp}}`; MCI line colon; `{{awards}},{{education}}`; contact address in the §6 pattern; legal canonical/`og:url` without `.html`; disabled-social + tooltip CSS added (hero spans now carry `data-tooltip`). |
 | `Pediatrician/microsite-pediatrician-4-param` | Re-verified 2026-09-29; same fixes as Pediatrician-3 (cloned markup). |
@@ -44,8 +46,8 @@ at the bucket folder, which is not renamed — leave those URLs unchanged.
 | `Urologist/microsite-urology-1-param` | Done 2026-09-25. |
 | `Urologist/microsite-urology-2-param` | Done 2026-09-25. Own hero layout (`uro-hero-*`); rest of the page matches Urology-1. |
 
-### Not started (15)
-Default Template, Dentist-1, Dentist-2-assigned, ENT-1, General Medicine-1,
+### Not started (14)
+Default Template, Dentist-2-assigned, ENT-1, General Medicine-1,
 General Medicine-2-assigned, Homeopathy, Intensivist-1, Intensivist-2-assigned,
 Neurology-1, Oncology-1-assigned, Oncology-2, Orthopedics-1,
 Pediatrician-1-assigned, Pediatrician-5 (work pending).

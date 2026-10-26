@@ -4305,13 +4305,6 @@ margin-bottom: 0;
   display: block;
 }
 
-.hero-edge-tooth--left {
-  top: 50%;
-  left: clamp(8px, 2vw, 32px);
-  --base-rotate: -8deg;
-  animation-delay: 0s;
-}
-
 .hero-edge-tooth--right {
   top: 50%;
   right: clamp(8px, 2vw, 32px);
@@ -5719,4 +5712,86 @@ footer .footer-disclaimer {
   max-width: 100%;
   max-height: inherit;
   object-fit: contain;
+}
+
+/* Consultation Journey header (replaces former inline styles) */
+.process-title { text-align: center; }
+.process-subtitle { text-align: center; max-width: 700px; margin: 0 auto 50px; }
+
+/* Hero stat cards: three rectangular cards in a single row on desktop */
+@media (min-width: 901px) {
+  .hero-highlights {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-highlights li,
+  .hero-highlights li:last-child {
+    grid-column: auto;
+    max-width: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 12px;
+  }
+
+  .hero-highlights li strong {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+}
+
+/* Hero stat cards: centre all text */
+.hero-highlights li {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Hero profile lines: same weight and colour on qualification, regd. no. and fellowship */
+.hero-content .hero-subtitle,
+.hero-content .mic,
+.hero-content .hero-credentials,
+.hero-content .hero-subtitle strong,
+.hero-content .mic strong {
+  font-weight: 500;
+  color: var(--deep);
+}
+
+/* Hero floating teeth: centre of the background (reuses floatTooth, no X translate) */
+.hero-edge-tooth--center-top,
+.hero-edge-tooth--center,
+.hero-edge-tooth--center-bottom {
+  left: 50%;
+  margin-left: calc(var(--tooth-w) / -2);
+  width: var(--tooth-w);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.hero-edge-tooth--center-top {
+  --tooth-w: clamp(24px, 2.6vw, 40px);
+  top: 12%;
+  --base-rotate: 10deg;
+  animation-delay: 0.6s;
+}
+
+.hero-edge-tooth--center {
+  --tooth-w: clamp(30px, 3.4vw, 52px);
+  top: 52%;
+  --base-rotate: -10deg;
+  animation-delay: 2.4s;
+}
+
+.hero-edge-tooth--center-bottom {
+  --tooth-w: clamp(24px, 2.6vw, 40px);
+  top: 86%;
+  --base-rotate: 16deg;
+  animation-delay: 3.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-edge-tooth--center-top,
+  .hero-edge-tooth--center,
+  .hero-edge-tooth--center-bottom {
+    animation: none;
+  }
 }

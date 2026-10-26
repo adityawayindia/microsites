@@ -994,7 +994,47 @@ document.addEventListener("click", (event) => {
 /* Hero: show only the year in "Practising since" */
 (function () {
   document.querySelectorAll("[data-practising-since]").forEach(function (el) {
-    var m = el.textContent.match(/(?:19|20)d{2}/);
+    var m = el.textContent.match(/(?:19|20)\d{2}/);
     if (m) el.textContent = m[0];
   });
+})();
+
+/* Hero stat counters: count up once when scrolled into view */
+(function () {
+  var els = document.querySelectorAll("[data-count-to]");
+  if (!els.length) return;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function parts(el) {
+    var m = String(el.getAttribute("data-count-to")).match(/^(\D*)(\d+)(\D*)$/);
+    return m ? { pre: m[1], n: parseInt(m[2], 10), suf: m[3] } : null;
+  }
+  function run(el) {
+    var p = parts(el);
+    if (!p) return;
+    var final = p.pre + p.n + p.suf;
+    if (reduce) { el.textContent = final; return; }
+    var dur = 1400, start = null;
+    function tick(ts) {
+      if (start === null) start = ts;
+      var t = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = p.pre + Math.max(1, Math.round(p.n * eased)) + p.suf;
+      if (t < 1) requestAnimationFrame(tick); else el.textContent = final;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    els.forEach(function (el) { var p = parts(el); if (p) el.textContent = p.pre + p.n + p.suf; });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      run(e.target);
+    });
+  }, { threshold: 0.4 });
+  els.forEach(function (el) { io.observe(el); });
 })();
