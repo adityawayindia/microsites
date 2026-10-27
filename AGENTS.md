@@ -2145,7 +2145,7 @@ Requirements:
   `.footer-visitor-badge`:
   `<strong|span class="footer-visitor-badge-count" id="visitorCount">0</strong>`.
 - Badge markup is static in the HTML, and `style.css` must contain the `.footer-visitor-badge`
-  rules (copy from `General Physician/microsite-general-physician-1/styles/style.css`). The
+  rules (copy from `General Physician/microsite-general-physician-1-assigned/styles/style.css`). The
   placeholder in `script/index.js` returns early when `.footer-visitor-badge` exists, so it
   injects no styles.
 - Legal pages need the script too — a badge without it stays at 0.
