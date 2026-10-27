@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#9f1239" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<defs>
+<radialGradient id="g1" cx="85%" cy="40%" r="45%"><stop offset="0" stop-color="#f3c9d2" stop-opacity=".55"/><stop offset="1" stop-color="#f3c9d2" stop-opacity="0"/></radialGradient>
+<radialGradient id="g2" cx="8%" cy="95%" r="40%"><stop offset="0" stop-color="#f6dfc9" stop-opacity=".6"/><stop offset="1" stop-color="#f6dfc9" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1440" height="820" fill="url(#g1)" stroke="none"/>
+<rect width="1440" height="820" fill="url(#g2)" stroke="none"/>
+<g opacity=".16">
+<!-- heart with pulse, top-right -->
+<g transform="translate(1130 40) scale(1.5)">
+<path d="M60 105C20 75 5 55 5 35a28 28 0 0 1 55-8 28 28 0 0 1 55 8c0 20-15 40-55 70z"/>
+<path d="M18 52h28l8-18 14 34 10-16h24"/>
+</g>
+<!-- clipboard with cross, top-centre-left -->
+<g transform="translate(560 28) rotate(-8)">
+<rect x="0" y="12" width="110" height="140" rx="12"/><rect x="32" y="0" width="46" height="26" rx="8"/>
+<path d="M55 55v50M30 80h50"/>
+<path d="M22 128h66"/>
+</g>
+<!-- thermometer, bottom-right -->
+<g transform="translate(1290 560) rotate(25)">
+<rect x="0" y="0" width="26" height="150" rx="13"/><circle cx="13" cy="170" r="26"/>
+<path d="M13 40v110M40 30h20M40 60h14M40 90h20M40 120h14"/>
+</g>
+<!-- syringe-free: medical bag, bottom-centre -->
+<g transform="translate(700 650)">
+<rect x="0" y="22" width="130" height="90" rx="14"/><path d="M40 22v-12a8 8 0 0 1 8-8h34a8 8 0 0 1 8 8v12"/>
+<path d="M65 50v38M46 69h38"/>
+</g>
+<!-- plus marks -->
+<path d="M470 220v28M456 234h28M980 130v28M966 144h28M1240 400v24M1228 412h24M380 640v24M368 652h24" stroke-width="3.5"/>
+</g>
+</svg>
