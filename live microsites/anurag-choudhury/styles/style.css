@@ -5244,3 +5244,24 @@ p, li, a,
   max-height: inherit;
   object-fit: contain;
 }
+
+/* Disabled social icons (hero + footer): give every network a muted
+   "not enabled" look and stop disabled icons behaving like links on hover.
+   The cursor/hover rules for the footer previously targeted .footer-social
+   (the row) instead of .footer-social-icon, so they never matched. */
+.social-website.is-disabled,
+.footer-social-website.is-disabled {
+  background: #b8c2cf;
+  color: #f1f5f9;
+}
+
+.social.is-disabled,
+.footer-social-icon.is-disabled {
+  cursor: not-allowed;
+}
+
+.social.is-disabled:hover,
+.footer-social-icon.is-disabled:hover {
+  transform: none;
+  box-shadow: none;
+}

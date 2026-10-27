@@ -2685,8 +2685,32 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .footer-social-youtube { background: #ff0000; }
 
     .footer-social-facebook.is-disabled, .footer-social-facebookpage.is-disabled, .footer-social-website.is-disabled, .footer-social-instagram.is-disabled, .footer-social-x.is-disabled, .footer-social-linkedin.is-disabled, .footer-social-whatsapp.is-disabled, .footer-social-youtube.is-disabled {
-        opacity: 0.4;
+        /* No element opacity: it would also dim the "Not Enabled" tooltip. */
+        background: #94a3b8;
     }
+
+/* Disabled hero icons: muted glyph, and no amber "link" hover. */
+.social.is-disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.social.is-disabled:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #94a3b8;
+  transform: none;
+  box-shadow: var(--shadow-card);
+}
+
+.footer-social-icon.is-disabled {
+  cursor: not-allowed;
+}
+
+.footer-social-icon.is-disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
 
 .social,
 .footer-social-icon {
@@ -2701,7 +2725,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
         left: 50%;
         transform: translateX(-50%) translateY(4px);
         background: var(--text);
-        color: var(--white);
+        color: #ffffff; /* --white is not defined in this stylesheet */
         font-family: "Outfit", sans-serif;
         font-size: 12px;
         font-weight: 600;

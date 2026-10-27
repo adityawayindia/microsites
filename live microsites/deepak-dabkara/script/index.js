@@ -1430,8 +1430,8 @@ initPhonePlugin();
     const API_BASE = "https://digidrapi.digidr.app";
     const FB_GRAPH_VERSION = "v23.0"; // Deprecated versions render blank, not errors — bump periodically.
     const MAX_CARDS = 5;
-    const MAX_POST_AGE_DAYS = 30;
-    const POSTS_PER_ACCOUNT = 10;
+    const MAX_POST_AGE_DAYS = 183; // ~6 months
+    const POSTS_PER_ACCOUNT = 50; // The filters below drop most posts, so ask for a deeper page.
     const FEED_TIMEOUT_MS = 7000; // No answer by then → section stays hidden, even if a reply arrives later.
 
     const section = document.getElementById("social-media");
@@ -1476,6 +1476,12 @@ initPhonePlugin();
         return (Date.now() - t) / 86400000 <= MAX_POST_AGE_DAYS;
     }
 
+    // Only posts whose text carries the #DigiDr hashtag (any casing) are shown.
+    const DIGIDR_TAG = /#digidr(?!\w)/i;
+    function hasDigiDrTag(message) {
+        return typeof message === "string" && DIGIDR_TAG.test(message);
+    }
+
     function fetchDoctorPosts(slug) {
         const url = API_BASE + "/api/MicrositeSocialFeed/" +
             encodeURIComponent(slug) + "?limit=" + POSTS_PER_ACCOUNT;
@@ -1490,6 +1496,7 @@ initPhonePlugin();
                     if (!post || !post.permalink) return;
                     if (isVideoPermalink(post.permalink)) return;
                     if (!isRecent(post.createdAt)) return;
+                    if (!hasDigiDrTag(post.message)) return;
                     entries.push({
                         accountName: (feed.accountName || "").trim(),
                         permalink: post.permalink,

@@ -692,7 +692,15 @@ margin-bottom: 0;
 .social-linkedin.is-disabled,
 .social-whatsapp.is-disabled,
 .social-youtube.is-disabled {
-    opacity: 0.4;
+    /* No element opacity: it would also dim the "Not Enabled" tooltip. */
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.social.is-disabled:hover,
+.footer-social-icon.is-disabled:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 .social,
@@ -2370,7 +2378,8 @@ margin-bottom: 0;
 .footer-social-linkedin.is-disabled,
 .footer-social-whatsapp.is-disabled,
 .footer-social-youtube.is-disabled {
-    opacity: 0.4;
+    background: #94a3b8;
+    cursor: not-allowed;
 }
 
 .footer-visitor-badge {
@@ -2816,6 +2825,15 @@ margin-bottom: 0;
 @media (max-width: 640px) {
   .container {
     width: 94%;
+  }
+
+  /* Hero social icons: 4 per row (4x2 for the 8 icons) */
+  .hero-section .social-links,
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(4, 38px);
+    justify-content: start;
+    gap: 12px;
   }
 
   /* Hero mobile layout */

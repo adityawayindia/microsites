@@ -625,7 +625,17 @@ h1, h2, h3, h4 {
 .sp-yt.is-disabled,
 .sp-li.is-disabled,
 .sp-web.is-disabled {
+    /* No element opacity: it would also dim the "Not Enabled" tooltip. */
+    cursor: not-allowed;
+}
+
+.iv-social-pill.is-disabled > i {
     opacity: 0.4;
+}
+
+.iv-social-pill.is-disabled:hover {
+    transform: none;
+    background: hsl(0 0% 100% / 0.07);
 }
 
 .footer-social-facebook.is-disabled,
@@ -636,9 +646,16 @@ h1, h2, h3, h4 {
 .footer-social-linkedin.is-disabled,
 .footer-social-whatsapp.is-disabled,
 .footer-social-youtube.is-disabled {
-    opacity: 0.4;
+    background: #94a3b8;
+    cursor: not-allowed;
 }
 
+.footer-social-icon.is-disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.iv-social-pill,
 .footer-social-icon {
     position: relative;
 }

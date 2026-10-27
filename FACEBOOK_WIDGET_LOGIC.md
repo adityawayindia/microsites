@@ -27,7 +27,8 @@ Example request for API #2:
 GET https://digidrapi.digidr.app/api/MicrositeSocialFeed/dr-jane-doe?limit=3
 ```
 
-Expected shape (fields actually used by the widget):
+Expected shape (fields actually used by the widget; `message` is the post text,
+used for the #DigiDr filter in rule 4a):
 ```json
 {
   "success": true,
@@ -36,8 +37,8 @@ Expected shape (fields actually used by the widget):
       "platform": "facebook",
       "accountName": "Dr. Jane Doe Clinic",
       "posts": [
-        { "permalink": "https://www.facebook.com/.../posts/123", "createdAt": "2026-09-10T12:00:00Z" },
-        { "permalink": "https://www.facebook.com/.../videos/456", "createdAt": "2026-09-05T09:00:00Z" }
+        { "permalink": "https://www.facebook.com/.../posts/123", "message": "New clinic hours #DigiDr", "createdAt": "2026-09-10T12:00:00Z" },
+        { "permalink": "https://www.facebook.com/.../videos/456", "message": "Watch our video", "createdAt": "2026-09-05T09:00:00Z" }
       ]
     }
   ]
@@ -107,9 +108,28 @@ their connected Facebook accounts, if they have more than one).
    since the API response has no explicit post-type field.
 
 4. **Only show recent posts.**
-   Posts older than a window (`MAX_POST_AGE_DAYS = 30`) are dropped so the
-   feed never looks abandoned. A missing or unparseable `createdAt` is
-   treated as "too old" rather than shown blindly (fail closed, not open).
+   Posts older than a window (`MAX_POST_AGE_DAYS = 183`, about 6 months) are
+   dropped so the feed never looks abandoned. A missing or unparseable
+   `createdAt` is treated as "too old" rather than shown blindly (fail
+   closed, not open).
+
+4a. **Only show posts tagged #DigiDr.**
+   A post qualifies only if its `message` contains the hashtag `#DigiDr` in
+   any casing (`#digidr`, `#DIGIDR`, …). It is matched as a whole hashtag, so
+   `#DigiDrX` and a bare "DigiDr" without the `#` do not count. A missing
+   `message` fails closed. This is an internal filter on the API data — there
+   is no filter button or any other UI for it.
+   ```js
+   const DIGIDR_TAG = /#digidr(?!\w)/i;
+   function hasDigiDrTag(message) {
+       return typeof message === 'string' && DIGIDR_TAG.test(message);
+   }
+   // inside the post loop, after the isRecent() check:
+   if (!hasDigiDrTag(post.message)) return;
+   ```
+   Because the tag and age filters discard most posts, request a deeper page
+   from the API: `POSTS_PER_ACCOUNT = 50` (the server caps it; `limit` is per
+   connected account).
 
 5. **Merge posts across the doctor's accounts, then sort newest-first.**
    A doctor can have more than one connected Facebook account (multiple
@@ -131,6 +151,7 @@ their connected Facebook accounts, if they have more than one).
                    if (!post || !post.permalink) return;
                    if (isVideoPermalink(post.permalink)) return;
                    if (!isRecent(post.createdAt)) return;
+                   if (!hasDigiDrTag(post.message)) return;
                    entries.push({
                        accountName: (feed.accountName || '').trim(),
                        permalink: post.permalink,
@@ -209,7 +230,7 @@ their connected Facebook accounts, if they have more than one).
       `display: none`, since templates may set `display` on `<section>`) when:
       the slug is unset, no Facebook feed is connected, the feed has zero
       qualifying posts after filtering (all videos / older than
-      `MAX_POST_AGE_DAYS`), the API fails, or there is no answer within 7 s.
+      `MAX_POST_AGE_DAYS` / not tagged #DigiDr), the API fails, or there is no answer within 7 s.
     - The decision is **final**: a reply that arrives after the 7 s timeout is
       ignored and the section stays hidden (no late pop-in / layout shift).
     - There is no "Posts are taking a moment to load…" empty-state message any
@@ -349,7 +370,8 @@ their connected Facebook accounts, if they have more than one).
 
 - [ ] Supply `DOCTOR_SLUG` from your config/route/page data — validate it's
       non-empty before calling the API.
-- [ ] Set `MAX_CARDS`, `MAX_POST_AGE_DAYS`, `POSTS_PER_ACCOUNT` for your case.
+- [ ] Set `MAX_CARDS`, `MAX_POST_AGE_DAYS` (183), `POSTS_PER_ACCOUNT` (50) for your case.
+- [ ] Keep the #DigiDr hashtag filter (rule 4a) — posts without the tag must not render.
 - [ ] Keep the video-permalink filter (or equivalent) if autoplay-without-
       control is unacceptable in your layout.
 - [ ] Memoize SDK loading; gate it behind `IntersectionObserver` if the

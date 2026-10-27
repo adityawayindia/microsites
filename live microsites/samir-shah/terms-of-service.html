@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
   <link
@@ -220,5 +220,22 @@
   <script src="{{path}}/script/analytics.js"></script>
   <script src="{{path}}/script/index.js"></script>
   <script src="{{path}}/script/chatbot.js" defer></script>
+
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 </html>
