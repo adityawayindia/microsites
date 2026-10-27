@@ -2109,3 +2109,43 @@ turns the rules in this file (and in `CLAUDE.md`) into a PASS/FAIL checklist: he
 contact, gallery, footer, booking modal, chatbot, legal pages, global CSS, structure,
 responsiveness, booking logic, analytics events, and SEO/accessibility. Fix every FAIL before
 calling the microsite done. It is written for microsites **before** parameterization.
+
+---
+
+## 44. Visitor Counter — Live Backend (Mandatory, All Pages)
+
+The footer "No. of Visitor" badge must show the real count from the DigiDr API — never the
+localStorage placeholder, never a hard-coded number (e.g. "500"). Put this inline script before
+`</body>` on **`index.html`, `privacy-policy.html` and `terms-of-service.html`** (every page whose
+footer has the badge), verbatim:
+
+```html
+<script>
+  (function () {
+    const micrositeId = document.body.dataset.micrositeid;
+    const el = document.getElementById("visitorCount");
+    if (!micrositeId || !el) return;
+
+    fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+      method: "POST"
+    })
+      .then(res => res.ok ? res.json() : Promise.reject(res.status))
+      .then(data => {
+        el.textContent = data.visitorCount.toLocaleString();
+      })
+      .catch(err => console.error("Visitor count error:", err));
+  })();
+</script>
+```
+
+Requirements:
+- `<body data-micrositeid="…">`: `{{micrositeId}}` on parameterized sites; on non-parameterized
+  copies use the folder name (e.g. `microsite-dentist-1`) — it must be an ID the backend knows.
+- The count element carries `id="visitorCount"` (initial text `0`), inside
+  `.footer-visitor-badge`:
+  `<strong|span class="footer-visitor-badge-count" id="visitorCount">0</strong>`.
+- Badge markup is static in the HTML, and `style.css` must contain the `.footer-visitor-badge`
+  rules (copy from `General Physician/microsite-general-physician-1/styles/style.css`). The
+  placeholder in `script/index.js` returns early when `.footer-visitor-badge` exists, so it
+  injects no styles.
+- Legal pages need the script too — a badge without it stays at 0.

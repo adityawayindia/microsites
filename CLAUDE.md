@@ -149,6 +149,13 @@ Practice Gallery → Booking Modal → Footer.
   `fellowship` is one string; multiple entries are separated by `;` (each entry already
   contains commas). The "Fellowship:" label is fixed template text. Wraps, never clamped.
 
+## Visitor counter (AGENTS.md §44, mandatory)
+
+- Footer badge count (`id="visitorCount"`) is filled by the inline visit-API script from
+  **AGENTS.md §44, verbatim**, on `index.html` **and both legal pages** — never the
+  localStorage placeholder or a hard-coded number.
+- `<body data-micrositeid>` is `{{micrositeId}}` on param sites, the folder name on non-param.
+
 ## Other standards
 
 - Fully responsive 320px–1440px.

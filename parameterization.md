@@ -1242,9 +1242,10 @@ Open questions for the backend team:
 
 ---
 
-## 5b. Visitor counter (in scope, `index.html` only)
+## 5b. Visitor counter (in scope, `index.html`, `privacy-policy.html` and `terms-of-service.html`)
 
-This inline script goes at the end of `index.html`, before `</body>`, verbatim
+This inline script goes at the end of **every page whose footer has the visitor badge**
+(`index.html` and both legal pages), before `</body>`, verbatim (full rule: AGENTS.md §44)
 (the old empty-testimonials cleanup script was removed along with the section):
 
 ```html

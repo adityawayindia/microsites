@@ -242,6 +242,14 @@ no leftover carousel markup or script errors.
     rendered footer height against ENT-2 at 1440px, 768px and 375px. It must also stay compact on
     mobile (stacked columns with tight spacing, no oversized gaps).
 29. There are no image credits for free or copyright-free images.
+29a. The footer visitor counter is live (AGENTS.md §44): on **all three pages** (index,
+    privacy-policy, terms-of-service) the `.footer-visitor-badge` count element has
+    `id="visitorCount"`, the page ends with the inline visit-API script
+    (`POST https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, verbatim from §44),
+    and `<body data-micrositeid>` is set (`{{micrositeId}}` on param sites, the folder name on
+    non-param sites). FAIL if any page lacks the script or the id, if the count is hard-coded
+    (e.g. "500"), or if the localStorage placeholder is the only source. `style.css` must contain
+    the `.footer-visitor-badge` rules.
 
 ## M. CHATBOT
 30. The chat panel layout and size are correct at 1440px, 768px and 375px. Nothing is clipped: the
