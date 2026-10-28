@@ -400,6 +400,70 @@ document.addEventListener("click", (event) => {
 
   if (!modal || !dialog || !form) return;
 
+  const doctorId = form.dataset.userid;
+  const clinicName = form.dataset.clinicname;
+  const clinicAddress = form.dataset.address;
+  const clinicDistrict = form.dataset.district;
+  const clinicState = form.dataset.state;
+  const clinicPincode = form.dataset.pincode;
+
+  let appointmentType = "offline";
+  let isOnlineAvailable = true;
+  let isOfflineAvailable = true;
+  let compressedFile = null;
+
+  // Appointment section
+  (async () => {
+    try {
+
+      const response = await fetch(`${API_BASE}/api/Patient_Appointment/getappointment?userid=${doctorId}`);
+
+      if (!response.ok) {
+        console.warn(`Appointment API returned ${response.status}, using defaults`);
+        return;
+      }
+
+      const data = await response.json();
+
+      isOnlineAvailable = data.online ?? true;
+      isOfflineAvailable = data.offline ?? true;
+
+      // hide online tab
+      if (!isOnlineAvailable && onlineTab) {
+        onlineTab.style.display = "none";
+      }
+
+      // hide offline tab
+      if (!isOfflineAvailable && clinicTab) {
+        clinicTab.style.display = "none";
+      }
+
+      // auto select available tab
+      if (isOnlineAvailable && !isOfflineAvailable) {
+        appointmentType = "online";
+        setActiveTab("online");
+        window.__onAppointmentTypeChange?.(appointmentType);
+      }
+
+      if (isOfflineAvailable && !isOnlineAvailable) {
+        appointmentType = "offline";
+        setActiveTab("clinic");
+        window.__onAppointmentTypeChange?.(appointmentType);
+      }
+
+      // Hide all book appointment buttons if both are unavailable
+      if (!isOnlineAvailable && !isOfflineAvailable) {
+        document.querySelectorAll(".cta-btn").forEach(btn => {
+          btn.style.display = "none";
+        });
+      }
+
+    } catch (err) {
+      console.warn("Failed to fetch appointment availability:", err.message);
+      // Keep defaults if API fails - don't break the page
+    }
+  })();
+
   function setBodyScroll(disable) {
     document.body.style.overflow = disable ? "hidden" : "";
   }
@@ -559,7 +623,11 @@ document.addEventListener("click", (event) => {
     }
   }
 
-  clinicTab?.addEventListener("click", () => setActiveTab("clinic"));
+  clinicTab?.addEventListener("click", () => {
+    setActiveTab("clinic");
+    appointmentType = "offline";
+    window.__onAppointmentTypeChange?.(appointmentType);
+  });
   // Telemedicine note: hover (mouse) or tap (touch) the info icon; Esc / outside tap closes.
   const infoIcon = document.getElementById("onlineConsultInfo");
   const infoTip = document.getElementById("onlineConsultTip");
@@ -574,7 +642,11 @@ document.addEventListener("click", (event) => {
   document.addEventListener("click", (e) => { if (!infoIcon?.contains(e.target)) toggleInfoTip(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleInfoTip(false); });
 
-  onlineTab?.addEventListener("click", () => setActiveTab("online"));
+  onlineTab?.addEventListener("click", () => {
+    setActiveTab("online");
+    appointmentType = "online";
+    window.__onAppointmentTypeChange?.(appointmentType);
+  });
 
   const fieldValidators = {
     fullName(value) {
@@ -733,12 +805,11 @@ document.addEventListener("click", (event) => {
 
     if (form.report) {
       form.report.addEventListener("change", () => {
-        renderReportPreview(form.report.files[0]);
-        if (form.report.files[0]) {
-          if (typeof gtag === "function") {
-            gtag("event", "report_uploaded", { page_path: window.location.pathname });
-          }
-          trackClarityEvent("report_uploaded");
+        const file = form.report.files[0] || null;
+        compressedFile = file;
+        renderReportPreview(file);
+        if (file) {
+          window.trackEvent?.("report_uploaded", {});
         }
       });
     }
@@ -747,6 +818,7 @@ document.addEventListener("click", (event) => {
     if (removeBtn) {
       removeBtn.addEventListener("click", () => {
         form.report.value = "";
+        compressedFile = null;
         renderReportPreview(null);
         validateField("report");
       });
@@ -822,6 +894,55 @@ document.addEventListener("click", (event) => {
   bindRealtimeValidation();
   setA11yAttributes();
 
+  const preferredDateInput = form.preferredDate;
+  const preferredTimeSelect = form.preferredTime;
+
+  //Slots section
+  preferredDateInput?.addEventListener("change", async () => {
+
+    const selectedDate = preferredDateInput.value;
+
+    if (!selectedDate) return;
+
+    try {
+
+      const formData = new FormData();
+
+      formData.append("UserId", doctorId);
+      formData.append("Date", selectedDate);
+      formData.append("Type", appointmentType);
+
+      const response = await fetch(`${API_BASE}/api/Patient_Appointment/getslots`, {
+        method: "POST",
+        body: formData
+      });
+      console.log(response);
+
+      const slots = await response.json();
+
+      preferredTimeSelect.innerHTML =
+        `<option value="">Select Time Slot</option>`;
+
+      if (!slots || slots.length === 0) {
+
+        preferredTimeSelect.innerHTML =
+          `<option value="">No Slots Available</option>`;
+
+        return;
+      }
+
+      slots.forEach(slot => {
+        preferredTimeSelect.innerHTML +=
+          `<option value="${slot.id}" data-label="${slot.label}">${slot.label}</option>`;
+      });
+
+    } catch (err) {
+
+      console.error(err);
+
+    }
+  });
+
   // Custom modern date picker (replaces native browser calendar)
   (function initDatePicker() {
     const trigger = document.getElementById("preferredDateText");
@@ -840,6 +961,25 @@ document.addEventListener("click", (event) => {
     today.setHours(0, 0, 0, 0);
     let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
     let selectedDate = null;
+
+    //Available days section
+    const doctorId = form.dataset.userid;
+    let availableDays = null;
+
+    async function loadAvailableDays(type) {
+      try {
+        const res = await fetch(`${API_BASE}/api/Patient_Appointment/getavailabledays?userid=${doctorId}&type=${type}`);
+        const days = await res.json();
+        availableDays = new Set((days || []).map(d => d.toLowerCase()));
+      } catch (err) {
+        console.warn("Failed to load available days:", err.message);
+        availableDays = null;
+      }
+      render();
+    }
+
+    window.__onAppointmentTypeChange = loadAvailableDays;
+    loadAvailableDays("offline");
 
     function pad(n) { return String(n).padStart(2, "0"); }
     function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
@@ -870,7 +1010,10 @@ document.addEventListener("click", (event) => {
         btn.className = "booking-calendar-day";
         btn.textContent = String(day);
 
-        if (cellDate < today) {
+        const dayName = cellDate.toLocaleDateString("en-US", { weekday: "long" }).toLowerCase();
+        const isUnconfiguredDay = availableDays && availableDays.size > 0 && !availableDays.has(dayName);
+
+        if (cellDate < today || isUnconfiguredDay) {
           btn.disabled = true;
           btn.classList.add("is-disabled");
         }
@@ -944,6 +1087,7 @@ document.addEventListener("click", (event) => {
 
   let isSubmitting = false;
 
+  //Patient appointment section
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (isSubmitting) return;
@@ -955,7 +1099,16 @@ document.addEventListener("click", (event) => {
 
     const fieldsToValidate = ["fullName", "email", "phone", "preferredDate", "preferredTime", "reason", "report"];
     const invalidFields = fieldsToValidate.filter((name) => !validateField(name));
-    const isValid = invalidFields.length === 0;
+    let isValid = invalidFields.length === 0;
+
+    // Bug fix: the form has `novalidate`, so the native `required` on the
+    // consent checkbox was never enforced and nothing here checked it —
+    // users could submit without consenting. Now actually validated.
+    const consentGiven = form.consentCheckbox.checked;
+    if (!consentGiven) {
+      showError("consentCheckbox", "Please provide consent to proceed.");
+      isValid = false;
+    }
 
     if (!isValid) {
       const firstInvalid = form[invalidFields[0]];
@@ -964,34 +1117,103 @@ document.addEventListener("click", (event) => {
       return;
     }
 
+    const fullName = form.fullName.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const preferredDate = form.preferredDate.value;
+    const preferredTime = form.preferredTime.value;
+    const selectedTimeOption = preferredTimeSelect.selectedOptions[0];
+    const preferredTimeLabel = selectedTimeOption ? selectedTimeOption.dataset.label : "";
+    const reason = form.reason.value.trim();
+
     isSubmitting = true;
+    submitBtnEl.disabled = true;
     submitBtnEl.style.display = "none";
     bookingLoader?.setAttribute("aria-hidden", "false");
 
-    await new Promise((resolve) => setTimeout(resolve, 900));
+    try {
+      const formData = new FormData();
 
-    const isOnline = onlineTab?.classList.contains("is-active");
-    const msg = isOnline
-      ? "Your online consultation has been booked successfully. (Demo mode)"
-      : "Your clinic appointment has been booked successfully. (Demo mode)";
+      formData.append("DoctorId", doctorId);
+      formData.append("FullName", fullName);
+      formData.append("Phone", phone);
+      formData.append("Email", email);
+      formData.append("Date", preferredDate);
+      formData.append("Type", appointmentType);
 
-    bookingLoader?.setAttribute("aria-hidden", "true");
-    submitBtnEl.style.display = "block";
+      const dayName = new Date(preferredDate).toLocaleDateString("en-US", { weekday: "long" });
 
-    form.reset();
-    renderReportPreview(null);
-    closeModal();
-    showBookingPopup(msg, true);
+      formData.append("Day", dayName);
+      formData.append("SlotId", preferredTime);
+      formData.append("Time", preferredTimeLabel);
+      formData.append("Reason", reason);
 
-    if (typeof gtag === "function") {
-      gtag("event", "booking_submitted", {
-        appointment_type: isOnline ? "online" : "clinic",
-        page_path: window.location.pathname,
+      // Use compressed file if available
+      if (compressedFile) {
+        formData.append("Upload", compressedFile);
+      }
+
+      const response = await fetch(`${API_BASE}/api/Patient_Appointment/patient_appointment`, {
+        method: "POST",
+        body: formData
       });
-    }
-    trackClarityEvent("booking_submitted");
 
-    isSubmitting = false;
+      let result;
+      let rawText = await response.text();
+
+      try {
+        result = JSON.parse(rawText);
+      } catch {
+        result = null;
+      }
+
+      const appointmentTypeResult = result?.data?.type ?? result?.type; // API now nests details under `data`
+      const addressMessage = result?.message;
+
+      if (appointmentTypeResult === "online") {
+        const meetLink = result?.data?.meetLink ?? result?.meetLink;
+        const msg = meetLink
+          ? `Your appointment is confirmed.<br/><br/>Please join 5 minutes before your scheduled time. Check your email for details.`
+          : "Your online consultation has been booked successfully.";
+        showBookingPopup(msg, true);
+        window.__trackBookingSuccess?.("online");
+      } else if (appointmentTypeResult === "offline") {
+        const locationHtml = `
+        <strong>Appointment Location:</strong><br/>
+        ${clinicName || ""}<br/>
+        ${clinicAddress || ""}<br/>
+        ${clinicDistrict || ""}${clinicState ? ", " + clinicState : ""}${clinicPincode ? " – " + clinicPincode : ""}
+    `;
+        const msg = `Hello ${fullName},<br/><br/>
+    Your Appointment is Confirmed!<br/><br/>
+    ${locationHtml}<br/><br/>
+    Confirmation details have been sent to your registered email<br/>
+    Please arrive 15 minutes before your scheduled appointment to complete any necessary check-in.
+`;
+        showBookingPopup(msg, true);
+        window.__trackBookingSuccess?.("offline");
+      } else if (!response.ok) {
+        showBookingPopup(addressMessage || "Something went wrong while booking your appointment.", false);
+        return;
+      }
+
+      form.reset();
+      renderReportPreview(null);
+      clearErrors();
+      compressedFile = null;
+      closeModal();
+      window.trackEvent?.("booking_submitted", { appointment_type: appointmentType });
+
+    } catch (err) {
+      console.error(err);
+      showBookingPopup("Something went wrong.", false);
+
+    } finally {
+      isSubmitting = false;
+      submitBtnEl.disabled = false;
+      submitBtnEl.style.display = "block";
+      bookingLoader?.setAttribute("aria-hidden", "true");
+    }
   });
 
   function showBookingPopup(message, success = true) {

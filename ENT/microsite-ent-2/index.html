@@ -663,7 +663,7 @@
         <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
-      <form id="bookingForm" class="booking-form" novalidate>
+      <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
         <div class="booking-form-row">
           <div class="booking-field">
             <label for="fullName">Full Name</label>
@@ -713,12 +713,6 @@
             <div class="booking-select-wrap">
               <select id="preferredTime" name="preferredTime" required>
                 <option value="">Select Time Slot</option>
-                <option value="09:00-10:00">09:00 - 10:00 AM</option>
-                <option value="10:00-11:00">10:00 - 11:00 AM</option>
-                <option value="11:00-12:00">11:00 - 12:00 PM</option>
-                <option value="14:00-15:00">02:00 - 03:00 PM</option>
-                <option value="15:00-16:00">03:00 - 04:00 PM</option>
-                <option value="16:00-17:00">04:00 - 05:00 PM</option>
               </select>
               <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
             </div>
