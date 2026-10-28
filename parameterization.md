@@ -817,12 +817,15 @@ real details for the slug into the chat prompt. Don't patch it client-side in
 The backend team provided the actual booking/appointment JS. It is **in scope now**,
 alongside the stat counter (§4) and the chatbot widget (§4a).
 
-**Checked against all 6 live sites (script-verified):** every code line of the block
-below is already in the `script/index.js` of all 6 live sites, including the
-consent-checkbox check. The only lines not found live are the 4 section labels
-(`//Available days section`, `// Appointment section`, `//Slots section`,
+**Checked against the live sites (script-verified, re-checked 2026-10-28 on all 8 live
+`index.js` files):** every code line of the block below is in the `script/index.js` of the
+live sites, including the consent-checkbox check. The only lines not found live are the 4
+section labels (`//Available days section`, `// Appointment section`, `//Slots section`,
 `//Patient appointment section`). The backend team added those to mark the pieces;
-they're optional. **The live sites need no booking changes. This rollout is for the
+they're optional. **Correction (2026-10-28):** the block's submit handler now reads
+`result?.data?.type ?? result?.type` and `result?.data?.meetLink ?? result?.meetLink`, as
+the live sites do, because the API nests its reply under `data`; the earlier flat
+`result?.type` / `result?.meetLink` lines were out of date. The complete code is in §4c. **The live sites need no booking changes. This rollout is for the
 templates only.**
 
 The rest of each live `index.js` differs from site to site (250–500 lines between any
@@ -1125,11 +1128,11 @@ let isSubmitting = false;
                 result = null;
             }
 
-            const appointmentTypeResult = result?.type;
+            const appointmentTypeResult = result?.data?.type ?? result?.type; // API now nests details under `data`
             const addressMessage = result?.message;
 
             if (appointmentTypeResult === "online") {
-                const meetLink = result?.meetLink;
+                const meetLink = result?.data?.meetLink ?? result?.meetLink;
                 const msg = meetLink
                     ? `Your appointment is confirmed.<br/><br/>Please join 5 minutes before your scheduled time. Check your email for details.`
                     : "Your online consultation has been booked successfully.";
@@ -1190,7 +1193,1177 @@ let isSubmitting = false;
       booking-form data attributes, see §5). Add only what's missing.
 - [ ] Don't touch analytics or banner code (still deferred, §5). Chatbot is its own
       file (§4a).
+- [ ] **Verify the booking system after parameterization (mandatory).** Once the template
+      is parameterized (placeholders in the HTML, `-param` folder), run the verification
+      in §4c "Verify the booking system after parameterization" and record the result in
+      the template's row in §0. Do not mark a template Done until it passes.
 - [ ] **Live sites: nothing to do.** All 6 already contain every line.
+
+---
+
+## 4c. Full booking system — reference code from the live microsites
+
+§4b lists the four booking pieces. This section holds the **complete booking code** that
+runs on the live microsites, so a template can be wired up without opening a live site.
+It is copied verbatim from `live microsites/samiran-das/script/index.js` (the reference
+file named in §4b).
+
+**Checked against the other live sites (script-verified, 2026-10-28):**
+- Lines 87–277 (phone plugin + `initDatePicker`) are byte-identical on samiran-das,
+  Raj-kumar, anurag-choudhury, deepak-dabkara, samir-shah and dhara-sharma.
+- The `Booking Modal & Form Validation` IIFE (samiran-das lines 477–1257) is identical on
+  Raj-kumar, anurag-choudhury, deepak-dabkara and samir-shah except for analytics hooks:
+  they call `window.trackEvent?.("consent_checkbox_click", { checked })` and
+  `window.trackEvent?.("report_uploaded")` (samiran-das sends a `file_type` param instead),
+  and samir-shah also defines `window.__trackBookingSuccess` inside the modal IIFE.
+  On the other live sites `window.__trackBookingSuccess` is defined in a separate
+  analytics block later in `index.js` (samiran-das line 1339, outside the code below), and
+  the booking submit handler calls it as `window.__trackBookingSuccess?.(type)`. That
+  analytics block is not part of this section (analytics is §5 / AGENTS.md §40). Keep the
+  `?.` calls so the booking works when the hook is absent.
+- nirav-rada and dr-ashok-s-gowda were not compared line by line (their `initDatePicker` /
+  booking-modal blocks sit at different places in the file, or are absent); samiran-das is
+  the reference.
+
+**VERIFICATION STATUS — verified twice; the booking code below is working.**
+This is the booking code from the live microsites. It was checked in two separate passes
+on 2026-10-28, and both passed:
+1. **Pass 1 — static check + mocked-API run, all 8 live microsites** (Raj-kumar,
+   anurag-choudhury, deepak-dabkara, dhara-sharma, dr-ashok-s-gowda, nirav-rada,
+   samir-shah, samiran-das): `node --check` syntax OK on every file; the four booking
+   pieces compared against §4b (identical, apart from the `data` nesting fixed above);
+   then each site's real `index.html` + `index.js` run in jsdom with a mocked `fetch`.
+   Scenarios: clinic booking, online booking with a reply nested under `data`, consent
+   unticked (request correctly blocked), online-only, clinic-only and neither mode offered.
+   Result: no JavaScript errors, correct availability / slots / `patient_appointment`
+   calls, correct confirmation popup.
+2. **Pass 2 — real HTTP round trip.** The same code was run against a local server that
+   decodes the request. The server received a `multipart/form-data` POST to
+   `/api/Patient_Appointment/patient_appointment` with `DoctorId`, `FullName`, `Phone`,
+   `Email`, `Date`, `Type`, `Day`, `SlotId`, `Time` and `Reason` (plus `Upload` when a
+   report is attached), for both clinic and online bookings, and the page showed the right
+   confirmation popup. No JavaScript errors.
+
+**Limits of that verification:** the real DigiDr backend was not called (a test booking
+would create a real appointment), so acceptance of the request by the live API is still
+to be confirmed with one test booking on a staging backend or an agreed live doctor. The
+phone library (intl-tel-input) was stubbed, and calendar clicks, file-picker dialogs and
+layout were driven by script, not in a real browser.
+
+**Known gap (all live sites):** no live `index.html` has a
+`.booking-error[data-error-for="consentCheckbox"]` element, so the "Please provide consent
+to proceed." message has nowhere to show. The booking is still blocked correctly; add that
+error element to the markup if the message should be visible.
+
+**Where it goes in `script/index.js`, in this order:** (A) the top-level helpers, then
+(B) the phone plugin and date-picker, then (C) the booking-modal IIFE. The four §4b
+pieces are already inside (B) and (C). The live code has no section-label comments (the
+`//Available days section` style labels in §4b are optional); find the pieces by the
+function and endpoint names.
+
+### Required page markup (ids and hooks the code reads)
+
+- `#bookingForm` with `data-userid`, `data-clinicname`, `data-address`, `data-district`,
+  `data-state`, `data-pincode`, and `novalidate`.
+- `#bookingModal` (with `.booking-modal-dialog`), `.cta-btn` (every element with this class
+  opens the modal, and is hidden when no appointment mode is offered), `#clinicVisitTab`,
+  `#onlineConsultTab`. The code does not read `#openBookingBtn`.
+- Fields: `fullName`, `phone`, `email`, `preferredDate` (hidden input) plus the
+  `.booking-datepicker` calendar (`[data-cal-title]`, `[data-cal-grid]`, `[data-cal-prev]`,
+  `[data-cal-next]`), `#preferredTime` (only the `Select Time Slot` option), `reason`,
+  `report` (file), `consentCheckbox`.
+- `#submitBtn`, `#bookingLoader`, `#filePreview`, `.booking-error[data-error-for]`.
+- Phone input: intl-tel-input v29.2.2 from jsDelivr (AGENTS.md §25) loaded before `index.js`.
+- `<body data-slug>` / `<body data-micrositeid>` as in §1 "System".
+
+### Booking behaviour summary
+
+1. On load, `loadAvailableDays("offline")` fetches the weekdays the doctor works; the
+   calendar disables every other day and every past date.
+2. `getappointment` hides the Clinic / Online tab the doctor doesn't offer, auto-selects the
+   only one left, and hides every `.cta-btn` when neither is offered.
+3. Picking a date posts `getslots` and fills `#preferredTime` from `{ id, label }` rows.
+4. Submit validates name, email, phone (`iti.isValidNumber()` gated on `phoneUtilsReady`),
+   date, slot, reason (≥10 chars) and the **consent checkbox**, then posts
+   `patient_appointment` and shows the clinic / online success popup.
+5. Uploads are PDF/JPG/PNG up to 5 MB; images are shrunk by `compressImage` (max 800px,
+   JPEG 0.5) before being sent as `Upload`.
+
+### (A) Top-level helpers — samiran-das lines 1–43
+
+```javascript
+const API_BASE = "https://digidrapi.digidr.app";
+//const API_BASE = "https://localhost:7088";
+async function compressImage(file) {
+
+    console.log("compressImage started");
+
+    const bitmap = await createImageBitmap(file);
+
+    console.log("bitmap created");
+
+    let width = bitmap.width;
+    let height = bitmap.height;
+
+    const maxWidth = 800;
+    const maxHeight = 800;
+
+    if (width > maxWidth || height > maxHeight) {
+        const ratio = Math.min(maxWidth / width, maxHeight / height);
+        width = Math.round(width * ratio);
+        height = Math.round(height * ratio);
+    }
+
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(bitmap, 0, 0, width, height);
+
+    const blob = await new Promise(resolve =>
+        canvas.toBlob(resolve, "image/jpeg", 0.5)
+    );
+
+    return new File(
+        [blob],
+        file.name.replace(/\.[^/.]+$/, "") + ".jpg",
+        { type: "image/jpeg" }
+    );
+}
+
+function blobToFile(blob, fileName) {
+    return new File([blob], fileName, { type: "image/jpeg" });
+}
+```
+
+### (B) Phone plugin and date picker — samiran-das lines 87–277
+
+Contains piece 1 (`loadAvailableDays`, §4b) plus the calendar `render()`.
+
+```javascript
+// Booking date picker (moved out of the testimonials carousel IIFE — it has
+// nothing to do with testimonials, and previously crashed on load because it
+// referenced a `form` variable that didn't exist in that scope)
+
+let iti = null;
+let phoneUtilsReady = false;
+
+function initPhonePlugin() {
+    const form = document.getElementById("bookingForm");
+    const phoneInputEl = form?.phone;
+    if (!phoneInputEl || !window.intlTelInput) return;
+
+    iti = window.intlTelInput(phoneInputEl, {
+        initialCountry: "in",
+        countryOrder: ["in"],
+        separateDialCode: true,
+        loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
+    });
+
+    iti.promise.then(() => { phoneUtilsReady = true; }).catch(() => { });
+
+    form.addEventListener("reset", () => {
+        iti?.setNumber("");
+        iti?.setSelectedCountry("in");
+    });
+}
+
+initPhonePlugin();
+
+(function initDatePicker() {
+    const form = document.getElementById("bookingForm");
+    const trigger = document.getElementById("preferredDateText");
+    const hiddenInput = document.getElementById("preferredDate");
+    const field = document.getElementById("preferredDateField");
+    const calendar = document.getElementById("preferredDateCalendar");
+    if (!form || !trigger || !hiddenInput || !field || !calendar) return;
+
+    const titleEl = calendar.querySelector("[data-cal-title]");
+    const gridEl = calendar.querySelector("[data-cal-grid]");
+    const prevBtn = calendar.querySelector("[data-cal-prev]");
+    const nextBtn = calendar.querySelector("[data-cal-next]");
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const BOOKING_WINDOW_DAYS = 30;
+    const maxBookableDate = new Date(today);
+    maxBookableDate.setDate(maxBookableDate.getDate() + BOOKING_WINDOW_DAYS);
+
+    let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selectedDate = null;
+
+    const doctorId = form.dataset.userid;
+    let availableDays = null;
+
+    async function loadAvailableDays(type) {
+        try {
+            const res = await fetch(`${API_BASE}/api/Patient_Appointment/getavailabledays?userid=${doctorId}&type=${type}`);
+            const days = await res.json();
+            availableDays = new Set((days || []).map(d => d.toLowerCase()));
+        } catch (err) {
+            console.warn("Failed to load available days:", err.message);
+            availableDays = null;
+        }
+        render();
+    }
+
+    // booking-modal IIFE calls this whenever the clinic/online tab changes
+    window.__onAppointmentTypeChange = loadAvailableDays;
+    loadAvailableDays("offline");
+
+    function pad(n) { return String(n).padStart(2, "0"); }
+    function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
+    function formatDisplay(d) { return `${pad(d.getDate())} ${monthNames[d.getMonth()].slice(0, 3)} ${d.getFullYear()}`; }
+    function isSameDay(a, b) {
+        return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    }
+
+    function render() {
+        if (!titleEl || !gridEl) return;
+        titleEl.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
+        gridEl.innerHTML = "";
+
+        const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+        const startOffset = firstDay.getDay();
+        const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+
+        for (let i = 0; i < startOffset; i++) {
+            const spacer = document.createElement("span");
+            spacer.className = "booking-calendar-day booking-calendar-day--empty";
+            gridEl.appendChild(spacer);
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const cellDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "booking-calendar-day";
+            btn.textContent = String(day);
+
+            const dayName = cellDate.toLocaleDateString("en-US", { weekday: "long" }).toLowerCase();
+            const isUnconfiguredDay = availableDays && availableDays.size > 0 && !availableDays.has(dayName);
+
+            const isOutsideWindow = cellDate > maxBookableDate;
+
+            if (cellDate < today || isUnconfiguredDay) {
+                btn.disabled = true;
+                btn.classList.add("is-disabled");
+            }
+            if (isSameDay(cellDate, today)) btn.classList.add("is-today");
+            if (isSameDay(cellDate, selectedDate)) btn.classList.add("is-selected");
+
+            btn.addEventListener("click", () => {
+                selectedDate = cellDate;
+                hiddenInput.value = formatISO(cellDate);
+                trigger.value = formatDisplay(cellDate);
+                hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
+                close();
+            });
+
+            gridEl.appendChild(btn);
+        }
+        if (nextBtn) {
+            const firstOfNextMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+            nextBtn.disabled = firstOfNextMonth > maxBookableDate;
+            nextBtn.classList.toggle("is-disabled", nextBtn.disabled);
+        }
+        // Also stop navigating before the current month
+        if (prevBtn) {
+            const lastOfPrevMonth = new Date(viewDate.getFullYear(), viewDate.getMonth(), 0);
+            prevBtn.disabled = lastOfPrevMonth < new Date(today.getFullYear(), today.getMonth(), 1);
+            prevBtn.classList.toggle("is-disabled", prevBtn.disabled);
+        }
+    }
+
+    prevBtn?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (prevBtn.disabled) return; // NEW guard
+        viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
+        render();
+    });
+
+    nextBtn?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (nextBtn.disabled) return; // NEW guard
+        viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+        render();
+    });
+
+    function open() {
+        calendar.hidden = false;
+        field.classList.add("is-open");
+        render();
+        document.addEventListener("click", onOutsideClick);
+    }
+
+    function close() {
+        calendar.hidden = true;
+        field.classList.remove("is-open");
+        document.removeEventListener("click", onOutsideClick);
+    }
+
+    function onOutsideClick(event) {
+        if (!field.contains(event.target)) close();
+    }
+
+    trigger.addEventListener("click", () => {
+        calendar.hidden ? open() : close();
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !calendar.hidden) close();
+    });
+
+    //document.addEventListener("keydown", (event) => {
+    //    if (event.key === "Escape" && !calendar.hidden) close();
+    //});
+
+    // Full form reset, or just the date/time pair when the appointment type is switched.
+    function clearSelectedDate() {
+        selectedDate = null;
+        trigger.value = "";
+        hiddenInput.value = "";
+        viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+        close();
+    }
+    form.addEventListener("reset", clearSelectedDate);
+    form.addEventListener("slotreset", clearSelectedDate);
+})();
+
+```
+
+### (C) Booking modal and form validation — samiran-das lines 477–1257
+
+Contains pieces 2, 3 and 4 (§4b): appointment availability, slots, and the submit handler
+with the consent check.
+
+```javascript
+// Booking Modal & Form Validation
+(function () {
+    const modal = document.getElementById("bookingModal");
+    const dialog = modal?.querySelector(".booking-modal-dialog");
+    const backdrop = document.getElementById("bookingModalBackdrop");
+    const closeBtn = document.getElementById("bookingModalClose");
+    const form = document.getElementById("bookingForm");
+
+    // Guard BEFORE touching form.dataset — previously this bailout ran too
+    // late (after several form.dataset.* reads), so a page missing the
+    // booking modal/form would throw instead of quietly skipping this IIFE.
+    if (!modal || !dialog || !form) return;
+
+    const consentCheckbox = document.getElementById("consentCheckbox");
+    const submitBtnEl = document.getElementById("submitBtn") || form.querySelector(".booking-submit-btn");
+
+    if (consentCheckbox && submitBtnEl) {
+        submitBtnEl.disabled = !consentCheckbox.checked;
+
+        consentCheckbox.addEventListener("change", (event) => {
+            submitBtnEl.disabled = !consentCheckbox.checked;
+            // Programmatic syncs from the consent modal are reported by that
+            // flow's own events — don't log them as user checkbox clicks.
+            if (!event.isTrusted) return;
+        });
+
+        // Intercept disabled property sets to respect consent checkbox state
+        const descriptor = Object.getOwnPropertyDescriptor(HTMLButtonElement.prototype, 'disabled');
+        if (descriptor) {
+            Object.defineProperty(submitBtnEl, 'disabled', {
+                get() {
+                    return descriptor.get.call(this);
+                },
+                set(val) {
+                    if (!val && !consentCheckbox.checked) {
+                        descriptor.set.call(this, true);
+                    } else {
+                        descriptor.set.call(this, val);
+                    }
+                },
+                configurable: true
+            });
+        }
+    }
+
+    const doctorId = form.dataset.userid;
+    const clinicName = form.dataset.clinicname;
+    const clinicAddress = form.dataset.address;
+    // Bug fix: the HTML only sets data-district (there is no data-city
+    // attribute), so this used to always read as `undefined` and rendered
+    // literally as "undefined" in the offline booking confirmation message.
+    const clinicDistrict = form.dataset.district;
+    const clinicState = form.dataset.state;
+    const clinicPincode = form.dataset.pincode;
+    const clinicTab = document.getElementById("clinicVisitTab");
+    const onlineTab = document.getElementById("onlineConsultTab");
+    const openTriggers = document.querySelectorAll(".cta-btn");
+
+    let isOnlineAvailable = true;
+    let isOfflineAvailable = true;
+    let compressedFile = null;
+
+    (async () => {
+        try {
+
+            const response = await fetch(`${API_BASE}/api/Patient_Appointment/getappointment?userid=${doctorId}`);
+
+            if (!response.ok) {
+                console.warn(`Appointment API returned ${response.status}, using defaults`);
+                return;
+            }
+
+            const data = await response.json();
+
+            isOnlineAvailable = data.online ?? true;
+            isOfflineAvailable = data.offline ?? true;
+
+            // hide online tab
+            if (!isOnlineAvailable && onlineTab) {
+                onlineTab.style.display = "none";
+            }
+
+            // hide offline tab
+            if (!isOfflineAvailable && clinicTab) {
+                clinicTab.style.display = "none";
+            }
+
+            // auto select available tab
+            if (isOnlineAvailable && !isOfflineAvailable) {
+                appointmentType = "online";
+                setActiveTab("online");
+                window.__onAppointmentTypeChange?.(appointmentType);
+            }
+
+            if (isOfflineAvailable && !isOnlineAvailable) {
+                appointmentType = "offline";
+                setActiveTab("clinic");
+                window.__onAppointmentTypeChange?.(appointmentType);
+            }
+
+            // Hide all book appointment buttons if both are unavailable
+            if (!isOnlineAvailable && !isOfflineAvailable) {
+                document.querySelectorAll(".cta-btn").forEach(btn => {
+                    btn.style.display = "none";
+                });
+            }
+
+        } catch (err) {
+            console.warn("Failed to fetch appointment availability:", err.message);
+            // Keep defaults if API fails - don't break the page
+        }
+    })();
+
+    function setBodyScroll(disable) {
+        document.body.style.overflow = disable ? "hidden" : "";
+    }
+
+    function openModal() {
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        setBodyScroll(true);
+    }
+
+    function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        setBodyScroll(false);
+    }
+
+    openTriggers.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
+    closeBtn?.addEventListener("click", closeModal);
+    backdrop?.addEventListener("click", closeModal);
+
+    /* ---- Patient Consent modal --------------------------------------------
+       Swaps places with the booking modal: opening it hides the booking form
+       (entered data is preserved, the form is never reset) and closing it or
+       clicking "I Agree" brings the booking form straight back. */
+    const consentModal = document.getElementById("consentModal");
+    const consentClose = document.getElementById("consentModalClose");
+    const consentBackdrop = document.getElementById("consentModalBackdrop");
+    const consentAgree = document.getElementById("consentAgreeBtn");
+    const consentFooter = document.getElementById("consentModalFooter");
+    const consentDialog = consentModal?.querySelector(".consent-modal-dialog");
+
+    // GA4 + Clarity helper for the consent flow. Mirrors the shape used by the
+    // delegated data-ga-event tracker, which can't cover these (the Agree button
+    // starts disabled, and open/scroll/close aren't clicks on a tagged element).
+    function trackConsentEvent(eventName, params) {
+      if (typeof gtag === "function") {
+        gtag("event", eventName, {
+          page_path: window.location.pathname,
+          ...params,
+        });
+      }
+      if (typeof trackClarityEvent === "function") {
+        trackClarityEvent(eventName);
+      } else if (typeof clarity === "function") {
+        clarity("event", eventName);
+      }
+    }
+
+    // Button label always reads "I Agree" — only its disabled state changes.
+    // The "Please read the full notice to continue" hint carries the instruction.
+    // The dialog itself is the scroller (overflow-y: auto); the body is static.
+    function markAsRead() {
+      if (!consentAgree) return;
+      consentAgree.disabled = false;
+      consentFooter?.classList.add("is-read");
+      trackConsentEvent("consent_scrolled_to_bottom");
+    }
+
+    function checkScrolledToBottom() {
+      if (!consentDialog || !consentAgree || !consentAgree.disabled) return;
+      const remaining =
+        consentDialog.scrollHeight - consentDialog.scrollTop - consentDialog.clientHeight;
+      // 8px slack absorbs sub-pixel rounding and zoom levels.
+      if (remaining <= 8) markAsRead();
+    }
+
+    function resetConsentGate() {
+      if (!consentAgree) return;
+      consentAgree.disabled = true;
+      consentFooter?.classList.remove("is-read");
+    }
+
+    function openConsentModal() {
+      if (!consentModal) return;
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      consentModal.classList.add("is-open");
+      consentModal.setAttribute("aria-hidden", "false");
+      setBodyScroll(true);
+      resetConsentGate();
+      if (consentDialog) consentDialog.scrollTop = 0;
+      // If the notice is short enough to need no scrolling, unlock immediately.
+      requestAnimationFrame(checkScrolledToBottom);
+      consentClose?.focus();
+      trackConsentEvent("consent_modal_open");
+    }
+
+    function closeConsentModal(agreed, method) {
+      if (!consentModal) return;
+      // Captured before the gate resets, so we can see whether people who
+      // dismissed the notice had actually read to the end.
+      const hadRead = consentAgree ? !consentAgree.disabled : false;
+      consentModal.classList.remove("is-open");
+      consentModal.setAttribute("aria-hidden", "true");
+      trackConsentEvent(agreed ? "consent_agreed" : "consent_dismissed", {
+        method: method || "unknown",
+        scrolled_to_bottom: hadRead,
+      });
+      if (consentCheckbox) {
+        // Consent is granted only via "I Agree" — any other exit leaves it unticked.
+        consentCheckbox.checked = !!agreed;
+        consentCheckbox.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+      // Return to the appointment form with all entered data intact.
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      setBodyScroll(true);
+      consentCheckbox?.focus();
+    }
+
+    // Ticking the checkbox opens the notice; it only stays ticked after "I Agree".
+    consentCheckbox?.addEventListener("click", (event) => {
+      if (!consentModal) return;
+      if (consentCheckbox.checked) {
+        event.preventDefault();
+        consentCheckbox.checked = false;
+        openConsentModal();
+      }
+    });
+
+    consentDialog?.addEventListener("scroll", checkScrolledToBottom, { passive: true });
+    window.addEventListener("resize", checkScrolledToBottom);
+    consentClose?.addEventListener("click", () => closeConsentModal(false, "close_button"));
+    consentBackdrop?.addEventListener("click", () => closeConsentModal(false, "backdrop"));
+    consentAgree?.addEventListener("click", () => closeConsentModal(true, "agree_button"));
+
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        // Consent modal sits on top of the booking form — it closes first.
+        if (consentModal?.classList.contains("is-open")) {
+            closeConsentModal(false, "escape_key");
+        } else if (modal.classList.contains("is-open")) {
+            closeModal();
+        }
+    });
+
+    // Slide the tab highlight under the active tab (measured, so it follows any tab width).
+    const tabsBar = clinicTab?.parentElement;
+    function moveTabIndicator() {
+        const current = [clinicTab, onlineTab].find((t) => t?.classList.contains("is-active"));
+        if (!tabsBar || !current || !current.offsetWidth) return;
+        tabsBar.style.setProperty("--tab-left", current.offsetLeft + "px");
+        tabsBar.style.setProperty("--tab-top", current.offsetTop + "px");
+        tabsBar.style.setProperty("--tab-width", current.offsetWidth + "px");
+        tabsBar.style.setProperty("--tab-height", current.offsetHeight + "px");
+        tabsBar.classList.add("is-positioned");
+    }
+    if (tabsBar && "ResizeObserver" in window) new ResizeObserver(moveTabIndicator).observe(tabsBar);
+    window.addEventListener("resize", moveTabIndicator);
+
+    function setActiveTab(active) {
+        if (!clinicTab || !onlineTab) return;
+        const alreadyActive = (active === "clinic" ? clinicTab : onlineTab).classList.contains("is-active");
+        if (active === "clinic") {
+            clinicTab.classList.add("is-active");
+            onlineTab.classList.remove("is-active");
+            clinicTab.setAttribute("aria-selected", "true");
+            onlineTab.setAttribute("aria-selected", "false");
+        } else {
+            clinicTab.classList.remove("is-active");
+            onlineTab.classList.add("is-active");
+            clinicTab.setAttribute("aria-selected", "false");
+            onlineTab.setAttribute("aria-selected", "true");
+        }
+        moveTabIndicator();
+        if (!alreadyActive) {
+            // Available days/slots depend on the appointment type, so a date or slot chosen
+            // under the other type must not carry over. Name, phone, email etc. are kept.
+            form.dispatchEvent(new CustomEvent("slotreset"));
+            const timeSelect = document.getElementById("preferredTime");
+            if (timeSelect) timeSelect.innerHTML = '<option value="">Select Time Slot</option>';
+            showError("preferredDate", "");
+            showError("preferredTime", "");
+            form.classList.remove("is-switching");
+            void form.offsetWidth; // restart the animation
+            form.classList.add("is-switching");
+        }
+    }
+
+    // Fix: previously these two tabs each had TWO click listeners attached
+    // (one set here, an identical second set further down) which both called
+    // setActiveTab redundantly. Consolidated into a single listener per tab
+    // that both switches the UI and updates appointmentType.
+    let appointmentType = "offline";
+
+    clinicTab?.addEventListener("click", () => {
+        setActiveTab("clinic");
+        appointmentType = "offline";
+        window.__onAppointmentTypeChange?.(appointmentType);
+    });
+    // Telemedicine note: hover (mouse) or tap (touch) the info icon; Esc / outside tap closes.
+    const infoIcon = document.getElementById("onlineConsultInfo");
+    const infoTip = document.getElementById("onlineConsultTip");
+    function toggleInfoTip(show) {
+      if (!infoIcon || !infoTip) return;
+      infoTip.hidden = !show;
+      infoIcon.classList.toggle("is-open", show);
+    }
+    infoIcon?.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") toggleInfoTip(true); });
+    infoIcon?.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") toggleInfoTip(false); });
+    infoIcon?.addEventListener("click", () => toggleInfoTip(infoTip.hidden));
+    document.addEventListener("click", (e) => { if (!infoIcon?.contains(e.target)) toggleInfoTip(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleInfoTip(false); });
+
+    onlineTab?.addEventListener("click", () => {
+        setActiveTab("online");
+        appointmentType = "online";
+        window.__onAppointmentTypeChange?.(appointmentType);
+    });
+
+    function markFieldState(name, hasError) {
+        const field = form[name];
+        const fieldElement = Array.isArray(field) ? field[0] : field;
+        if (!fieldElement) return;
+        fieldElement.classList.toggle("is-invalid", hasError);
+        fieldElement.setAttribute("aria-invalid", hasError ? "true" : "false");
+        if (name === "preferredDate") {
+            const displayField = document.getElementById("preferredDateText");
+            if (displayField) {
+                displayField.classList.toggle("is-invalid", hasError);
+                displayField.setAttribute("aria-invalid", hasError ? "true" : "false");
+            }
+        }
+    }
+
+    function showError(name, message) {
+        const errorEl = form.querySelector(`.booking-error[data-error-for="${name}"]`);
+        if (errorEl) {
+            errorEl.textContent = message || "";
+        }
+    }
+
+    function clearErrors() {
+        form.querySelectorAll(".booking-error").forEach((el) => {
+            el.textContent = "";
+        });
+    }
+
+    function validateEmail(value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(value);
+    }
+
+    function validatePhone(value) {
+        const phoneRegex = /^\+?[0-9\s-]{7,10}$/;
+        return phoneRegex.test(value);
+    }
+
+    function validateDateNotPast(value) {
+        if (!value) return false;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const chosen = new Date(value);
+        return chosen >= today;
+    }
+
+    const preferredDateInput = document.getElementById("preferredDate");
+    const preferredTimeSelect = document.getElementById("preferredTime");
+    const reportInput = document.getElementById("report");
+    const filePreviewDiv = document.getElementById("filePreview");
+    const bookingLoader = document.getElementById("bookingLoader");
+    const submitBtn = document.getElementById("submitBtn");
+
+    if (preferredDateInput) {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const dd = String(today.getDate()).padStart(2, "0");
+        preferredDateInput.setAttribute("min", `${yyyy}-${mm}-${dd}`);
+    }
+
+    // FILE PREVIEW
+    reportInput?.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        filePreviewDiv.innerHTML = "";
+        compressedFile = null;
+
+        if (!file) return;
+
+        const isImage = file.type.startsWith("image/");
+        const isPdf = file.type === "application/pdf";
+
+        window.trackEvent?.("report_uploaded", {
+            file_type: isPdf ? "pdf" : isImage ? "image" : "other"
+        });
+
+        if (isImage) {
+            // Show compression status
+            filePreviewDiv.innerHTML = `
+                <div class="preview-container">
+                    <div style="text-align: center; padding: 20px;">
+                        <p style="margin: 0; color: #666;">Compressing image...</p>
+                    </div>
+                </div>
+            `;
+
+            (async function () {
+                try {
+                    // Compress the image
+                    console.time("compression");
+
+                    compressedFile = await compressImage(file);
+
+                    console.timeEnd("compression");
+
+                    if (!compressedFile) {
+                        throw new Error("Compression failed");
+                    }
+
+                    const fileName = file.name;
+                    const originalSizeKB = (file.size / 1024).toFixed(2);
+                    const compressedSizeKB = (compressedFile.size / 1024).toFixed(2);
+                    const compressionPercent = Math.round(
+                        ((file.size - compressedFile.size) / file.size) * 100
+                    );
+
+                    // Create preview from compressed blob
+                    const previewReader = new FileReader();
+                    previewReader.onload = (event) => {
+                        filePreviewDiv.innerHTML = `
+                        <div class="preview-container">
+                            <img src="${event.target.result}" alt="Preview" class="preview-image" />
+                            <div class="preview-info">
+                                <p class="preview-name">${fileName}</p>
+                                <p class="preview-size">${compressedSizeKB} KB</p>
+                            </div>
+                        </div>
+                    `;
+                    };
+                    previewReader.readAsDataURL(compressedFile);
+
+                } catch (err) {
+                    console.error("Compression error:", err);
+                    filePreviewDiv.innerHTML = `
+                    <div class="preview-container">
+                        <div style="text-align: center; padding: 20px; color: #f44336;">
+                            <p>Error compressing image. Please try another file.</p>
+                        </div>
+                    </div>
+                `;
+                }
+            })();
+
+        } else if (isPdf) {
+            // PDFs are not compressed, just show preview
+            const fileSize = (file.size / 1024).toFixed(2);
+            compressedFile = file; // Use original PDF
+
+            filePreviewDiv.innerHTML = `
+                <div class="preview-container">
+                    <div class="preview-pdf">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div class="preview-info">
+                        <p class="preview-name">${file.name}</p>
+                        <p class="preview-size">${fileSize} KB</p>
+                    </div>
+                </div>
+            `;
+        }
+    });
+
+    // LOAD SLOTS API
+    preferredDateInput?.addEventListener("change", async () => {
+
+        const selectedDate = preferredDateInput.value;
+
+        if (!selectedDate) return;
+
+        try {
+
+            const formData = new FormData();
+
+            formData.append("UserId", doctorId);
+            formData.append("Date", selectedDate);
+            formData.append("Type", appointmentType);
+
+            const response = await fetch(`${API_BASE}/api/Patient_Appointment/getslots`, {
+                method: "POST",
+                body: formData
+            });
+            console.log(response);
+
+            const slots = await response.json();
+
+            preferredTimeSelect.innerHTML =
+                `<option value="">Select Time Slot</option>`;
+
+            if (!slots || slots.length === 0) {
+
+                preferredTimeSelect.innerHTML =
+                    `<option value="">No Slots Available</option>`;
+
+                return;
+            }
+
+            slots.forEach(slot => {
+                preferredTimeSelect.innerHTML +=
+                    `<option value="${slot.id}" data-label="${slot.label}">${slot.label}</option>`;
+            });
+
+        } catch (err) {
+
+            console.error(err);
+
+        }
+    });
+
+    let isSubmitting = false;
+
+    form.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        if (isSubmitting) {
+            return;
+        }
+
+        clearErrors();
+
+        const fullName = form.fullName.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone.value.trim();
+        const preferredDate = form.preferredDate.value;
+        const preferredTime = form.preferredTime.value;
+        const selectedTimeOption = preferredTimeSelect.selectedOptions[0];
+        const preferredTimeLabel = selectedTimeOption ? selectedTimeOption.dataset.label : "";
+        const reason = form.reason.value.trim();
+        //const report = form.report.value.trim();
+        const consentGiven = form.consentCheckbox.checked;
+
+        let isValid = true;
+
+        if (!fullName) {
+            showError("fullName", "Please enter your full name.");
+            isValid = false;
+        }
+
+        if (!email) {
+            showError("email", "Please enter your email address.");
+            isValid = false;
+        } else if (!validateEmail(email)) {
+            showError("email", "Please enter a valid email address.");
+            isValid = false;
+        }
+
+        if (!phone) {
+            showError("phone", "Please enter your phone number.");
+            isValid = false;
+        } else if (iti && phoneUtilsReady && !iti.isValidNumber()) {
+            showError("phone", "Please enter a valid phone number.");
+            isValid = false;
+        }
+
+        if (!preferredDate) {
+            showError("preferredDate", "Please select a preferred date.");
+            isValid = false;
+        } else if (!validateDateNotPast(preferredDate)) {
+            showError("preferredDate", "Date cannot be in the past.");
+            isValid = false;
+        }
+
+        if (!preferredTime) {
+            showError("preferredTime", "Please select a time slot.");
+            isValid = false;
+        }
+
+        if (!reason || reason.length < 10) {
+            showError("reason", "Please provide a brief description (min 10 characters).");
+            isValid = false;
+        }
+
+        //if (!report || report.length == 0) {
+        //    showError("report", "Please provide a image");
+        //    isValid = false;
+        //}
+
+        // Bug fix: the form has `novalidate`, so the native `required` on the
+        // consent checkbox was never enforced and nothing here checked it —
+        // users could submit without consenting. Now actually validated.
+        if (!consentGiven) {
+            showError("consentCheckbox", "Please provide consent to proceed.");
+            isValid = false;
+        }
+
+        if (!isValid) return;
+
+        isSubmitting = true;
+        submitBtn.disabled = true;
+        submitBtn.style.display = "none";
+        filePreviewDiv.style.display = "none";
+        bookingLoader.setAttribute("aria-hidden", "false");
+
+        try {
+            const formData = new FormData();
+
+            formData.append("DoctorId", doctorId);
+            formData.append("FullName", fullName);
+            formData.append("Phone", phone);
+            formData.append("Email", email);
+            formData.append("Date", preferredDate);
+            formData.append("Type", appointmentType);
+
+            const dayName = new Date(preferredDate).toLocaleDateString("en-US", { weekday: "long" });
+
+            formData.append("Day", dayName);
+            formData.append("SlotId", preferredTime);
+            formData.append("Time", preferredTimeLabel);
+            formData.append("Reason", reason);
+
+            // Use compressed file if available
+            if (compressedFile) {
+                formData.append("Upload", compressedFile);
+            }
+
+            const response = await fetch(`${API_BASE}/api/Patient_Appointment/patient_appointment`, {
+                method: "POST",
+                body: formData
+            });
+
+            let result;
+            let rawText = await response.text();
+
+            try {
+                result = JSON.parse(rawText);
+            } catch {
+                result = null;
+            }
+
+            const appointmentTypeResult = result?.data?.type ?? result?.type; // API now nests details under `data`
+            const addressMessage = result?.message;
+
+            if (appointmentTypeResult === "online") {
+                const meetLink = result?.data?.meetLink ?? result?.meetLink;
+                const msg = meetLink
+                    ? `Your appointment is confirmed.<br/><br/>Please join 5 minutes before your scheduled time. Check your email for details.`
+                    : "Your online consultation has been booked successfully.";
+                showPopup(msg, true);
+                window.__trackBookingSuccess?.("online");
+            } else if (appointmentTypeResult === "offline") {
+                const locationHtml = `
+        <strong>Appointment Location:</strong><br/>
+        ${clinicName || ""}<br/>
+        ${clinicAddress || ""}<br/>
+        ${clinicDistrict || ""}${clinicState ? ", " + clinicState : ""}${clinicPincode ? " – " + clinicPincode : ""}
+    `;
+                const msg = `Hello ${fullName},<br/><br/>
+    Your Appointment is Confirmed!<br/><br/>
+    ${locationHtml}<br/><br/>
+    Confirmation details have been sent to your registered email<br/>
+    Please arrive 15 minutes before your scheduled appointment to complete any necessary check-in.
+`;
+                showPopup(msg, true);
+                window.__trackBookingSuccess?.("offline");
+            } else if (!response.ok) {
+                showPopup(addressMessage || "Something went wrong while booking your appointment.", false);
+                return;
+            }
+
+            form.reset();
+            filePreviewDiv.innerHTML = "";
+            clearErrors();
+            compressedFile = null;
+            closeModal();
+
+        } catch (err) {
+            console.error(err);
+            alert("Something went wrong.");
+
+        }
+        finally {
+            isSubmitting = false;
+            submitBtn.disabled = false;
+            submitBtn.style.display = "block";
+            filePreviewDiv.style.display = "block";
+            bookingLoader.setAttribute("aria-hidden", "true");
+        }
+    });
+
+    function showPopup(message, success = true) {
+
+        // Remove existing popup if any
+        document.getElementById("customPopup")?.remove();
+
+        const popup = document.createElement("div");
+
+        popup.id = "customPopup";
+
+        popup.innerHTML = `
+    <div style="
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,.5);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        z-index:999999;
+    ">
+        <div style="
+            background:#fff;
+            width:800px;
+            max-width:90%;
+            border-radius:12px;
+            padding:30px;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(0,0,0,.3);
+            animation:popupScale .25s ease;
+            font-family:Arial,sans-serif;
+        ">
+
+            <div style="
+                font-size:65px;
+                margin-bottom:15px;
+                color:${success ? "#28a745" : "#dc3545"};
+            ">
+                <i class="fa-solid ${success ? "fa-circle-check" : "fa-circle-xmark"}"></i>
+            </div>
+
+            <h2 style="
+                margin:0 0 15px;
+                color:#333;
+            ">
+                ${success ? "Success" : "Error"}
+            </h2>
+
+            <p style="
+                margin:0 0 25px;
+                color:#666;
+                line-height:1.5;
+            ">
+                ${message}
+            </p>
+
+            <button id="popupOkBtn"
+                style="
+                    background:${success ? "#28a745" : "#dc3545"};
+                    color:#fff;
+                    border:none;
+                    padding:10px 35px;
+                    border-radius:6px;
+                    cursor:pointer;
+                    font-size:15px;
+                ">
+                OK
+            </button>
+
+        </div>
+    </div>
+    `;
+
+        document.body.appendChild(popup);
+
+        document.getElementById("popupOkBtn").onclick = () => {
+            popup.remove();
+        };
+    }
+
+})();
+```
+
+
+### Verify the booking system after parameterization (mandatory, every template)
+
+Parameterizing a template changes the HTML (placeholders such as `{{userid}}`,
+`{{clinicname}}`, `{{slug}}`) around the booking code, so a template that worked before
+can stop working afterwards. After every conversion, and again after any later edit to the
+booking markup or `script/index.js`, verify the booking system before calling the template
+done:
+
+1. **Static check.** `node --check script/index.js` passes. The four §4b pieces and the
+   `if (!consentGiven)` check are present and match §4c (compare with whitespace and
+   comments ignored; the only allowed differences are analytics calls). The booking form
+   still has `data-userid`, `data-clinicname`, `data-address`, `data-district`,
+   `data-state`, `data-pincode`, `novalidate`, and every id listed under "Required page
+   markup" above. `{{userid}}` is rendered into `data-userid`, not left in the script.
+2. **Render with sample data.** Substitute the placeholders (a numeric `userid`, a clinic
+   name, address, district, state, pincode) so no `{{…}}` is left, as in the per-template
+   verification in §0.
+3. **Run the booking flow against a mock API** (jsdom or a real browser) and check:
+   - On load, `getavailabledays` and `getappointment` are called with the doctor's
+     `userid`; the calendar enables only the returned weekdays and no past dates.
+   - Picking a date calls `getslots` and fills `#preferredTime`.
+   - Valid details with consent ticked send exactly one `POST patient_appointment`
+     (`multipart/form-data`) with `DoctorId`, `FullName`, `Phone`, `Email`, `Date`, `Type`,
+     `Day`, `SlotId`, `Time`, `Reason` (and `Upload` when a report is attached), and the
+     correct clinic or online confirmation popup appears.
+   - Consent unticked: no request is sent.
+   - Modes: online-only and clinic-only auto-select the single tab and send the matching
+     `Type`; when neither is offered every `.cta-btn` is hidden.
+   - No JavaScript errors on `index.html`, `privacy-policy.html` or
+     `terms-of-service.html`.
+4. **Real HTTP round trip (recommended).** Point `API_BASE` at a local server that decodes
+   the multipart request and confirm the fields above actually arrive, as in the
+   verification status of this section.
+5. **One real test booking (before go-live).** The mocked checks cannot show that the live
+   API accepts the request. Submit one test booking on a staging backend, or with an agreed
+   doctor on the live one, and confirm it appears in the backend and the email is sent.
+
+Record the date, who ran it, and anything that failed. A template whose booking has not
+been verified this way is not Done.
 
 ---
 
@@ -1395,7 +2568,7 @@ For each `<Specialty>/microsite-*/` folder:
 
 **Chatbot:** complete the chatbot rollout checklist in §4a.
 
-**Booking:** complete the booking rollout checklist in §4b.
+**Booking:** complete the booking rollout checklist in §4b, then verify the booking system after parameterization (§4c). A template is not Done until that verification passes.
 
 **Do not touch:** `script/*.js`, except for the counter IIFE (§4), `chatbot.js`
 (§4a), and the booking-modal splice (§4b) — analytics, banner, and
