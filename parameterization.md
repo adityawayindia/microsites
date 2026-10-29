@@ -1,88 +1,61 @@
-# Microsite Parameterization Plan
+# Microsite Parameterization Playbook
 
-Plan for converting every specialty template into a Mustache-style template, using
-**only the placeholders that already exist in the live microsites**
-(`live microsites/*` and `microsite-urology-* (live)`).
+How to convert any finished, non-parameterized microsite into a Mustache-style template that
+the DigiDr backend renders for each doctor. Everything needed is in this file: the placeholder
+vocabulary, the markup patterns, the head and SEO files, the JavaScript that is allowed to
+change, the shared files a template may be missing (Appendix P), and the checks to run. No other
+microsite and no other document is needed.
 
-> Status: plan finalized; conversion in progress — 19 of 31 templates done (see §0).
-> **JavaScript is out of scope for now, with three exceptions: the stat counter (§4),
-> the chatbot widget (§4a), and the booking/appointment code (§4b).** Apart from
-> those three, do not modify any `script/*.js` file until the backend team's actual
-> code is available for the rest (analytics/banner — see §5).
+> **JavaScript scope: only three things change during a conversion.** The stat counter (§4),
+> the chatbot widget (§4a) and the booking/appointment code (§4b, §4c). Do not modify any
+> other `script/*.js` code until the backend team's code is available for it (analytics,
+> banner and auto-open-modal, see §5).
+
+Conversion history for this workspace (which templates are done, what was found on the live
+sites) is kept separately in [parameterization-log.md](parameterization-log.md).
 
 ---
 
-## 0. Conversion status
+## 0. Conventions
 
-**Naming convention:** once a template is fully parameterized, its folder gets the
-suffix `-param` (e.g. `Urologist/microsite-urology-1` →
-`Urologist/microsite-urology-1-param`). A folder without `-param` has not been
-converted yet. Rename in the same commit that finishes the conversion.
+**Naming convention:** once a template is fully parameterized, its folder gets the suffix
+`-param` (e.g. `<Specialty>/microsite-<specialty>-1` → `<Specialty>/microsite-<specialty>-1-param`).
+A folder without `-param` has not been converted. Rename in the same commit that finishes the
+conversion.
 
 The suffix is a **repo folder name only**. GCS asset URLs inside the pages
-(`https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/…`) point
-at the bucket folder, which is not renamed — leave those URLs unchanged.
+(`https://storage.googleapis.com/microsite_buck/microsite-<specialty>-<n>/assets/…`) point at the
+bucket folder, which is not renamed. Leave those URLs unchanged.
 
-### Done (19)
-| Template folder | Notes |
-|---|---|
-| `Ayurvedic/microsite-ayurvedic-1-param` | |
-| `Ayurvedic/microsite-ayurvedic-2-param` | |
-| `Cardiology/microsite-cardiology-1-param` | |
-| `Gastroenterology/microsite-gastroenterology-1-param` | |
-| `Gastroenterology/microsite-gastroenterology-2-param` | |
-| `ENT/microsite-ent-2-param` | Done 2026-10-21. Built from ENT-2 (non-parameterized copy kept at `ENT/microsite-ent-2`). Booking/chatbot/analytics/counter JS taken from Radiology-2-param (ENT-2 had only the demo booking code); privacy/terms pages use the current Radiology-2-param legal text with ENT head/fonts/footer. Services use one fixed icon (`fa-head-side-cough`); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}`; FAQ kept as is; About/Philosophy photos use the `microsite-ent-2` GCS folder; Facebook-posts carousel JS omitted (no social-media section). Added the shared disabled-social CSS and a `form?.` null guard on the consent line so `index.js` no longer throws on the legal pages. |
-| `ENT/microsite-ent-3-param` | Done 2026-10-21. Same conversion as ENT-2-param (non-parameterized copy kept at `ENT/microsite-ent-3`): navy/rose theme, no About photo, rounded UI, dark photo hero. One fixed services icon (`fa-ear-listen`); the philosophy photo uses the byte-identical `microsite-ent-2` GCS copy (no `microsite-ent-3` bucket folder yet — upload one and repoint if wanted). Hero disabled-social CSS tuned for the dark hero. |
-| `General Physician/microsite-general-physician-1-param-assigned` | Done 2026-09-29. Folder renamed to `-param`. Services tag pills dropped (loop is title + description only); philosophy image uses the byte-identical `microsite-general-medicine-1` bucket copy. |
-| `General Physician/microsite-general-physician-2-param` | Done 2026-09-29. Same conversion as General Physician-1 (identical JS; blue-theme CSS). Folder renamed to `-param`. |
-| `General Physician/microsite-general-physician-3-param` | Done 2026-10-21. New design (indigo / linen / pine palette, Fraunces + Figtree, arch portrait, clinic-photo journey band, split contact card), parameterized from the start; there is no non-parameterized copy. Booking/chatbot/analytics/counter JS, legal pages and the visitor counter come from ENT-2-param (head, fonts, favicon and footer retargeted). Services use one fixed icon (`fa-stethoscope`); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}`; FAQ kept as written. The About and Philosophy photos and the Journey background (CSS) are linked to the local `assets/` folder at the owner's request (not the bucket convention in the Conventions list above — if served under `{{path}}` they must be reachable at `assets/…`, otherwise repoint to the bucket). Verified by rendering with Mustache (long name / all flags on, and short name / all flags off): no unresolved tags, balanced sections, no JS errors, no overflow at 320–1440px, fellowship line hides when empty, disabled-social tooltips work. Added `html, body { overflow-x: clip }` so the hidden tooltip of the last social icon cannot cause sideways scroll. |
-| `Dentist/microsite-dentist-3-param` | Done 2026-10-26. New design (mint / pine / raspberry palette, Fraunces + Figtree, arch portrait, clinic-photo hero, rounded cards), parameterized from the non-parameterized copy kept at `Dentist/microsite-dentist-3`. Booking/chatbot/analytics/counter/banner JS and the legal-page body text come from General Physician-3-param; the legal pages keep this site's own head and footer. Services use one fixed icon (`fa-tooth`); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}` (all with `data-counter`); FAQ kept as written; contact section has a `.js-book-trigger` Book Appointment button (opens the modal and is hidden with the other CTAs when no mode is available); the Facebook-posts carousel is kept. Added the disabled-social/tooltip CSS and `html, body { overflow-x: clip }`, the send-icon `currentColor` rule, and keyboard focus for the Online Consultation info note. The About/Philosophy photos and the hero background are linked to the local `assets/` folder (as in General Physician-3-param) rather than the bucket convention. Verified by rendering with Mustache (everything on / everything off, 60+ character name): no unresolved tags, balanced sections, no overflow at 320–1440px, fellowship and MCI lines hide when empty. |
-| `Dentist/microsite-dentist-1-param` | Done 2026-10-26. Built from `Dentist/microsite-dentist-1` (non-parameterized copy kept). Booking/chatbot/analytics/counter/banner JS taken from ENT-2-param; the booking modal markup was updated to match it (report preview block, empty time-slot select, `data-city` etc.). Services use one fixed icon (`fa-tooth`); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}` (all `data-counter`); FAQ kept as written. Hero social order is FB Profile, FB Page, Instagram, X, LinkedIn, Website, WhatsApp, YouTube with has/no pairs and tooltips in hero, footer and legal footers. About/Philosophy photos are not parameterized (the philosophy image is still the local `assets/philosophy-workspace.jpg`; no bucket folder exists yet). No social-media section, no contact Book button. Disabled-social/tooltip, upload-preview and booking-popup CSS appended. Verified by rendering with Mustache (everything on / everything off, long name): no unresolved tags. Not yet checked in a browser. |
-| `General Medicine/microsite-general-medicine-1-param` | Done 2026-10-26. Built from `General Medicine/microsite-general-medicine-1` (non-parameterized copy kept) in its blue theme. Booking/chatbot/analytics/counter/banner JS and the booking-modal markup (upload preview, `data-city`, GA attributes) taken from Dentist-1-param; the hero stat counter regex and the `form?.` null guard keep `index.js` error-free on the legal pages. Services use one fixed icon (`fa-stethoscope`, tag pills dropped); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}` (all `data-counter`); hero reg line is `Medical Regd. No.: {{mci}}` inside `{{#hasmic}}`; fellowship line comment-wrapped; FAQ and kickers kept as written. Hero social order is FB Profile, FB Page, Instagram, X, LinkedIn, Website, WhatsApp, YouTube with has/no pairs in hero, footer and legal footers; visitor badge + `#visitorCount` script added. About/Philosophy photos and the hero background stay on the local `assets/` folder (not the bucket convention); no social-media section, no contact-section Book button beyond the existing CTA. Appended the disabled-social/tooltip, upload-preview and booking-popup CSS, `html, body { overflow-x: clip }`, and wrap rules so long doctor names no longer overflow the header or h1. Verified by rendering with a small Mustache-style renderer (everything on / everything off, 60+ character name): no unresolved tags, balanced sections, no new console errors; checked in headless Chrome at 1400px and 375px (index) and 375px (privacy). Not checked: booking flow against the live API, the legal-page footers at 375px by eye. |
-| `General Medicine/microsite-general-medicine-3-param` | Done 2026-10-26. New design (deep-ocean / leaf / coral palette, Bricolage Grotesque + Nunito Sans, doctor's-desk photo hero with ECG trace, four-across journey timeline), parameterized from the non-parameterized copy kept at `General Medicine/microsite-general-medicine-3`. Booking/chatbot/analytics/counter/banner JS, the legal-page body text and the visitor counter come from Dentist-3-param; the head, fonts, favicon and footer are retargeted. Services use one fixed icon (`fa-stethoscope`); stat tiles use `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}` (all `data-counter`); FAQ kept as written; contact section has a `.js-book-trigger` Book Appointment button; the Facebook-posts carousel is kept. Disabled-social/tooltip CSS (tuned for the dark hero), `html, body { overflow-x: clip }` and the send-icon `currentColor` rule added. The hero background (CSS) and the About/Philosophy photos are linked to the local `assets/` folder (as in Dentist-3-param), not the bucket convention. Verified by rendering with Mustache (everything on / everything off, 60+ character name): no unresolved tags, balanced sections, no overflow at 320–1900px on all three pages, fellowship and MCI lines hide when empty. |
-| `Pediatrician/microsite-pediatrician-2-param` | |
-| `Pediatrician/microsite-pediatrician-3-param` | Re-verified 2026-09-29 and fixed: hero Facebook Page disabled icon was gated on `noFacebook` (now `noFacebookPage`); footer + legal-page WhatsApp now `https://wa.me/91{{whatsapp}}`; MCI line colon; `{{awards}},{{education}}`; contact address in the §6 pattern; legal canonical/`og:url` without `.html`; disabled-social + tooltip CSS added (hero spans now carry `data-tooltip`). |
-| `Pediatrician/microsite-pediatrician-4-param` | Re-verified 2026-09-29; same fixes as Pediatrician-3 (cloned markup). |
-| `Radiology/microsite-radiology-1-param` | Calendar now honours `availableDays`; demo time slots removed (2026-09-25). Later changes: hero scan sweep over the portrait and the hero specialty badge removed; hero stat tiles/social buttons made opaque so the background scan line cannot show through; static "500" visitor badge removed and the live badge moved under the Legal links; "within 24 hours" and "same day" wording removed from fallbacks, taglines and FAQ; new `{{#hasFellowship}}{{fellowship}}` hero line. A non-parameterized copy exists at `Radiology/microsite-radiology-1`. |
-| `Radiology/microsite-radiology-2-param` | Done 2026-10-16. Built from Radiology-1-param plus the Radiology-2 differences (fonts, light hero CSS, no About photo, shorter About fallback, philosophy photo). Disabled-social/tooltip CSS added. A non-parameterized copy exists at `Radiology/microsite-radiology-2`. |
-| `Urologist/microsite-urology-1-param` | Done 2026-09-25. |
-| `Urologist/microsite-urology-2-param` | Done 2026-09-25. Own hero layout (`uro-hero-*`); rest of the page matches Urology-1. |
-
-### Not started (13)
-Default Template, Dentist-2-assigned, ENT-1,
-General Medicine-2-assigned, Homeopathy, Intensivist-1, Intensivist-2-assigned,
-Neurology-1, Oncology-1-assigned, Oncology-2, Orthopedics-1,
-Pediatrician-1-assigned, Pediatrician-5 (work pending).
-
-### Conventions settled while converting (apply to every remaining template)
-- **Calendar must use `availableDays`.** Piece 1 of §4b only loads the days; the
-  date-picker `render()` must also disable days not in the set, as samiran-das does:
+Rules that apply to every conversion:
+- **Calendar must use `availableDays`.** Piece 1 of §4b only loads the days; the date-picker
+  `render()` must also disable days not in the set:
   `const isUnconfiguredDay = availableDays && availableDays.size > 0 && !availableDays.has(dayName);`
-  then `if (cellDate < today || isUnconfiguredDay)`. Loading without this lets
-  patients pick days the doctor doesn't work.
+  then `if (cellDate < today || isUnconfiguredDay)`. Loading without this lets patients pick
+  days the doctor doesn't work. (The §4c code already does this.)
 - **Remove demo `<option>`s from `#preferredTime`.** Keep only
-  `<option value="">Select Time Slot</option>`; the slots API fills the rest. Demo
-  values would otherwise be submitted as a `SlotId` if the slots call fails.
-- **Template-owned images** (About/Philosophy photos, etc.) use the GCS bucket URL
-  for that template, not relative `assets/` paths (which break under `{{path}}`
-  serving). `{{path}}` stays for CSS/JS only.
-- **Disabled-social CSS:** if a template has no `.is-disabled` / `data-tooltip`
-  styling for social icons, add it (dim the icon glyph and surface, not the whole
-  element, so the "Not Enabled" tooltip stays readable).
-- **Page links use `{{slug}}`, no `.html`.** Every relative link to another page
-  (nav, logo, footer, legal-page back button, consent modal) is
-  `/{{slug}}/<page-name>`, e.g. `/{{slug}}`, `/{{slug}}/#services`,
-  `/{{slug}}/privacy-policy`, `/{{slug}}/terms-of-service`.
-  See the §6 checklist item.
-- **Hero MCI line:** `Medical Regd. No.: {{mci}}` inside `{{#hasmic}}`.
+  `<option value="">Select Time Slot</option>`; the slots API fills the rest. Demo values would
+  otherwise be submitted as a `SlotId` if the slots call fails.
+- **Template-owned images** (About/Philosophy photos, etc.) use the GCS bucket URL for that
+  template's bucket folder, not relative `assets/` paths (which break under `{{path}}` serving).
+  `{{path}}` stays for CSS/JS only. If images are deliberately kept in the local `assets/`
+  folder, they must be reachable at `assets/…` wherever the page is served.
+- **Disabled-social CSS:** if the template has no `.is-disabled` / `data-tooltip` styling for
+  social icons, add the block in §1.1 (it dims the glyph and surface, not the whole element, so
+  the "Not Enabled" tooltip stays readable). Also add `html, body { overflow-x: clip; }` so the
+  hidden tooltip of the last icon in a row can't cause sideways scroll.
+- **Page links use `{{slug}}`, no `.html`.** Every relative link to another page (nav, logo,
+  footer, legal-page back button, consent modal) is `/{{slug}}/<page-name>`, e.g. `/{{slug}}`,
+  `/{{slug}}/#services`, `/{{slug}}/privacy-policy`, `/{{slug}}/terms-of-service`. See §6.
+- **Hero registration line:** `Medical Regd. No.: {{mci}}` inside `{{#hasmic}}`.
 - **Blog pages:** removed from every microsite; there is no Blog nav link and no `{{#hasBlog}}`.
-- **Verify each template** by rendering it with sample data (long name, `15+`,
-  `20,000+`, some `has*`/`no*` flags each way, some `has_`/`no_` section texts each
-  way) and checking no `{{…}}` is left and every section opens/closes in balance.
+- **Verify each template** by rendering it with sample data (long name, `15+`, `20,000+`, some
+  `has*`/`no*` flags each way, some `has_`/`no_` section texts each way) and checking no `{{…}}`
+  is left and every section opens/closes in balance.
 
 ---
 
-## 1. Placeholder vocabulary (160 total, union of all 6 live sites)
+## 1. Placeholder vocabulary (160 total)
 
 Syntax: `{{var}}` for values, `{{#flag}}…{{/flag}}` for sections that show or hide.
 
@@ -93,29 +66,34 @@ Syntax: `{{var}}` for values, `{{#flag}}…{{/flag}}` for sections that show or 
 - `experience` and `totalpatient` are **strings**, e.g. `15` or `15+`.
 - Qualification line pattern: `{{awards}},{{education}}`.
 - Registration: `{{#hasmic}}…Medical Regd. No.: {{mci}}…{{/hasmic}}`.
-- **Fellowships (all param and live microsites; placeholder is {{fellowship}}, flag is hasFellowship).
+- **Hero stat tiles** (Practising Since, Languages, Consultation Modes, in that order). The three tiles use `{{practising_since}}` (the year,
+  with `data-practising-since`), `{{languages_count}}` and `{{consultation_modes_count}}`, each
+  with `data-counter` (§4). These three are not in the 160-key count above; confirm with the
+  backend team that it sends them for every doctor.
+- **Fellowships (placeholder `{{fellowship}}`, flag `hasFellowship`).
   Shown ONLY when the backend sends a value:** the line is `<p data-hero-fellowship>` wrapped in
-  `<!-- {{#hasFellowship}} -->…<!-- {{/hasFellowship}} -->` (comment-wrapped so an unsupported tag never
-  leaks as text), and a small script at the end of `script/index.js` sets `hidden` plus inline `display: none` on it (the inline style is needed because classes like
-  `.hero-credentials { display: flex }` would otherwise override `hidden`) when the
-  value is empty or the `{{fellowship}}` tag came through unrendered. Never hardcode a fellowship in a
-  param/live site.
-  `{{#hasFellowship}}…Fellowship: {{fellowship}}…{{/hasFellowship}}`. `fellowship` is
-  **one string** holding every fellowship, e.g.
+  `<!-- {{#hasFellowship}} -->…<!-- {{/hasFellowship}} -->` (comment-wrapped so an unsupported
+  tag never leaks as text), and a small script at the end of `script/index.js` (§4, "Hero
+  year and fellowship script") sets `hidden` plus inline `display: none` on it (the inline style
+  is needed because classes like `.hero-credentials { display: flex }` would otherwise override
+  `hidden`) when the value is empty or the `{{fellowship}}` tag came through unrendered. Never
+  hardcode a fellowship in a param site.
+  `fellowship` is **one string** holding every fellowship, e.g.
   `FACR (Fellow of the American College of Radiology), USA; EDiR (European Diploma in Radiology), Europe`.
   Each entry already contains a comma, so the backend should separate entries with a
-  semicolon. The "Fellowship:" label is fixed template text — the backend sends the value
+  semicolon. The "Fellowship:" label is fixed template text; the backend sends the value
   only. Rendered as a second `hero-credentials` line under the qualifications line (icon
-  `fa-award`); it wraps, so any number of entries is safe. Not in the live-site vocabulary,
-  so it is not counted in the total above.
-
+  `fa-award`); it wraps, so any number of entries is safe. Not counted in the total above.
 - **Privacy policy "Who We Are" line:** `Dr. {{full_name}}, {{awards}},{{education}}{{#hasmic}}, Registration No. {{mci}}, {{council}}{{/hasmic}}`.
+- **JSON-LD:** `"image": "{{profile}}"`. `{{profile}}` is already a full URL (it's used as
+  `<img src="{{profile}}">`), so never prefix it with a domain or folder.
 
 ### Clinic and contact
 `clinicname`, `address`, `city`, `district`, `state`, `pincode`, `phone`, `code`,
 `email`, `whatsapp`, `website`
 
 - Phone pattern: `<a href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a>`.
+- Address pattern: `<strong>{{clinicname}}</strong><br />{{address}}<br />{{district}}, {{state}} - {{pincode}}`.
 
 ### Social links (both Facebook flags are required)
 | Flag pair | URL placeholder | Meaning |
@@ -127,32 +105,196 @@ Syntax: `{{var}}` for values, `{{#flag}}…{{/flag}}` for sections that show or 
 | `hasTwitter` / `noTwitter` | `{{twitter}}` | |
 | `hasYoutube` / `noYoutube` | `{{youtube}}` | |
 | `hasWebsite` / `noWebsite` | `{{website}}` | |
-| `hasWhatsapp` / `noWhatsapp` | `{{whatsapp}}` | |
+| `hasWhatsapp` / `noWhatsapp` | `{{whatsapp}}` | bare number, see §5a |
 
 `has*` renders the `<a>` link. `no*` renders the disabled `<span>` ("Not Enabled"
-tooltip). Used in the header, hero and footer of index, privacy and terms.
+tooltip). Used in the header, hero and footer of index, privacy and terms. Never swap the two
+Facebook mappings: `hasFacebook` → `{{facebook}}`, `hasFacebookPage` → `{{facebookpage}}`.
+
+**Hero social row**, in this order (FB Profile, FB Page, Instagram, X, LinkedIn,
+Website, WhatsApp, YouTube):
+
+```html
+<div class="social-links" aria-label="Social media links">
+  {{#hasFacebook}}<a href="{{facebook}}" class="social" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="hero_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+  {{#noFacebook}}<span class="social is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+  {{#hasFacebookPage}}<a href="{{facebookpage}}" class="social" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="hero_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+  {{#noFacebookPage}}<span class="social is-disabled" aria-label="Facebook page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+  {{#hasInstagram}}<a href="{{instagram}}" class="social" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="hero_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+  {{#noInstagram}}<span class="social is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+  {{#hasTwitter}}<a href="{{twitter}}" class="social" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="hero_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+  {{#noTwitter}}<span class="social is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+  {{#hasLinkedin}}<a href="{{linkedin}}" class="social" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="hero_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+  {{#noLinkedin}}<span class="social is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+  {{#hasWebsite}}<a href="{{website}}" class="social" aria-label="Website" data-tooltip="Website" data-ga-event="hero_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+  {{#noWebsite}}<span class="social is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+  {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="hero_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+  {{#noWhatsapp}}<span class="social is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+  {{#hasYoutube}}<a href="{{youtube}}" class="social" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="hero_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+  {{#noYoutube}}<span class="social is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+</div>
+```
+
+**Footer social row** (index and both legal pages): the same 8 pairs inside `.footer-social`,
+without the `social` class (`<a href="{{facebook}}" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile">…</a>`
+and `<span class="is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1">…</span>`).
+Disabled spans carry no `data-ga-event`, so they never fire analytics.
+
+**Keep the template's own icon classes.** The patterns above show the minimum markup. If a
+template already styles its icons through extra classes (e.g. `class="social social-facebook"`
+in the hero, `class="footer-social-icon footer-social-facebook"` in the footer), keep those
+classes on both the `<a>` and the disabled `<span>` (`class="footer-social-icon footer-social-facebook is-disabled"`),
+or the icons lose their size and colours. Only the href, the has/no wrapping, `aria-label`,
+`data-tooltip` and the GA attributes come from the pattern.
+
+### 1.1 Disabled-social CSS (add to `styles/style.css` if missing)
+
+Adapt the selectors if the hero social wrapper uses a different class. The colours are the
+site's tokens (`--bg-2`, `--border`, `--muted`, `--text`, `--radius-sm`, `--font-body`); map them
+in `:root` if the template names them differently.
+
+```css
+/* ============================================================
+   Disabled social icons + "Not Enabled" tooltip (parameterized template).
+   Dim the glyph and surface, not the whole element, so the tooltip
+   stays readable. Tooltip labels are short fixed strings.
+   ============================================================ */
+.hero-section .social.is-disabled,
+.footer-social > span.is-disabled { cursor: not-allowed; }
+.hero-section .social.is-disabled,
+.hero-section .social.is-disabled:hover {
+  background: var(--bg-2);
+  border-color: var(--border);
+  color: var(--muted);
+  transform: none;
+}
+.footer-social > span.is-disabled {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  background: hsla(0,0%,100%,0.06);
+  border: 1px solid hsla(0,0%,100%,0.16);
+  color: #fff;
+  font-size: 18px;
+  min-width: 0;
+}
+.hero-section .social.is-disabled > i,
+.footer-social > span.is-disabled > i { opacity: 0.4; }
+
+.hero-section .social[data-tooltip],
+.footer-social > [data-tooltip] { position: relative; }
+.hero-section .social[data-tooltip]::after,
+.footer-social > [data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--text);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap; /* fixed short labels ("Not Enabled", network names), not dynamic content */
+  padding: 6px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 20;
+}
+.hero-section .social[data-tooltip]::before,
+.footer-social > [data-tooltip]::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--text);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+  z-index: 20;
+}
+.hero-section .social[data-tooltip]:hover::after,
+.hero-section .social[data-tooltip]:hover::before,
+.hero-section .social[data-tooltip]:focus-visible::after,
+.hero-section .social[data-tooltip]:focus-visible::before,
+.footer-social > [data-tooltip]:hover::after,
+.footer-social > [data-tooltip]:hover::before,
+.footer-social > [data-tooltip]:focus-visible::after,
+.footer-social > [data-tooltip]:focus-visible::before {
+  opacity: 1;
+  visibility: visible;
+}
+.hero-section .social[data-tooltip]:hover::after,
+.hero-section .social[data-tooltip]:focus-visible::after,
+.footer-social > [data-tooltip]:hover::after,
+.footer-social > [data-tooltip]:focus-visible::after { transform: translateX(-50%) translateY(0); }
+```
 
 ### System
 `slug`, `path`, `micrositeId`, `userid`, `date`
 
 - `{{date}}`: "Effective Date" on privacy-policy.html and terms-of-service.html.
-- `{{path}}`: prefix for script and style URLs.
+- `{{path}}`: prefix for script and style URLs (`{{path}}/styles/style.css`,
+  `{{path}}/script/index.js`).
 - `<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">`.
-- The booking form carries `data-userid`, `data-address`, `data-clinicname`,
-  `data-district`, `data-state` and `data-pincode`.
+- The booking form carries `data-userid="{{userid}}"`, `data-address="{{address}}"`,
+  `data-clinicname="{{clinicname}}"`, `data-district="{{district}}"`, `data-state="{{state}}"`,
+  `data-pincode="{{pincode}}"` and `data-city="{{city}}"`.
 
 ### Banner
 `{{#has_banner}}` with `banner_src`, `banner_src_mobile`, `banner_alt`,
-`banner_start`, `banner_end`
+`banner_start`, `banner_end`. Wrap the whole banner module in
+`{{#has_banner}}…{{/has_banner}}` with `data-banner-active="true"`, and put the fields into
+`data-banner-start`, `data-banner-end`, `data-banner-src`, `data-banner-src-mobile`,
+`data-banner-alt`, the `<source srcset>` and the `<img src>`/`alt`. Full markup, CSS and JS:
+Appendix P.2.
 
 ### Loops
 | Loop | Fields |
 |---|---|
-| `{{#services}}` | `title`, `description` (see note below — `icon` dropped) |
+| `{{#services}}` | `title`, `description` (no `icon`, see below) |
 | `{{#images}}` | `image` |
 
 `title`, `description`, `rating`, `stars_html` and `profile_picture` are **loop
 fields only**. They never appear outside their loop.
+
+```html
+<div class="services-grid">
+  {{#services}}
+  <article class="service-card">
+    <div class="service-icon"><i class="fa-solid <specialty-icon>" aria-hidden="true"></i></div>
+    <h3>{{title}}</h3>
+    <p>{{description}}</p>
+  </article>
+  {{/services}}
+</div>
+
+<div class="gallery-grid">
+  {{#images}}
+  <figure class="gallery-item">
+    <img src="{{image}}" alt="Gallery image" loading="lazy" />
+  </figure>
+  {{/images}}
+</div>
+```
+
+**Services icon:** one fixed Font Awesome icon for the whole Services section, hardcoded in the
+template, never a `{{icon}}` loop field. Use the icon for the template's specialty in the §3.4 table. The backend can then add or remove services without supplying
+an icon.
 
 ### Other flags
 `{{#hasmic}}`, `{{#has_banner}}`
@@ -177,55 +319,33 @@ fields only**. They never appear outside their loop.
 > ⚠️ The pillar 2 keys are spelled `pillor_text_2` and `piller_subtext_2` in the
 > backend. Copy them **exactly as spelled**; do not "fix" the spelling.
 
-The fallback text is each template's current text for that element.
+The fallback text is the microsite's current text for that element. Example:
 
----
+```html
+<h2 class="about-title">
+  {{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}
+  {{#no_about_section_title}}Expert Care, Built Around the Patient{{/no_about_section_title}}
+</h2>
+```
 
-### Verification (checked with scripts)
+### Syntax and scope rules
+- No other Mustache syntax is used: no `{{{ }}}`, `{{> }}`, `{{^ }}` or `{{! }}`.
+- Only the HTML pages (and `robots.txt`, `sitemap.xml`, `llms.txt`, §3.3) contain
+  placeholders. JS, CSS and JSON files contain none, so JavaScript reads page data from the
+  DOM (`document.body.dataset.slug`, `form.dataset.userid`), never from a `{{…}}` literal.
+- No placeholder is used inside an `id`.
+- The backend may support keys beyond this list; confirm with the backend team before using one.
 
-**Completeness.** All 160 distinct placeholders used by the 6 live sites and the 2
-`microsite-urology-* (live)` sites are documented above. None are missing and none
-are extra.
-- No other syntax is used: no `{{{ }}}`, `{{> }}`, `{{^ }}` or `{{! }}`.
-- Only the HTML pages contain placeholders. The live JS, CSS, XML, TXT and JSON
-  files contain none.
-- "Complete" means complete compared with the live sites. The backend may support
-  keys that no live site uses yet; confirm this with the backend team.
-
-**Class-name compatibility.** Placeholders are plain text substitution, so they work
-with any class name or HTML structure. No placeholder is used inside an `id`. The
-exceptions:
-1. **`{{icon}}` — dropped from the services loop (decision update).** The services
-   loop used to receive a per-service `icon` field (`class="fa-solid {{icon}}"`),
-   meaning the backend had to supply a matching Font Awesome class for every service
-   row. **Changed:** every template now hardcodes one fixed Font Awesome icon for the
-   whole Services section, chosen per specialty (e.g. Ayurvedic → `fa-leaf`,
-   Dentist → `fa-tooth`, Cardiology → `fa-heart-pulse` — see the codebase's own
-   specialty→icon mapping, not duplicated here). The `{{#services}}` loop is now
-   `title` + `description` only. This means the backend team can add/remove services
-   freely without ever supplying an icon — the template icon is fixed at build time,
-   not sent per row. Confirmed and applied to Ayurvedic-1/2 (the only two templates
-   that had already parameterized `{{icon}}`); the other templates were hardcoded
-   per-card icons before this change and are now hardcoded to one shared icon
-   instead, so no loop field was ever removed there.
-2. ~~`{{stars_html}}` is backend-generated HTML~~ **Obsolete:** the Testimonials
-   section was removed from every microsite, so no testimonial loop or fields exist.
-3. **The live JS needs specific ids and classes.** This matters for the JavaScript
-   work (§4a, §4b now; the rest later, §5):
-   - `index.js`: `#bookingForm`, `#bookingModal`, `#preferredDate`,
-     `#preferredTime`, `#clinicVisitTab`, `#onlineConsultTab`, `.cta-btn`,
-     `.faq-item`, `.read-more-*`,
-     `.social:not(.is-disabled)`, `[data-cal-*]`, and others.
-   - `banner-module.js`: `#digidrBannerImg` / `.digidr-banner-img`,
-     `#digidrBannerLink`.
-   - `chatbot.js`: needs no page markup except `<link id="chatbot-css">` (see §4a).
-     It creates all its own `chatbot*` elements.
-
-   Template markup must match these hooks once the JS is brought over.
-
-**Problem found:** the JSON-LD in `live microsites/dhara-sharma/index.html` has
-`"image": "https://www.example.com/ent-1/{{profile}}"`. `{{profile}}` is already a
-full URL (it's used as `<img src="{{profile}}">`), so this should be `"{{profile}}"`.
+### Ids and classes the JavaScript needs
+Placeholders are plain text substitution, so they work with any class name or HTML structure,
+but the scripts look for specific hooks. Template markup must keep them:
+- `index.js`: `#bookingForm`, `#bookingModal`, `#preferredDate`, `#preferredTime`,
+  `#clinicVisitTab`, `#onlineConsultTab`, `.cta-btn`, `.faq-item`, `.read-more-*`,
+  `.social:not(.is-disabled)`, `[data-cal-*]`, `[data-counter]`, `[data-practising-since]`,
+  `[data-hero-fellowship]`, `[data-contact-info]` (full list for booking in §4c).
+- `banner-module.js`: `#digidrBannerImg` / `.digidr-banner-img`, `#digidrBannerLink`.
+- `chatbot.js`: needs no page markup except `<link id="chatbot-css">` (§4a). It creates all its
+  own `chatbot*` elements.
 
 ---
 
@@ -233,58 +353,246 @@ full URL (it's used as `<img src="{{profile}}">`), so this should be `"{{profile
 
 | # | Topic | Decision |
 |---|---|---|
-| 1 | Doctor name outside the FAQ | Every hardcoded name ("Dr. Arjun Mehta", "Dr. Mehta", "Dr. Kapoor", …) becomes `Dr. {{full_name}}`, matching the live sites. There is no surname placeholder. |
-| 2 | FAQ section | **Left exactly as it is** in each specialty template, hardcoded names included. The real questions and answers will be provided later. |
-| 3 | Third hero stat | Stays **hardcoded per microsite** (e.g. 98%, 24h, 97%). |
-| 4 | Stat counters | Counter added to **all templates and live dhara-sharma** (see §4). **In scope now.** |
-| 5 | Made-up social-media sections | **Comment out** `<section id="social-media">` in ENT-1, Neurology-1 and Pediatrician-1, plus any nav or footer links pointing to `#social-media`. Not worked on further for now. |
-| 6 | Section kickers / small labels | Kept **as they are in each microsite** (no placeholder exists). |
+| 1 | Doctor name outside the FAQ | Every hardcoded name becomes `Dr. {{full_name}}`. There is no surname placeholder. |
+| 2 | FAQ section | **Left exactly as it is** in the template, hardcoded names included. The real questions and answers will be provided later. |
+| 3 | Hero stat tiles | `{{practising_since}}`, `{{languages_count}}`, `{{consultation_modes_count}}` (§1). Older templates whose third tile is a hardcoded figure (e.g. 98%) keep it hardcoded. |
+| 4 | Stat counters | Every template gets the shared text-based counter (§4). |
+| 5 | Made-up social-media sections | A hand-written mock `<section id="social-media">` (static fake posts) is **commented out**, together with any nav or footer link to `#social-media`. The live Facebook-posts widget (an empty `#socialMediaTrack` that the JS fills from the DigiDr social-feed API, reading `<body data-slug>`) is a different thing and stays. |
+| 6 | Section kickers / small labels | Kept **as they are** (no placeholder exists). |
 | 7 | Facebook | Both flags kept: `hasFacebook` → `{{facebook}}` (profile), `hasFacebookPage` → `{{facebookpage}}` (page), each with its `no*` state. |
-| 8 | Technology section | Kept as hardcoded content in **Intensivist-1 only**. Not added to any other microsite. |
-| 9 | Swapped Facebook links in live sites | Fix the 4 swapped `href` values (see §3). |
-| 10 | JavaScript | Only three JS changes are in scope now: the stat counter (§4), `chatbot.js` (§4a) and the booking code in `index.js` (§4b). Analytics, banner and `auto-open-modal.js` wait for the backend team (§5). |
-| 11 | `chatbot.js` `BOT_ICON` | Hardcoded literal, **not** a placeholder. One shared URL (`.../microsite-ent-1/assets/chatbot-icon.svg`) across all 21 non-live templates — no longer per-template GCS folder. Live sites unchanged, still per-site. |
-| 12 | Live sites and the JS | The 6 live sites already match §4a and §4b exactly. Only the stat counter (§4) changes live JS, and only on dhara-sharma. |
-| 13 | Services `{{icon}}` | Dropped from the `{{#services}}` loop. One fixed Font Awesome icon per specialty, hardcoded in the template — not sent per service by the backend. Loop is now `title` + `description` only. |
+| 8 | Extra specialty sections | A section unique to one template (e.g. a technology section) stays hardcoded there. Not added to other microsites. |
+| 9 | JavaScript | Only three JS changes are in scope: the stat counter (§4), `chatbot.js` (§4a) and the booking code in `index.js` (§4b). Analytics, banner and `auto-open-modal.js` wait for the backend team (§5). |
+| 10 | `chatbot.js` `BOT_ICON` | Hardcoded literal, **not** a placeholder: one shared URL for every template (§4a). |
+| 11 | Services `{{icon}}` | Dropped from the `{{#services}}` loop. One fixed Font Awesome icon per specialty, hardcoded in the template. Loop is `title` + `description` only. |
 
 ---
 
-## 3. Live-site Facebook fix (HTML only)
+## 3. Head, meta and SEO files
 
-The swap is **only in the hero social row of index.html**. The footer, privacy,
-terms pages are already correct.
+Every page is served at `https://digidr.app/{{slug}}/…` with **no `.html`** (§0 "Page links").
+Use exactly those URLs in the canonical tag, `og:url`, JSON-LD, `sitemap.xml` and `llms.txt`,
+so search engines and LLM crawlers see the same URLs the pages link to. Never leave a
+`www.example.com` (or other placeholder) domain or a "TODO: replace with live production
+domain" comment in a converted template.
 
-| File | Line | Flag | Current href | Change to |
-|---|---|---|---|---|
-| `live microsites/samir-shah/index.html` | 193 | `hasFacebookPage` | `{{facebook}}` | `{{facebookpage}}` |
-| `live microsites/samir-shah/index.html` | 196 | `hasFacebook` | `{{facebookpage}}` | `{{facebook}}` |
-| `live microsites/samiran-das/index.html` | 218 | `hasFacebookPage` | `{{facebook}}` | `{{facebookpage}}` |
-| `live microsites/samiran-das/index.html` | 221 | `hasFacebook` | `{{facebookpage}}` | `{{facebook}}` |
+### 3.1 `index.html` `<head>`
 
-Change only the href values. The flags, aria-labels, tooltips, icons, GA attributes
-and `no*` states on those lines are already correct. After the fix, re-check that
-every Facebook link on both sites maps `hasFacebookPage` → `{{facebookpage}}` and
-`hasFacebook` → `{{facebook}}`.
+Keep the head's order and the analytics snippets; change these lines (the description wording
+stays specific to the template's specialty, with the doctor's name and specialty templated):
+
+```html
+<!-- Clarity tags: microsite is always {{slug}}; specialty is the template's tag slug (§3.4) -->
+<script>
+  if (typeof clarity === "function") {
+    clarity('set', 'microsite', '{{slug}}');
+    clarity('set', 'specialty', '<tag-slug>');
+  }
+</script>
+
+<title>Dr. {{full_name}} | {{speciality}} — [short practice description]</title>
+<meta name="description" content="Dr. {{full_name}}, {{speciality}} — [the template's main services, in one sentence]." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://digidr.app/{{slug}}/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://digidr.app/{{slug}}/" />
+<meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
+<meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
+<meta property="og:image" content="{{profile}}" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
+<meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
+<meta name="twitter:image" content="{{profile}}" />
+
+<!-- Library CSS first, then site CSS, all site files under {{path}} -->
+<link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+<link rel="stylesheet" href="{{path}}/styles/style.css" />
+<link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. {{full_name}}",
+  "medicalSpecialty": "[schema.org MedicalSpecialty for the template, e.g. Otolaryngologic]",
+  "image": "{{profile}}",
+  "url": "https://digidr.app/{{slug}}/",
+  "telephone": "+{{code}}-{{phone}}",
+  "email": "{{email}}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{address}}",
+    "addressLocality": "{{city}}",
+    "addressRegion": "{{state}}",
+    "postalCode": "{{pincode}}",
+    "addressCountry": "IN"
+  }
+}
+</script>
+```
+
+And at the end of `<body>`, in this order (the visitor script, §5b, comes last):
+
+```html
+<script src="{{path}}/script/banner-module.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+<script src="{{path}}/script/analytics.js"></script>
+<script src="{{path}}/script/index.js"></script>
+<script src="{{path}}/script/chatbot.js" defer></script>
+```
+
+intl-tel-input v29.2.2 (CSS and JS) must load before `index.js`; the booking code calls
+`window.intlTelInput` (§4c). Keep the GA4 `gtag.js` snippet as it is: the Measurement ID is not a
+placeholder. `{{profile}}` is already a full URL; never prefix it.
+
+### 3.2 Legal pages `<head>`
+
+`privacy-policy.html` (for `terms-of-service.html`, swap "Privacy Policy" → "Terms of Service",
+`privacy-policy` → `terms-of-service`, and use its own description):
+
+```html
+<title>Privacy Policy | Dr. {{full_name}}</title>
+<meta name="description" content="Privacy policy for Dr. {{full_name}}'s practice, covering how patient and website data is collected, used, and protected." />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://digidr.app/{{slug}}/privacy-policy" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dr. {{full_name}}" />
+<meta property="og:title" content="Privacy Policy | Dr. {{full_name}}" />
+<meta property="og:description" content="Privacy policy for Dr. {{full_name}}'s practice, covering how patient and website data is collected, used, and protected." />
+<meta property="og:url" content="https://digidr.app/{{slug}}/privacy-policy" />
+<meta property="og:image" content="{{profile}}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Privacy Policy | Dr. {{full_name}}" />
+<meta name="twitter:image" content="{{profile}}" />
+<link rel="stylesheet" href="{{path}}/styles/style.css" />
+<link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+<link rel="stylesheet" href="{{path}}/styles/legal.css" />
+```
+
+The legal pages have no JSON-LD. They load `analytics.js`, `index.js` and `chatbot.js` with
+`{{path}}` and end with the visitor script (§5b). In the body: the effective date is `{{date}}`,
+the Privacy Policy "Who We Are" line follows §1, the Back link is
+`<a href="/{{slug}}" class="blog-detail-back-link">`, and the contact card uses `{{clinicname}}`,
+`{{email}}`, `+{{code}}-{{phone}}` and the §1 address pattern.
+
+### 3.3 `robots.txt`, `sitemap.xml`, `llms.txt`
+
+These three files are templated like the HTML pages (the backend renders `{{slug}}` in them too).
+They are per-microsite drafts: the backend team merges every microsite's copy into one file at
+`digidr.app/robots.txt`, `/sitemap.xml` and `/llms.txt`. Keep the top comment that says so.
+
+`robots.txt`:
+
+```
+# NOTE: robots.txt only takes effect at the domain root (digidr.app/robots.txt).
+# This file is a per-microsite draft — backend team must merge all microsites'
+# rules into ONE robots.txt served at digidr.app/robots.txt, and point the
+# Sitemap line at the single combined sitemap (see sitemap.xml note in this folder).
+# Path below assumes this microsite is served at digidr.app/{{slug}}/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://digidr.app/sitemap.xml
+```
+
+`sitemap.xml`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  NOTE: A sitemap.xml only takes effect once, at the domain root
+  (digidr.app/sitemap.xml). This file is a per-microsite draft listing only
+  this doctor's pages — backend team must merge every microsite's <url>
+  entries into ONE combined sitemap.xml served at digidr.app/sitemap.xml.
+  Path below assumes this microsite is served at digidr.app/{{slug}}/
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://digidr.app/{{slug}}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://digidr.app/{{slug}}/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://digidr.app/{{slug}}/terms-of-service</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
+```
+
+`llms.txt` (llmstxt.org format: H1 name, one-line blockquote, `## Pages`):
+
+```
+# NOTE: llms.txt (see llmstxt.org) only takes effect at the domain root
+# (digidr.app/llms.txt). This file is a per-microsite draft — backend team
+# must merge every microsite's entry into ONE combined llms.txt served at
+# digidr.app/llms.txt, one line per doctor under the "Doctors" section below.
+# Path below assumes this microsite is served at digidr.app/{{slug}}/
+
+# Dr. {{full_name}}
+
+> Dr. {{full_name}}, {{speciality}}, on DigiDr. Book a consultation online.
+
+- Specialty: {{speciality}}
+- Book a consultation: https://digidr.app/{{slug}}/
+
+## Pages
+
+- [Profile](https://digidr.app/{{slug}}/): Dr. {{full_name}}'s profile — about, services, care philosophy, consultation journey, and practice gallery.
+- [Privacy Policy](https://digidr.app/{{slug}}/privacy-policy)
+- [Terms of Service](https://digidr.app/{{slug}}/terms-of-service)
+```
+
+### 3.4 Specialty tag slugs and Services icons
+
+The Clarity `specialty` tag (§3.1) and the fixed Services icon (§1 "Loops") per specialty. Never
+invent a new spelling for a specialty that is already listed; a new specialty gets a
+lowercase-hyphenated slug and an icon added here (and in AGENTS.md §20) in the same change.
+
+| Folder | Specialty | Clarity tag slug | Services icon (`fa-solid …`) |
+|---|---|---|---|
+| `microsite-ayurvedic` | Ayurvedic Medicine | `ayurvedic` | `fa-leaf` |
+| `microsite-cardiology` | Cardiology | `cardiology` | `fa-heart-pulse` |
+| `microsite-dentist` | Dentistry | `dentist` | `fa-tooth` |
+| `microsite-ent` | ENT (Ear, Nose & Throat) | `ent` | `fa-ear-listen` |
+| `microsite-gastroenterology` | Gastroenterology | `gastroenterology` | `fa-pills` |
+| `microsite-general-medicine` | General Medicine | `general-medicine` | `fa-stethoscope` |
+| `microsite-general-physician` | General Physician | `general-medicine` | `fa-stethoscope` |
+| `microsite-homeopathy` | Homeopathy | `homeopathy` | `fa-mortar-pestle` |
+| `microsite-intensivist` | Intensivist / Critical Care | `intensivist` | `fa-heart-circle-bolt` |
+| `microsite-neurology` | Neurology | `neurology` | `fa-brain` |
+| `microsite-oncology` | Oncology | `oncology` | `fa-ribbon` |
+| `microsite-orthopedics` | Orthopedics | `orthopedics` | `fa-bone` |
+| `microsite-pediatrician` | Pediatrics | `pediatrician` | `fa-child-reaching` |
+| `microsite-plastic-surgery` | Plastic & Cosmetic Surgery | `plastic-surgery` | `fa-wand-magic-sparkles` |
+| `microsite-radiology` | Radiology | `radiology` | `fa-x-ray` |
+| `microsite-urology` | Urology | `urology` | `fa-droplet` |
+
+Clarity project ID is always the shared `ymqvcvdc4v`; never a per-site ID.
 
 ---
 
-## 4. Stat counters (in scope)
+## 4. Stat counters
 
-### Current state
-| Group | Microsites |
-|---|---|
-| Markup and JS present | ENT-1, ENT-2, Oncology-2, Pediatrician-5, Radiology-1, Urology-1, Urology-2 |
-| Markup present, no JS | live dhara-sharma |
-| Neither (stats as plain text) | all other templates |
+**Why:** a counter that counts up to a hardcoded `data-count-to` value shows the wrong number
+once the HTML is templated. With `{{experience}}` = 22 and `data-count-to="15"` the page would
+display "15+", and a `data-suffix="k+"` would turn "20000" into "20000k+". The counter must
+read its target from the rendered text instead.
 
-**Current problem:** the existing JS counts up to the hardcoded `data-count-to` value
-instead of the rendered text. So `{{experience}}` = 22 would display as "15+", and a
-`data-suffix="k+"` would turn "20000" into "20000k+".
-
-### Planned approach
-1. One shared counter script (a self-contained IIFE) in each site's
-   `script/index.js`. It replaces the old counter in the 7 templates that have one,
-   rather than duplicating it.
+### Approach
+1. One shared counter script (a self-contained IIFE) in `script/index.js`. It replaces any
+   older counter rather than duplicating it.
 2. Each stat number element gets a `data-counter` hook, whatever its class name.
 3. The target comes from the element's **own text**:
    - `15` → 15 → "15"
@@ -292,80 +600,133 @@ instead of the rendered text. So `{{experience}}` = 22 would display as "15+", a
    - `20k+` → 20 → "20k+"
    - `20,000+` → 20000 → "20,000+" (commas kept)
    - Text that doesn't start with a number is left untouched.
-4. The real value is in the HTML first, so it shows without JavaScript. The script
-   sets it to 0 only once the counter is set up, then counts up when the stat
-   scrolls into view. It runs once. With `prefers-reduced-motion`, it jumps straight
-   to the final value.
-5. The hardcoded third stat uses the same mechanism. Remove `data-count-to` and
-   `data-suffix` everywhere.
-6. dhara-sharma: remove `data-count-to="15"` / `"20"`, add `data-counter`, add the
-   script.
-7. Hardcoded experience or patient numbers in templates ("12+ Years", "8k+ Children
-   Treated") become `{{experience}}` / `{{totalpatient}}`. The label text stays per
-   microsite.
+4. The real value is in the HTML first, so it shows without JavaScript. The script sets it to
+   0 only once the counter is set up, then counts up when the stat scrolls into view. It runs
+   once. With `prefers-reduced-motion`, it jumps straight to the final value.
+5. Remove `data-count-to` and `data-suffix` everywhere.
+6. Hardcoded experience or patient numbers ("12+ Years", "8k+ Children Treated") become
+   `{{experience}}` / `{{totalpatient}}`. The label text stays.
 
 ### Rules for the counter JavaScript
-- Add the counter as a self-contained IIFE **appended to the end** of
-  `script/index.js`, marked with a comment (e.g. `// DigiDr Stat Counter`). Check
-  for that marker first, so it is never added twice.
-- In the 7 templates with the old counter, remove only the old
-  `// Animated Stat Counters` IIFE. Change nothing else in the file.
-- Do not touch the analytics or banner code, or any other script file (§5). (Booking
-  and `chatbot.js` are handled separately — §4b and §4a — since they're now also in
-  scope, but are distinct files/tasks from the counter.)
-- Test with `15`, `15+`, `20k+`, `20,000+`, an empty value and a non-numeric value,
-  and with reduced motion turned on.
+- Append the counter IIFE below to `script/index.js`, marked with the `// DigiDr Stat Counter`
+  comment. Check for that marker first, so it is never added twice.
+- If the template has an older counter (e.g. an `// Animated Stat Counters` IIFE that reads
+  `data-count-to`), remove only that IIFE. Change nothing else in the file.
+- Do not touch the analytics or banner code, or any other script file (§5).
+- Test with `15`, `15+`, `20k+`, `20,000+`, an empty value and a non-numeric value, and with
+  reduced motion turned on.
+
+### Counter code (append verbatim)
+
+```javascript
+// DigiDr Stat Counter
+(function () {
+  const statEls = document.querySelectorAll("[data-counter]");
+  if (!statEls.length) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const DURATION = 1400;
+
+  function parseTarget(text) {
+    const match = text.trim().match(/^([\d,]+)(.*)$/);
+    if (!match) return null;
+    const target = parseInt(match[1].replace(/,/g, ""), 10);
+    if (isNaN(target)) return null;
+    return { target, prefix: match[1], suffix: match[2] || "" };
+  }
+
+  function formatWithCommas(value, template) {
+    if (!template.includes(",")) return String(value);
+    return value.toLocaleString("en-US");
+  }
+
+  function animateCount(el) {
+    const original = el.textContent;
+    const parsed = parseTarget(original);
+    if (!parsed) return;
+
+    const { target, prefix, suffix } = parsed;
+
+    if (prefersReducedMotion) {
+      el.textContent = prefix + suffix;
+      return;
+    }
+
+    el.textContent = "0" + suffix;
+
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / DURATION, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      el.textContent = formatWithCommas(current, prefix) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  statEls.forEach((el) => observer.observe(el));
+})();
+```
+
+### Hero year and fellowship script (append verbatim)
+
+Shows only the year in "Practising since" (the backend may send a full date) and hides the
+fellowship line when it is empty or unrendered (§1):
+
+```javascript
+/* Hero: show only the year in "Practising since"; hide the fellowship line when empty */
+(function () {
+  var since = document.querySelector('[data-practising-since]');
+  if (since) {
+    var m = since.textContent.match(/\b(?:19|20)\d{2}\b/);
+    if (m) since.textContent = m[0];
+  }
+  var fel = document.querySelector('[data-hero-fellowship]');
+  if (fel && (!fel.textContent.replace(/Fellowship:/i, "").trim() || fel.textContent.indexOf("{{") !== -1)) { fel.hidden = true; fel.style.display = "none"; }
+})();
+```
 
 ### Counter checklist (per microsite)
-- [ ] Stat numbers: `{{experience}}` / `{{totalpatient}}` plus the hardcoded third
-      stat, each with `data-counter`.
+- [ ] Stat numbers carry `data-counter` (and the practising-since tile `data-practising-since`).
 - [ ] Remove `data-count-to` and `data-suffix`.
 - [ ] Remove the old counter IIFE, if present.
+- [ ] Remove any older "practising since" / fellowship script (e.g. a `/* Hero: show only the
+      year in "Practising since" */` IIFE); the hero script below replaces it.
 - [ ] Append the shared counter IIFE, if its marker isn't already there.
-- [ ] Live dhara-sharma: the same steps (markup and script).
+- [ ] Append the hero year/fellowship script, if missing.
 
 ---
 
-## 4a. Chatbot widget (in scope: promoted from §5, confirmed with the backend team)
+## 4a. Chatbot widget (in scope, confirmed with the backend team)
 
-The backend team provided the actual `chatbot.js`. It is **in scope now**, alongside
-the stat counter (§4) and the booking code (§4b).
-
-**Checked against all 6 live sites (script-verified):** the code block below matches
-every live `script/chatbot.js` line for line, apart from the `BOT_ICON` line.
-The only other difference is whitespace: the blank line under
-`/* ── Suggestion chips ── */` has 4 trailing spaces on samir-shah and none on the
-others. Whitespace doesn't matter.
+The backend team provided the actual `chatbot.js`. It is **in scope**, alongside the stat
+counter (§4) and the booking code (§4b).
 
 ### What's confirmed
-- **Only `BOT_ICON` differs per site.** `BOT_NAME` (`'Assistant'`), `API_BASE`,
-  `WELCOME_MSG` and all logic are the same on every live site. `BOT_ICON` points at
-  the chatbot icon in the GCS folder of the **template the site was built from**:
-
-  | Live site | `BOT_ICON` folder |
-  |---|---|
-  | Raj-kumar | `microsite-intensivist-2` |
-  | anurag-choudhury | `microsite-general-medicine-1` |
-  | deepak-dabkara | `microsite-oncology-1` |
-  | dhara-sharma | `microsite-ent-1` |
-  | samir-shah | `microsite-pediatrician-1` |
-  | samiran-das | `microsite-dentist-2` |
-
+- **The file is identical on every microsite.** `BOT_NAME` (`'Assistant'`), `BOT_ICON`,
+  `API_BASE`, `WELCOME_MSG` and all logic are literals, not placeholders. `BOT_ICON` is one
+  shared asset for every template:
+  `https://storage.googleapis.com/microsite_buck/microsite-ent-1/assets/chatbot-icon.svg`
+  (it happens to be hosted under that bucket folder, but it is the shared icon for all
+  specialties; don't swap it per template).
 - **Structure:** a self-contained IIFE. Its `injectCSS()` adds
   `<link id="chatbot-css" href="./styles/chatbot.css">` **only if no element with id
   `chatbot-css` exists yet**. It builds the widget as an HTML string and puts it in
   place of a `#chatbot-mount` element if one exists; otherwise it appends it to the
   end of `<body>`.
-- **How the live pages actually use it (verified on all 5 pages of all 6 sites):**
-  - Every page links the stylesheet itself, in `<head>`:
-    `<link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />`.
-    Because the `id` is already there, `injectCSS()` does nothing. **This link is
-    required**: `injectCSS()` uses `./styles/chatbot.css`, which ignores `{{path}}`
-    and would point to the wrong place once the backend serves the page.
-  - Every page loads the script at the end of `<body>`:
-    `<script src="{{path}}/script/chatbot.js" defer></script>`.
-  - **No live page has a `#chatbot-mount` element.** The widget is always appended
-    to `<body>`. Don't add a mount element.
 - **Send flow:** `sendMessage()` posts `FormData` (`Message`) to `POST
   {API_BASE}/api/MicrositeChat?slug={document.body.dataset.slug}` — a **new endpoint**
   not previously listed in this plan's API summary (only booking + analytics were
@@ -380,8 +741,8 @@ others. Whitespace doesn't matter.
   `SUGGESTIONS`, `suggWrap`, `suggestions`, `suggPrev`, `suggNext`, and calls
   `updateSuggArrows()` (guarded with `typeof === 'function'`, so it silently no-ops),
   but the `/* ── Suggestion chips ── */` section that would render and wire them up is
-  empty in every live site. **Decision: implement the file exactly as confirmed,
-  including this gap** — do not add chip-rendering code that doesn't exist live.
+  empty in the deployed file. **Decision: implement the file exactly as confirmed,
+  including this gap** — do not add chip-rendering code that the deployed file doesn't have.
   Still confirm with the backend team (open question 5 below) whether this is an
   intentional disable or a future feature, but that answer does not block rolling out
   this file as-is now.
@@ -390,29 +751,9 @@ others. Whitespace doesn't matter.
   the shared script; harmless (the icon markup itself, `fa-solid fa-xmark`, is
   consistent) and kept as-is since every template already loads Font Awesome.
 
-### Decision (updated): `BOT_ICON` is now one shared URL across all templates
-Superseded the original per-template-GCS-folder convention below. The backend team
-confirmed a single shared icon asset for all templates:
-`https://storage.googleapis.com/microsite_buck/microsite-ent-1/assets/chatbot-icon.svg`
-(hosted under the `microsite-ent-1` folder, but used by every template regardless of
-its own specialty/folder — it is not swapped per template anymore).
-
-Still a hardcoded literal, not a `{{placeholder}}` — every template's
-`script/chatbot.js` has this exact same `BOT_ICON` line now, verbatim, with no
-per-template substitution needed. `BOT_NAME`, `API_BASE`, and `WELCOME_MSG` are also
-literals (not placeholders), copied verbatim from the code below.
-
-**Live sites are unchanged and out of scope for this update.** The 6 live sites (table
-above) and the two `(live)` urology folders still use their own existing per-site GCS
-`BOT_ICON` paths (e.g. `microsite-ayurvedic-1`, `microsite-dentist-2`, etc.) — those
-were deliberately left alone, not migrated to the shared URL. Only the 21 non-live
-templates (all specialty folders + `Default Template`) were switched to the shared
-URL.
-
 ### Exact code to implement in every microsite's `script/chatbot.js`
 
-Copy verbatim, including the `BOT_ICON` line — it is now identical across every
-template, nothing to swap per microsite.
+Copy verbatim. Nothing changes per microsite.
 
 ```javascript
 (function () {
@@ -764,7 +1105,7 @@ template, nothing to swap per microsite.
 })();
 ```
 
-### Required markup (all 5 pages of every template, copied from the live sites)
+### Required markup (every page)
 In `<head>`:
 ```html
 <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
@@ -777,30 +1118,23 @@ At the end of `<body>`, with the other scripts:
   link with the wrong (`./`) path.
 - `<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">` (already required
   by §1 "System"). `sendMessage()` reads `document.body.dataset.slug`.
-- Font Awesome must be loaded (for `fa-solid fa-xmark`). Every template already
-  loads it.
-- **No `#chatbot-mount` element.** No live page has one.
+- Font Awesome must be loaded (for `fa-solid fa-xmark`).
+- **No `#chatbot-mount` element.** The widget is always appended to `<body>`.
 
 ### Chatbot rollout checklist (per template)
-- [x] `script/chatbot.js` = the exact code above, `BOT_ICON` set to the shared URL
-      (`.../microsite-ent-1/assets/chatbot-icon.svg`) — same on every template, no
-      per-template substitution needed. **Correction (2026-09-25):** this was
-      marked done for all 21 non-live templates, but Urology-1/2 still had the old
-      demo `chatbot.js` until their conversion. Check the file on every template
-      as part of its conversion rather than assuming it's done.
-- [ ] `styles/chatbot.css` exists (copy it from a live site if the template has
-      none; don't redesign it).
+- [ ] `script/chatbot.js` = the exact code above. Check the file on every template as part of
+      its conversion; don't assume an older demo `chatbot.js` was already replaced.
+- [ ] `styles/chatbot.css` exists. If the template has none, use the full stylesheet in
+      Appendix P.4; don't redesign it.
 - [ ] The `chatbot-css` link in `<head>` and the `chatbot.js` script tag at the end
-      of `<body>` on all 5 pages, both with `{{path}}`.
+      of `<body>` on every page, both with `{{path}}`.
 - [ ] `<body data-slug="{{slug}}">` is present.
 - [ ] No suggestion-chip code added. Ship the file as it is.
-- [ ] **Live sites: nothing to do.** All 6 already match this section exactly.
-- [ ] **Send icon visible.** `chatbot.js` hardcodes `stroke="white"` on the send
-      icon. If the template styles `.chatbot-send-btn` with a white background, add
-      this to `styles/chatbot.css` (don't edit `chatbot.js`):
-      `.chatbot-send-btn svg path { stroke: currentColor; }`. Added 2026-09-25 to
-      Cardiology-1, Pediatrician-2/3/4, Radiology-1 and Urology-1/2. Ayurvedic-1/2
-      and Gastroenterology-1/2 use a coloured button, so white is already correct.
+- [ ] **Send icon visible.** `chatbot.js` hardcodes `stroke="white"` on the send icon. If the
+      template styles `.chatbot-send-btn` with a white background, add this to
+      `styles/chatbot.css` (don't edit `chatbot.js`):
+      `.chatbot-send-btn svg path { stroke: currentColor; }`. A coloured send button needs
+      nothing (white is already correct).
 
 **Open issue — backend chat replies (not a template bug):** replies from
 `api/MicrositeChat` can contain unfilled placeholders, e.g. *"Welcome to Dr.
@@ -812,36 +1146,27 @@ real details for the slug into the chat prompt. Don't patch it client-side in
 
 ---
 
-## 4b. Booking/appointment code (in scope: promoted from §5, confirmed with the backend team)
+## 4b. Booking/appointment code (in scope, confirmed with the backend team)
 
-The backend team provided the actual booking/appointment JS. It is **in scope now**,
-alongside the stat counter (§4) and the chatbot widget (§4a).
-
-**Checked against the live sites (script-verified, re-checked 2026-10-28 on all 8 live
-`index.js` files):** every code line of the block below is in the `script/index.js` of the
-live sites, including the consent-checkbox check. The only lines not found live are the 4
-section labels (`//Available days section`, `// Appointment section`, `//Slots section`,
-`//Patient appointment section`). The backend team added those to mark the pieces;
-they're optional. **Correction (2026-10-28):** the block's submit handler now reads
-`result?.data?.type ?? result?.type` and `result?.data?.meetLink ?? result?.meetLink`, as
-the live sites do, because the API nests its reply under `data`; the earlier flat
-`result?.type` / `result?.meetLink` lines were out of date. The complete code is in §4c. **The live sites need no booking changes. This rollout is for the
-templates only.**
-
-The rest of each live `index.js` differs from site to site (250–500 lines between any
-two). This section covers only the booking pieces, not the whole file.
+The backend team provided the actual booking/appointment JS. It is **in scope**, alongside the
+stat counter (§4) and the chatbot widget (§4a). The code below matches what runs on the
+deployed DigiDr microsites, including the consent-checkbox check, and was verified on
+2026-10-28 (details in parameterization-log.md). The 4 section-label comments
+(`//Available days section`, etc.) are optional markers. The submit handler reads
+`result?.data?.type ?? result?.type` and `result?.data?.meetLink ?? result?.meetLink` because
+the API nests its reply under `data`.
 
 ### Where this code goes: 4 pieces, not one block
 Unlike `chatbot.js` (§4a), this is **not a self-contained file or IIFE**. Don't paste
-it as one top-level block. The 4 pieces sit in two IIFEs in `script/index.js`
-(line numbers from `live microsites/samiran-das/script/index.js`, the reference file):
+it as one top-level block. The 4 pieces sit in two IIFEs in `script/index.js` (both IIFEs are
+given in full in §4c):
 
-| Piece | Goes inside | samiran-das lines |
-|---|---|---|
-| 1. `loadAvailableDays` | `initDatePicker` IIFE, straight after `const doctorId = form.dataset.userid; let availableDays = null;`. Followed by `window.__onAppointmentTypeChange = loadAvailableDays; loadAvailableDays("offline");` | ~236–253 |
-| 2. Appointment availability | Booking-modal IIFE, straight after the `doctorId` / `clinic*` / tab declarations and `let isOnlineAvailable`, `isOfflineAvailable`, `compressedFile` | ~615–681 |
-| 3. Slots `change` handler | Booking-modal IIFE, after `preferredDateInput` / `preferredTimeSelect` are declared (~904–905) | ~1011–1053 |
-| 4. `let isSubmitting` + submit handler | Booking-modal IIFE, after the slots handler | ~1056–1226 |
+| Piece | Goes inside |
+|---|---|
+| 1. `loadAvailableDays` | `initDatePicker` IIFE, straight after `const doctorId = form.dataset.userid; let availableDays = null;`. Followed by `window.__onAppointmentTypeChange = loadAvailableDays; loadAvailableDays("offline");` |
+| 2. Appointment availability | Booking-modal IIFE, straight after the `doctorId` / `clinic*` / tab declarations and `let isOnlineAvailable`, `isOfflineAvailable`, `compressedFile` |
+| 3. Slots `change` handler | Booking-modal IIFE, after `preferredDateInput` / `preferredTimeSelect` are declared |
+| 4. `let isSubmitting` + submit handler | Booking-modal IIFE, after the slots handler |
 
 The pieces use variables and functions the two IIFEs declare themselves: `form`,
 `doctorId`, `availableDays`, `render()`, `clinicName`, `clinicAddress`,
@@ -850,9 +1175,11 @@ The pieces use variables and functions the two IIFEs declare themselves: `form`,
 `preferredDateInput`, `preferredTimeSelect`, `submitBtn`, `filePreviewDiv`,
 `bookingLoader`, `iti`, `phoneUtilsReady`, `compressedFile`, `showError()`,
 `clearErrors()`, `validateEmail()`, `validateDateNotPast()`, `showPopup()`,
-`closeModal()`, plus the top-level `API_BASE`. For a template with no booking
-integration, copy the whole date-picker and booking-modal IIFEs from samiran-das
-(they include all of these), then compare the 4 pieces against the block below.
+`closeModal()`, plus the top-level `API_BASE`. For a template with no booking integration,
+copy the whole date-picker and booking-modal IIFEs from §4c (they include all of these), then
+compare the 4 pieces against the block below. **Delete the template's old booking code**
+(e.g. a `// Booking Modal (frontend demo — no API)` IIFE, and any separate date-picker IIFE) in
+the same step. Two booking IIFEs on one page both bind the form and double-submit.
 
 ### The 4 pieces
 1. **Available days** — `loadAvailableDays(type)`: `GET
@@ -887,7 +1214,7 @@ integration, copy the whole date-picker and booking-modal IIFEs from samiran-das
 **Consent check — required in every template:** the booking form has `novalidate`,
 so the browser never enforces `required` on the consent checkbox. The
 `if (!consentGiven)` block in piece 4 is the only thing that stops a booking without
-consent. All 6 live sites already have it. Every template must have it too.
+consent. Every template must have it.
 
 ### Exact code (the 4 pieces, verbatim from the backend team)
 
@@ -1181,83 +1508,62 @@ let isSubmitting = false;
 
 ### Booking rollout checklist (per template)
 - [ ] `script/index.js` has the date-picker IIFE and the booking-modal IIFE with every
-      variable and function listed above. The 26 templates with no booking
-      integration copy both IIFEs from samiran-das.
+      variable and function listed above (copy both from §4c if the template has no booking
+      integration).
 - [ ] The 4 pieces are in the places given in the table above and match the code
       block line for line (the 4 section-label comments are optional).
 - [ ] The `if (!consentGiven)` check is present.
 - [ ] The booking form has `data-userid`, `data-clinicname`, `data-address`,
-      `data-district`, `data-state` and `data-pincode` (§1 "System"). All 6 live
-      sites have these.
-- [ ] Cardiology-1: it already has part of this (no `getavailabledays`, no
-      booking-form data attributes, see §5). Add only what's missing.
+      `data-district`, `data-state` and `data-pincode` (§1 "System").
+- [ ] If the template already has part of this (e.g. no `getavailabledays`, or no booking-form
+      data attributes), add only what's missing.
 - [ ] Don't touch analytics or banner code (still deferred, §5). Chatbot is its own
       file (§4a).
 - [ ] **Verify the booking system after parameterization (mandatory).** Once the template
       is parameterized (placeholders in the HTML, `-param` folder), run the verification
-      in §4c "Verify the booking system after parameterization" and record the result in
-      the template's row in §0. Do not mark a template Done until it passes.
-- [ ] **Live sites: nothing to do.** All 6 already contain every line.
+      in §4c "Verify the booking system after parameterization" and record the result
+      (date, who ran it, what failed). Do not mark a template Done until it passes.
 
 ---
 
-## 4c. Full booking system — reference code from the live microsites
+## 4c. Full booking system — reference code
 
-§4b lists the four booking pieces. This section holds the **complete booking code** that
-runs on the live microsites, so a template can be wired up without opening a live site.
-It is copied verbatim from `live microsites/samiran-das/script/index.js` (the reference
-file named in §4b).
+§4b lists the four booking pieces. This section holds the **complete booking code** that runs
+on the deployed microsites, so a template can be wired up from this file alone.
 
-**Checked against the other live sites (script-verified, 2026-10-28):**
-- Lines 87–277 (phone plugin + `initDatePicker`) are byte-identical on samiran-das,
-  Raj-kumar, anurag-choudhury, deepak-dabkara, samir-shah and dhara-sharma.
-- The `Booking Modal & Form Validation` IIFE (samiran-das lines 477–1257) is identical on
-  Raj-kumar, anurag-choudhury, deepak-dabkara and samir-shah except for analytics hooks:
-  they call `window.trackEvent?.("consent_checkbox_click", { checked })` and
-  `window.trackEvent?.("report_uploaded")` (samiran-das sends a `file_type` param instead),
-  and samir-shah also defines `window.__trackBookingSuccess` inside the modal IIFE.
-  On the other live sites `window.__trackBookingSuccess` is defined in a separate
-  analytics block later in `index.js` (samiran-das line 1339, outside the code below), and
-  the booking submit handler calls it as `window.__trackBookingSuccess?.(type)`. That
-  analytics block is not part of this section (analytics is §5 / AGENTS.md §40). Keep the
-  `?.` calls so the booking works when the hook is absent.
-- nirav-rada and dr-ashok-s-gowda were not compared line by line (their `initDatePicker` /
-  booking-modal blocks sit at different places in the file, or are absent); samiran-das is
-  the reference.
+**Analytics hooks.** The booking-modal IIFE calls `window.trackEvent?.(…)` and
+`window.__trackBookingSuccess?.(type)`. Both are optional: `trackEvent` comes from
+`script/analytics.js` (Appendix P.3) and `__trackBookingSuccess` may be defined by a separate
+analytics block. Keep the `?.` calls so the booking works when a hook is absent. **But define
+`__trackBookingSuccess`**, or the GA4 `booking_submitted` event is never sent. Append this to
+`index.js` if the template doesn't define it already:
 
-**VERIFICATION STATUS — verified twice; the booking code below is working.**
-This is the booking code from the live microsites. It was checked in two separate passes
-on 2026-10-28, and both passed:
-1. **Pass 1 — static check + mocked-API run, all 8 live microsites** (Raj-kumar,
-   anurag-choudhury, deepak-dabkara, dhara-sharma, dr-ashok-s-gowda, nirav-rada,
-   samir-shah, samiran-das): `node --check` syntax OK on every file; the four booking
-   pieces compared against §4b (identical, apart from the `data` nesting fixed above);
-   then each site's real `index.html` + `index.js` run in jsdom with a mocked `fetch`.
-   Scenarios: clinic booking, online booking with a reply nested under `data`, consent
-   unticked (request correctly blocked), online-only, clinic-only and neither mode offered.
-   Result: no JavaScript errors, correct availability / slots / `patient_appointment`
-   calls, correct confirmation popup.
-2. **Pass 2 — real HTTP round trip.** The same code was run against a local server that
-   decodes the request. The server received a `multipart/form-data` POST to
-   `/api/Patient_Appointment/patient_appointment` with `DoctorId`, `FullName`, `Phone`,
-   `Email`, `Date`, `Type`, `Day`, `SlotId`, `Time` and `Reason` (plus `Upload` when a
-   report is attached), for both clinic and online bookings, and the page showed the right
-   confirmation popup. No JavaScript errors.
+```javascript
+// GA4 booking_submitted (AGENTS.md §40). The booking code calls this after a successful
+// booking with "online" or "offline"; without it the event is never sent.
+window.__trackBookingSuccess = function (type) {
+  window.trackEvent?.("booking_submitted", { appointment_type: type });
+};
+```
+ Some deployed
+copies send `window.trackEvent?.("report_uploaded")` without a `file_type` param; either form is
+fine, as long as no patient-entered data is sent.
 
-**Limits of that verification:** the real DigiDr backend was not called (a test booking
-would create a real appointment), so acceptance of the request by the live API is still
-to be confirmed with one test booking on a staging backend or an agreed live doctor. The
-phone library (intl-tel-input) was stubbed, and calendar clicks, file-picker dialogs and
-layout were driven by script, not in a real browser.
+**Verification status: verified twice (2026-10-28), working.** A static check plus a mocked-API
+run (clinic booking, online booking with a reply nested under `data`, consent unticked, online-only,
+clinic-only and neither mode) and a real HTTP round trip against a local server that decoded the
+multipart request. The real DigiDr backend was not called; acceptance by the live API still needs
+one test booking on a staging backend or an agreed doctor. The phone library was stubbed and
+calendar clicks / file pickers were driven by script, not a real browser. Full record in
+parameterization-log.md.
 
-**Known gap (all live sites):** no live `index.html` has a
-`.booking-error[data-error-for="consentCheckbox"]` element, so the "Please provide consent
-to proceed." message has nowhere to show. The booking is still blocked correctly; add that
-error element to the markup if the message should be visible.
+**Consent error element.** Add `<p class="booking-error" data-error-for="consentCheckbox"></p>`
+after the consent label if the "Please provide consent to proceed." message should be visible.
+Without it the booking is still blocked correctly, but the message has nowhere to show.
 
 **Where it goes in `script/index.js`, in this order:** (A) the top-level helpers, then
 (B) the phone plugin and date-picker, then (C) the booking-modal IIFE. The four §4b
-pieces are already inside (B) and (C). The live code has no section-label comments (the
+pieces are already inside (B) and (C). The code has no section-label comments (the
 `//Available days section` style labels in §4b are optional); find the pieces by the
 function and endpoint names.
 
@@ -1273,7 +1579,7 @@ function and endpoint names.
   `[data-cal-next]`), `#preferredTime` (only the `Select Time Slot` option), `reason`,
   `report` (file), `consentCheckbox`.
 - `#submitBtn`, `#bookingLoader`, `#filePreview`, `.booking-error[data-error-for]`.
-- Phone input: intl-tel-input v29.2.2 from jsDelivr (AGENTS.md §25) loaded before `index.js`.
+- Phone input: intl-tel-input v29.2.2 from jsDelivr, CSS and JS loaded before `index.js` (tags in §3.1).
 - `<body data-slug>` / `<body data-micrositeid>` as in §1 "System".
 
 ### Booking behaviour summary
@@ -1289,7 +1595,7 @@ function and endpoint names.
 5. Uploads are PDF/JPG/PNG up to 5 MB; images are shrunk by `compressImage` (max 800px,
    JPEG 0.5) before being sent as `Upload`.
 
-### (A) Top-level helpers — samiran-das lines 1–43
+### (A) Top-level helpers
 
 ```javascript
 const API_BASE = "https://digidrapi.digidr.app";
@@ -1337,7 +1643,7 @@ function blobToFile(blob, fileName) {
 }
 ```
 
-### (B) Phone plugin and date picker — samiran-das lines 87–277
+### (B) Phone plugin and date picker
 
 Contains piece 1 (`loadAvailableDays`, §4b) plus the calendar `render()`.
 
@@ -1535,7 +1841,7 @@ initPhonePlugin();
 
 ```
 
-### (C) Booking modal and form validation — samiran-das lines 477–1257
+### (C) Booking modal and form validation
 
 Contains pieces 2, 3 and 4 (§4b): appointment availability, slots, and the submit handler
 with the consent check.
@@ -1565,6 +1871,7 @@ with the consent check.
             // Programmatic syncs from the consent modal are reported by that
             // flow's own events — don't log them as user checkbox clicks.
             if (!event.isTrusted) return;
+            window.trackEvent?.("consent_checkbox_click", { checked: consentCheckbox.checked });
         });
 
         // Intercept disabled property sets to respect consent checkbox state
@@ -2365,60 +2672,46 @@ done:
 Record the date, who ran it, and anything that failed. A template whose booking has not
 been verified this way is not Done.
 
+
 ---
 
 ## 5. JavaScript: analytics, banner and auto-open-modal (deferred)
 
-What the repo shows. The booking and chatbot parts are now in §4b and §4a. Everything
-else here is reference only (**do not implement yet**):
+Reference only (**do not implement yet**):
 
-- All 6 live `index.js` files share the same backend integration:
+- The deployed microsites share one backend integration:
   - `API_BASE = "https://digidrapi.digidr.app"`
   - Booking: `api/Patient_Appointment/getavailabledays`, `getslots`,
-    `getappointment`, `patient_appointment`
+    `getappointment`, `patient_appointment` (§4b, §4c)
+  - Chat: `api/MicrositeChat?slug=` (§4a)
   - Analytics: `api/MicrositeAnalytics/analytics/track`
+  - Visitor count: `api/Microsite/{micrositeId}/visit` (§5b)
   - Reads `data-userid`, `data-clinicname`, `data-address`, `data-district`,
     `data-state`, `data-pincode` (booking form) and `data-micrositeid` (`<body>`).
-- 26 of 27 template `index.js` files have **none** of this. Cardiology-1 has part of
-  it (missing `getavailabledays` and the booking-form data attributes).
-- Other live script files:
+- Other script files:
   | File | Notes |
   |---|---|
-  | `analytics.js` | 3 versions across the live sites |
-  | `banner-module.js` | Identical on 5 live sites; dhara-sharma's matches the template |
-  | `chatbot.js` | Confirmed identical on every live site except `BOT_ICON` — now in scope, see §4a |
-  | `auto-open-modal.js` | Present everywhere but **not loaded by any HTML page** |
-
-**Booking/appointment code:** promoted to in-scope — see §4b. **Chatbot:** promoted
-to in-scope — see §4a.
+  | `analytics.js` | GA4 + Clarity event helper (Appendix P.3). Leave as is during a conversion; add it if missing. |
+  | `banner-module.js` | Shared banner script (Appendix P.2). Leave as is; add it if missing. |
+  | `chatbot.js` | In scope, §4a |
+  | `auto-open-modal.js` | Not loaded by any HTML page. Leave as is; don't add a `<script>` for it. |
 
 **Still not covered:** `MicrositeAnalytics/analytics/track`, `banner-module.js`, and
-`auto-open-modal.js` — the open questions below about those still stand.
-
-Open questions for the backend team:
-1. Is the repo copy of the live JS the same as what's deployed? *(For booking and
-   `chatbot.js`, the backend team's code matches the repo copy on all 6 live sites.
-   Still open for analytics, banner and auto-open-modal.)*
+`auto-open-modal.js`. Open questions for the backend team:
+1. Is the repo copy of the analytics, banner and auto-open-modal JS the same as what's deployed?
 2. Does the backend add any scripts to the page when it renders it? For example, is
    that how `auto-open-modal.js` gets loaded?
-3. ~~What differs per site in `chatbot.js`?~~ **Answered — see §4a:** only `BOT_ICON`
-   (a per-microsite asset URL). Everything else — including the incomplete
-   suggestion-chip wiring — is identical across all 6 live sites.
-4. Which request and response fields do the booking and analytics APIs require?
-   *(Answered for booking — see §4b; answered for chat (`api/MicrositeChat?slug=`,
-   `FormData.Message` → `{reply|message|answer|response}`) — see §4a; analytics still
-   open.)*
-5. Is the empty "Suggestion chips" section in `chatbot.js` an intentional disable or
+3. Which request and response fields does the analytics API require? (Booking: §4b. Chat:
+   `api/MicrositeChat?slug=`, `FormData.Message` → `{reply|message|answer|response}`, §4a.)
+4. Is the empty "Suggestion chips" section in `chatbot.js` an intentional disable or
    an unfinished feature to complete later? (See §4a.)
-6. ~~Does the live `index.js` already have the consent-checkbox fix?~~ **Answered:**
-   yes, on all 6 live sites (see §4b).
 
 ---
 
 ## 5b. Visitor counter (in scope, `index.html`, `privacy-policy.html` and `terms-of-service.html`)
 
 This inline script goes at the end of **every page whose footer has the visitor badge**
-(`index.html` and both legal pages), before `</body>`, verbatim (full rule: AGENTS.md §44)
+(`index.html` and both legal pages), before `</body>`, verbatim
 (the old empty-testimonials cleanup script was removed along with the section):
 
 ```html
@@ -2440,22 +2733,14 @@ This inline script goes at the end of **every page whose footer has the visitor 
 </script>
 ```
 
+
 Requirements:
 - `<body data-micrositeid="{{micrositeId}}" ...>`.
-- A footer element with `id="visitorCount"` (e.g. the `.footer-visitor-badge` markup
-  used in Cardiology-1).
-
-- The old localStorage visitor placeholder in `script/index.js` must return early
-  when `.footer-visitor-badge` already exists, or it overwrites the real count.
-
-Status (2026-09-25): present in all 11 parameterized templates. Radiology-1 and
-Urology-1/2 were added last: badge at the top of `.footer-bottom-row`, placeholder
-JS switched to the early-return guard.
-
-Radiology-1 (updated): the badge now sits under the Privacy Policy / Terms of Service
-links inside the Legal column (`.footer-links-group`), not in `.footer-bottom-row`. The
-static "No. of Visitor: 500" duplicate was removed from `index.html` — only the live
-`#visitorCount` badge remains.
+- A footer element with `id="visitorCount"`, inside the `.footer-visitor-badge` markup (markup
+  and CSS in Appendix P.1).
+- The old localStorage visitor placeholder in `script/index.js` (if the template has one) must
+  return early when `.footer-visitor-badge` already exists, or it overwrites the real count.
+- Never a hardcoded count (e.g. "500") next to or instead of the live badge.
 
 ---
 
@@ -2480,35 +2765,9 @@ link from `{{code}}{{phone}}`.
 separate placeholder for one. If a future doctor is outside India this will need
 revisiting; not a concern for the current roster.
 
-**What was actually found on the 6 live sites (corrects this section's earlier,
-wrong claim that all 42 live WhatsApp icons use `{{whatsapp}}`):** the live sites
-are **internally inconsistent** between page types —
-- `index.html` (hero + footer, all 6 sites, 12 icons): unconditional
-  `href="https://wa.me/{{code}}{{phone}}"` — no `{{#hasWhatsapp}}`/`{{#noWhatsapp}}`
-  gating at all, and built from the clinic phone, not a WhatsApp number. This is a
-  bug matching the one found and fixed in the Ayurvedic-1 template (§6/checklist) —
-  **still present on live sites, not yet fixed there.**
-- `privacy-policy.html`, `terms-of-service.html`
-  (all 6 sites, 30 icons): already `{{#hasWhatsapp}}<a href="{{whatsapp}}">…`,
-  matching the "own field" decision above, but missing the `https://wa.me/` prefix
-  now that `{{whatsapp}}` is confirmed to be a bare number — currently broken links.
-- One stray `href="#"` on dhara-sharma's `index.html` (unclear whether that's a third
-  inconsistency or a copy-paste leftover — not yet investigated).
-
-**Rollout:**
-- [x] Every template converted so far (Ayurvedic-1, Ayurvedic-2): `index.html`,
-      `privacy-policy.html`, `terms-of-service.html` — WhatsApp icon wrapped in
-      `{{#hasWhatsapp}}`/`{{#noWhatsapp}}`, `href="https://wa.me/91{{whatsapp}}"`. Apply the same rule to every template converted from here on.
-- [x] Live sites (done 2026-09-24): all 6 `index.html` files fixed — dropped the
-      unconditional `https://wa.me/{{code}}{{phone}}` construction (which also had
-      no has/no gating), replaced with `{{#hasWhatsapp}}<a
-      href="https://wa.me/91{{whatsapp}}">…{{/hasWhatsapp}}` +
-      `{{#noWhatsapp}}<span …>…{{/noWhatsapp}}`, matching each site's own existing
-      class names and `data-ga-label` style. All 6 sites' `privacy-policy.html` and
-      `terms-of-service.html` got the `https://wa.me/91` prefix added.
-- [x] dhara-sharma's `index.html` stray `href="#"` WhatsApp icon (line 242,
-      investigated): it's inside an HTML comment (dead scaffold markup, never
-      rendered), not a second live icon. No action needed.
+The disabled state is the `{{#noWhatsapp}}` span shown in §1. Never build the link from
+`{{code}}{{phone}}`, and never leave a bare `href="{{whatsapp}}"` without the `https://wa.me/91`
+prefix (that is a broken link).
 
 ---
 
@@ -2531,11 +2790,11 @@ For each `<Specialty>/microsite-*/` folder:
       `/{{slug}}/privacy-policy`, `/{{slug}}/terms-of-service`.
       Never a bare `index.html` / `privacy-policy.html` / `terms-of-service.html`. Same-page `#anchor` links on index.html stay as they are.
 
+
 **index.html**
 - [ ] Hero: `{{profile}}`, `{{awards}},{{education}}`, `{{#hasmic}}{{mci}}`,
-      `{{languages}}`, `{{experience}}`, `{{totalpatient}}`. The third stat stays
-      hardcoded. Optional extra line (Radiology-1): `{{#hasFellowship}}Fellowship:
-      {{fellowship}}{{/hasFellowship}}`.
+      `{{languages}}`, the stat tiles (§1 "Hero stat tiles"). Optional fellowship line:
+      `{{#hasFellowship}}Fellowship: {{fellowship}}{{/hasFellowship}}` (comment-wrapped, §1).
 - [ ] Banner block wrapped in `{{#has_banner}}` with the banner fields.
 - [ ] About: title and subtitle has_/no_ pairs, `{{introduction}}`.
 - [ ] Services: title and subtitle pairs, cards become a `{{#services}}` loop
@@ -2551,18 +2810,25 @@ For each `<Specialty>/microsite-*/` folder:
 - [ ] `<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">` and the booking
       form data attributes.
 - [ ] Script and style URLs prefixed with `{{path}}`.
+- [ ] `<head>`, end-of-body scripts and JSON-LD as in §3.1: `https://digidr.app/{{slug}}/`
+      canonical and `og:url`, `{{profile}}` image, Clarity `microsite` = `{{slug}}` and
+      `specialty` from §3.4. No `example.com` and no TODO comment left.
 
 **privacy-policy.html / terms-of-service.html**
 - [ ] Effective Date → `{{date}}` (currently "1 June 2026" or "[Insert Date]").
 - [ ] Doctor name, contact details and social rows as above.
+- [ ] `<head>` as in §3.2 (canonical and `og:url` without `.html`); Back link `/{{slug}}`.
+
+**robots.txt / sitemap.xml / llms.txt**
+- [ ] As in §3.3: `digidr.app` URLs with `{{slug}}`, no `.html`, top comment kept.
+
 
 **Template-specific**
-- [ ] ENT-1, Neurology-1, Pediatrician-1: comment out `<section id="social-media">`
-      and any `#social-media` links.
-- [ ] Intensivist-1: keep the `technology` section and the "ICU Availability" /
-      "Family Briefings" contact blocks hardcoded.
-- [ ] ENT-1 / ENT-2: both sample doctor names in each ("Sarah Jenkins" plus "Anand" or
-      "Khanna") become `Dr. {{full_name}}` outside the FAQ.
+- [ ] Comment out any hand-written mock `<section id="social-media">` and its `#social-media`
+      links (Decision 5).
+- [ ] Keep sections unique to this template hardcoded (Decision 8).
+- [ ] Templates with more than one sample doctor name (e.g. a different name in the About bio)
+      convert every one of them to `Dr. {{full_name}}` outside the FAQ.
 
 **Counter:** complete the counter checklist in §4.
 
@@ -2573,3 +2839,1316 @@ For each `<Specialty>/microsite-*/` folder:
 **Do not touch:** `script/*.js`, except for the counter IIFE (§4), `chatbot.js`
 (§4a), and the booking-modal splice (§4b) — analytics, banner, and
 `auto-open-modal.js` stay deferred (§5).
+
+---
+
+## Appendix P. Shared files a template may be missing
+
+A microsite built to the current standard already has all of these. Older templates may lack one
+or more; add the missing ones verbatim during the conversion. Every colour is a site token
+(`--brand`, `--brand-dark`, `--accent`, `--accent-dark`, `--accent-rgb` as an `r, g, b` triplet,
+`--bg-2`, `--surface`, `--border`, `--text`, `--muted`, `--radius-sm`). If the template names its
+tokens differently, map them in `:root` (e.g. `--accent: var(--amber);`) rather than editing
+these files.
+
+### P.1 Footer visitor badge (§5b)
+
+Markup, on all three pages: inside the footer's right-hand column (under the Legal links) where
+the footer has one, or, in an older single-column footer, directly before the copyright line:
+
+```html
+<div class="footer-visitor-badge" role="status">
+  <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+  <span class="footer-visitor-badge-label">No. of Visitor:</span>
+  <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
+</div>
+```
+
+CSS for a dark footer (invert the light-on-dark colours if the footer background is light):
+
+```css
+.footer-visitor-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 18px;
+  line-height: 1.4;
+  max-width: 100%;
+  color: #ffffff !important;
+}
+.footer-visitor-badge i,
+.footer-visitor-badge .footer-visitor-badge-icon { font-size: 16px; color: #ffffff !important; }
+.footer-visitor-badge span,
+.footer-visitor-badge .footer-visitor-badge-label { color: #f1f5f9 !important; font-weight: 500; }
+.footer-visitor-badge .footer-visitor-badge-count { font-weight: 700; color: #ffffff !important; font-variant-numeric: tabular-nums; }
+```
+
+### P.2 Banner module, parameterized (§1 "Banner")
+
+The first child of the hero section. The backend renders it only when the doctor has an active
+banner:
+
+```html
+{{#has_banner}}
+<div
+  class="digidr-banner-module single-image-banner-section"
+  id="digidrBannerModule"
+  data-banner-active="true"
+  data-banner-start="{{banner_start}}"
+  data-banner-end="{{banner_end}}"
+  aria-label="Main Clinic Banner"
+  data-banner-src="{{banner_src}}"
+  data-banner-src-mobile="{{banner_src_mobile}}"
+  data-banner-alt="{{banner_alt}}"
+  data-banner-href="#"
+>
+  <div class="container digidr-banner-container single-image-banner-container">
+    <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+      <div class="digidr-banner-wrap single-image-banner-wrap">
+        <picture>
+          <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
+          <img src="{{banner_src}}" alt="{{banner_alt}}" class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
+        </picture>
+      </div>
+    </a>
+  </div>
+</div>
+{{/has_banner}}
+```
+
+`styles/banner-module.css`:
+
+```css
+/* ==========================================================================
+   DigiDr Modular Banner System — Component Stylesheet
+   ========================================================================== */
+
+.digidr-banner-module {
+  width: 100%;
+  margin-top: 16px;
+  padding: 10px 0 24px;
+  background-color: transparent;
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1; /* Elevate banner above absolute background patterns */
+}
+
+.digidr-banner-module[data-banner-active="false"] {
+  display: none !important;
+}
+
+.digidr-banner-container {
+  /* Width comes from shared .container so banner aligns with hero cards */
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.digidr-banner-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  cursor: default;
+}
+
+.digidr-banner-link[href]:not([href="#"]) {
+  cursor: pointer;
+}
+
+.digidr-banner-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(214, 51, 132, 0.14), 0 4px 15px rgba(0, 0, 0, 0.04);
+  border: 3px solid #ffffff;
+  background: #ffffff;
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+}
+
+.digidr-banner-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 2.5; /* Fixed banner ratio on desktop */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease, filter 0.3s ease;
+  max-width: 100%;
+}
+
+.digidr-banner-link[href]:not([href="#"]):hover .digidr-banner-img,
+.digidr-banner-wrap:hover .digidr-banner-img {
+  transform: scale(1.012);
+}
+
+@media (max-width: 768px) {
+  .digidr-banner-section,
+  .digidr-banner-module {
+    margin-top: 10px;
+    padding: 10px 0 16px;
+  }
+  .digidr-banner-wrap {
+    border-radius: 14px;
+    border-width: 2px;
+  }
+  .digidr-banner-img {
+    aspect-ratio: 16 / 5; /* Force 16:5 aspect ratio on mobile for readability */
+    max-height: none;
+  }
+}
+```
+
+`script/banner-module.js`:
+
+```javascript
+/**
+ * DigiDr Modular Banner System — Client & Backend API Module
+ * ============================================================
+ * Provides an easy, developer-friendly interface for backend integration.
+ * 
+ * Features:
+ * 1. Global Manual On/Off Toggle (`DigiDrBanner.enabled`)
+ * 2. Automated Date & Time Scheduling (`DigiDrBanner.schedule`)
+ * 3. HTML Data-Attributes or Programmatic JS API
+ */
+
+(function (window, document) {
+  'use strict';
+
+  var DEFAULT_SELECTOR = '#digidrBannerModule, .digidr-banner-module';
+
+  var DigiDrBanner = {
+    // 1. GLOBAL MANUAL TOGGLE: Set to false to force-disable the banner system instantly
+    enabled: true,
+
+    // 2. DATE & TIME SCHEDULING CONFIGURATION:
+    // Allows scheduling banners for any specific timeframe in the future.
+    // Format: ISO 8601 string or Date format (e.g., 'YYYY-MM-DDTHH:mm:ss+05:30')
+    schedule: {
+      enabled: true, // Set to false to bypass schedule checks and rely only on manual toggle
+      startDate: '2026-08-11T00:00:00+05:30', // Campaign Start (Today)
+      endDate: '2026-08-15T23:59:59+05:30'    // Campaign End (15 August 11:59 PM IST)
+    },
+
+    /**
+     * Check if current time falls within scheduled start and end dates
+     * @returns {boolean}
+     */
+    isWithinSchedule: function () {
+      if (!this.schedule || !this.schedule.enabled) {
+        return true;
+      }
+
+      var now = new Date();
+
+      if (this.schedule.startDate) {
+        var start = new Date(this.schedule.startDate);
+        if (!isNaN(start.getTime()) && now < start) {
+          return false;
+        }
+      }
+
+      if (this.schedule.endDate) {
+        var end = new Date(this.schedule.endDate);
+        if (!isNaN(end.getTime()) && now > end) {
+          return false;
+        }
+      }
+
+      return true;
+    },
+
+    /**
+     * Programmatically update schedule parameters for future campaigns
+     * @param {Object} scheduleConfig
+     * @param {string|Date} [scheduleConfig.startDate]
+     * @param {string|Date} [scheduleConfig.endDate]
+     * @param {boolean} [scheduleConfig.enabled]
+     */
+    setSchedule: function (scheduleConfig) {
+      if (!scheduleConfig) return;
+      if (typeof scheduleConfig.enabled !== 'undefined') {
+        this.schedule.enabled = !!scheduleConfig.enabled;
+      }
+      if (scheduleConfig.startDate) {
+        this.schedule.startDate = scheduleConfig.startDate;
+      }
+      if (scheduleConfig.endDate) {
+        this.schedule.endDate = scheduleConfig.endDate;
+      }
+      this.init();
+    },
+
+    /**
+     * Get target DOM element(s)
+     */
+    getElement: function () {
+      return document.querySelector(DEFAULT_SELECTOR);
+    },
+
+    /**
+     * Update banner content & visibility dynamically
+     * @param {Object} config
+     * @param {string} [config.src] - Desktop Image URL
+     * @param {string} [config.srcMobile] - Mobile Image URL
+     * @param {string} [config.alt] - Accessible alt text
+     * @param {string} [config.href] - Destination click URL
+     * @param {boolean} [config.active] - Visible state (true|false)
+     */
+    setBanner: function (config) {
+      if (!config) return;
+      var el = this.getElement();
+      if (!el) return;
+
+      // Handle global disabled toggle
+      if (!this.enabled) {
+        el.style.display = 'none';
+        el.setAttribute('data-banner-active', 'false');
+        return;
+      }
+
+      var img = el.querySelector('#digidrBannerImg, .digidr-banner-img');
+      var link = el.querySelector('#digidrBannerLink, .digidr-banner-link');
+      var sourceMobile = el.querySelector('source');
+
+      if (typeof config.active !== 'undefined') {
+        el.setAttribute('data-banner-active', config.active ? 'true' : 'false');
+        if (!config.active) {
+          el.style.display = 'none';
+          return;
+        } else {
+          el.style.display = '';
+        }
+      }
+
+      if (config.src && img) {
+        img.src = config.src;
+        el.setAttribute('data-banner-src', config.src);
+      }
+
+      if (config.srcMobile && sourceMobile) {
+        sourceMobile.srcset = config.srcMobile;
+        el.setAttribute('data-banner-src-mobile', config.srcMobile);
+      }
+
+      if (config.alt && img) {
+        img.alt = config.alt;
+        el.setAttribute('data-banner-alt', config.alt);
+      }
+
+      if (typeof config.href !== 'undefined' && link) {
+        if (config.href && config.href !== '#') {
+          link.href = config.href;
+          link.removeAttribute('tabindex');
+          el.setAttribute('data-banner-href', config.href);
+        } else {
+          link.removeAttribute('href');
+          el.setAttribute('data-banner-href', '#');
+        }
+      }
+    },
+
+    /**
+     * Show banner
+     */
+    show: function () {
+      this.setBanner({ active: true });
+    },
+
+    /**
+     * Hide banner
+     */
+    hide: function () {
+      this.setBanner({ active: false });
+    },
+
+    /**
+     * Fetch banner data from a REST API endpoint
+     * @param {string} endpointUrl - API URL returning { src, alt, href, active, startDate, endDate }
+     */
+    loadFromEndpoint: function (endpointUrl) {
+      var self = this;
+      if (!endpointUrl) return;
+
+      fetch(endpointUrl)
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data) {
+            if (data.startDate || data.endDate) {
+              self.setSchedule({
+                startDate: data.startDate || data.start_date,
+                endDate: data.endDate || data.end_date
+              });
+            }
+            self.setBanner({
+              src: data.src || data.banner_image || data.imageUrl,
+              srcMobile: data.srcMobile || data.banner_image_mobile || data.imageUrlMobile || data.src_mobile || data.imageUrl_mobile,
+              alt: data.alt || data.banner_alt || data.altText,
+              href: data.href || data.target_url || data.linkUrl,
+              active: typeof data.active !== 'undefined' ? data.active : (data.status === 'active' || true)
+            });
+          }
+        })
+        .catch(function (err) {
+          console.warn('[DigiDr Banner] Failed to load banner from endpoint:', err);
+        });
+    },
+
+    /**
+     * Initialize data attributes and schedule checks on load
+     */
+    init: function () {
+      var el = this.getElement();
+      if (!el) return;
+
+      // 1. Handle global manual toggle
+      if (!this.enabled) {
+        el.style.display = 'none';
+        return;
+      }
+
+      // Read schedule override attributes from HTML if present
+      var dataStart = el.getAttribute('data-banner-start');
+      var dataEnd = el.getAttribute('data-banner-end');
+      if (dataStart) this.schedule.startDate = dataStart;
+      if (dataEnd) this.schedule.endDate = dataEnd;
+
+      // 2. Handle Date & Time Schedule window check
+      if (!this.isWithinSchedule()) {
+        el.style.display = 'none';
+        return;
+      }
+
+      var active = el.getAttribute('data-banner-active');
+      var src = el.getAttribute('data-banner-src');
+      var srcMobile = el.getAttribute('data-banner-src-mobile');
+      var alt = el.getAttribute('data-banner-alt');
+      var href = el.getAttribute('data-banner-href');
+
+      // Safety check: if active is true but no image is set, hide container to avoid broken image display
+      if (active === 'true' && !src && !srcMobile) {
+        el.style.display = 'none';
+        return;
+      }
+
+      if (active === 'false') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = '';
+      }
+
+      var img = el.querySelector('#digidrBannerImg, .digidr-banner-img');
+      var link = el.querySelector('#digidrBannerLink, .digidr-banner-link');
+      var sourceMobile = el.querySelector('source');
+
+      if (src && img && img.getAttribute('src') !== src) {
+        img.src = src;
+      }
+      if (srcMobile && sourceMobile) {
+        sourceMobile.srcset = srcMobile;
+      }
+      if (alt && img) {
+        img.alt = alt;
+      }
+      if (href && link) {
+        if (href !== '#') {
+          link.href = href;
+        }
+      }
+    }
+  };
+
+  // Auto-init on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { DigiDrBanner.init(); });
+  } else {
+    DigiDrBanner.init();
+  }
+
+  // Export to global scope
+  window.DigiDrBanner = DigiDrBanner;
+
+})(window, document);
+```
+
+### P.3 `script/analytics.js`
+
+GA4 + Clarity event helper. Loaded before `index.js` on every page (§3.1); the booking code calls
+`window.trackEvent?.(…)` from it.
+
+```javascript
+// GA4 analytics - all event tracking for this microsite lives in this file.
+//
+// 1) Declarative tracking: add data-ga-event="event_name" to any element and
+//    clicks on it (or any nested icon/span inside it) are sent automatically.
+//    Optional data-ga-label overrides the auto-derived label (element text).
+//
+// 2) Programmatic tracking: call window.trackEvent(name, params) from other
+//    scripts (e.g. script/index.js) for events tied to form/app state that
+//    can't be expressed as a plain click listener (consent toggles, file
+//    uploads, form submissions).
+window.trackEvent = function trackEvent(eventName, params) {
+  if (typeof gtag === "function") {
+    gtag("event", eventName, {
+      page_path: window.location.pathname,
+      ...params,
+    });
+  }
+  if (typeof clarity === "function") {
+    clarity("event", eventName);
+  }
+};
+
+document.addEventListener("click", (event) => {
+  const el = event.target.closest("[data-ga-event]");
+  if (!el) return;
+
+  window.trackEvent(el.getAttribute("data-ga-event"), {
+    label:
+      el.getAttribute("data-ga-label") ||
+      el.getAttribute("aria-label") ||
+      el.textContent.trim().slice(0, 60),
+  });
+});
+```
+
+### P.4 `styles/chatbot.css` (§4a)
+
+The stylesheet for `chatbot.js`. Colours come from `--accent`, `--accent-dark` and `--accent-rgb`.
+The send-button rule near the end is the "send icon visible" fix from the §4a checklist.
+
+```css
+/* ============================================================
+   Chatbot Widget
+   ============================================================ */
+
+/* Microsite primary colour (see --accent / --accent-dark in styles/style.css)
+   — solid brand colour, no gradients. */
+:root {
+    --chatbot-primary: var(--accent, #f69c1e);
+    --chatbot-primary-hover: var(--accent-dark, #a6520c);
+}
+
+/* ── Floating Action Button ── */
+.chatbot-fab-wrap {
+    position: fixed;
+    bottom: 40px;
+    right: 28px;
+    left: auto;
+    z-index: 9999;
+}
+
+.chatbot-fab {
+    /* The FAB is absolutely positioned inside a zero-width fixed wrap, so the
+       global reset's `button { max-width: 100% }` would resolve to 0 and clip
+       the label. Size to content and opt out of that cap. */
+    width: max-content;
+    max-width: none;
+    min-width: 100px;
+    height: 50px;
+    padding: 7px 16px 7px 10px;
+    box-sizing: border-box;
+    border-radius: 999px;
+    /* <button> doesn't inherit font-family from the page by default — without
+       this, the "Ask Doctor" label and badge render in the browser's UI font
+       instead of the site's. */
+    font-family: inherit;
+    /* White pill with a brand-colour rim — professional, not candy-bright. */
+    background: #ffffff;
+    border: 2px solid var(--chatbot-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow:
+        0 6px 16px -6px rgba(var(--accent-rgb, 246, 156, 30), 0.30),
+        0 2px 6px rgba(15, 23, 42, 0.10);
+    transition:
+        background 0.15s ease,
+        width 0.35s cubic-bezier(0.34, 1.25, 0.64, 1),
+        min-width 0.35s cubic-bezier(0.34, 1.25, 0.64, 1),
+        height 0.35s cubic-bezier(0.34, 1.25, 0.64, 1),
+        padding 0.35s cubic-bezier(0.34, 1.25, 0.64, 1),
+        gap 0.35s ease,
+        transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.25s ease,
+        opacity 0.22s ease,
+        visibility 0.22s ease;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    overflow: visible;
+    isolation: isolate;
+}
+
+.chatbot-fab.is-collapsed {
+    min-width: 54px;
+    width: 54px;
+    height: 54px;
+    padding: 5px;
+    gap: 0;
+}
+
+.chatbot-fab:hover {
+    transform: scale(1.06);
+    background: #ffffff;
+    border-color: var(--chatbot-primary-hover);
+    box-shadow:
+        0 8px 20px -6px rgba(var(--accent-rgb, 246, 156, 30), 0.38),
+        0 3px 8px rgba(15, 23, 42, 0.12);
+}
+
+.chatbot-fab:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 4px #ffffff,
+        0 0 0 7px rgba(var(--accent-rgb, 246, 156, 30), 0.55),
+        0 10px 26px -6px rgba(var(--accent-rgb, 246, 156, 30), 0.35);
+}
+
+.chatbot-fab:active {
+    transform: scale(0.96);
+}
+
+.chatbot-fab img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.2s ease;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.chatbot-fab.is-collapsed img {
+    width: 36px;
+    height: 36px;
+}
+
+.chatbot-fab-text {
+    /* Brand colour on white pill. Set explicitly — the global
+       reset's `span { color }` otherwise beats inherited button colour. */
+    color: var(--chatbot-primary-hover);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    max-width: 150px;
+    opacity: 1;
+    transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.chatbot-fab.is-collapsed .chatbot-fab-text {
+    max-width: 0;
+    opacity: 0;
+}
+
+.chatbot-fab-wrap.is-open .chatbot-fab {
+    display: none;
+}
+
+/* ── Notification Badge ── */
+.chatbot-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #FF4757;
+    border: 2px solid #fff;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.chatbot-fab-wrap.is-open .chatbot-badge {
+    display: none;
+}
+
+/* Mobile backdrop (blur when chat is open) */
+.chatbot-backdrop {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .chatbot-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background: rgba(15, 23, 42, 0.35);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.28s ease;
+    }
+
+    .chatbot-fab-wrap.is-open .chatbot-backdrop {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    .chatbot-backdrop {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(15, 23, 42, 0.5);
+    }
+}
+
+/* ── Chat Window ── */
+.chatbot-window {
+    position: relative;
+    z-index: 1;
+    width: 400px;
+    max-width: calc(100vw - 24px);
+    max-height: min(620px, calc(100dvh - 110px));
+    height: min(580px, calc(100dvh - 110px));
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.04),
+        0 24px 48px -12px rgba(var(--accent-rgb, 246, 156, 30), 0.15),
+        0 12px 24px -8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform-origin: bottom right;
+    animation: chatbot-open 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+    border: none;
+    isolation: isolate;
+}
+
+@keyframes chatbot-open {
+    from { opacity: 0; transform: scale(0.92) translateY(12px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.chatbot-window.is-closing {
+    animation: chatbot-close 0.2s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+@keyframes chatbot-close {
+    from { opacity: 1; transform: scale(1) translateY(0); }
+    to   { opacity: 0; transform: scale(0.96) translateY(8px); }
+}
+
+/* Fallback for browsers without dvh */
+@supports not (height: 1dvh) {
+    .chatbot-window {
+        max-height: min(600px, calc(100vh - 110px));
+        height: min(560px, calc(100vh - 110px));
+    }
+}
+
+/* ── Header ── */
+.chatbot-header {
+    background: #ffffff;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.chatbot-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--chatbot-primary);
+    opacity: 0.9;
+}
+
+.chatbot-header-avatar {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid rgba(var(--accent-rgb, 246, 156, 30), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(var(--accent-rgb, 246, 156, 30), 0.08);
+}
+
+.chatbot-header-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chatbot-header-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.chatbot-header-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+
+.chatbot-header-close {
+    margin-left: auto;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: #374151;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.chatbot-header-close:hover {
+    background: rgba(var(--accent-rgb, 246, 156, 30), 0.1);
+    color: var(--accent, #f69c1e);
+}
+
+.chatbot-header-close:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb, 246, 156, 30), 0.25);
+}
+
+.chatbot-header-close i {
+    font-size: 22px;
+}
+
+/* ── Suggested Quick Replies ── */
+.chatbot-suggestions-wrap {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+    background: var(--bg, #fff5f8);
+    border-top: 1px solid rgba(var(--accent-rgb, 246, 156, 30), 0.1);
+    padding-top: 12px;
+}
+
+.chatbot-suggestions-arrow {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    margin: 0 0 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(var(--accent-rgb, 246, 156, 30), 0.22);
+    background: #ffffff;
+    color: var(--chatbot-primary-hover);
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+.chatbot-suggestions-arrow--prev { margin-left: 16px; }
+.chatbot-suggestions-arrow--next { margin-right: 16px; }
+
+.chatbot-suggestions-arrow:hover:not(:disabled) {
+    background: var(--accent, #f69c1e);
+    color: #ffffff;
+    border-color: var(--accent, #f69c1e);
+}
+
+.chatbot-suggestions-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.chatbot-suggestions-wrap--no-scroll .chatbot-suggestions-arrow {
+    display: none;
+}
+
+.chatbot-suggestions {
+    padding: 0 4px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    flex-shrink: 1;
+    min-width: 0;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+}
+
+.chatbot-suggestions::-webkit-scrollbar { display: none; }
+
+.chatbot-suggestion-chip {
+    white-space: nowrap;
+    padding: 9px 16px;
+    border-radius: 9999px;
+    border: 1px solid rgba(var(--accent-rgb, 246, 156, 30), 0.22);
+    background: #ffffff;
+    color: var(--accent-dark, #a6520c);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    margin-bottom: 12px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.chatbot-suggestion-chip:hover {
+    background: var(--accent, #f69c1e);
+    color: #ffffff;
+    border-color: var(--accent, #f69c1e);
+}
+
+/* ── Messages Area ── */
+.chatbot-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 18px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    scroll-behavior: smooth;
+    background-color: var(--bg, #fff5f8);
+    background-image: radial-gradient(rgba(var(--accent-rgb, 246, 156, 30), 0.12) 1px, transparent 1px);
+    background-size: 14px 14px;
+}
+
+.chatbot-messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+    background: rgba(var(--accent-rgb, 246, 156, 30), 0.20);
+    border-radius: 4px;
+}
+
+/* ── Message Bubble ── */
+.chatbot-msg {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    max-width: 90%;
+    animation: chatbot-msg-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes chatbot-msg-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.chatbot-msg.bot {
+    align-self: flex-start;
+}
+
+.chatbot-msg.user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.chatbot-msg-avatar {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid rgba(var(--accent-rgb, 246, 156, 30), 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.chatbot-msg-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chatbot-msg-bubble {
+    padding: 12px 16px;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    word-break: break-word;
+    letter-spacing: -0.01em;
+}
+
+.chatbot-msg.bot .chatbot-msg-bubble {
+    background: #ffffff;
+    color: #0f172a;
+    border-bottom-left-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.chatbot-msg.user .chatbot-msg-bubble {
+    background: #ffffff;
+    color: var(--accent-dark, #a6520c);
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 2px 8px rgba(var(--accent-rgb, 246, 156, 30), 0.2);
+    border: 1px solid rgba(var(--accent-rgb, 246, 156, 30), 0.3);
+}
+
+.chatbot-msg-time {
+    font-size: 16px;
+    color: #52606d;
+    margin-top: 5px;
+    text-align: right;
+    padding: 0 2px;
+    font-weight: 500;
+}
+
+.chatbot-msg.bot .chatbot-msg-time {
+    text-align: left;
+    /* padding-left: 46px; */
+}
+
+/* ── Typing Indicator ── */
+.chatbot-typing {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    align-self: flex-start;
+}
+
+.chatbot-typing-dots {
+    background: #ffffff;
+    border-radius: 20px;
+    border-bottom-left-radius: 6px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    border: none;
+}
+
+.chatbot-typing-dots span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #94a3b8;
+    animation: chatbot-bounce 1.2s ease-in-out infinite;
+}
+
+.chatbot-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.chatbot-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes chatbot-bounce {
+    0%, 80%, 100% { transform: translateY(0);   opacity: 0.4; }
+    40%            { transform: translateY(-5px); opacity: 1;   }
+}
+
+/* ── Divider ── */
+.chatbot-divider {
+    align-self: center;
+    font-size: 16px;
+    color: #334155;
+    font-weight: 600;
+    margin: 2px 0 6px;
+    flex-shrink: 0;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 9999px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Input Area ── */
+.chatbot-input-area {
+    padding: 4px 16px 14px;
+    background: var(--bg, #fff5f8);
+    border-top: none;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.chatbot-input-wrap {
+    flex: 1;
+    border: 2px solid rgba(var(--accent-rgb, 246, 156, 30), 0.22);
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 16px;
+    background: #ffffff;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    min-height: 48px;
+}
+
+.chatbot-input-wrap:focus-within {
+    background: #ffffff;
+    border-color: var(--chatbot-primary);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb, 246, 156, 30), 0.1);
+}
+
+.chatbot-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    color: #0f172a;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    resize: none;
+    line-height: 1.5;
+    max-height: 100px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding: 0;
+    min-height: 22px;
+}
+
+.chatbot-input::placeholder {
+    color: #64748b;
+}
+
+.chatbot-input::-webkit-scrollbar { display: none; }
+
+.chatbot-send-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 2px solid var(--chatbot-primary);
+    color: var(--chatbot-primary-hover);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px -2px rgba(var(--accent-rgb, 246, 156, 30), 0.35);
+    transition: background 0.15s ease, transform 0.15s ease, opacity 0.15s ease,
+        box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.chatbot-send-btn:hover:not(:disabled) {
+    background: #ffffff;
+    border-color: var(--chatbot-primary-hover);
+    transform: scale(1.04);
+    box-shadow: 0 6px 16px -2px rgba(var(--accent-rgb, 246, 156, 30), 0.45);
+}
+
+.chatbot-send-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb, 246, 156, 30), 0.35);
+}
+
+.chatbot-send-btn:active:not(:disabled) {
+    transform: scale(0.96);
+}
+
+.chatbot-send-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    background: #d1d5db;
+    box-shadow: none;
+}
+
+.chatbot-send-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    margin-left: 2px;
+}
+
+/* chatbot.js hardcodes stroke="white" on the send icon; this button is white,
+   so draw the icon in the button text colour instead. */
+.chatbot-send-btn svg path {
+    stroke: currentColor;
+}
+
+/* ── Footer ── */
+.chatbot-footer {
+    text-align: center;
+    font-size: 16px;
+    color: #52606d;
+    padding: 4px 16px 12px;
+    background: #ffffff;
+    flex-shrink: 0;
+    letter-spacing: 0.01em;
+}
+
+.chatbot-footer a {
+    color: var(--accent-dark, #a6520c);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.chatbot-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Desktop: nudge FAB slightly inward from the right edge */
+@media (min-width: 769px) {
+    .chatbot-fab-wrap {
+        right: 44px;
+        left: auto;
+    }
+
+    .chatbot-window {
+        width: 340px;
+        height: min(420px, calc(100dvh - 110px));
+        max-height: min(440px, calc(100dvh - 110px));
+    }
+
+    .chatbot-window .chatbot-header {
+        padding: 10px 14px;
+    }
+
+    .chatbot-window .chatbot-footer {
+        font-size: 14px;
+        padding: 2px 14px 8px;
+    }
+}
+
+@supports not (height: 1dvh) {
+    @media (min-width: 769px) {
+        .chatbot-window {
+            height: min(420px, calc(100vh - 110px));
+            max-height: min(440px, calc(100vh - 110px));
+        }
+    }
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 480px) {
+    .chatbot-fab-wrap {
+        left: 16px;
+        right: 16px;
+        bottom: 28px;
+    }
+
+    .chatbot-fab {
+        min-width: 98px;
+        height: 52px;
+        padding: 8px 16px 8px 10px;
+    }
+
+    .chatbot-fab.is-collapsed {
+        min-width: 56px;
+        width: 56px;
+        height: 56px;
+        padding: 6px;
+        gap: 0;
+    }
+
+    .chatbot-fab img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .chatbot-fab.is-collapsed img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .chatbot-fab-text {
+        font-size: 16px;
+    }
+
+    .chatbot-window {
+        width: 100%;
+        max-width: 100%;
+        height: calc(100dvh - 96px);
+        max-height: calc(100dvh - 96px);
+        border-radius: 20px 20px 8px 8px;
+        transform-origin: bottom center;
+    }
+
+    /* Fallback for browsers without dvh */
+    @supports not (height: 1dvh) {
+        .chatbot-window {
+            height: calc(100vh - 96px);
+            max-height: calc(100vh - 96px);
+        }
+    }
+}
+
+/* Landscape on phones: shorten height to avoid overflow */
+@media (max-height: 500px) and (max-width: 480px) {
+    .chatbot-window {
+        height: calc(100dvh - 84px);
+        max-height: calc(100dvh - 84px);
+    }
+
+    @supports not (height: 1dvh) {
+        .chatbot-window {
+            height: calc(100vh - 84px);
+            max-height: calc(100vh - 84px);
+        }
+    }
+
+    .chatbot-header {
+        padding: 10px 16px;
+    }
+
+    .chatbot-header-avatar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ── Site integration: keep the FAB out of the way of overlays ──
+   The booking modal (z-index 120) and gallery lightbox (z-index 100) sit
+   below the widget's 9999, so hide the launcher while either is open. */
+body:has(.booking-modal.is-open) .chatbot-fab-wrap,
+body:has(.gallery-lightbox.is-open) .chatbot-fab-wrap {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+```

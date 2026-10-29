@@ -1,14 +1,16 @@
 # Microsite Verification Prompt
 
-Use this after generating a microsite (from ENT-2 + AGENTS.md). Paste the prompt below into
+Use this after generating a microsite (built to AGENTS.md). Paste the prompt below into
 the agent and replace `<PATH>` with the new microsite folder.
 
 ---
 
 You have just generated the microsite at `<PATH>`. Audit it against the checklist below,
-using the ENT-2 microsite as the reference (`ENT/microsite-ent-2`), AGENTS.md and CLAUDE.md.
+using AGENTS.md (the rules, plus the reference markup, CSS, JS and text in its Appendix A,
+including the booking and consent JavaScript in A.18). No other microsite or document
+is needed as a reference: where this checklist says "the reference", it means those sections.
 
-**The design may differ slightly from ENT-2, but the required elements must remain.** Do not fail
+**The design may differ slightly from the reference code, but the required elements must remain.** Do not fail
 a microsite for small visual differences (layout details, spacing, imagery, section styling,
 wording). Fail it when a required element, section, behaviour or event is missing or broken: any
 item in this checklist that isn't marked as allowed to vary.
@@ -33,18 +35,18 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
 - For anything that needs runtime behaviour (modal flow, tooltip, chatbot layout, URL hash),
   open the page in a browser at 1440px, 768px and 375px and test it. If you can't, mark the item
   "UNVERIFIED (needs browser)". Never mark it PASS. Do the browser-only items last.
-- Fix every FAIL, then re-verify. Where ENT-2 is the reference, copy its structure, markup and
-  text, changing only doctor-specific data.
+- Fix every FAIL, then re-verify. Where AGENTS.md Appendix A gives the reference structure,
+  markup or text, copy it, changing only doctor-specific data.
 - Do not commit or push unless told to.
 - **Sections with their own design:** Care Philosophy, Consultation Journey and any other section the
   new microsite deliberately designs differently (layout, imagery, wording) are static, fixed content.
-  They may look different from ENT-2 and must not be flagged as a mismatch with it. For these
-  sections, check only that they are present, in the correct order, responsive, accessible, readable
-  (AA contrast, 18px body text), consistent with the specialty and the rest of the checklist, and
-  free of leftover ENT-2 or other-specialty wording and of overflow.
+  They may look different from the default designs and must not be flagged as a mismatch with them.
+  For these sections, check only that they are present, in the correct order, responsive, accessible,
+  readable (AA contrast, 18px body text), consistent with the specialty and the rest of the checklist,
+  and free of overflow and of leftover wording from the source template or another specialty.
 - **Default design (when no new design is made):** if the microsite does not give Care Philosophy,
-  Consultation Journey or FAQ a new design, they must use the ENT-2 design below, with only the wording
-  changed to fit the specialty.
+  Consultation Journey or FAQ a new design, they must use the default design below (AGENTS.md §39;
+  markup and CSS in Appendix A.5, A.6 and A.9), with only the wording changed to fit the specialty.
   - *Care Philosophy* (`section.philosophy-section#philosophy`): a split-screen layout inside
     `.container.philosophy-layout`. The left side (`.philosophy-visual`) has a framed photo
     (`.philosophy-img-frame`, lazy-loaded, descriptive alt text) with a small badge on it
@@ -60,8 +62,8 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
     and a one-sentence description. The four steps are: 1) Appointment Booking, 2) a diagnostic or
     evaluation step, 3) a personalised treatment plan, 4) recovery and follow-up.
   - For all three sections, the layout, classes, icons, element order and counts (3 pillars, 4 steps) stay
-    as in ENT-2. The photo, badge text, kicker, titles, subtitles, headings and descriptions are
-    rewritten for the doctor's specialty, and no ENT wording is left over. The kickers stay generic
+    as in the default design. The photo, badge text, kicker, titles, subtitles, headings and descriptions
+    are rewritten for the doctor's specialty, and no wording from another specialty is left over. The kickers stay generic
     (no doctor names or "20+ years" claims). FAQ questions and answers are rewritten for the specialty.
   - *FAQ* (`section.faq-section#faq`, placed straight after the Gallery on the home page): a header
     with an h2 ("Frequently Asked Questions") and a one-line subtitle, then an accordion
@@ -69,8 +71,8 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
     question text and a chevron icon, `aria-expanded` set) and a collapsible answer
     (`.faq-answer` > `.faq-answer-inner` > `p`). The first item is open by default
     (`is-active`). Clicking an item opens it and closes the others, and the chevron rotates.
-    The accordion JS is the shared "FAQ accordion" block at the end of `script/index.js`. Copy it
-    and don't rewrite it.
+    The accordion JS is the shared "FAQ accordion" block at the end of `script/index.js` (AGENTS.md
+    Appendix A.13). Copy it and don't rewrite it.
 - Finish with a table: Item | Status | Evidence | Fix applied. List unverified items separately.
 
 ---
@@ -84,7 +86,7 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
    `preventDefault`, smooth `scrollIntoView`, and `history.replaceState` to strip the hash. The
    logo link and footer links must behave the same way. The header (portrait + nav + CTA) collapses
    properly on mobile: the menu opens and closes, traps nothing, and closes on link click.
-   In phone view the header Book Appointment button reads "Appointment" (two spans as in ENT-2:
+   In phone view the header Book Appointment button reads "Appointment" (two spans, AGENTS.md §32:
    `.cta-text-desktop` "Book Appointment" and `.cta-text-mobile` "Appointment", swapped at the
    mobile-menu breakpoint). Check at 375px and 320px: the label is "Appointment", it is white on the
    button (the span colour gotcha), and it does not wrap or overflow the header. On desktop it still
@@ -118,23 +120,24 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
 
 ## E. SOCIAL MEDIA WIDGET ("From My Social Media")
 
-Comes straight after Services. Reference: `ENT/microsite-ent-2` (`section.social-media-section#social-media`),
-AGENTS.md §30 and `FACEBOOK_WIDGET_LOGIC.md`. Include this section if the microsite has the
-Facebook-posts carousel. If it doesn't, it must be absent cleanly: no empty band, no dead nav link,
-no leftover carousel markup or script errors.
+Comes straight after Services. Reference: AGENTS.md §30, §30.1 and Appendix A.4
+(`section.social-media-section#social-media`: markup, CSS and JS). Include this section if the
+microsite has the Facebook-posts carousel. If it doesn't, it must be absent cleanly: no empty band,
+no dead nav link, no leftover carousel markup or script errors.
 
 **E1. Placement and markup**
-- The section sits between Services and Care Philosophy, as in ENT-2, with `id="social-media"`.
+- The section sits between Services and Care Philosophy, with `id="social-media"`.
 - Header: a kicker with a share icon ("Latest Updates"), an h2 ("From My Social Media") and a
   one-line subtitle. The wording is generic and fits the specialty.
 - Structure: `.social-media-carousel-wrap` containing the prev and next buttons
   (`.social-carousel-prev` / `.social-carousel-next`, each with an aria-label) and
   `#socialMediaCarousel` > `#socialMediaTrack` (cards are filled in by JS).
 
-**E2. Behaviour (follows FACEBOOK_WIDGET_LOGIC.md)**
+**E2. Behaviour (AGENTS.md §30.1)**
 - The doctor's slug is read from `<body data-slug>`, not hardcoded in the JS.
-- At most 5 cards are shown. Video posts are excluded, only posts from the last 30 days are shown,
-  and posts from all Facebook accounts are merged, newest first.
+- At most 5 cards are shown. Video posts are excluded, only posts from the last 183 days (about 6
+  months) whose text carries the `#DigiDr` hashtag are shown (`MAX_POST_AGE_DAYS = 183`,
+  `POSTS_PER_ACCOUNT = 50`), and posts from all Facebook accounts are merged, newest first.
 - Skeleton cards show while the feed loads (3 placeholders, shimmer disabled under
   `prefers-reduced-motion`, `aria-busy` on the track), and each real card has a skeleton behind
   the embed until Facebook paints.
@@ -172,14 +175,14 @@ no leftover carousel markup or script errors.
 
 ## F. CARE PHILOSOPHY
 10. The section exists after Social Media (or after Services if there is no social section), with
-    `id="philosophy"`. It uses its own static design or the default ENT-2 design described in the
-    rules above (split-screen, framed photo with badge, kicker, h2, subtitle, three pillars with
-    index numbers). The wording is rewritten for the specialty with no ENT text left over, and the
-    kicker stays generic.
+    `id="philosophy"`. It uses its own static design or the default design described in the
+    rules above (AGENTS.md Appendix A.5: split-screen, framed photo with badge, kicker, h2, subtitle,
+    three pillars with index numbers). The wording is rewritten for the specialty with no text from
+    another specialty left over, and the kicker stays generic.
 
 ## G. CONSULTATION JOURNEY
 11. The section exists after Care Philosophy, with `id="process"`. It uses its own static design or
-    the default ENT-2 design (decorative background layer, centred header with the "Consultation
+    the default design (AGENTS.md Appendix A.6: decorative background layer, centred header with the "Consultation
     Journey" kicker, h2 "What to Expect", subtitle, zig-zag timeline of exactly 4 steps with markers,
     numbers 01–04, h3 and one sentence each). The steps and wording fit the specialty.
 
@@ -188,7 +191,8 @@ no leftover carousel markup or script errors.
     - the clinic's full address, and
     - contact details: phone number (`tel:` link) and email address (`mailto:` link),
     - plus a Book Appointment button that opens the modal.
-    Icons match ENT-2.
+    Icons as in AGENTS.md Appendix A.7: `fa-location-dot` for the address, `fa-phone` for the
+    contact details.
 
 ## I. GALLERY
 13. The gallery is an image grid only. There are no captions, titles, overlays or descriptive text
@@ -206,17 +210,20 @@ no leftover carousel markup or script errors.
 
 ## K. APPOINTMENT MODAL & BOOKING FORM
 15. An "i" info icon sits next to the Online Consultation toggle.
-16. Hovering or focusing the icon shows a tooltip with the exact text from ENT-2. It must also work
-    on keyboard focus and on tap for mobile.
+16. Hovering or focusing the icon shows a tooltip with the exact text from AGENTS.md §37 ("Online
+    consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for
+    emergencies, and the doctor may advise an in-person visit where an examination is needed."). It
+    must also work on keyboard focus and on tap for mobile.
 17. Ticking the consent checkbox opens a "Patient Consent & Data Privacy" panel inside the modal.
     The patient must scroll to the bottom before the "I agree" button enables. Clicking it closes
     the panel and leaves the checkbox ticked. Closing without agreeing leaves the checkbox unticked.
-    Compare markup and JS with ENT-2.
+    Compare the markup with AGENTS.md Appendix A.10 and the JS with the booking-modal IIFE in
+    AGENTS.md Appendix A.18 (C).
 18. The primary brand colour is reserved for primary actions only (e.g. Submit/Review). The toggle,
     upload button, close button and secondary controls use neutral or outline styles.
 19. The text "Try the appointment form. This is a sample clinic; your request stays in this browser
     and is not sent." is absent (grep for "sample clinic" and "not sent").
-20. The consent label text is exactly as in CLAUDE.md, with the correct doctor name.
+20. The consent label text is exactly as in AGENTS.md §11, with the correct doctor name.
 21. The phone input uses intl-tel-input v29.2.2 via the jsDelivr CDN, `initialCountry: "in"`, and
     `iti.isValidNumber()` gated on `phoneUtilsReady`. Invalid and empty numbers show an error.
 22. The full name field accepts only letters, spaces, apostrophes and hyphens, and is sanitised
@@ -232,15 +239,16 @@ no leftover carousel markup or script errors.
     by `.booking-field input` padding. Widget dropdowns aren't collapsed by `max-width: 100%`.
 
 ## L. FOOTER
-26. The footer layout and hierarchy mirror ENT-2 exactly (column structure, order, classes).
+26. The footer layout and hierarchy match AGENTS.md §12, §36 and Appendix A.11 exactly (column
+    structure, order, classes).
 27. The footer is the same on all three pages (index, privacy-policy, terms-of-service): identical
-    markup, content, links and styling, differing only where ENT-2 itself differs (for example
-    in-page anchors resolving to `index.html#...` on the legal pages). Diff the footer block across
-    the three files.
-28. The footer is compact, exactly like ENT-2: the same height, padding, spacing, font sizes and
-    number of rows and columns. It adds no extra rows, large blocks or tall padding. Compare
-    rendered footer height against ENT-2 at 1440px, 768px and 375px. It must also stay compact on
-    mobile (stacked columns with tight spacing, no oversized gaps).
+    markup, content, links and styling, differing only in link targets (in-page anchors resolve to
+    `index.html#...` on the legal pages). Diff the footer block across the three files.
+28. The footer is compact, per AGENTS.md §36: the padding, spacing and font sizes of §12 and
+    Appendix A.11, and only the rows in Appendix A.11 (brand column with tagline and social icons,
+    Quick Links, Legal, visitor badge, copyright row, disclaimer). It adds no extra rows, large
+    blocks or tall padding. Measure the rendered footer at 1440px, 768px and 375px. It must also
+    stay compact on mobile (stacked columns with tight spacing, no oversized gaps).
 29. There are no image credits for free or copyright-free images.
 29a. The footer visitor counter is live (AGENTS.md §44): on **all three pages** (index,
     privacy-policy, terms-of-service) the `.footer-visitor-badge` count element has
@@ -261,14 +269,15 @@ no leftover carousel markup or script errors.
 32. The launcher opens and closes the panel. Quick-reply chips work and answers are on-topic for
     this specialty. Input and send button work with Enter. The panel scrolls to the latest message,
     has a close button, and is keyboard accessible (aria-label, `aria-live` on the message area).
-33. Chatbot replies contain no leftover ENT-2 text and no real medical advice. They point to
+33. Chatbot replies contain no leftover text from the source template and no real medical advice. They point to
     booking or "consult your doctor".
 
 ## N. PRIVACY POLICY & TERMS OF SERVICE
-34. The body content of both pages is identical to ENT-2 (full text in the Appendix), with only the
-    doctor name, clinic and contact details swapped. Run a diff against ENT-2 and list any
-    differences that aren't doctor-specific data.
-35. A visible Back button or link exists on both pages (to index.html), styled like ENT-2.
+34. The body content of both pages is identical to the text in AGENTS.md §41 (repeated in the
+    Appendix below), with only the doctor name, clinic and contact details swapped. Diff against the
+    Appendix text and list any differences that aren't doctor-specific data.
+35. A visible Back button or link exists on both pages (to index.html), styled as in AGENTS.md
+    Appendix A.12 (`.blog-detail-back-link`).
 
 ---
 
@@ -282,14 +291,15 @@ no leftover carousel markup or script errors.
 37. The index.html section order is: Header/Nav → Hero → About → Services → Social Media widget
     (only if present, see section E) → Care Philosophy → Consultation Journey → Contact → Practice
     Gallery → FAQ → Booking Modal → Footer (the FAQ comes straight after the Gallery). Every nav
-    link's target id exists, including `#faq`. Section designs may differ from ENT-2 (see the rule
-    above).
-38. robots.txt, sitemap.xml and llms.txt follow AGENTS.md §29. URLs and doctor details match this
-    microsite, with no leftover ENT-2 or other-specialty text.
+    link's target id exists, including `#faq`. Section designs may differ from the default designs
+    (see the rule above).
+38. robots.txt, sitemap.xml and llms.txt follow AGENTS.md §29 and Appendix A.15. URLs and doctor
+    details match this microsite, with no leftover text from the source template or another specialty.
 39. No blog pages, links or files exist (blog was removed project-wide). grep for "blog" in the
     HTML and nav.
-40. No leftover strings from the source template. grep for the old doctor name, the old specialty,
-    "ENT", "Ananya", "Heart Care Guide", "Lorem", "TODO", "example.com" and any `{{ }}` template tags.
+40. No leftover strings from the source template. grep for its doctor name(s) and specialty wording
+    (for example "ENT" when the source was an ENT site), "Lorem", "TODO", "example.com", "[Doctor",
+    "[Insert" (outside the legal-page placeholders the doctor will fill) and any `{{ }}` template tags.
 
 ## P. CONTENT ACCURACY & SPECIALTY FIT
 41. All copy, services, FAQs, journey steps, chatbot replies and alt text match this doctor's
@@ -298,6 +308,13 @@ no leftover carousel markup or script errors.
     and meta tags.
 42. There are no medical claims such as guaranteed cures, and no unverifiable "20+ years" claims
     outside h1, paragraphs, list items and the footer. Sub-headings, badges and kickers stay generic.
+42a. No "trust" wording anywhere (AGENTS.md §42): run
+    `grep -inE "trust|reliab|dependab|rely on|count on" index.html privacy-policy.html terms-of-service.html llms.txt`.
+    Any hit in page text, `<title>`, meta/Open Graph tags, alt text, JSON-LD, the chatbot welcome
+    text or the legal pages is a FAIL (trust, trusted, trusting, trustworthy, entrust, reliable,
+    reliability, dependable, rely on, count on). Hits inside code comments, class names or URLs are
+    not page text and don't count. The Privacy Policy line is "Service providers, including DigiDr…",
+    not "Trusted service providers".
 
 ## Q. BRANDING, COLOUR & LAYOUT (AGENTS.md §1.1, §2, §6, §11, §15)
 43. The colour split follows 60% neutral / 30% brand / 10% accent. The accent is used only on CTAs
@@ -328,8 +345,9 @@ no leftover carousel markup or script errors.
 
 ## S. ANALYTICS VERIFICATION: GOOGLE ANALYTICS (GA4) + MICROSOFT CLARITY
 
-Reference for analytics: `ENT/microsite-ent-2-param` (the analytics setup is copied from it; `script/analytics.js`, the `data-ga-event` attributes in
-index.html, and the consent/booking/upload calls in `script/index.js`).
+Reference for analytics: AGENTS.md §40 and Appendix A.14 (`script/analytics.js`), the
+`data-ga-event` attributes listed in S2, and the consent/booking/upload calls in the booking-modal
+IIFE (AGENTS.md Appendix A.18 (C)).
 
 **S1. Setup (every page: index, privacy-policy, terms-of-service)**
 - The GA4 gtag.js snippet is in `<head>` and loads exactly once per page, with a Measurement ID
@@ -369,15 +387,22 @@ index.html, and the consent/booking/upload calls in `script/index.js`).
 | `consent_checkbox_click` | the consent checkbox is toggled | `checked` (true/false) |
 | `consent_modal_open` | the Patient Consent & Data Privacy panel opens | none |
 | `consent_scrolled_to_bottom` | the patient scrolls to the bottom of the consent text (once) | none |
-| `consent_agreed` / `consent_dismissed` | the panel closes via "I Agree" / via close or backdrop | as in ENT-2 |
+| `consent_agreed` / `consent_dismissed` | the panel closes via "I Agree" / via close, backdrop or Escape | `method` (`agree_button`, `close_button`, `backdrop`, `escape_key`) and `scrolled_to_bottom` (true/false) |
 | `report_uploaded` | a valid report file is chosen | none |
 | `booking_submitted` | the booking form is submitted successfully | `appointment_type` (clinic/online) |
 
 **S4. How to verify**
-1. Static: grep every `data-ga-event` and `trackEvent`/`trackConsentEvent` call. Diff the list with
-   ENT-2-param. Report events that are missing, renamed, duplicated or misspelled. Every nav,
+1. Static: grep every `data-ga-event` and `trackEvent`/`trackConsentEvent` call. Diff the list
+   against the S2 and S3 tables. Report events that are missing, renamed, duplicated or misspelled. Every nav,
    social, footer and CTA element needs a `data-ga-event`, including any added or removed by this
-   microsite's design.
+   microsite's design. Two events have no element of their own and are easy to lose, so check
+   them explicitly:
+   - `booking_submitted`: the booking code only calls `window.__trackBookingSuccess?.(type)`.
+     `index.js` must also define `window.__trackBookingSuccess` (AGENTS.md Appendix A.13);
+     without it the event is silently never sent. FAIL if the definition is missing.
+   - `consent_checkbox_click`: the consent checkbox `change` listener must call
+     `window.trackEvent?.("consent_checkbox_click", { checked: … })` after its `isTrusted` guard
+     (AGENTS.md Appendix A.18 (C)). FAIL if the listener only has the guard.
 2. Runtime: open the page with DevTools and the Network tab filtered to `collect` (GA4), or GA
    DebugView / Tag Assistant, plus a console hook such as
    `const g = window.gtag; window.gtag = (...a) => { console.log("gtag", ...a); return g(...a); }`.
@@ -397,22 +422,39 @@ index.html, and the consent/booking/upload calls in `script/index.js`).
 
 **S5. Report**
 Add a table: Event | Trigger | Found in code (file:line) | Fired at runtime (yes/no) | Notes. List
-events present in ENT-2 but missing here, and events here that aren't in ENT-2.
+events in S2/S3 that are missing here, and events here that aren't in S2/S3.
 
-## T. SEO, ACCESSIBILITY & GLOBAL REGRESSION (CLAUDE.md)
+## T. SEO, ACCESSIBILITY & GLOBAL REGRESSION
 54. The §22 global CSS block is present once. There is no `nowrap` on dynamic text, no fixed
     heights on cards, `min-width: 0` on flex/grid children, and `flex-wrap` on all social rows.
     p/li/a are 18px, with AA contrast.
 55. Each page has a unique title and meta description, a canonical URL, Open Graph/Twitter tags, a
-    single h1 and a logical heading order. JSON-LD (Physician/MedicalBusiness) is present if ENT-2
-    has it, with correct data.
+    single h1 and a logical heading order. JSON-LD (`Physician`, AGENTS.md Appendix A.1) is present
+    on index.html with correct data.
 56. Accessibility: every image has alt text (decorative ones `alt=""`), every icon-only link/button
     has an aria-label, form fields have labels, the modal has `role="dialog"` and `aria-modal`,
-    there is a skip link if ENT-2 has one, and the page is fully keyboard navigable. Run a quick
+    any skip link works, and the page is fully keyboard navigable. Run a quick
     axe/Lighthouse pass and report the scores.
 57. No broken links, no missing assets, no console errors or warnings, no 404s in the network tab,
     no mixed content. External links use `rel="noopener noreferrer"` and `target="_blank"`. Internal
     links are relative.
+57a. **Icon visibility (AGENTS.md §45).** On all three pages at 1440px, 768px and 375px, every icon
+    renders and is clearly visible: header, hero (profile-line, stat, social and decorative icons),
+    services, philosophy, journey, contact, FAQ chevrons, carousel and lightbox controls, booking
+    modal (close, info "i", calendar arrows, date/select/upload icons), consent panel, footer social
+    icons and visitor badge, legal Back arrow, and the chatbot (FAB logo, avatar, close, send). Check:
+    - Each `<i>` glyph loads: Font Awesome 6.7.2 is linked on the page, the class exists in FA 6 with
+      the right family (`fa-brands` / `fa-solid`), and
+      `getComputedStyle(i, "::before").content` is not `"none"` or empty. No empty boxes.
+    - Icon colour vs its background meets 3:1 (4.5:1 for meaning-carrying icons such as social,
+      close, send, info). Compute it from `getComputedStyle(icon).color` and the background, not a
+      screenshot. Watch the `span`/`a` colour-reset gotcha: an icon inheriting `--text` on a dark
+      fill is a FAIL.
+    - No icon is hidden (`opacity: 0`, `visibility: hidden`, `display: none`), clipped by
+      `overflow: hidden`, or squashed to 0 width; icon boxes keep their specified sizes.
+    - Hover and focus states keep the icon visible; disabled social icons are dimmed but visible,
+      with a readable "Not Enabled" tooltip; the chatbot send icon is visible on its button.
+    List every failing icon with its selector, page and width.
 
 ## U. WORKSPACE HYGIENE
 58. If this is a new specialty, it is added to the AGENTS.md §20 table in the same change. Folder
@@ -431,11 +473,11 @@ made. List any item you couldn't verify separately.
 
 ## APPENDIX: REFERENCE TEXT FOR THE LEGAL PAGES (items 34 and 35)
 
-This is the exact text from ENT-2. Compare the generated pages against it word for word. Allowed
-differences: replace `[Doctor/Clinic Name]` with the doctor's name, fill in the contact card
-(email, phone, address), and in Privacy Policy section 1 replace the qualification and registration
-details ("MBBS, MS (ENT), Registration No. 71934, MCI") with this doctor's own. "Effective Date" stays
-as `[Insert Date]` as in ENT-2 unless told otherwise. Anything else that differs is a FAIL.
+This is the exact legal text from AGENTS.md §41. Compare the generated pages against it word for
+word. Allowed differences: replace `[Doctor/Clinic Name]` with the doctor's name, fill in the contact
+card (email, phone, address), and in Privacy Policy section 1 replace `[Qualifications]`,
+`[Registration No.]` and `[Council]` with this doctor's own details. "Effective Date" stays as
+`[Insert Date]` unless told otherwise. Anything else that differs is a FAIL.
 
 Both pages share this structure: a "Back to Home" link (arrow icon, links to `index.html`), the
 small label "Legal Information", the h1 title, a lead sentence, the effective date line, then the
@@ -456,8 +498,8 @@ you use this website and its consultation and appointment services.
 
 **1) Who We Are**
 
-This is the personal microsite of **[Doctor/Clinic Name]**, MBBS, MS (ENT), Registration No. 71934,
-MCI. It is hosted on technology provided by DigiDr (digidr.app).
+This is the personal microsite of **[Doctor/Clinic Name]**, [Qualifications], Registration No.
+[Registration No.], [Council]. It is hosted on technology provided by DigiDr (digidr.app).
 
 [Doctor/Clinic Name] decides why and how your details are used for your consultation and is the Data
 Fiduciary under the Digital Personal Data Protection Act, 2023 ("DPDP Act"). DigiDr provides the
@@ -508,7 +550,7 @@ documents are not used to create public content.
 We do not sell personal data and we do not use it for advertising. We may share information only when
 necessary with:
 - Authorised staff and healthcare professionals involved in your care
-- Trusted service providers, including DigiDr as the technology provider, and hosting, appointment,
+- Service providers, including DigiDr as the technology provider, and hosting, appointment,
   or communication tools
 - Government or legal authorities when required by law
 
