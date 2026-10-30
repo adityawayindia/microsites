@@ -454,6 +454,11 @@ events in S2/S3 that are missing here, and events here that aren't in S2/S3.
       `overflow: hidden`, or squashed to 0 width; icon boxes keep their specified sizes.
     - Hover and focus states keep the icon visible; disabled social icons are dimmed but visible,
       with a readable "Not Enabled" tooltip; the chatbot send icon is visible on its button.
+    - **Social tooltips (hero AND footer rows):** hover/focus every disabled social icon in both
+      rows. The tooltip must be one horizontal line, never a vertical letter-per-line strip.
+      Verify `getComputedStyle(icon, "::after")`: `white-space` is `nowrap`, `max-width` is
+      `none`, and its width is greater than its height. FAIL if any tooltip wraps (AGENTS.md
+      §26 #4).
     List every failing icon with its selector, page and width.
 
 ## U. WORKSPACE HYGIENE

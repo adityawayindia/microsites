@@ -1009,6 +1009,7 @@ on mobile. Each rule defends against a specific failure mode:
 - **Rule 1 — No Hard Text Overflow.** Never apply `white-space: nowrap` to any heading,
   badge, pill, chip, name, or paragraph that could contain dynamic/long content — use
   `overflow-wrap: break-word; word-break: break-word; white-space: normal;` instead.
+  **Sole exception:** the fixed-label social tooltip `::after` (§26 #4) must keep `nowrap`.
   `nowrap` is only acceptable for single-line UI labels where content length is
   guaranteed short (see exceptions table below).
 - **Rule 2 — Flex & Grid Child Shrink Defense.** All flex/grid children need
@@ -1436,6 +1437,19 @@ wins, then the second, then the third. `.foo` scores `(0,1,0)`; `.foo input` sco
    (specificity 0,1,1) beats a widget's own single-class padding rule (0,1,0). Fix with
    a more specific override, e.g. `.booking-field .iti__search-input { padding-left:
    ...; padding-right: ...; }` (see §25).
+
+4. **Social "Not Enabled" / name tooltips collapse into a vertical letter strip.** The
+   tooltip is an absolutely-positioned `::after` inside a 28–46px icon. It inherits the
+   reset's `word-break: break-word`, and its shrink-to-fit width is capped by the icon, so if
+   `white-space: nowrap` is missing, removed (e.g. by the "no nowrap" rule in §22) or
+   overridden, the text wraps one character per line (N-o-t-E-n-a-b-l-e-d stacked). Fix: on
+   the tooltip `::after` set `white-space: nowrap; width: max-content; max-width: none;
+   word-break: normal; overflow-wrap: normal;` — this is the **one sanctioned `nowrap`**
+   (fixed short labels only, never dynamic text). Copy the block from parameterization.md
+   §1.1. **Check in both the hero and the footer social rows** (the footer is the one most
+   often missed): hover each disabled icon and confirm the tooltip is a single horizontal
+   line, via `getComputedStyle(icon, '::after')` → `white-space: nowrap`, and width
+   greater than height.
 
 **Takeaway:** whenever integrating a third-party widget or adding a new colored button,
 check rendered results with actual computed styles, not just a screenshot mid-transition
@@ -2610,7 +2624,8 @@ legal-page Back arrow, and the chatbot (FAB logo, avatar, close ×, send icon).
   (`flex-shrink: 0` on icon boxes). Icon boxes keep their §-specified sizes (e.g. 46px hero
   social, 36px footer social, 52px contact).
 - **Disabled social icons** (param sites) are dimmed but still visible (glyph opacity ~0.4, not
-  0), and their "Not Enabled" tooltip is readable.
+  0), and their "Not Enabled" tooltip is readable — one horizontal line, not a vertical
+  letter-per-line strip — in **both the hero and the footer** social rows (§26 #4).
 - **Hover and focus states** keep the icon visible (an icon that turns the same colour as its
   hover background is a FAIL).
 - **SVG icons** (chatbot send icon, decorative SVGs) use `currentColor` or a colour that
@@ -6294,6 +6309,21 @@ white send icon and this stylesheet draws a white button.
             max-height: calc(100vh - 96px);
         }
     }
+
+    /* On-screen keyboard open: JS (visualViewport) sets --chatbot-vvh (visible height)
+       and --chatbot-kb-offset (gap between layout-viewport bottom and keyboard top).
+       Dock the window flush to the keyboard — no 28px wrap offset, no 96px reserve. */
+    .chatbot-fab-wrap.is-kb-open {
+        bottom: var(--chatbot-kb-offset, 0px);
+        left: 0;
+        right: 0;
+    }
+
+    .chatbot-fab-wrap.is-kb-open .chatbot-window {
+        height: calc(var(--chatbot-vvh, 100dvh) - 8px);
+        max-height: calc(var(--chatbot-vvh, 100dvh) - 8px);
+        border-radius: 20px 20px 0 0;
+    }
 }
 
 /* Landscape on phones: shorten height to avoid overflow */
@@ -8007,11 +8037,39 @@ Same code as parameterization.md §4a; **keep the two copies identical**.
 
         /* Focus input after animation */
         setTimeout(function () { inputEl.focus(); }, 330);
+        syncKeyboard();
+    }
+
+    /* ── Mobile keyboard: dock the window flush against the on-screen keyboard ── */
+    var kbBaseHeight = 0; /* tallest visible height seen = no-keyboard height */
+    function syncKeyboard() {
+        var vv = window.visualViewport;
+        if (!vv || !isOpen || window.innerWidth > 480) {
+            wrap.classList.remove('is-kb-open');
+            return;
+        }
+        /* Works whether the browser shrinks only the visual viewport or the layout too */
+        if (!kbBaseHeight || vv.height > kbBaseHeight) kbBaseHeight = vv.height;
+        var offset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+        var kbOpen = (kbBaseHeight - vv.height) > 120;
+        wrap.classList.toggle('is-kb-open', kbOpen);
+        if (kbOpen) {
+            wrap.style.setProperty('--chatbot-vvh', vv.height + 'px');
+            wrap.style.setProperty('--chatbot-kb-offset', offset + 'px');
+            scrollToBottom();
+        }
+    }
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', syncKeyboard);
+        window.visualViewport.addEventListener('scroll', syncKeyboard);
+        window.addEventListener('orientationchange', function () { kbBaseHeight = 0; });
     }
 
     function closeChat() {
         isOpen = false;
         wrap.classList.remove('is-open');
+        wrap.classList.remove('is-kb-open');
+        kbBaseHeight = 0;
         fab.setAttribute('aria-expanded', 'false');
         fab.setAttribute('aria-label', 'Open Assistant');
         if (backdrop) backdrop.setAttribute('aria-hidden', 'true');

@@ -40,6 +40,12 @@ Rules that apply to every conversion:
   template's bucket folder, not relative `assets/` paths (which break under `{{path}}` serving).
   `{{path}}` stays for CSS/JS only. If images are deliberately kept in the local `assets/`
   folder, they must be reachable at `assets/…` wherever the page is served.
+- **Only the hero profile image is dynamic.** The hero photo is the one doctor image that uses
+  `{{profile}}` (as it does today). The **About-section image — and any other image that
+  appears outside the hero — is never parameterized**: if an About image exists, keep it a
+  static, template-owned asset (GCS bucket URL per the rule above). Never put `{{profile}}` or
+  any other placeholder in the About `<img>`, and never wrap it in a `{{#has…}}` block. (`{{profile}}`
+  in `og:image` / `twitter:image` / JSON-LD is unaffected — see §3.)
 - **Disabled-social CSS:** if the template has no `.is-disabled` / `data-tooltip` styling for
   social icons, add the block in §1.1 (it dims the glyph and surface, not the whole element, so
   the "Not Enabled" tooltip stays readable). Also add `html, body { overflow-x: clip; }` so the
@@ -52,6 +58,30 @@ Rules that apply to every conversion:
 - **Verify each template** by rendering it with sample data (long name, `15+`, `20,000+`, some
   `has*`/`no*` flags each way, some `has_`/`no_` section texts each way) and checking no `{{…}}`
   is left and every section opens/closes in balance.
+- **Smoke test: no stray placeholders on the rendered page (mandatory, after every
+  conversion).** After rendering with dummy data, look at what a visitor actually sees, not
+  just the source. A leftover tag shows up as literal text such as `📍 {{CITY}} AND ONLINE` in
+  the hero. Do all of these on `index.html`, `privacy-policy.html` and
+  `terms-of-service.html`, at desktop and 390px width:
+  1. **Scan the rendered DOM text and attributes.** In a real browser (or jsdom), run
+     `document.body.innerText` and the serialized HTML through a case-insensitive search for
+     `{{`, `}}`, `{{#`, `{{/` and `{{^`. Zero hits is the only pass. Also check `<title>`,
+     `<meta>` content, JSON-LD, `alt`/`aria-label`/`title`, `href`/`src`, `data-*` and
+     `placeholder` attributes, and `style` values.
+  2. **Search case-insensitively.** `text-transform: uppercase` makes `{{city}}` display as
+     `{{CITY}}`, so a source search for the exact lowercase tag name can miss what the visitor
+     sees. Search for `{{` itself, not for individual tag names.
+  3. **Every tag must exist in the §1 vocabulary.** A tag that is not in §1 (typo, wrong case,
+     invented name such as a `{{city}}` in a place the backend does not fill) is never
+     substituted and renders literally. Fix by using the correct §1 placeholder, wrapping it in
+     the matching `has*`/`no*` block, or replacing it with fixed text. Do not leave it for the
+     backend.
+  4. **Render each conditional both ways.** Every `{{#hasX}}`/`{{#noX}}` pair and every
+     `has_`/`no_` section text, once with the value present and once empty, then re-scan. Text
+     built from several tags (e.g. `{{city}} and Online`, `{{district}}, {{state}}`) must read
+     correctly when one of them is empty, with no orphan separators or stray braces.
+  5. **List every hit** with page, section, the tag and the viewport. A page with any visible
+     `{{…}}` is not done.
 
 ---
 
@@ -203,7 +233,15 @@ in `:root` if the template names them differently.
   font-size: 16px;
   font-weight: 600;
   line-height: 1.3;
-  white-space: nowrap; /* fixed short labels ("Not Enabled", network names), not dynamic content */
+  /* Fixed short labels ("Not Enabled", network names), not dynamic content — the one
+     sanctioned nowrap. All four lines are required: the tooltip is sized by its 28–46px icon
+     and inherits the global reset's `word-break: break-word`, so without them it collapses
+     into a one-letter-per-line vertical strip (AGENTS.md §26 #4). */
+  white-space: nowrap;
+  width: max-content;
+  max-width: none;
+  word-break: normal;
+  overflow-wrap: normal;
   padding: 6px 10px;
   border-radius: 6px;
   opacity: 0;
@@ -951,11 +989,39 @@ Copy verbatim. Nothing changes per microsite.
 
         /* Focus input after animation */
         setTimeout(function () { inputEl.focus(); }, 330);
+        syncKeyboard();
+    }
+
+    /* ── Mobile keyboard: dock the window flush against the on-screen keyboard ── */
+    var kbBaseHeight = 0; /* tallest visible height seen = no-keyboard height */
+    function syncKeyboard() {
+        var vv = window.visualViewport;
+        if (!vv || !isOpen || window.innerWidth > 480) {
+            wrap.classList.remove('is-kb-open');
+            return;
+        }
+        /* Works whether the browser shrinks only the visual viewport or the layout too */
+        if (!kbBaseHeight || vv.height > kbBaseHeight) kbBaseHeight = vv.height;
+        var offset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+        var kbOpen = (kbBaseHeight - vv.height) > 120;
+        wrap.classList.toggle('is-kb-open', kbOpen);
+        if (kbOpen) {
+            wrap.style.setProperty('--chatbot-vvh', vv.height + 'px');
+            wrap.style.setProperty('--chatbot-kb-offset', offset + 'px');
+            scrollToBottom();
+        }
+    }
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', syncKeyboard);
+        window.visualViewport.addEventListener('scroll', syncKeyboard);
+        window.addEventListener('orientationchange', function () { kbBaseHeight = 0; });
     }
 
     function closeChat() {
         isOpen = false;
         wrap.classList.remove('is-open');
+        wrap.classList.remove('is-kb-open');
+        kbBaseHeight = 0;
         fab.setAttribute('aria-expanded', 'false');
         fab.setAttribute('aria-label', 'Open Assistant');
         if (backdrop) backdrop.setAttribute('aria-hidden', 'true');
@@ -2648,7 +2714,8 @@ done:
    markup" above. `{{userid}}` is rendered into `data-userid`, not left in the script.
 2. **Render with sample data.** Substitute the placeholders (a numeric `userid`, a clinic
    name, address, district, state, pincode) so no `{{…}}` is left, as in the per-template
-   verification in §0.
+   verification in §0, then run the stray-placeholder smoke test from §0 (no visible
+   `{{…}}` anywhere on the rendered pages).
 3. **Run the booking flow against a mock API** (jsdom or a real browser) and check:
    - On load, `getavailabledays` and `getappointment` are called with the doctor's
      `userid`; the calendar enables only the returned weekdays and no past dates.
@@ -4115,6 +4182,21 @@ The send-button rule near the end is the "send icon visible" fix from the §4a c
             height: calc(100vh - 96px);
             max-height: calc(100vh - 96px);
         }
+    }
+
+    /* On-screen keyboard open: JS (visualViewport) sets --chatbot-vvh (visible height)
+       and --chatbot-kb-offset (gap between layout-viewport bottom and keyboard top).
+       Dock the window flush to the keyboard — no 28px wrap offset, no 96px reserve. */
+    .chatbot-fab-wrap.is-kb-open {
+        bottom: var(--chatbot-kb-offset, 0px);
+        left: 0;
+        right: 0;
+    }
+
+    .chatbot-fab-wrap.is-kb-open .chatbot-window {
+        height: calc(var(--chatbot-vvh, 100dvh) - 8px);
+        max-height: calc(var(--chatbot-vvh, 100dvh) - 8px);
+        border-radius: 20px 20px 0 0;
     }
 }
 
