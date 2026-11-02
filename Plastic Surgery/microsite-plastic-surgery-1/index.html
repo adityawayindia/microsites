@@ -31,7 +31,7 @@
   <meta name="description" content="Dr. Vikram Malhotra, MCh plastic and cosmetic surgeon — rhinoplasty, facial rejuvenation, liposuction and body contouring, gynecomastia, hair restoration, and reconstructive surgery with natural-looking results." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23141d2e'/%3E%3Cpath d='M36 12c-2 6-1 10 2 14l6 9-5 2c1 3 0 5-2 6 1 2 1 5-2 7-3 2-8 2-12 1' fill='none' stroke='%23d8b87a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.example.com/plastic-surgery-1/" /><!-- TODO: replace with live production domain before launch -->
+  <link rel="canonical" href="https://digidr.app/{{slug}}/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -65,8 +65,8 @@
     "@type": "Physician",
     "name": "Dr. Vikram Malhotra",
     "medicalSpecialty": "PlasticSurgery",
-    "image": "https://www.example.com/plastic-surgery-1/assets/dr-vikram-malhotra.jpg",
-    "url": "https://www.example.com/plastic-surgery-1/",
+    "image": "https://digidr.app/{{slug}}/assets/dr-vikram-malhotra.jpg",
+    "url": "https://digidr.app/{{slug}}/",
     "telephone": "+91-9068935571",
     "email": "dr.malhotra@wayindiahospitals.com",
     "address": {
@@ -170,8 +170,8 @@
 
         <h1 class="hero-title">Dr. Vikram Malhotra</h1>
         <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MS (General Surgery), MCh (Plastic &amp; Reconstructive Surgery)</p>
-        <p class="hero-credentials"><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: FRCS (Plast) (Fellow of the Royal College of Surgeons), UK; Aesthetic Surgery Fellowship, USA</p>
         <p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Medical Regd. No. 64318</p>
+        <p class="hero-credentials"><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: FRCS (Plast) (Fellow of the Royal College of Surgeons), UK; Aesthetic Surgery Fellowship, USA</p>
 
         <div class="hero-stats-grid">
           <article class="hero-stat-box">
@@ -194,14 +194,14 @@
         <p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Languages:</strong> English &bull; Hindi &bull; Marathi</p>
 
         <div class="social-links" aria-label="Social media links">
-          <a href="#" class="social" aria-label="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Hero"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social" aria-label="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Hero"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="social" aria-label="Instagram" data-ga-event="social_instagram_click" data-ga-label="Hero"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="social" aria-label="X" data-ga-event="social_x_click" data-ga-label="Hero"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="social" aria-label="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Hero"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="social" aria-label="Website" data-ga-event="social_website_click" data-ga-label="Hero"><i class="fa-solid fa-globe"></i></a>
-          <a href="https://wa.me/919068935571" class="social" aria-label="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Hero"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" class="social" aria-label="YouTube" data-ga-event="social_youtube_click" data-ga-label="Hero"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social" aria-label="Facebook Profile" data-ga-event="hero_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social" aria-label="Facebook Page" data-ga-event="hero_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social" aria-label="Instagram" data-ga-event="hero_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social" aria-label="X" data-ga-event="hero_social_link_click" data-ga-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social" aria-label="LinkedIn" data-ga-event="hero_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social" aria-label="Website" data-ga-event="hero_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>
+          <a href="https://wa.me/919068935571" class="social" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" data-ga-event="hero_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="social" aria-label="YouTube" data-ga-event="hero_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
 
@@ -482,6 +482,10 @@
               <a href="mailto:dr.malhotra@wayindiahospitals.com" data-contact-email data-ga-event="email_click">dr.malhotra@wayindia<wbr />hospitals.com</a>
             </p>
           </div>
+        </div>
+
+        <div class="contact-actions">
+          <a href="#" class="cta-btn contact-cta-btn" data-ga-event="book_appointment_click" data-ga-label="Contact">Book Appointment</a>
         </div>
       </div>
     </div>
@@ -780,21 +784,21 @@
         <div class="footer-social-wrap">
           <span class="footer-social-label">Follow me on:</span>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook Page" data-ga-event="social_facebook_page_click" data-ga-label="Footer"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Facebook Profile" data-ga-event="social_facebook_profile_click" data-ga-label="Footer"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" aria-label="Instagram" data-ga-event="social_instagram_click" data-ga-label="Footer"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="X" data-ga-event="social_x_click" data-ga-label="Footer"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn" data-ga-event="social_linkedin_click" data-ga-label="Footer"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Website" data-ga-event="social_website_click" data-ga-label="Footer"><i class="fa-solid fa-globe"></i></a>
-            <a href="https://wa.me/919068935571" aria-label="WhatsApp" data-ga-event="social_whatsapp_click" data-ga-label="Footer"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" aria-label="YouTube" data-ga-event="social_youtube_click" data-ga-label="Footer"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X" data-ga-event="footer_social_link_click" data-ga-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>
+            <a href="https://wa.me/919068935571" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
 
-        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor: 500">
+        <div class="footer-visitor-badge" role="status" aria-label="No. of Visitors">
           <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
           <span class="footer-visitor-badge-label">No. of Visitor:</span>
-          <span class="footer-visitor-badge-count">500</span>
+          <span class="footer-visitor-badge-count" id="visitorCount">0</span>
         </div>
       </div>
 
@@ -831,5 +835,21 @@
   <script src="./script/analytics.js"></script>
   <script src="./script/index.js"></script>
   <script src="./script/chatbot.js" defer></script>
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 </html>

@@ -274,7 +274,8 @@ aside,
 }
 
 .booking-modal-close {
-  position: absolute; top: 12px; right: 20px;
+  position: absolute; top: 12px; right: 20px; z-index: 2;
+  min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center;
   background: none; border: none; font-size: 28px; line-height: 1;
   cursor: pointer; color: var(--muted); transition: color 0.2s ease;
 }
@@ -2497,7 +2498,7 @@ body.footer-in-view .chatbot-fab-wrap:not(.is-open) .chatbot-fab {
   width: max-content;
   min-width: 100%;
   max-width: none;
-  justify-content: center;
+  justify-content: safe center;
 }
 /* Every card is locked to one height (--post-card-height). Facebook sizes its
    iframe to the post's own content, which varies wildly (one long post
@@ -2657,6 +2658,8 @@ body.footer-in-view .chatbot-fab-wrap:not(.is-open) .chatbot-fab {
 .social-carousel-prev { left: 0; }
 .social-carousel-next { right: 0; }
 /* display:flex above would otherwise defeat [hidden]. */
+.social-carousel-prev[hidden],
+.social-carousel-next[hidden],
 .social-carousel-btn[hidden] { display: none; }
 .social-carousel-btn:disabled { opacity: 0.4; cursor: default; pointer-events: none; }
 

@@ -981,7 +981,7 @@ document.addEventListener("click", (event) => {
     closeModal();
     showBookingPopup(msg, true);
 
-    window.trackEvent("booking_submitted", { appointment_type: isOnline ? "online" : "clinic" });
+    window.__trackBookingSuccess?.(isOnline ? "online" : "clinic");
 
     isSubmitting = false;
   });
@@ -1021,6 +1021,10 @@ document.addEventListener("click", (event) => {
    session on this site adds 50. Swap getVisitorCount() for a real API
    call once the backend endpoint exists.
    ========================================================================== */
+window.__trackBookingSuccess = function (type) {
+  window.trackEvent?.("booking_submitted", { appointment_type: type });
+};
+
 (function () {
   var STORAGE_KEY = "digidrVisitorCount";
   var SESSION_KEY = "digidrVisitorCounted";
@@ -1066,6 +1070,9 @@ document.addEventListener("click", (event) => {
   function renderVisitorCounter() {
     var footer = document.querySelector("footer");
     if (!footer) return;
+
+    // Static badge: the live count comes from the visit-API inline script.
+    if (footer.querySelector(".footer-visitor-badge")) return;
 
     var count = getVisitorCount();
     var existingBadge = footer.querySelector(".footer-visitor-badge");
@@ -1218,8 +1225,8 @@ document.addEventListener("click", (event) => {
     const API_BASE = "https://digidrapi.digidr.app";
     const FB_GRAPH_VERSION = "v23.0"; // Deprecated versions render blank, not errors — bump periodically.
     const MAX_CARDS = 5;
-    const MAX_POST_AGE_DAYS = 30;
-    const POSTS_PER_ACCOUNT = 10;
+    const MAX_POST_AGE_DAYS = 183;
+    const POSTS_PER_ACCOUNT = 50;
     const FEED_TIMEOUT_MS = 7000; // No answer by then → section stays hidden, even if a reply arrives later.
 
     const section = document.getElementById("social-media");
@@ -1446,9 +1453,10 @@ document.addEventListener("click", (event) => {
         }
 
         function syncButtons() {
-            const maxScroll = carousel.scrollWidth - carousel.clientWidth - 1;
+            const fits = carousel.scrollWidth <= carousel.clientWidth + 1;
+            prevBtn.hidden = nextBtn.hidden = fits;
             prevBtn.disabled = carousel.scrollLeft <= 0;
-            nextBtn.disabled = carousel.scrollLeft >= maxScroll;
+            nextBtn.disabled = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 1;
         }
 
         prevBtn.addEventListener("click", () => {
