@@ -1293,7 +1293,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
 .hero-stat-box strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 44px;
   font-weight: 700;
   line-height: 1.1;
   color: var(--bronze);
@@ -2121,7 +2121,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   .hero-stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .hero-stat-box { padding: 14px 6px; }
   .hero-stat-box + .hero-stat-box { padding-left: 12px; }
-  .hero-stat-box strong { font-size: 26px; }
+  .hero-stat-box strong { font-size: 34px; }
   .hero-actions { width: 100%; }
   .hero-book-btn, .hero-cta-secondary { flex: 1 1 100%; justify-content: center; }
   .hero-float { position: relative; top: auto; left: auto; right: auto; bottom: auto; }

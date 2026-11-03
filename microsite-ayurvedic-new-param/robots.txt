@@ -1,0 +1,5 @@
+# Per-template draft only. Merge at the digidr.app domain root.
+# tools/render.py generates the per-doctor discovery files during deployment.
+User-agent: *
+Allow: /
+Sitemap: https://digidr.app/sitemap.xml

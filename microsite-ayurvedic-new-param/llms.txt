@@ -1,0 +1,6 @@
+# Ayurveda-02 template deployment draft
+
+> Populate doctor-owned content with tools/render.py before publication.
+
+This template has three pages: profile, Privacy Policy, and Terms of Service.
+Merge the generated doctor entry into the shared domain discovery document.

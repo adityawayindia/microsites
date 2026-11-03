@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Per-template draft. Run tools/render.py with the doctor data to populate
+     the three clean page URLs, then merge into digidr.app/sitemap.xml. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>

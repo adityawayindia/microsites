@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 250" role="img" aria-label="Natural-looking results, planned around you. Book your private plastic surgery consultation.">
+  <defs>
+    <linearGradient id="bgD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f3a37"/>
+      <stop offset="1" stop-color="#1f5d57"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="250" fill="url(#bgD)"/>
+  <circle cx="1450" cy="60" r="190" fill="#f7bfa9" opacity="0.10"/>
+  <circle cx="1330" cy="230" r="120" fill="#ee8c6d" opacity="0.12"/>
+  <g transform="translate(80 70) scale(4.6)" fill="none" stroke="#f7bfa9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/>
+  </g>
+  <text x="250" y="108" font-family="'Fraunces', Georgia, serif" font-weight="700" font-size="44" fill="#fff4ef">Natural-looking results, planned around you.</text>
+  <text x="250" y="160" font-family="'Manrope', 'Segoe UI', sans-serif" font-weight="600" font-size="28" fill="#f7bfa9">Book a private consultation — in clinic or online.</text>
+  <rect x="250" y="182" width="190" height="8" rx="4" fill="#ee8c6d"/>
+</svg>
