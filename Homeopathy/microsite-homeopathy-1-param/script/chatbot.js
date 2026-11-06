@@ -1,7 +1,7 @@
 (function () {
     /* ── Config ── */
     var BOT_NAME = 'Assistant';
-    var BOT_ICON = 'assets/chatbot-icon.svg';
+    var BOT_ICON = new URL('../assets/chatbot-icon.svg', document.currentScript.src).href;
     var API_BASE = 'https://digidrapi.digidr.app';
 
     var WELCOME_MSG = "Hi there! 👋 I'm your Assistant. How can I help you today?";
