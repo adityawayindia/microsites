@@ -1,3 +1,6 @@
+// GA4 tracking lives in script/analytics.js (window.trackEvent + the
+// data-ga-event click delegation). Loaded before this file on every page.
+
 // Always start fresh on load/refresh: reset scroll position and strip any
 // URL hash left over from in-page nav so a reload never resumes mid-page.
 if ("scrollRestoration" in history) {
@@ -26,57 +29,34 @@ document.addEventListener("click", (event) => {
   targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-async function compressImage(file) {
-    const bitmap = await createImageBitmap(file);
-    let width = bitmap.width;
-    let height = bitmap.height;
-    const maxWidth = 800;
-    const maxHeight = 800;
-
-    if (width > maxWidth || height > maxHeight) {
-        const ratio = Math.min(maxWidth / width, maxHeight / height);
-        width = Math.round(width * ratio);
-        height = Math.round(height * ratio);
-    }
-
-    const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(bitmap, 0, 0, width, height);
-
-    const blob = await new Promise(resolve =>
-        canvas.toBlob(resolve, "image/jpeg", 0.5)
-    );
-
-    return new File(
-        [blob],
-        file.name.replace(/\.[^/.]+$/, "") + ".jpg",
-        { type: "image/jpeg" }
-    );
-}
-
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
 if (menuToggle && mainNav) {
-    menuToggle.addEventListener("click", () => {
-        const isOpen = mainNav.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Node)) return;
+
+    const clickedInsideNav = mainNav.contains(target);
+    const clickedToggle = menuToggle.contains(target);
+
+    if (!clickedInsideNav && !clickedToggle && mainNav.classList.contains("open")) {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
     });
-
-    document.addEventListener("click", (event) => {
-        const target = event.target;
-        if (!(target instanceof Node)) return;
-
-        const clickedInsideNav = mainNav.contains(target);
-        const clickedToggle = menuToggle.contains(target);
-
-        if (!clickedInsideNav && !clickedToggle && mainNav.classList.contains("open")) {
-            mainNav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
-        }
-    });
+  });
 }
 
 // In-page anchor links: smooth-scroll without writing #section to the address bar,
@@ -97,6 +77,50 @@ document.addEventListener("click", (event) => {
     }
     section.scrollIntoView({ behavior: "smooth", block: "start" });
 });
+
+// Animated Stat Counters
+(function () {
+  const statEls = document.querySelectorAll(".stat-card-num[data-count-to]");
+  if (!statEls.length) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const DURATION = 1400;
+
+  function animateCount(el) {
+    const target = parseFloat(el.getAttribute("data-count-to"));
+    const suffix = el.getAttribute("data-suffix") || "";
+    if (isNaN(target)) return;
+
+    if (prefersReducedMotion) {
+      el.textContent = target + suffix;
+      return;
+    }
+
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / DURATION, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  statEls.forEach((el) => observer.observe(el));
+})();
 
 // Gallery Lightbox
 (function () {
@@ -168,7 +192,8 @@ document.addEventListener("click", (event) => {
 
   galleryImages.forEach((img, idx) => {
     img.style.cursor = "zoom-in";
-    img.addEventListener("click", () => openLightbox(idx));
+    const trigger = img.closest(".gallery-item") || img;
+    trigger.addEventListener("click", () => openLightbox(idx));
   });
 
   if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
@@ -188,17 +213,127 @@ document.addEventListener("click", (event) => {
   });
 })();
 
-// Booking Modal (frontend demo ? no API)
+// Social Media Carousel
 (function () {
-    const modal = document.getElementById("bookingModal");
-    const dialog = modal?.querySelector(".booking-modal-dialog");
-    const backdrop = document.getElementById("bookingModalBackdrop");
-    const closeBtn = document.getElementById("bookingModalClose");
-    const form = document.getElementById("bookingForm");
+  const track = document.getElementById("socialMediaTrack");
+  const carousel = document.getElementById("socialMediaCarousel");
+  const dotsContainer = document.getElementById("socialCarouselDots");
+  const prevBtn = document.querySelector(".social-carousel-prev");
+  const nextBtn = document.querySelector(".social-carousel-next");
+  const cards = track ? track.querySelectorAll(".social-post-card") : [];
+  const totalCards = cards.length;
+
+  if (!track || totalCards === 0) return;
+
+  const AUTO_INTERVAL = 5000;
+  let currentIndex = 0;
+  let autoTimer = null;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function getCardsPerView() {
+    const w = window.innerWidth;
+    if (w <= 640) return 1;
+    if (w <= 900) return 2;
+    return 3;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, totalCards - getCardsPerView());
+  }
+
+  function goTo(index) {
+    currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
+    const targetCard = cards[currentIndex];
+    const offset = targetCard ? -targetCard.offsetLeft : 0;
+    track.style.transform = `translateX(${offset}px)`;
+    updateDots();
+    resetAutoPlay();
+  }
+
+  function updateDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = "";
+    const maxIndex = getMaxIndex();
+    for (let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot" + (i === currentIndex ? " active" : "");
+      dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+      dot.addEventListener("click", () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function resetAutoPlay() {
+    if (autoTimer) clearInterval(autoTimer);
+    autoTimer = setInterval(() => {
+      const max = getMaxIndex();
+      if (currentIndex >= max) {
+        goTo(0);
+      } else {
+        goTo(currentIndex + 1);
+      }
+    }, AUTO_INTERVAL);
+  }
+
+  function stopAutoPlay() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+  }
+
+  const carouselWrap = carousel?.closest(".social-media-carousel-wrap");
+  const touchTarget = carouselWrap || carousel || track;
+
+  touchTarget.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoPlay();
+  }, { passive: true });
+
+  touchTarget.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) goTo(currentIndex + 1);
+      else goTo(currentIndex - 1);
+    }
+    resetAutoPlay();
+  }, { passive: true });
+
+  touchTarget.addEventListener("mousedown", () => stopAutoPlay());
+  touchTarget.addEventListener("mouseup", () => resetAutoPlay());
+  touchTarget.addEventListener("mouseleave", () => resetAutoPlay());
+
+  window.addEventListener("resize", () => {
+    goTo(Math.min(currentIndex, getMaxIndex()));
+    updateDots();
+  });
+
+  goTo(0);
+  updateDots();
+})();
+
+// Booking Modal & Form Validation
+(function () {
+  const modal = document.getElementById("bookingModal");
+  const dialog = modal?.querySelector(".booking-modal-dialog");
+  const backdrop = document.getElementById("bookingModalBackdrop");
+  const closeBtn = document.getElementById("bookingModalClose");
+  const form = document.getElementById("bookingForm");
+  const bookingLoader = document.getElementById("bookingLoader");
 
     // Consent checkbox logic
     const consentCheckbox = document.getElementById("consentCheckbox");
-    const submitBtnEl = document.getElementById("submitBtn") || form.querySelector(".booking-submit-btn");
+    const submitBtnEl = document.getElementById("submitBtn") || form?.querySelector(".booking-submit-btn");
 
     if (consentCheckbox && submitBtnEl) {
         submitBtnEl.disabled = !consentCheckbox.checked;
@@ -208,7 +343,7 @@ document.addEventListener("click", (event) => {
             // Programmatic syncs from the consent modal are reported by that
             // flow's own events — don't log them as user checkbox clicks.
             if (!event.isTrusted) return;
-            window.trackEvent?.("consent_checkbox_click", { checked: consentCheckbox.checked });
+            window.trackEvent("consent_checkbox_click", { checked: consentCheckbox.checked });
         });
 
         // Intercept disabled property sets to respect consent checkbox state
@@ -230,501 +365,656 @@ document.addEventListener("click", (event) => {
         }
     }
 
-    const clinicTab = document.getElementById("clinicVisitTab");
-    const onlineTab = document.getElementById("onlineConsultTab");
-    const openTriggers = document.querySelectorAll(".cta-btn");
+  const clinicTab = document.getElementById("clinicVisitTab");
+  const onlineTab = document.getElementById("onlineConsultTab");
+  const openTriggers = document.querySelectorAll(".cta-btn, [data-open-booking]");
 
-    let compressedFile = null;
-    let appointmentType = "offline";
+  if (!modal || !dialog || !form) return;
 
-    if (!modal || !dialog || !form) return;
+  function setBodyScroll(disable) {
+    document.body.style.overflow = disable ? "hidden" : "";
+  }
 
-    function setBodyScroll(disable) {
-        document.body.style.overflow = disable ? "hidden" : "";
-    }
+  function openModal() {
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    setBodyScroll(true);
+    form.fullName?.focus();
+  }
 
-    function openModal() {
-        modal.classList.add("is-open");
-        modal.setAttribute("aria-hidden", "false");
-        setBodyScroll(true);
-    }
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    setBodyScroll(false);
+  }
 
-    function closeModal() {
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
-        setBodyScroll(false);
-    }
-
-    openTriggers.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            openModal();
-        });
+  openTriggers.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal();
     });
+  });
 
-    closeBtn?.addEventListener("click", closeModal);
-    backdrop?.addEventListener("click", closeModal);
+  closeBtn?.addEventListener("click", closeModal);
+  backdrop?.addEventListener("click", closeModal);
 
-    /* ---- Patient Consent modal --------------------------------------------
-       Swaps places with the booking modal: opening it hides the booking form
-       (entered data is preserved, the form is never reset) and closing it or
-       clicking "I Agree" brings the booking form straight back. */
-    const consentModal = document.getElementById("consentModal");
-    const consentClose = document.getElementById("consentModalClose");
-    const consentBackdrop = document.getElementById("consentModalBackdrop");
-    const consentAgree = document.getElementById("consentAgreeBtn");
-    const consentFooter = document.getElementById("consentModalFooter");
-    const consentDialog = consentModal?.querySelector(".consent-modal-dialog");
+  /* ---- Patient Consent modal --------------------------------------------
+     Swaps places with the booking modal: opening it hides the booking form
+     (entered data is preserved, the form is never reset) and closing it or
+     clicking "I Agree" brings the booking form straight back. */
+  const consentModal = document.getElementById("consentModal");
+  const consentClose = document.getElementById("consentModalClose");
+  const consentBackdrop = document.getElementById("consentModalBackdrop");
+  const consentAgree = document.getElementById("consentAgreeBtn");
+  const consentFooter = document.getElementById("consentModalFooter");
+  const consentDialog = consentModal?.querySelector(".consent-modal-dialog");
 
-    // GA4 + Clarity helper for the consent flow. Mirrors the shape used by the
-    // delegated data-ga-event tracker, which can't cover these (the Agree button
-    // starts disabled, and open/scroll/close aren't clicks on a tagged element).
-    function trackConsentEvent(eventName, params) {
-      if (typeof gtag === "function") {
-        gtag("event", eventName, {
-          page_path: window.location.pathname,
-          ...params,
-        });
-      }
-      if (typeof trackClarityEvent === "function") {
-        trackClarityEvent(eventName);
-      } else if (typeof clarity === "function") {
-        clarity("event", eventName);
-      }
-    }
-
-    // Button label always reads "I Agree" — only its disabled state changes.
-    // The "Please read the full notice to continue" hint carries the instruction.
-    // The dialog itself is the scroller (overflow-y: auto); the body is static.
-    function markAsRead() {
-      if (!consentAgree) return;
-      consentAgree.disabled = false;
-      consentFooter?.classList.add("is-read");
-      trackConsentEvent("consent_scrolled_to_bottom");
-    }
-
-    function checkScrolledToBottom() {
-      if (!consentDialog || !consentAgree || !consentAgree.disabled) return;
-      const remaining =
-        consentDialog.scrollHeight - consentDialog.scrollTop - consentDialog.clientHeight;
-      // 8px slack absorbs sub-pixel rounding and zoom levels.
-      if (remaining <= 8) markAsRead();
-    }
-
-    function resetConsentGate() {
-      if (!consentAgree) return;
-      consentAgree.disabled = true;
-      consentFooter?.classList.remove("is-read");
-    }
-
-    function openConsentModal() {
-      if (!consentModal) return;
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-      consentModal.classList.add("is-open");
-      consentModal.setAttribute("aria-hidden", "false");
-      setBodyScroll(true);
-      resetConsentGate();
-      if (consentDialog) consentDialog.scrollTop = 0;
-      // If the notice is short enough to need no scrolling, unlock immediately.
-      requestAnimationFrame(checkScrolledToBottom);
-      consentClose?.focus();
-      trackConsentEvent("consent_modal_open");
-    }
-
-    function closeConsentModal(agreed, method) {
-      if (!consentModal) return;
-      // Captured before the gate resets, so we can see whether people who
-      // dismissed the notice had actually read to the end.
-      const hadRead = consentAgree ? !consentAgree.disabled : false;
-      consentModal.classList.remove("is-open");
-      consentModal.setAttribute("aria-hidden", "true");
-      trackConsentEvent(agreed ? "consent_agreed" : "consent_dismissed", {
-        method: method || "unknown",
-        scrolled_to_bottom: hadRead,
+  // GA4 + Clarity helper for the consent flow. Mirrors the shape used by the
+  // delegated data-ga-event tracker, which can't cover these (the Agree button
+  // starts disabled, and open/scroll/close aren't clicks on a tagged element).
+  function trackConsentEvent(eventName, params) {
+    if (typeof gtag === "function") {
+      gtag("event", eventName, {
+        page_path: window.location.pathname,
+        ...params,
       });
-      if (consentCheckbox) {
-        // Consent is granted only via "I Agree" — any other exit leaves it unticked.
-        consentCheckbox.checked = !!agreed;
-        consentCheckbox.dispatchEvent(new Event("change", { bubbles: true }));
-      }
-      // Return to the appointment form with all entered data intact.
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-      setBodyScroll(true);
-      consentCheckbox?.focus();
     }
+    if (typeof trackClarityEvent === "function") {
+      trackClarityEvent(eventName);
+    } else if (typeof clarity === "function") {
+      clarity("event", eventName);
+    }
+  }
 
-    // Ticking the checkbox opens the notice; it only stays ticked after "I Agree".
-    consentCheckbox?.addEventListener("click", (event) => {
-      if (!consentModal) return;
-      if (consentCheckbox.checked) {
-        event.preventDefault();
-        consentCheckbox.checked = false;
-        openConsentModal();
+  // Button label always reads "I Agree" — only its disabled state changes.
+  // The "Please read the full notice to continue" hint carries the instruction.
+  // The dialog itself is the scroller (overflow-y: auto); the body is static.
+  function markAsRead() {
+    if (!consentAgree) return;
+    consentAgree.disabled = false;
+    consentFooter?.classList.add("is-read");
+    trackConsentEvent("consent_scrolled_to_bottom");
+  }
+
+  function checkScrolledToBottom() {
+    if (!consentDialog || !consentAgree || !consentAgree.disabled) return;
+    const remaining =
+      consentDialog.scrollHeight - consentDialog.scrollTop - consentDialog.clientHeight;
+    // 8px slack absorbs sub-pixel rounding and zoom levels.
+    if (remaining <= 8) markAsRead();
+  }
+
+  function resetConsentGate() {
+    if (!consentAgree) return;
+    consentAgree.disabled = true;
+    consentFooter?.classList.remove("is-read");
+  }
+
+  function openConsentModal() {
+    if (!consentModal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    consentModal.classList.add("is-open");
+    consentModal.setAttribute("aria-hidden", "false");
+    setBodyScroll(true);
+    resetConsentGate();
+    if (consentDialog) consentDialog.scrollTop = 0;
+    // If the notice is short enough to need no scrolling, unlock immediately.
+    requestAnimationFrame(checkScrolledToBottom);
+    consentClose?.focus();
+    trackConsentEvent("consent_modal_open");
+  }
+
+  function closeConsentModal(agreed, method) {
+    if (!consentModal) return;
+    // Captured before the gate resets, so we can see whether people who
+    // dismissed the notice had actually read to the end.
+    const hadRead = consentAgree ? !consentAgree.disabled : false;
+    consentModal.classList.remove("is-open");
+    consentModal.setAttribute("aria-hidden", "true");
+    trackConsentEvent(agreed ? "consent_agreed" : "consent_dismissed", {
+      method: method || "unknown",
+      scrolled_to_bottom: hadRead,
+    });
+    if (consentCheckbox) {
+      // Consent is granted only via "I Agree" — any other exit leaves it unticked.
+      consentCheckbox.checked = !!agreed;
+      consentCheckbox.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+    // Return to the appointment form with all entered data intact.
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    setBodyScroll(true);
+    consentCheckbox?.focus();
+  }
+
+  // Ticking the checkbox opens the notice; it only stays ticked after "I Agree".
+  consentCheckbox?.addEventListener("click", (event) => {
+    if (!consentModal) return;
+    if (consentCheckbox.checked) {
+      event.preventDefault();
+      consentCheckbox.checked = false;
+      openConsentModal();
+    }
+  });
+
+  consentDialog?.addEventListener("scroll", checkScrolledToBottom, { passive: true });
+  window.addEventListener("resize", checkScrolledToBottom);
+  consentClose?.addEventListener("click", () => closeConsentModal(false, "close_button"));
+  consentBackdrop?.addEventListener("click", () => closeConsentModal(false, "backdrop"));
+  consentAgree?.addEventListener("click", () => closeConsentModal(true, "agree_button"));
+
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    // Consent modal sits on top of the booking form — it closes first.
+    if (consentModal?.classList.contains("is-open")) {
+      closeConsentModal(false, "escape_key");
+    } else if (modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+
+  // Slide the underline under the active tab (measured, so it follows any tab width).
+  const tabsBar = clinicTab?.parentElement;
+  function moveTabIndicator() {
+    const current = [clinicTab, onlineTab].find((t) => t?.classList.contains("is-active"));
+    if (!tabsBar || !current) return;
+    tabsBar.style.setProperty("--tab-left", current.offsetLeft + "px");
+    tabsBar.style.setProperty("--tab-width", current.offsetWidth + "px");
+  }
+  if (tabsBar && "ResizeObserver" in window) new ResizeObserver(moveTabIndicator).observe(tabsBar);
+  window.addEventListener("resize", moveTabIndicator);
+
+  function setActiveTab(active) {
+    if (!clinicTab || !onlineTab) return;
+    const alreadyActive = (active === "clinic" ? clinicTab : onlineTab).classList.contains("is-active");
+    if (active === "clinic") {
+      clinicTab.classList.add("is-active");
+      onlineTab.classList.remove("is-active");
+      clinicTab.setAttribute("aria-selected", "true");
+      onlineTab.setAttribute("aria-selected", "false");
+    } else {
+      clinicTab.classList.remove("is-active");
+      onlineTab.classList.add("is-active");
+      clinicTab.setAttribute("aria-selected", "false");
+      onlineTab.setAttribute("aria-selected", "true");
+    }
+    moveTabIndicator();
+    if (!alreadyActive) {
+      if (form) {
+        // Slots are per date (and will differ per appointment type), so a stale
+        // date/time must not carry over. Name, phone, email, etc. are kept.
+        form.dispatchEvent(new CustomEvent("slotreset"));
+        if (form.preferredTime) form.preferredTime.value = "";
+        showError("preferredDate", "");
+        showError("preferredTime", "");
+        form.classList.remove("is-switching");
+        void form.offsetWidth; // restart the animation
+        form.classList.add("is-switching");
       }
+    }
+  }
+
+  // Telemedicine note: hover (mouse) or tap (touch) the info icon; Esc / outside tap closes.
+  const infoIcon = document.getElementById("onlineConsultInfo");
+  const infoTip = document.getElementById("onlineConsultTip");
+  function toggleInfoTip(show) {
+    if (!infoIcon || !infoTip) return;
+    infoTip.hidden = !show;
+    infoIcon.classList.toggle("is-open", show);
+  }
+  infoIcon?.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") toggleInfoTip(true); });
+  infoIcon?.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") toggleInfoTip(false); });
+  infoIcon?.addEventListener("click", () => toggleInfoTip(infoTip.hidden));
+  // Keyboard: tabbing onto the Online Consultation tab shows the note, tabbing away hides it.
+  onlineTab?.addEventListener("focus", () => { if (onlineTab.matches(":focus-visible")) toggleInfoTip(true); });
+  onlineTab?.addEventListener("blur", () => toggleInfoTip(false));
+  document.addEventListener("click", (e) => { if (!infoIcon?.contains(e.target)) toggleInfoTip(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleInfoTip(false); });
+
+  clinicTab?.addEventListener("click", () => setActiveTab("clinic"));
+  onlineTab?.addEventListener("click", () => setActiveTab("online"));
+
+  const fieldValidators = {
+    fullName(value) {
+      if (!value) return "Please enter your full name.";
+      if (value.length < 3) return "Name should be at least 3 characters.";
+      if (!/^[A-Za-z\s.'-]+$/.test(value)) return "Name should contain only letters.";
+      return "";
+    },
+    email(value) {
+      if (!value) return "Please enter your email address.";
+      if (!validateEmail(value)) return "Please enter a valid email address.";
+      return "";
+    },
+    phone(value) {
+      if (!value) return "Please enter your phone number.";
+      if (!iti || !phoneUtilsReady) return "";
+      if (!iti.isValidNumber()) return getPhoneErrorMessage(iti.getValidationError());
+      return "";
+    },
+    preferredDate(value) {
+      if (!value) return "Please select a preferred date.";
+      if (!validateDateNotPast(value)) return "Date cannot be in the past.";
+      return "";
+    },
+    preferredTime(value) {
+      if (!value) return "Please select a time slot.";
+      return "";
+    },
+    reason(value) {
+      if (!value || value.length < 10) {
+        return "Please provide a brief description (min 10 characters).";
+      }
+      return "";
+    },
+    report(file) {
+      if (!file) return "";
+      const allowedTypes = ["application/pdf", "image/jpeg", "image/png"];
+      const maxFileSizeInBytes = 5 * 1024 * 1024;
+      if (!allowedTypes.includes(file.type)) {
+        return "Only JPEG, PNG, or PDF files are allowed.";
+      }
+      if (file.size > maxFileSizeInBytes) {
+        return "File size should be less than 5 MB.";
+      }
+      return "";
+    },
+  };
+
+  function markFieldState(name, hasError) {
+    const field = form[name];
+    const fieldElement = Array.isArray(field) ? field[0] : field;
+    if (!fieldElement) return;
+    fieldElement.classList.toggle("is-invalid", hasError);
+    fieldElement.setAttribute("aria-invalid", hasError ? "true" : "false");
+    if (name === "preferredDate") {
+      const displayField = document.getElementById("preferredDateText");
+      if (displayField) {
+        displayField.classList.toggle("is-invalid", hasError);
+        displayField.setAttribute("aria-invalid", hasError ? "true" : "false");
+      }
+    }
+  }
+
+  function showError(name, message) {
+    const errorEl = form.querySelector(`.booking-error[data-error-for="${name}"]`);
+    if (errorEl) {
+      errorEl.textContent = message || "";
+    }
+    markFieldState(name, Boolean(message));
+  }
+
+  function clearErrors() {
+    form.querySelectorAll(".booking-error").forEach((el) => {
+      el.textContent = "";
+    });
+    ["fullName", "email", "phone", "preferredDate", "preferredTime", "reason", "report"].forEach((name) =>
+      markFieldState(name, false)
+    );
+  }
+
+  function validateEmail(value) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(value);
+  }
+
+  let iti = null;
+  let phoneUtilsReady = false;
+
+  function getPhoneErrorMessage(errorCode) {
+    if (!window.intlTelInput) return "Please enter a valid phone number.";
+    const { VALIDATION_ERROR } = window.intlTelInput;
+    switch (errorCode) {
+      case VALIDATION_ERROR.INVALID_COUNTRY_CODE: return "Invalid country code.";
+      case VALIDATION_ERROR.TOO_SHORT: return "Phone number is too short.";
+      case VALIDATION_ERROR.TOO_LONG: return "Phone number is too long.";
+      default: return "Please enter a valid phone number.";
+    }
+  }
+
+  function initPhonePlugin() {
+    const phoneInputEl = form.phone;
+    if (!phoneInputEl || !window.intlTelInput) return;
+
+    iti = window.intlTelInput(phoneInputEl, {
+      initialCountry: "in",
+      countryOrder: ["in"],
+      separateDialCode: true,
+      loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/utils.js"),
     });
 
-    consentDialog?.addEventListener("scroll", checkScrolledToBottom, { passive: true });
-    window.addEventListener("resize", checkScrolledToBottom);
-    consentClose?.addEventListener("click", () => closeConsentModal(false, "close_button"));
-    consentBackdrop?.addEventListener("click", () => closeConsentModal(false, "backdrop"));
-    consentAgree?.addEventListener("click", () => closeConsentModal(true, "agree_button"));
+    iti.promise.then(() => { phoneUtilsReady = true; }).catch(() => {});
 
+    phoneInputEl.addEventListener("countrychange", () => {
+      if (phoneInputEl.value.trim()) validateField("phone");
+    });
+
+    form.addEventListener("reset", () => {
+      iti?.setNumber("");
+      iti?.setSelectedCountry("in");
+    });
+  }
+
+  function setDateConstraints() {
+    const dateInput = form.preferredDate;
+    if (!dateInput) return;
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+  }
+
+  function validateField(name) {
+    if (!fieldValidators[name]) return true;
+
+    const value = name === "report" ? form.report.files[0] : form[name].value.trim();
+    const message = fieldValidators[name](value);
+    showError(name, message);
+    return !message;
+  }
+
+  function bindRealtimeValidation() {
+    const textFields = ["fullName", "email", "phone", "reason"];
+    textFields.forEach((name) => {
+      const field = form[name];
+      if (!field) return;
+      field.addEventListener("input", () => validateField(name));
+      field.addEventListener("blur", () => validateField(name));
+    });
+
+    ["preferredDate", "preferredTime", "report"].forEach((name) => {
+      const field = form[name];
+      if (!field) return;
+      field.addEventListener("change", () => validateField(name));
+    });
+
+    if (form.report) {
+      form.report.addEventListener("change", () => {
+        renderReportPreview(form.report.files[0]);
+
+        if (form.report.files[0]) {
+          window.trackEvent("report_uploaded");
+        }
+      });
+    }
+
+    const removeBtn = document.getElementById("reportPreviewRemove");
+    if (removeBtn) {
+      removeBtn.addEventListener("click", () => {
+        form.report.value = "";
+        renderReportPreview(null);
+        validateField("report");
+      });
+    }
+  }
+
+  function formatFileSize(bytes) {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  }
+
+  function renderReportPreview(file) {
+    const preview = document.getElementById("reportPreview");
+    const thumb = document.getElementById("reportPreviewThumb");
+    const icon = document.getElementById("reportPreviewIcon");
+    const nameEl = document.getElementById("reportPreviewName");
+    const sizeEl = document.getElementById("reportPreviewSize");
+    if (!preview || !thumb || !icon || !nameEl || !sizeEl) return;
+
+    if (thumb.src && thumb.src.startsWith("blob:")) {
+      URL.revokeObjectURL(thumb.src);
+    }
+
+    if (!file) {
+      preview.classList.remove("is-visible");
+      thumb.hidden = true;
+      thumb.src = "";
+      icon.hidden = true;
+      return;
+    }
+
+    nameEl.textContent = file.name;
+    sizeEl.textContent = formatFileSize(file.size);
+
+    if (file.type.startsWith("image/")) {
+      thumb.src = URL.createObjectURL(file);
+      thumb.alt = file.name;
+      thumb.hidden = false;
+      icon.hidden = true;
+    } else {
+      thumb.hidden = true;
+      thumb.src = "";
+      icon.hidden = false;
+    }
+
+    preview.classList.add("is-visible");
+  }
+
+  function setA11yAttributes() {
+    form.querySelectorAll(".booking-error").forEach((errorEl) => {
+      const fieldName = errorEl.getAttribute("data-error-for");
+      if (!fieldName) return;
+      const errorId = `booking-error-${fieldName}`;
+      errorEl.id = errorId;
+      errorEl.setAttribute("aria-live", "polite");
+      const field = form[fieldName];
+      const fieldElement = Array.isArray(field) ? field[0] : field;
+      if (fieldElement) {
+        fieldElement.setAttribute("aria-describedby", errorId);
+      }
+    });
+  }
+
+  form.fullName?.addEventListener("input", () => {
+    const el = form.fullName;
+    const sanitized = el.value.replace(/[^A-Za-z\s.'-]/g, "");
+    if (sanitized !== el.value) el.value = sanitized;
+  });
+
+  initPhonePlugin();
+  setDateConstraints();
+  bindRealtimeValidation();
+  setA11yAttributes();
+
+  // Custom modern date picker (replaces native browser calendar)
+  (function initDatePicker() {
+    const trigger = document.getElementById("preferredDateText");
+    const hiddenInput = document.getElementById("preferredDate");
+    const field = document.getElementById("preferredDateField");
+    const calendar = document.getElementById("preferredDateCalendar");
+    if (!trigger || !hiddenInput || !field || !calendar) return;
+
+    const titleEl = calendar.querySelector("[data-cal-title]");
+    const gridEl = calendar.querySelector("[data-cal-grid]");
+    const prevBtn = calendar.querySelector("[data-cal-prev]");
+    const nextBtn = calendar.querySelector("[data-cal-next]");
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selectedDate = null;
+
+    function pad(n) { return String(n).padStart(2, "0"); }
+    function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
+    function formatDisplay(d) { return `${pad(d.getDate())} ${monthNames[d.getMonth()].slice(0, 3)} ${d.getFullYear()}`; }
+    function isSameDay(a, b) {
+      return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    }
+
+    function render() {
+      if (!titleEl || !gridEl) return;
+      titleEl.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
+      gridEl.innerHTML = "";
+
+      const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+      const startOffset = firstDay.getDay();
+      const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+
+      for (let i = 0; i < startOffset; i++) {
+        const spacer = document.createElement("span");
+        spacer.className = "booking-calendar-day booking-calendar-day--empty";
+        gridEl.appendChild(spacer);
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const cellDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "booking-calendar-day";
+        btn.textContent = String(day);
+
+        if (cellDate < today) {
+          btn.disabled = true;
+          btn.classList.add("is-disabled");
+        }
+        if (isSameDay(cellDate, today)) btn.classList.add("is-today");
+        if (isSameDay(cellDate, selectedDate)) btn.classList.add("is-selected");
+
+        btn.addEventListener("click", () => {
+          selectedDate = cellDate;
+          hiddenInput.value = formatISO(cellDate);
+          trigger.value = formatDisplay(cellDate);
+          hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
+          close();
+        });
+
+        gridEl.appendChild(btn);
+      }
+    }
+
+    function open() {
+      calendar.hidden = false;
+      field.classList.add("is-open");
+      render();
+      document.addEventListener("click", onOutsideClick);
+    }
+
+    function close() {
+      calendar.hidden = true;
+      field.classList.remove("is-open");
+      document.removeEventListener("click", onOutsideClick);
+    }
+
+    function onOutsideClick(event) {
+      if (!field.contains(event.target)) close();
+    }
+
+    trigger.addEventListener("click", () => {
+      calendar.hidden ? open() : close();
+    });
+
+    prevBtn?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
+      render();
+    });
+
+    nextBtn?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+      render();
+    });
 
     document.addEventListener("keydown", (event) => {
-        if (event.key !== "Escape") return;
-        // Consent modal sits on top of the booking form — it closes first.
-        if (consentModal?.classList.contains("is-open")) {
-            closeConsentModal(false, "escape_key");
-        } else if (modal.classList.contains("is-open")) {
-            closeModal();
-        }
+      if (event.key === "Escape" && !calendar.hidden) close();
     });
 
-    function setActiveTab(active) {
-        if (!clinicTab || !onlineTab) return;
-        const isClinic = active === "clinic";
-        clinicTab.classList.toggle("is-active", isClinic);
-        onlineTab.classList.toggle("is-active", !isClinic);
-        clinicTab.setAttribute("aria-selected", String(isClinic));
-        onlineTab.setAttribute("aria-selected", String(!isClinic));
-        appointmentType = isClinic ? "offline" : "online";
+    // Full form reset, or just the date/time pair when the appointment type is switched.
+    function clearSelectedDate() {
+      selectedDate = null;
+      trigger.value = "";
+      hiddenInput.value = "";
+      viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+      close();
+    }
+    form.addEventListener("reset", clearSelectedDate);
+    form.addEventListener("slotreset", clearSelectedDate);
+  })();
+
+  window.addEventListener("resize", setDateConstraints);
+
+  form.addEventListener("reset", () => {
+    clearErrors();
+    setDateConstraints();
+  });
+
+  let isSubmitting = false;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (isSubmitting) return;
+    clearErrors();
+
+    if (iti) {
+      try { await iti.promise; } catch (e) {}
     }
 
-    clinicTab?.addEventListener("click", () => setActiveTab("clinic"));
-    // Telemedicine note: hover (mouse) or tap (touch) the info icon; Esc / outside tap closes.
-    const infoIcon = document.getElementById("onlineConsultInfo");
-    const infoTip = document.getElementById("onlineConsultTip");
-    function toggleInfoTip(show) {
-      if (!infoIcon || !infoTip) return;
-      infoTip.hidden = !show;
-      infoIcon.classList.toggle("is-open", show);
-    }
-    infoIcon?.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") toggleInfoTip(true); });
-    infoIcon?.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") toggleInfoTip(false); });
-    infoIcon?.addEventListener("click", () => toggleInfoTip(infoTip.hidden));
-    document.addEventListener("click", (e) => { if (!infoIcon?.contains(e.target)) toggleInfoTip(false); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleInfoTip(false); });
+    const fieldsToValidate = ["fullName", "email", "phone", "preferredDate", "preferredTime", "reason", "report"];
+    const invalidFields = fieldsToValidate.filter((name) => !validateField(name));
+    const isValid = invalidFields.length === 0;
 
-    onlineTab?.addEventListener("click", () => setActiveTab("online"));
-
-    function showError(name, message) {
-        const errorEl = form.querySelector(`.booking-error[data-error-for="${name}"]`);
-        if (errorEl) errorEl.textContent = message || "";
+    if (!isValid) {
+      const firstInvalid = form[invalidFields[0]];
+      const firstInvalidElement = Array.isArray(firstInvalid) ? firstInvalid[0] : firstInvalid;
+      firstInvalidElement?.focus();
+      return;
     }
 
-    function clearErrors() {
-        form.querySelectorAll(".booking-error").forEach((el) => {
-            el.textContent = "";
-        });
-    }
+    isSubmitting = true;
+    submitBtnEl.style.display = "none";
+    bookingLoader?.setAttribute("aria-hidden", "false");
 
-    function validateEmail(value) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    }
+    await new Promise((resolve) => setTimeout(resolve, 900));
 
-    function validatePhone(value) {
-        const digits = value.replace(/[\s\-().+]/g, "");
-        return /^[0-9]{4,15}$/.test(digits);
-    }
+    const isOnline = onlineTab?.classList.contains("is-active");
+    const msg = isOnline
+      ? "Your online consultation has been booked successfully. (Demo mode)"
+      : "Your clinic appointment has been booked successfully. (Demo mode)";
 
-    function validateDateNotPast(value) {
-        if (!value) return false;
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        return new Date(value) >= today;
-    }
+    bookingLoader?.setAttribute("aria-hidden", "true");
+    submitBtnEl.style.display = "block";
 
-    const preferredDateInput = document.getElementById("preferredDate");
-    const reportInput = document.getElementById("report");
-    const filePreviewDiv = document.getElementById("filePreview");
-    const bookingLoader = document.getElementById("bookingLoader");
-    const submitBtn = document.getElementById("submitBtn");
+    form.reset();
+    renderReportPreview(null);
+    closeModal();
+    showBookingPopup(msg, true);
 
-    // Custom modern date picker (replaces native browser calendar)
-    (function initDatePicker() {
-        const trigger = document.getElementById("preferredDateText");
-        const hiddenInput = document.getElementById("preferredDate");
-        const field = document.getElementById("preferredDateField");
-        const calendar = document.getElementById("preferredDateCalendar");
-        if (!trigger || !hiddenInput || !field || !calendar) return;
+    window.__trackBookingSuccess?.(isOnline ? "online" : "clinic");
 
-        const titleEl = calendar.querySelector("[data-cal-title]");
-        const gridEl = calendar.querySelector("[data-cal-grid]");
-        const prevBtn = calendar.querySelector("[data-cal-prev]");
-        const nextBtn = calendar.querySelector("[data-cal-next]");
-        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    isSubmitting = false;
+  });
 
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
-        let selectedDate = null;
+  function showBookingPopup(message, success = true) {
+    document.getElementById("bookingPopup")?.remove();
 
-        function pad(n) { return String(n).padStart(2, "0"); }
-        function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
-        function formatDisplay(d) { return `${pad(d.getDate())} ${monthNames[d.getMonth()].slice(0, 3)} ${d.getFullYear()}`; }
-        function isSameDay(a, b) {
-            return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
-        }
+    const overlay = document.createElement("div");
+    overlay.id = "bookingPopup";
+    overlay.className = "booking-popup-overlay";
+    overlay.innerHTML = `
+      <div class="booking-popup${success ? "" : " is-error"}">
+        <div class="booking-popup-icon"><i class="fa-solid ${success ? "fa-circle-check" : "fa-circle-xmark"}"></i></div>
+        <h2>${success ? "Success" : "Error"}</h2>
+        <p>${message}</p>
+        <button type="button" class="booking-popup-ok">OK</button>
+      </div>`;
 
-        function render() {
-            if (!titleEl || !gridEl) return;
-            titleEl.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
-            gridEl.innerHTML = "";
-
-            const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
-            const startOffset = firstDay.getDay();
-            const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
-
-            for (let i = 0; i < startOffset; i++) {
-                const spacer = document.createElement("span");
-                spacer.className = "booking-calendar-day booking-calendar-day--empty";
-                gridEl.appendChild(spacer);
-            }
-
-            for (let day = 1; day <= daysInMonth; day++) {
-                const cellDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
-                const btn = document.createElement("button");
-                btn.type = "button";
-                btn.className = "booking-calendar-day";
-                btn.textContent = String(day);
-
-                if (cellDate < today) {
-                    btn.disabled = true;
-                    btn.classList.add("is-disabled");
-                }
-                if (isSameDay(cellDate, today)) btn.classList.add("is-today");
-                if (isSameDay(cellDate, selectedDate)) btn.classList.add("is-selected");
-
-                btn.addEventListener("click", () => {
-                    selectedDate = cellDate;
-                    hiddenInput.value = formatISO(cellDate);
-                    trigger.value = formatDisplay(cellDate);
-                    hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
-                    close();
-                });
-
-                gridEl.appendChild(btn);
-            }
-        }
-
-        function open() {
-            calendar.hidden = false;
-            field.classList.add("is-open");
-            render();
-            document.addEventListener("click", onOutsideClick);
-        }
-
-        function close() {
-            calendar.hidden = true;
-            field.classList.remove("is-open");
-            document.removeEventListener("click", onOutsideClick);
-        }
-
-        function onOutsideClick(event) {
-            if (!field.contains(event.target)) close();
-        }
-
-        trigger.addEventListener("click", () => {
-            calendar.hidden ? open() : close();
-        });
-
-        prevBtn?.addEventListener("click", (event) => {
-            event.stopPropagation();
-            viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
-            render();
-        });
-
-        nextBtn?.addEventListener("click", (event) => {
-            event.stopPropagation();
-            viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
-            render();
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && !calendar.hidden) close();
-        });
-
-        form.addEventListener("reset", () => {
-            selectedDate = null;
-            trigger.value = "";
-            hiddenInput.value = "";
-            viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
-            close();
-        });
-    })();
-
-    reportInput?.addEventListener("change", (e) => {
-        const file = e.target.files[0];
-        filePreviewDiv.innerHTML = "";
-        compressedFile = null;
-        if (!file) return;
-
-        window.trackEvent?.("report_uploaded", {});
-
-        const isImage = file.type.startsWith("image/");
-        const isPdf = file.type === "application/pdf";
-
-        if (isImage) {
-            filePreviewDiv.innerHTML = `
-                <div class="preview-container">
-                    <div style="text-align: center; padding: 20px;">
-                        <p style="margin: 0; color: #666;">Compressing image...</p>
-                    </div>
-                </div>
-            `;
-
-            (async function () {
-                try {
-                    compressedFile = await compressImage(file);
-                    const previewReader = new FileReader();
-                    previewReader.onload = (event) => {
-                        filePreviewDiv.innerHTML = `
-                        <div class="preview-container">
-                            <img src="${event.target.result}" alt="Preview" class="preview-image" />
-                            <div class="preview-info">
-                                <p class="preview-name">${file.name}</p>
-                                <p class="preview-size">${(compressedFile.size / 1024).toFixed(2)} KB</p>
-                            </div>
-                        </div>`;
-                    };
-                    previewReader.readAsDataURL(compressedFile);
-                } catch (err) {
-                    console.error("Compression error:", err);
-                    filePreviewDiv.innerHTML = `
-                    <div class="preview-container">
-                        <div style="text-align: center; padding: 20px; color: #f44336;">
-                            <p>Error compressing image. Please try another file.</p>
-                        </div>
-                    </div>`;
-                }
-            })();
-        } else if (isPdf) {
-            compressedFile = file;
-            filePreviewDiv.innerHTML = `
-                <div class="preview-container">
-                    <div class="preview-pdf"><i class="fa-solid fa-file-pdf"></i></div>
-                    <div class="preview-info">
-                        <p class="preview-name">${file.name}</p>
-                        <p class="preview-size">${(file.size / 1024).toFixed(2)} KB</p>
-                    </div>
-                </div>`;
-        }
-    });
-
-    let isSubmitting = false;
-
-    form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        if (isSubmitting) return;
-
-        clearErrors();
-
-        const fullName = form.fullName.value.trim();
-        const email = form.email.value.trim();
-        const phone = form.phone.value.trim();
-        const fullPhone = phone;
-        const preferredDate = form.preferredDate.value;
-        const preferredTime = form.preferredTime.value;
-        const reason = form.reason.value.trim();
-        const report = form.report.value.trim();
-
-        let isValid = true;
-
-        if (!fullName) {
-            showError("fullName", "Please enter your full name.");
-            isValid = false;
-        }
-        if (!email) {
-            showError("email", "Please enter your email address.");
-            isValid = false;
-        } else if (!validateEmail(email)) {
-            showError("email", "Please enter a valid email address.");
-            isValid = false;
-        }
-        if (!phone) {
-            showError("phone", "Please enter your phone number.");
-            isValid = false;
-        } else if (!validatePhone(phone)) {
-            showError("phone", "Please enter a valid phone number.");
-            isValid = false;
-        }
-        if (!preferredDate) {
-            showError("preferredDate", "Please select a preferred date.");
-            isValid = false;
-        } else if (!validateDateNotPast(preferredDate)) {
-            showError("preferredDate", "Date cannot be in the past.");
-            isValid = false;
-        }
-        if (!preferredTime) {
-            showError("preferredTime", "Please select a time slot.");
-            isValid = false;
-        }
-        if (!reason || reason.length < 10) {
-            showError("reason", "Please provide a brief description (min 10 characters).");
-            isValid = false;
-        }
-
-        if (!isValid) return;
-
-        isSubmitting = true;
-        submitBtn.disabled = true;
-        submitBtn.style.display = "none";
-        filePreviewDiv.style.display = "none";
-        bookingLoader.setAttribute("aria-hidden", "false");
-
-        await new Promise((resolve) => setTimeout(resolve, 900));
-
-        const msg = appointmentType === "online"
-            ? "Your online consultation has been booked successfully. (Demo mode)"
-            : "Your clinic appointment has been booked successfully at Thorne Homeopathic Clinic. (Demo mode)";
-
-        showPopup(msg, true);
-        window.trackEvent?.("booking_submitted", { appointment_type: appointmentType });
-        form.reset();
-        filePreviewDiv.innerHTML = "";
-        clearErrors();
-        compressedFile = null;
-        closeModal();
-
-        isSubmitting = false;
-        submitBtn.disabled = false;
-        submitBtn.style.display = "block";
-        filePreviewDiv.style.display = "block";
-        bookingLoader.setAttribute("aria-hidden", "true");
-    });
-
-    function showPopup(message, success = true) {
-        document.getElementById("customPopup")?.remove();
-
-        const popup = document.createElement("div");
-        popup.id = "customPopup";
-        popup.innerHTML = `
-    <div style="
-        position:fixed; top:0; left:0; width:100%; height:100%;
-        background:rgba(0,0,0,.5); display:flex; justify-content:center;
-        align-items:center; z-index:999999;">
-        <div style="
-            background:#fff; width:380px; max-width:90%; border-radius:12px;
-            padding:30px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,.3);
-            font-family:Sora,sans-serif;">
-            <div style="font-size:65px; margin-bottom:15px; color:${success ? "#0f766e" : "#dc3545"};">
-                <i class="fa-solid ${success ? "fa-circle-check" : "fa-circle-xmark"}"></i>
-            </div>
-            <h2 style="margin:0 0 15px; color:#142824;">${success ? "Success" : "Error"}</h2>
-            <p style="margin:0 0 25px; color:#5a6f6a; line-height:1.5;">${message}</p>
-            <button id="popupOkBtn" style="
-                background:${success ? "#0f766e" : "#dc3545"}; color:#fff; border:none;
-                padding:10px 35px; border-radius:999px; cursor:pointer; font-size:16px;">
-                OK
-            </button>
-        </div>
-    </div>`;
-
-        document.body.appendChild(popup);
-        document.getElementById("popupOkBtn").onclick = () => popup.remove();
-    }
+    document.body.appendChild(overlay);
+    const remove = () => overlay.remove();
+    overlay.querySelector(".booking-popup-ok").addEventListener("click", remove);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) remove(); });
+  }
+  function validateDateNotPast(value) {
+    if (!value) return false;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const chosen = new Date(value);
+    return chosen >= today;
+  }
 })();
 
 /* ==========================================================================
@@ -734,6 +1024,10 @@ document.addEventListener("click", (event) => {
    session on this site adds 50. Swap getVisitorCount() for a real API
    call once the backend endpoint exists.
    ========================================================================== */
+window.__trackBookingSuccess = function (type) {
+  window.trackEvent?.("booking_submitted", { appointment_type: type });
+};
+
 (function () {
   var STORAGE_KEY = "digidrVisitorCount";
   var SESSION_KEY = "digidrVisitorCounted";
@@ -757,19 +1051,19 @@ document.addEventListener("click", (event) => {
     var style = document.createElement("style");
     style.id = STYLE_ID;
     style.textContent = [
-      ".footer-visitor-badge{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.32);box-shadow:0 2px 10px rgba(0,0,0,0.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:16px;line-height:1.4;max-width:100%;transition:background .25s ease,border-color .25s ease,transform .25s ease;}",
+      ".footer-visitor-badge{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.32);box-shadow:0 2px 10px rgba(0,0,0,0.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:18px;line-height:1.4;max-width:100%;transition:background .25s ease,border-color .25s ease,transform .25s ease;}",
       ".footer-visitor-badge:hover{background:rgba(255,255,255,0.24);border-color:rgba(255,255,255,0.44);transform:translateY(-1px);}",
       ".footer-visitor-badge .footer-visitor-badge-icon{font-size:16px;color:#ffffff;}",
       ".footer-visitor-badge .footer-visitor-badge-label{white-space:nowrap;color:#f1f5f9;font-weight:500;}",
       ".footer-visitor-badge .footer-visitor-badge-count{font-weight:700;color:#ffffff;font-variant-numeric:tabular-nums;}",
-      "@media (max-width:480px){.footer-visitor-badge{font-size:16px;padding:9px 14px;gap:6px;margin-top:12px;}}"
+      "@media (max-width:480px){.footer-visitor-badge{font-size:18px;padding:9px 14px;gap:6px;margin-top:12px;}}"
     ].join("");
     document.head.appendChild(style);
   }
 
   function findSocialContainer(footer) {
     return (
-      footer.querySelector(".peds2-footer-social") ||
+      footer.querySelector(".footer-social") ||
       footer.querySelector(".alt-footer-social") ||
       footer.querySelector(".footer-social") ||
       footer.querySelector('[class*="footer-social"]')
@@ -778,7 +1072,21 @@ document.addEventListener("click", (event) => {
 
   function renderVisitorCounter() {
     var footer = document.querySelector("footer");
-    if (!footer || footer.querySelector(".footer-visitor-badge")) return;
+    if (!footer) return;
+
+    // Static badge: the live count comes from the visit-API inline script.
+    if (footer.querySelector(".footer-visitor-badge")) return;
+
+    var count = getVisitorCount();
+    var existingBadge = footer.querySelector(".footer-visitor-badge");
+    if (existingBadge) {
+      existingBadge.setAttribute("aria-label", "No. of Visitor: " + count.toLocaleString("en-US"));
+      var existingCountEl = existingBadge.querySelector(".footer-visitor-badge-count");
+      if (existingCountEl) {
+        existingCountEl.textContent = count.toLocaleString("en-US");
+      }
+      return;
+    }
 
     var social = findSocialContainer(footer);
     if (!social || !social.parentNode) return;
@@ -892,6 +1200,341 @@ document.addEventListener("click", (event) => {
     item.classList.toggle("is-active", !isActive);
     btn.setAttribute("aria-expanded", String(!isActive));
   });
+})();
+
+// Hide the chatbot launcher while the footer is on screen
+(function () {
+  const footer = document.querySelector(".site-footer");
+  if (!footer || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      document.body.classList.toggle("footer-in-view", entry.isIntersecting);
+    });
+  });
+  observer.observe(footer);
+})();
+
+// Facebook Posts Carousel — live embeds from the DigiDr social feed API.
+// Cards hold Facebook SDK embeds, which must never be cloned (a cloned embed
+// renders blank) nor re-parented (that reloads the iframe). So the DOM is built
+// once and left alone: paging only changes the container's scrollLeft, which
+// the browser handles natively without touching any card.
+(function () {
+    // Slug comes from <body data-slug="{{slug}}"> — only HTML pages are templated.
+    // An unreplaced "{{slug}}" counts as unset, so the section is hidden.
+    const RAW_SLUG = (document.body.dataset.slug || "").trim();
+    const DOCTOR_SLUG = RAW_SLUG.includes("{{") ? "" : RAW_SLUG;
+    const API_BASE = "https://digidrapi.digidr.app";
+    const FB_GRAPH_VERSION = "v23.0"; // Deprecated versions render blank, not errors — bump periodically.
+    const MAX_CARDS = 5;
+    const MAX_POST_AGE_DAYS = 183;
+    const POSTS_PER_ACCOUNT = 50;
+    const FEED_TIMEOUT_MS = 7000; // No answer by then → section stays hidden, even if a reply arrives later.
+
+    const section = document.getElementById("social-media");
+    const carousel = document.getElementById("socialMediaCarousel");
+    const track = document.getElementById("socialMediaTrack");
+    const prevBtn = document.querySelector(".social-carousel-prev");
+    const nextBtn = document.querySelector(".social-carousel-next");
+
+    if (!section || !carousel || !track) return;
+
+    // The section only shows when the doctor has posts to display. No connected
+    // feed, no qualifying posts, an API failure, an unset slug or no answer within
+    // FEED_TIMEOUT_MS all hide the whole section, so the page flows straight on.
+    function hideSection() {
+        section.hidden = true;
+        section.style.display = "none"; // Templates may set display on <section>, beating [hidden].
+    }
+
+    if (!DOCTOR_SLUG) {
+        hideSection();
+        return;
+    }
+
+    function fetchJson(url) {
+        const attempt = () => fetch(url, { credentials: "omit" }).then((r) => {
+            if (!r.ok) throw new Error("HTTP " + r.status);
+            return r.json();
+        });
+        // One retry — short network blips are common on mobile.
+        return attempt().catch(
+            () => new Promise((res) => setTimeout(res, 800)).then(attempt)
+        );
+    }
+
+    function isVideoPermalink(url) {
+        return /\/videos\//i.test(url);
+    }
+
+    function isRecent(createdAt) {
+        const t = Date.parse(createdAt);
+        if (isNaN(t)) return false; // Fail closed — unknown age is treated as stale.
+        return (Date.now() - t) / 86400000 <= MAX_POST_AGE_DAYS;
+    }
+
+    function fetchDoctorPosts(slug) {
+        const url = API_BASE + "/api/MicrositeSocialFeed/" +
+            encodeURIComponent(slug) + "?limit=" + POSTS_PER_ACCOUNT;
+
+        return fetchJson(url).then((data) => {
+            if (!data || data.success === false || !Array.isArray(data.feeds)) return [];
+
+            const entries = [];
+            data.feeds.forEach((feed) => {
+                if (!feed || feed.platform !== "facebook" || !Array.isArray(feed.posts)) return;
+                feed.posts.forEach((post) => {
+                    if (!post || !post.permalink) return;
+                    if (isVideoPermalink(post.permalink)) return;
+                    if (!isRecent(post.createdAt)) return;
+                    entries.push({
+                        accountName: (feed.accountName || "").trim(),
+                        permalink: post.permalink,
+                        createdAt: post.createdAt || ""
+                    });
+                });
+            });
+
+            entries.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            return entries.slice(0, MAX_CARDS);
+        }).catch(() => []);
+    }
+
+    let fbSdkPromise = null;
+    function loadFbSdk() {
+        if (fbSdkPromise) return fbSdkPromise;
+        fbSdkPromise = new Promise((resolve, reject) => {
+            const s = document.createElement("script");
+            s.src = "https://connect.facebook.net/en_US/sdk.js";
+            s.async = true;
+            s.defer = true;
+            s.crossOrigin = "anonymous";
+            s.onload = () => {
+                if (!window.FB) return reject(new Error("FB missing"));
+                // xfbml:false — parsing is triggered manually once the cards exist.
+                window.FB.init({ xfbml: false, version: FB_GRAPH_VERSION });
+                resolve(window.FB);
+            };
+            s.onerror = () => reject(new Error("SDK blocked"));
+            document.body.appendChild(s);
+        });
+        return fbSdkPromise;
+    }
+
+    function embedWidth() {
+        const raw = getComputedStyle(carousel).getPropertyValue("--post-card-width");
+        return parseInt(raw, 10) || 300;
+    }
+
+    // The SDK reports success even when the embed is empty: with the plugin
+    // iframe blocked (tracker blockers, third-party-cookie restrictions), it
+    // still sets fb-xfbml-state="rendered", fires xfbml.render, AND removes the
+    // nested fallback blockquote — leaving a 0px iframe in a blank card. So a
+    // card only counts as loaded if its iframe actually has height; otherwise we
+    // swap in our own link card, which the SDK cannot strip.
+    function settleCard(card) {
+        if (card.dataset.settled) return;
+
+        const frame = card.querySelector("iframe");
+        if (frame && frame.getBoundingClientRect().height > 40) {
+            card.dataset.settled = "1";
+            card.classList.add("is-loaded");
+            return;
+        }
+        if (!card.dataset.deadline || Date.now() < +card.dataset.deadline) return;
+
+        card.dataset.settled = "1";
+        card.classList.add("is-loaded", "is-fallback");
+        card.textContent = "";
+
+        const link = document.createElement("a");
+        link.className = "social-post-fallback";
+        link.href = card.dataset.permalink || "#";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        const icon = document.createElement("i");
+        icon.className = "fa-brands fa-facebook";
+        icon.setAttribute("aria-hidden", "true");
+
+        const label = document.createElement("span");
+        label.textContent = card.dataset.account
+            ? "View this post from " + card.dataset.account + " on Facebook"
+            : "View this post on Facebook";
+
+        link.append(icon, label);
+        card.appendChild(link);
+    }
+
+    function settleAll() {
+        track.querySelectorAll(".social-post-card").forEach(settleCard);
+    }
+
+    // Poll briefly: a blocked embed never fires an event we could listen for.
+    function watchCards() {
+        const deadline = Date.now() + 6000;
+        track.querySelectorAll(".social-post-card").forEach((card) => {
+            card.dataset.deadline = String(deadline);
+        });
+        const timer = setInterval(() => {
+            settleAll();
+            const pending = track.querySelectorAll(".social-post-card:not([data-settled])");
+            if (!pending.length) clearInterval(timer);
+        }, 400);
+    }
+
+    // Skeleton that mirrors a Facebook post (avatar + name, image, text lines).
+    // Used for placeholder cards while the feed loads, and layered behind each
+    // real embed until its iframe paints; hidden via .is-loaded, never moved.
+    function buildSkeleton() {
+        const skel = document.createElement("div");
+        skel.className = "social-post-skeleton";
+        skel.setAttribute("aria-hidden", "true");
+        skel.innerHTML =
+            '<div class="sk-head"><span class="sk sk-avatar"></span>' +
+            '<span class="sk-lines"><span class="sk sk-line sk-w60"></span>' +
+            '<span class="sk sk-line sk-w40"></span></span></div>' +
+            '<span class="sk sk-media"></span>' +
+            '<span class="sk sk-line"></span>' +
+            '<span class="sk sk-line sk-w80"></span>';
+        return skel;
+    }
+
+    function showSkeletons() {
+        track.innerHTML = "";
+        track.setAttribute("aria-busy", "true");
+        for (let i = 0; i < 3; i++) {
+            const card = document.createElement("div");
+            card.className = "social-post-card is-placeholder";
+            card.appendChild(buildSkeleton());
+            track.appendChild(card);
+        }
+    }
+
+    function buildCard(entry, width) {
+        const card = document.createElement("article");
+        card.className = "social-post-card";
+        card.dataset.permalink = entry.permalink;
+        if (entry.accountName) card.dataset.account = entry.accountName;
+
+        const embed = document.createElement("div");
+        embed.className = "fb-post";
+        embed.setAttribute("data-href", entry.permalink);
+        embed.setAttribute("data-width", String(width));
+        embed.setAttribute("data-show-text", "true");
+
+        // Visible if the SDK is blocked by an ad blocker or cookie restrictions.
+        const fallback = document.createElement("blockquote");
+        fallback.className = "fb-xfbml-parse-ignore";
+        fallback.setAttribute("cite", entry.permalink);
+        const link = document.createElement("a");
+        link.href = entry.permalink;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = entry.accountName
+            ? "View this post from " + entry.accountName + " on Facebook"
+            : "View this post on Facebook";
+        fallback.appendChild(link);
+
+        embed.appendChild(fallback);
+        card.appendChild(buildSkeleton());
+        card.appendChild(embed);
+        return card;
+    }
+
+    function initPaging() {
+        if (!prevBtn || !nextBtn) return;
+
+        function stepSize() {
+            const card = track.firstElementChild;
+            if (!card) return carousel.clientWidth;
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            const span = card.offsetWidth + gap;
+            const perPage = Math.max(1, Math.floor(carousel.clientWidth / span));
+            return span * perPage;
+        }
+
+        function syncButtons() {
+            const fits = carousel.scrollWidth <= carousel.clientWidth + 1;
+            prevBtn.hidden = nextBtn.hidden = fits;
+            prevBtn.disabled = carousel.scrollLeft <= 0;
+            nextBtn.disabled = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 1;
+        }
+
+        prevBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: -stepSize(), behavior: "smooth" });
+        });
+        nextBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: stepSize(), behavior: "smooth" });
+        });
+
+        carousel.addEventListener("scroll", syncButtons, { passive: true });
+        window.addEventListener("resize", syncButtons);
+        syncButtons();
+    }
+
+    function embedPosts() {
+        watchCards();
+        loadFbSdk().then((FB) => {
+            FB.Event.subscribe("xfbml.render", settleAll);
+            FB.XFBML.parse(track, settleAll);
+            initPaging();
+        }).catch(() => {
+            // SDK never loaded — settle immediately into link cards.
+            track.querySelectorAll(".social-post-card").forEach((card) => {
+                card.dataset.deadline = "0";
+            });
+            settleAll();
+            initPaging();
+        });
+    }
+
+    function renderPosts(entries) {
+        const width = embedWidth();
+        const frag = document.createDocumentFragment();
+        entries.forEach((entry) => frag.appendChild(buildCard(entry, width)));
+        track.innerHTML = ""; // drop the placeholder skeletons
+        track.appendChild(frag);
+        track.removeAttribute("aria-busy");
+
+        // The Facebook SDK (and the paint watchdog) still wait until the section
+        // nears the viewport; only the small feed request runs at page load.
+        if ("IntersectionObserver" in window) {
+            const io = new IntersectionObserver((seen, obs) => {
+                if (seen.some((e) => e.isIntersecting)) {
+                    obs.disconnect();
+                    embedPosts();
+                }
+            }, { rootMargin: "400px 0px" });
+            io.observe(section);
+        } else {
+            embedPosts();
+        }
+    }
+
+    // The feed is fetched at page load, not when the section scrolls into view,
+    // so a doctor without posts has the section hidden before the visitor gets
+    // there — it never collapses under them mid-read.
+    showSkeletons();
+
+    let decided = false;
+    const timeout = setTimeout(() => {
+        if (decided) return;
+        decided = true;
+        hideSection();
+    }, FEED_TIMEOUT_MS);
+
+    fetchDoctorPosts(DOCTOR_SLUG).then((entries) => {
+        if (decided) return; // Late reply — the section is already hidden.
+        decided = true;
+        clearTimeout(timeout);
+        if (!entries.length) {
+            hideSection();
+            return;
+        }
+        renderPosts(entries);
+    });
 })();
 
 /* ==========================================================================

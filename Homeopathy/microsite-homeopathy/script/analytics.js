@@ -1,4 +1,4 @@
-// GA4 analytics - all event tracking for this microsite lives in this file.
+// GA4 analytics — all event tracking for this microsite lives in this file.
 //
 // 1) Declarative tracking: add data-ga-event="event_name" to any element and
 //    clicks on it (or any nested icon/span inside it) are sent automatically.
