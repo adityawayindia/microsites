@@ -240,11 +240,12 @@
           {{#no_about_section_subtitle}}Dedicated classical homeopathic care for long-standing health concerns, children's health and everyday wellbeing.{{/no_about_section_subtitle}}
         </p>
         <div class="read-more-wrap">
-          $1
+          <div class="read-more-content">
             <p>
               {{introduction}}
             </p>
-          $2 aria-expanded="false" data-ga-event="read_more_click">
+          </div>
+          <button type="button" class="read-more-btn" aria-expanded="false" data-ga-event="read_more_click">
             <span>Read More</span>
             <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
@@ -372,7 +373,7 @@
       <div class="philosophy-visual">
         <div class="philosophy-img-glow" aria-hidden="true"></div>
         <div class="philosophy-img-frame">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-homeopathy-1/assets/philosophy-remedy.jpg" alt="Amber glass remedy bottle surrounded by dried herbs and an eucalyptus sprig on a white marble surface" loading="lazy" />
+          <img src="assets/philosophy-remedy.jpg" alt="Amber glass remedy bottle surrounded by dried herbs and an eucalyptus sprig on a white marble surface" loading="lazy" />
         </div>
       </div>
     </div>
@@ -684,7 +685,8 @@
             <label for="preferredTime">Preferred Time</label>
             <div class="booking-select-wrap">
               <select id="preferredTime" name="preferredTime" required>
-                $1$2
+                <option value="">Select Time Slot</option>
+              </select>
               <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
             </div>
             <p class="booking-error" data-error-for="preferredTime"></p>
