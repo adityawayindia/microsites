@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+<title id="t">Homeopathy consultation</title><desc id="d">An editorial clinic scene showing a male doctor reviewing a patient history in a calm consultation room.</desc>
+<defs><linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F7F0E5"/><stop offset="1" stop-color="#EDE1D2"/></linearGradient><linearGradient id="plum" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#24132D"/><stop offset="1" stop-color="#56305C"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#2a1830" flood-opacity=".18"/></filter></defs>
+<rect width="1200" height="900" rx="42" fill="url(#wall)"/>
+<path d="M0 690h1200v210H0z" fill="#B8C3A8" opacity=".7"/>
+<path d="M85 80h470v510H85z" rx="20" fill="#FFFFFF" filter="url(#s)"/>
+<path d="M120 125h400v330H120z" fill="url(#plum)"/>
+<g opacity=".75" fill="none" stroke="#E0B56D" stroke-width="5"><path d="M208 408c10-116 58-195 132-254M232 344c55-4 99-34 133-78M244 282c-19-34-23-69-12-106"/><path d="M433 408c-9-116-55-193-129-252M411 344c-55-4-97-33-131-76M400 282c18-33 21-67 11-104"/></g>
+<rect x="160" y="495" width="320" height="26" rx="13" fill="#C18A3F" opacity=".55"/>
+<g filter="url(#s)">
+  <path d="M412 820v-205c0-91 62-136 139-136h41c75 0 137 45 137 136v205z" fill="#f7f3ed"/>
+  <circle cx="570" cy="360" r="112" fill="#CC8B68"/>
+  <path d="M457 358c5-94 52-139 112-139 69 0 112 47 112 139-34-51-76-72-122-68-47 4-77 23-102 68z" fill="#241B21"/>
+  <path d="M489 417c27 48 59 69 92 69 35 0 65-21 91-69-9 74-49 111-91 111-43 0-82-38-92-111z" fill="#241B21"/>
+  <path d="M484 611l87 72 78-72 45 209H435z" fill="#fff"/>
+  <path d="M571 683l22 43-20 94-23-94z" fill="#3A1F46"/>
+  <rect x="679" y="659" width="124" height="120" rx="12" fill="#3A1F46" transform="rotate(8 679 659)"/>
+  <rect x="694" y="676" width="94" height="9" rx="4" fill="#E0B56D" transform="rotate(8 694 676)"/>
+  <rect x="697" y="700" width="70" height="7" rx="3" fill="#EDE1D2" transform="rotate(8 697 700)"/>
+  <!-- patient -->
+  <circle cx="932" cy="430" r="96" fill="#9B6249"/>
+  <path d="M844 426c0-87 44-132 94-132 65 0 103 55 93 142-25-54-57-78-101-78-37 0-65 18-86 68z" fill="#302027"/>
+  <path d="M803 820V655c0-83 56-127 129-127 74 0 130 44 130 127v165z" fill="#879878"/>
+  <path d="M903 535l29 45 29-45" fill="none" stroke="#F7F0E5" stroke-width="5"/>
+</g>
+<rect x="706" y="744" width="365" height="44" rx="22" fill="#24132D"/>
+<circle cx="1070" cy="150" r="70" fill="#E0B56D" opacity=".25"/><circle cx="1070" cy="150" r="36" fill="#C18A3F" opacity=".25"/>
+</svg>

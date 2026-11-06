@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 260">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfdfb"/>
+      <stop offset="1" stop-color="#e8f0e9"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8EAE96" stop-opacity="0"/>
+      <stop offset="1" stop-color="#8EAE96" stop-opacity="0.24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="260" fill="url(#bg)"/>
+  <rect x="960" width="440" height="260" fill="url(#panel)"/>
+
+  <path d="M470,-10 C560,55 600,15 690,85 C735,120 715,175 795,215" stroke="#FF9933" stroke-width="12" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <path d="M470,10 C560,75 600,35 690,105 C735,140 715,195 795,235" stroke="#FFFFFF" stroke-width="12" fill="none" opacity="0.9" stroke-linecap="round"/>
+  <path d="M470,30 C560,95 600,55 690,125 C735,160 715,215 795,255" stroke="#128807" stroke-width="12" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <g transform="translate(742,130)">
+    <circle r="44" fill="#fff" stroke="#0b2a6b" stroke-width="3"/>
+    <circle r="34" fill="none" stroke="#0b2a6b" stroke-width="2.5" stroke-dasharray="1.6 4.3"/>
+    <circle r="6" fill="#0b2a6b"/>
+  </g>
+
+  <g transform="translate(52,52) scale(0.42)" fill="#4d6b57">
+    <path d="M50 12 C64 36 74 52 74 66 C74 82 62 90 50 90 C38 90 26 82 26 66 C26 52 36 36 50 12 Z"/>
+  </g>
+
+  <text x="98" y="98" font-family="'Outfit','Inter',sans-serif" font-weight="700" font-size="30" fill="#33473b">Gentle Healing,</text>
+  <text x="98" y="136" font-family="'Outfit','Inter',sans-serif" font-weight="700" font-size="30" fill="#6e9a7d">Rooted in Trust.</text>
+  <text x="46" y="232" font-family="'Inter',sans-serif" font-size="15" fill="#48594e">Celebrating 79 years of Independence &#8226; Special holistic-wellness care this August</text>
+
+  <g transform="translate(1100,50) scale(1.9)" fill="#8EAE96" opacity="0.26">
+    <path d="M50 12 C64 36 74 52 74 66 C74 82 62 90 50 90 C38 90 26 82 26 66 C26 52 36 36 50 12 Z"/>
+  </g>
+</svg>

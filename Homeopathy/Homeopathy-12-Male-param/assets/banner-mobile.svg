@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500">
+  <defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#1C1428"/><stop offset="1" stop-color="#3A6B65"/></linearGradient></defs>
+  <rect width="1600" height="500" rx="26" fill="url(#bg)"/>
+  <g font-family="Manrope,Arial,sans-serif" fill="#fff">
+    <text x="80" y="125" font-size="34" font-weight="700" letter-spacing="2">HOMEOPATHY CONSULTATIONS</text>
+    <text x="80" y="220" font-size="64" font-weight="800">Clinic and online</text>
+    <text x="80" y="295" font-size="64" font-weight="800">appointments</text>
+    <text x="80" y="375" font-size="30" opacity=".84">Detailed case review and follow up planning</text>
+  </g>
+</svg>

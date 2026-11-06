@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-labelledby="t d">
+<title id="t">Dr. Kunal Vardhan portrait</title><desc id="d">Editorial illustration of an Indian male homeopathic physician in a white coat, standing in a botanical study.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#24132D"/><stop offset=".62" stop-color="#3A1F46"/><stop offset="1" stop-color="#56305C"/></linearGradient>
+  <linearGradient id="coat" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#fffdf9"/><stop offset="1" stop-color="#ded5ca"/></linearGradient>
+  <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CC8B68"/><stop offset="1" stop-color="#A96747"/></linearGradient>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" seed="9" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  <filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="20" flood-color="#160c1d" flood-opacity=".38"/></filter>
+  <clipPath id="arch"><path d="M170 935V365C170 155 300 70 450 70s280 85 280 295v570z"/></clipPath>
+</defs>
+<rect width="900" height="1125" fill="url(#bg)"/>
+<rect width="900" height="1125" filter="url(#grain)" opacity=".7"/>
+<g opacity=".28" fill="none" stroke="#E0B56D" stroke-width="3">
+  <path d="M88 1050C90 795 208 668 325 565C170 652 108 803 88 1050Z"/>
+  <path d="M812 1050C806 790 689 676 577 568C724 654 793 800 812 1050Z"/>
+  <path d="M109 882c54-19 104-59 139-108M133 790c48-7 88-36 122-73M783 882c-57-18-105-58-140-108M760 792c-49-8-90-37-122-73"/>
+</g>
+<path d="M170 935V365C170 155 300 70 450 70s280 85 280 295v570z" fill="#F7F0E5" opacity=".94" filter="url(#shadow)"/>
+<g clip-path="url(#arch)">
+  <rect x="170" y="70" width="560" height="865" fill="#F7F0E5"/>
+  <circle cx="645" cy="218" r="130" fill="#EDE1D2"/>
+  <path d="M170 758c148-85 277-119 560-31v208H170z" fill="#B8C3A8" opacity=".55"/>
+  <g opacity=".55" fill="none" stroke="#879878" stroke-width="5" stroke-linecap="round">
+    <path d="M221 696c17-113 74-204 144-284M250 641c48-1 88-29 120-67M269 577c-16-31-18-68-6-101"/>
+    <path d="M690 620c-17-105-69-183-134-250M661 573c-46 0-84-27-116-62M642 514c14-29 15-62 5-91"/>
+  </g>
+  <g filter="url(#shadow)">
+    <!-- shoulders and coat -->
+    <path d="M250 1115V822c0-100 70-156 158-169h84c95 17 158 74 158 169v293z" fill="url(#coat)"/>
+    <path d="M405 654l45 91 45-91 55 40-35 119h-130l-36-119z" fill="#D8CBBE"/>
+    <path d="M365 675l85 70-70 57-55-101zM535 675l-85 70 70 57 55-101z" fill="#fffaf4"/>
+    <path d="M451 742l22 38-20 214-32-214z" fill="#3A1F46"/>
+    <path d="M254 843l106-144 35 105-41 310H252zM646 843L540 699l-35 105 41 310h100z" fill="#f8f4ee"/>
+    <path d="M450 837v278" stroke="#c7bbb0" stroke-width="3"/>
+    <path d="M552 840v102h55" fill="none" stroke="#C18A3F" stroke-width="4"/>
+    <circle cx="596" cy="925" r="22" fill="none" stroke="#3A1F46" stroke-width="5"/>
+    <path d="M575 883c-23-58-83-47-96-5" fill="none" stroke="#3A1F46" stroke-width="5" stroke-linecap="round"/>
+    <!-- neck -->
+    <path d="M390 576h120v116c-34 31-86 32-120 0z" fill="url(#skin)"/>
+    <!-- ears -->
+    <ellipse cx="334" cy="446" rx="38" ry="55" fill="#A96747"/><ellipse cx="566" cy="446" rx="38" ry="55" fill="#A96747"/>
+    <!-- face -->
+    <path d="M338 373c4-111 64-169 112-169s111 58 112 169l-12 147c-9 91-62 137-100 137s-91-46-100-137z" fill="url(#skin)"/>
+    <!-- hair -->
+    <path d="M337 386c-3-83 12-142 53-176 39-33 124-30 160 9 25 28 31 75 15 149-30-63-72-90-123-90-49 0-81 25-105 108z" fill="#241B21"/>
+    <path d="M347 360c14-88 56-126 111-126 42 0 80 19 104 58-27-12-54-16-82-14-59 4-101 28-133 82z" fill="#34252e"/>
+    <!-- beard -->
+    <path d="M360 497c16 85 52 122 90 122s76-39 92-122c-29 28-60 40-92 40-34 0-63-12-90-40z" fill="#241B21" opacity=".96"/>
+    <path d="M397 522c22 14 84 14 106 0-8 28-27 42-53 42s-45-14-53-42z" fill="#181218"/>
+    <!-- nose/mouth -->
+    <path d="M451 395c-2 47-8 80-20 96 13 8 29 8 42 0" fill="none" stroke="#7f4938" stroke-width="5" stroke-linecap="round"/>
+    <path d="M413 518c25 11 50 11 75 0" fill="none" stroke="#6e3b35" stroke-width="4" stroke-linecap="round"/>
+    <!-- glasses -->
+    <g fill="none" stroke="#24132D" stroke-width="7">
+      <rect x="354" y="392" width="82" height="53" rx="22"/><rect x="464" y="392" width="82" height="53" rx="22"/><path d="M436 412h28M354 408l-28-11M546 408l28-11"/>
+    </g>
+    <circle cx="400" cy="418" r="7" fill="#24132D"/><circle cx="500" cy="418" r="7" fill="#24132D"/>
+    <circle cx="397" cy="415" r="2.5" fill="#fff"/><circle cx="497" cy="415" r="2.5" fill="#fff"/>
+  </g>
+</g>
+<path d="M170 935V365C170 155 300 70 450 70s280 85 280 295v570" fill="none" stroke="#C18A3F" stroke-width="7"/>
+<circle cx="106" cy="126" r="7" fill="#E0B56D"/><circle cx="780" cy="154" r="5" fill="#B8C3A8"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="320" viewBox="0 0 2048 320">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#1C1428"/><stop offset="1" stop-color="#3A6B65"/></linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="2" fill="#fff" opacity=".08"/></pattern>
+  </defs>
+  <rect width="2048" height="320" rx="24" fill="url(#bg)"/><rect width="2048" height="320" rx="24" fill="url(#dots)"/>
+  <g font-family="Manrope,Arial,sans-serif" fill="#fff">
+    <text x="120" y="122" font-size="35" font-weight="700" letter-spacing="3">HOMEOPATHY CONSULTATIONS</text>
+    <text x="120" y="190" font-size="62" font-weight="800">Clinic and online appointments</text>
+    <text x="120" y="242" font-size="28" opacity=".84">Detailed case review • Follow up planning • Coordinated care</text>
+  </g>
+  <g transform="translate(1700 40)">
+    <circle cx="120" cy="120" r="100" fill="#F8F4ED" opacity=".96"/>
+    <path d="M78 158c56-10 91-46 108-112 20 44 12 96-31 126-31 22-61 12-77-14Z" fill="#3A6B65"/>
+    <path d="M82 163c29-35 61-62 104-89" stroke="#B85832" stroke-width="12" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>
