@@ -243,9 +243,9 @@
 
       <div class="hero-visual">
         <div class="hero-visual-blob" aria-hidden="true"></div>
-        <div class="hero-digestive-visual">
-          <img src="assets/digestive-system.svg" alt="Human Digestive System Anatomy" class="digestive-system-img" />
-        </div>
+        <figure class="hero-portrait">
+          <img src="{{profile}}" alt="Dr. {{full_name}}" class="hero-portrait-img" width="1024" height="1024" fetchpriority="high" />
+        </figure>
       </div>
     </div>
 
@@ -256,13 +256,6 @@
 
   <section class="about-section" id="about">
     <div class="container about-profile-grid">
-      <!-- Profile Image Shifted Here -->
-      <div class="about-visual">
-        <div class="about-portrait-frame">
-          <img src="{{profile}}" alt="Dr. {{full_name}}" class="about-image" />
-        </div>
-      </div>
-
       <!-- About Text Content -->
       <div class="about-content">
         <div class="about-intro">

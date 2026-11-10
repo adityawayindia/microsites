@@ -646,6 +646,44 @@ overflow: hidden;
   object-fit: contain;
 }
 
+/* Hero doctor portrait (right column) */
+.hero-portrait {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  width: 100%;
+  max-width: 440px;
+  min-width: 0;
+}
+
+.hero-portrait::before {
+  content: "";
+  position: absolute;
+  inset: 18px -16px -16px 18px;
+  border-radius: 220px 220px 32px 32px;
+  background: var(--teal-soft);
+  border: 2px solid var(--border-teal);
+  z-index: -1;
+}
+
+.hero-portrait-img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 220px 220px 32px 32px;
+  border: 4px solid var(--surface);
+  box-shadow: var(--shadow-lg);
+  background: var(--surface);
+}
+
+@media (max-width: 1024px) {
+  .hero-visual { order: -1; }
+  .hero-portrait { max-width: 320px; margin: 0 16px 16px 0; }
+}
+
 .hero-wave {
   position: absolute;
   bottom: 0;
@@ -666,7 +704,7 @@ overflow: hidden;
 
 .about-profile-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 54px;
   align-items: center;
 }
