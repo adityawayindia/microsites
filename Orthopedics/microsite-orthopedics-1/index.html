@@ -30,9 +30,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dr. Kabir Malhotra | Orthopedics</title>
     <meta name="description" content="Dr. Kabir Malhotra is an orthopedic surgeon offering comprehensive musculoskeletal care." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://digidr.app/{{slug}}/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://digidr.app/{{slug}}/" />
     <meta property="og:title" content="Dr. Kabir Malhotra | Orthopedic Surgeon" />
     <meta property="og:description" content="Dr. Kabir Malhotra, Orthopedic Surgeon." />
     <meta property="og:image" content="assets/dr-kabir-malhotra.png" />
@@ -57,9 +60,31 @@
           crossorigin="anonymous"
           referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/banner-module.css" />
-  <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Kabir Malhotra",
+      "medicalSpecialty": "Orthopedic",
+      "image": "https://digidr.app/{{slug}}/assets/dr-kabir-malhotra.png",
+      "url": "https://digidr.app/{{slug}}/",
+      "telephone": "+91-2045678900",
+      "email": "dr.kabir@motionortho.care",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "118, Baner Road, Baner",
+        "addressLocality": "Pune",
+        "addressRegion": "MH",
+        "postalCode": "411045",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
 </head>
-<body>
+<body data-micrositeid="microsite-orthopedics-1" data-slug="{{slug}}">
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand" aria-label="Dr. Kabir Malhotra">
@@ -88,21 +113,21 @@
       </button>
 
       <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact-us">Contact</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#faq">FAQ</a>
+          <a href="#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
+          <a href="#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
+          <a href="#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
+          <a href="#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
+          <a href="#faq" data-ga-event="nav_link_click" data-ga-label="FAQ">FAQ</a>
       </nav>
 
-      <a href="#" class="cta-btn">
+      <a href="#" class="cta-btn" data-ga-event="book_appointment_click" data-ga-label="Navbar">
         <span class="cta-text-desktop">Book Appointment</span>
         <span class="cta-text-mobile">Appointment</span>
       </a>
     </div>
   </header>
 
-  <section class="hero-section">
+  <section class="hero-section" id="home">
     <!-- ==========================================================================
          DIGIDR MODULAR BANNER MODULE (Hero Banner)
          ==========================================================================
@@ -154,7 +179,7 @@
           <img
             src="assets/dr-kabir-malhotra.png"
             alt="Dr. Kabir Malhotra"
-            class="hero-image"
+            class="hero-image" loading="eager" fetchpriority="high"
           />
         </div>
         <div class="hero-bone-mark" aria-hidden="true">
@@ -169,37 +194,35 @@
             </div>
 
             <h1 class="hero-title">Dr. Kabir Malhotra</h1>
-            <p class="hero-subtitle">MS (Ortho) · AIIMS, New Delhi</p>
-            <p class="hero-subtitle"><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: Joint Replacement</p>
-            <p class="mic">Medical Registration number: MCI-2012-63914</p>
+            <p class="hero-subtitle hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MS (Ortho) · AIIMS, New Delhi</p>
+            <p class="hero-subtitle hero-credentials hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Medical Regd. No.: MCI-2012-63914</p>
+            <p class="hero-subtitle hero-credentials" data-hero-fellowship><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: Joint Replacement</p>
+            <p class="hero-subtitle hero-credentials languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Languages:</strong> English &bull; Hindi &bull; Punjabi</p>
+
             <div class="hero-stats">
                 <article class="stat-card">
-                    <h3 data-practising-since>{{practising_since}}</h3>
+                    <strong class="stat-value" data-practising-since data-counter>2012</strong>
                     <p>Practising since</p>
                 </article>
                 <article class="stat-card">
-                    <h3>{{languages_count}}</h3>
+                    <strong class="stat-value" data-counter>3</strong>
                     <p>Languages</p>
                 </article>
                 <article class="stat-card">
-                    <h3>{{consultation_modes_count}}</h3>
+                    <strong class="stat-value" data-counter>2</strong>
                     <p>Consultation modes</p>
                 </article>
             </div>
 
-            <p class="languages">
-                <strong>Language Proficiency:</strong> English, Hindi, Punjabi
-            </p>
-
         <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="social social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="social social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" class="social social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-            <a href="https://wa.me/912045678900" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/" class="social social-facebook-alt" aria-label="Facebook Profile" data-ga-event="hero_social_link_click" data-ga-label="Facebook Profile" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/" class="social social-facebook" aria-label="Facebook Page" data-ga-event="hero_social_link_click" data-ga-label="Facebook Page" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/" class="social social-instagram" aria-label="Instagram" data-ga-event="hero_social_link_click" data-ga-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://x.com/" class="social social-x" aria-label="X" data-ga-event="hero_social_link_click" data-ga-label="X" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/" class="social social-linkedin" aria-label="LinkedIn" data-ga-event="hero_social_link_click" data-ga-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://digidr.app/" class="social social-website" aria-label="Website" data-ga-event="hero_social_link_click" data-ga-label="Website" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>
+            <a href="https://wa.me/912045678900" class="social social-whatsapp" aria-label="WhatsApp" data-ga-event="hero_social_link_click" data-ga-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/" class="social social-youtube" aria-label="YouTube" data-ga-event="hero_social_link_click" data-ga-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
         </div>
 
             <a href="#contact-us" class="contact-btn">Contact Now</a>
@@ -215,11 +238,6 @@
           <h2 class="about-title">Bones. Joints. Movement.</h2>
           <div class="about-aside-rule" aria-hidden="true"></div>
           <p class="about-aside-note">Precision orthopedic care for strength, stability &amp; lasting mobility.</p>
-          <ul class="about-highlights">
-            <li><strong>16+ years</strong> rebuilding joints &amp; mobility</li>
-            <li><strong>Treatment + rehab</strong> planned as one journey</li>
-            <li><strong>Sports to senior</strong> musculoskeletal care</li>
-          </ul>
         </div>
         <div class="about-content">
           <p class="about-subtitle">
@@ -239,7 +257,7 @@
                   consultation through recovery and long-term joint health.
               </p>
             </div>
-            <button type="button" class="read-more-btn" aria-expanded="false">
+            <button type="button" class="read-more-btn" data-ga-event="read_more_click" aria-expanded="false">
               <span>Read More</span>
               <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
             </button>
@@ -330,7 +348,7 @@
       <!-- Left: Visual Column -->
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo" loading="lazy" />
+          <img src="assets/philosophy-orthopedics.jpg" alt="Doctor reviewing a knee X-ray during an orthopedic assessment" class="philosophy-photo" loading="lazy" width="1200" height="800" />
         </div>
       </div>
       <!-- Right: Content Column -->
@@ -374,8 +392,8 @@
     <div class="container">
       <div class="process-header">
         <p class="about-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
-        <h2 class="about-title" style="text-align: center;">Your Orthopedic Care</h2>
-        <p class="about-subtitle" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+        <h2 class="about-title">Your Orthopedic Care</h2>
+        <p class="about-subtitle">
           A step-by-step pathway from pain relief to restored movement and activity.
         </p>
       </div>
@@ -466,7 +484,7 @@
         <div class="contact-grid">
           <article class="contact-item">
             <div class="contact-item-icon">
-              <i class="fa-solid fa-location-dot"></i>
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
             </div>
             <div>
               <h3>Clinic Address</h3>
@@ -480,16 +498,19 @@
 
           <article data-contact-info class="contact-item">
             <div class="contact-item-icon">
-              <i class="fa-solid fa-phone"></i>
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
             </div>
             <div>
               <h3>Reach Us</h3>
               <p>
-                  <a data-contact-phone href="tel:+912045678900">+91-2045678900</a><br />
-                  <a data-contact-email href="mailto:dr.kabir@motionortho.care">dr.kabir@motionortho.care</a>
+                  <a data-contact-phone data-ga-event="phone_number_click" href="tel:+912045678900">+91-2045678900</a><br />
+                  <a data-contact-email data-ga-event="email_click" href="mailto:dr.kabir@motionortho.care">dr.kabir@motionortho.care</a>
               </p>
             </div>
           </article>
+        </div>
+        <div class="contact-actions">
+          <a href="#" class="cta-btn contact-cta-btn" data-ga-event="book_appointment_click" data-ga-label="Contact">Book Appointment</a>
         </div>
       </div>
     </div>
@@ -498,7 +519,7 @@
   <section class="gallery-section" id="gallery">
     <div class="container">
       <div class="gallery-header">
-        <p class="gallery-kicker"><i class="fa-solid fa-x-ray" aria-hidden="true"></i> Photo gallery</p>
+        <p class="gallery-kicker"><i class="fa-solid fa-x-ray" aria-hidden="true"></i> Practice Gallery</p>
         <h2 class="gallery-title">A Look Inside My Practice</h2>
         <p class="gallery-subtitle">
             A glimpse into my Orthopedics clinic, treatment rooms, and patient care facilities.
@@ -507,22 +528,22 @@
 
       <div class="gallery-grid">
           <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Orthopedic consultation room" loading="lazy" decoding="async" width="600" height="400" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&q=80" alt="Joint and spine assessment area" loading="lazy" decoding="async" width="600" height="400" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Diagnostic imaging review desk" loading="lazy" decoding="async" width="600" height="400" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="Rehabilitation and physiotherapy space" loading="lazy" decoding="async" width="600" height="400" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Minor procedure room" loading="lazy" decoding="async" width="600" height="400" />
           </figure>
           <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Gallery image" />
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Clinic reception and waiting area" loading="lazy" decoding="async" width="600" height="400" />
           </figure>
       </div>
     </div>
@@ -621,16 +642,16 @@
         </button>
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" data-ga-event="clinic_visit_tab_click" role="tab" aria-selected="true">
             Clinic Visit
           </button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">
+          <button type="button" class="booking-tab" id="onlineConsultTab" data-ga-event="online_consult_tab_click" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">
             Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
         <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
 
-      <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor">
+      <form id="bookingForm" class="booking-form" novalidate data-userid="demo-doctor" data-address="118, Baner Road, Baner" data-clinicname="Motion Ortho Clinic" data-pincode="411045" data-state="Maharashtra" data-district="Pune" data-city="Pune">
           <div class="booking-form-row">
               <div class="booking-field">
                   <label for="fullName">Full Name</label>
@@ -679,11 +700,6 @@
                   <div class="booking-select-wrap">
                       <select id="preferredTime" name="preferredTime" required>
                           <option value="">Select Time Slot</option>
-                          <option value="10:00 AM">10:00 AM</option>
-                          <option value="11:30 AM">11:30 AM</option>
-                          <option value="02:00 PM">02:00 PM</option>
-                          <option value="04:30 PM">04:30 PM</option>
-                          <option value="06:00 PM">06:00 PM</option>
                       </select>
                       <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
                   </div>
@@ -700,7 +716,7 @@
           <div class="booking-field booking-field--file">
               <label for="report">Upload Report</label>
               <div class="booking-upload-row">
-                  <label class="booking-upload-btn" for="report">Upload</label>
+                  <label class="booking-upload-btn" for="report" data-ga-event="upload_report_click">Upload</label>
                   <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
                   <span class="booking-upload-help">(JPEG, PNG file formats supported)</span>
               </div>
@@ -771,39 +787,65 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact-us">Contact</a>
-        <a href="#faq">FAQ</a>
+        <a href="#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
+        <a href="#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
+        <a href="#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
+        <a href="#gallery" data-ga-event="footer_nav_link_click" data-ga-label="Gallery">Gallery</a>
+        <a href="#faq" data-ga-event="footer_nav_link_click" data-ga-label="FAQ">FAQ</a>
       </nav>
 
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          <a href="#" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="footer-social-icon footer-social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="footer-social-icon footer-social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="footer-social-icon footer-social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-          <a href="https://wa.me/912045678900" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" class="footer-social-icon footer-social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.facebook.com/" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://x.com/" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="footer_social_link_click" data-ga-label="X" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://digidr.app/" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>
+          <a href="https://wa.me/912045678900" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
         </div>
       </div>
 
       <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="privacy-policy.html" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
         <span class="footer-divider">|</span>
-        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="terms-of-service.html" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
       </div>
 
-      <p class="footer-copy">Dr. Kabir Malhotra. All rights reserved</p>
+      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
+        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+        <span class="footer-visitor-badge-label">No. of Visitor:</span>
+        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
+      </div>
+
+      <p class="footer-copy"><i class="fa-solid fa-bone" aria-hidden="true"></i> Dr. Kabir Malhotra. All rights reserved</p>
     </div>
-      <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation.<br>In an emergency, call 112 or go to the nearest hospital.</p>
+    <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation.<br>In an emergency, call 112 or go to the nearest hospital.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+  <script src="./script/analytics.js"></script>
+  <script src="./script/index.js"></script>
   <script src="./script/banner-module.js"></script>
-  <script src="script/analytics.js"></script>
-  <script src="script/index.js"></script>
+  <script src="./script/chatbot.js" defer></script>
+
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
 </body>
 </html>

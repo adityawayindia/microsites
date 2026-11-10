@@ -414,7 +414,8 @@ margin-bottom: 0;
   border-color: rgba(180, 83, 9, 0.45);
 }
 
-.stat-card h3 {
+.stat-card h3,
+.stat-card .stat-value {
   margin: 0;
   font-family: "Sora", sans-serif;
   font-size: 30px;
@@ -2734,7 +2735,8 @@ margin-bottom: 0;
     padding: 14px 10px;
   }
 
-  .stat-card h3 {
+  .stat-card h3,
+  .stat-card .stat-value {
     font-size: 24px;
   }
 
@@ -4075,15 +4077,7 @@ select {
     font-size: 18px !important;
   }
   .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
-    font-size: 20px !important;
-  }
-}
-@media (min-width: 1900px) {
-  body, p, li, .hero-subtitle, .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .blog-card-title, .blog-detail-content p, .privacy-content p, .terms-content p, .alt-hero-subtext, .alt-about-body, .alt-services-sub, .alt-philosophy-sub, .alt-journey-sub, .alt-contact-sub, .alt-testi-sub, .alt-gallery-sub {
-    font-size: 20px !important;
-  }
-  .about-subtitle, .testimonials-subtitle, .contact-subtitle, .services-subtitle, .alt-about-lead {
-    font-size: 22px !important;
+    font-size: 18px !important;
   }
 }
 
@@ -4886,3 +4880,196 @@ footer .footer-disclaimer {
   max-height: inherit;
   object-fit: contain;
 }
+
+
+/* ==========================================================================
+   AGENTS.md compliance additions (typography, tap targets, phone input,
+   visitor badge, hero credentials). Kept last so they win the cascade.
+   ========================================================================== */
+:root {
+  --accent: #b45309;
+  --accent-soft: #c7cdf0;
+}
+
+/* §4 Hero credential lines: icon + plain text, same style as the subtitle */
+.hero-credentials i { margin-right: 8px; color: #ffffff; }
+.hero-credentials strong { color: #ffffff; font-weight: 600; }
+.hero-credentials[hidden] { display: none; }
+.hero-content .hero-subtitle, .hero-content .mic, .hero-content .languages { font-size: 18px !important; }
+
+/* §33 Hero social icons: 46px, wrapping row */
+.social-links, .footer-social { flex-wrap: wrap; }
+.social { width: 46px; height: 46px; font-size: 18px; flex-shrink: 0; }
+.social i, .footer-social-icon i { color: #ffffff; }
+
+/* §3 Header: dynamic specialty text wraps, never truncates */
+.site-header .brand-role {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  font-size: 16px !important;
+}
+.menu-toggle { width: 44px; height: 44px; }
+
+/* Tap targets >= 44px */
+.booking-modal-close { min-width: 44px; min-height: 44px; }
+.gallery-lightbox-close { width: 44px; height: 44px; }
+.booking-calendar-nav { min-width: 44px; min-height: 44px; }
+
+/* §0 Typography: h2 32-38px bold, h3 22px (20px <=480px), p/li/a 18px, badges 16px */
+.about-title, .services-title, .contact-header h2, .gallery-title, .faq-title {
+  font-size: clamp(32px, 3.4vw, 38px) !important;
+  font-weight: 700 !important;
+  line-height: 1.2;
+}
+.service-card-title, .contact-item h3 { font-size: 22px !important; font-weight: 700; }
+@media (max-width: 480px) {
+  .service-card-title, .contact-item h3 { font-size: 20px !important; }
+}
+section p, section li, .site-footer p, .site-footer a,
+.nav-links a, .footer-nav a, .footer-links a, .contact-item a,
+.faq-question, .faq-answer-inner p { font-size: 18px !important; }
+.expert-badge, .about-kicker, .services-kicker, .gallery-kicker, .contact-kicker,
+.step-number, .about-highlights li::before { font-size: 16px !important; }
+.process-header { text-align: center; }
+.process-header .about-subtitle { max-width: 700px; margin: 0 auto 50px; }
+.about-description p { text-align: left; }
+
+/* §11 Contact actions */
+.contact-actions { display: flex; justify-content: center; margin-top: 24px; }
+.contact-cta-btn { padding: 14px 30px; font-size: 18px; }
+
+/* §45 Footer */
+.footer-copy i { color: #a5b4fc; font-size: 18px; }
+footer p.footer-disclaimer { font-size: 14px !important; }
+.footer-visitor-badge {
+  display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center;
+  gap: 8px; margin-top: 6px; padding: 10px 18px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 18px; line-height: 1.4; max-width: 100%; color: #ffffff;
+}
+.footer-visitor-badge i, .footer-visitor-badge .footer-visitor-badge-icon { font-size: 16px; color: #ffffff; }
+.footer-visitor-badge span, .footer-visitor-badge .footer-visitor-badge-label { color: #f1f5f9; font-weight: 500; font-size: 18px; }
+.footer-visitor-badge .footer-visitor-badge-count { font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; font-size: 18px; }
+
+/* §25 intl-tel-input v29 inside the booking form */
+.booking-field .iti { width: 100%; display: block; }
+.booking-field .iti input, .booking-field .iti .iti__tel-input { width: 100%; min-width: 0; }
+.booking-field input[type="tel"] { padding: 11px 14px 11px 92px !important; }
+.iti__country-selector { border-radius: 10px; max-width: none !important; }
+.iti__selected-country, .iti__selected-dial-code {
+  font-size: 16px; line-height: normal; color: var(--text);
+}
+.iti__dial-code { font-size: 15px; }
+.booking-field .iti__search-input {
+  padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal)) !important;
+  padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal)) !important;
+  padding-top: 8px !important; padding-bottom: 8px !important; font-size: 15px !important;
+}
+.booking-field .iti__tel-input.is-invalid { border-color: #dc2626 !important; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.16) !important; }
+.booking-calendar[hidden] { display: none !important; }
+.booking-modal.is-open, .booking-modal.open { display: flex; }
+.booking-file-preview:not(:empty) { margin-top: 8px; font-size: 16px; color: var(--muted); }
+.booking-upload-row { flex-wrap: wrap; }
+
+/* §22 Rule 2 / 3: new component classes */
+.stat-card, .about-aside, .about-highlights li, .philosophy-pillar, .pillar-text,
+.process-step, .step-body, .faq-item, .faq-question, .contact-actions { min-width: 0; }
+.stat-card, .philosophy-pillar, .process-step, .faq-item, .hero-credentials {
+  height: auto !important; min-height: fit-content; max-width: 100%;
+}
+
+/* ==========================================================================
+   AGENTS.md §23 — 12-track grids with centred leftover rows (Services, Gallery).
+   Copied verbatim, do not reorder.
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+  justify-content: center;
+}
+.service-card {
+  grid-column: span 4;
+  min-width: 0;
+}
+.service-card:last-child:nth-child(3n + 1) { grid-column: 3 / span 8; }
+.service-card:nth-last-child(2):nth-child(3n + 1) { grid-column: 3 / span 4; }
+.service-card:last-child:nth-child(3n + 2) { grid-column: 7 / span 4; }
+
+@media (max-width: 1100px) {
+  .service-card,
+  .service-card:last-child:nth-child(3n + 1),
+  .service-card:nth-last-child(2):nth-child(3n + 1),
+  .service-card:last-child:nth-child(3n + 2) { grid-column: span 6; }
+  .service-card:last-child:nth-child(odd) { grid-column: 4 / span 6; }
+}
+@media (max-width: 640px) {
+  .service-card,
+  .service-card:last-child:nth-child(odd),
+  .service-card:last-child:nth-child(3n + 1),
+  .service-card:nth-last-child(2):nth-child(3n + 1),
+  .service-card:last-child:nth-child(3n + 2) { grid-column: 1 / -1; }
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+}
+.service-card .service-icon { margin: 0 auto; }
+.service-card-title, .service-card-desc { text-align: center; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  align-items: stretch;
+  justify-content: center;
+}
+.gallery-item { grid-column: span 4; min-width: 0; }
+.gallery-item:last-child:nth-child(3n + 1) { grid-column: 3 / span 8; }
+.gallery-item:nth-last-child(2):nth-child(3n + 1) { grid-column: 3 / span 4; }
+.gallery-item:last-child:nth-child(3n + 2) { grid-column: 7 / span 4; }
+@media (max-width: 1100px) {
+  .gallery-item,
+  .gallery-item:last-child:nth-child(3n + 1),
+  .gallery-item:nth-last-child(2):nth-child(3n + 1),
+  .gallery-item:last-child:nth-child(3n + 2) { grid-column: span 6; }
+  .gallery-item:last-child:nth-child(odd) { grid-column: 4 / span 6; }
+}
+@media (max-width: 640px) {
+  .gallery-grid { gap: 12px !important; }
+}
+.gallery-item { aspect-ratio: 4 / 3; }
+
+/* brand name in the header is link text: 18px */
+.site-header .brand-name { font-size: 18px !important; }
+
+/* Tap targets (verification #52) and icon box sizes (§45) */
+.social { width: 46px !important; height: 46px !important; min-width: 46px; flex: 0 0 46px; }
+.cta-btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.read-more-btn { min-height: 44px; display: inline-flex; align-items: center; gap: 6px; }
+
+/* Contrast fixes (AA 4.5:1) */
+.footer-divider { color: #cbd5e1; }
+.stat-card .stat-value { display: block; }
+
+/* AGENTS.md §3 / §3.2: header crush-zone defence. The brand name is the one element allowed
+   to truncate (15ch + ellipsis); nav labels are fixed short words and stay on one line, so a
+   long doctor name can never squeeze the nav into vertical letter-per-line text. */
+.site-header .brand { min-width: 0; flex: 0 1 auto; }
+.site-header .brand-name {
+  display: block;
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nav-links { margin-left: auto; flex-shrink: 0; }
+.nav-links a { white-space: nowrap; }
+.nav-actions, .site-header .cta-btn { flex-shrink: 0; }
+@media (max-width: 1100px) { .nav-links { margin-left: 0; } }
