@@ -32,10 +32,11 @@
   <meta name="description" content="Compassionate pediatric care by Dr. {{full_name}} focused on your child's health, growth, development, nutrition, and overall well-being." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23f05a28'/%3E%3Cpath d='M32 46s-16-9.5-16-21a9 9 0 0 1 16-5.6A9 9 0 0 1 48 25c0 11.5-16 21-16 21z' fill='%23fff'/%3E%3C/svg%3E" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.example.com/{{slug}}/" /><!-- TODO: replace with live production domain before launch -->
+  <link rel="canonical" href="https://digidr.app/{{slug}}/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://digidr.app/{{slug}}/" />
   <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
   <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
   <meta property="og:image" content="{{profile}}" />
@@ -74,7 +75,7 @@
     "name": "Dr. {{full_name}}",
     "medicalSpecialty": "{{speciality}}",
     "image": "{{profile}}",
-    "url": "https://www.example.com/{{slug}}/",
+    "url": "https://digidr.app/{{slug}}/",
     "telephone": "+{{code}}-{{phone}}",
     "email": "{{email}}",
     "address": {
@@ -104,11 +105,11 @@
       </a>
 
       <nav class="alt-nav-links" id="mainNav" aria-label="Main Navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact-us">Contact</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#faq">FAQ</a>
+        <a data-ga-event="nav_link_click" data-ga-label="About" href="#about">About</a>
+        <a data-ga-event="nav_link_click" data-ga-label="Services" href="#services">Services</a>
+        <a data-ga-event="nav_link_click" data-ga-label="Contact" href="#contact-us">Contact</a>
+        <a data-ga-event="nav_link_click" data-ga-label="Gallery" href="#gallery">Gallery</a>
+        <a data-ga-event="nav_link_click" data-ga-label="FAQ" href="#faq">FAQ</a>
       </nav>
 
       <div class="alt-nav-actions">
@@ -116,7 +117,7 @@
           <span></span><span></span><span></span>
         </button>
 
-        <a href="#" class="alt-cta-btn cta-btn" id="openBookingBtn">
+        <a data-ga-event="book_appointment_click" data-ga-label="Navbar" href="#" class="alt-cta-btn cta-btn" id="openBookingBtn">
           <span class="cta-text-desktop">Book Appointment</span>
           <span class="cta-text-mobile">Appointment</span>
         </a>
@@ -176,7 +177,7 @@
       <!-- Top kicker chip -->
       <div class="alt-hero-chip">
         <i class="fa-solid fa-child-reaching"></i>
-        Your Trusted Child Health Partner
+        Your Child Health Partner
       </div>
 
       <!-- Central heading -->
@@ -193,15 +194,15 @@
       <!-- Floating stat orbs -->
       <!-- <div class="alt-hero-stats" aria-label="Doctor highlights">
         <div class="alt-stat-orb alt-stat-orb--yellow">
-          <span class="alt-stat-num" data-practising-since>{{practising_since}}</span>
+          <span class="alt-stat-num" data-practising-since data-counter>{{practising_since}}</span>
           <span class="alt-stat-lbl">Practising since</span>
         </div>
         <div class="alt-stat-orb alt-stat-orb--teal">
-          <span class="alt-stat-num">{{languages_count}}</span>
+          <span class="alt-stat-num" data-counter>{{languages_count}}</span>
           <span class="alt-stat-lbl">Languages</span>
         </div>
         <div class="alt-stat-orb alt-stat-orb--coral">
-          <span class="alt-stat-num">{{consultation_modes_count}}</span>
+          <span class="alt-stat-num" data-counter>{{consultation_modes_count}}</span>
           <span class="alt-stat-lbl">Consultation modes</span>
         </div>
       </div> -->
@@ -211,21 +212,21 @@
     <div class="alt-hero-social-strip">
       <span class="alt-social-label">Follow for child health tips:</span>
       <div class="alt-social-pills">
-        {{#hasFacebookPage}}<a href="{{facebookpage}}" class="alt-social-pill sp-fb" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
-        {{#noFacebook}}<span class="alt-social-pill sp-fb is-disabled" aria-label="Facebook Page not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebook}}
-        {{#hasFacebook}}<a href="{{facebook}}" class="alt-social-pill sp-fb-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+        {{#hasFacebook}}<a data-ga-event="hero_social_link_click" data-ga-label="Facebook Profile" href="{{facebook}}" class="alt-social-pill sp-fb-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
         {{#noFacebook}}<span class="alt-social-pill sp-fb-alt is-disabled" aria-label="Facebook Profile not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
-        {{#hasInstagram}}<a href="{{instagram}}" class="alt-social-pill sp-ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+        {{#hasFacebookPage}}<a data-ga-event="hero_social_link_click" data-ga-label="Facebook Page" href="{{facebookpage}}" class="alt-social-pill sp-fb" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+        {{#noFacebookPage}}<span class="alt-social-pill sp-fb is-disabled" aria-label="Facebook Page not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+        {{#hasInstagram}}<a data-ga-event="hero_social_link_click" data-ga-label="Instagram" href="{{instagram}}" class="alt-social-pill sp-ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
         {{#noInstagram}}<span class="alt-social-pill sp-ig is-disabled" aria-label="Instagram not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
-        {{#hasTwitter}}<a href="{{twitter}}" class="alt-social-pill sp-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+        {{#hasTwitter}}<a data-ga-event="hero_social_link_click" data-ga-label="X" href="{{twitter}}" class="alt-social-pill sp-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
         {{#noTwitter}}<span class="alt-social-pill sp-x is-disabled" aria-label="X not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
-        {{#hasLinkedin}}<a href="{{linkedin}}" class="alt-social-pill sp-li" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+        {{#hasLinkedin}}<a data-ga-event="hero_social_link_click" data-ga-label="LinkedIn" href="{{linkedin}}" class="alt-social-pill sp-li" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
         {{#noLinkedin}}<span class="alt-social-pill sp-li is-disabled" aria-label="LinkedIn not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
-        {{#hasWebsite}}<a href="{{website}}" class="alt-social-pill sp-web" aria-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+        {{#hasWebsite}}<a data-ga-event="hero_social_link_click" data-ga-label="Website" href="{{website}}" class="alt-social-pill sp-web" aria-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
         {{#noWebsite}}<span class="alt-social-pill sp-web is-disabled" aria-label="Website not linked" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
-        {{#hasYoutube}}<a href="{{youtube}}" class="alt-social-pill sp-yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+        {{#hasYoutube}}<a data-ga-event="hero_social_link_click" data-ga-label="YouTube" href="{{youtube}}" class="alt-social-pill sp-yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
         {{#noYoutube}}<span class="alt-social-pill sp-yt is-disabled" aria-label="YouTube not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
-        {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="alt-social-pill sp-wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+        {{#hasWhatsapp}}<a data-ga-event="hero_social_link_click" data-ga-label="WhatsApp" href="https://wa.me/91{{whatsapp}}" class="alt-social-pill sp-wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
         {{#noWhatsapp}}<span class="alt-social-pill sp-wa is-disabled" aria-label="WhatsApp not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
       </div>
     </div>
@@ -263,7 +264,7 @@
               {{introduction}}
             </p>
           </div>
-          <button type="button" class="read-more-btn" aria-expanded="false">
+          <button data-ga-event="read_more_click" type="button" class="read-more-btn" aria-expanded="false">
             <span>Read More</span>
             <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
@@ -271,15 +272,15 @@
 
         <div class="alt-about-stats" aria-label="Doctor highlights">
           <div class="alt-stat-orb alt-stat-orb--yellow">
-            <span class="alt-stat-num" data-practising-since>{{practising_since}}</span>
+            <span class="alt-stat-num" data-practising-since data-counter>{{practising_since}}</span>
             <span class="alt-stat-lbl">Practising since</span>
           </div>
           <div class="alt-stat-orb alt-stat-orb--mint">
-            <span class="alt-stat-num">{{languages_count}}</span>
+            <span class="alt-stat-num" data-counter>{{languages_count}}</span>
             <span class="alt-stat-lbl">Languages</span>
           </div>
           <div class="alt-stat-orb alt-stat-orb--coral">
-            <span class="alt-stat-num">{{consultation_modes_count}}</span>
+            <span class="alt-stat-num" data-counter>{{consultation_modes_count}}</span>
             <span class="alt-stat-lbl">Consultation modes</span>
           </div>
         </div>
@@ -526,8 +527,8 @@
           <h3>Clinic Address</h3>
           <p>
             <strong>{{clinicname}}</strong><br />
-            {{address}}, {{district}}<br />
-            {{city}}, {{state}} - {{pincode}}
+            {{address}}<br />
+            {{district}}, {{state}} - {{pincode}}
           </p>
         </div>
 
@@ -537,8 +538,8 @@
           <div class="acc-icon"><i class="fa-solid fa-phone"></i></div>
           <h3>Contact Information</h3>
           <p>
-            <a data-contact-phone href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
-            <a data-contact-email href="mailto:{{email}}">{{email}}</a>
+            <a data-contact-phone data-ga-event="phone_number_click" href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+            <a data-contact-email data-ga-event="email_click" href="mailto:{{email}}">{{email}}</a>
           </p>
         </div>
       </div>
@@ -592,60 +593,72 @@
       <div class="faq-list">
         <div class="faq-item is-active">
           <button type="button" class="faq-question" aria-expanded="true">
-            <span>What conditions do you treat?</span>
+            <span>Which vaccines does my child need and when?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>We provide comprehensive care for infants, children, and adolescents, including routine check-ups, vaccinations, growth and development monitoring, and treatment of common childhood illnesses.</p>
+              <p>Children follow a national immunisation schedule from birth, covering diseases like polio, measles, hepatitis B and tetanus. Keep the vaccination card updated at every visit.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Do I need a referral to book a consultation?</span>
+            <span>How do I manage fever in a child?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>No referral is required. You can book a clinic visit or an online consultation directly through this website, and we'll guide you on any further steps after your first appointment.</p>
+              <p>Keep the child hydrated, dress lightly and give age appropriate fever medicine. Seek care for fever in babies under 3 months, fits, rash, or if the child is unusually drowsy.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>What should I bring to my first appointment?</span>
+            <span>What should I feed my child for healthy growth?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Please bring your child's vaccination record, any prior test reports or prescriptions, a valid ID, and a list of medications your child is currently taking so we can review their history thoroughly.</p>
+              <p>Exclusive breastfeeding for the first 6 months, then iron rich and varied complementary foods. Limit sugary drinks and packaged snacks.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Do you offer online consultations?</span>
+            <span>What are the signs of dehydration in children?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Yes. Online consultations are available for follow-ups, report reviews, and minor concerns — simply select "Online Consultation" when booking your appointment.</p>
+              <p>Dry mouth, no tears when crying, sunken eyes and fewer wet diapers are signs. Give ORS often and seek care if the child cannot keep fluids down.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Is emergency care available?</span>
+            <span>How can I tell if my child is growing normally?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>For urgent issues such as high fever with seizures, difficulty breathing, or severe injury, please visit the nearest emergency room immediately. For non-emergency concerns, book the earliest available slot and we'll prioritize your case.</p>
+              <p>Weight, height and milestone tracking against growth charts shows progress. Delays in speech, walking or social response should be discussed early.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>How do I handle frequent colds and coughs in children?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Young children can get 6 to 8 colds a year, which is normal. Rest, fluids and saline drops help, and breathing difficulty needs prompt attention.</p>
             </div>
           </div>
         </div>
@@ -661,8 +674,8 @@
         <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
+          <button data-ga-event="clinic_visit_tab_click" type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button data-ga-event="online_consult_tab_click" type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
         <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
@@ -732,7 +745,7 @@
         <div class="booking-field booking-field--file">
           <label for="report">Upload Report</label>
           <div class="booking-upload-row">
-            <label class="booking-upload-btn" for="report">Upload</label>
+            <label data-ga-event="upload_report_click" class="booking-upload-btn" for="report">Upload</label>
             <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
             <span class="booking-upload-help">(JPEG, PNG, PDF supported)</span>
           </div>
@@ -845,18 +858,18 @@
         <div class="alt-footer-links-group">
           <h4>Quick Links</h4>
           <nav class="alt-footer-nav-horizontal">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact-us">Contact</a>
-            <a href="#gallery">Gallery</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="About" href="#about">About</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Services" href="#services">Services</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Contact" href="#contact-us">Contact</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Gallery" href="#gallery">Gallery</a>
           </nav>
         </div>
 
         <div class="alt-footer-links-group">
           <h4>Legal</h4>
           <nav class="alt-footer-nav-horizontal">
-            <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
-            <a href="/{{slug}}/terms-of-service">Terms of Service</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy" href="/{{slug}}/privacy-policy">Privacy Policy</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service" href="/{{slug}}/terms-of-service">Terms of Service</a>
           </nav>
         </div>
 

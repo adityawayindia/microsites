@@ -14,5 +14,5 @@
 ## Pages
 
 - [Profile](https://digidr.app/{{slug}}/): Dr. {{full_name}}'s profile — about, services, care philosophy, consultation journey, and practice gallery.
-- [Privacy Policy](https://digidr.app/{{slug}}/privacy-policy.html)
-- [Terms of Service](https://digidr.app/{{slug}}/terms-of-service.html)
+- [Privacy Policy](https://digidr.app/{{slug}}/privacy-policy)
+- [Terms of Service](https://digidr.app/{{slug}}/terms-of-service)

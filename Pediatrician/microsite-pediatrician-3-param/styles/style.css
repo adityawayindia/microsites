@@ -203,7 +203,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(--navy-dark); }
 
 .container {
-  max-width: 1240px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -1502,7 +1502,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(
 }
 
 /* Hide scattered floating toy emojis on mobile/tablets */
-@media (max-width: 1240px) {
+@media (max-width: 1440px) {
   .toy-scatter-item, .toys-scatter-layer {
     display: none !important;
   }
@@ -2428,7 +2428,7 @@ section.faq-section {
 }
 
 /* ============================================================
-   SOCIAL ICONS — disabled ({{#no*}}) state + tooltips
+   SOCIAL ICONS — disabled (no-link) state + tooltips
    Backend renders a <span class="… is-disabled" data-tooltip="Not Enabled">
    for each unlinked network, and an <a data-tooltip="Name"> for linked ones.
    Covers the hero row (.peds2-social), the index footer row
@@ -2780,3 +2780,11 @@ section.faq-section {
   max-height: inherit;
   object-fit: contain;
 }
+
+/* Centred section headings (replaces inline styles) */
+.peds2-section-title.is-centered, .peds2-section-subtitle.is-centered { text-align: center; }
+.peds2-section-subtitle.is-centered { max-width: 700px; margin-left: auto; margin-right: auto; }
+.peds2-float-badge-num { color: #fff; }
+
+/* Keeps the hidden social tooltip from causing sideways scroll */
+html, body { overflow-x: clip; }

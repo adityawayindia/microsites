@@ -164,7 +164,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--sky-dark); }
 
 .container {
-  max-width: 1240px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -2605,3 +2605,7 @@ footer .footer-disclaimer {
   max-height: inherit;
   object-fit: contain;
 }
+
+/* Centred section headings (replaces inline styles) */
+.peds4-section-title.is-centered, .peds4-section-subtitle.is-centered { text-align: center; }
+.peds4-section-subtitle.is-centered { max-width: 700px; margin-left: auto; margin-right: auto; }

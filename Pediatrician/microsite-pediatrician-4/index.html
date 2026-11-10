@@ -97,15 +97,15 @@
       </a>
 
       <nav class="peds4-nav-links" id="mainNav" aria-label="Main Navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact-us">Contact</a>
-        <a href="#gallery">Gallery</a>
-        <!-- <a href="#faq">FAQ</a> -->
+        <a data-ga-event="nav_link_click" data-ga-label="About" href="#about">About</a>
+        <a data-ga-event="nav_link_click" data-ga-label="Services" href="#services">Services</a>
+        <a data-ga-event="nav_link_click" data-ga-label="Contact" href="#contact-us">Contact</a>
+        <a data-ga-event="nav_link_click" data-ga-label="Gallery" href="#gallery">Gallery</a>
+        <a data-ga-event="nav_link_click" data-ga-label="FAQ" href="#faq">FAQ</a>
       </nav>
 
       <div class="peds4-nav-actions">
-        <a href="#" class="peds4-cta-btn cta-btn" id="openBookingBtn">
+        <a data-ga-event="book_appointment_click" data-ga-label="Navbar" href="#" class="peds4-cta-btn cta-btn" id="openBookingBtn">
           <span class="cta-text-desktop">Book Appointment</span>
           <span class="cta-text-mobile">Appointment</span>
         </a>
@@ -193,9 +193,9 @@
 
         <div class="peds4-hero-social" aria-label="Social media links">
           
-          <span class="peds4-social is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>
-          
           <span class="peds4-social is-disabled" aria-label="Facebook Profile not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>
+          
+          <span class="peds4-social is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>
           
           <span class="peds4-social is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>
           
@@ -267,7 +267,7 @@
 <p>He takes time to explain every step of your child's care plan, so families feel informed and supported. Beyond treatment, Dr. Mehta is passionate about preventive pediatrics&mdash;ensuring vaccinations are on schedule, monitoring milestones, guiding healthy habits, and helping children thrive physically and emotionally.
             </p>
           </div>
-          <button type="button" class="read-more-btn" aria-expanded="false">
+          <button data-ga-event="read_more_click" type="button" class="read-more-btn" aria-expanded="false">
             <span>Read More</span>
             <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
@@ -412,11 +412,11 @@
         <span class="peds4-chip peds4-chip--sky">
           <i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey
         </span>
-        <h2 class="peds4-section-title" style="text-align:center;">
+        <h2 class="peds4-section-title is-centered">
           
           Your Child's Care Journey
         </h2>
-        <p class="peds4-section-subtitle" style="text-align:center; max-width:700px; margin:0 auto;">
+        <p class="peds4-section-subtitle is-centered">
           
           A clear, reassuring 4-step process for complete pediatric care.
         </p>
@@ -527,8 +527,8 @@
             <div class="peds4-contact-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
             <h3>Contact Information</h3>
             <p>
-              <a data-contact-phone href="tel:+919068935571">+91-9068935571</a><br />
-              <a data-contact-email href="mailto:dr.mehta@minneasotahospitals.com">dr.mehta@minneasotahospitals.com</a>
+              <a data-contact-phone data-ga-event="phone_number_click" href="tel:+919068935571">+91-9068935571</a><br />
+              <a data-contact-email data-ga-event="email_click" href="mailto:dr.mehta@minneasotahospitals.com">dr.mehta@minneasotahospitals.com</a>
             </p>
           </div>
         </div>
@@ -605,60 +605,72 @@
       <div class="faq-list">
         <div class="faq-item is-active">
           <button type="button" class="faq-question" aria-expanded="true">
-            <span>What conditions do you treat?</span>
+            <span>Why is the measles vaccine so important?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>We provide comprehensive care for infants, children, and adolescents, including routine check-ups, vaccinations, growth and development monitoring, and treatment of common childhood illnesses.</p>
+              <p>Measles can cause pneumonia, brain swelling and death. Two doses give strong lifelong protection.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Do I need a referral to book a consultation?</span>
+            <span>What causes rickets in children?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>No referral is required. You can book a clinic visit or an online consultation directly through this website, and we'll guide you on any further steps after your first appointment.</p>
+              <p>Lack of vitamin D, calcium or sunlight softens bones, causing bowed legs and delayed walking. Supplements and sunlight prevent and treat it.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>What should I bring to my first appointment?</span>
+            <span>How do I prevent obesity in children?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Please bring your child's vaccination record, any prior test reports or prescriptions, a valid ID, and a list of medications your child is currently taking so we can review their history thoroughly.</p>
+              <p>Offer home cooked meals, limit sugary drinks and snacks and encourage an hour of play daily. Family habits matter most.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Do you offer online consultations?</span>
+            <span>What are the signs of bronchiolitis in babies?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Yes. Online consultations are available for follow-ups, report reviews, and minor concerns — simply select "Online Consultation" when booking your appointment.</p>
+              <p>Fast breathing, wheeze and feeding difficulty after a cold suggest it. Babies who breathe hard or feed poorly need quick medical care.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Is emergency care available?</span>
+            <span>What are early signs of ADHD?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>For urgent issues such as high fever with seizures, difficulty breathing, or severe injury, please visit the nearest emergency room immediately. For non-emergency concerns, book the earliest available slot and we'll prioritize your case.</p>
+              <p>Constant restlessness, trouble focusing and impulsive behaviour beyond what is expected for age may suggest ADHD. Early assessment guides support at home and school.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>When should my child start brushing teeth?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Begin as soon as the first tooth appears, using a rice grain sized smear of fluoride paste. Limit sweets and avoid bottles at bedtime to prevent cavities.</p>
             </div>
           </div>
         </div>
@@ -675,8 +687,8 @@
         <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
+          <button data-ga-event="clinic_visit_tab_click" type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button data-ga-event="online_consult_tab_click" type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
         <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
@@ -746,7 +758,7 @@
         <div class="booking-field booking-field--file">
           <label for="report">Upload Report</label>
           <div class="booking-upload-row">
-            <label class="booking-upload-btn" for="report">Upload</label>
+            <label data-ga-event="upload_report_click" class="booking-upload-btn" for="report">Upload</label>
             <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
             <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
           </div>
@@ -829,10 +841,10 @@
           <span class="peds4-footer-social-label">Follow me on:</span>
           <div class="peds4-footer-social">
             
-            <span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>
+            <span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>
 
             
-            <span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>
+            <span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>
 
             
             <span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>
@@ -859,18 +871,18 @@
         <div class="peds4-footer-links-group">
           <h4>Quick Links</h4>
           <nav class="peds4-footer-nav-horizontal">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact-us">Contact</a>
-            <a href="#gallery">Gallery</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="About" href="#about">About</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Services" href="#services">Services</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Contact" href="#contact-us">Contact</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Gallery" href="#gallery">Gallery</a>
           </nav>
         </div>
 
         <div class="peds4-footer-links-group">
           <h4>Legal</h4>
           <nav class="peds4-footer-nav-horizontal">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy" href="privacy-policy.html">Privacy Policy</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service" href="terms-of-service.html">Terms of Service</a>
           </nav>
         </div>
 

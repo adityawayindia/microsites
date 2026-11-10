@@ -97,16 +97,16 @@
       </a>
 
       <nav class="peds2-nav-links" id="mainNav" aria-label="Main Navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact-us">Contact</a>
-        <a href="#gallery">Gallery</a>
-        <!-- <a href="#faq">FAQ</a> -->
+        <a data-ga-event="nav_link_click" data-ga-label="About" href="#about">About</a>
+        <a data-ga-event="nav_link_click" data-ga-label="Services" href="#services">Services</a>
+        <a data-ga-event="nav_link_click" data-ga-label="Contact" href="#contact-us">Contact</a>
+        <a data-ga-event="nav_link_click" data-ga-label="Gallery" href="#gallery">Gallery</a>
+        <a data-ga-event="nav_link_click" data-ga-label="FAQ" href="#faq">FAQ</a>
         
       </nav>
 
       <div class="peds2-nav-actions">
-        <a href="#" class="peds2-cta-btn cta-btn" id="openBookingBtn">
+        <a data-ga-event="book_appointment_click" data-ga-label="Navbar" href="#" class="peds2-cta-btn cta-btn" id="openBookingBtn">
           <span class="cta-text-desktop">Book Appointment</span>
           <span class="cta-text-mobile">Appointment</span>
         </a>
@@ -193,9 +193,9 @@
 
         <div class="peds2-hero-social" aria-label="Social media links">
           
-          <span class="peds2-social is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>
-          
           <span class="peds2-social is-disabled" aria-label="Facebook Profile not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>
+          
+          <span class="peds2-social is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>
           
           <span class="peds2-social is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>
           
@@ -223,7 +223,7 @@
         </div>
         <div class="peds2-float-badge peds2-float-badge--bottom">
           <i class="fa-solid fa-user-group" aria-hidden="true"></i>
-          <span style="color: white;" data-counter>8k+</span>
+          <span class="peds2-float-badge-num" data-counter>8k+</span>
         </div>
       </div>
     </div>
@@ -232,17 +232,17 @@
     <div class="peds2-stat-ribbon" aria-label="Practice statistics">
       <div class="container peds2-stat-ribbon-inner">
         <div class="peds2-stat-item">
-          <span data-practising-since class="peds2-stat-num">{{practising_since}}</span>
+          <span data-practising-since class="peds2-stat-num">2010</span>
           <span class="peds2-stat-lbl">Practising since</span>
         </div>
         <div class="peds2-stat-divider" aria-hidden="true"></div>
         <div class="peds2-stat-item">
-          <span class="peds2-stat-num">{{languages_count}}</span>
+          <span class="peds2-stat-num">3</span>
           <span class="peds2-stat-lbl">Languages</span>
         </div>
         <div class="peds2-stat-divider" aria-hidden="true"></div>
         <div class="peds2-stat-item">
-          <span class="peds2-stat-num">{{consultation_modes_count}}</span>
+          <span class="peds2-stat-num">2</span>
           <span class="peds2-stat-lbl">Consultation modes</span>
         </div>
       </div>
@@ -271,7 +271,7 @@
         </span>
         <h2 class="peds2-section-title">
           
-          Trusted Pediatric Care For Growing Families
+          Pediatric Care For Growing Families
         </h2>
         <p class="peds2-about-lead">
           
@@ -295,7 +295,7 @@
             </p>
             </p>
           </div>
-          <button type="button" class="read-more-btn" aria-expanded="false">
+          <button data-ga-event="read_more_click" type="button" class="read-more-btn" aria-expanded="false">
             <span>Read More</span>
             <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
@@ -444,11 +444,11 @@
         <span class="peds2-chip peds2-chip--peach">
           <i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey
         </span>
-        <h2 class="peds2-section-title" style="text-align:center;">
+        <h2 class="peds2-section-title is-centered">
           
           Your Child's Healthcare Journey
         </h2>
-        <p class="peds2-section-subtitle" style="text-align:center; max-width:700px; margin:0 auto;">
+        <p class="peds2-section-subtitle is-centered">
           
           A warm, child-friendly 4-step process for complete pediatric care.
         </p>
@@ -571,8 +571,8 @@
             <div class="peds2-contact-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
             <h3>Contact Information</h3>
             <p>
-              <a data-contact-phone href="tel:+919068935571">+91-9068935571</a><br />
-              <a data-contact-email href="mailto:dr.mehta@minneasotahospitals.com">dr.mehta@minneasotahospitals.com</a>
+              <a data-contact-phone data-ga-event="phone_number_click" href="tel:+919068935571">+91-9068935571</a><br />
+              <a data-contact-email data-ga-event="email_click" href="mailto:dr.mehta@minneasotahospitals.com">dr.mehta@minneasotahospitals.com</a>
             </p>
           </article>
         </div>
@@ -663,60 +663,72 @@
       <div class="faq-list">
         <div class="faq-item is-active">
           <button type="button" class="faq-question" aria-expanded="true">
-            <span>What conditions do you treat?</span>
+            <span>How do I recognise and treat worms in children?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>We provide comprehensive care for infants, children, and adolescents, including routine check-ups, vaccinations, growth and development monitoring, and treatment of common childhood illnesses.</p>
+              <p>Itching around the bottom, belly pain and poor weight gain can point to worms. A simple deworming tablet and good hand hygiene clear them.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Do I need a referral to book a consultation?</span>
+            <span>How can I ease my baby's teething?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>No referral is required. You can book a clinic visit or an online consultation directly through this website, and we'll guide you on any further steps after your first appointment.</p>
+              <p>Give a clean cold teether and gently massage the gums. Mild irritability is normal, and high fever is not caused by teething.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>What should I bring to my first appointment?</span>
+            <span>Is newborn jaundice normal?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Please bring your child's vaccination record, any prior test reports or prescriptions, a valid ID, and a list of medications your child is currently taking so we can review their history thoroughly.</p>
+              <p>Mild yellowing in the first week is common and settles. Yellowness that appears in the first day, spreads or lasts long needs checking.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Do you offer online consultations?</span>
+            <span>How can I tell if my child has asthma?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Yes. Online consultations are available for follow-ups, report reviews, and minor concerns — simply select "Online Consultation" when booking your appointment.</p>
+              <p>Repeated cough or wheeze at night, with exercise or after colds suggests asthma. Inhalers keep it controlled so children can play freely.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Is emergency care available?</span>
+            <span>Why does my child wet the bed at night?</span>
             <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>For urgent issues such as high fever with seizures, difficulty breathing, or severe injury, please visit the nearest emergency room immediately. For non-emergency concerns, book the earliest available slot and we'll prioritize your case.</p>
+              <p>It is common up to age 5 to 7 and often runs in families. Avoid punishment, limit fluids late evening and seek advice if it continues beyond that age.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>What should I do when my child has loose motions?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Give ORS and fluids often, keep feeding and add zinc as advised. Blood in stool, high fever or signs of dehydration need prompt care.</p>
             </div>
           </div>
         </div>
@@ -733,8 +745,8 @@
         <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
+          <button data-ga-event="clinic_visit_tab_click" type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">Clinic Visit</button>
+          <button data-ga-event="online_consult_tab_click" type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
         <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
       </div>
@@ -804,7 +816,7 @@
         <div class="booking-field booking-field--file">
           <label for="report">Upload Report</label>
           <div class="booking-upload-row">
-            <label class="booking-upload-btn" for="report">Upload</label>
+            <label data-ga-event="upload_report_click" class="booking-upload-btn" for="report">Upload</label>
             <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
             <span class="booking-upload-help">(JPEG, PNG, PDF file formats supported)</span>
           </div>
@@ -887,10 +899,10 @@
           <span class="peds2-footer-social-label">Follow me on:</span>
           <div class="peds2-footer-social">
             
-            <span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>
+            <span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>
 
             
-            <span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>
+            <span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>
 
             
             <span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>
@@ -917,18 +929,18 @@
         <div class="peds2-footer-links-group">
           <h4>Quick Links</h4>
           <nav class="peds2-footer-nav-horizontal">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact-us">Contact</a>
-            <a href="#gallery">Gallery</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="About" href="#about">About</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Services" href="#services">Services</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Contact" href="#contact-us">Contact</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Gallery" href="#gallery">Gallery</a>
           </nav>
         </div>
 
         <div class="peds2-footer-links-group">
           <h4>Legal</h4>
           <nav class="peds2-footer-nav-horizontal">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy" href="privacy-policy.html">Privacy Policy</a>
+            <a data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service" href="terms-of-service.html">Terms of Service</a>
           </nav>
         </div>
 

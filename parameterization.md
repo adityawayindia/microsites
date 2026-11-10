@@ -40,12 +40,17 @@ Rules that apply to every conversion:
   template's bucket folder, not relative `assets/` paths (which break under `{{path}}` serving).
   `{{path}}` stays for CSS/JS only. If images are deliberately kept in the local `assets/`
   folder, they must be reachable at `assets/…` wherever the page is served.
-- **Only the hero profile image is dynamic.** The hero photo is the one doctor image that uses
-  `{{profile}}` (as it does today). The **About-section image — and any other image that
-  appears outside the hero — is never parameterized**: if an About image exists, keep it a
-  static, template-owned asset (GCS bucket URL per the rule above). Never put `{{profile}}` or
-  any other placeholder in the About `<img>`, and never wrap it in a `{{#has…}}` block. (`{{profile}}`
-  in `og:image` / `twitter:image` / JSON-LD is unaffected — see §3.)
+- **The big profile image appears only once on the site.** The large doctor photo
+  (`{{profile}}`) is rendered in exactly one place: the **hero section** *or* the **About
+  section**, depending on the microsite template's layout. Never show the big profile image in
+  both. The section that does not carry it must not duplicate it, and uses a static,
+  template-owned image if it needs one (GCS bucket URL per the rule above) — never
+  `{{profile}}` or any other placeholder, and never wrapped in a `{{#has…}}` block.
+  Every other image outside that one big-photo slot is likewise never parameterized.
+- **Small profile image stays in the header and footer, as usual.** The compact/avatar-size
+  `{{profile}}` image in the header (logo area) and the footer is unchanged and is not
+  affected by the "only once" rule above — that rule applies to the *big* profile image only.
+  (`{{profile}}` in `og:image` / `twitter:image` / JSON-LD is also unaffected — see §3.)
 - **Disabled-social CSS:** if the template has no `.is-disabled` / `data-tooltip` styling for
   social icons, add the block in §1.1 (it dims the glyph and surface, not the whole element, so
   the "Not Enabled" tooltip stays readable). Also add `html, body { overflow-x: clip; }` so the

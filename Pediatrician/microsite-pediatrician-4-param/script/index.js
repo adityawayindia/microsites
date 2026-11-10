@@ -543,6 +543,7 @@ initPhonePlugin();
             // Programmatic syncs from the consent modal are reported by that
             // flow's own events — don't log them as user checkbox clicks.
             if (!event.isTrusted) return;
+            window.trackEvent?.("consent_checkbox_click", { checked: consentCheckbox.checked });
         });
 
         // Intercept disabled property sets to respect consent checkbox state
