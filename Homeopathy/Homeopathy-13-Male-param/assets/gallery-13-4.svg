@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+<defs><linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4eadf"/><stop offset="1" stop-color="#dfcdbb"/></linearGradient><linearGradient id="wood" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#6a3b2c"/><stop offset=".5" stop-color="#8a5037"/><stop offset="1" stop-color="#5b3026"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-opacity=".18"/></filter></defs>
+<rect width="1200" height="900" fill="url(#wall)"/>
+<rect x="80" y="80" width="1040" height="720" rx="36" fill="#f9f4ee" stroke="#4b2840" stroke-width="7" filter="url(#s)"/>
+<g fill="url(#wood)"><rect x="125" y="220" width="950" height="28" rx="10"/><rect x="125" y="450" width="950" height="28" rx="10"/><rect x="125" y="680" width="950" height="28" rx="10"/></g>
+<g stroke="#2a1624" stroke-width="4">
+  <g transform="translate(175 105)"><rect x="0" y="55" width="98" height="60" rx="18" fill="#9a5d30"/><rect x="20" y="12" width="58" height="50" rx="9" fill="#d6b48b"/><rect x="14" y="72" width="70" height="24" rx="4" fill="#f6eee5" stroke="none"/></g>
+  <g transform="translate(350 80)"><rect x="0" y="78" width="88" height="78" rx="18" fill="#6d3c2d"/><rect x="20" y="26" width="48" height="58" rx="8" fill="#c7a26c"/><rect x="12" y="101" width="64" height="25" rx="4" fill="#f5ebdf" stroke="none"/></g>
+  <g transform="translate(520 110)"><rect x="0" y="48" width="108" height="108" rx="22" fill="#4b2840"/><rect x="23" y="0" width="62" height="58" rx="10" fill="#c7a26c"/><rect x="14" y="88" width="80" height="28" rx="5" fill="#f7efe6" stroke="none"/></g>
+  <g transform="translate(730 88)"><rect x="0" y="70" width="82" height="86" rx="17" fill="#8c4d34"/><rect x="19" y="23" width="44" height="53" rx="8" fill="#d8b582"/><rect x="10" y="99" width="62" height="24" rx="4" fill="#f7efe6" stroke="none"/></g>
+  <g transform="translate(888 98)"><rect x="0" y="60" width="108" height="96" rx="20" fill="#5d6b51"/><rect x="24" y="8" width="60" height="58" rx="9" fill="#c7a26c"/><rect x="13" y="94" width="82" height="26" rx="4" fill="#f7efe6" stroke="none"/></g>
+</g>
+<g transform="translate(165 303)" fill="#5d6b51"><path d="M70 138c-15-72 8-123 54-152 9 57-1 102-54 152z"/><path d="M72 139c-60-43-72-93-52-141 45 34 66 76 52 141z"/><path d="M73 140c54-52 104-58 148-31-43 38-87 49-148 31z"/><rect x="52" y="130" width="49" height="70" rx="12" fill="#c46b42"/></g>
+<g transform="translate(380 310)"><circle cx="95" cy="80" r="76" fill="#f2dfcc" stroke="#4b2840" stroke-width="5"/><path d="M95 25v55l38 23" fill="none" stroke="#4b2840" stroke-width="8" stroke-linecap="round"/></g>
+<g transform="translate(640 300)"><rect x="0" y="0" width="165" height="150" rx="20" fill="#f7f1ea" stroke="#657458" stroke-width="5"/><path d="M35 105c35-48 63-18 96-73" fill="none" stroke="#c46b42" stroke-width="9" stroke-linecap="round"/><circle cx="36" cy="105" r="8" fill="#4b2840"/><circle cx="92" cy="70" r="8" fill="#4b2840"/><circle cx="132" cy="32" r="8" fill="#4b2840"/></g>
+<g transform="translate(875 306)"><rect x="0" y="35" width="130" height="110" rx="18" fill="#81503b" stroke="#2a1624" stroke-width="4"/><rect x="33" y="0" width="64" height="48" rx="8" fill="#c9a36d"/><circle cx="65" cy="89" r="29" fill="#f0e4d6" stroke="#4b2840" stroke-width="4"/></g>
+<g transform="translate(215 535)"><rect x="0" y="40" width="150" height="105" rx="22" fill="#4b2840"/><rect x="37" y="0" width="76" height="52" rx="10" fill="#d3ad78"/><rect x="20" y="79" width="110" height="30" rx="6" fill="#f8f0e8"/></g>
+<g transform="translate(468 540)"><path d="M0 100c42-92 116-96 156 0z" fill="#657458"/><path d="M45 105c-10-55 2-96 42-127 11 50 2 93-42 127z" fill="#839277"/><rect x="55" y="103" width="65" height="45" rx="12" fill="#c46b42"/></g>
+<g transform="translate(758 535)"><rect x="0" y="22" width="205" height="125" rx="20" fill="#ede0d2" stroke="#4b2840" stroke-width="5"/><path d="M25 110h155M25 82h110M25 54h150" stroke="#657458" stroke-width="9" stroke-linecap="round"/></g>
+</svg>

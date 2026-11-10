@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 320">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2a1624"/><stop offset=".55" stop-color="#4b2840"/><stop offset="1" stop-color="#657458"/></linearGradient><pattern id="p" width="44" height="44" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2" fill="#fff" opacity=".09"/></pattern></defs>
+<rect width="2048" height="320" fill="url(#b)"/><rect width="2048" height="320" fill="url(#p)"/>
+<g fill="none" stroke="#d6b48b" stroke-width="6" opacity=".35"><path d="M1680 20c-95 77-126 160-92 277M1710 58c61 1 114-18 155-61M1648 119c-54-1-100-21-137-59M1634 205c62 2 114-18 157-61"/></g>
+<text x="110" y="132" fill="#f8f1e8" font-family="Georgia,serif" font-size="56" font-weight="700">Thoughtful Homeopathic Consultations</text>
+<text x="112" y="205" fill="#eadfd2" font-family="Arial,sans-serif" font-size="28">Detailed case history • Clear follow-up • Clinic and online appointments</text>
+<circle cx="1890" cy="160" r="84" fill="#c46b42" opacity=".95"/><path d="M1870 160c36-48 80-35 92-78 15 55-9 101-92 78z" fill="#f8f1e8"/><path d="M1906 153c-38-25-63-11-80-46-6 43 18 72 80 46z" fill="#f8f1e8" opacity=".88"/>
+</svg>
