@@ -7713,3 +7713,7 @@ footer .footer-disclaimer {
 .inline-style-4 { margin: 0 !important; font-size: 16px !important; font-weight: 800 !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; color: var(--deep, var(--text, #0f172a)) !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; justify-content: center !important; }
 .inline-style-5 { margin: 10px auto 12px !important; font-size: clamp(28px, 3.4vw, 42px) !important; font-weight: 700 !important; color: var(--deep, var(--text, #0f172a)) !important; letter-spacing: -0.03em !important; line-height: 1.25 !important; text-align: center !important; max-width: none !important; }
 .inline-style-6 { margin: 0 auto !important; font-size: 16px !important; color: var(--muted, #334155) !important; max-width: 600px !important; line-height: 1.6 !important; text-align: center !important; }
+
+/* Contact: Book Appointment button (AGENTS.md A.7) */
+.contact-actions { display: flex; justify-content: center; margin-top: 28px; }
+.contact-cta-btn { padding: 14px 30px; font-size: 18px; }

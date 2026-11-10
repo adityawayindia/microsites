@@ -54,7 +54,7 @@
 .legal-lead {
   margin: 0 0 14px;
   color: #374151;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.75;
   max-width: 74ch;
 }
@@ -78,6 +78,13 @@
   gap: 12px;
 }
 
+.legal-page .blog-detail-content > *,
+.legal-article,
+.legal-contact-card {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .legal-page .blog-detail-content h2 {
   margin-top: 20px;
   margin-bottom: 0;
@@ -94,8 +101,8 @@
 .legal-page .blog-detail-content p {
   margin: 0;
   color: #475569;
-  font-size: 16px;
-  line-height: 1.85;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 .legal-list {
@@ -105,6 +112,7 @@
 }
 
 .legal-list li {
+  font-size: 18px;
   margin: 0 0 8px;
   line-height: 1.75;
 }
@@ -140,8 +148,8 @@
   }
 
   .legal-lead {
-    font-size: 16px;
-    line-height: 1.72;
+    font-size: 18px;
+    line-height: 1.7;
   }
 
   .legal-effective-date {
@@ -152,6 +160,6 @@
   .legal-page .blog-detail-content h2 {
     margin-top: 18px;
     padding-top: 12px;
-    font-size: 19px;
+    font-size: 20px;
   }
 }

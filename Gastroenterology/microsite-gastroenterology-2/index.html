@@ -29,22 +29,25 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Sarah Jenkins | Gastroenterologist & Hepatologist</title>
-  <meta name="description" content="Dr. Sarah Jenkins is a gastroenterologist and hepatologist offering comprehensive digestive and liver care." />
+  <title>Dr. Sarah Jenkins | Gastroenterologist</title>
+  <meta name="description" content="Dr. Sarah Jenkins is a gastroenterologist offering comprehensive digestive and liver care." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://digidr.app/{{slug}}/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dr. Sarah Jenkins | Gastroenterologist & Hepatologist" />
-  <meta property="og:description" content="Dr. Sarah Jenkins, Gastroenterologist & Hepatologist." />
+  <meta property="og:url" content="https://digidr.app/{{slug}}/" />
+  <meta property="og:title" content="Dr. Sarah Jenkins | Gastroenterologist" />
+  <meta property="og:description" content="Dr. Sarah Jenkins, Gastroenterologist." />
   <meta property="og:image" content="assets/dr-sarah-jenkins.png" />
   <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:alt" content="Dr. Sarah Jenkins, Gastroenterologist & Hepatologist" />
+  <meta property="og:image:alt" content="Dr. Sarah Jenkins, Gastroenterologist" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dr. Sarah Jenkins | Gastroenterologist & Hepatologist" />
-  <meta name="twitter:description" content="Dr. Sarah Jenkins, Gastroenterologist & Hepatologist." />
+  <meta name="twitter:title" content="Dr. Sarah Jenkins | Gastroenterologist" />
+  <meta name="twitter:description" content="Dr. Sarah Jenkins, Gastroenterologist." />
   <meta name="twitter:image" content="assets/dr-sarah-jenkins.png" />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2314453d'/%3E%3Cpath d='M12 32h8l4-11 6 22 5-16 3 5h14' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
@@ -61,6 +64,26 @@
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Sarah Jenkins",
+    "medicalSpecialty": "Gastroenterologic",
+    "image": "https://digidr.app/{{slug}}/assets/dr-sarah-jenkins.png",
+    "url": "https://digidr.app/{{slug}}/",
+    "telephone": "+91-8041234567",
+    "email": "care@jenkinsgastro.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "14, Lakeview Medical Plaza, MG Road",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "KA",
+      "postalCode": "560034",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
 </head>
 
 <body data-micrositeid="microsite-gastroenterology-2" data-slug="{{slug}}">
@@ -72,7 +95,7 @@
         </span>
         <span class="brand-text">
           <span class="brand-name">Dr. Sarah Jenkins</span>
-          <span class="brand-role">Gastroenterologist & Hepatologist</span>
+          <span class="brand-role">Gastroenterologist</span>
         </span>
       </a>
 
@@ -98,7 +121,7 @@
     </div>
   </header>
 
-  <section class="hero-section">
+  <section class="hero-section" id="home">
     <!-- ==========================================================================
          DIGIDR MODULAR BANNER MODULE (Hero Banner)
          ==========================================================================
@@ -350,7 +373,7 @@
       <!-- Left: Visual Column -->
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-gastroenterology-2/assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo"
+          <img src="assets/digestive-system.svg" alt="Diagram of the human digestive system from mouth to colon, including liver, stomach, pancreas and intestines" class="philosophy-photo philosophy-diagram"
             loading="lazy" />
         </div>
       </div>
@@ -573,6 +596,9 @@
             </div>
           </div>
         </aside>
+      </div>
+    <div class="contact-actions">
+        <a href="#" class="cta-btn contact-cta-btn" data-ga-event="book_appointment_click" data-ga-label="Contact">Book Appointment</a>
       </div>
     </div>
   </section>

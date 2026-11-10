@@ -6,9 +6,9 @@
 
 # Dr. Sarah Jenkins
 
-> Dr. Sarah Jenkins, Gastroenterologist & Hepatologist, on DigiDr. Book a consultation online.
+> Dr. Sarah Jenkins, Gastroenterologist, on DigiDr. Book a consultation online.
 
-- Specialty: Gastroenterologist & Hepatologist
+- Specialty: Gastroenterologist
 - Book a consultation: https://digidr.app/{{slug}}/#booking-modal
 
 ## Pages

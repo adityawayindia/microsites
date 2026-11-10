@@ -381,13 +381,16 @@ initPhonePlugin();
     //    if (event.key === "Escape" && !calendar.hidden) close();
     //});
 
-    form.addEventListener("reset", () => {
+    // Full form reset, or just the date/time pair when the appointment type is switched.
+    function clearSelectedDate() {
         selectedDate = null;
         trigger.value = "";
         hiddenInput.value = "";
         viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
         close();
-    });
+    }
+    form.addEventListener("reset", clearSelectedDate);
+    form.addEventListener("slotreset", clearSelectedDate);
 })();
 
 // Booking Modal & Form Validation
@@ -414,6 +417,7 @@ initPhonePlugin();
             // Programmatic syncs from the consent modal are reported by that
             // flow's own events — don't log them as user checkbox clicks.
             if (!event.isTrusted) return;
+            window.trackEvent?.("consent_checkbox_click", { checked: consentCheckbox.checked });
         });
 
         // Intercept disabled property sets to respect consent checkbox state
@@ -646,8 +650,23 @@ initPhonePlugin();
         }
     });
 
+    // Slide the tab highlight under the active tab (measured, so it follows any tab width).
+    const tabsBar = clinicTab?.parentElement;
+    function moveTabIndicator() {
+        const current = [clinicTab, onlineTab].find((t) => t?.classList.contains("is-active"));
+        if (!tabsBar || !current || !current.offsetWidth) return;
+        tabsBar.style.setProperty("--tab-left", current.offsetLeft + "px");
+        tabsBar.style.setProperty("--tab-top", current.offsetTop + "px");
+        tabsBar.style.setProperty("--tab-width", current.offsetWidth + "px");
+        tabsBar.style.setProperty("--tab-height", current.offsetHeight + "px");
+        tabsBar.classList.add("is-positioned");
+    }
+    if (tabsBar && "ResizeObserver" in window) new ResizeObserver(moveTabIndicator).observe(tabsBar);
+    window.addEventListener("resize", moveTabIndicator);
+
     function setActiveTab(active) {
         if (!clinicTab || !onlineTab) return;
+        const alreadyActive = (active === "clinic" ? clinicTab : onlineTab).classList.contains("is-active");
         if (active === "clinic") {
             clinicTab.classList.add("is-active");
             onlineTab.classList.remove("is-active");
@@ -658,6 +677,19 @@ initPhonePlugin();
             onlineTab.classList.add("is-active");
             clinicTab.setAttribute("aria-selected", "false");
             onlineTab.setAttribute("aria-selected", "true");
+        }
+        moveTabIndicator();
+        if (!alreadyActive) {
+            // Available days/slots depend on the appointment type, so a date or slot chosen
+            // under the other type must not carry over. Name, phone, email etc. are kept.
+            form.dispatchEvent(new CustomEvent("slotreset"));
+            const timeSelect = document.getElementById("preferredTime");
+            if (timeSelect) timeSelect.innerHTML = '<option value="">Select Time Slot</option>';
+            showError("preferredDate", "");
+            showError("preferredTime", "");
+            form.classList.remove("is-switching");
+            void form.offsetWidth; // restart the animation
+            form.classList.add("is-switching");
         }
     }
 
@@ -1150,99 +1182,6 @@ initPhonePlugin();
 
 })();
 
-/* ==========================================================================
-   DigiDr Visitor Counter (frontend placeholder)
-   No backend yet — count is tracked in this browser via localStorage and
-   is NOT shared across visitors/devices. Starts at 0; each new browser
-   session on this site adds 50. Swap getVisitorCount() for a real API
-   call once the backend endpoint exists.
-   ========================================================================== */
-(function () {
-  var STORAGE_KEY = "digidrVisitorCount";
-  var SESSION_KEY = "digidrVisitorCounted";
-  var STYLE_ID = "digidr-visitor-badge-style";
-
-  function getVisitorCount() {
-    var stored = parseInt(localStorage.getItem(STORAGE_KEY), 10);
-    var count = isNaN(stored) ? 0 : stored;
-
-    if (!sessionStorage.getItem(SESSION_KEY)) {
-      count += 50;
-      localStorage.setItem(STORAGE_KEY, String(count));
-      sessionStorage.setItem(SESSION_KEY, "1");
-    }
-
-    return count;
-  }
-
-  function injectStyles() {
-    if (document.getElementById(STYLE_ID)) return;
-    var style = document.createElement("style");
-    style.id = STYLE_ID;
-    style.textContent = [
-      ".footer-visitor-badge{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.32);box-shadow:0 2px 10px rgba(0,0,0,0.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:16px;line-height:1.4;max-width:100%;transition:background .25s ease,border-color .25s ease,transform .25s ease;}",
-      ".footer-visitor-badge:hover{background:rgba(255,255,255,0.24);border-color:rgba(255,255,255,0.44);transform:translateY(-1px);}",
-      ".footer-visitor-badge .footer-visitor-badge-icon{font-size:16px;color:#ffffff;}",
-      ".footer-visitor-badge .footer-visitor-badge-label{white-space:nowrap;color:#f1f5f9;font-weight:500;}",
-      ".footer-visitor-badge .footer-visitor-badge-count{font-weight:700;color:#ffffff;font-variant-numeric:tabular-nums;}",
-      "@media (max-width:480px){.footer-visitor-badge{font-size:16px;padding:9px 14px;gap:6px;margin-top:12px;}}"
-    ].join("");
-    document.head.appendChild(style);
-  }
-
-  function findSocialContainer(footer) {
-    return (
-      footer.querySelector(".peds2-footer-social") ||
-      footer.querySelector(".alt-footer-social") ||
-      footer.querySelector(".footer-social") ||
-      footer.querySelector('[class*="footer-social"]')
-    );
-  }
-
-  function renderVisitorCounter() {
-    var footer = document.querySelector("footer");
-    if (!footer || footer.querySelector(".footer-visitor-badge")) return;
-
-    var social = findSocialContainer(footer);
-    if (!social || !social.parentNode) return;
-
-    injectStyles();
-
-    var count = getVisitorCount();
-
-    var badge = document.createElement("div");
-    badge.className = "footer-visitor-badge";
-    badge.setAttribute("role", "status");
-    badge.setAttribute(
-      "aria-label",
-      "No. of Visitor: " + count.toLocaleString("en-US")
-    );
-
-    var icon = document.createElement("i");
-    icon.className = "fa-solid fa-users footer-visitor-badge-icon";
-    icon.setAttribute("aria-hidden", "true");
-
-    var label = document.createElement("span");
-    label.className = "footer-visitor-badge-label";
-    label.textContent = "No. of Visitor:";
-
-    var countEl = document.createElement("span");
-    countEl.className = "footer-visitor-badge-count";
-    countEl.textContent = count.toLocaleString("en-US");
-
-    badge.appendChild(icon);
-    badge.appendChild(label);
-    badge.appendChild(countEl);
-
-    social.insertAdjacentElement("afterend", badge);
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", renderVisitorCounter);
-  } else {
-    renderVisitorCounter();
-  }
-})();
 
 (function () {
   function checkTruncation(wrap) {
@@ -1443,3 +1382,9 @@ initPhonePlugin();
   var fel = document.querySelector("[data-hero-fellowship]");
   if (fel && (!fel.textContent.replace(/Fellowship:/i, "").trim() || fel.textContent.indexOf("{{") !== -1)) { fel.hidden = true; fel.style.display = "none"; }
 })();
+
+// GA4 booking_submitted (AGENTS.md §40). The booking code calls this after a successful
+// booking with "online" or "offline"; without it the event is never sent.
+window.__trackBookingSuccess = function (type) {
+  window.trackEvent?.("booking_submitted", { appointment_type: type });
+};

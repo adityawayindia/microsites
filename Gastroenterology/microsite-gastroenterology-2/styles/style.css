@@ -3,7 +3,7 @@
      DigiDr Gastro Alternate Theme — "Clinical Precision & Gut Vitality"
      ========================================================================== */
   --teal-primary: #0b7d72;
-  --teal-dark: #0f766e;
+  --teal-dark: #047857;
   --teal-deep: #0a5c5a;
   --teal-light: #e0faf7;
   --teal-soft: #ccfbf1;
@@ -199,6 +199,10 @@ img {
   max-width: 1480px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .container { width: min(1480px, 92%); }
 }
 
 /* Section Kickers & Titles */
@@ -900,6 +904,17 @@ overflow: hidden;
   height: auto;
   object-fit: cover;
   display: block;
+}
+
+.philosophy-img-frame:has(.philosophy-diagram) {
+  background: var(--teal-light);
+  padding: 24px;
+}
+
+.philosophy-diagram {
+  max-height: 520px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .philosophy-pillars {
@@ -1730,7 +1745,8 @@ overflow: hidden;
 }
 
 .footer-inner {
-  max-width: 1240px;
+  width: min(1480px, 92%);
+  max-width: 1480px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -2898,14 +2914,14 @@ overflow: hidden;
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--button, #0f766e);
+  color: var(--button, #047857);
   font-family: inherit;
   font-weight: 600;
   font-size: 16px;
 }
 
 .read-more-btn span {
-  color: var(--button, #0f766e);
+  color: var(--button, #047857);
 }
 
 .read-more-btn i {
@@ -2915,7 +2931,7 @@ overflow: hidden;
 .read-more-btn:hover span,
 .read-more-btn:hover i,
 .read-more-btn:hover {
-  color: var(--button-hover, #0f766e);
+  color: var(--button-hover, #047857);
 }
 
 .read-more-wrap.is-expanded .read-more-btn i {
@@ -3403,3 +3419,89 @@ footer .footer-disclaimer {
 .inline-style-4 { margin: 0 !important; font-size: 16px !important; font-weight: 800 !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; color: var(--deep, var(--text, #0f172a)) !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; justify-content: center !important; }
 .inline-style-5 { margin: 10px auto 12px !important; font-size: clamp(28px, 3.4vw, 42px) !important; font-weight: 700 !important; color: var(--deep, var(--text, #0f172a)) !important; letter-spacing: -0.03em !important; line-height: 1.25 !important; text-align: center !important; max-width: none !important; }
 .inline-style-6 { margin: 0 auto !important; font-size: 16px !important; color: var(--muted, #334155) !important; max-width: 600px !important; line-height: 1.6 !important; text-align: center !important; }
+
+/* Contact: Book Appointment button (AGENTS.md A.7) */
+.contact-actions { display: flex; justify-content: center; margin-top: 28px; }
+.contact-cta-btn { padding: 14px 30px; font-size: 18px; }
+
+/* About: keep the bio to a readable measure (AGENTS.md §2, ~65-75ch) now that it has no side image */
+.about-profile-grid > .about-content { width: 100%; max-width: 75ch; margin: 0 auto; }
+
+/* ==========================================================================
+   Alternating section bands (60% neutral / 30% brand teal) — AGENTS.md §6
+   white → teal tint → white → deep teal → teal tint → white → teal tint → footer
+   ========================================================================== */
+.about-section,
+.philosophy-section,
+.gallery-section { background: #ffffff; }
+
+.services-section,
+.contact-section,
+.faq-section {
+  background: var(--teal-light);
+  background-image: none;
+  background-attachment: scroll;
+}
+
+.process-section {
+  background:
+    linear-gradient(135deg, rgba(10, 92, 90, 0.80) 0%, rgba(4, 120, 87, 0.70) 100%),
+    url("../assets/journey-bg-real.png") center / cover no-repeat;
+  background-attachment: scroll;
+}
+.process-section .about-kicker,
+.process-section .about-title,
+.process-section .about-subtitle { color: #ffffff; }
+.process-section .about-kicker {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+.process-section .about-kicker i { color: #ffffff; }
+.process-section .process-timeline-line { opacity: 0.55; }
+
+/* Subtle brand edge between bands */
+.services-section,
+.contact-section,
+.faq-section { border-top: 1px solid rgba(11, 125, 114, 0.15); border-bottom: 1px solid rgba(11, 125, 114, 0.15); }
+
+/* ==========================================================================
+   Richer colour: bolder hero + brand accents on cards (60/30/10)
+   ========================================================================== */
+.hero-section {
+  background:
+    linear-gradient(100deg, rgba(224, 250, 247, 0.96) 0%, rgba(204, 251, 241, 0.90) 45%, rgba(153, 246, 228, 0.62) 100%),
+    url("../assets/gastro-hero-bg.png") center / cover no-repeat;
+}
+.hero-mesh {
+  background: radial-gradient(circle at 82% 25%, rgba(11, 125, 114, 0.28) 0%, transparent 45%),
+              radial-gradient(circle at 8% 80%, rgba(10, 92, 90, 0.18) 0%, transparent 50%);
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  border: 56px solid rgba(11, 125, 114, 0.12);
+  pointer-events: none;
+}
+
+/* Brand-coloured card accents */
+.service-card-new {
+  border-top: 4px solid var(--teal-primary);
+}
+.philosophy-pillar {
+  background: var(--teal-light);
+  border-left: 4px solid var(--teal-primary);
+}
+.about-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%);
+}
+.contact-card,
+.contact-card-new {
+  border-top: 4px solid var(--teal-primary);
+}
+.faq-section .faq-item { border-left: 4px solid var(--teal-primary); }

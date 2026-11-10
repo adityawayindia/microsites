@@ -6,9 +6,9 @@
 
 # Dr. Arjun Mehta
 
-> Dr. Arjun Mehta, Gastroenterologist & Hepatologist, on DigiDr. Book a consultation online.
+> Dr. Arjun Mehta, Gastroenterologist, on DigiDr. Book a consultation online.
 
-- Specialty: Gastroenterologist & Hepatologist
+- Specialty: Gastroenterologist
 - Book a consultation: https://digidr.app/{{slug}}/#booking-modal
 
 ## Pages

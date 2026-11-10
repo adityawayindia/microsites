@@ -390,7 +390,8 @@ margin-bottom: 0;
   animation: fadeRise 1s ease 0.08s both;
 }
 
-.hero-subtitle {
+.hero-subtitle,
+.hero-credentials {
   margin: 0;
   font-size: clamp(16px, 1.5vw, 18px);
   font-weight: 400;
@@ -398,7 +399,8 @@ margin-bottom: 0;
   line-height: 1.55;
 }
 
-.mic {
+.mic,
+.hero-reg-id {
     margin: 0;
     font-size: 18px;
     font-weight: 400;
@@ -2837,6 +2839,7 @@ margin-bottom: 0;
     letter-spacing: -0.4px;
   }
 
+  .hero-credentials,
   .hero-subtitle {
     font-size: 18px;
     color: var(--muted);
@@ -3950,6 +3953,8 @@ margin-bottom: 0;
 
 .hero-title { color: var(--deep) !important; }
 .hero-subtitle,
+.hero-credentials,
+.hero-reg-id,
 .mic,
 .languages { color: var(--muted) !important; }
 .languages strong { color: var(--deep) !important; }
@@ -7677,3 +7682,120 @@ footer .footer-disclaimer {
   max-height: inherit;
   object-fit: contain;
 }
+
+/* Param conformance (parameterization.md) */
+html, body { overflow-x: clip; }
+/* ============================================================
+   Disabled social icons + "Not Enabled" tooltip (parameterized template).
+   Dim the glyph and surface, not the whole element, so the tooltip
+   stays readable. Tooltip labels are short fixed strings.
+   ============================================================ */
+.hero-section .social.is-disabled,
+.footer-social > span.is-disabled { cursor: not-allowed; }
+.hero-section .social.is-disabled,
+.hero-section .social.is-disabled:hover {
+  background: var(--bg-2);
+  border-color: var(--border);
+  color: var(--muted);
+  transform: none;
+}
+.footer-social > span.is-disabled {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  background: hsla(0,0%,100%,0.06);
+  border: 1px solid hsla(0,0%,100%,0.16);
+  color: #fff;
+  font-size: 18px;
+  min-width: 0;
+}
+.hero-section .social.is-disabled > i,
+.footer-social > span.is-disabled > i { opacity: 0.4; }
+
+.hero-section .social[data-tooltip],
+.footer-social > [data-tooltip] { position: relative; }
+.hero-section .social[data-tooltip]::after,
+.footer-social > [data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--text);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  /* Fixed short labels ("Not Enabled", network names), not dynamic content — the one
+     sanctioned nowrap. All four lines are required: the tooltip is sized by its 28–46px icon
+     and inherits the global reset's `word-break: break-word`, so without them it collapses
+     into a one-letter-per-line vertical strip (AGENTS.md §26 #4). */
+  white-space: nowrap;
+  width: max-content;
+  max-width: none;
+  word-break: normal;
+  overflow-wrap: normal;
+  padding: 6px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 20;
+}
+.hero-section .social[data-tooltip]::before,
+.footer-social > [data-tooltip]::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--text);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+  z-index: 20;
+}
+.hero-section .social[data-tooltip]:hover::after,
+.hero-section .social[data-tooltip]:hover::before,
+.hero-section .social[data-tooltip]:focus-visible::after,
+.hero-section .social[data-tooltip]:focus-visible::before,
+.footer-social > [data-tooltip]:hover::after,
+.footer-social > [data-tooltip]:hover::before,
+.footer-social > [data-tooltip]:focus-visible::after,
+.footer-social > [data-tooltip]:focus-visible::before {
+  opacity: 1;
+  visibility: visible;
+}
+.hero-section .social[data-tooltip]:hover::after,
+.hero-section .social[data-tooltip]:focus-visible::after,
+.footer-social > [data-tooltip]:hover::after,
+.footer-social > [data-tooltip]:focus-visible::after { transform: translateX(-50%) translateY(0); }
+
+/* Visitor badge (AGENTS.md §44, parameterization.md P.1) */
+.footer-visitor-badge { display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 6px; padding: 10px 18px; border-radius: 999px; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.28); font-size: 18px; line-height: 1.4; max-width: 100%; color: #ffffff !important; }
+.footer-visitor-badge i,
+.footer-visitor-badge .footer-visitor-badge-icon { font-size: 16px; color: #ffffff !important; }
+.footer-visitor-badge span,
+.footer-visitor-badge .footer-visitor-badge-label { color: #f1f5f9 !important; font-weight: 500; }
+.footer-visitor-badge .footer-visitor-badge-count { font-weight: 700; color: #ffffff !important; font-variant-numeric: tabular-nums; }
+
+/* Contact: Book Appointment button (AGENTS.md A.7) */
+.contact-actions { display: flex; justify-content: center; margin-top: 28px; }
+.contact-cta-btn { padding: 14px 30px; font-size: 18px; }
+
+/* Form content eases in whenever the appointment type is switched */
+.booking-form.is-switching { animation: bookingFormSwap 0.3s ease; }
+@keyframes bookingFormSwap { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .booking-form.is-switching { animation: none; } }
+
+/* Former inline styles (moved out of index.html) */
+.inline-style-1 { text-align: center !important; }
+.inline-style-2 { text-align: center !important; max-width: 700px !important; margin: 0 auto 50px !important; }
+.inline-style-3 { text-align: center !important; margin-bottom: 40px !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; width: 100% !important; }
+.inline-style-4 { margin: 0 !important; font-size: 16px !important; font-weight: 800 !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; color: var(--deep, var(--text, #0f172a)) !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; justify-content: center !important; }
+.inline-style-5 { margin: 10px auto 12px !important; font-size: clamp(28px, 3.4vw, 42px) !important; font-weight: 700 !important; color: var(--deep, var(--text, #0f172a)) !important; letter-spacing: -0.03em !important; line-height: 1.25 !important; text-align: center !important; max-width: none !important; }
+.inline-style-6 { margin: 0 auto !important; font-size: 16px !important; color: var(--muted, #334155) !important; max-width: 600px !important; line-height: 1.6 !important; text-align: center !important; }

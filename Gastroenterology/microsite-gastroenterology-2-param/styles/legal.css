@@ -22,9 +22,9 @@
   margin-bottom: 22px;
   padding: 9px 14px;
   border-radius: 999px;
-  border: 1px solid var(--button);
+  border: 1px solid var(--teal-deep);
   background: #ffffff;
-  color: var(--button);
+  color: var(--teal-deep);
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -37,8 +37,8 @@
 
 .legal-page .blog-detail-back-link:hover {
   transform: translateY(-1px);
-  border-color: var(--button);
-  background: var(--button);
+  border-color: var(--teal-deep);
+  background: var(--teal-deep);
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
@@ -54,7 +54,7 @@
 .legal-lead {
   margin: 0 0 14px;
   color: #374151;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.75;
   max-width: 74ch;
 }
@@ -66,9 +66,9 @@
   gap: 6px;
   padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid var(--button);
+  border: 1px solid var(--teal-deep);
   background: #ffffff;
-  color: var(--button);
+  color: var(--teal-deep);
   font-size: 16px;
   font-weight: 600;
 }
@@ -78,13 +78,20 @@
   gap: 12px;
 }
 
+.legal-page .blog-detail-content > *,
+.legal-article,
+.legal-contact-card {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .legal-page .blog-detail-content h2 {
   margin-top: 20px;
   margin-bottom: 0;
   padding-top: 14px;
   border-top: 1px solid #edf1f7;
   font-size: 22px;
-  color: var(--button);
+  color: var(--teal-deep);
 }
 
 .legal-page .blog-detail-content h2:first-of-type {
@@ -94,8 +101,8 @@
 .legal-page .blog-detail-content p {
   margin: 0;
   color: #475569;
-  font-size: 16px;
-  line-height: 1.85;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 .legal-list {
@@ -105,6 +112,7 @@
 }
 
 .legal-list li {
+  font-size: 18px;
   margin: 0 0 8px;
   line-height: 1.75;
 }
@@ -113,7 +121,7 @@
   margin-top: 10px;
   padding: 18px 18px 8px;
   border-radius: 14px;
-  border: 1px solid var(--button);
+  border: 1px solid var(--teal-deep);
   background: #ffffff;
 }
 
@@ -140,8 +148,8 @@
   }
 
   .legal-lead {
-    font-size: 16px;
-    line-height: 1.72;
+    font-size: 18px;
+    line-height: 1.7;
   }
 
   .legal-effective-date {
@@ -152,6 +160,6 @@
   .legal-page .blog-detail-content h2 {
     margin-top: 18px;
     padding-top: 12px;
-    font-size: 19px;
+    font-size: 20px;
   }
 }

@@ -193,11 +193,39 @@
 
         /* Focus input after animation */
         setTimeout(function () { inputEl.focus(); }, 330);
+        syncKeyboard();
+    }
+
+    /* ── Mobile keyboard: dock the window flush against the on-screen keyboard ── */
+    var kbBaseHeight = 0; /* tallest visible height seen = no-keyboard height */
+    function syncKeyboard() {
+        var vv = window.visualViewport;
+        if (!vv || !isOpen || window.innerWidth > 480) {
+            wrap.classList.remove('is-kb-open');
+            return;
+        }
+        /* Works whether the browser shrinks only the visual viewport or the layout too */
+        if (!kbBaseHeight || vv.height > kbBaseHeight) kbBaseHeight = vv.height;
+        var offset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+        var kbOpen = (kbBaseHeight - vv.height) > 120;
+        wrap.classList.toggle('is-kb-open', kbOpen);
+        if (kbOpen) {
+            wrap.style.setProperty('--chatbot-vvh', vv.height + 'px');
+            wrap.style.setProperty('--chatbot-kb-offset', offset + 'px');
+            scrollToBottom();
+        }
+    }
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', syncKeyboard);
+        window.visualViewport.addEventListener('scroll', syncKeyboard);
+        window.addEventListener('orientationchange', function () { kbBaseHeight = 0; });
     }
 
     function closeChat() {
         isOpen = false;
         wrap.classList.remove('is-open');
+        wrap.classList.remove('is-kb-open');
+        kbBaseHeight = 0;
         fab.setAttribute('aria-expanded', 'false');
         fab.setAttribute('aria-label', 'Open Assistant');
         if (backdrop) backdrop.setAttribute('aria-hidden', 'true');
@@ -244,14 +272,14 @@
                 hideTyping();
                 var reply =
                     (data && (data.reply || data.message || data.answer || data.response)) ||
-                    "Thanks for your message! My team will get back to you shortly. For immediate assistance, please call or visit my support page.";
+                    "Thanks for your message! Our team will get back to you shortly. For immediate assistance, please call or visit our support page.";
                 addMessage(reply, 'bot');
             })
             .catch(function (err) {
                 console.error('MicrositeChat error:', err);
                 hideTyping();
                 addMessage(
-                    "Sorry, I'm having trouble responding right now. Please call or visit my support page for immediate assistance.",
+                    "Sorry, I'm having trouble responding right now. Please call or visit our support page for immediate assistance.",
                     'bot'
                 );
             });

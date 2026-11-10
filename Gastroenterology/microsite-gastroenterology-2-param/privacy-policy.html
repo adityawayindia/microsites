@@ -30,6 +30,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy | Dr. {{full_name}}</title>
     <meta name="description" content="Privacy Policy for the practice of Dr. {{full_name}}, {{speciality}}." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://digidr.app/{{slug}}/privacy-policy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dr. {{full_name}}" />
+    <meta property="og:title" content="Privacy Policy | Dr. {{full_name}}" />
+    <meta property="og:description" content="Privacy Policy for the practice of Dr. {{full_name}}, {{speciality}}." />
+    <meta property="og:url" content="https://digidr.app/{{slug}}/privacy-policy" />
+    <meta property="og:image" content="{{profile}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Privacy Policy | Dr. {{full_name}}" />
+    <meta name="twitter:image" content="{{profile}}" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2314453d'/%3E%3Cpath d='M12 32h8l4-11 6 22 5-16 3 5h14' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -120,7 +131,7 @@
             </p>
             <ul class="legal-list">
               <li>Authorised staff and healthcare professionals involved in your care</li>
-              <li>Trusted service providers, including DigiDr as the technology provider, and hosting, appointment, or communication tools</li>
+              <li>Service providers, including DigiDr as the technology provider, and hosting, appointment, or communication tools</li>
               <li>Government or legal authorities when required by law</li>
             </ul>
             <p>
@@ -192,42 +203,49 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/{{slug}}/#about">About</a>
-        <a href="/{{slug}}/#services">Services</a>
-        <a href="/{{slug}}/#contact-us">Contact</a>
+        <a href="/{{slug}}/#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
+        <a href="/{{slug}}/#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
+        <a href="/{{slug}}/#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
+        <a href="/{{slug}}/#gallery" data-ga-event="footer_nav_link_click" data-ga-label="Gallery">Gallery</a>
+        <a href="/{{slug}}/#faq" data-ga-event="footer_nav_link_click" data-ga-label="FAQ">FAQ</a>
       </nav>
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook Profile not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
           {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
 
-          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
-          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
-
-          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
           {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
 
-          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
           {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
 
-          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
           {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
 
-          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
           {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
 
-          {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
           {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
 
-          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
           {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
         </div>
       </div>
       <div class="footer-links">
-        <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
+        <a href="/{{slug}}/privacy-policy" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
         <span class="footer-divider">|</span>
-        <a href="/{{slug}}/terms-of-service">Terms of Service</a>
+        <a href="/{{slug}}/terms-of-service" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
+      </div>
+      <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
+        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+        <span class="footer-visitor-badge-label">No. of Visitor:</span>
+        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
       </div>
       <p class="footer-copy"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Dr. {{full_name}}. All rights reserved</p>
     </div>
@@ -237,6 +255,24 @@
   <script src="{{path}}/script/analytics.js"></script>
   <script src="{{path}}/script/index.js"></script>
   <script src="{{path}}/script/chatbot.js" defer></script>
+
+  <script>
+    (function () {
+      const micrositeId = document.body.dataset.micrositeid;
+      const el = document.getElementById("visitorCount");
+      if (!micrositeId || !el) return;
+
+      fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+        method: "POST"
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          el.textContent = data.visitorCount.toLocaleString();
+        })
+        .catch(err => console.error("Visitor count error:", err));
+    })();
+  </script>
+
 </body>
 </html>
 

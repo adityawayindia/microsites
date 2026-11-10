@@ -29,22 +29,25 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Arjun Mehta | Gastroenterologist & Hepatologist</title>
-  <meta name="description" content="Dr. Arjun Mehta is a gastroenterologist and hepatologist offering comprehensive digestive and liver care." />
+  <title>Dr. Arjun Mehta | Gastroenterologist</title>
+  <meta name="description" content="Dr. Arjun Mehta is a gastroenterologist offering comprehensive digestive and liver care." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://digidr.app/{{slug}}/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dr. Arjun Mehta | Gastroenterologist & Hepatologist" />
-  <meta property="og:description" content="Dr. Arjun Mehta, Gastroenterologist & Hepatologist." />
+  <meta property="og:url" content="https://digidr.app/{{slug}}/" />
+  <meta property="og:title" content="Dr. Arjun Mehta | Gastroenterologist" />
+  <meta property="og:description" content="Dr. Arjun Mehta, Gastroenterologist." />
   <meta property="og:image" content="assets/dr-arjun-mehta.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:alt" content="Dr. Arjun Mehta, Gastroenterologist & Hepatologist" />
+  <meta property="og:image:alt" content="Dr. Arjun Mehta, Gastroenterologist" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dr. Arjun Mehta | Gastroenterologist & Hepatologist" />
-  <meta name="twitter:description" content="Dr. Arjun Mehta, Gastroenterologist & Hepatologist." />
+  <meta name="twitter:title" content="Dr. Arjun Mehta | Gastroenterologist" />
+  <meta name="twitter:description" content="Dr. Arjun Mehta, Gastroenterologist." />
   <meta name="twitter:image" content="assets/dr-arjun-mehta.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2314453d'/%3E%3Cpath d='M12 32h8l4-11 6 22 5-16 3 5h14' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
@@ -60,6 +63,26 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/chatbot.css" id="chatbot-css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Arjun Mehta",
+    "medicalSpecialty": "Gastroenterologic",
+    "image": "https://digidr.app/{{slug}}/assets/dr-arjun-mehta.jpg",
+    "url": "https://digidr.app/{{slug}}/",
+    "telephone": "+91-8049876543",
+    "email": "contact@mehtagastro.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2nd Floor, Garden Wellness Center, 80 Feet Road, Koramangala",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "KA",
+      "postalCode": "560034",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
 </head>
 
 <body data-micrositeid="microsite-gastroenterology-1" data-slug="{{slug}}">
@@ -71,7 +94,7 @@
         </span>
         <span class="brand-text">
           <span class="brand-name">Dr. Arjun Mehta</span>
-          <span class="brand-role">Gastroenterologist & Hepatologist</span>
+          <span class="brand-role">Gastroenterologist</span>
         </span>
       </a>
 
@@ -97,7 +120,7 @@
     </div>
   </header>
 
-  <section class="hero-section">
+  <section class="hero-section" id="home">
     <!-- ==========================================================================
          DIGIDR MODULAR BANNER MODULE (Hero Banner)
          ==========================================================================
@@ -257,7 +280,7 @@
         <div class="about-story-new read-more-wrap">
           <div class="read-more-content">
             <p>
-              Dr. Arjun Mehta is a gastroenterologist and hepatologist with over a decade of experience in diagnosing and treating disorders of the digestive system and liver. He trained at AIIMS New Delhi and specialises in advanced endoscopy, inflammatory bowel disease, fatty liver and chronic liver conditions. His approach combines accurate diagnostics with evidence-based therapy and practical dietary guidance, so that every patient understands their condition and their treatment plan. He believes in patient education, early screening and long-term follow-up, and consults patients both in clinic and online.
+              Dr. Arjun Mehta is a gastroenterologist with over a decade of experience in diagnosing and treating disorders of the digestive system and liver. He trained at AIIMS New Delhi and specialises in advanced endoscopy, inflammatory bowel disease, fatty liver and chronic liver conditions. His approach combines accurate diagnostics with evidence-based therapy and practical dietary guidance, so that every patient understands their condition and their treatment plan. He believes in patient education, early screening and long-term follow-up, and consults patients both in clinic and online.
             </p>
           </div>
           <button type="button" class="read-more-btn" data-ga-event="read_more_click" aria-expanded="false">
@@ -579,6 +602,9 @@
             </div>
           </div>
         </aside>
+      </div>
+    <div class="contact-actions">
+        <a href="#" class="cta-btn contact-cta-btn" data-ga-event="book_appointment_click" data-ga-label="Contact">Book Appointment</a>
       </div>
     </div>
   </section>

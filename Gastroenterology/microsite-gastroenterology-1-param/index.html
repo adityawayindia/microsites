@@ -30,10 +30,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. {{full_name}} | {{speciality}}</title>
-  <meta name="description" content="Dr. {{full_name}} is a gastroenterologist and hepatologist offering comprehensive digestive and liver care." />
+  <meta name="description" content="Dr. {{full_name}} is a gastroenterologist offering comprehensive digestive and liver care." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://digidr.app/{{slug}}/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://digidr.app/{{slug}}/" />
   <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
   <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
   <meta property="og:image" content="{{profile}}" />
@@ -60,6 +63,26 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" />
   <link rel="stylesheet" href="{{path}}/styles/style.css" />
   <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. {{full_name}}",
+    "medicalSpecialty": "Gastroenterologic",
+    "image": "{{profile}}",
+    "url": "https://digidr.app/{{slug}}/",
+    "telephone": "+{{code}}-{{phone}}",
+    "email": "{{email}}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{address}}",
+      "addressLocality": "{{city}}",
+      "addressRegion": "{{state}}",
+      "postalCode": "{{pincode}}",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
 </head>
 
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
@@ -83,21 +106,21 @@
       </button>
 
       <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact-us">Contact</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#faq">FAQ</a>
+        <a href="#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
+        <a href="#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
+        <a href="#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
+        <a href="#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
+        <a href="#faq" data-ga-event="nav_link_click" data-ga-label="FAQ">FAQ</a>
       </nav>
 
-      <a href="#" class="cta-btn">
+      <a href="#" class="cta-btn" data-ga-event="book_appointment_click" data-ga-label="Navbar">
         <span class="cta-text-desktop">Book Appointment</span>
         <span class="cta-text-mobile">Appointment</span>
       </a>
     </div>
   </header>
 
-  <section class="hero-section">
+  <section class="hero-section" id="home">
     <!-- ==========================================================================
          DIGIDR MODULAR BANNER MODULE (Hero Banner)
          ==========================================================================
@@ -189,53 +212,58 @@
         </div>
 
         <h1 class="hero-title">Dr. {{full_name}}</h1>
-        <p class="hero-subtitle"><i class="fa-solid fa-user-graduate"></i> <strong>Qualification:</strong> {{awards}} &middot; {{education}}</p>
+        <p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{awards}},{{education}}</p>
+        {{#hasmic}}<p class="hero-reg-id"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Medical Regd. No.: {{mci}}</p>{{/hasmic}}
         <!-- {{#hasFellowship}} -->
-        <p class="hero-subtitle" data-hero-fellowship><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
+        <p class="hero-credentials" data-hero-fellowship><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p>
         <!-- {{/hasFellowship}} -->
-        {{#hasmic}}<p class="mic"><i class="fa-solid fa-id-card"></i> <strong>Medical Regd No:</strong> {{mci}}</p>{{/hasmic}}
+
+        <p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <strong>Languages:</strong> {{languages}}</p>
 
         <div class="hero-stats-grid">
           <article class="hero-stat-box">
             <i class="fa-solid fa-award"></i>
-            <strong data-practising-since>{{practising_since}}</strong>
+            <strong class="stat-card-num" data-practising-since data-counter>{{practising_since}}</strong>
             <span>Practising since</span>
           </article>
           <article class="hero-stat-box">
             <i class="fa-solid fa-users"></i>
-            <strong>{{languages_count}}</strong>
+            <strong class="stat-card-num" data-counter>{{languages_count}}</strong>
             <span>Languages</span>
           </article>
           <article class="hero-stat-box">
             <i class="fa-solid fa-star"></i>
-            <strong>{{consultation_modes_count}}</strong>
+            <strong class="stat-card-num" data-counter>{{consultation_modes_count}}</strong>
             <span>Consultation modes</span>
           </article>
         </div>
 
-        <p class="languages">
-          <i class="fa-solid fa-language"></i> <strong>Language:</strong> {{languages}}
-        </p>
-
         <div class="hero-actions">
           <a href="#contact-us" class="contact-btn">Contact Now</a>
           <div class="social-links" aria-label="Social media links">
-            {{#hasFacebookPage}}<a href="{{facebookpage}}" class="social social-facebook" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
-            {{#noFacebook}}<span class="social social-facebook is-disabled" aria-label="Facebook Page not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebook}}
-            {{#hasFacebook}}<a href="{{facebook}}" class="social social-facebook-alt" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
-            {{#noFacebook}}<span class="social social-facebook-alt is-disabled" aria-label="Facebook Profile not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
-            {{#hasInstagram}}<a href="{{instagram}}" class="social social-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
-            {{#noInstagram}}<span class="social social-instagram is-disabled" aria-label="Instagram not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
-            {{#hasTwitter}}<a href="{{twitter}}" class="social social-x" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
-            {{#noTwitter}}<span class="social social-x is-disabled" aria-label="X not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
-            {{#hasLinkedin}}<a href="{{linkedin}}" class="social social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
-            {{#noLinkedin}}<span class="social social-linkedin is-disabled" aria-label="LinkedIn not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
-            {{#hasWebsite}}<a href="{{website}}" class="social social-website" aria-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
-            {{#noWebsite}}<span class="social social-website is-disabled" aria-label="Website not linked" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
-            {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social social-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
-            {{#noWhatsapp}}<span class="social social-whatsapp is-disabled" aria-label="WhatsApp not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
-            {{#hasYoutube}}<a href="{{youtube}}" class="social social-youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
-            {{#noYoutube}}<span class="social social-youtube is-disabled" aria-label="YouTube not linked" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
+            {{#hasFacebook}}<a href="{{facebook}}" class="social social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+            {{#noFacebook}}<span class="social social-facebook-alt is-disabled" aria-label="Facebook Profile not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+            {{#hasFacebookPage}}<a href="{{facebookpage}}" class="social social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+            {{#noFacebookPage}}<span class="social social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
+
+            {{#hasInstagram}}<a href="{{instagram}}" class="social social-instagram" aria-label="Instagram" data-tooltip="Instagram" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+            {{#noInstagram}}<span class="social social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
+
+            {{#hasTwitter}}<a href="{{twitter}}" class="social social-x" aria-label="X" data-tooltip="X (Twitter)" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+            {{#noTwitter}}<span class="social social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
+
+            {{#hasLinkedin}}<a href="{{linkedin}}" class="social social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+            {{#noLinkedin}}<span class="social social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
+
+            {{#hasWebsite}}<a href="{{website}}" class="social social-website" aria-label="Website" data-tooltip="Website" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+            {{#noWebsite}}<span class="social social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
+
+            {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+            {{#noWhatsapp}}<span class="social social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
+
+            {{#hasYoutube}}<a href="{{youtube}}" class="social social-youtube" aria-label="YouTube" data-tooltip="YouTube" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+            {{#noYoutube}}<span class="social social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
           </div>
         </div>
       </div>
@@ -243,7 +271,7 @@
       <div class="hero-visual">
         <div class="hero-visual-blob" aria-hidden="true"></div>
         <div class="hero-digestive-visual">
-          <img src="assets/digestive-system.svg" alt="Human Digestive System Anatomy" class="digestive-system-img" />
+          <img src="assets/digestive-system.svg" alt="Human Digestive System Anatomy" class="digestive-system-img" loading="eager" fetchpriority="high" />
         </div>
       </div>
     </div>
@@ -281,7 +309,7 @@
               {{introduction}}
             </p>
           </div>
-          <button type="button" class="read-more-btn" aria-expanded="false">
+          <button type="button" class="read-more-btn" data-ga-event="read_more_click" aria-expanded="false">
             <span>Read More</span>
             <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
@@ -395,11 +423,11 @@
     <div class="container">
       <div class="process-header">
         <p class="about-kicker"><i class="fa-solid fa-route" aria-hidden="true"></i> Consultation Journey</p>
-        <h2 class="about-title" style="text-align: center;">
+        <h2 class="about-title inline-style-1">
           {{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}
           {{#no_process_section_about_title}}Your Digestive Care Journey{{/no_process_section_about_title}}
         </h2>
-        <p class="about-subtitle" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+        <p class="about-subtitle inline-style-2">
           {{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}
           {{#no_process_section_about_subtitle}}A systematic process for accurate diagnosis and effective digestive relief.{{/no_process_section_about_subtitle}}
         </p>
@@ -507,17 +535,13 @@
 
   <section class="contact-section" id="contact-us">
     <div class="container">
-      <div class="contact-header"
-        style="text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
-        <p class="contact-kicker"
-          style="margin: 0; font-size: 16px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--deep, var(--text, #0f172a)); display: inline-flex; align-items: center; gap: 8px; justify-content: center;">
+      <div class="contact-header inline-style-3">
+        <p class="contact-kicker inline-style-4">
           <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact
         </p>
-        <h2 class="contact-title"
-          style="margin: 10px auto 12px; font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; color: var(--deep, var(--text, #0f172a)); letter-spacing: -0.03em; line-height: 1.25; text-align: center; max-width: none;">
+        <h2 class="contact-title inline-style-5">
           Get in Touch</h2>
-        <p class="contact-subtitle"
-          style="margin: 0 auto; font-size: 16px; color: var(--muted, #334155); max-width: 600px; line-height: 1.6; text-align: center;">
+        <p class="contact-subtitle inline-style-6">
           {{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}
           {{#no_contact_us_subtitle}}Have questions or want to schedule an appointment? Reach out to my team directly.{{/no_contact_us_subtitle}}</p>
       </div>
@@ -547,13 +571,16 @@
               <div>
                 <h4>Phone &amp; Email</h4>
                 <p>
-                  <a data-contact-phone href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
-                  <a data-contact-email href="mailto:{{email}}">{{email}}</a>
+                  <a data-contact-phone data-ga-event="phone_number_click" href="tel:+{{code}}{{phone}}">+{{code}}-{{phone}}</a><br />
+                  <a data-contact-email data-ga-event="email_click" href="mailto:{{email}}">{{email}}</a>
                 </p>
               </div>
             </div>
           </div>
         </aside>
+      </div>
+    <div class="contact-actions">
+        <a href="#" class="cta-btn contact-cta-btn" data-ga-event="book_appointment_click" data-ga-label="Contact">Book Appointment</a>
       </div>
     </div>
   </section>
@@ -575,7 +602,7 @@
       <div class="gallery-grid">
           {{#images}}
           <figure class="gallery-item">
-              <img src="{{image}}" alt="Inside the clinic" />
+              <img src="{{image}}" alt="Inside the clinic" loading="lazy" decoding="async" />
               <span class="gallery-item-overlay" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
           </figure>
           {{/images}}
@@ -676,10 +703,10 @@
         </button>
 
         <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
-          <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true">
+          <button type="button" class="booking-tab is-active" id="clinicVisitTab" data-ga-event="clinic_visit_tab_click" role="tab" aria-selected="true">
             Clinic Visit
           </button>
-          <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">
+          <button type="button" class="booking-tab" id="onlineConsultTab" data-ga-event="online_consult_tab_click" role="tab" aria-selected="false" aria-describedby="onlineConsultTip">
             Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
         </div>
         <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
@@ -754,7 +781,7 @@
         <div class="booking-field booking-field--file">
           <label for="report">Upload Report</label>
           <div class="booking-upload-row">
-            <label class="booking-upload-btn" for="report">Upload</label>
+            <label class="booking-upload-btn" for="report" data-ga-event="upload_report_click">Upload</label>
             <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf,image/*,application/pdf" />
             <span class="booking-upload-help">(JPEG, PNG file formats supported)</span>
           </div>
@@ -766,6 +793,7 @@
         <div class="booking-field booking-consent-field">
           <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
           <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. {{full_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
+          <p class="booking-error" data-error-for="consentCheckbox"></p>
         </div>
 
         <button type="submit" class="booking-submit-btn" id="submitBtn" disabled>
@@ -825,45 +853,46 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact-us">Contact</a>
-        <a href="#faq">FAQ</a>
+        <a href="#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
+        <a href="#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
+        <a href="#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
+        <a href="/{{slug}}/#gallery" data-ga-event="footer_nav_link_click" data-ga-label="Gallery">Gallery</a>
+        <a href="#faq" data-ga-event="footer_nav_link_click" data-ga-label="FAQ">FAQ</a>
       </nav>
 
       <div class="footer-social-wrap">
         <span class="footer-social-label">Follow me on:</span>
         <div class="footer-social" aria-label="Footer social links">
-          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
+          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
+          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook Profile not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
+
+          {{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-icon footer-social-facebook" aria-label="Facebook Page" data-tooltip="Facebook Page" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>{{/hasFacebookPage}}
           {{#noFacebookPage}}<span class="footer-social-icon footer-social-facebook is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook-f"></i></span>{{/noFacebookPage}}
 
-          {{#hasFacebook}}<a href="{{facebook}}" class="footer-social-icon footer-social-facebook-alt" aria-label="Facebook Profile" data-tooltip="Facebook Profile" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>{{/hasFacebook}}
-          {{#noFacebook}}<span class="footer-social-icon footer-social-facebook-alt is-disabled" aria-label="Facebook not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-facebook"></i></span>{{/noFacebook}}
-
-          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
+          {{#hasInstagram}}<a href="{{instagram}}" class="footer-social-icon footer-social-instagram" aria-label="Instagram" data-tooltip="Instagram" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{/hasInstagram}}
           {{#noInstagram}}<span class="footer-social-icon footer-social-instagram is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-instagram"></i></span>{{/noInstagram}}
 
-          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
+          {{#hasTwitter}}<a href="{{twitter}}" class="footer-social-icon footer-social-x" aria-label="X" data-tooltip="X (Twitter)" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>{{/hasTwitter}}
           {{#noTwitter}}<span class="footer-social-icon footer-social-x is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-x-twitter"></i></span>{{/noTwitter}}
 
-          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
+          {{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-icon footer-social-linkedin" aria-label="LinkedIn" data-tooltip="LinkedIn" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>{{/hasLinkedin}}
           {{#noLinkedin}}<span class="footer-social-icon footer-social-linkedin is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-linkedin-in"></i></span>{{/noLinkedin}}
 
-          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
+          {{#hasWebsite}}<a href="{{website}}" class="footer-social-icon footer-social-website" aria-label="Website" data-tooltip="Website" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe"></i></a>{{/hasWebsite}}
           {{#noWebsite}}<span class="footer-social-icon footer-social-website is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-solid fa-globe"></i></span>{{/noWebsite}}
 
-          {{#hasWhatsapp}}<a href="{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
+          {{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="footer-social-icon footer-social-whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>{{/hasWhatsapp}}
           {{#noWhatsapp}}<span class="footer-social-icon footer-social-whatsapp is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-whatsapp"></i></span>{{/noWhatsapp}}
 
-          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
+          {{#hasYoutube}}<a href="{{youtube}}" class="footer-social-icon footer-social-youtube" aria-label="YouTube" data-tooltip="YouTube" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube"></i></a>{{/hasYoutube}}
           {{#noYoutube}}<span class="footer-social-icon footer-social-youtube is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="-1"><i class="fa-brands fa-youtube"></i></span>{{/noYoutube}}
         </div>
       </div>
 
       <div class="footer-links">
-        <a href="/{{slug}}/privacy-policy">Privacy Policy</a>
+        <a href="/{{slug}}/privacy-policy" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
         <span class="footer-divider">|</span>
-        <a href="/{{slug}}/terms-of-service">Terms of Service</a>
+        <a href="/{{slug}}/terms-of-service" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
       </div>
 
       <div class="footer-visitor-badge" role="status" aria-label="No. of Visitor">
