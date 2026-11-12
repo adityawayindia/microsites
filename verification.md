@@ -219,6 +219,10 @@ no dead nav link, no leftover carousel markup or script errors.
     contact details.
 
 ## I. GALLERY
+Check that the default standalone gallery and parameterized preview contain exactly
+three images unless a different count was requested. Preserve support for configured
+gallery counts and run the additional grid stress checks below.
+
 13. The gallery is an image grid only. There are no captions, titles, overlays or descriptive text
     on the items. Keep meaningful alt text. Images are real, not placeholders, and below-the-fold
     images use `loading="lazy"`. The grid is centred for 4/5/7 images, and the lightbox works.

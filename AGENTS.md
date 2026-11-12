@@ -602,6 +602,11 @@ only so existing cross-references (§N) stay stable. Parameterized builds must n
 
 ## 10. Practice Gallery
 
+**Default gallery count: three images.** New microsites ship with exactly three
+selected gallery images unless another count is explicitly requested. Use three
+images in parameterized preview/sample data too; retain the backend `images` loop
+so configured galleries can support other counts. Do not add a fourth default image.
+
 | Element | Value |
 |---|---|
 | Section padding | `20px 0` |

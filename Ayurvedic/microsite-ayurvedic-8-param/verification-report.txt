@@ -1,0 +1,146 @@
+DigiDr verification — microsite-ayurvedic-8-param
+Date: 12 November 2026
+Profile: Dr. Devendra Shah — male Ayurvedic physician
+Result: PASS for local implementation and fixture-backed integration tests. Production service delivery is UNVERIFIED.
+
+SCOPE AND METHOD
+Built from AGENTS.md shared component/API contracts, checked against verification.md, parameterized per parameterization.md.
+Chrome headless, real fonts/Font Awesome/intl-tel-input; appointment/chat/visitor/social responses intercepted outside the delivered files. GA4/Clarity event queues inspected; no real patient bookings or production social posts created.
+Parameterized pages rendered with full field values, optional flags, fallback text, variable-length lists and long text. Static GCS URLs mapped to the corresponding delivered local assets only in the QA harness.
+Source/template core booking helpers, phone/calendar and booking-submit blocks match all three AGENTS Appendix A.18 JavaScript blocks verbatim (normalized line endings).
+
+RUNTIME RESULTS
+37/37 interaction assertions, including complete offline and online bookings.
+9/9 booking-edge assertions (mode availability, required fields, dates, empty slots, failure recovery and focus).
+12/12 final modal/analytics/navigation/contrast assertions.
+39/39 template configuration, banner, grid and chat assertions; dedicated Facebook SDK/fallback/carousel checks: 6/6 PASS. No Facebook implementation change was required.
+18 page/viewport combinations per folder (36 per source+template pair); six viewport widths on each of the three pages. No horizontal overflow, broken content images or missing Font Awesome glyphs.
+Axe: no WCAG A/AA violations on homepage, legal pages, booking or consent. The shared keyboard-focusable chat log passed the final scan. Axe reports violation counts rather than a numeric score; Lighthouse was not run.
+Initial checks that sampled unfinished animations were rechecked after settling: chat-recheck.json and final-recheck.json supersede those timing failures. No booking implementation changes were needed.
+Full header-name stress tests: 248/248 across eight sites. Equal-size gallery checks with 4/5/6/7 images: 992/992. No commits or pushes.
+Final layouts and generated imagery visually reviewed. Chat measured at 1440x900, 768x900, 375x900, 320x900, 375x420 and 812x375.
+
+CHECKLIST (verification.md item | result | evidence | notes)
+1 | PASS | index.html:5 | Professional generated doctor portrait; circular header avatar; optimized local portrait.
+2 | PASS | script/index.js:1651 | Header links and legal-footer section navigation tested; hash removed; mobile menu and Escape work.
+3 | PASS | index.html:28 | Qualification, registration, optional fellowship, languages retain required order and icons.
+4 | PASS | script/index.js:1078 | Three counters; year/count data read from rendered text, one-shot observer, reduced-motion handling.
+5 | PASS | index.html:28 | Eight networks in required order. Unconfigured source links are disabled; all enabled template links tested.
+6 | PASS | index.html:6 | Doctor information only; no extra promotional hero title, paragraph or suggestion UI.
+6a | PASS | styles/style.css:934 | Portrait decoration is a small icon without a slogan and does not obscure the doctor.
+7 | PASS | script/index.js:1710 | Canonical seven-line Read More implementation; long and short biographies tested.
+8 | PASS | styles/style.css:81 | 12-track grid: three/two/one columns at desktop/1100/640; centered remainder rows tested for 4/5/6/7 items. AGENTS breakpoint takes precedence over the older 1200 wording in verification item 8.
+9 | PASS | index.html:37 | Six Ayurvedic services; headings larger/bolder than 18px copy; no nested service cards.
+10 | PASS | index.html:64 | Distinct care-philosophy design and three pillars; people-free imagery wherever shown.
+11 | PASS | index.html:67 | Four-step journey in required position; static specialty wording and responsive design.
+12 | PASS | index.html:71 | Address, telephone, email and appointment CTA; required contact hooks retained.
+13 | PASS | index.html:72 | Four people-free scenes; responsive centered grid, keyboard lightbox, arrows and Escape tested.
+14 | PASS | script/index.js:1139 | Six questions; one open answer at a time; keyboard-operable buttons and regions.
+15 | PASS | index.html:88 | Info icon present beside online-consultation tab.
+16 | PASS | script/index.js:550 | Exact telemedicine note; hover, keyboard focus and touch verified.
+17 | PASS | script/index.js:379 | Scroll-gated consent; dismissal preserves fields and leaves checkbox unticked; agreeing enables booking.
+18 | PASS | styles/style.css:496 | Primary booking action uses brand fill; tabs, upload and close retain neutral/outline styling.
+19 | PASS | index.html:93 | No demo appointment adapter or sample-clinic notice in shipped pages.
+20 | PASS | index.html:169 | Required consent wording with source doctor or rendered full_name.
+21 | PASS | script/index.js:51 | Real intl-tel-input 29.2.2 and utils loaded; India default; invalid phone submission blocked.
+22 | PASS | script/index.js:1685 | Live Unicode letter/space/apostrophe/hyphen sanitization.
+23 | PASS | script/index.js:1687 | Past/unconfigured weekdays blocked; required fields, PDF/JPG/PNG type and 5 MB limit tested.
+24 | PASS | script/index.js:357 | Both modes: validation -> consent -> API submission -> confirmation. Shared live/reference booking flow retained, without adding another review stage. Focus trapping/restoration, Escape, API failure and empty slots tested.
+25 | PASS | styles/style.css:932 | White CTA span labels and functional phone dropdown verified in browser.
+26 | PASS | index.html:222 | Canonical brand/Quick Links/Legal/visitor/copyright/disclaimer hierarchy.
+27 | PASS | index.html:222 | Footer markup byte-identical across all three pages.
+28 | PASS | styles/style.css:731 | Compact footer checked at 1440, 768 and 375; no extra rows.
+28a | PASS | styles/style.css:808 | Computed 14px disclaimer at all six tested viewport widths on all three pages.
+29 | PASS | index.html:222 | No image credits clutter the footer. Provenance lives in assets/IMAGE-SOURCES.txt.
+29a | PASS | index.html:270 | Shared visitor API integration on all pages; browser fixture updates count; real production count remains unverified.
+30 | PASS | styles/chatbot.css:197 | Compact chat: desktop 340x420; tablet/phone caps; short landscape and simulated keyboard-height viewports checked.
+30a | PASS | script/chatbot.js:53 | No suggestions wrapper, chips, arrows or empty band in generated DOM before/after messages.
+31 | PASS | script/chatbot.js:81 | Required two-line footer, including final punctuation.
+32 | PASS | script/chatbot.js:174 | Launcher, typed Enter/send, response, close, live log and keyboard focus tested.
+33 | PASS | script/chatbot.js:7 | Ayurvedic welcome; backend response contract tested with non-advisory fixture. Actual backend replies require configured doctor.
+34 | PASS | privacy-policy.html:6 | Reference legal body retained; only doctor/clinic/contact data substituted. Parameterized effective date uses {{date}}.
+35 | PASS | privacy-policy.html:5 | Back to Home present on both legal pages; footer section links reach correct homepage section.
+36 | PASS | index.html:1; styles/style.css:1; script/index.js:1 | Required source, assets, styles, scripts and three SEO files present. Verification report is the only added audit document.
+37 | PASS | index.html:5 | Required section order verified; social section hides when API has no usable posts.
+38 | PASS | robots.txt:1; sitemap.xml:1; llms.txt:1 | Per-site draft URLs, doctor and specialty; param URLs use slug with extension-free routes.
+39 | PASS | index.html:5 | No blog page or navigation link. Reference blog-detail-* classes remain only as legal-shell class names.
+40 | PASS | index.html:1 | No previous doctor/specialty copy, TODO or Lorem. Only intentional placeholders: registration/contact defaults, GA4 ID and param fields.
+41 | PASS | index.html:37 | Gender-appropriate Ayurvedic profile and consultation-focused copy; illustrative doctor/clinic details must be configured before publication.
+42 | PASS | assets/IMAGE-SOURCES.txt:1 | Generated assets reviewed; only doctor portrait contains a person. No unverifiable cure claims or testimonials.
+42a | PASS | index.html:37 | No prohibited trust/reliability wording in visible content or metadata.
+42b | PASS | index.html:28 | No unsupported doctor trust/verification labels; factual specialty label only.
+43 | PASS | styles/style.css:1 | Distinct specialty palette: neutral base, brand areas and small interactive accents; visual 60/30/10 balance review.
+44 | PASS | styles/style.css:1 | Computed key text/background pairs meet 4.5:1; axe checks cover page/dialog contrast. Lowest sampled ratios listed below.
+45 | PASS | styles/style.css:931 | Alternating bands and 20px section padding; hero has its own layout padding.
+46 | PASS | styles/style.css:930 | 1480px container scale, constrained text and shared footer width.
+47 | PASS | styles/style.css:929 | 18px body; larger/bolder headings; 14px footer exception and documented modal/chat scale. Distinct Google Fonts per requested visual identity.
+48 | PASS | styles/style.css:936 | Card, pillar, journey and contact headings larger/bolder than body.
+49 | PASS | styles/style.css:950 | Visible focus and consistent hover styles; reduced motion disables animation.
+50 | PASS | styles/style.css:948 | All three pages measured at 320/375/768/1024/1440/1900: no overflow, broken images or missing icon glyphs.
+51 | PASS | styles/style.css:62 | 50+ character name, long specialty, qualification, fellowship, address/email stress fixtures; no header collisions or overflow.
+52 | PASS | styles/style.css:947 | Mobile menu, booking/consent, gallery, social carousel, chat and footer checked; calendar retains compact reference cell scale.
+53 | PASS | assets/IMAGE-SOURCES.txt:1 | JPEGs below 185 KB, portrait 900x1200, scenes 1000x750; image geometry and lazy loading present.
+53a | PASS | assets/IMAGE-SOURCES.txt:1 | All eight original generated assets visually reviewed; supporting scenes have no people, each portrait contains only the selected doctor.
+54 | PASS | styles/style.css:20 | Shared responsive CSS block present once; text wraps, grids can shrink, cards grow and social rows wrap.
+55 | PASS | index.html:1 | Unique page titles, descriptions, canonical, OG/Twitter, single H1; Physician JSON-LD on homepage.
+56 | PASS | index.html:5 | Keyboard controls, labels and modal roles. Axe WCAG A/AA page/modal checks passed after chat-log focus fix; details below.
+57 | PASS | index.html:1 | No unexpected JS exceptions or failed asset requests in fixture-backed browser checks. Live bucket deployment and backend transactions remain unverified.
+57a | PASS | index.html:1 | Actual Font Awesome CSS loaded; glyphs, CTA colors and chat send/close icons reviewed. Shared chatbot SVG loaded through the QA local-asset mapping.
+58 | PASS | index.html:1 | Existing Ayurvedic specialty; numbering continues 7-10 with matching -param folders.
+59 | PASS | verification-report.txt:1 | This task writes only the eight new Ayurvedic folders; no existing file deleted; no commit or push. All pre-existing files are unchanged against the start-of-task hash inventory.
+
+SOCIAL MEDIA (E1-E5)
+E1 | PASS | script/index.js:1384 | Backend slug feed, filtering and chronological order; hide when empty.
+E2 | PASS | script/index.js:1604 | Two populated cards centered; five-card carousel responsive and scrollable.
+E3 | PASS | script/index.js:1413 | Lazy SDK invocation and iframe parse path tested with SDK contract fixture.
+E4 | PASS | script/index.js:1444 | Blocked SDK/empty embed gives usable external fallback links.
+E5 | PASS (fixture); UNVERIFIED (live) | index.html:38 | Real account feed and Facebook login/privacy restrictions require deployment configuration.
+
+ANALYTICS (S1-S5)
+S1 | PASS (configuration) | index.html:3 | User-requested GA4 placeholder retained. Clarity shared project ymqvcvdc4v. Live analytics ingestion UNVERIFIED.
+S2-S4 | PASS | script/analytics.js:7 | Each enabled declarative action fired exactly once to both queues; guards tolerate blocked globals.
+S5 | Event | Trigger | Evidence | Runtime
+   nav_link_click | matching data-ga-event element | index.html:5 | yes, exactly once per action (GA4 and Clarity)
+   book_appointment_click | matching data-ga-event element | index.html:5 | yes, exactly once per action (GA4 and Clarity)
+   hero_social_link_click | matching data-ga-event element | index.html:28 | yes, exactly once per action (GA4 and Clarity)
+   read_more_click | matching data-ga-event element | index.html:36 | yes, exactly once per action (GA4 and Clarity)
+   phone_number_click | matching data-ga-event element | index.html:71 | yes, exactly once per action (GA4 and Clarity)
+   email_click | matching data-ga-event element | index.html:71 | yes, exactly once per action (GA4 and Clarity)
+   clinic_visit_tab_click | matching data-ga-event element | index.html:87 | yes, exactly once per action (GA4 and Clarity)
+   online_consult_tab_click | matching data-ga-event element | index.html:88 | yes, exactly once per action (GA4 and Clarity)
+   upload_report_click | matching data-ga-event element | index.html:159 | yes, exactly once per action (GA4 and Clarity)
+   footer_social_link_click | matching data-ga-event element | index.html:237 | yes, exactly once per action (GA4 and Clarity)
+   footer_nav_link_click | matching data-ga-event element | index.html:252 | yes, exactly once per action (GA4 and Clarity)
+   consent_checkbox_click | consent/upload/success flow | script/index.js:263 | yes in complete booking flow
+   consent_modal_open | consent/upload/success flow | script/index.js:443 | yes in complete booking flow
+   consent_scrolled_to_bottom | consent/upload/success flow | script/index.js:414 | yes in complete booking flow
+   consent_agreed | consent/upload/success flow | script/index.js:453 | yes in complete booking flow
+   consent_dismissed | consent/upload/success flow | script/index.js:453 | yes in complete booking flow
+   report_uploaded | consent/upload/success flow | script/index.js:642 | yes in complete booking flow
+   booking_submitted | consent/upload/success flow | script/index.js:1210 | yes in complete booking flow
+Patient names, phone numbers, email addresses, symptoms and uploaded filenames are absent from event payloads.
+
+LOWEST SAMPLED TEXT CONTRAST RATIOS
+.cta-btn: 6.18:1
+.chatbot-footer: 6.46:1
+.hero-stat-box span: 6.51:1
+
+PARAMETERIZATION
+PASS: profile and gallery retain {{profile}} / {{#images}}{{image}}. Static content images and favicon use https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-filename>. CSS/JS use {{path}}. No unresolved template expressions in rendered page text or attributes.
+Shared chatbot icon retains the documented microsite-ent-1 URL. Public production asset availability is not established by the local mapping.
+No test fixtures, mock API adapters, preview server or browser dependencies are included in the delivered folders.
+
+DEPLOYMENT / UNVERIFIED EXTERNAL CHECKS
+Doctor names, portraits and clinic details are illustrative; configure real practice details, registration, phone/email and DoctorId/userid before production booking.
+No live appointment was submitted. Production booking persistence, notifications, real meet links, visitor totals, actual chatbot replies and Facebook account content need configured backend data.
+The assets are delivered locally; uploading them to the real slug bucket and verifying deployed GCS responses is outside this local build. The GA4 ID remains a placeholder as expressly requested.
+
+WORKSPACE HYGIENE
+No Git commit or push. All writes for this task are confined to the eight newly created Ayurvedic 7-10 / 7-10-param folders; QA tools and screenshots are in the OS temporary directory.
+2360 pre-existing files were compared against the start-of-task hash inventory; none changed or was deleted.
+QA evidence directory: C:\Users\Lenovo\AppData\Local\Temp\digidr-ayurveda-new-qa
+Screenshots: final-8-param-1440.png; final-8-param-375.png; review-8-param-booking-*.png; review-8-param-consent-*.png; 8-param-*-confirmation.png.
+Report JSONs in the QA directory: functional.json, responsive-axe.json, parameter-checks.json, facebook-recheck.json, booking-edges.json, final-checks.json, final-recheck.json, chat-recheck.json, tooltip-contrast.json, touch-keyboard.json, header-full-name.json, gallery-equal-size.json.
+
+THREE-IMAGE DEFAULT FOLLOW-UP
+PASS: Default standalone gallery now contains three images. Parameterized preview tested with three backend images; dynamic images loop preserved. Equal image dimensions and no overflow at 1440, 768 and 375px. Lightbox wraps from image three to image one; Escape closes. Previous four-image default superseded.
