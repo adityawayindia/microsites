@@ -756,7 +756,7 @@ overflow: hidden;
   padding: 20px 0;
   position: relative;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(240, 253, 244, 0.80) 100%),
-              url('../assets/digestive-system.svg') center/contain no-repeat;
+              var(--static-image-digestive-system-svg) center/contain no-repeat;
   background-attachment: fixed;
 }
 
@@ -975,7 +975,7 @@ overflow: hidden;
   padding: 20px 0;
   position: relative;
   background: linear-gradient(180deg, rgba(240, 253, 244, 0.80) 0%, rgba(255, 255, 255, 0.80) 100%),
-              url('../assets/digestive-system.svg') center/contain no-repeat;
+              var(--static-image-digestive-system-svg) center/contain no-repeat;
   background-attachment: fixed;
 }
 
@@ -1165,7 +1165,7 @@ overflow: hidden;
 
 .testimonials-section {
   padding: 20px 0;
-  background-image: linear-gradient(rgba(248, 250, 252, 0.94), rgba(248, 250, 252, 0.94)), url('../assets/digestive-system.svg');
+  background-image: linear-gradient(rgba(248, 250, 252, 0.94), rgba(248, 250, 252, 0.94)), var(--static-image-digestive-system-svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -3528,7 +3528,7 @@ html, body { overflow-x: clip; }
 .process-section {
   background:
     linear-gradient(135deg, rgba(10, 92, 90, 0.80) 0%, rgba(4, 120, 87, 0.70) 100%),
-    url("../assets/journey-bg-real.png") center / cover no-repeat;
+    var(--static-image-journey-bg-real-png) center / cover no-repeat;
   background-attachment: scroll;
 }
 .process-section .about-kicker,
@@ -3553,7 +3553,7 @@ html, body { overflow-x: clip; }
 .hero-section {
   background:
     linear-gradient(100deg, rgba(224, 250, 247, 0.96) 0%, rgba(204, 251, 241, 0.90) 45%, rgba(153, 246, 228, 0.62) 100%),
-    url("../assets/gastro-hero-bg.png") center / cover no-repeat;
+    var(--static-image-gastro-hero-bg-png) center / cover no-repeat;
 }
 .hero-mesh {
   background: radial-gradient(circle at 82% 25%, rgba(11, 125, 114, 0.28) 0%, transparent 45%),

@@ -83,6 +83,12 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-services-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/services-bg.png");
+    }
+  </style>
 </head>
 
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
@@ -271,7 +277,7 @@
       <div class="hero-visual">
         <div class="hero-visual-blob" aria-hidden="true"></div>
         <div class="hero-digestive-visual">
-          <img src="assets/digestive-system.svg" alt="Human Digestive System Anatomy" class="digestive-system-img" loading="eager" fetchpriority="high" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/digestive-system.svg" alt="Human Digestive System Anatomy" class="digestive-system-img" loading="eager" fetchpriority="high" />
         </div>
       </div>
     </div>
@@ -355,7 +361,7 @@
       <!-- Left: Visual Column -->
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-gastroenterology-1/assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo"
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo"
             loading="lazy" />
         </div>
       </div>

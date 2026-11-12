@@ -1,7 +1,7 @@
 (function () {
     /* ── Config ── */
     var BOT_NAME = 'Assistant';
-    var BOT_ICON = 'https://storage.googleapis.com/microsite_buck/microsite-ent-1/assets/chatbot-icon.svg';
+    var BOT_ICON = 'https://storage.googleapis.com/digidr/microsite-ent-1/assets/chatbot-icon.svg';
     var API_BASE = 'https://digidrapi.digidr.app';
 
     var WELCOME_MSG = "Hello! I can help with pediatric services, clinic information and booking a visit. How can I help?";

@@ -1179,7 +1179,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   background:
     /* cream wash keeps the dark hero text AA-legible over the globules photo */
     linear-gradient(90deg, rgba(250, 248, 241, 0.95) 0%, rgba(250, 248, 241, 0.86) 30%, rgba(250, 248, 241, 0.5) 52%, rgba(250, 248, 241, 0.08) 75%),
-    url("../assets/hero-bg.jpg") center / cover no-repeat,
+    var(--static-image-hero-bg-jpg) center / cover no-repeat,
     linear-gradient(135deg, #faf8f1 0%, #eaf1e1 55%, #e2ecd6 100%);
   border-bottom: 3px solid var(--amber);
 }
@@ -2750,7 +2750,7 @@ body { background: var(--bg); }
 .hero-section {
   background:
     linear-gradient(90deg, rgba(247,242,234,.99) 0%, rgba(247,242,234,.98) 43%, rgba(247,242,234,.88) 62%, rgba(247,242,234,.70) 100%),
-    url("../assets/homeopathy-13-hero-pattern.svg") right center / min(780px, 60vw) auto no-repeat,
+    var(--static-image-homeopathy-13-hero-pattern-svg) right center / min(780px, 60vw) auto no-repeat,
     var(--bg);
   border-bottom: 1px solid var(--border);
 }
@@ -3039,7 +3039,7 @@ body { background: var(--bg); }
 }
 
 @media (max-width: 640px) {
-  .hero-section { background: linear-gradient(rgba(247,242,234,.97), rgba(247,242,234,.97)), url("../assets/homeopathy-13-hero-pattern.svg") center top / 900px auto no-repeat; }
+  .hero-section { background: linear-gradient(rgba(247,242,234,.97), rgba(247,242,234,.97)), var(--static-image-homeopathy-13-hero-pattern-svg) center top / 900px auto no-repeat; }
   .hero-layout { padding-top: 28px; padding-bottom: 34px; }
   .hero-title { font-size: clamp(38px, 12vw, 52px); }
   .hero-stats-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }

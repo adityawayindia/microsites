@@ -3365,7 +3365,7 @@ footer .footer-disclaimer {
   background-color: var(--sky-deep);
   background-image:
     linear-gradient(180deg, hsla(224, 66%, 12%, 0.74) 0%, hsla(224, 66%, 14%, 0.50) 45%, hsla(224, 66%, 12%, 0.72) 100%),
-    url("../assets/services-bg.jpg");
+    var(--static-image-services-bg-jpg);
   background-size: cover, cover;
   background-position: center, center 30%;
   background-repeat: no-repeat;
@@ -3390,7 +3390,7 @@ footer .footer-disclaimer {
   background-image:
     linear-gradient(90deg, hsla(222, 78%, 20%, 0.58) 0%, hsla(222, 78%, 17%, 0.70) 40%, hsla(224, 74%, 12%, 0.90) 100%),
     radial-gradient(ellipse 50% 60% at 6% 100%, hsla(340, 72%, 45%, 0.18), transparent 62%),
-    url("../assets/hero-bg-photo.jpg");
+    var(--static-image-hero-bg-photo-jpg);
   background-size: cover, cover, cover;
   background-position: center, center, center 42%;
   background-repeat: no-repeat;

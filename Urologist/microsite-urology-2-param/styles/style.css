@@ -999,7 +999,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   inset: 0;
   background-image:
     linear-gradient(180deg, rgba(10, 22, 38, 0.72) 0%, rgba(10, 22, 38, 0.6) 50%, rgba(10, 22, 38, 0.78) 100%),
-    url('../assets/journey-bg.jpg');
+    var(--static-image-journey-bg-jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -3246,7 +3246,7 @@ footer .footer-disclaimer {
 /* Hero: faded X-ray study behind the details column */
 .hero-mesh {
   display: block;
-  background: url("../assets/hero-bg.png") right center / cover no-repeat;
+  background: var(--static-image-hero-bg-png) right center / cover no-repeat;
   mix-blend-mode: multiply;
   opacity: 0.22;
   -webkit-mask-image: linear-gradient(90deg, transparent 20%, #000 75%);
@@ -3280,7 +3280,7 @@ footer .footer-disclaimer {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: url("../assets/hero-bg.png") left center / 640px auto no-repeat;
+  background: var(--static-image-hero-bg-png) left center / 640px auto no-repeat;
   mix-blend-mode: multiply;
   opacity: 0.10;
 }
@@ -3310,12 +3310,12 @@ footer .footer-disclaimer {
 .services-section::before {
   background-image:
     linear-gradient(180deg, hsl(210 35% 97% / 0.93), hsl(210 30% 95% / 0.90)),
-    url("https://images.unsplash.com/photo-1631563019676-dade0dbdb8fc?auto=format&fit=crop&w=1800&q=70");
+    var(--static-image-photo-1631563019676-dade0dbdb8fc-w1800-q70-jpg);
 }
 .process-bg::after {
   background-image:
     linear-gradient(180deg, hsl(0 0% 100% / 0.93), hsl(30 30% 98% / 0.90)),
-    url("https://images.unsplash.com/photo-1758574437877-68a1ec5fafc3?auto=format&fit=crop&w=1800&q=70");
+    var(--static-image-photo-1758574437877-68a1ec5fafc3-w1800-q70-jpg);
 }
 
 /* Hero: reg-id line matches the credentials lines */
@@ -3334,7 +3334,7 @@ footer .footer-disclaimer {
   display: block;
   background:
     linear-gradient(90deg, hsl(210 40% 98% / 0.95) 0%, hsl(210 40% 98% / 0.84) 45%, hsl(210 40% 98% / 0.55) 100%),
-    url("https://images.unsplash.com/photo-1616012480717-fd9867059ca0?auto=format&fit=crop&w=1800&q=70") center center / cover no-repeat;
+    var(--static-image-photo-1616012480717-fd9867059ca0-w1800-q70-jpg) center center / cover no-repeat;
   opacity: 1;
   mix-blend-mode: normal;
   -webkit-mask-image: none;
@@ -3344,7 +3344,7 @@ footer .footer-disclaimer {
   .hero-mesh {
     background:
       linear-gradient(180deg, hsl(210 40% 98% / 0.93), hsl(210 40% 98% / 0.88)),
-      url("https://images.unsplash.com/photo-1616012480717-fd9867059ca0?auto=format&fit=crop&w=1200&q=70") center center / cover no-repeat;
+      var(--static-image-photo-1616012480717-fd9867059ca0-w1200-q70-jpg) center center / cover no-repeat;
   }
 }
 
@@ -3358,7 +3358,7 @@ footer .footer-disclaimer {
   background:
     repeating-linear-gradient(90deg, hsl(190 90% 80% / 0.35) 0 1px, transparent 1px 14px) bottom / 100% 8px no-repeat,
     linear-gradient(hsl(210 70% 14% / 0.28), hsl(210 70% 14% / 0.28)),
-    url("../assets/hero-bg.png") center 24% / cover no-repeat;
+    var(--static-image-hero-bg-png) center 24% / cover no-repeat;
 }
 
 /* Skeleton divider bands removed */
@@ -3369,24 +3369,24 @@ footer .footer-disclaimer {
 .services-section::before {
   background-image:
     linear-gradient(180deg, hsl(210 35% 97% / 0.90), hsl(210 30% 95% / 0.86)),
-    url("https://images.unsplash.com/photo-1666214282459-c7dff167ecc0?auto=format&fit=crop&w=1800&q=70");
+    var(--static-image-photo-1666214282459-c7dff167ecc0-w1800-q70-jpg);
 }
 .process-bg::after {
   background-image:
     linear-gradient(180deg, hsl(0 0% 100% / 0.90), hsl(30 30% 98% / 0.86)),
-    url("https://images.unsplash.com/photo-1666214280352-db292c05fd80?auto=format&fit=crop&w=1800&q=70");
+    var(--static-image-photo-1666214280352-db292c05fd80-w1800-q70-jpg);
 }
 
 /* Stronger photo visibility: wash is heavier behind the heading, lighter below */
 .services-section::before {
   background-image:
     linear-gradient(180deg, hsl(210 35% 97% / 0.88) 0%, hsl(210 35% 97% / 0.55) 30%, hsl(210 30% 95% / 0.40) 100%),
-    url("https://images.unsplash.com/photo-1666214282459-c7dff167ecc0?auto=format&fit=crop&w=1800&q=70");
+    var(--static-image-photo-1666214282459-c7dff167ecc0-w1800-q70-jpg);
 }
 .process-bg::after {
   background-image:
     linear-gradient(180deg, hsl(0 0% 100% / 0.88) 0%, hsl(0 0% 100% / 0.55) 25%, hsl(30 30% 98% / 0.40) 100%),
-    url("https://images.unsplash.com/photo-1666214280352-db292c05fd80?auto=format&fit=crop&w=1800&q=70");
+    var(--static-image-photo-1666214280352-db292c05fd80-w1800-q70-jpg);
 }
 
 /* Parallax: photos stay fixed to the viewport while the section scrolls over them */

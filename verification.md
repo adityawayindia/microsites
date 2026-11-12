@@ -80,6 +80,15 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
 # PART 1: PAGE SECTIONS (in page order)
 
 ## A. HEADER
+**Full doctor name — mandatory:** the complete doctor name must remain visible in
+the header on source and `-param` sites. FAIL ellipsis, clipping, line clamping or
+hidden name text at any breakpoint. Allow wrapping and automatic header height;
+do not shrink text solely to force a name onto one line. Test the actual name and
+a 50+ character name (including a long single word) at 320px, 375px, 768px, 1200px,
+just above the menu breakpoint, and 1440px. Check that all name text is visible and
+the portrait, navigation, appointment button and menu do not overlap. A tooltip
+with the full name does not satisfy this requirement.
+
 1. The header shows a circular frame with the doctor's professional portrait
    (`border-radius: 50%`, `object-fit: cover`, a real image that exists in assets/).
 2. Clicking nav links must not leave `#home`, `#about`, `#gallery` etc. in the URL. Check the JS:
@@ -105,6 +114,21 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
 6. No redundant text or secondary descriptions. Remove extra taglines and duplicate paragraphs;
    keep the h1, the profile lines, the stats, the socials and the CTA. The hero image is eager-loaded
    and is a real image.
+   **FAIL an extra promotional heading or supporting descriptive paragraph**, for example
+   “Growing up, together.” and “From first smiles to new school days…”. Inspect both the
+   rendered hero and its markup for `.hero-message`, `.hero-description` or equivalent
+   marketing blocks. They must be omitted, with no empty space reserved for them, on both
+   standalone and `-param` sites. Unique specialty wording or a custom hero design does not
+   exempt these blocks. Preserve the doctor's name, specialty, profile details, portrait,
+   statistics, social links and appointment action.
+6a. **Profile-image badges stay short and compact (AGENTS.md §4).** If present, use one
+    brief factual label (2–3 words) with an optional small icon, at **18px**. FAIL long
+    slogans, stacked heading-and-description blocks, or wide text banners. Inspect the
+    rendered portrait at 1440px, 768px, 375px and 320px: the badge must not cover the
+    doctor's face or body, obscure the image, clip its text, or overflow. Prefer a
+    content-sized badge beside or below the image in normal flow, with `8px 14px`
+    padding and an `18–20px` icon. Check standalone and `-param` versions, including
+    representative rendered template values; allow wrapping and auto height as needed.
 
 ## C. ABOUT
 7. The Read More / Read Less toggle follows AGENTS.md §24 verbatim: 7-line clamp, auto-hides when
@@ -198,6 +222,12 @@ no dead nav link, no leftover carousel markup or script errors.
 13. The gallery is an image grid only. There are no captions, titles, overlays or descriptive text
     on the items. Keep meaningful alt text. Images are real, not placeholders, and below-the-fold
     images use `loading="lazy"`. The grid is centred for 4/5/7 images, and the lightbox works.
+    **Every gallery item must have the same width and height at the current breakpoint.**
+    Test 4, 5, 6 and 7 images: a lone fourth/seventh image stays the normal card size and
+    is centered, never widened to fill the row or span two cards. On desktop, use
+    `5 / span 4` for a lone leftover; at `≤1100px`, keep all items `span 6` and center
+    an odd leftover at `4 / span 6`. Verify equal dimensions on source and `-param`
+    sites at desktop, tablet and phone widths, preserving the 4:3 image ratio.
 
 ## J. FAQ
 14. The FAQ section exists straight after the Gallery, with `id="faq"` and a nav link, and at least
@@ -249,6 +279,11 @@ no dead nav link, no leftover carousel markup or script errors.
     Quick Links, Legal, visitor badge, copyright row, disclaimer). It adds no extra rows, large
     blocks or tall padding. Measure the rendered footer at 1440px, 768px and 375px. It must also
     stay compact on mobile (stacked columns with tight spacing, no oversized gaps).
+28a. The bottom footer disclaimer is **small: 14px**, line-height `1.5`, on the homepage and
+     both legal pages, at desktop, tablet and mobile widths. Inspect `getComputedStyle` on
+     `.footer-disclaimer` and any nested text/links at 1440px, 768px and 375px. FAIL if global
+     18px typography enlarges it. Preserve its wording and at least 4.5:1 contrast; footer
+     navigation and copyright retain their normal sizes. This is the explicit §0.1 exception.
 29. There are no image credits for free or copyright-free images.
 29a. The footer visitor counter is live (AGENTS.md §44): on **all three pages** (index,
     privacy-policy, terms-of-service) the `.footer-visitor-badge` count element has
@@ -260,13 +295,22 @@ no dead nav link, no leftover carousel markup or script errors.
     the `.footer-visitor-badge` rules.
 
 ## M. CHATBOT
-30. The chat panel layout and size are correct at 1440px, 768px and 375px. Nothing is clipped: the
-    header, avatar, message bubble, quick-reply chips (wrapping or scrolling cleanly, not cut off),
-    input and send button are all fully visible. The panel fits inside the viewport (`max-height`
-    with `overflow-y: auto` on the messages area).
+30. The chat panel stays **compact like the existing microsites**, per AGENTS.md §13.2.
+    Measure its computed width/height at 1440px, 768px, 375px and 320px: desktop uses **340px
+    width and 420px height** (shrinks for short viewports, maximum height 440px); tablet uses
+    up to 400px width and 580px height; phones fit the inset wrapper and cap height at 580px
+    or the available viewport height, whichever is smaller. FAIL oversized later CSS
+    overrides or a window stretched to fill a tall phone screen. Test landscape and the
+    visible viewport with the keyboard open. Header, avatar, messages, input, send button and
+    disclaimer remain visible; only the messages area scrolls as the conversation grows.
+30a. **No chatbot suggestions**, on standalone or `-param` sites. Inspect the source and live
+     DOM for `chatbot.suggestions`, `.chatbot-suggestions`, `#chatbotSuggestions`, suggestion
+     wrappers, quick-reply chips and their arrows. FAIL any created/injected suggestion UI
+     or empty reserved suggestion band. Repeat after opening the chat and sending a message.
+     Unused legacy variables in the shared backend script do not require suggestion UI.
 31. The footer note reads exactly: "Informational only, not medical advice." then a line break, then
     "Consult your doctor." (two lines).
-32. The launcher opens and closes the panel. Quick-reply chips work and answers are on-topic for
+32. The launcher opens and closes the panel, and typed-message replies are on-topic for
     this specialty. Input and send button work with Enter. The panel scrolls to the latest message,
     has a close button, and is keyboard accessible (aria-label, `aria-live` on the message area).
 33. Chatbot replies contain no leftover text from the source template and no real medical advice. They point to
@@ -315,6 +359,14 @@ no dead nav link, no leftover carousel markup or script errors.
     reliability, dependable, rely on, count on). Hits inside code comments, class names or URLs are
     not page text and don't count. The Privacy Policy line is "Service providers, including DigiDr…",
     not "Trusted service providers".
+42b. **No “Trusted Doctor” or “Verified Doctor” wording anywhere (AGENTS.md §42).** Search
+    all site HTML, JS and text files case-insensitively, including hyphenated/plural forms,
+    then inspect rendered text for phrases split across elements or generated dynamically.
+    FAIL either label in any section/page, badge, tooltip, accessibility label, alt text,
+    metadata, structured data, chatbot copy or `llms.txt`. Check standalone and `-param`
+    versions, including template values and fallbacks. Remove the label or use a short
+    factual specialty label; a replacement trust or verification claim is also a FAIL.
+    Source scan: `rg -n -i '(trusted|verified)[\s-]+doctors?\b' <PATH> -g '*.html' -g '*.js' -g '*.txt'`.
 
 ## Q. BRANDING, COLOUR & LAYOUT (AGENTS.md §1.1, §2, §6, §11, §15)
 43. The colour split follows 60% neutral / 30% brand / 10% accent. The accent is used only on CTAs
@@ -325,8 +377,9 @@ no dead nav link, no leftover carousel markup or script errors.
     `20px 0` with no separate mobile override.
 46. The container is 1440–1600px wide, not 1280px, and text blocks keep a 65–75ch measure.
 47. Typography: h2 is 32–38px and bold (600+); h3 is 22px (20px at ≤480px); p, li and a are 18px
-    with dark text; badges are 16px; line-height 1.5–1.6; the 1400px media query caps at 18px.
-    Fonts are Google Fonts (Inter, Roboto or Outfit).
+    with dark text; badges are 18px; line-height 1.5–1.6; the 1400px media query caps at 18px.
+    Fonts are Google Fonts (Inter, Roboto or Outfit). The bottom footer disclaimer is the
+    **14px exception** (item 28a); chatbot text keeps the scale in AGENTS.md §13.
 48. Card h3/h4 headings are visibly bolder and larger than the card body text everywhere (services,
     philosophy, journey, contact). No card is nested inside another card.
 49. Cards, hover states and focus states are consistent. Focus rings are visible, and animations
@@ -342,6 +395,14 @@ no dead nav link, no leftover carousel markup or script errors.
 53. Images are optimised: width/height or aspect ratio set, below-the-fold images use
     `loading="lazy"`, the hero image is eager. No image is over about 500KB, and none is a
     placeholder.
+53a. **People-in-images rule (AGENTS.md §17).** Visually inspect every new/generated or
+     selected image, including hero backgrounds, About, Care Philosophy, gallery and banners,
+     and verify the same assets in the `-param` copy. Only the doctor's portrait may include
+     an adult, and it must show only that doctor. Pediatrician sites may additionally use
+     children-only images; no parents, caregivers, staff or other adults may appear in them.
+     Every remaining image must be people-free. Check generation prompts as well as the
+     actual pixels. FAIL each noncompliant image with its path and section; if an image cannot
+     be inspected, mark it UNVERIFIED instead of inferring compliance from its filename/alt text.
 
 ## S. ANALYTICS VERIFICATION: GOOGLE ANALYTICS (GA4) + MICROSOFT CLARITY
 
@@ -427,7 +488,8 @@ events in S2/S3 that are missing here, and events here that aren't in S2/S3.
 ## T. SEO, ACCESSIBILITY & GLOBAL REGRESSION
 54. The §22 global CSS block is present once. There is no `nowrap` on dynamic text, no fixed
     heights on cards, `min-width: 0` on flex/grid children, and `flex-wrap` on all social rows.
-    p/li/a are 18px, with AA contrast.
+    p/li/a are 18px, with AA contrast, except the 14px bottom footer disclaimer and the
+    explicitly specified chatbot text scale (AGENTS.md §0.1, §12, §13).
 55. Each page has a unique title and meta description, a canonical URL, Open Graph/Twitter tags, a
     single h1 and a logical heading order. JSON-LD (`Physician`, AGENTS.md Appendix A.1) is present
     on index.html with correct data.

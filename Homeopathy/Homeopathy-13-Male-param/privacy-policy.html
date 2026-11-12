@@ -45,6 +45,13 @@
 <link href="{{path}}/styles/style.css" rel="stylesheet"/>
 <link href="{{path}}/styles/chatbot.css" id="chatbot-css" rel="stylesheet"/>
 <link href="{{path}}/styles/legal.css" rel="stylesheet"/>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-hero-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg.jpg");
+      --static-image-homeopathy-13-hero-pattern-svg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/homeopathy-13-hero-pattern.svg");
+    }
+  </style>
 </head>
 <body data-clarity-mask="true" data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 <a class="skip-link" href="#main">Skip to main content</a>

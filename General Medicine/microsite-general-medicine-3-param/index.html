@@ -79,6 +79,12 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-hero-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg.jpg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
@@ -247,7 +253,7 @@
       <div class="about-aside">
         <div class="about-photo-glow" aria-hidden="true"></div>
         <div class="about-photo-frame">
-          <img src="assets/about-photo.jpg" alt="Two hands held together in a gesture of comfort and reassurance, reflecting compassionate patient care" loading="lazy" width="1000" height="1250" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/about-photo.jpg" alt="Two hands held together in a gesture of comfort and reassurance, reflecting compassionate patient care" loading="lazy" width="1000" height="1250" />
         </div>
       </div>
 
@@ -259,7 +265,7 @@
         </h2>
         <p class="about-description">
           {{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}
-          {{#no_about_section_subtitle}}One trusted doctor for everyday illness, long-term conditions and prevention&mdash;with time to listen and clear answers in plain language.{{/no_about_section_subtitle}}
+          {{#no_about_section_subtitle}}One doctor for everyday illness, long-term conditions and prevention&mdash;with time to listen and clear answers in plain language.{{/no_about_section_subtitle}}
         </p>
         <div class="read-more-wrap">
           <div class="read-more-content">
@@ -338,7 +344,7 @@
     <div class="container philosophy-layout">
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-photo.jpg" alt="Close-up of a stethoscope resting on clean linen, reflecting careful examination and diagnosis" loading="lazy" width="1000" height="1000" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-photo.jpg" alt="Close-up of a stethoscope resting on clean linen, reflecting careful examination and diagnosis" loading="lazy" width="1000" height="1000" />
         </div>
         <div class="philosophy-badge">
           <div class="philosophy-badge-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></div>

@@ -64,6 +64,12 @@
   <link rel="stylesheet" href="{{path}}/styles/style.css" />
   <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
   <link rel="stylesheet" href="{{path}}/styles/legal.css" />
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-alternate-hero-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/alternate-hero-bg.png");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
   <main class="legal-page">

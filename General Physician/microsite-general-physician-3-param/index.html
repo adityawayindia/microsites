@@ -79,6 +79,12 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-journey-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/journey-bg.jpg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
@@ -258,7 +264,7 @@
       <div class="about-aside">
         <div class="about-photo-glow" aria-hidden="true"></div>
         <div class="about-photo-frame">
-          <img src="assets/about-bg.png" alt="A general physician's consultation desk with a stethoscope, otoscope, thermometer and prescription pad at Dr. {{full_name}}'s clinic" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/about-bg.png" alt="A general physician's consultation desk with a stethoscope, otoscope, thermometer and prescription pad at Dr. {{full_name}}'s clinic" loading="lazy" />
         </div>
       </div>
 
@@ -270,7 +276,7 @@
         </h2>
         <p class="about-description">
           {{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}
-          {{#no_about_section_subtitle}}Honest, unhurried primary care&mdash;one trusted doctor who knows your history and looks after the whole family, from the first fever to the long-term check-up.{{/no_about_section_subtitle}}
+          {{#no_about_section_subtitle}}Honest, unhurried primary care&mdash;one doctor who knows your history and looks after the whole family, from the first fever to the long-term check-up.{{/no_about_section_subtitle}}
         </p>
         <div class="read-more-wrap">
           <div class="read-more-content">
@@ -349,7 +355,7 @@
     <div class="container philosophy-layout">
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-workspace.png" alt="A flat-lay of a stethoscope, reflex hammer, tuning fork, face mask and common medicines — the everyday tools of a general physician" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-workspace.png" alt="A flat-lay of a stethoscope, reflex hammer, tuning fork, face mask and common medicines — the everyday tools of a general physician" loading="lazy" />
         </div>
         <div class="philosophy-badge">
           <div class="philosophy-badge-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></div>
@@ -409,7 +415,7 @@
               </h3>
               <p>
                 {{#has_philosophy_section_pillar_subtext_3}}{{philosophy_section_pillar_subtext_3}}{{/has_philosophy_section_pillar_subtext_3}}
-                {{#no_philosophy_section_pillar_subtext_3}}One trusted doctor who knows your history and cares for every generation of your household.{{/no_philosophy_section_pillar_subtext_3}}
+                {{#no_philosophy_section_pillar_subtext_3}}One doctor who knows your history and cares for every generation of your household.{{/no_philosophy_section_pillar_subtext_3}}
               </p>
             </div>
           </div>

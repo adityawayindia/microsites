@@ -75,15 +75,31 @@ than copying `1200px` blindly.
 
 ### 0.1 Global Body Text Rule
 
-Every `<p>`, `<a>`, and `<li>` on every page is **18px**, with no exceptions — this
+Every `<p>`, `<a>`, and `<li>` on every page is **18px**, except for the scoped exemptions below — this
 includes header nav links, footer quick links, footer legal links, and inline body
 links, not just paragraph and list text. `<ul>`/`<ol>` carry no text themselves, so
 this applies to the `<li>` items inside them. Dark color (`--text`, never pure black).
 
-The only exemption: CTA buttons styled as `<a>` tags (e.g. "Book Appointment") follow
-button sizing (§15), not this rule. Metadata/badges/pills/kickers are **18px** too —
+Exemptions: CTA buttons styled as `<a>` tags (e.g. "Book Appointment") follow
+button sizing (§15), not this rule. The **bottom footer disclaimer** (`.footer-disclaimer`,
+including any nested text or links) is **14px on every page and at every breakpoint** (§12,
+Appendix A.11). Do not enlarge it to 18px through global text rules. The chatbot retains its
+own text scale (§13). Metadata/badges/pills/kickers are **18px** too —
 this overrides the older 16px convention for that category; keep every badge/pill/kicker
 at the same 18px scale as body text rather than a separate smaller size.
+
+**Section kicker appearance (mandatory).** Section kickers must look like distinct
+labels above their headings, not plain body text. Use a brand-tinted pill background,
+a subtle 1px border, bold 18px text (weight 700), and a small decorative dot or an
+existing relevant icon. Match each microsite's palette. Default styling: `inline-flex`,
+`align-items:center`, `gap:10px`, `padding:7px 14px`, `margin-bottom:16px`,
+`border-radius:var(--radius-pill)`, `line-height:1.4`, and `letter-spacing:.02em`.
+Use `--brand-light` for the background, `--border` for the border and `--brand-dark`
+for text; verify at least 4.5:1 text contrast. A decorative dot may be a 7px circle
+using `currentColor`. On dark sections, use light text with a subtle light tint and
+visible border; light sections retain the normal tinted treatment. Keep labels
+within their container (`max-width:100%`) and allow long text to wrap on phones.
+These labels are noninteractive: do not give them button semantics or hover effects.
 
 ### 0.2 Typography Size Reference (all font-sizes, in one place)
 
@@ -103,7 +119,7 @@ is a lookup index, not a replacement for those sections.
 
 | Element | Size |
 |---|---|
-| `p`, `a`, `li` — everywhere, no exceptions | **18px** |
+| `p`, `a`, `li` — except the scoped exemptions in §0.1 | **18px** |
 | Badges / pills / metadata / kickers | **18px** |
 
 **Header (§3)**
@@ -176,6 +192,7 @@ is a lookup index, not a replacement for those sections.
 | Links heading (`h4`) | 18px |
 | Footer nav links | 18px |
 | Copyright row | 18px |
+| Bottom footer disclaimer, including nested text/links | **14px at every breakpoint** |
 
 **Chatbot (§13)**
 
@@ -183,7 +200,6 @@ is a lookup index, not a replacement for those sections.
 |---|---|
 | FAB label text | 16px |
 | Bot/agent name | 16px |
-| Suggestion chips | 16px |
 | Message bubble text | 16px |
 | Timestamp | 16px |
 | Input textarea | 16px |
@@ -282,7 +298,8 @@ error, blue = clickable link (unless already styled as a CTA button per §15).
 **Text & readability:**
 - Dark charcoal (`--text`, e.g. `#333`/`#222`-range) instead of pure black, on light
   backgrounds.
-- Body text at least 16px (in practice, 18px everywhere per §0.1).
+- Body text at least 16px (18px per §0.1), except the **14px bottom footer disclaimer**
+  and the explicitly specified widget metadata in §13; these still require AA contrast.
 - Line-height 1.5–1.6× for body copy.
 - Every text/background pairing must meet **WCAG AA — 4.5:1 minimum** contrast for
   normal text. Verify with the WebAIM contrast-checker logic (or equivalent) before
@@ -341,11 +358,19 @@ primary actions there; tabs, upload, and close use neutral or outline styling.)
 | Header shadow | `0 2px 20px hsla(<brand-hue>,45%,25%,.08)` — tint with the site's own brand hue, static (not scroll-triggered) |
 | `.navbar` padding | `10px` top/bottom, `20px` gap between brand/nav/actions (rendered header height ≈78px, governed by the two-line brand-text block, not the 46px avatar) |
 | `.avatar` (logo circle) | `46px × 46px`, `2px solid var(--brand-dark)` border |
-| `.brand-name` | `18px`, weight 700, `max-width:15ch` + ellipsis |
+| `.brand-name` | `18px`, weight 700; full name always visible, wrapping onto additional lines when needed |
 | `.brand-role` | `18px` |
 | `.nav-links a` | `18px`, padding `8px 14px`, pill hover background, gap `6px` between links |
 | Header CTA (`.cta-btn`) | padding `9px 18px`, font `18px`, pill radius, `--shadow-accent` |
 | Hamburger icon | `24px × 2px` bars, `5px` gap, `6px` padding |
+
+**The doctor's header name must never be truncated.** Do not apply ellipsis, line
+clamping, `white-space: nowrap`, hidden overflow, or character-count width caps to
+`.brand-name`, including in mobile overrides. Use `white-space: normal`,
+`overflow-wrap: anywhere`, and `min-width: 0` on its flex/grid ancestors. Let the
+header grow in height to show the complete name; keep the portrait, navigation,
+appointment button and menu usable without overlap. A tooltip or `title` attribute
+does not replace displaying the full name. Apply this to source and `-param` sites.
 
 **Responsive collapse — snap to the §0 scale:**
 - `≤1200px` (verify per site, see §3.2): hamburger menu appears; `.nav-links` becomes
@@ -420,7 +445,7 @@ arbitrary round number. Measure it, don't guess it:
    to `1200px`, which eliminates the crush zone entirely — the header snaps cleanly
    from full-width desktop nav directly to the compact mobile/hamburger layout with no
    in-between crushed state.
-4. Re-test with a longer doctor name (near the `.brand-name` 15ch cap) — a heavier
+4. Re-test with a longer doctor name (50+ characters, including a long single word) — a heavier
    name or a nav with more links pushes the crush zone's start wider still, so the
    safe breakpoint number is specific to each microsite's actual header content, not a
    fixed constant to copy without re-checking.
@@ -432,6 +457,22 @@ a wider CTA label than the example above.
 ---
 
 ## 4. Hero Section
+
+**No extra promotional heading or descriptive paragraph.** Do not add a slogan heading
+such as “Growing up, together.” or a supporting marketing paragraph such as “From first
+smiles to new school days…”. These are not required hero elements and must be omitted,
+including from custom hero designs and `-param` versions. Keep the doctor's name,
+specialty/profile details, portrait, statistics, social links and appointment action (§33).
+
+**Keep profile-image badges short and compact.** Use at most one brief, factual label
+(2–3 words, e.g. “Pediatric care”) with an optional small icon. Do not use long slogans,
+stacked heading-and-description text, or wide banner-like badges around the portrait.
+Keep badge text at **18px**; reduce wording, padding and icon size instead of shrinking
+the text. Prefer content-sized badges with `8px 14px` padding and an `18–20px` icon,
+placed beside or below the image in normal flow. A badge must not cover the doctor's
+face or body, obscure the profile image, or overflow at any breakpoint. Allow wrapping
+and auto height when needed; never clip or truncate a label to make it fit. Apply this
+to custom heroes and `-param` versions too. The wording restrictions in §42 also apply.
 
 | Element | Value |
 |---|---|
@@ -567,10 +608,11 @@ only so existing cross-references (§N) stay stable. Parameterized builds must n
 | Grid | 12-track system (`repeat(12, minmax(0,1fr))`, `gap:18px`), same mechanism as Services §6 — 3 per row desktop (`span 4`), 2 per row at `≤1100px` (`span 6`), stays 2-column down to smallest widths (no forced single-column gallery) |
 | Item | `aspect-ratio:4/3`, `--radius-lg`, `--shadow-card`; hover: image `scale(1.08)` |
 
-**Leftover-row centering is mandatory here too** — copy the exact same §23 code used
-for Services, applied to `.gallery-item` instead of `.service-card`: 1 leftover item
-widens to `span 8` and centers; 2 leftover items stay `span 4` each, shifted to columns
-3 and 7. At `≤1100px`, reset to `span 6` and re-center a lone leftover at `4 / span 6`.
+**Gallery images must remain the same size, including incomplete rows.** Use the
+gallery-specific code in §23: 1 leftover item stays `span 4`, centered at
+`5 / span 4`; 2 leftover items stay `span 4` each, shifted to columns 3 and 7.
+Never widen a lone gallery item to `span 8` or stretch it across the row. At
+`≤1100px`, every item uses `span 6`; center a lone leftover at `4 / span 6`.
 A gallery with 6 items will never visibly exercise this —
 verify with 4/5/7 test images before shipping, same caveat as the services grid.
 | **Lightbox** | overlay `z-index:600`; content `max-width:min(1100px,92vw)`, `max-height:82dvh`, `radius:18px`; close button `40px × 40px` (`26px` glyph); nav arrows `50px × 50px` (`36px` glyph) → `44px × 44px` (`28px` glyph) relocated below image at `≤768px`; supports keyboard arrows + Escape |
@@ -663,6 +705,11 @@ One footer spec for every page (marketing pages and legal pages alike — two di
 | Footer nav links | `18px` |
 | Copyright row | `18px`, padding `14px 24px`, `1px solid` faint light divider (e.g. `hsla(0,0%,100%,.14)` on a dark footer background — invert to a dark-on-light divider if the footer background is light) |
 | Visitor badge | padding `10px 18px`, the same on every page (§44) |
+| Bottom footer disclaimer (`.footer-disclaimer`) | **`14px` on desktop, tablet and mobile**, including nested text/links; line-height `1.5`; AA contrast at least `4.5:1` |
+
+The bottom disclaimer is deliberately smaller than body copy. This is an explicit
+exception to §0.1, not a reason to shrink footer navigation, contact links or copyright.
+Use the same small disclaimer on the homepage and both legal pages; keep its wording intact.
 
 Breakpoints: `≤1100px` → 2-column grid; `≤640px` → 1-column, social icons become a
 4-per-row grid.
@@ -676,6 +723,13 @@ identical on every microsite) is Appendix A.19. Chatbot colors follow the same
 placeholder rule as §1: define
 `--chatbot-primary: var(--accent)` and `--chatbot-primary-hover: var(--accent-dark)` so
 the widget automatically inherits that site's own accent hue rather than hardcoding one.
+
+**No chatbot suggestions (mandatory for both standalone and `-param` sites).** Do not
+create `chatbot.suggestions`, `.chatbot-suggestions`, `#chatbotSuggestions`, suggestion
+wrappers, quick-reply chips or their navigation arrows. Do not add code that injects or
+activates them, and do not leave an empty band for them. The window contains its header,
+message history, message input/send controls and disclaimer only. Legacy unused suggestion
+variables in the shared backend script are not permission to build suggestion UI.
 
 ### 13.1 Collapsed bubble (FAB)
 
@@ -696,15 +750,18 @@ Mobile (`≤480px`): wrap positioned `left/right:16px; bottom:28px`; expanded-la
 
 | Breakpoint | Width | Height |
 |---|---|---|
-| Base / mobile-first default | `400px` (max `calc(100vw - 24px)`) | `min(580px, calc(100dvh - 110px))`, max `620px` |
+| Base / tablet default (`481–768px`) | `400px` (max `calc(100vw - 24px)`) | `min(580px, calc(100dvh - 110px))`; max-height uses the same cap |
 | `≥769px` (desktop) | `340px` | `min(420px, calc(100dvh - 110px))`, max `440px` |
-| `≤480px` | `100%` | `calc(100dvh - 96px)`, radius `20px 20px 8px 8px` |
+| `≤480px` | `100%` of the inset wrapper | `min(580px, calc(100dvh - 96px))`, radius `20px 20px 8px 8px` |
 | Landscape phone (`max-height:500px and max-width:480px`) | — | `calc(100dvh - 84px)` |
 
-Note the inversion: the un-media-queried base rule is actually the *mobile* sizing
-(taller window), and the `≥769px` query shrinks it down for desktop. Keep this pattern
-when copying to a new microsite — don't "fix" it into a conventional mobile-first scale
-without checking both breakpoints render correctly.
+**Keep the chatbot compact like the existing microsites.** The desktop baseline is
+**340 × 420px**, not a large panel. Do not add later overrides that enlarge it beyond
+the desktop limits. Tablet and phone windows are capped at **580px** and must shrink
+further to fit the available viewport; do not make them fill a tall phone screen.
+When the on-screen keyboard opens, keep the same 580px cap and fit within the visible
+viewport. Scroll the messages area rather than growing the window. Keep `dvh` sizing
+and a matching `vh` fallback, and verify the computed dimensions at every breakpoint.
 
 ### 13.3 Chat window internals
 
@@ -715,8 +772,6 @@ without checking both breakpoints render correctly.
 | Header avatar | `44px × 44px` (base) → `40px × 40px` (landscape mobile) |
 | Bot/agent name | `16px` |
 | Close button | `36px × 36px`, `22px` glyph |
-| Suggestion chips | padding `9px 16px`, pill radius, `16px` text |
-| Suggestion nav arrows | `26px × 26px`, `10px` glyph |
 | Message area padding | `20px 18px 12px`, `gap:14px` |
 | Message avatar | `32px × 32px` |
 | Message bubble | padding `12px 16px`, `20px` radius (near corner `6px`), font `16px`, line-height `1.5` |
@@ -744,9 +799,9 @@ pattern must be kept exactly:
   inherit correctly already, since they're `<p>`/`<span>`/`<div>` — no action needed.
 - Every **interactive, text-bearing** element needs an explicit override:
   `.chatbot-fab { font-family: inherit; }` (a `<button>`), and
-  `.chatbot-suggestion-chip`, `.chatbot-msg-bubble`, `.chatbot-input` all set
+  `.chatbot-msg-bubble` and `.chatbot-input` both set
   `font-family: var(--font-body, 'Inter', sans-serif);` — the `var(...)` form (rather
-  than plain `inherit`) is deliberate here because the message bubbles and chips can be
+  than plain `inherit`) is deliberate here because the message bubbles can be
   generated/re-parented by the chat script after initial load, so tying them directly
   to the site's font token (with a same-family fallback) is more robust than relying on
   inheritance from whatever happens to be their DOM parent at that moment.
@@ -842,6 +897,16 @@ components on the same page invent their own overlay darkness.
 ---
 
 ## 17. Images & Lighthouse / Performance Checklist
+
+**People in images — mandatory for future image generation and selection.** Only the
+doctor's portrait may include an adult, and that portrait must show only the doctor.
+For **pediatrician microsites only**, non-portrait images may also show children, with
+**no adults**: no parents, caregivers, staff or doctors in those scenes. All other
+images must be **people-free**, including About, Care Philosophy, gallery, banner and
+background imagery. Use empty clinic interiors, equipment, objects, nature or abstract
+specialty imagery as appropriate. Apply this to new/replacement images and to images
+carried into a new `-param` copy. State the restriction in generation prompts and visually
+inspect every result before use; a suitable alt text does not make a noncompliant image pass.
 
 Apply to every microsite:
 
@@ -996,6 +1061,9 @@ Each specialty lives in its own folder, one subfolder per microsite variant:
   never absolute URLs.
 - Doctor/clinic images go in `assets/`; prefer local assets over hotlinked images (§17).
 - **Never delete a file without explicit user approval.**
+- **Never automatically commit changes or push to GitHub.** Keep changes local and
+  uncommitted unless the user explicitly requests a commit or push. Completing a build,
+  verification, parameterization or bulk update does not authorize either action.
 - Test every new/edited layout with long doctor names and long specialty text before
   calling it done (this is what surfaces bugs like the header crush zone in §3.2).
 
@@ -1053,7 +1121,7 @@ apply:
 | 6 | Care Philosophy | Split-screen: image + floating badge, 3 pillars with connecting rail | §7, A.5 |
 | 7 | Consultation Journey | 4-step animated timeline | §8, A.6 |
 | 8 | Contact | Dedicated address/phone/email card (mandatory section) | §18.1, §35, A.7 |
-| 9 | Practice Gallery | Grid + lightbox, 12-track centering same as Services | §10, §23, A.8 |
+| 9 | Practice Gallery | Grid + lightbox, equal-size images with centered incomplete rows | §10, §23, A.8 |
 | 10 | FAQ | Accordion of at least 5 specialty-specific questions, straight after the Gallery (`#faq`) | §39, A.9 |
 | 11 | Booking Modal | Popup form: date/time, file upload, phone input, consent | §11, §25, §37, A.10 |
 | 12 | Footer | Branding, social links, quick/legal links, visitor badge, copyright | §12, §36, §44, A.11 |
@@ -1150,21 +1218,23 @@ social row, hero social row, header social row) must include:
 
 ## 23. Grid Centering — Copy-Paste Code (Services & Gallery)
 
-The exact reusable pattern behind §6 and §10's leftover-row centering. Copy verbatim,
-swap only the class name (`.service-card` ↔ `.gallery-item`), and **do not reorder the
-rules** — the reset and the centering override are equal specificity and depend on
-source order:
+Use the separate Services and Gallery blocks below. **Do not replace Services class
+names with Gallery class names:** Services may widen a lone card, but gallery images
+must keep equal dimensions. Do not reorder the reset and centering rules; they
+depend on source order.
+
+**Services (§6):**
 
 ```css
-.services-grid { /* or .gallery-grid */
+.services-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 26px; /* 18px for gallery */
+  gap: 26px;
   align-items: stretch;
   justify-content: center;
 }
 
-.service-card { /* or .gallery-item */
+.service-card {
   grid-column: span 4;
   min-width: 0;
 }
@@ -1213,7 +1283,45 @@ source order:
 }
 ```
 
-Card content centering (pairs with the grid above — needed because `align-items:
+**Gallery (§10): equal-size images, including the fourth or seventh image.** Keep
+two columns below 1100px, including phones; center incomplete rows without enlarging
+any item.
+
+```css
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+.gallery-item {
+  grid-column: span 4;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+}
+.gallery-item:last-child:nth-child(3n + 1) {
+  grid-column: 5 / span 4;
+}
+.gallery-item:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 3 / span 4;
+}
+.gallery-item:last-child:nth-child(3n + 2) {
+  grid-column: 7 / span 4;
+}
+@media (max-width: 1100px) {
+  .gallery-item,
+  .gallery-item:last-child:nth-child(3n + 1),
+  .gallery-item:nth-last-child(2):nth-child(3n + 1),
+  .gallery-item:last-child:nth-child(3n + 2) {
+    grid-column: span 6;
+  }
+  .gallery-item:last-child:nth-child(odd) {
+    grid-column: 4 / span 6;
+  }
+}
+```
+
+Card content centering (pairs with the Services grid above — needed because `align-items:
 stretch` gives every card in a row equal height):
 
 ```css
@@ -2067,6 +2175,13 @@ Keep the hero lean: no redundant text, extra taglines, or secondary descriptions
 elements specified in §4 (specialty badge, floating decorative icons, stat tiles, portrait
 frame) stay as they are. Build this content:
 
+**Omit promotional headline-and-paragraph blocks.** In particular, do not introduce a
+second heading such as “Growing up, together.” or its explanatory marketing paragraph
+below the doctor's profile. This applies even when the wording is unique to the specialty;
+it is not an allowed custom-design addition. Do not render `.hero-message`,
+`.hero-description` or equivalent elements for this purpose, and do not leave empty
+spacing reserved for them. Apply the same rule to standalone and parameterized sites.
+
 **Profile details**: four separate lines, each with its own icon, in this order:
 
 | # | Line | Notes |
@@ -2090,6 +2205,8 @@ YouTube. The row must have `flex-wrap: wrap` (see §22).
 **Content cleanup**: no redundant text. Do not add extra taglines, secondary descriptions, or
 duplicate paragraphs. The hero contains the doctor name (h1), the profile lines, the stats, the
 social row, and the call-to-action buttons.
+Any optional portrait badge follows §4's compact-label rule; it must never become a large
+text panel covering the profile image.
 
 ---
 
@@ -2129,6 +2246,9 @@ image credits anywhere on the page.
   Appendix A.11 (brand column with tagline and social icons; Quick Links, Legal and the visitor
   badge; copyright row; disclaimer). Do not add extra rows, large blocks, or tall padding. It stays
   compact on mobile too (stacked columns, tight spacing, no oversized gaps).
+- **Small bottom disclaimer.** `.footer-disclaimer` and any nested text/links compute to
+  **14px**, line-height `1.5`, on all three pages and every breakpoint. Preserve the wording
+  and AA contrast; do not let the global 18px rule override this exception.
 - No image credits line.
 
 ---
@@ -2175,9 +2295,11 @@ The consent label wording stays exactly as defined in §11.
 
 The chatbot follows §13 with these additions:
 - **Layout and size must be fully visible at every width** (1440, 768, and 375px). Nothing
-  clipped: header, avatar, message bubbles, quick-reply chips (wrap or scroll cleanly), input, and
+  clipped: header, avatar, message bubbles, input, and
   send button. The panel stays inside the viewport (`max-height` with `overflow-y: auto` on the
-  messages area).
+  messages area) and keeps the compact dimensions in §13.2.
+- **No suggestions.** No `chatbot.suggestions`, `.chatbot-suggestions`, quick-reply chips,
+  suggestion arrows or empty suggestion area, on standalone or parameterized sites.
 - **Footer note.** The text at the bottom of the chat window is exactly two lines:
 
   > Informational only, not medical advice.
@@ -2190,6 +2312,25 @@ The chatbot follows §13 with these additions:
 ---
 
 ## 39. Care Philosophy, Consultation Journey & FAQ: Static Sections and Default Designs
+
+**FAQ content source (mandatory for new microsites and FAQ content edits).** Read
+`DigiDr_FAQ_6_Sets_22_Specialities.pdf` from this workspace before writing FAQs.
+Identify the doctor's specialty and take both questions and their corresponding
+answers from that specialty's section in the PDF. Do not invent replacement FAQs,
+use generic appointment FAQs, or copy FAQs from an unrelated specialty when the
+PDF covers the required specialty. Use six question-and-answer pairs; the PDF permits
+one complete set or reshuffling pairs across its six sets. Preserve an existing
+valid selection. For a new numbered draft without an assigned selection, use its
+matching set number (1–6). Keep source and `-param` FAQ content identical; do not
+replace it with generic appointment FAQs during parameterization. General Medicine
+and General Physician map to General Medicine / Family Physician; Pediatrician to
+Paediatrics; Orthopedics to Orthopaedics; Dentist to Dentistry; Intensivist to Critical
+Care; Urologist to Urology; Plastic Surgery to Plastic and Cosmetic Surgery.
+The PDF has **no Ayurveda, Homeopathy, or Radiology sets**: retain those specialties'
+existing FAQs unless another source is supplied. Never substitute a different
+specialty's set. Run `node scripts/audit-faqs.cjs` (requires Poppler `pdftotext`) to
+check local FAQ content; results are saved in `faq-audit.json`. This content audit
+also flags commented-out sections, but does not verify rendered accordion behavior.
 
 **Section order.** This extends §21. The home page order is Header → Hero → About → Services → Social Media widget (optional, §30) →
 Care Philosophy → Consultation Journey → Contact → Practice Gallery → **FAQ** → Booking Modal →
@@ -2521,6 +2662,13 @@ Contact card:
   about, footer, legal pages, booking consent label, chatbot, and meta tags.
 - No medical claims such as guaranteed cures, and no unverifiable "20+ years" claims outside the
   h1, paragraphs, list items, and footer. Sub-headings, badges, and kickers stay generic.
+- **No “Trusted Doctor” or “Verified Doctor” wording anywhere on the website.** Do not
+  use these labels in any casing, plural or hyphenated form, including text split across
+  HTML elements. This applies to every section and page, portrait badges, tooltips,
+  accessibility labels, image alt text, metadata, structured data, chatbot copy and
+  `llms.txt`, including standalone sites and parameterized values/fallbacks. Remove the
+  label or replace it with a short factual specialty label; do not substitute a similar
+  trust or verification claim. Check both source files and rendered text.
 - **No "trust" wording (mandatory, every page, no exceptions).** Never use *trust*, *trusted*,
   *trusting*, *trustworthy*, *entrust*, *reliable*, *reliability*, *dependable*, *rely on* or
   *count on* (any casing or form) anywhere in a microsite's visible or indexed text: headings,
@@ -3916,7 +4064,7 @@ drops an empty phone or email line, and the whole contact-information item when 
 </div>
 ```
 
-Grid CSS: §23 (swap `.service-card` for `.gallery-item`, gap 18px, 2 columns below 1100px). Item and
+Grid CSS: the gallery-specific block in §23 (equal-size images, gap 18px, 2 columns below 1100px). Item and
 lightbox CSS:
 
 ```css
@@ -4925,7 +5073,7 @@ light-on-dark colours if the footer background is light):
 /* The global reset's span { color } rule beats inherited colour (§26 gotcha 2). */
 .footer-bottom-row p .footer-rights { color: inherit; }
 
-/* Footer disclaimer */
+/* Small bottom disclaimer: explicit exception to the global 18px text rule. */
 footer .footer-disclaimer {
   position: relative;
   display: block;
@@ -4942,6 +5090,11 @@ footer .footer-disclaimer {
   overflow-wrap: break-word;
   word-break: break-word;
   white-space: normal;
+}
+
+footer .footer-disclaimer :is(p, a, li, span, strong, em, small) {
+  font-size: 14px !important;
+  line-height: 1.5;
 }
 
 @media (max-width: 1100px) {
@@ -5725,7 +5878,7 @@ white send icon and this stylesheet draws a white button.
     z-index: 1;
     width: 400px;
     max-width: calc(100vw - 24px);
-    max-height: min(620px, calc(100dvh - 110px));
+    max-height: min(580px, calc(100dvh - 110px));
     height: min(580px, calc(100dvh - 110px));
     background: #ffffff;
     border-radius: 24px;
@@ -5759,8 +5912,8 @@ white send icon and this stylesheet draws a white button.
 /* Fallback for browsers without dvh */
 @supports not (height: 1dvh) {
     .chatbot-window {
-        max-height: min(600px, calc(100vh - 110px));
-        height: min(560px, calc(100vh - 110px));
+        max-height: min(580px, calc(100vh - 110px));
+        height: min(580px, calc(100vh - 110px));
     }
 }
 
@@ -5851,89 +6004,6 @@ white send icon and this stylesheet draws a white button.
 
 .chatbot-header-close i {
     font-size: 22px;
-}
-
-/* ── Suggested Quick Replies ── */
-.chatbot-suggestions-wrap {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    flex-shrink: 0;
-    background: var(--bg, #fff5f8);
-    border-top: 1px solid rgba(var(--accent-rgb, 246, 156, 30), 0.1);
-    padding-top: 12px;
-}
-
-.chatbot-suggestions-arrow {
-    flex-shrink: 0;
-    width: 26px;
-    height: 26px;
-    margin: 0 0 12px;
-    border-radius: 50%;
-    border: 1px solid rgba(var(--accent-rgb, 246, 156, 30), 0.22);
-    background: #ffffff;
-    color: var(--chatbot-primary-hover);
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
-}
-
-.chatbot-suggestions-arrow--prev { margin-left: 16px; }
-.chatbot-suggestions-arrow--next { margin-right: 16px; }
-
-.chatbot-suggestions-arrow:hover:not(:disabled) {
-    background: var(--accent, #f69c1e);
-    color: #ffffff;
-    border-color: var(--accent, #f69c1e);
-}
-
-.chatbot-suggestions-arrow:disabled {
-    opacity: 0.3;
-    cursor: default;
-}
-
-.chatbot-suggestions-wrap--no-scroll .chatbot-suggestions-arrow {
-    display: none;
-}
-
-.chatbot-suggestions {
-    padding: 0 4px;
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    flex-shrink: 1;
-    min-width: 0;
-    scrollbar-width: none;
-    scroll-snap-type: x proximity;
-    scroll-behavior: smooth;
-}
-
-.chatbot-suggestions::-webkit-scrollbar { display: none; }
-
-.chatbot-suggestion-chip {
-    white-space: nowrap;
-    padding: 9px 16px;
-    border-radius: 9999px;
-    border: 1px solid rgba(var(--accent-rgb, 246, 156, 30), 0.22);
-    background: #ffffff;
-    color: var(--accent-dark, #a6520c);
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-    font-family: var(--font-body, 'Inter', sans-serif);
-    margin-bottom: 12px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-}
-
-.chatbot-suggestion-chip:hover {
-    background: var(--accent, #f69c1e);
-    color: #ffffff;
-    border-color: var(--accent, #f69c1e);
 }
 
 /* ── Messages Area ── */
@@ -6296,8 +6366,8 @@ white send icon and this stylesheet draws a white button.
     .chatbot-window {
         width: 100%;
         max-width: 100%;
-        height: calc(100dvh - 96px);
-        max-height: calc(100dvh - 96px);
+        height: min(580px, calc(100dvh - 96px));
+        max-height: min(580px, calc(100dvh - 96px));
         border-radius: 20px 20px 8px 8px;
         transform-origin: bottom center;
     }
@@ -6305,8 +6375,8 @@ white send icon and this stylesheet draws a white button.
     /* Fallback for browsers without dvh */
     @supports not (height: 1dvh) {
         .chatbot-window {
-            height: calc(100vh - 96px);
-            max-height: calc(100vh - 96px);
+            height: min(580px, calc(100vh - 96px));
+            max-height: min(580px, calc(100vh - 96px));
         }
     }
 
@@ -6320,8 +6390,8 @@ white send icon and this stylesheet draws a white button.
     }
 
     .chatbot-fab-wrap.is-kb-open .chatbot-window {
-        height: calc(var(--chatbot-vvh, 100dvh) - 8px);
-        max-height: calc(var(--chatbot-vvh, 100dvh) - 8px);
+        height: min(580px, calc(var(--chatbot-vvh, 100dvh) - 8px));
+        max-height: min(580px, calc(var(--chatbot-vvh, 100dvh) - 8px));
         border-radius: 20px 20px 0 0;
     }
 }

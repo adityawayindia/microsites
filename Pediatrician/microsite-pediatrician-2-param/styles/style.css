@@ -64,7 +64,7 @@ body { position: relative; }
   --shadow-yellow: 0 8px 28px rgba(245,184,32,0.30);
 
   /* Hero background pattern */
-  --hero-pattern:  url('../assets/alternate-hero-bg.png');
+  --hero-pattern:  var(--static-image-alternate-hero-bg-png);
 }
 
 /* ============================================================

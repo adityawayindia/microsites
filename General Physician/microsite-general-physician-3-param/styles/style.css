@@ -1057,7 +1057,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   inset: 0;
   background-image:
     linear-gradient(rgba(18, 18, 18, 0.66), rgba(18, 18, 18, 0.66)),
-    url("../assets/journey-bg.jpg");
+    var(--static-image-journey-bg-jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

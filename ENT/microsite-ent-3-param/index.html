@@ -79,6 +79,13 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-services-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/services-bg.jpg");
+      --static-image-hero-bg-photo-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg-photo.jpg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
@@ -357,7 +364,7 @@
     <div class="container philosophy-layout">
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-ent-2/assets/philosophy-photo-exam2.jpg" alt="A clinician using a Heine otoscope to examine a patient's ear, reflecting a precise, hands-on approach to ENT diagnosis" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-photo-exam2.jpg" alt="A clinician using a Heine otoscope to examine a patient's ear, reflecting a precise, hands-on approach to ENT diagnosis" loading="lazy" />
         </div>
         <div class="philosophy-badge">
           <div class="philosophy-badge-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></div>

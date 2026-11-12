@@ -60,6 +60,13 @@
   <link rel="stylesheet" href="{{path}}/styles/style.css" />
   <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
   <link rel="stylesheet" href="{{path}}/styles/legal.css" />
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-services-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/services-bg.jpg");
+      --static-image-hero-bg-photo-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg-photo.jpg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
   <main class="legal-page">

@@ -1190,7 +1190,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   background:
     /* cream wash keeps the dark hero text AA-legible over the globules photo */
     linear-gradient(90deg, rgba(250, 248, 241, 0.95) 0%, rgba(250, 248, 241, 0.86) 30%, rgba(250, 248, 241, 0.5) 52%, rgba(250, 248, 241, 0.08) 75%),
-    url("../assets/hero-bg.jpg") center / cover no-repeat,
+    var(--static-image-hero-bg-jpg) center / cover no-repeat,
     linear-gradient(135deg, #faf8f1 0%, #eaf1e1 55%, #e2ecd6 100%);
   border-bottom: 3px solid var(--amber);
 }
@@ -2759,7 +2759,7 @@ body { overflow-x: hidden; }
 .hero-section {
   background:
     linear-gradient(90deg, rgba(251,247,242,.98) 0%, rgba(251,247,242,.96) 46%, rgba(251,247,242,.74) 67%, rgba(251,247,242,.28) 100%),
-    url('../assets/botanical-orbit.svg') right center / min(62vw, 980px) auto no-repeat,
+    var(--static-image-botanical-orbit-svg) right center / min(62vw, 980px) auto no-repeat,
     linear-gradient(135deg, #fbf7f2 0%, #f2e8e1 56%, #e1ebe4 100%);
   border-bottom: 3px solid var(--accent);
 }

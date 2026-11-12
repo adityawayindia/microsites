@@ -674,7 +674,7 @@ margin-bottom: 0;
 .about-section {
   background: 
     linear-gradient(rgba(251,244,245, 0.85), rgba(251,244,245, 0.85)),
-    url('../assets/about-bg.png') center / cover no-repeat fixed !important;
+    var(--static-image-about-bg-png) center / cover no-repeat fixed !important;
   padding: 88px 0;
   position: relative;
   overflow: hidden;
@@ -1071,7 +1071,7 @@ margin-bottom: 0;
   padding: 44px 0 52px;
   background: 
     linear-gradient(rgba(251,244,245, 0.85), rgba(251,244,245, 0.85)),
-    url('../assets/contact-bg.png') center / cover no-repeat fixed !important;
+    var(--static-image-contact-bg-png) center / cover no-repeat fixed !important;
 }
 
 .contact-section::before {
@@ -7461,5 +7461,5 @@ html, body { overflow-x: clip; }
 
 /* Hero background — general-medicine line-art (stethoscope, heart-pulse, clipboard, thermometer, bag) */
 .hero-bg-accent {
-  background: url("../assets/hero-bg-medicine.svg") center / cover no-repeat;
+  background: var(--static-image-hero-bg-medicine-svg) center / cover no-repeat;
 }

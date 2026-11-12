@@ -73,7 +73,14 @@
     "addressCountry": "IN"
   }
 }</script>
-<meta content="https://digidr.app/{{slug}}/" property="og:url"/></head>
+<meta content="https://digidr.app/{{slug}}/" property="og:url"/>  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-hero-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg.jpg");
+      --static-image-hero-mineral-grid-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-mineral-grid.jpg");
+    }
+  </style>
+</head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}"><a class="skip-link" href="#main">Skip to main content</a>
 <!-- ====== HEADER ====== -->
 <header class="site-header">
@@ -150,7 +157,7 @@
 </section>
 <!-- ====== ABOUT ====== -->
 <section class="about-section" id="about">
-<div class="container about-layout"><aside class="about-aside"><div class="about-image-frame"><img alt="Consultation notes, stethoscope and clinic workspace" height="1125" loading="lazy" src="https://storage.googleapis.com/microsite_buck/Homeopathy-14-Male/assets/about-case-notes.jpg" width="900"/></div><div class="about-note"><i aria-hidden="true" class="fa-solid fa-notes-medical has-local-icon"><svg aria-hidden="true" class="local-icon" focusable="false" viewBox="0 0 512 512"><path d="M96 352L96 96c0-35.3 28.7-64 64-64l256 0c35.3 0 64 28.7 64 64l0 197.5c0 17-6.7 33.3-18.7 45.3l-58.5 58.5c-12 12-28.3 18.7-45.3 18.7L160 416c-35.3 0-64-28.7-64-64zM272 128c-8.8 0-16 7.2-16 16l0 48-48 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l48 0 0 48c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-48 48 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-48 0 0-48c0-8.8-7.2-16-16-16l-32 0zm24 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-160 0C60.9 512 0 451.1 0 376L0 152c0-13.3 10.7-24 24-24s24 10.7 24 24l0 224c0 48.6 39.4 88 88 88l160 0z"></path></svg></i><div><strong>Detailed case history</strong><span>Context, continuity and planned reviews</span></div></div></aside><div class="about-content"><span class="about-kicker">About the Physician</span><h2 class="about-title">{{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}{{#no_about_section_title}}Careful listening before every plan.{{/no_about_section_title}}</h2><p class="about-description">{{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}{{#no_about_section_subtitle}}A structured consultation that looks at symptoms, history, current treatment, routines and personal priorities.{{/no_about_section_subtitle}}</p><div class="read-more-wrap"><div class="read-more-content"><p>{{introduction}}</p></div><button aria-expanded="false" class="read-more-btn" data-ga-event="read_more_click" type="button"><span>Read More</span><i aria-hidden="true" class="fa-solid fa-chevron-down has-local-icon"><svg aria-hidden="true" class="local-icon" focusable="false" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg></i></button></div></div></div>
+<div class="container about-layout"><aside class="about-aside"><div class="about-image-frame"><img alt="Consultation notes, stethoscope and clinic workspace" height="1125" loading="lazy" src="https://storage.googleapis.com/digidr/{{slug}}/assets/about-case-notes.jpg" width="900"/></div><div class="about-note"><i aria-hidden="true" class="fa-solid fa-notes-medical has-local-icon"><svg aria-hidden="true" class="local-icon" focusable="false" viewBox="0 0 512 512"><path d="M96 352L96 96c0-35.3 28.7-64 64-64l256 0c35.3 0 64 28.7 64 64l0 197.5c0 17-6.7 33.3-18.7 45.3l-58.5 58.5c-12 12-28.3 18.7-45.3 18.7L160 416c-35.3 0-64-28.7-64-64zM272 128c-8.8 0-16 7.2-16 16l0 48-48 0c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l48 0 0 48c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-48 48 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-48 0 0-48c0-8.8-7.2-16-16-16l-32 0zm24 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-160 0C60.9 512 0 451.1 0 376L0 152c0-13.3 10.7-24 24-24s24 10.7 24 24l0 224c0 48.6 39.4 88 88 88l160 0z"></path></svg></i><div><strong>Detailed case history</strong><span>Context, continuity and planned reviews</span></div></div></aside><div class="about-content"><span class="about-kicker">About the Physician</span><h2 class="about-title">{{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}{{#no_about_section_title}}Careful listening before every plan.{{/no_about_section_title}}</h2><p class="about-description">{{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}{{#no_about_section_subtitle}}A structured consultation that looks at symptoms, history, current treatment, routines and personal priorities.{{/no_about_section_subtitle}}</p><div class="read-more-wrap"><div class="read-more-content"><p>{{introduction}}</p></div><button aria-expanded="false" class="read-more-btn" data-ga-event="read_more_click" type="button"><span>Read More</span><i aria-hidden="true" class="fa-solid fa-chevron-down has-local-icon"><svg aria-hidden="true" class="local-icon" focusable="false" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg></i></button></div></div></div>
 </section>
 <!-- ====== SERVICES ====== -->
 <section class="services-section" id="services">
@@ -198,7 +205,7 @@
 <div class="philosophy-visual">
 <div aria-hidden="true" class="philosophy-img-glow"></div>
 <div class="philosophy-img-frame">
-<img alt="Amber remedy bottle with dried botanicals arranged on a light surface" height="1250" loading="lazy" src="https://storage.googleapis.com/microsite_buck/Homeopathy-14-Male/assets/philosophy-mineral-remedy.jpg" width="1000"/>
+<img alt="Amber remedy bottle with dried botanicals arranged on a light surface" height="1250" loading="lazy" src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-mineral-remedy.jpg" width="1000"/>
 </div>
 </div>
 </div>

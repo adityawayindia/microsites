@@ -80,6 +80,18 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-hero-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg.png");
+      --static-image-photo-1631563019676-dade0dbdb8fc-w1800-q70-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/photo-1631563019676-dade0dbdb8fc-w1800-q70.jpg");
+      --static-image-photo-1758574437877-68a1ec5fafc3-w1800-q70-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/photo-1758574437877-68a1ec5fafc3-w1800-q70.jpg");
+      --static-image-photo-1616012480717-fd9867059ca0-w1800-q70-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/photo-1616012480717-fd9867059ca0-w1800-q70.jpg");
+      --static-image-photo-1616012480717-fd9867059ca0-w1200-q70-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/photo-1616012480717-fd9867059ca0-w1200-q70.jpg");
+      --static-image-photo-1666214282459-c7dff167ecc0-w1800-q70-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/photo-1666214282459-c7dff167ecc0-w1800-q70.jpg");
+      --static-image-photo-1666214280352-db292c05fd80-w1800-q70-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/photo-1666214280352-db292c05fd80-w1800-q70.jpg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
@@ -331,7 +343,7 @@
     <div class="container philosophy-layout">
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="https://images.unsplash.com/photo-1666214275099-0ca566aefe26?auto=format&fit=crop&w=1200&q=80" alt="A radiographer positioning a patient for a scan" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/photo-1666214275099-0ca566aefe26-w1200-q80.jpg" alt="A radiographer positioning a patient for a scan" loading="lazy" />
         </div>
       </div>
 

@@ -80,6 +80,12 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-hero-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg.jpg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
@@ -389,7 +395,7 @@
       <div class="philosophy-visual">
         <div class="philosophy-img-glow" aria-hidden="true"></div>
         <div class="philosophy-img-frame">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-plastic-surgery-1/assets/philosophy-surgery.jpg" alt="Plastic surgeon performing a precise procedure in an accredited operating theatre" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-surgery.jpg" alt="Plastic surgeon performing a precise procedure in an accredited operating theatre" loading="lazy" />
         </div>
       </div>
     </div>

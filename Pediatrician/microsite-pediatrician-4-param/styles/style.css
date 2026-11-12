@@ -370,7 +370,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
 .peds4-hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/Lifeline BG.png');
+  background-image: var(--static-image-lifeline-bg-png);
   background-repeat: repeat;
   background-size: 360px auto;
   opacity: 1;
@@ -807,7 +807,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   inset: 0;
   background-image:
     linear-gradient(180deg, rgba(10, 22, 38, 0.72) 0%, rgba(10, 22, 38, 0.6) 50%, rgba(10, 22, 38, 0.78) 100%),
-    url('../assets/journey-bg.jpg');
+    var(--static-image-journey-bg-jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

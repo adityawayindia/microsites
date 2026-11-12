@@ -82,6 +82,14 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-about-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/about-bg.png");
+      --static-image-contact-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/contact-bg.png");
+      --static-image-hero-bg-medicine-svg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg-medicine.svg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
   <header class="site-header">
@@ -276,7 +284,7 @@
           <!-- Floating credential chips -->
           <div class="hero-v2-chip hero-v2-chip--bottom">
             <i class="fa-solid fa-shield-heart"></i>
-            <span>Trusted Doctor</span>
+            <span>General Medicine</span>
           </div>
         </div>
         <!-- Decorative dots pattern -->
@@ -392,7 +400,7 @@
       <!-- Left: Visual Column -->
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-workspace.png" alt="Clinical workspace flat-lay" class="philosophy-photo" loading="lazy" />
         </div>
       </div>
       <!-- Right: Content Column -->

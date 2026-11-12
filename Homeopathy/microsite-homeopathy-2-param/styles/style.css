@@ -1175,7 +1175,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   background:
     /* cream wash keeps the dark hero text AA-legible over the globules photo */
     linear-gradient(90deg, rgba(248, 247, 252, 0.95) 0%, rgba(248, 247, 252, 0.86) 30%, rgba(248, 247, 252, 0.5) 52%, rgba(248, 247, 252, 0.08) 75%),
-    url("../assets/hero-bg.svg") center / cover no-repeat,
+    var(--static-image-hero-bg-svg) center / cover no-repeat,
     linear-gradient(135deg, #f8f7fc 0%, #e8ebf7 55%, #dde2f4 100%);
   border-bottom: 0;
 }
@@ -2054,7 +2054,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
 .hero-section {
   background:
     linear-gradient(90deg, rgba(248, 247, 252, 0.97) 0%, rgba(248, 247, 252, 0.93) 42%, rgba(248, 247, 252, 0.55) 70%, rgba(248, 247, 252, 0.25) 100%),
-    url("../assets/hero-bg.jpg") center / cover no-repeat,
+    var(--static-image-hero-bg-jpg) center / cover no-repeat,
     var(--bg);
   border-bottom: 0;
 }
@@ -2184,7 +2184,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   .hero-section {
     background:
       linear-gradient(180deg, rgba(248, 247, 252, 0.82) 0%, rgba(248, 247, 252, 0.95) 100%),
-      url("../assets/hero-bg.jpg") 80% center / cover no-repeat,
+      var(--static-image-hero-bg-jpg) 80% center / cover no-repeat,
       var(--bg);
   }
   .hero-portrait { width: min(300px, 72%); }

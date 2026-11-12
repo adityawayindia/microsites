@@ -6,6 +6,16 @@ vocabulary, the markup patterns, the head and SEO files, the JavaScript that is 
 change, the shared files a template may be missing (Appendix P), and the checks to run. No other
 microsite and no other document is needed.
 
+> **IMPORTANT — Step 3 static image URLs (mandatory).** In the `-param` version, static
+> content images must use
+> `https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-image-filename>`.
+> Keep `{{slug}}` as the backend placeholder and preserve the actual filename and extension.
+> For example:
+> `https://storage.googleapis.com/microsite_buck/{{slug}}/assets/family-consultation.jpg`.
+> **Doctor profile and gallery images are excluded**: keep `{{profile}}` and the existing
+> `{{#images}}` / `{{image}}` gallery mapping. Do not rewrite those dynamic image values.
+> This applies during Step 3; the original non-parameterized site's image paths stay unchanged.
+
 > **JavaScript scope: only three things change during a conversion.** The stat counter (§4),
 > the chatbot widget (§4a) and the booking/appointment code (§4b, §4c). Do not modify any
 > other `script/*.js` code until the backend team's code is available for it (analytics,
@@ -23,9 +33,10 @@ sites) is kept separately in [parameterization-log.md](parameterization-log.md).
 A folder without `-param` has not been converted. Rename in the same commit that finishes the
 conversion.
 
-The suffix is a **repo folder name only**. GCS asset URLs inside the pages
-(`https://storage.googleapis.com/microsite_buck/microsite-<specialty>-<n>/assets/…`) point at the
-bucket folder, which is not renamed. Leave those URLs unchanged.
+The suffix is a **repo folder name only**. Static content image URLs use the backend's
+`{{slug}}` as the bucket folder, never the repository folder name or a `-param` suffix:
+`https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-image-filename>`.
+Replace older hardcoded template-folder image URLs during conversion.
 
 Rules that apply to every conversion:
 - **Calendar must use `availableDays`.** Piece 1 of §4b only loads the days; the date-picker
@@ -36,17 +47,25 @@ Rules that apply to every conversion:
 - **Remove demo `<option>`s from `#preferredTime`.** Keep only
   `<option value="">Select Time Slot</option>`; the slots API fills the rest. Demo values would
   otherwise be submitted as a `SlotId` if the slots call fails.
-- **Template-owned images** (About/Philosophy photos, etc.) use the GCS bucket URL for that
-  template's bucket folder, not relative `assets/` paths (which break under `{{path}}` serving).
-  `{{path}}` stays for CSS/JS only. If images are deliberately kept in the local `assets/`
-  folder, they must be reachable at `assets/…` wherever the page is served.
+- **Static content images — important.** About/Philosophy photos, static background images
+  and other static section imagery use
+  `https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-image-filename>`.
+  Do not leave relative `assets/` paths, `{{path}}/assets/` paths or hardcoded template-folder
+  GCS paths in the `-param` version. `{{path}}` stays for CSS/JS only. Preserve each actual
+  filename and extension; `abc.jpg` in an example is not a filename to ship. Apply the rule
+  to each static image reference, including `src`, `srcset` and background-image sources.
+  Resolve `{{slug}}` through the backend-rendered markup; do not put an unresolved Mustache
+  tag into an ordinary, untemplated CSS or JavaScript file. Doctor profile and gallery
+  images keep their existing dynamic placeholders. Configurable banner fields remain
+  backend-provided values rather than being converted into static filenames.
 - **The big profile image appears only once on the site.** The large doctor photo
   (`{{profile}}`) is rendered in exactly one place: the **hero section** *or* the **About
   section**, depending on the microsite template's layout. Never show the big profile image in
   both. The section that does not carry it must not duplicate it, and uses a static,
-  template-owned image if it needs one (GCS bucket URL per the rule above) — never
-  `{{profile}}` or any other placeholder, and never wrapped in a `{{#has…}}` block.
-  Every other image outside that one big-photo slot is likewise never parameterized.
+  template-owned image if it needs one (the `{{slug}}` GCS URL per the rule above). Keep
+  that image's filename fixed: do not replace it with `{{profile}}` or a new image-content
+  placeholder, and do not wrap it in a `{{#has…}}` block. The URL's `{{slug}}` is required;
+  the filename stays static. Gallery images retain their separate dynamic loop.
 - **Small profile image stays in the header and footer, as usual.** The compact/avatar-size
   `{{profile}}` image in the header (logo area) and the footer is unchanged and is not
   affected by the "only once" rule above — that rule applies to the *big* profile image only.
@@ -2848,6 +2867,16 @@ prefix (that is a broken link).
 For each `<Specialty>/microsite-*/` folder:
 
 **All pages**
+- [ ] **IMPORTANT: static content image URLs** use
+      `https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-image-filename>`.
+      Check About, Philosophy, backgrounds and every other static section image, including
+      `srcset` variants. Preserve filenames/extensions. No relative `assets/`,
+      `{{path}}/assets/` or hardcoded template-folder URLs remain for these images.
+- [ ] Doctor profile images still use `{{profile}}`; gallery images still use `{{image}}`
+      inside `{{#images}}`. Do not apply the static-image URL rewrite to either.
+- [ ] Render with a sample `slug` and verify static image URLs resolve to that slug's
+      `/assets/` folder with no leftover `{{…}}` tags. Check that the actual assets load;
+      report missing bucket assets as unverified or broken instead of assuming availability.
 - [ ] Replace every hardcoded doctor name **outside the FAQ** with `Dr. {{full_name}}`.
 - [ ] Replace the specialty display text with `{{speciality}}`.
 - [ ] Header, hero and footer social rows: all 8 `has*` / `no*` pairs, with the

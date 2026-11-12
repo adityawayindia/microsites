@@ -268,7 +268,7 @@ section { scroll-margin-top: 86px; }
   padding: 0;
   background:
     linear-gradient(90deg, rgba(8, 34, 23, 0.96) 0%, rgba(13, 52, 36, 0.88) 48%, rgba(13, 42, 30, 0.54) 100%),
-    url("https://storage.googleapis.com/microsite_buck/microsite-ayurvedic-2/assets/ayurveda-hero-bg.webp") center / cover no-repeat;
+    var(--static-image-ayurveda-hero-bg-webp) center / cover no-repeat;
 }
 .hero-section::after {
   content: "";
@@ -812,7 +812,7 @@ section { scroll-margin-top: 86px; }
   border-radius: var(--radius-xl);
   background:
     linear-gradient(125deg, rgba(255,253,248,.98), rgba(247,240,228,.94)),
-    url("https://storage.googleapis.com/microsite_buck/microsite-ayurvedic-2/assets/ayurveda-hero-bg.webp") center / cover;
+    var(--static-image-ayurveda-hero-bg-webp) center / cover;
   box-shadow: var(--shadow-card);
 }
 .contact-card::after {

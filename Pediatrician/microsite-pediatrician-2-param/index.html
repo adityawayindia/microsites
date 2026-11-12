@@ -88,6 +88,12 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-alternate-hero-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/alternate-hero-bg.png");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
@@ -404,7 +410,7 @@
 
       <div class="alt-philosophy-visual">
         <div class="alt-philosophy-img-wrap">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-pediatrician-2/assets/pediatric-philosophy-workspace.png" alt="Pediatric care philosophy workspace with stethoscope and child toys" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/pediatric-philosophy-workspace.png" alt="Pediatric care philosophy workspace with stethoscope and child toys" loading="lazy" />
         </div>
         <div class="alt-philosophy-float-badge">
           <i class="fa-solid fa-shield-heart"></i>

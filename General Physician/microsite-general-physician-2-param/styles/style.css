@@ -674,7 +674,7 @@ margin-bottom: 0;
 .about-section {
   background: 
     linear-gradient(rgba(245, 246, 253, 0.85), rgba(245, 246, 253, 0.85)),
-    url('../assets/about-bg.png') center / cover no-repeat fixed !important;
+    var(--static-image-about-bg-png) center / cover no-repeat fixed !important;
   padding: 88px 0;
   position: relative;
   overflow: hidden;
@@ -1071,7 +1071,7 @@ margin-bottom: 0;
   padding: 44px 0 52px;
   background: 
     linear-gradient(rgba(245, 246, 253, 0.85), rgba(245, 246, 253, 0.85)),
-    url('../assets/contact-bg.png') center / cover no-repeat fixed !important;
+    var(--static-image-contact-bg-png) center / cover no-repeat fixed !important;
 }
 
 .contact-section::before {

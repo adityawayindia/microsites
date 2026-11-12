@@ -79,6 +79,13 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-lifeline-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/Lifeline BG.png");
+      --static-image-journey-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/journey-bg.jpg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
@@ -278,7 +285,7 @@
       <div class="about-aside">
         <div class="about-photo-glow" aria-hidden="true"></div>
         <div class="about-photo-frame">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/about-photo.png" alt="Doctor examining an anatomical kidney model during a urology consultation at Dr. {{full_name}}'s practice" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/about-photo.png" alt="Doctor examining an anatomical kidney model during a urology consultation at Dr. {{full_name}}'s practice" loading="lazy" />
         </div>
       </div>
 
@@ -399,7 +406,7 @@
       <div class="philosophy-visual">
         <div class="philosophy-img-glow" aria-hidden="true"></div>
         <div class="philosophy-img-frame">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-urology-1/assets/philosophy-photo.jpg" alt="Urologist reviewing a live endoscopic camera feed during a minimally invasive urology procedure" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-photo.jpg" alt="Urologist reviewing a live endoscopic camera feed during a minimally invasive urology procedure" loading="lazy" />
         </div>
       </div>
     </div>

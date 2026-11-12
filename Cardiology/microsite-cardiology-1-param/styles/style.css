@@ -239,7 +239,7 @@ body {
   position: relative;
 margin-bottom: 0;
   overflow: hidden;
-  background: #ffffff url("../assets/Lifeline BG.png") center / cover no-repeat;
+  background: #ffffff var(--static-image-lifeline-bg-png) center / cover no-repeat;
 }
 
 .hero-section::before {
@@ -659,7 +659,7 @@ margin-bottom: 0;
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../assets/Lifeline BG.png") center / cover no-repeat;
+  background: var(--static-image-lifeline-bg-png) center / cover no-repeat;
   opacity: 0.1;
   pointer-events: none;
 }
@@ -4121,7 +4121,7 @@ select {
    ========================================================================== */
 .hero-section {
   background:
-    url("../assets/Lifeline BG.png") center / cover no-repeat,
+    var(--static-image-lifeline-bg-png) center / cover no-repeat,
     radial-gradient(circle at 85% 20%, rgba(217, 0, 15, 0.10), transparent 45%),
     radial-gradient(circle at 5% 90%, rgba(217, 0, 15, 0.07), transparent 40%),
     linear-gradient(180deg, #fff5f5 0%, #ffffff 100%);

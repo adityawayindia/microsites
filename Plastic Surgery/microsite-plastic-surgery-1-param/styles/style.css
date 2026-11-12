@@ -1181,7 +1181,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   background:
     /* slight cream overlay keeps the dark hero text AA-legible over the photo */
     linear-gradient(90deg, rgba(253, 246, 241, 0.88) 0%, rgba(253, 246, 241, 0.62) 50%, rgba(253, 246, 241, 0.3) 100%),
-    url("../assets/hero-bg.jpg") 0% 40% / 115% auto no-repeat,
+    var(--static-image-hero-bg-jpg) 0% 40% / 115% auto no-repeat,
     linear-gradient(135deg, #fdf6f1 0%, #f9e9e1 55%, #f3dcd2 100%);
   border-bottom: 3px solid var(--amber);
 }
@@ -2084,7 +2084,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   .hero-section {
     background:
       linear-gradient(180deg, rgba(253, 246, 241, 0.35) 0%, rgba(253, 246, 241, 0.5) 100%),
-      url("../assets/hero-bg.jpg") 62% center / cover no-repeat,
+      var(--static-image-hero-bg-jpg) 62% center / cover no-repeat,
       linear-gradient(135deg, #fdf6f1 0%, #f9e9e1 55%, #f3dcd2 100%);
   }
   .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 36px; }

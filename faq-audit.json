@@ -1,0 +1,594 @@
+{
+  "source": "DigiDr_FAQ_6_Sets_22_Specialities.pdf",
+  "extractedSpecialties": 22,
+  "extractedSets": 132,
+  "extractedFaqs": 792,
+  "policy": "Preserve matching sets; otherwise use draft number 1–6. Do not change assigned/live/unfinished sites or specialties absent from the PDF.",
+  "rows": [
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-1/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-1-param/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-2/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-2-param/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-3/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-3-param/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-4/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-4-param/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-5/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-5-param/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-6/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Ayurvedic/microsite-ayurvedic-6-param/index.html",
+      "specialty": "Ayurvedic",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Cardiology/microsite-cardiology-1/index.html",
+      "specialty": "Cardiology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Cardiology/microsite-cardiology-1-param/index.html",
+      "specialty": "Cardiology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Default Template/microsite-default/index.html",
+      "specialty": "Default Template",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "Dentist/microsite-dentist-1/index.html",
+      "specialty": "Dentistry",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Dentist/microsite-dentist-1-param/index.html",
+      "specialty": "Dentistry",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Dentist/microsite-dentist-2-assigned/index.html",
+      "specialty": "Dentistry",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Dentist/microsite-dentist-3/index.html",
+      "specialty": "Dentistry",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Dentist/microsite-dentist-3-param/index.html",
+      "specialty": "Dentistry",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "ENT/microsite-ent-1/index.html",
+      "specialty": "ENT",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "ENT/microsite-ent-2/index.html",
+      "specialty": "ENT",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "ENT/microsite-ent-2-param/index.html",
+      "specialty": "ENT",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "ENT/microsite-ent-3/index.html",
+      "specialty": "ENT",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "ENT/microsite-ent-3-param/index.html",
+      "specialty": "ENT",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Gastroenterology/microsite-gastroenterology-1/index.html",
+      "specialty": "Gastroenterology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Gastroenterology/microsite-gastroenterology-1-param/index.html",
+      "specialty": "Gastroenterology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Gastroenterology/microsite-gastroenterology-2/index.html",
+      "specialty": "Gastroenterology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Gastroenterology/microsite-gastroenterology-2-param/index.html",
+      "specialty": "Gastroenterology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Medicine/microsite-general-medicine-1/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Medicine/microsite-general-medicine-1-param/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Medicine/microsite-general-medicine-2-assigned/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Medicine/microsite-general-medicine-3/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Medicine/microsite-general-medicine-3-param/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Physician/microsite-general-physician-1-assigned/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": true,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Physician/microsite-general-physician-1-param-assigned/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Physician/microsite-general-physician-2/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": true,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Physician/microsite-general-physician-2-param/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": true,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Physician/microsite-general-physician-3/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "General Physician/microsite-general-physician-3-param/index.html",
+      "specialty": "General Medicine / Family Physician",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Homeopathy/Homeopathy-11-Female/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Homeopathy/Homeopathy-11-Female-param/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Homeopathy/Homeopathy-11-Male-param/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Homeopathy/Homeopathy-12-Male-param-assigned/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Homeopathy/Homeopathy-13-Male-param/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Homeopathy/Homeopathy-14-Male-param/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Homeopathy/microsite-homeopathy/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Homeopathy/microsite-homeopathy-1-param-assigned/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Homeopathy/microsite-homeopathy-2/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Homeopathy/microsite-homeopathy-2-param/index.html",
+      "specialty": "Homeopathy",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Intensivist/microsite-intensivist-1/index.html",
+      "specialty": "Critical Care",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Intensivist/microsite-intensivist-2-assigned/index.html",
+      "specialty": "Critical Care",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "live microsites/anurag-choudhury/index.html",
+      "specialty": "live microsites",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "live microsites/deepak-dabkara/index.html",
+      "specialty": "live microsites",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "live microsites/dhara-sharma/index.html",
+      "specialty": "live microsites",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "live microsites/dr-ashok-s-gowda/index.html",
+      "specialty": "live microsites",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "live microsites/nirav-rada/index.html",
+      "specialty": "live microsites",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "live microsites/Raj-kumar/index.html",
+      "specialty": "live microsites",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "live microsites/samir-shah/index.html",
+      "specialty": "live microsites",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "live microsites/samiran-das/index.html",
+      "specialty": "live microsites",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "microsite-ayurvedic-new-param/index.html",
+      "specialty": "microsite-ayurvedic-new-param",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "microsite-testing/index.html",
+      "specialty": "microsite-testing",
+      "status": "outside-specialty-drafts"
+    },
+    {
+      "file": "Neurology/microsite-neurology-1/index.html",
+      "specialty": "Neurology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Oncology/microsite-oncology-1-assigned/index.html",
+      "specialty": "Oncology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Oncology/microsite-oncology-2/index.html",
+      "specialty": "Oncology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Orthopedics/microsite-orthopedics-1/index.html",
+      "specialty": "Orthopaedics",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Orthopedics/microsite-orthopedics-1-param/index.html",
+      "specialty": "Orthopaedics",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-1-assigned/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-2/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-2-param/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-3/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": true,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-3-param/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": true,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-4/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": true,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-4-param/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": true,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-5 (work pending)/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-6/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": 6,
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Pediatrician/microsite-pediatrician-6-param/index.html",
+      "specialty": "Paediatrics",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": 6,
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Plastic Surgery/microsite-plastic-surgery-1/index.html",
+      "specialty": "Plastic and Cosmetic Surgery",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Plastic Surgery/microsite-plastic-surgery-1-param/index.html",
+      "specialty": "Plastic and Cosmetic Surgery",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Plastic Surgery/microsite-plastic-surgery-2/index.html",
+      "specialty": "Plastic and Cosmetic Surgery",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Plastic Surgery/microsite-plastic-surgery-2-param/index.html",
+      "specialty": "Plastic and Cosmetic Surgery",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Radiology/microsite-radiology-1/index.html",
+      "specialty": "Radiology",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Radiology/microsite-radiology-1-param/index.html",
+      "specialty": "Radiology",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Radiology/microsite-radiology-2/index.html",
+      "specialty": "Radiology",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Radiology/microsite-radiology-2-param/index.html",
+      "specialty": "Radiology",
+      "status": "specialty-absent-from-pdf"
+    },
+    {
+      "file": "Urologist/microsite-urology-1-param/index.html",
+      "specialty": "Urology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    },
+    {
+      "file": "Urologist/microsite-urology-2-param/index.html",
+      "specialty": "Urology",
+      "faqCount": 6,
+      "commentedOut": false,
+      "set": "mixed (permitted by PDF)",
+      "status": "matches-pdf"
+    }
+  ]
+}

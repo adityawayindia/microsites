@@ -491,7 +491,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(
   overflow: hidden;
   padding: 0;
   background-color: var(--bg);
-  background-image: url("../assets/hero-bg.jpg");
+  background-image: var(--static-image-hero-bg-jpg);
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;

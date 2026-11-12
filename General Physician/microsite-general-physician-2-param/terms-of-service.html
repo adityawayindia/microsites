@@ -43,6 +43,13 @@
     <link rel="stylesheet" href="{{path}}/styles/style.css" />
     <link rel="stylesheet" href="{{path}}/styles/legal.css" />
   <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-about-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/about-bg.png");
+      --static-image-contact-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/contact-bg.png");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
   <main class="legal-page">

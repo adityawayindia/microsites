@@ -56,12 +56,13 @@ header `nav` and the footer nav, matching the existing pattern for Gallery.
 </section>
 ```
 
-Recommended starter set (5 questions, tailor wording to the specialty):
-1. What conditions do you treat?
-2. Do I need a referral to book a consultation?
-3. What should I bring to my first appointment?
-4. Do you offer online consultations?
-5. Is emergency/urgent care available?
+Use six question-and-answer pairs from the matching specialty in
+`DigiDr_FAQ_6_Sets_22_Specialities.pdf`. One complete set or a reshuffled selection
+within that specialty is permitted. Preserve valid existing selections and keep
+source and `-param` versions identical. For new numbered drafts without an assigned
+selection, use the matching set number (1–6). Ayurveda, Homeopathy, and Radiology
+are absent from this PDF; keep their existing FAQs until another source is supplied.
+See AGENTS.md §39 for specialty mappings and the repeatable content audit.
 
 **Important:** every `<p>` must sit inside a `.faq-answer-inner` wrapper, which sits
 inside `.faq-answer`. Skipping the inner wrapper reintroduces a text-clipping bug (see

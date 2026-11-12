@@ -1175,7 +1175,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   background:
     /* cream wash keeps the dark hero text AA-legible over the globules photo */
     linear-gradient(90deg, rgba(250, 248, 241, 0.95) 0%, rgba(250, 248, 241, 0.86) 30%, rgba(250, 248, 241, 0.5) 52%, rgba(250, 248, 241, 0.08) 75%),
-    url("../assets/hero-bg.jpg") center / cover no-repeat,
+    var(--static-image-hero-bg-jpg) center / cover no-repeat,
     linear-gradient(135deg, #faf8f1 0%, #eaf1e1 55%, #e2ecd6 100%);
   border-bottom: 3px solid var(--amber);
 }
@@ -2862,7 +2862,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 .hero-section {
   background:
     linear-gradient(90deg, rgba(13, 30, 52, 0.98) 0%, rgba(21, 42, 70, 0.94) 48%, rgba(31, 78, 121, 0.96) 100%),
-    url('../assets/hero-mineral-grid.jpg') center / cover no-repeat;
+    var(--static-image-hero-mineral-grid-jpg) center / cover no-repeat;
   border-bottom: 4px solid var(--amber);
   color: #ffffff;
 }

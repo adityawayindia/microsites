@@ -79,6 +79,12 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-hero-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg.jpg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
@@ -237,7 +243,7 @@
       <div class="about-aside">
         <div class="about-photo-glow" aria-hidden="true"></div>
         <div class="about-photo-frame">
-          <img src="assets/about-photo.jpg" alt="Bright, modern dental treatment room at Dr. {{full_name}}'s practice, with a dental chair and overhead light" loading="lazy" width="900" height="600" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/about-photo.jpg" alt="Bright, modern dental treatment room at Dr. {{full_name}}'s practice, with a dental chair and overhead light" loading="lazy" width="900" height="600" />
         </div>
       </div>
 
@@ -328,7 +334,7 @@
     <div class="container philosophy-layout">
       <div class="philosophy-visual">
         <div class="philosophy-img-frame">
-          <img src="assets/philosophy-photo.jpg" alt="A dentist studying dental X-rays on a light box, reflecting a careful, diagnosis-first approach to dental care" loading="lazy" width="1000" height="667" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-photo.jpg" alt="A dentist studying dental X-rays on a light box, reflecting a careful, diagnosis-first approach to dental care" loading="lazy" width="1000" height="667" />
         </div>
         <div class="philosophy-badge">
           <div class="philosophy-badge-icon"><i class="fa-solid fa-tooth" aria-hidden="true"></i></div>

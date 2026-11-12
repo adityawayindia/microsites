@@ -81,6 +81,13 @@
     }
   }
   </script>
+  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-lifeline-bg-png: url("https://storage.googleapis.com/digidr/{{slug}}/assets/Lifeline BG.png");
+      --static-image-journey-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/journey-bg.jpg");
+    }
+  </style>
 </head>
 <body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}">
 
@@ -247,7 +254,7 @@
       <div class="peds4-about-visual">
         <div class="peds4-about-photo-offset" aria-hidden="true"></div>
         <div class="peds4-about-photo">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-pediatrician-4/assets/about-photo.jpg" alt="Doctor examining a young child during a pediatric consultation at Dr. {{full_name}}'s clinic" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/about-photo.jpg" alt="Doctor examining a young child during a pediatric consultation at Dr. {{full_name}}'s clinic" loading="lazy" />
         </div>
       </div>
 
@@ -368,7 +375,7 @@
       <div class="peds4-philosophy-visual">
         <div class="peds4-philosophy-photo-offset" aria-hidden="true"></div>
         <div class="peds4-philosophy-photo">
-          <img src="https://storage.googleapis.com/microsite_buck/microsite-pediatrician-4/assets/philosophy-photo.jpg" alt="Child gently examining a teddy bear with a stethoscope, reflecting a warm, playful approach to pediatric care" loading="lazy" />
+          <img src="https://storage.googleapis.com/digidr/{{slug}}/assets/philosophy-photo.jpg" alt="Child gently examining a teddy bear with a stethoscope, reflecting a warm, playful approach to pediatric care" loading="lazy" />
         </div>
       </div>
     </div>

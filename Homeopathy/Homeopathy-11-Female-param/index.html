@@ -64,7 +64,14 @@
     "addressCountry": "IN"
   }
 }</script>
-<meta content="https://digidr.app/{{slug}}/" property="og:url"/></head>
+<meta content="https://digidr.app/{{slug}}/" property="og:url"/>  <!-- Static image URLs are rendered here; external stylesheets only consume these values. -->
+  <style id="static-image-urls">
+    :root {
+      --static-image-hero-bg-jpg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/hero-bg.jpg");
+      --static-image-botanical-orbit-svg: url("https://storage.googleapis.com/digidr/{{slug}}/assets/botanical-orbit.svg");
+    }
+  </style>
+</head>
 <body data-ga4-id="" data-micrositeid="{{micrositeId}}" data-slug="{{slug}}"><a class="skip-link" href="#main">Skip to main content</a>
 <!-- ====== HEADER ====== -->
 <header class="site-header">
@@ -168,7 +175,7 @@
 <section class="about-section" id="about">
 <div class="container about-layout">
 <div class="about-aside">
-<div class="about-photo-frame"><img alt="Consultation notes, stethoscope and a small plant on a bright desk" height="1125" loading="lazy" src="assets/case-notes.webp" width="900"/></div>
+<div class="about-photo-frame"><img alt="Consultation notes, stethoscope and a small plant on a bright desk" height="1125" loading="lazy" src="https://storage.googleapis.com/digidr/{{slug}}/assets/case-notes.webp" width="900"/></div>
 <div class="about-note"><i aria-hidden="true" class="fa-solid fa-notes-medical"></i><div><strong>Detailed Case Review</strong><span>History, medicines, routines and priorities</span></div></div>
 </div>
 <div class="about-content">
@@ -221,7 +228,7 @@
 <div class="container philosophy-layout">
 <div class="philosophy-visual">
 <div aria-hidden="true" class="philosophy-img-glow"></div>
-<div class="philosophy-img-frame"><img alt="Amber remedy bottle arranged with dried botanicals on a light surface" height="880" loading="lazy" src="assets/remedy-study.webp" width="920"/></div>
+<div class="philosophy-img-frame"><img alt="Amber remedy bottle arranged with dried botanicals on a light surface" height="880" loading="lazy" src="https://storage.googleapis.com/digidr/{{slug}}/assets/remedy-study.webp" width="920"/></div>
 <div class="philosophy-badge"><div class="philosophy-badge-icon"><i aria-hidden="true" class="fa-solid fa-scale-balanced"></i></div><div class="philosophy-badge-text"><strong>Measured Care</strong><span>Clear follow up and boundaries</span></div></div>
 </div>
 <div class="philosophy-content">

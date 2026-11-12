@@ -1183,7 +1183,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   background:
     /* slight cream overlay keeps the dark hero text AA-legible over the photo */
     linear-gradient(90deg, rgba(253, 244, 240, 0.88) 0%, rgba(253, 244, 240, 0.62) 50%, rgba(253, 244, 240, 0.3) 100%),
-    url("../assets/hero-bg.jpg") 0% 40% / 115% auto no-repeat,
+    var(--static-image-hero-bg-jpg) 0% 40% / 115% auto no-repeat,
     linear-gradient(135deg, #fdf4f0 0%, #f8e6e0 55%, #f1d5cc 100%);
   border-bottom: 3px solid var(--amber);
 }
@@ -2086,7 +2086,7 @@ h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--ink); 
   .hero-section {
     background:
       linear-gradient(180deg, rgba(253, 244, 240, 0.35) 0%, rgba(253, 244, 240, 0.5) 100%),
-      url("../assets/hero-bg.jpg") 62% center / cover no-repeat,
+      var(--static-image-hero-bg-jpg) 62% center / cover no-repeat,
       linear-gradient(135deg, #fdf4f0 0%, #f8e6e0 55%, #f1d5cc 100%);
   }
   .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 36px; }
@@ -2703,7 +2703,7 @@ body.footer-in-view .chatbot-fab-wrap:not(.is-open) .chatbot-fab {
 .hero-section {
   background:
     linear-gradient(100deg, rgba(8, 40, 38, 0.95) 0%, rgba(15, 58, 55, 0.88) 50%, rgba(15, 58, 55, 0.66) 100%),
-    url("../assets/hero-bg.jpg") center 35% / cover no-repeat,
+    var(--static-image-hero-bg-jpg) center 35% / cover no-repeat,
     var(--ink);
   border-bottom: 3px solid var(--amber);
 }
@@ -2757,7 +2757,7 @@ body.footer-in-view .chatbot-fab-wrap:not(.is-open) .chatbot-fab {
   .hero-section {
     background:
       linear-gradient(180deg, rgba(8, 40, 38, 0.92) 0%, rgba(15, 58, 55, 0.88) 100%),
-      url("../assets/hero-bg.jpg") 60% center / cover no-repeat,
+      var(--static-image-hero-bg-jpg) 60% center / cover no-repeat,
       var(--ink);
   }
   .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; }
