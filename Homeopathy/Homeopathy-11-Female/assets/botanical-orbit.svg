@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Abstract botanical line art">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f6eee8"/>
+      <stop offset="1" stop-color="#ede4db"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#d7a16b" stop-opacity=".28"/>
+      <stop offset=".7" stop-color="#d7a16b" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#d7a16b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="600" cy="420" r="350" fill="url(#halo)"/>
+  <g fill="none" stroke="#4b244a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".32">
+    <path d="M100 820C230 690 270 515 230 330C205 210 245 115 340 60"/>
+    <path d="M225 340c-80-30-135-75-170-137c79 1 141 27 186 78"/>
+    <path d="M203 465c-88-15-154-56-199-123c91-7 164 16 217 69"/>
+    <path d="M185 604c-89 6-160-20-216-76c89-28 166-20 231 24"/>
+    <path d="M1100 850c-145-128-194-300-160-489c22-121-23-216-120-275"/>
+    <path d="M950 365c82-28 139-71 176-132c-80-1-143 23-190 73"/>
+    <path d="M970 493c89-12 156-51 204-116c-91-11-165 9-220 60"/>
+    <path d="M995 630c89 9 160-14 219-68c-88-31-165-26-231 16"/>
+  </g>
+  <g fill="none" stroke="#476b5d" stroke-width="2.4" opacity=".34">
+    <circle cx="600" cy="420" r="270" stroke-dasharray="8 14"/>
+    <circle cx="600" cy="420" r="330" stroke-dasharray="2 18"/>
+  </g>
+  <g fill="#476b5d" opacity=".12">
+    <circle cx="330" cy="150" r="16"/><circle cx="895" cy="176" r="12"/>
+    <circle cx="248" cy="695" r="11"/><circle cx="965" cy="726" r="17"/>
+  </g>
+</svg>

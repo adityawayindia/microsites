@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dr. {{full_name}} | {{speciality}} — Care for growing families</title><meta name="description" content="Pediatric care with Dr. {{full_name}}: newborn visits, childhood health, growth reviews and online consultations."><meta name="robots" content="index, follow"><link rel="canonical" href="https://digidr.app/{{slug}}/"><meta property="og:type" content="website"><meta property="og:site_name" content="Dr. {{full_name}}"><meta property="og:title" content="Dr. {{full_name}} | {{speciality}} — Care for growing families"><meta property="og:description" content="Pediatric care with Dr. {{full_name}}: newborn visits, childhood health, growth reviews and online consultations."><meta property="og:url" content="https://digidr.app/{{slug}}/"><meta property="og:image" content="{{profile}}"><meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}"><meta property="og:locale" content="en_IN"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}} — Care for growing families"><meta name="twitter:description" content="Pediatric care with Dr. {{full_name}}: newborn visits, childhood health, growth reviews and online consultations."><meta name="twitter:image" content="{{profile}}"><meta name="theme-color" content="#174d48"><link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"><link rel="stylesheet" href="{{path}}/styles/banner-module.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css"><link rel="stylesheet" href="{{path}}/styles/style.css"><link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css">
+<!-- GA4 placeholder retained at the owner's request; replace before deployment. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER_MICROSITE_PEDIATRICIAN_6"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLACEHOLDER_MICROSITE_PEDIATRICIAN_6');</script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,'clarity','script','ymqvcvdc4v');clarity('set','microsite','{{slug}}');clarity('set','specialty','pediatrician');</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. {{full_name}}",
+  "medicalSpecialty": "Pediatric",
+  "image": "{{profile}}",
+  "url": "https://digidr.app/{{slug}}/",
+  "telephone": "+{{code}}-{{phone}}",
+  "email": "{{email}}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{address}}",
+    "addressLocality": "{{city}}",
+    "addressRegion": "{{state}}",
+    "postalCode": "{{pincode}}",
+    "addressCountry": "IN"
+  }
+}</script>
+</head>
+<body data-micrositeid="{{micrositeId}}" data-slug="{{slug}}"><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="container navbar">
+    <a href="/{{slug}}/" class="brand" aria-label="Dr. {{full_name}}, {{speciality}}">
+      <span class="avatar">
+        <img src="{{profile}}" alt="Dr. {{full_name}}" />
+      </span>
+      <span class="brand-text">
+        <span class="brand-name" title="Dr. {{full_name}}">Dr. {{full_name}}</span>
+        <span class="brand-role">{{speciality}}</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+      <a href="/{{slug}}/#about" data-ga-event="nav_link_click" data-ga-label="About">About</a>
+      <a href="/{{slug}}/#services" data-ga-event="nav_link_click" data-ga-label="Services">Services</a>
+      <a href="/{{slug}}/#contact-us" data-ga-event="nav_link_click" data-ga-label="Contact">Contact</a>
+      <a href="/{{slug}}/#gallery" data-ga-event="nav_link_click" data-ga-label="Gallery">Gallery</a>
+      <a href="/{{slug}}/#faq" data-ga-event="nav_link_click" data-ga-label="FAQ">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#" class="cta-btn" id="openBookingBtn" data-ga-event="book_appointment_click" data-ga-label="Navbar">
+        <span class="cta-text-desktop">Book Appointment</span>
+        <span class="cta-text-mobile">Appointment</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main-content">
+<section class="hero-section" id="home">
+  <!-- Optional promotional banner: inactive until a campaign is configured. -->
+  {{#has_banner}}
+<div
+  class="digidr-banner-module single-image-banner-section"
+  id="digidrBannerModule"
+  data-banner-active="true"
+  data-banner-start="{{banner_start}}"
+  data-banner-end="{{banner_end}}"
+  aria-label="Main Clinic Banner"
+  data-banner-src="{{banner_src}}"
+  data-banner-src-mobile="{{banner_src_mobile}}"
+  data-banner-alt="{{banner_alt}}"
+  data-banner-href="/{{slug}}/#contact-us"
+>
+  <div class="container digidr-banner-container single-image-banner-container">
+    <a href="#" class="digidr-banner-link" id="digidrBannerLink" aria-label="Clinic Promo Banner">
+      <div class="digidr-banner-wrap single-image-banner-wrap">
+        <picture>
+          <source media="(max-width: 768px)" srcset="{{banner_src_mobile}}" />
+          <img src="{{banner_src}}" alt="{{banner_alt}}" class="digidr-banner-img single-image-banner-img" id="digidrBannerImg" loading="eager" />
+        </picture>
+      </div>
+    </a>
+  </div>
+</div>
+{{/has_banner}}
+  <div class="hero-pattern" aria-hidden="true"><svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M1050 80q80-100 160 0m-140 0q60-75 120 0m-100 0q40-50 80 0"/><path d="M120 590c50-100 170-20 210-110s140-20 180-100" stroke-dasharray="5 14"/><path d="m710 95 10 24 25 2-19 17 5 25-21-13-22 13 6-25-19-17 25-2z"/><path d="M1300 500v80m-40-40h80"/><circle cx="90" cy="170" r="35"/><circle cx="1390" cy="310" r="16"/></g></svg></div>
+  <div class="container hero-layout">
+    <div class="hero-content"><span class="section-kicker"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Little steps. Healthy beginnings.</span><h1>Dr. {{full_name}}</h1><span class="hero-role">{{speciality}}</span><p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{awards}},{{education}}</p>{{#hasmic}}<p class="hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Medical Regd. No.: {{mci}}</p>{{/hasmic}}<!-- {{#hasFellowship}} --><p class="hero-credentials" data-hero-fellowship><i class="fa-solid fa-award" aria-hidden="true"></i> Fellowship: {{fellowship}}</p><!-- {{/hasFellowship}} --><p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> {{languages}}</p><h2 class="hero-message">Growing up,<br> <em>together.</em></h2><p class="hero-description">From first smiles to new school days, thoughtful pediatric care that makes room for every child — and every parent’s questions.</p>
+    <div class="hero-actions"><button type="button" class="cta-btn primary-btn" data-ga-event="book_appointment_click" data-ga-label="Hero">Book Appointment <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button><a class="hero-text-link" href="/{{slug}}/#services">Explore care <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></div>
+    <div class="hero-stats-grid"><article class="hero-stat-box"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><strong data-counter data-practising-since>{{practising_since}}</strong><span>Practising since</span></article><article class="hero-stat-box"><i class="fa-solid fa-language" aria-hidden="true"></i><strong data-counter>{{languages_count}}</strong><span>Languages</span></article><article class="hero-stat-box"><i class="fa-solid fa-comments" aria-hidden="true"></i><strong data-counter>{{consultation_modes_count}}</strong><span>Consultation modes</span></article></div><div class="social-links" aria-label="Social media links">{{#hasFacebook}}<a href="{{facebook}}" class="social" aria-label="Facebook Profile" data-tooltip="Facebook Profile" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>{{/hasFacebook}}{{#noFacebook}}<span class="social is-disabled" aria-label="Facebook Profile not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-facebook" aria-hidden="true"></i></span>{{/noFacebook}}
+{{#hasFacebookPage}}<a href="{{facebookpage}}" class="social" aria-label="Facebook Page" data-tooltip="Facebook Page" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>{{/hasFacebookPage}}{{#noFacebookPage}}<span class="social is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span>{{/noFacebookPage}}
+{{#hasInstagram}}<a href="{{instagram}}" class="social" aria-label="Instagram" data-tooltip="Instagram" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>{{/hasInstagram}}{{#noInstagram}}<span class="social is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>{{/noInstagram}}
+{{#hasTwitter}}<a href="{{twitter}}" class="social" aria-label="X" data-tooltip="X" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>{{/hasTwitter}}{{#noTwitter}}<span class="social is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></span>{{/noTwitter}}
+{{#hasLinkedin}}<a href="{{linkedin}}" class="social" aria-label="LinkedIn" data-tooltip="LinkedIn" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>{{/hasLinkedin}}{{#noLinkedin}}<span class="social is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span>{{/noLinkedin}}
+{{#hasWebsite}}<a href="{{website}}" class="social" aria-label="Website" data-tooltip="Website" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>{{/hasWebsite}}{{#noWebsite}}<span class="social is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>{{/noWebsite}}
+{{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="social" aria-label="WhatsApp" data-tooltip="WhatsApp" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>{{/hasWhatsapp}}{{#noWhatsapp}}<span class="social is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>{{/noWhatsapp}}
+{{#hasYoutube}}<a href="{{youtube}}" class="social" aria-label="YouTube" data-tooltip="YouTube" target="_blank" rel="noopener noreferrer" data-ga-event="hero_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>{{/hasYoutube}}{{#noYoutube}}<span class="social is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-youtube" aria-hidden="true"></i></span>{{/noYoutube}}</div></div>
+    <div class="hero-visual"><div class="portrait-halo" aria-hidden="true"></div><div class="hero-portrait"><img src="{{profile}}" width="900" height="1200" alt="Dr. {{full_name}}, male pediatrician" fetchpriority="high" /></div><div class="portrait-caption"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i><div><strong>Small patients. Big possibilities.</strong><span>Care that grows with your family.</span></div></div><span class="floating-icon floating-cloud" aria-hidden="true"><i class="fa-solid fa-cloud"></i></span><span class="floating-icon floating-star" aria-hidden="true"><i class="fa-solid fa-star"></i></span></div>
+  </div>
+</section>
+<section class="about-section" id="about"><div class="container about-layout"><div class="about-aside"><div class="about-photo"><img src="assets/family-consultation.jpg" alt="A father and his child talking with a male pediatrician" width="1000" height="750" loading="lazy" /></div><div class="photo-note"><i class="fa-solid fa-heart" aria-hidden="true"></i><span>A little listening goes a long way.</span></div></div><div class="about-content"><span class="section-kicker">Meet your pediatrician</span><h2 class="about-title">{{#has_about_section_title}}{{about_section_title}}{{/has_about_section_title}}{{#no_about_section_title}}A familiar face.<br>A thoughtful approach.{{/no_about_section_title}}</h2><p class="about-lede">{{#has_about_section_subtitle}}{{about_section_subtitle}}{{/has_about_section_subtitle}}{{#no_about_section_subtitle}}Every child has their own story. Their care should make space for it.{{/no_about_section_subtitle}}</p><div class="about-story-new read-more-wrap"><div class="read-more-content"><p>{{introduction}}</p></div><button class="read-more-btn" type="button" aria-expanded="false" data-ga-event="read_more_click"><span>Read More</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></div></div></div></section>
+<section class="services-section" id="services"><div class="container"><div class="section-heading services-header"><div><span class="section-kicker">Care at every stage</span><h2 class="services-title">{{#has_service_section_title}}{{service_section_title}}{{/has_service_section_title}}{{#no_service_section_title}}For the everyday.<br>And the growing-up days.{{/no_service_section_title}}</h2></div><p class="services-subtitle">{{#has_service_section_subtitle}}{{service_section_subtitle}}{{/has_service_section_subtitle}}{{#no_service_section_subtitle}}A range of pediatric services, with your child’s comfort and your family’s questions at the centre.{{/no_service_section_subtitle}}</p></div><div class="services-grid">{{#services}}<article class="service-card"><div class="service-card-top"><span class="service-icon"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></span></div><h3>{{title}}</h3><p>{{description}}</p></article>{{/services}}</div></div></section>
+<section class="social-media-section" id="social-media">
+  <div class="container">
+    <div class="services-header social-media-header">
+      <span class="services-kicker social-media-kicker">
+        <i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Latest Updates
+      </span>
+      <h2 class="services-title social-media-title">From My Social Media</h2>
+      <p class="services-subtitle social-media-subtitle">
+        Updates from the practice, for parents and caregivers.
+      </p>
+    </div>
+
+    <div class="social-media-carousel-wrap">
+      <button type="button" class="social-carousel-btn social-carousel-prev" aria-label="Previous posts">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="social-carousel-btn social-carousel-next" aria-label="Next posts">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+      <div class="social-media-carousel" id="socialMediaCarousel">
+        <div class="social-media-track" id="socialMediaTrack"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="philosophy-section" id="philosophy"><div class="container philosophy-layout"><div class="philosophy-visual"><img src="assets/clinic-waiting.jpg" alt="An inviting pediatric waiting area with a reading and play corner" width="1000" height="750" loading="lazy" /><div class="philosophy-badge"><i class="fa-solid fa-seedling" aria-hidden="true"></i><strong>A space to feel at ease</strong></div></div><div class="philosophy-content"><span class="section-kicker">Care philosophy</span><h2>{{#has_philosophy_section_title}}{{philosophy_section_title}}{{/has_philosophy_section_title}}{{#no_philosophy_section_title}}Little people.<br>Whole-person care.{{/no_philosophy_section_title}}</h2><p class="philosophy-subtitle">{{#has_philosophy_section_subtitle}}{{philosophy_section_subtitle}}{{/has_philosophy_section_subtitle}}{{#no_philosophy_section_subtitle}}Children do better when they feel heard. Parents do too.{{/no_philosophy_section_subtitle}}</p><div class="philosophy-pillars"><article class="philosophy-pillar"><span class="pillar-icon"><i class="fa-solid fa-ear-listen" aria-hidden="true"></i></span><div><h3>{{#has_philosophy_section_pillar_text_1}}{{philosophy_section_pillar_text_1}}{{/has_philosophy_section_pillar_text_1}}{{#no_philosophy_section_pillar_text_1}}Listen first{{/no_philosophy_section_pillar_text_1}}</h3><p>{{#has_philosophy_section_pillar_subtext_1}}{{philosophy_section_pillar_subtext_1}}{{/has_philosophy_section_pillar_subtext_1}}{{#no_philosophy_section_pillar_subtext_1}}Time to understand your child, their routines and the concerns you bring.{{/no_philosophy_section_pillar_subtext_1}}</p></div></article>
+<article class="philosophy-pillar"><span class="pillar-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></span><div><h3>{{#has_philosophy_section_pillor_text_2}}{{philosophy_section_pillor_text_2}}{{/has_philosophy_section_pillor_text_2}}{{#no_philosophy_section_pillor_text_2}}Explain clearly{{/no_philosophy_section_pillor_text_2}}</h3><p>{{#has_philosophy_section_piller_subtext_2}}{{philosophy_section_piller_subtext_2}}{{/has_philosophy_section_piller_subtext_2}}{{#no_philosophy_section_piller_subtext_2}}Straightforward conversations about the assessment and the next steps.{{/no_philosophy_section_piller_subtext_2}}</p></div></article>
+<article class="philosophy-pillar"><span class="pillar-icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span><div><h3>{{#has_philosophy_section_pillar_text_3}}{{philosophy_section_pillar_text_3}}{{/has_philosophy_section_pillar_text_3}}{{#no_philosophy_section_pillar_text_3}}Grow together{{/no_philosophy_section_pillar_text_3}}</h3><p>{{#has_philosophy_section_pillar_subtext_3}}{{philosophy_section_pillar_subtext_3}}{{/has_philosophy_section_pillar_subtext_3}}{{#no_philosophy_section_pillar_subtext_3}}Continuity of care as your child’s needs change, one milestone at a time.{{/no_philosophy_section_pillar_subtext_3}}</p></div></article></div></div></div></section>
+<section class="process-section" id="process"><div class="container"><div class="section-heading"><div><span class="section-kicker">Consultation journey</span><h2>{{#has_process_section_about_title}}{{process_section_about_title}}{{/has_process_section_about_title}}{{#no_process_section_about_title}}What to expect{{/no_process_section_about_title}}</h2></div><p class="process-subtitle">{{#has_process_section_about_subtitle}}{{process_section_about_subtitle}}{{/has_process_section_about_subtitle}}{{#no_process_section_about_subtitle}}A clear, comfortable path from your first question to the next step in care.{{/no_process_section_about_subtitle}}</p></div><div class="journey-grid"><article class="process-step"><div class="step-marker"><span class="step-number">01</span><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></div><h3>{{#has_process_section_step_body_text_1}}{{process_section_step_body_text_1}}{{/has_process_section_step_body_text_1}}{{#no_process_section_step_body_text_1}}Appointment booking{{/no_process_section_step_body_text_1}}</h3><p>{{#has_process_section_step_body_subtext_1}}{{process_section_step_body_subtext_1}}{{/has_process_section_step_body_subtext_1}}{{#no_process_section_step_body_subtext_1}}Choose a clinic visit or an online consultation and a suitable available time.{{/no_process_section_step_body_subtext_1}}</p></article>
+<article class="process-step"><div class="step-marker"><span class="step-number">02</span><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></div><h3>{{#has_process_section_step_body_text_2}}{{process_section_step_body_text_2}}{{/has_process_section_step_body_text_2}}{{#no_process_section_step_body_text_2}}A conversation & assessment{{/no_process_section_step_body_text_2}}</h3><p>{{#has_process_section_step_body_subtext_2}}{{process_section_step_body_subtext_2}}{{/has_process_section_step_body_subtext_2}}{{#no_process_section_step_body_subtext_2}}Share your child’s concerns, history and records with the pediatrician.{{/no_process_section_step_body_subtext_2}}</p></article>
+<article class="process-step"><div class="step-marker"><span class="step-number">03</span><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></div><h3>{{#has_process_section_step_body_text_3}}{{process_section_step_body_text_3}}{{/has_process_section_step_body_text_3}}{{#no_process_section_step_body_text_3}}A plan you understand{{/no_process_section_step_body_text_3}}</h3><p>{{#has_process_section_step_body_subtext_3}}{{process_section_step_body_subtext_3}}{{/has_process_section_step_body_subtext_3}}{{#no_process_section_step_body_subtext_3}}Discuss the assessment and an individual care plan in clear, practical language.{{/no_process_section_step_body_subtext_3}}</p></article>
+<article class="process-step"><div class="step-marker"><span class="step-number">04</span><i class="fa-solid fa-seedling" aria-hidden="true"></i></div><h3>{{#has_process_section_step_body_text_4}}{{process_section_step_body_text_4}}{{/has_process_section_step_body_text_4}}{{#no_process_section_step_body_text_4}}Follow-up & growing well{{/no_process_section_step_body_text_4}}</h3><p>{{#has_process_section_step_body_subtext_4}}{{process_section_step_body_subtext_4}}{{/has_process_section_step_body_subtext_4}}{{#no_process_section_step_body_subtext_4}}Review progress and arrange follow-up as your child’s needs change.{{/no_process_section_step_body_subtext_4}}</p></article></div></div></section>
+<section class="contact-section" id="contact-us"><div class="container"><div class="section-heading"><div><span class="section-kicker">Let’s make a little progress</span><h2>Your next visit starts here.</h2></div><p class="contact-subtitle">{{#has_contact_us_subtitle}}{{contact_us_subtitle}}{{/has_contact_us_subtitle}}{{#no_contact_us_subtitle}}Find the clinic, get in touch, or choose a time to talk.{{/no_contact_us_subtitle}}</p></div><div class="contact-card" data-contact-card><div class="contact-item"><span class="contact-item-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span><div><h3>Visit the clinic</h3><p><strong>{{clinicname}}</strong><br>{{address}}<br>{{district}}, {{state}} - {{pincode}}</p></div></div><div class="contact-divider" aria-hidden="true"></div><div class="contact-item" data-contact-info><span class="contact-item-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span><div><h3>Get in touch</h3><p><a href="tel:+{{code}}{{phone}}" data-contact-phone data-ga-event="phone_number_click">+{{code}}-{{phone}}</a><br><a href="mailto:{{email}}" data-contact-email data-ga-event="email_click">{{email}}</a></p><button type="button" class="cta-btn" data-ga-event="book_appointment_click" data-ga-label="Contact">Book Appointment <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div></div></div></div></section>
+<section class="gallery-section" id="gallery"><div class="container"><div class="section-heading"><div><span class="section-kicker">A welcoming space</span><h2 class="gallery-title">{{#has_gallery_section_title}}{{gallery_section_title}}{{/has_gallery_section_title}}{{#no_gallery_section_title}}Room for little discoveries.{{/no_gallery_section_title}}</h2></div><p class="gallery-subtitle">{{#has_gallery_section_subtitle}}{{gallery_section_subtitle}}{{/has_gallery_section_subtitle}}{{#no_gallery_section_subtitle}}A glimpse of a child-friendly setting, designed for calmer visits.{{/no_gallery_section_subtitle}}</p></div><div class="gallery-grid">{{#images}}<figure class="gallery-item"><img src="{{image}}" alt="Pediatric practice gallery image" width="1000" height="750" loading="lazy" tabindex="0" role="button" aria-label="Enlarge practice gallery image" /></figure>{{/images}}</div></div></section>
+<section class="faq-section" id="faq"><div class="container faq-layout"><div class="faq-heading"><span class="section-kicker">A few helpful answers</span><h2>Frequently<br> asked questions.</h2><p>For the questions that come before the appointment.</p><div class="faq-decoration" aria-hidden="true"><i class="fa-solid fa-comments"></i></div></div><div class="faq-list"><article class="faq-item is-active"><h3><button type="button" class="faq-question" aria-expanded="true" aria-controls="faq-answer-1" id="faq-question-1"><span>Which age groups can visit the practice?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1"><div class="faq-answer-inner"><p>The practice welcomes newborns, infants, children and adolescents. Contact the clinic if you would like to check whether a particular concern is suitable for a pediatric appointment.</p></div></div></article>
+<article class="faq-item"><h3><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2"><span>What should we bring to the first appointment?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2"><div class="faq-answer-inner"><p>Bring your child’s vaccination card, growth records, previous prescriptions, relevant test reports and a list of current medicines. A short note of your questions can help you make the most of the visit.</p></div></div></article>
+<article class="faq-item"><h3><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3"><span>Can we book an online consultation?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3"><div class="faq-answer-inner"><p>Online consultations are available for suitable concerns and follow-ups. Select Online Consultation when booking. The doctor may recommend a clinic visit if a physical examination is needed.</p></div></div></article>
+<article class="faq-item"><h3><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4"><span>Can we discuss vaccinations during a visit?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4"><div class="faq-answer-inner"><p>Yes. Bring the vaccination card so the doctor can review the record and discuss the next steps. Please contact the clinic to check availability before arranging a vaccination visit.</p></div></div></article>
+<article class="faq-item"><h3><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5"><span>Who should complete the booking form?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5"><div class="faq-answer-inner"><p>A parent or lawful guardian should book on behalf of a child and provide their own contact details. Include the child’s age and the reason for the appointment in the visit description.</p></div></div></article>
+<article class="faq-item"><h3><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6"><span>Is this service suitable for emergencies?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6"><div class="faq-answer-inner"><p>This website and its appointment service are not for emergencies. If a child needs urgent medical attention, seek care at the nearest emergency facility.</p></div></div></article></div></div></section>
+</main>
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Practice gallery"><div class="gallery-lightbox-backdrop" id="galleryLightboxBackdrop"></div><figure class="gallery-lightbox-content"><img src="" alt="" id="galleryLightboxImage" /></figure><button class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image">&times;</button></div>
+<div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Book an appointment">
+  <div class="booking-modal-backdrop" id="bookingModalBackdrop"></div>
+  <div class="booking-modal-dialog" role="document">
+    <div class="booking-modal-header">
+      <button class="booking-modal-close" id="bookingModalClose" aria-label="Close booking form">&times;</button>
+
+      <div class="booking-modal-tabs" role="tablist" aria-label="Appointment type">
+        <button type="button" class="booking-tab is-active" id="clinicVisitTab" role="tab" aria-selected="true" data-ga-event="clinic_visit_tab_click">Clinic Visit</button>
+        <button type="button" class="booking-tab" id="onlineConsultTab" role="tab" aria-selected="false" data-ga-event="online_consult_tab_click" aria-describedby="onlineConsultTip">Online Consultation<span class="booking-tab-info" id="onlineConsultInfo" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span></button>
+      </div>
+      <div class="booking-tab-tip" id="onlineConsultTip" role="tooltip" hidden>Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.</div>
+    </div>
+
+    <form id="bookingForm" class="booking-form" novalidate data-userid="{{userid}}" data-address="{{address}}" data-clinicname="{{clinicname}}" data-pincode="{{pincode}}" data-state="{{state}}" data-district="{{district}}" data-city="{{city}}">
+      <div class="booking-form-row">
+        <div class="booking-field">
+          <label for="fullName">Parent / Guardian Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter parent or guardian name" autocomplete="name" required />
+          <p class="booking-error" data-error-for="fullName"></p>
+        </div>
+        <div class="booking-field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" autocomplete="tel" required />
+          <p class="booking-error" data-error-for="phone"></p>
+        </div>
+      </div>
+
+      <div class="booking-form-row">
+        <div class="booking-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Parent or guardian email" autocomplete="email" required />
+          <p class="booking-error" data-error-for="email"></p>
+        </div>
+        <div class="booking-field booking-field--date">
+          <label for="preferredDateText">Preferred Date</label>
+          <div class="booking-datepicker" id="preferredDateField">
+            <div class="booking-input-with-icon">
+              <input type="text" id="preferredDateText" class="booking-date-display" placeholder="Select a date" readonly autocomplete="off" />
+              <i class="fa-solid fa-calendar-days booking-date-icon" aria-hidden="true"></i>
+            </div>
+            <input type="hidden" id="preferredDate" name="preferredDate" />
+            <div class="booking-calendar" id="preferredDateCalendar" hidden>
+              <div class="booking-calendar-header">
+                <button type="button" class="booking-calendar-nav" data-cal-prev aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+                <span class="booking-calendar-title" data-cal-title></span>
+                <button type="button" class="booking-calendar-nav" data-cal-next aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+              <div class="booking-calendar-weekdays">
+                <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+              </div>
+              <div class="booking-calendar-grid" data-cal-grid></div>
+            </div>
+          </div>
+          <p class="booking-error" data-error-for="preferredDate"></p>
+        </div>
+      </div>
+
+      <div class="booking-form-row">
+        <div class="booking-field">
+          <label for="preferredTime">Preferred Time</label>
+          <div class="booking-select-wrap">
+            <select id="preferredTime" name="preferredTime" required>
+              <option value="">Select Time Slot</option>
+            </select>
+            <i class="fa-solid fa-chevron-down booking-select-icon" aria-hidden="true"></i>
+          </div>
+          <p class="booking-error" data-error-for="preferredTime"></p>
+        </div>
+      </div>
+
+      <div class="booking-field">
+        <label for="reason">Reason For Visit</label>
+        <textarea id="reason" name="reason" rows="3" placeholder="Tell us your child’s age and the reason for the visit..." required></textarea>
+        <p class="booking-error" data-error-for="reason"></p><p class="guardian-note">Appointments for children must be requested by a parent or lawful guardian.</p>
+      </div>
+
+      <div class="booking-field booking-field--file">
+        <label for="report">Upload Report</label>
+        <div class="booking-upload-row">
+          <label role="button" tabindex="0" class="booking-upload-btn" for="report" data-ga-event="upload_report_click">Upload</label>
+          <input type="file" id="report" name="report" accept=".jpg,.jpeg,.png,.pdf" />
+          <span class="booking-upload-help">PDF, JPG or PNG · maximum 5 MB</span>
+        </div>
+        <div class="booking-file-preview" id="filePreview"></div>
+        <p class="booking-error" data-error-for="report"></p>
+      </div>
+
+      <div class="booking-field booking-consent-field">
+        <input type="checkbox" id="consentCheckbox" name="consentCheckbox" required />
+        <label for="consentCheckbox">I agree to the Privacy Policy and consent to Dr. {{full_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at info@digidr.app.</label>
+      </div>
+      <p class="booking-error" data-error-for="consentCheckbox"></p>
+
+      <button type="submit" id="submitBtn" class="booking-submit-btn" disabled>Review Appointment</button>
+
+      <div class="booking-loader" id="bookingLoader" aria-hidden="true">
+        <div class="loader-spinner"></div>
+        <p>Booking your appointment...</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Patient Consent & Data Privacy panel (§37) -->
+<div class="booking-modal consent-modal" id="consentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="consentModalTitle">
+  <div class="booking-modal-backdrop" id="consentModalBackdrop"></div>
+  <div class="booking-modal-dialog consent-modal-dialog" role="document">
+    <div class="booking-modal-header consent-modal-header">
+      <button class="booking-modal-close" id="consentModalClose" aria-label="Close consent notice">&times;</button>
+      <h2 class="consent-modal-title" id="consentModalTitle">Patient Consent &amp; Data Privacy</h2>
+    </div>
+
+    <div class="consent-modal-body">
+      <p>By submitting this form, I consent to <strong>digidr.app</strong> collecting and processing the personal and health information provided by me, including my <strong>name, phone number, email address, appointment details, symptoms/reason for consultation, and uploaded medical reports</strong>, for scheduling, managing, and facilitating my consultation with the doctor.</p>
+
+      <h3>How we protect your information</h3>
+      <ul>
+        <li>Your personal and health information will be <strong>kept secure and confidential</strong> using appropriate safeguards.</li>
+        <li>Your information will <strong>not be sold or shared for marketing or unrelated purposes</strong>.</li>
+        <li>Information may be shared only where necessary to facilitate the requested healthcare service, with my authorisation, or where required or permitted by applicable law.</li>
+        <li>Medical reports and health information will be handled only for legitimate healthcare and related service purposes.</li>
+      </ul>
+
+      <h3>Your rights</h3>
+      <p>Subject to applicable law and necessary medical-record retention requirements, you may request <strong>access, correction, deletion, or withdrawal of consent</strong> regarding your personal information.</p>
+
+      <h3>Questions or Complaints</h3>
+      <p>For any privacy concern, complaint, or request relating to your personal data, you may contact:</p>
+      <p class="consent-contact"><strong>Compliance Officer &ndash; DigiDr.app</strong><br /><strong>Email:</strong> <a href="mailto:info@digidr.app">info@digidr.app</a></p>
+
+      <p>By clicking on I Agree button, I confirm that I have <strong>read and understood this consent notice and agree to the processing of my information for the purposes stated above.</strong></p>
+
+      <p class="consent-modal-links"><a href="/{{slug}}/privacy-policy">Privacy Policy</a> | <a href="/{{slug}}/terms-of-service">Terms &amp; Conditions</a></p>
+    </div>
+
+    <div class="consent-modal-footer" id="consentModalFooter">
+      <p class="consent-scroll-hint" id="consentScrollHint"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Please read the full notice to continue</p>
+      <button type="button" class="booking-submit-btn consent-agree-btn" id="consentAgreeBtn" disabled>
+        <span class="consent-agree-label" id="consentAgreeLabel">I Agree</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="booking-modal review-modal" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle" aria-hidden="true"><div class="booking-modal-backdrop" data-review-close></div><div class="booking-modal-dialog review-dialog"><button class="booking-modal-close" type="button" data-review-close aria-label="Back to appointment form">&times;</button><span class="section-kicker">One last check</span><h2 id="reviewTitle">Review your appointment</h2><p>Please check your details before confirming.</p><dl id="reviewDetails"></dl><div class="review-actions"><button class="outline-btn" type="button" data-review-close>Edit details</button><button class="primary-btn" id="confirmBooking" type="button">Confirm Appointment</button></div></div></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <a href="/{{slug}}/" class="brand">
+        <span class="avatar">
+          <img src="{{profile}}" alt="Dr. {{full_name}}" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Dr. {{full_name}}</span>
+          <span class="brand-role">{{speciality}}</span>
+        </span>
+      </a>
+      <p class="footer-tagline">Thoughtful care for every little milestone.</p>
+      <div class="footer-social-wrap">
+        <span class="footer-social-label">Follow me on:</span>
+        <div class="footer-social">
+{{#hasFacebook}}<a href="{{facebook}}" class="footer-social-item" aria-label="Facebook Profile" data-tooltip="Facebook Profile" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Facebook Profile"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>{{/hasFacebook}}{{#noFacebook}}<span class="footer-social-item is-disabled" aria-label="Facebook Profile not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-facebook" aria-hidden="true"></i></span>{{/noFacebook}}
+{{#hasFacebookPage}}<a href="{{facebookpage}}" class="footer-social-item" aria-label="Facebook Page" data-tooltip="Facebook Page" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Facebook Page"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>{{/hasFacebookPage}}{{#noFacebookPage}}<span class="footer-social-item is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span>{{/noFacebookPage}}
+{{#hasInstagram}}<a href="{{instagram}}" class="footer-social-item" aria-label="Instagram" data-tooltip="Instagram" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>{{/hasInstagram}}{{#noInstagram}}<span class="footer-social-item is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>{{/noInstagram}}
+{{#hasTwitter}}<a href="{{twitter}}" class="footer-social-item" aria-label="X" data-tooltip="X" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>{{/hasTwitter}}{{#noTwitter}}<span class="footer-social-item is-disabled" aria-label="X not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></span>{{/noTwitter}}
+{{#hasLinkedin}}<a href="{{linkedin}}" class="footer-social-item" aria-label="LinkedIn" data-tooltip="LinkedIn" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>{{/hasLinkedin}}{{#noLinkedin}}<span class="footer-social-item is-disabled" aria-label="LinkedIn not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span>{{/noLinkedin}}
+{{#hasWebsite}}<a href="{{website}}" class="footer-social-item" aria-label="Website" data-tooltip="Website" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="Website"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>{{/hasWebsite}}{{#noWebsite}}<span class="footer-social-item is-disabled" aria-label="Website not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>{{/noWebsite}}
+{{#hasWhatsapp}}<a href="https://wa.me/91{{whatsapp}}" class="footer-social-item" aria-label="WhatsApp" data-tooltip="WhatsApp" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>{{/hasWhatsapp}}{{#noWhatsapp}}<span class="footer-social-item is-disabled" aria-label="WhatsApp not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>{{/noWhatsapp}}
+{{#hasYoutube}}<a href="{{youtube}}" class="footer-social-item" aria-label="YouTube" data-tooltip="YouTube" target="_blank" rel="noopener noreferrer" data-ga-event="footer_social_link_click" data-ga-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>{{/hasYoutube}}{{#noYoutube}}<span class="footer-social-item is-disabled" aria-label="YouTube not linked" data-tooltip="Not Enabled" aria-disabled="true" role="link" tabindex="0"><i class="fa-brands fa-youtube" aria-hidden="true"></i></span>{{/noYoutube}}
+</div>
+      </div>
+    </div>
+
+    <div class="footer-right-col">
+      <div class="footer-links-group">
+        <h4 aria-level="2">Quick Links</h4>
+        <nav class="footer-nav" aria-label="Quick links">
+          <a href="/{{slug}}/#about" data-ga-event="footer_nav_link_click" data-ga-label="About">About</a>
+          <a href="/{{slug}}/#services" data-ga-event="footer_nav_link_click" data-ga-label="Services">Services</a>
+          <a href="/{{slug}}/#contact-us" data-ga-event="footer_nav_link_click" data-ga-label="Contact">Contact</a>
+          <a href="/{{slug}}/#faq" data-ga-event="footer_nav_link_click" data-ga-label="FAQ">FAQ</a>
+          <a href="/{{slug}}/#gallery" data-ga-event="footer_nav_link_click" data-ga-label="Gallery">Gallery</a>
+        </nav>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 aria-level="2">Legal</h4>
+        <nav class="footer-nav" aria-label="Legal">
+          <a href="/{{slug}}/privacy-policy" data-ga-event="footer_nav_link_click" data-ga-label="Privacy Policy">Privacy Policy</a>
+          <a href="/{{slug}}/terms-of-service" data-ga-event="footer_nav_link_click" data-ga-label="Terms of Service">Terms of Service</a>
+        </nav>
+      </div>
+
+      <div class="footer-visitor-badge" role="status">
+        <i class="fa-solid fa-users footer-visitor-badge-icon" aria-hidden="true"></i>
+        <span class="footer-visitor-badge-label">No. of Visitor:</span>
+        <strong class="footer-visitor-badge-count" id="visitorCount">0</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-row">
+    <p>&copy; 2026 Dr. {{full_name}}. <span class="footer-rights">All rights reserved.</span></p>
+  </div>
+  
+  <p class="footer-disclaimer">Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation.<br>In an emergency, call 112 or go to the nearest hospital.</p>
+</footer>
+<script src="{{path}}/script/banner-module.js"></script><script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script><script src="{{path}}/script/analytics.js"></script><script src="{{path}}/script/index.js"></script><script src="{{path}}/script/chatbot.js" defer></script>
+<script>
+  (function () {
+    const micrositeId = document.body.dataset.micrositeid;
+    const el = document.getElementById("visitorCount");
+    if (!micrositeId || !el) return;
+
+    fetch(`https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, {
+      method: "POST"
+    })
+      .then(res => res.ok ? res.json() : Promise.reject(res.status))
+      .then(data => {
+        el.textContent = data.visitorCount.toLocaleString();
+      })
+      .catch(err => console.error("Visitor count error:", err));
+  })();
+</script>
+</body>
+</html>

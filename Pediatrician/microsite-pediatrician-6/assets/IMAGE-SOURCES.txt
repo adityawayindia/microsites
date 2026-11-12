@@ -1,0 +1,16 @@
+IMAGE SOURCES — Pediatrician 6
+Generated with the built-in OpenAI image generation tool on 12 November 2026.
+Original fictional people and clinic interiors. Not photographs of an actual doctor or practice.
+No third-party stock photographs were used. JPEG encoding and resizing are for web performance.
+
+doctor-aarav-menon.jpg
+Final generation prompt: Use case: photorealistic-natural. Asset type: portrait photograph for a pediatrician website template. Create an original fictional Indian male pediatrician, around 38 years old, short neatly styled black hair, clean-shaven, friendly natural smile, wearing a white doctor's coat over a muted teal shirt and a stethoscope. Waist-up portrait, seated, looking at the camera, hands relaxed and anatomically correct. A bright contemporary child-friendly consultation room softly out of focus, warm ivory walls and subtle sage details. Natural window light, realistic skin texture, refined editorial healthcare photography, welcoming and professional. Portrait 3:4 composition with generous space around his head and shoulders. No text, logos, watermarks, badges, or other people.
+
+family-consultation.jpg
+Final generation prompt: Use case: photorealistic-natural. Asset type: wide image for a pediatric clinic website. An original warm editorial photograph of a cheerful Indian father seated beside his fully clothed five-year-old son in a bright modern pediatric consultation room, both listening comfortably to a male pediatrician whose shoulder and white coat are visible in the foreground with his face out of frame. The child is smiling gently and holding a small wooden toy airplane. Child-centered, calm, everyday conversation without a medical procedure. Soft natural daylight, ivory walls, muted teal and sage accents, realistic anatomy and natural skin texture, uncluttered professional clinic setting. Landscape 4:3 framing. No text, signage, logos, watermarks or medical claims.
+
+clinic-waiting.jpg
+Final generation prompt: Use case: photorealistic-natural. Asset type: clinic interior photo for a pediatrician website. Create an original high-end editorial architectural photograph of a welcoming Indian pediatric clinic waiting and play area, no people. Warm ivory walls, sage green upholstered benches, light oak furniture, a tidy low bookshelf with colorful children's books, a few wooden toys, a subtle tree mural in muted teal, rounded architectural details, large windows with natural daylight, clean spacious realistic interior. Calm, friendly, accessible and professional, not a toy store. Landscape 4:3 composition. No readable text, logos, watermark, posters, or signage.
+
+clinic-examination.jpg
+Final generation prompt: Use case: photorealistic-natural. Asset type: pediatric examination room image for a doctor website template. Original editorial architectural photograph of a clean, welcoming pediatric examination room in India, no people. A modern examination couch with cream upholstery, a small child-height stool, neatly organized medical tools on a closed cabinet, light oak desk, sage green and warm ivory palette, minimal framed drawings of leaves and a little bird, soft daylight. Spacious, professional and child-friendly with realistic furniture proportions. Landscape 4:3 composition. No text, logos, watermarks, syringes, or dramatic lighting.

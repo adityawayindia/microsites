@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 320" role="img" aria-label="Homeopathy consultation banner">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#3b183a"/>
+      <stop offset=".58" stop-color="#4b244a"/>
+      <stop offset="1" stop-color="#6a3e4f"/>
+    </linearGradient>
+    <radialGradient id="r" cx="80%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#d7a16b" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#d7a16b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="2048" height="320" rx="28" fill="url(#g)"/>
+  <rect width="2048" height="320" rx="28" fill="url(#r)"/>
+  <g fill="none" stroke="#f6eee8" stroke-width="3" opacity=".22">
+    <path d="M1590 320c60-110 97-220 94-320M1682 215c-77-29-126-74-149-134c76 4 132 31 169 82M1680 122c72-28 120-66 146-115"/>
+    <path d="M1885 320c-30-90-34-186-10-288M1876 150c-58-16-101-49-128-100c61-3 110 14 147 52"/>
+  </g>
+  <g transform="translate(112 78)">
+    <text x="0" y="0" fill="#d7a16b" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4">DR. EVELYN THORNE</text>
+    <text x="0" y="68" fill="#ffffff" font-family="Georgia, serif" font-size="54" font-weight="700">Detailed consultations. Clear follow up.</text>
+    <text x="0" y="116" fill="#f6eee8" font-family="Manrope, Arial, sans-serif" font-size="25">Clinic and online appointments in Bengaluru</text>
+  </g>
+  <g transform="translate(1752 72)">
+    <circle cx="82" cy="82" r="80" fill="#f6eee8" opacity=".96"/>
+    <circle cx="82" cy="82" r="62" fill="#dce7df"/>
+    <path d="M82 35c-32 24-48 52-48 84c30-8 49-26 58-54c5 28 21 49 48 63c3-41-16-72-58-93z" fill="#476b5d"/>
+    <circle cx="82" cy="84" r="14" fill="#d7a16b"/>
+  </g>
+</svg>
