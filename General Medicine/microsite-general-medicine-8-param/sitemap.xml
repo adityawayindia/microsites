@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Per-microsite sitemap draft for backend root merge. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://digidr.app/{{slug}}/</loc></url><url><loc>https://digidr.app/{{slug}}/privacy-policy</loc></url><url><loc>https://digidr.app/{{slug}}/terms-of-service</loc></url></urlset>

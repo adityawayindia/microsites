@@ -168,3 +168,12 @@ No commit, push or deployment.
 CONSULTATION JOURNEY CORRECTION - 13 November 2026
 Replaced the narrow single-column list with two equal columns of compact cards, stacking at 640px. Numbers and icons share a row; headings and descriptions align consistently. Source and param responsive checks passed at 320, 375, 768, 1024, 1440 and 1900px, with zero detected accessibility violations. Only journey CSS changed; booking logic unchanged. No commit or push.
 
+
+
+IMAGE REFRESH - 13 November 2026
+The original build checklist above is retained. This update changes only image assets, their references/alternative text, provenance and this audit note.
+Replaced the reception/lounge image with a dental teaching model, mouth mirror and clear aligner. The dental treatment-chair and examination-instrument images remain appropriate.
+PASS: source and rendered param checked at 1440, 768 and 375 pixels; all three gallery images load at equal dimensions, no horizontal overflow, replacement About image loads, and lightbox image opens correctly.
+All generated supporting images are people-free; images and complete prompts recorded in assets/IMAGE-SOURCES.txt. Static param image references retain the required slug-based bucket format.
+Scripts, styles, doctor portraits and legal pages were not changed. No commit or push. Live storage upload was not performed.
+Evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-dentist-image-review

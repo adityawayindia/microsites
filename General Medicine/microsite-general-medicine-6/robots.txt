@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-ishaan-rao/
+Disallow: /dr-ishaan-rao/privacy-policy.html
+Disallow: /dr-ishaan-rao/terms-of-service.html
+Sitemap: https://digidr.app/dr-ishaan-rao/sitemap.xml

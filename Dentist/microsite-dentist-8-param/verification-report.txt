@@ -163,3 +163,12 @@ Source / parameterized parity | PASS | styles/style.css | Matching visual identi
 Current sampled text contrast: .hero-stat-box span 6.23:1; .service-card p 6.39:1; .process-step p 6.39:1; .chatbot-footer 6.46:1; .cta-btn 7.46:1; .hero-content h1 10.09:1; .footer-disclaimer 12.55:1; .philosophy-caption span 14.24:1; .chatbot-msg-bubble 17.85:1.
 External delivery remains unverified: this revision uses the existing local API/SDK fixtures; production booking persistence, live Facebook content and analytics delivery were not tested.
 No commit, push or deployment.
+
+
+IMAGE REFRESH - 13 November 2026
+The original build checklist above is retained. This update changes only image assets, their references/alternative text, provenance and this audit note.
+Replaced the reception/lounge image with a dental teaching model, mouth mirror and clear aligner. The dental treatment-chair and examination-instrument images remain appropriate.
+PASS: source and rendered param checked at 1440, 768 and 375 pixels; all three gallery images load at equal dimensions, no horizontal overflow, replacement About image loads, and lightbox image opens correctly.
+All generated supporting images are people-free; images and complete prompts recorded in assets/IMAGE-SOURCES.txt. Static param image references retain the required slug-based bucket format.
+Scripts, styles, doctor portraits and legal pages were not changed. No commit or push. Live storage upload was not performed.
+Evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-dentist-image-review
