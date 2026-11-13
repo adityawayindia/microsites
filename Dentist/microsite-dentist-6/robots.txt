@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-kunal-shah/
+Disallow: /dr-kunal-shah/privacy-policy.html
+Disallow: /dr-kunal-shah/terms-of-service.html
+Sitemap: https://digidr.app/dr-kunal-shah/sitemap.xml

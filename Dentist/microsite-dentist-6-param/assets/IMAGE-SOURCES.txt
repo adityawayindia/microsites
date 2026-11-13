@@ -1,0 +1,22 @@
+Images generated using OpenAI built-in image_gen on 13 November 2026. Fictional demonstration doctor; practice details are illustrative. Supporting imagery contains no people. No real patient or staff photographs.
+
+FILE: dental-suite.jpg
+PROMPT: Premium architectural photograph of an empty contemporary dental treatment room. Clean ivory dental chair, articulated examination lamp, compact dental unit, pale oak cabinetry, softly lit frosted glass and a muted teal wall accent. Realistic professionally arranged equipment, welcoming daylight, wide 4:3 framing. No people, no body parts, no human photographs or reflections, no readable text, logos or watermark.
+VISUAL CHECK: inspected, no people.
+
+FILE: dental-instruments.jpg
+PROMPT: Premium editorial still-life photograph of clean dental examination instruments, a stainless steel mouth mirror and dental probe resting neatly on a small clean instrument tray, with an unbranded packaged toothbrush and a small ceramic cup on pale cream countertop. Subtle cool blue and ivory palette, soft daylight, tidy clinical realism, 4:3 landscape. Absolutely no people, hands, body parts, faces, human reflections, readable text, logos or watermark.
+VISUAL CHECK: inspected, no people.
+
+FILE: dental-lounge.jpg
+PROMPT: Architectural editorial photograph of an empty contemporary dental clinic reception and waiting room. Curved pale oak reception counter, three muted blue upholstered seats, cream plaster, daylight through sheer blinds, one green indoor plant, clean uncluttered small professional clinic, inviting and realistic, 4:3 landscape. Absolutely no people, hands, faces, human art or reflections. No text, signage, logos or watermark.
+VISUAL CHECK: inspected, no people.
+
+FILE: doctor-kunal-shah.jpg
+PROMPT: Professional editorial portrait of one fictional Indian male dentist aged 35, medium-brown skin, short dark hair combed to the side, neatly trimmed full beard, no glasses, relaxed confident expression. White clinical coat over charcoal blue shirt, no stethoscope, no name tag. Soft blurred slate blue and ivory modern dental practice backdrop. Vertical 3:4 waist-up composition with entire head visible, soft natural light, realistic skin texture. Exactly one doctor, no other people. No text, logo or watermark.
+VISUAL CHECK: inspected, one doctor only.
+
+FILE: hero-dental-aligners.jpg
+GENERATED: 13 November 2026, OpenAI built-in image_gen.
+PROMPT: Use case: photorealistic-natural. Asset type: wide 16:9 background photo for a contemporary dentist website hero, pale slate-blue, pearl-white and a tiny soft coral accent. Premium macro editorial still life of transparent dental aligners resting neatly beside an open unbranded powder-blue aligner case on a frosted glass shelf. Objects are concentrated in the FAR RIGHT third and lower right; LEFT 60 percent is an airy mostly blank pearl-white studio backdrop for website text. Clear plastic catches gentle daylight, with realistic transparent molded tooth forms, soft blue shadows and a muted coral ceramic tile edge in the distant right background. Minimal sophisticated clinical product photography with low contrast and no clutter. Only empty removable dental appliances, no actual teeth, no mouth, no people, faces, hands, body parts, human photos or reflections, text, logos, readable labels or watermarks.
+VISUAL CHECK: inspected; no people, faces, hands, human photographs or reflections. Decorative hero background; locally optimized JPEG.

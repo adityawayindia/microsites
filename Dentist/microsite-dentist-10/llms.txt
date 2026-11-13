@@ -1,0 +1,10 @@
+# Dr. Nisha Desai — Dentist
+
+> Per-microsite draft for backend root merge. Consultation information and appointment booking.
+
+## Pages
+- [Profile](https://digidr.app/dr-nisha-desai/): About, services, care philosophy, consultation journey, contact, gallery and FAQ.
+- [Privacy Policy](https://digidr.app/dr-nisha-desai/privacy-policy.html)
+- [Terms of Service](https://digidr.app/dr-nisha-desai/terms-of-service.html)
+
+The chat and booking service are not for emergencies. Consult the doctor for individual medical advice.
