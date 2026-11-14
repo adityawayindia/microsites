@@ -1,0 +1,9 @@
+# NOTE: Per-microsite draft; backend merges all entries into digidr.app/llms.txt.
+# Dr. Rohan Deshmukh
+
+> General Physician: consultations, preventive health reviews and ongoing adult medical care.
+
+## Pages
+- [Profile](https://digidr.app/{{slug}}/)
+- [Privacy Policy](https://digidr.app/{{slug}}/privacy-policy)
+- [Terms of Service](https://digidr.app/{{slug}}/terms-of-service)

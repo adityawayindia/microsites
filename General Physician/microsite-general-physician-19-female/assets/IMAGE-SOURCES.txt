@@ -1,0 +1,122 @@
+IMAGE SOURCES - GENERATED AND EXISTING PHOTOGRAPHS
+Generated: 2026-11-14
+Generated-assets tool: OpenAI built-in image_gen (not CLI); existing photograph licenses recorded below.
+Purpose: fictional general physician design template. Portrait is not a real doctor endorsement.
+Current nonportrait imagery mixes nature, everyday wellbeing, abstract hero artwork and clinical equipment. No people or standalone room scenes; original doctor portraits retained.
+
+doctor.webp
+Original: C:\Users\adity\.codex\generated_images\01a1d9d0-27d5-78d2-91b8-369802bac986\exec-44bbe9af-b653-4fc3-8c85-dd81d0cca195.png
+Prompt: Use case: photorealistic-natural. Asset type: professional physician website portrait. Create a beautiful high-end editorial photograph of one fictional Indian female general physician, 48 years old, brown skin, black hair neatly in a bun, thin oval glasses, calm natural smile, a pristine white medical coat over a tasteful solid-color blouse, stethoscope worn naturally. Subject alone, waist-up portrait, looking at camera, hands relaxed naturally, spacious framing with head fully visible. Soft daylight in a forest green and pale peach primary-care consulting office, gently blurred background, real skin texture, polished approachable photography. Vertical 3:4 portrait composition. Absolutely no other people, no patients, staff or children, no text, no badges, no logo, no watermark, no surgical equipment. Unique fictional face; never a real public figure.
+Visual inspection: PASS — one doctor only, appropriate gender, professional primary-care setting.
+
+clinic.webp
+Original: C:\Users\adity\.codex\generated_images\01a1d9d0-27d5-78d2-91b8-369802bac986\exec-75ed7347-cdc4-4c56-8ff5-2a422f30d2ca.png
+Prompt: Use case: product-mockup. Asset type: general physician website hero and section photograph. Create a beautiful premium studio product photograph of ONLY one forest-green stethoscope arranged as a graceful central circle alongside a neatly rolled soft-peach blood-pressure cuff, high-angle composition. Color direction: forest green and pale peach. Accurate professional primary-care equipment, realistic rubber tubing and stainless steel, tasteful soft shadows, high-end healthcare campaign aesthetic, landscape 4:3; arrange essential instruments centrally so a portrait crop remains usable. All objects rest on continuous seamless matte photographic studio paper in warm white or very pale brand tint, extending uninterrupted to every edge; softly graded neutral background without any horizon or corner. ABSOLUTELY NO ROOM OR INTERIOR: no clinic, living room, furniture, desk, table, chairs, walls, windows, shelving, cabinets, plants, plants' shadows, floor, tiles, wood texture, decor or environmental cues. No people, human images, hands or body parts. No text, logos, watermarks. No other objects.
+Visual inspection: PASS — isolated medical equipment only, seamless studio background, no rooms or room cues, no people.
+
+care.webp
+Original: C:\Users\adity\.codex\generated_images\01a1d9d0-27d5-78d2-91b8-369802bac986\exec-d60601bb-f72a-4497-bb9b-ba7632c396df.png
+Prompt: Use case: product-mockup. Asset type: general physician website care photo. Create a beautiful premium studio macro product photograph of ONLY one small white fingertip pulse oximeter with forest-green trim and switched-off screen, a plain white digital thermometer with muted peach cap and silver tip, arranged centrally with slight overlap. Color direction: forest green and pale peach; all metal components are plain stainless steel, no decorative metal finishes. Realistic accurate medical devices, polished small details, softly diffused studio lighting, subtle shadows, landscape 4:3; group instruments centrally so portrait cropping remains useful. Continuous seamless matte photographic studio paper in warm white or very pale brand tint fills the entire frame, no horizon, corner or edges. ABSOLUTELY NO ROOM OR INTERIOR: no clinic setting, living room, desk, table, furniture, chairs, walls, windows, cabinets, shelves, plants, decor, floor, tiles, wood, cloth or environmental cues. No people, human images, hands, body parts or reflections. No readable text, logos, watermark or extra objects. Screens OFF with no readings.
+Visual inspection: PASS — isolated medical equipment only, seamless studio background, no rooms or room cues, no people.
+
+gallery.webp
+Original: C:\Users\adity\.codex\generated_images\01a1d9d0-27d5-78d2-91b8-369802bac986\exec-e5b8329a-9294-4cfb-9427-132082f57e6f.png
+Prompt: Use case: product-mockup. Asset type: general physician practice gallery photograph. Create a beautiful premium studio product photograph of ONLY one white upper-arm digital blood pressure monitor with forest-green button and blank switched-off screen, pale peach cuff rolled beside it and connected by one grey tube, tight centered angled composition. Color direction: forest green and pale peach, keep device construction realistic plain medical-grade white plastic. Crisp realistic fabric and rubber textures, soft diffused studio lighting, elegant natural shadow, calm precise healthcare campaign aesthetic, landscape 4:3. Main equipment clustered at center with generous breathing room, suitable for portrait cropping too. Continuous seamless matte studio paper in warm white or very pale brand tint is the entire background, no corners, horizon or edges. ABSOLUTELY NO ROOM OR INTERIOR: no clinic scene, living room, furniture, desk, table, chairs, walls, windows, cabinets, shelves, plants, shadows from plants/windows, flooring, tiles, wood or decor. No people, human images, body parts, hands, silhouettes or reflections. No logos, readable text, watermark or other objects. Device screen OFF with no displayed numbers.
+Visual inspection: PASS — isolated medical equipment only, seamless studio background, no rooms or room cues, no people.
+
+Production export: portraits 800px wide, other photographs 1200px wide; WebP quality 85.
+Images generated separately for this template; no photographs shared between sites 11–20.
+Original generated PNGs retained in the tool output directory.
+
+EXISTING IMAGE REUSE - 14 November 2026
+No new images generated for this revision. Each content section uses a different photo.
+
+hero-medical.webp
+Reused source: F:/microsites/General Physician/microsite-general-physician-8-male/assets/hero-physician.jpg
+Visual review: primary-care equipment, no people or separate room scene. Export: WebP, up to 1200px wide, below 200 KB.
+
+restored-care.webp
+Reused source: C:\Users\adity\.codex\generated_images\01a1d9d0-27d5-78d2-91b8-369802bac986\exec-743208a9-ffaa-457b-9cf1-fb9d1650d711.png
+Visual review: primary-care equipment, no people or separate room scene. Export: WebP, up to 1200px wide, below 200 KB.
+
+gallery-glucose.webp
+Reused source: F:/microsites/General Physician/microsite-general-physician-8-male/assets/glucose-monitoring.jpg
+Visual review: primary-care equipment, no people or separate room scene. Export: WebP, up to 1200px wide, below 200 KB.
+
+banner-examination.webp
+Reused source: F:/microsites/General Physician/microsite-general-physician-8-male/assets/clinical-examination.jpg
+Visual review: primary-care equipment, no people or separate room scene. Export: WebP, up to 1200px wide, below 200 KB.
+
+Restored care selection: Restored original theme-matched equipment close-up. Instruments are the main subject; incidental clinical background is retained. Standalone room photographs are excluded.
+Original hero prompt record:
+TOOL: OpenAI built-in image_gen
+ORIGINAL: exec-83b874b0-cdaf-4d45-b136-e1ac012169a4.png
+PROMPT: Create an attractive photorealistic 16:9 panoramic hero background for a general physician website. A refined still life of a manual blood-pressure assessment kit: folded deep forest-green cuff, classic small circular silver aneroid pressure gauge, matte black inflation bulb, softly curved black tubes, and one slim digital thermometer on a pearl white medical surface. Equipment grouped along the RIGHT third; the LEFT half is bright clean pearl white with softly graded sage shadows and ample negative space for website text. Airy daylight, elegant overhead three-quarter angle, accurate recognizable instrument shapes, polished metal and tactile woven cuff fabric, premium editorial medical photography. No room view, reception, lounge, furniture, flowers, plants, people, hands, human images, pills, blood, readable words, brand labels, logos or watermark.
+Gallery order / backend images array: gallery.webp, care.webp, gallery-glucose.webp. Do not reuse these in other content sections. Doctor branding avatars remain in header/footer. Backend-configured profile, gallery and banner values remain supported.
+
+Exact original prompt for restored-care.webp:
+Use case: photorealistic-natural. Asset type: general physician website care photograph. Beautiful editorial still-life photograph of real primary-care examination tools: a forest-green stethoscope and compact digital blood pressure monitor on a pale peach consultation desk, pale oak tray and closed cream folder, subtle leafy shadow. Palette: forest green and pale peach. Clean modern clinic, soft directional window light, shallow natural depth of field, realistic materials and accurate simple equipment, visually balanced composition with quiet negative space, landscape 4:3. Absolutely no people, body parts, hands, faces, reflections, human artwork or silhouettes. Screens switched off, no readable text, no logos, no watermark. Not a surgery, dentistry or hospital emergency scene.
+
+Existing source provenance for banner-examination.webp:
+Original: exec-22837576-8104-4ec1-b56a-137b073318c7.png
+Full generation prompt: Use case: photorealistic-natural. Create a high-quality editorial still-life photograph for a general medicine physician's website, showing tools for an adult physical examination. Close three-quarter overhead view of an unbranded black-and-silver otoscope with a spare clean speculum, a rubber-headed reflex hammer, a compact fingertip pulse oximeter with its screen off, and a simple digital clinical thermometer on a small clean stainless-steel instrument tray. A pale neutral clinical worktop fills the entire background; soft natural daylight, accurate recognizable instrument shapes and realistic material detail, refined uncluttered composition. Landscape 4:3 image, with the important instruments grouped toward the center so a portrait crop remains useful. No room view, reception, living room, lounge, furniture, flowers, people, hands, faces, human pictures, blood, needles, text, logos or watermarks. Equipment photography only, appropriate to general medical assessment.
+
+glucose-monitoring.jpg
+Original: exec-b14c9f3e-7f14-4269-9309-3f9c300f4a94.png
+Full generation prompt: Use case: photorealistic-natural. Create a premium but authentic editorial still-life photograph for a general medicine physician's website, illustrating diabetes review and blood-glucose monitoring. A recognizable unbranded handheld blood-glucose meter with its display switched off, one clean test strip aligned beside it, a small closed plain test-strip container, and a closed compact patient logbook with a simple pen. Carefully arranged as a compact central group on a pale blue-grey medical work surface, with generous clean margins around the group. Realistic plastic and paper textures, soft directional daylight, calm clinical colour balance. Landscape 4:3 composition, close overhead view, no room or furniture visible. No people, hands, body parts, blood, exposed needles, medication, food, reception or living-room furnishings, labels, lettering, numbers, logos or watermarks. Visually clear equipment for ongoing general medicine care, not an instructional diagram.
+
+medical-instruments.jpg
+Original: exec-14ed7ff7-917e-4890-a168-98b9a76fd58c.png
+Prompt summary: Black and silver stethoscope, blood pressure cuff and digital thermometer on a pale blue worktop with a closed notebook. Soft daylight; no people, hands, faces, human illustrations, text, logos or pills.
+
+
+
+favicon.svg: original code-native vector artwork. chatbot-icon.svg: shared DigiDr project asset.
+
+Images optimized as JPEG; originals retained. Each source/param pair uses the same imagery.
+
+Existing source provenance for gallery-glucose.webp:
+Original: exec-b14c9f3e-7f14-4269-9309-3f9c300f4a94.png
+Full generation prompt: Use case: photorealistic-natural. Create a premium but authentic editorial still-life photograph for a general medicine physician's website, illustrating diabetes review and blood-glucose monitoring. A recognizable unbranded handheld blood-glucose meter with its display switched off, one clean test strip aligned beside it, a small closed plain test-strip container, and a closed compact patient logbook with a simple pen. Carefully arranged as a compact central group on a pale blue-grey medical work surface, with generous clean margins around the group. Realistic plastic and paper textures, soft directional daylight, calm clinical colour balance. Landscape 4:3 composition, close overhead view, no room or furniture visible. No people, hands, body parts, blood, exposed needles, medication, food, reception or living-room furnishings, labels, lettering, numbers, logos or watermarks. Visually clear equipment for ongoing general medicine care, not an instructional diagram.
+
+medical-instruments.jpg
+Original: exec-14ed7ff7-917e-4890-a168-98b9a76fd58c.png
+Prompt summary: Black and silver stethoscope, blood pressure cuff and digital thermometer on a pale blue worktop with a closed notebook. Soft daylight; no people, hands, faces, human illustrations, text, logos or pills.
+
+
+
+favicon.svg: original code-native vector artwork. chatbot-icon.svg: shared DigiDr project asset.
+
+Images optimized as JPEG; originals retained. Each source/param pair uses the same imagery.
+
+MIXED IMAGERY AND HERO REVISION - 14 November 2026
+Current image map:
+Hero: hero-wellness.webp
+About: wellbeing-nature.webp
+Care Philosophy: restored-care.webp
+Default gallery/backend images array: wellbeing-nutrition.webp, wellbeing-hydration.webp, care.webp
+Optional banner: banner-examination.webp
+Header/footer branding avatars intentionally retain the original doctor portrait. No repeated content photo within a page. Gallery uses existing photographs and the previously generated clinical photograph; no new gallery images generated.
+
+hero-wellness.webp
+Generator: OpenAI built-in image_gen. Original: C:\Users\adity\.codex\generated_images\01a1d9d0-27d5-78d2-91b8-369802bac986\exec-de353d18-0162-4656-af5d-69a6cfc11c93.png
+Prompt: Use case: ads-marketing. Asset type: premium general physician website hero background, not a UI mockup. Create a beautiful modern healthcare editorial abstract photograph/render: delicate fern-frond silhouettes layered within translucent green glass, elegant sunlight patterns and fine botanical texture across the right half, fading into a clear warm ivory field; artistic abstraction, no room, no potted plant. Palette fern green and warm ivory. Mood: clarity, calm vitality, clean modern primary care and whole-person wellbeing. High-end luminous material study with believable glass and light, refined subtle texture, editorial art direction, not generic stock clipart. Wide cinematic landscape16:9 composition. Keep the entire LEFT45% quiet, light, uncluttered and low contrast for dark doctor-profile text; concentrate detailed forms on RIGHT half and middle-right. Seamless abstract setting, no room or interiors, no furniture, windows, walls, shelves or floors. Absolutely no people, bodyparts, faces, human artwork, equipment, stethoscopes, blood-pressure devices, medical tool catalogues, candles, flower piles, herbal remedies or spa imagery. No words, text, labels, logos, watermarks or UI elements.
+Inspection: PASS: inspected full output; people-free abstract wellness composition, no rooms, equipment, furniture or text, quiet light left field and distinct palette-matched right-side forms.
+
+wellbeing-nutrition.webp
+Existing photograph by Anna Pelzer
+Photo page: https://unsplash.com/photos/bowl-of-vegetable-salads-IGfIGP5ONV0
+License verified 14 November 2026: https://unsplash.com/license
+Locally downloaded and exported as WebP, maximum 1000px wide and under 200KB. Visually inspected: no people, no standalone room scenes.
+
+wellbeing-nature.webp
+Existing photograph by Phil Goodwin
+Photo page: https://unsplash.com/photos/empty-pathway-surrounded-by-trees-aELL9sRIpUY
+License verified 14 November 2026: https://unsplash.com/license
+Locally downloaded and exported as WebP, maximum 1000px wide and under 200KB. Visually inspected: no people, no standalone room scenes.
+
+wellbeing-hydration.webp
+Existing photograph by Suhairy Tri Yadhi
+Photo page: https://www.pexels.com/photo/photo-of-lemon-in-drinking-glass-with-water-2477379/
+License verified 14 November 2026: https://www.pexels.com/license/
+Locally downloaded and exported as WebP, maximum 1000px wide and under 200KB. Visually inspected: no people, no standalone room scenes.

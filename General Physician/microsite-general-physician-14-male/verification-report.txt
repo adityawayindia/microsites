@@ -1,0 +1,301 @@
+DIGIDR GENERAL PHYSICIAN VERIFICATION
+14 November 2026 — Codex
+microsite-general-physician-14-male
+Design: Slate; Plus Jakarta Sans / Roboto; Dr. Sameer Khanna (male)
+
+RESULT
+50/50 static checks; 184/184 browser assertions passed.
+Chromium over local HTTP. Real Google Fonts, Font Awesome and phone utility.
+Booking/chat/social feed/visitor API responses were intercepted using test fixtures.
+Parameterized static bucket URLs were mapped to their actual local assets for QA.
+No real appointments were created. The booking API endpoint and multipart payload block match the existing source.
+
+CHECKLIST
+Item | Status | Evidence | Fix applied / notes
+1 | PASS (local) | index.html:43 | Unique generated portrait, doctor alone.
+2 | PASS (local) | script/index.js:1651 | Menu, clean hashes, complete long names and short phone CTA tested.
+3 | PASS (local) | index.html:108 | Qualifications, registration, optional fellowship and languages.
+4 | PASS (local) | script/index.js:1080 | Three text-based counters; reduced-motion; animated completion checked on shared implementation.
+5 | PASS (local) | index.html:142 | Eight ordered networks. Unconfigured links disabled; enabled/disabled template states tested.
+6 / 6a | PASS (local) | index.html:75 | No promotional hero heading/paragraph or obstructive portrait badge.
+7 | PASS (local) | script/index.js:1710 | Seven-line bio and auto-hiding Read More; short/long values tested.
+8 / 9 | PASS (local) | styles/style.css:66 | 12-track service grid; 4/5/6/7-card centering; larger, bold headings.
+E1–E5 | PASS (local) | script/index.js:1384 | Live feed module retained. Empty, 2-post and 6-post fixtures; max five displayed; lazy SDK and fallback. Real Facebook embeds remain unverified.
+10 | PASS (local) | index.html:303 | Three pillars, specialty imagery and custom responsive design.
+11 | PASS (local) | index.html:352 | Four consultation stages in correct order.
+12 | PASS (local) | index.html:401 | Address, phone, email and modal CTA.
+13 | PASS (local) | index.html:450 | Three images; equal-size 4/5/6/7 stress tests; keyboard lightbox.
+14 | PASS (local) | index.html:463 | Six PDF pairs; assigned set 4; accordion keyboard and one-open behavior.
+15 / 16 | PASS (local) | index.html:576 | Exact telemedicine tooltip. Touch bounds and content checked on shared implementation.
+17 | PASS (local) | script/index.js:379 | Scroll-gated consent, dismissal, preserved data and agree state.
+18 | PASS (local) | styles/style.css:600 | Brand primary action; neutral secondary controls.
+19 / 20 | PASS (local) | index.html:685 | Required consent wording and no removed demo-form notice.
+21 / 22 / 23 | PASS (local) | script/index.js:53 | Real intl-tel-input 29.2.2 utilities, invalid phone/name, past/closed dates, PDF/JPG/PNG and 5 MB limit.
+24 | PASS (local) | script/index.js:768 | Both modes submit once with full multipart fields and correct confirmation; report attached. Existing booking API/payload preserved. Fresh-open scroll reset added.
+25 | PASS (local) | styles/style.css:917 | White CTA labels and phone widget styling; browser axe checks.
+26 / 27 / 28 / 28a / 29 | PASS (local) | index.html:752 | Byte-identical footer on all three pages, compact layout, computed 14px disclaimer.
+29a | PASS (local) | index.html:828 | Real visit API code retained; fixture count tested; production count unverified.
+30 / 30a / 31 / 32 / 33 | PASS (local) | script/chatbot.js:40 | Compact chat, typed reply and no suggestions. Template checks include six sizes/short landscape; required two-line note. Live AI answers unverified.
+34 / 35 | PASS (local) | privacy-policy.html:54 | Canonical legal copy and Back link; only sample identity/contact fields substituted.
+36 / 37 / 38 / 39 / 40 | PASS (local) | index.html:3 | Complete architecture, section order, SEO drafts, no blog or previous identity.
+41 / 42 / 42a / 42b | PASS (local) | index.html:75 | General physician wording; matching gender; no prohibited trust/verification language. Doctor details remain illustrative template content.
+43 / 44 / 45 | PASS (local) | styles/style.css:1 | Neutral/brand/accent roles; six critical token contrast pairs >=4.5:1; axe text-contrast checks.
+46 / 47 / 48 | PASS (local) | styles/style.css:46 | Common container, 18px body, 14px disclaimer, distinct Google Fonts and larger card headings.
+49 | PASS (local) | styles/style.css:934 | Focus rings and motion preferences retained.
+50 / 51 / 52 | PASS (local) | styles/style.css:929 | Three pages at 320/375/768/1024/1440/1900; long header at 1200/1201; no overflow.
+53 / 53a | PASS (local) | assets/IMAGE-SOURCES.txt | Four generated, visually inspected, unique WebP assets; all below 200 KB; only doctor portrait contains a person.
+54 / 55 | PASS (local) | index.html:6 | Global wrapping rules, one h1/page, metadata, canonical URLs and Physician schema.
+56 | PASS (local) | index.html:39 | Zero axe WCAG A/AA violations on all three pages and booking. Consent/chat additionally checked on representative shared implementations. Lighthouse not run.
+57 / 57a | PASS (local) | styles/style.css:954 | No browser console errors/warnings, network errors or missing visible FA glyphs in final fixture-backed tests.
+58 / 59 | PASS (local) | git status; SHA-256 baseline | 5843 pre-existing files unchanged; no deletes, commit, push or deployment.
+
+ANALYTICS
+Event | Found in code | Fired at runtime | Notes
+nav_link_click | index.html:52 | yes | 
+book_appointment_click | index.html:59 | yes | 
+hero_social_link_click | index.html:1 | not directly exercised here | 
+read_more_click | index.html:203 | not directly exercised here | 
+phone_number_click | index.html:431 | not directly exercised here | 
+email_click | index.html:433 | not directly exercised here | 
+clinic_visit_tab_click | index.html:575 | yes | 
+online_consult_tab_click | index.html:576 | yes | 
+upload_report_click | index.html:674 | not directly exercised here | Declarative hook present; file input selection and report_uploaded exercised.
+footer_nav_link_click | index.html:808 | not directly exercised here | 
+footer_social_link_click | index.html:1 | not directly exercised here | 
+consent_checkbox_click | script/index.js:472 | yes | One event per actual action; hidden notice never emits read event.
+consent_modal_open | script/index.js:444 | yes | 
+consent_scrolled_to_bottom | script/index.js:414 | yes | One event per actual action; hidden notice never emits read event.
+consent_agreed | script/index.js:454 | yes | 
+consent_dismissed | script/index.js:454 | yes | 
+report_uploaded | script/index.js:644 | yes | 
+booking_submitted | script/index.js:1210 | yes | Exactly two success events, one for each mode.
+
+LOWEST THREE CHECKED TOKEN CONTRAST RATIOS
+White / accent: 6.44:1
+Muted / light tint: 6.75:1
+White / brand: 9.39:1
+
+FIXES IN THESE NEW BUILDS
+- Fresh booking opens at the top; consent return retains form data.
+- Consent checkbox analytics moved to the actual click; hidden notice resize no longer emits a read event.
+- Report analytics contains no file metadata or patient information.
+- Parameterized consent legal links use /{{slug}} routes.
+- Legal styles separated; SEO drafts use shared-domain merge conventions.
+
+PARAMETERIZATION
+Matching -param folder supplied and independently browser-tested. Source images remain local.
+
+UNVERIFIED / DEPLOYMENT CONFIGURATION
+- These are illustrative local templates, not deployed doctor websites. Configure and verify actual doctor identity, credentials, practising year, registration/council, clinic/contact details and social URLs.
+- Supply registered userid/micrositeId/slug values. Source drafts deliberately have no assigned doctor user ID; QA injects a fixture ID.
+- Replace the per-template G-PLACEHOLDER measurement ID with a real GA4 property. No real property was supplied; GA4 collection and Clarity dashboard delivery are unverified. Shared Clarity ID is retained.
+- Upload each assets folder to its real slug bucket; public bucket availability is unverified.
+- Real appointment persistence, email delivery, online meeting creation, chatbot responses and Facebook rendering require staging/production checks with configured services.
+- Lighthouse performance scores, Safari/Firefox and physical-device keyboard behavior were not measured.
+
+EVIDENCE
+Detailed local runtime logs/screenshots: C:\Users\adity\AppData\Local\Temp\digidr-gp-11-20\evidence
+Shared edge checks: 11-param-edge.json and 18-param-edge.json (44 checks each).
+Image decoding rechecked in 14-source-assets.json, excluding the empty hidden lightbox target.
+FAQ audit: unchanged scripts/audit-faqs.cjs with Poppler; output redirected to C:\Users\adity\AppData\Local\Temp\digidr-gp-11-20\faq-audit-current.json to preserve the user's existing report.
+Prompts, generation method and saved asset paths: assets/IMAGE-SOURCES.txt.
+
+ASSERTION DETAILS
+Check | Status
+All local content images decode | PASS
+index.html 320 no overflow | PASS
+index.html 320 no stray template tags | PASS
+index.html 320 one h1 | PASS
+index.html 320 footer 14px | PASS
+index.html 320 icons | PASS
+index.html 320 eager images | PASS
+index.html 320 visitor count | PASS
+index.html 375 no overflow | PASS
+index.html 375 no stray template tags | PASS
+index.html 375 one h1 | PASS
+index.html 375 footer 14px | PASS
+index.html 375 icons | PASS
+index.html 375 eager images | PASS
+index.html 375 visitor count | PASS
+index.html 768 no overflow | PASS
+index.html 768 no stray template tags | PASS
+index.html 768 one h1 | PASS
+index.html 768 footer 14px | PASS
+index.html 768 icons | PASS
+index.html 768 eager images | PASS
+index.html 768 visitor count | PASS
+index.html 1024 no overflow | PASS
+index.html 1024 no stray template tags | PASS
+index.html 1024 one h1 | PASS
+index.html 1024 footer 14px | PASS
+index.html 1024 icons | PASS
+index.html 1024 eager images | PASS
+index.html 1024 visitor count | PASS
+index.html 1440 no overflow | PASS
+index.html 1440 no stray template tags | PASS
+index.html 1440 one h1 | PASS
+index.html 1440 footer 14px | PASS
+index.html 1440 icons | PASS
+index.html 1440 eager images | PASS
+index.html 1440 visitor count | PASS
+index.html 1900 no overflow | PASS
+index.html 1900 no stray template tags | PASS
+index.html 1900 one h1 | PASS
+index.html 1900 footer 14px | PASS
+index.html 1900 icons | PASS
+index.html 1900 eager images | PASS
+index.html 1900 visitor count | PASS
+index.html axe | PASS
+privacy-policy.html 320 no overflow | PASS
+privacy-policy.html 320 no stray template tags | PASS
+privacy-policy.html 320 one h1 | PASS
+privacy-policy.html 320 footer 14px | PASS
+privacy-policy.html 320 icons | PASS
+privacy-policy.html 320 eager images | PASS
+privacy-policy.html 320 visitor count | PASS
+privacy-policy.html 375 no overflow | PASS
+privacy-policy.html 375 no stray template tags | PASS
+privacy-policy.html 375 one h1 | PASS
+privacy-policy.html 375 footer 14px | PASS
+privacy-policy.html 375 icons | PASS
+privacy-policy.html 375 eager images | PASS
+privacy-policy.html 375 visitor count | PASS
+privacy-policy.html 768 no overflow | PASS
+privacy-policy.html 768 no stray template tags | PASS
+privacy-policy.html 768 one h1 | PASS
+privacy-policy.html 768 footer 14px | PASS
+privacy-policy.html 768 icons | PASS
+privacy-policy.html 768 eager images | PASS
+privacy-policy.html 768 visitor count | PASS
+privacy-policy.html 1024 no overflow | PASS
+privacy-policy.html 1024 no stray template tags | PASS
+privacy-policy.html 1024 one h1 | PASS
+privacy-policy.html 1024 footer 14px | PASS
+privacy-policy.html 1024 icons | PASS
+privacy-policy.html 1024 eager images | PASS
+privacy-policy.html 1024 visitor count | PASS
+privacy-policy.html 1440 no overflow | PASS
+privacy-policy.html 1440 no stray template tags | PASS
+privacy-policy.html 1440 one h1 | PASS
+privacy-policy.html 1440 footer 14px | PASS
+privacy-policy.html 1440 icons | PASS
+privacy-policy.html 1440 eager images | PASS
+privacy-policy.html 1440 visitor count | PASS
+privacy-policy.html 1900 no overflow | PASS
+privacy-policy.html 1900 no stray template tags | PASS
+privacy-policy.html 1900 one h1 | PASS
+privacy-policy.html 1900 footer 14px | PASS
+privacy-policy.html 1900 icons | PASS
+privacy-policy.html 1900 eager images | PASS
+privacy-policy.html 1900 visitor count | PASS
+privacy-policy.html axe | PASS
+terms-of-service.html 320 no overflow | PASS
+terms-of-service.html 320 no stray template tags | PASS
+terms-of-service.html 320 one h1 | PASS
+terms-of-service.html 320 footer 14px | PASS
+terms-of-service.html 320 icons | PASS
+terms-of-service.html 320 eager images | PASS
+terms-of-service.html 320 visitor count | PASS
+terms-of-service.html 375 no overflow | PASS
+terms-of-service.html 375 no stray template tags | PASS
+terms-of-service.html 375 one h1 | PASS
+terms-of-service.html 375 footer 14px | PASS
+terms-of-service.html 375 icons | PASS
+terms-of-service.html 375 eager images | PASS
+terms-of-service.html 375 visitor count | PASS
+terms-of-service.html 768 no overflow | PASS
+terms-of-service.html 768 no stray template tags | PASS
+terms-of-service.html 768 one h1 | PASS
+terms-of-service.html 768 footer 14px | PASS
+terms-of-service.html 768 icons | PASS
+terms-of-service.html 768 eager images | PASS
+terms-of-service.html 768 visitor count | PASS
+terms-of-service.html 1024 no overflow | PASS
+terms-of-service.html 1024 no stray template tags | PASS
+terms-of-service.html 1024 one h1 | PASS
+terms-of-service.html 1024 footer 14px | PASS
+terms-of-service.html 1024 icons | PASS
+terms-of-service.html 1024 eager images | PASS
+terms-of-service.html 1024 visitor count | PASS
+terms-of-service.html 1440 no overflow | PASS
+terms-of-service.html 1440 no stray template tags | PASS
+terms-of-service.html 1440 one h1 | PASS
+terms-of-service.html 1440 footer 14px | PASS
+terms-of-service.html 1440 icons | PASS
+terms-of-service.html 1440 eager images | PASS
+terms-of-service.html 1440 visitor count | PASS
+terms-of-service.html 1900 no overflow | PASS
+terms-of-service.html 1900 no stray template tags | PASS
+terms-of-service.html 1900 one h1 | PASS
+terms-of-service.html 1900 footer 14px | PASS
+terms-of-service.html 1900 icons | PASS
+terms-of-service.html 1900 eager images | PASS
+terms-of-service.html 1900 visitor count | PASS
+terms-of-service.html axe | PASS
+Mobile menu opens | PASS
+Navigation cleans hash | PASS
+Mobile menu closes | PASS
+FAQ keyboard one open | PASS
+Gallery keyboard lightbox | PASS
+Chat fits mobile | PASS
+No suggestions | PASS
+offline empty validation | PASS
+Name sanitation | PASS
+Invalid phone rejected | PASS
+Consent required blocks submission | PASS
+Consent scroll gate | PASS
+Dismiss leaves consent unticked | PASS
+Consent preserves name | PASS
+Consent scroll gate | PASS
+Consent agrees | PASS
+offline single submission | PASS
+offline multipart fields | PASS
+Report attached to multipart booking | PASS
+offline confirmation | PASS
+online empty validation | PASS
+Name sanitation | PASS
+Invalid phone rejected | PASS
+Consent required blocks submission | PASS
+Consent scroll gate | PASS
+Dismiss leaves consent unticked | PASS
+Consent preserves name | PASS
+Consent scroll gate | PASS
+Consent agrees | PASS
+online single submission | PASS
+online multipart fields | PASS
+online confirmation | PASS
+Analytics book_appointment_click | PASS
+Analytics nav_link_click | PASS
+Analytics clinic_visit_tab_click | PASS
+Analytics online_consult_tab_click | PASS
+Analytics consent_checkbox_click | PASS
+Analytics consent_modal_open | PASS
+Analytics consent_dismissed | PASS
+Analytics consent_scrolled_to_bottom | PASS
+Analytics consent_agreed | PASS
+Analytics booking_submitted | PASS
+Exactly two booking success events | PASS
+Consent events exactly once per action | PASS
+Analytics excludes patient details | PASS
+Booking axe | PASS
+Long header 320 | PASS
+Long header 375 | PASS
+Long header 768 | PASS
+Long header 1200 | PASS
+Long header 1201 | PASS
+Long header 1440 | PASS
+No runtime errors | PASS
+No network errors | PASS
+
+IMAGE CONTENT REVISION — NO ROOM SCENES
+14 November 2026: Replaced all three nonportrait photographs with unique isolated primary-care equipment on seamless studio backgrounds. No room interiors, living-room scenes, furniture, windows or architectural backgrounds remain in separate hero-background/About/Philosophy/gallery or default banner imagery. Updated matching source and parameterized assets and image descriptions. Doctor portraits retained, including their existing backgrounds. Generated image prompts and inspection records are in assets/IMAGE-SOURCES.txt.
+Scripts, styles, booking logic, legal pages and portraits unchanged.
+Image revision verification: all 20 source/parameterized pages load and decode all content images; no browser console errors or HTTP errors. All 30 nonportrait images visually reviewed. Source/parameterized image hashes match. SHA-256 confirms all 220 protected script/style/legal/portrait files unchanged. Original portraits, including room backgrounds, retained per user instruction.
+
+EXISTING IMAGE REUSE REVISION - 14 November 2026
+Restored the original theme-matched medical equipment close-up in Care Philosophy. Its incidental clinical background is retained; separate room scenes remain excluded. Reused an existing matching hero photograph. About, Philosophy, all three gallery items and the optional banner use distinct images. No new images generated. Gallery uses existing gallery.webp, care.webp and gallery-glucose.webp; the parameterized gallery remains the unchanged backend images loop. Original doctor portraits and small branding avatars are unchanged.
+PASS: 49 targeted browser assertions for this version at 1440, 768 and 375px: image loading, unique section photos, no horizontal overflow, three gallery items, each lightbox image and Escape close, optional banner, console and HTTP errors. All 20 versions passed 980 assertions. Source/parameterized asset hashes match. Scripts, styles, legal pages and doctor portraits are byte-for-byte unchanged.
+
+MIXED IMAGERY AND HERO REVISION - 14 November 2026
+Ten unique generated hero artworks replace equipment backgrounds; each matches the site palette. Hero shading follows each layout, protecting profile text while revealing artwork behind the portrait, with a mobile-specific gradient. Supporting sections mix licensed existing nutrition, hydration and woodland photographs with retained clinical equipment photos. No repeated content photos within each page; original doctor portraits remain unchanged. Three-image galleries use existing images and retain the backend images loop.
+PASS: 52 targeted browser assertions for this version at 1440, 768 and 375px: image decoding, hero accessibility audit, no overflow, unique content photos, all three gallery lightbox images and Escape close, distinct optional banner, no console/HTTP errors. All 20 source/parameterized versions passed 1040 assertions. Hero and full-page screenshots visually reviewed. Assets and styles match between source/param. Booking scripts, other scripts, legal pages, original doctor portraits and nonhero styling unchanged.
