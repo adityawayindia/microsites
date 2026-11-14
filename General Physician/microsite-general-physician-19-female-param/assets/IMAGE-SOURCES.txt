@@ -52,7 +52,7 @@ Original hero prompt record:
 TOOL: OpenAI built-in image_gen
 ORIGINAL: exec-83b874b0-cdaf-4d45-b136-e1ac012169a4.png
 PROMPT: Create an attractive photorealistic 16:9 panoramic hero background for a general physician website. A refined still life of a manual blood-pressure assessment kit: folded deep forest-green cuff, classic small circular silver aneroid pressure gauge, matte black inflation bulb, softly curved black tubes, and one slim digital thermometer on a pearl white medical surface. Equipment grouped along the RIGHT third; the LEFT half is bright clean pearl white with softly graded sage shadows and ample negative space for website text. Airy daylight, elegant overhead three-quarter angle, accurate recognizable instrument shapes, polished metal and tactile woven cuff fabric, premium editorial medical photography. No room view, reception, lounge, furniture, flowers, plants, people, hands, human images, pills, blood, readable words, brand labels, logos or watermark.
-Gallery order / backend images array: gallery.webp, care.webp, gallery-glucose.webp. Do not reuse these in other content sections. Doctor branding avatars remain in header/footer. Backend-configured profile, gallery and banner values remain supported.
+Gallery order / backend images array: medical-ecg.webp, medical-laboratory.webp, care.webp. The backend images loop remains configurable.
 
 Exact original prompt for restored-care.webp:
 Use case: photorealistic-natural. Asset type: general physician website care photograph. Beautiful editorial still-life photograph of real primary-care examination tools: a forest-green stethoscope and compact digital blood pressure monitor on a pale peach consultation desk, pale oak tray and closed cream folder, subtle leafy shadow. Palette: forest green and pale peach. Clean modern clinic, soft directional window light, shallow natural depth of field, realistic materials and accurate simple equipment, visually balanced composition with quiet negative space, landscape 4:3. Absolutely no people, body parts, hands, faces, reflections, human artwork or silhouettes. Screens switched off, no readable text, no logos, no watermark. Not a surgery, dentistry or hospital emergency scene.
@@ -89,34 +89,36 @@ favicon.svg: original code-native vector artwork. chatbot-icon.svg: shared DigiD
 
 Images optimized as JPEG; originals retained. Each source/param pair uses the same imagery.
 
-MIXED IMAGERY AND HERO REVISION - 14 November 2026
-Current image map:
+CURRENT IMAGE MAP - 14 November 2026
 Hero: hero-wellness.webp
-About: wellbeing-nature.webp
+About: medical-reference.webp
 Care Philosophy: restored-care.webp
-Default gallery/backend images array: wellbeing-nutrition.webp, wellbeing-hydration.webp, care.webp
+Default gallery/backend images array: medical-ecg.webp, medical-laboratory.webp, care.webp
 Optional banner: banner-examination.webp
-Header/footer branding avatars intentionally retain the original doctor portrait. No repeated content photo within a page. Gallery uses existing photographs and the previously generated clinical photograph; no new gallery images generated.
+Original doctor portraits retained. Distinct content photographs within each page. Gallery photographs reused from existing licensed sources; no new gallery generation.
 
 hero-wellness.webp
 Generator: OpenAI built-in image_gen. Original: C:\Users\adity\.codex\generated_images\01a1d9d0-27d5-78d2-91b8-369802bac986\exec-de353d18-0162-4656-af5d-69a6cfc11c93.png
 Prompt: Use case: ads-marketing. Asset type: premium general physician website hero background, not a UI mockup. Create a beautiful modern healthcare editorial abstract photograph/render: delicate fern-frond silhouettes layered within translucent green glass, elegant sunlight patterns and fine botanical texture across the right half, fading into a clear warm ivory field; artistic abstraction, no room, no potted plant. Palette fern green and warm ivory. Mood: clarity, calm vitality, clean modern primary care and whole-person wellbeing. High-end luminous material study with believable glass and light, refined subtle texture, editorial art direction, not generic stock clipart. Wide cinematic landscape16:9 composition. Keep the entire LEFT45% quiet, light, uncluttered and low contrast for dark doctor-profile text; concentrate detailed forms on RIGHT half and middle-right. Seamless abstract setting, no room or interiors, no furniture, windows, walls, shelves or floors. Absolutely no people, bodyparts, faces, human artwork, equipment, stethoscopes, blood-pressure devices, medical tool catalogues, candles, flower piles, herbal remedies or spa imagery. No words, text, labels, logos, watermarks or UI elements.
 Inspection: PASS: inspected full output; people-free abstract wellness composition, no rooms, equipment, furniture or text, quiet light left field and distinct palette-matched right-side forms.
 
-wellbeing-nutrition.webp
-Existing photograph by Anna Pelzer
-Photo page: https://unsplash.com/photos/bowl-of-vegetable-salads-IGfIGP5ONV0
-License verified 14 November 2026: https://unsplash.com/license
-Locally downloaded and exported as WebP, maximum 1000px wide and under 200KB. Visually inspected: no people, no standalone room scenes.
+MEDICAL IMAGE CORRECTION - 14 November 2026
+Removed the food, drink and woodland assets. Medical stock photographs below are shared across templates; the hero, doctor portrait and retained generated clinical assets remain specific to each template.
 
-wellbeing-nature.webp
-Existing photograph by Phil Goodwin
-Photo page: https://unsplash.com/photos/empty-pathway-surrounded-by-trees-aELL9sRIpUY
+medical-reference.webp
+Existing photograph by Bermix Studio
+Photo page: https://unsplash.com/photos/a-stethoscope-sitting-on-top-of-a-pile-of-books-00heEp9LFP0
 License verified 14 November 2026: https://unsplash.com/license
-Locally downloaded and exported as WebP, maximum 1000px wide and under 200KB. Visually inspected: no people, no standalone room scenes.
+Export: WebP, 1000px wide, below 200 KB. Visual inspection: medical subject, no people or standalone room scene.
 
-wellbeing-hydration.webp
-Existing photograph by Suhairy Tri Yadhi
-Photo page: https://www.pexels.com/photo/photo-of-lemon-in-drinking-glass-with-water-2477379/
+medical-ecg.webp
+Existing photograph by Pixabay on Pexels
+Photo page: https://www.pexels.com/photo/selective-focus-photography-of-white-and-black-vital-sign-printing-paper-415779/
 License verified 14 November 2026: https://www.pexels.com/license/
-Locally downloaded and exported as WebP, maximum 1000px wide and under 200KB. Visually inspected: no people, no standalone room scenes.
+Export: WebP, 1000px wide, below 200 KB. Visual inspection: medical subject, no people or standalone room scene.
+
+medical-laboratory.webp
+Existing photograph by Testalize.me
+Photo page: https://unsplash.com/photos/white-and-orange-plastic-tube-KWb_41kG0GE
+License verified 14 November 2026: https://unsplash.com/license
+Export: WebP, 1000px wide, below 200 KB. Visual inspection: medical subject, no people or standalone room scene.
