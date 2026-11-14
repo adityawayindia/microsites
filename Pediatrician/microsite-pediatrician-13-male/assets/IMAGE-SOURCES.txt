@@ -1,0 +1,55 @@
+Pediatrician 13 — Plum notebook — Dr. Devansh Shah
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-13.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-6636d58a-b594-45f8-828c-b0a7671db4e2.png
+PROMPT: Create an attractive authentic photorealistic professional portrait of fictional Indian male pediatrician Dr. Devansh Shah, about 39 years old. Distinct slim face, softly wavy black hair, subtle neat stubble, naturally warm attentive expression and realistic skin texture. White clinical coat over a modest muted plum collared shirt, no stethoscope, badges, embroidery, text, logos or props. Vertical 3:4 waist-up portrait, full head with ample headroom, relaxed professional posture looking toward camera. Plain softly blurred cream and muted plum studio backdrop with beautiful soft side daylight. Identity Plum notebook, restrained plum #6c415c and warm ivory. One doctor only, no additional people, claims, watermark or graphic badges. Full rectangular edge-to-edge photograph, square corners without a frame; authentic editorial photography, no glamour retouching.
+ALT: Portrait of the fictional pediatrician Dr. Devansh Shah
+INSPECTION: PASS: fictional male doctor with wavy dark hair, subtle stubble, plum shirt and white coat; full head visible, no extra people or text.
+
+FILE: hero-pediatrics-13.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-4b506613-cb23-45e7-8d15-b284dd1d81e4.png
+PROMPT: Create an attractive photorealistic editorial pediatric-care website hero still life, wide landscape 16:9. Identity Plum notebook: warm cream, muted plum #6c415c, lilac details and pale natural wood. An open child-health notebook with completely blank cream pages is arranged beside a real plum-colored pediatric stethoscope with accurate connected tubing and small polished chestpiece, several LARGE pastel crayons without labels, and a small wooden counting toy with large smooth pegs. Create a thoughtful reading-and-drawing materials composition grouped on the RIGHT THIRD of a cream tabletop, slightly elevated oblique viewpoint. Leave the LEFT TWO THIRDS broad quiet cream negative space for text. Beautiful soft daylight, tactile paper and wood, realistic medical-device detail, refined gentle shadows. ZERO people, children, adults, hands, faces, body parts or human reflections. No room/reception/lounge, furniture, dominant plants, printed words, letters, numbers, labels, logos, watermark, medical claims, graphic badges, border or rounded corners. Full rectangular edge-to-edge photograph.
+ALT: Blank child-health notebook with a plum pediatric stethoscope and drawing materials
+INSPECTION: PASS: blank notebook, plum pediatric stethoscope, large crayons and wooden counting pegs grouped right with quiet cream space left; people-free and text-free.
+
+FILE: about-pediatrics-13.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-caeb55c7-fa64-4c2a-bcf0-07dcffd33d3d.png
+PROMPT: An attractive photorealistic editorial photograph of a single Indian schoolgirl, age nine, enjoying a quiet art activity. She wears a lilac long-sleeved shirt and comfortable trousers and sits at a simple cream activity table. She draws a cheerful landscape of colored hills, a sun and geometric trees using large plum and pastel crayons on paper. Natural focused expression, three-quarter view, soft daylight, realistic paper texture and crayon marks, plum and cream palette. Vertical 4:5 composition showing the child's face and the drawing clearly. Plain softly blurred neutral background, no adults or other children, no room or reception setting. No writing, labels, logos, watermark, graphic frame or rounded corners.
+ALT: Indian school-age girl drawing an abstract landscape with large crayons
+INSPECTION: PASS: single fully clothed Indian school-age girl drawing a landscape with large crayons; no adults, other people, room scene, words or labels.
+
+FILE: philosophy-pediatrics-13.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-f461a079-35a0-4387-8873-799fbde7e535.png
+PROMPT: Create an attractive photorealistic editorial pediatric ear-examination kit still life, landscape 4:3. Identity Plum notebook: a small neatly folded muted plum linen cloth on warm cream tabletop. A real compact pediatric otoscope with believable polished-metal and matte dark construction lies beside a tiny clean ivory instrument tray holding several unused ear specula tips, with a closed completely blank cream consultation notebook behind them. Use a close but fully framed slightly elevated oblique perspective, refined soft daylight and realistic clean instrument detail. This is equipment only, no examination being performed. Arrange the ENTIRE kit compactly in the middle 60 percent of image width with generous quiet margins of at least 20 percent left/right and 16 percent top/bottom; a centered square crop must retain the complete otoscope and tray. No people, hands, faces, body parts, human reflections, room/reception/lounge, furniture, plants, readable text, labels, logos, watermark, medical efficacy claims or graphic badges. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Pediatric otoscope and clean ear tips beside a blank notebook
+INSPECTION: PASS: complete otoscope, clean ear tips in tray, blank notebook and folded plum linen centrally framed; full instruments and tray remain within a centered square crop, no people or readable text.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 1 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

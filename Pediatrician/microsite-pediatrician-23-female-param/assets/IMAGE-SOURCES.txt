@@ -1,0 +1,55 @@
+Pediatrician 23 — Mint circle — Dr. Tara Mehta
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-23.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-5fa013a7-2bb1-4bf3-a2f6-353adebc4e47.png
+PROMPT: Use case: photorealistic-natural. Asset type: professional pediatrician profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Tara Mehta, an Indian female doctor about 35 with dark brown skin, a short softly wavy dark bob and small simple earrings. No glasses. A modest mint blouse beneath a white clinical coat. Naturally warm professional expression, realistic skin texture and proportions. Full head and waist-up framing, both shoulders visible, about 8 percent comfortable headroom, eye-level camera. Plain softly blurred white/pearl studio backdrop with a restrained mint tint, fresh diffused daylight. One adult only. No stethoscope, badges, writing, logos, watermark or graphic frame.
+ALT: Portrait of fictional pediatrician Dr. Tara Mehta
+INSPECTION: PASS: One fictional Indian female pediatrician with short wavy bob, small earrings, mint blouse and white coat. Full head and waist-up professional framing, natural expression and pale mint/pearl backdrop. No other people, text, logos or watermark.
+
+FILE: hero-pediatrics-23.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-67c44929-3afa-42f9-8b06-c09a854eb701.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric website hero background, wide landscape 16:9. Attractive crisp editorial still life on a pale white-and-mint matte tabletop: a real child-sized mint pediatric stethoscope, a small folded pale mint pediatric blood-pressure cuff with neatly gathered tubing, and three large rounded smoothly finished wooden developmental stacking cups. No gauge or written markings. Group all objects toward the RIGHT third, roughly 70–92 percent of frame width; keep stethoscope chestpiece and large cups clearly visible on the right. Leave the LEFT 60 percent as broad clean softly lit white negative space. Fresh studio daylight, realistic shadows, tactile wood and fabric, restrained soft pink detail. Close pediatric still-life photograph, no room scene. Strictly no people, hands, faces, readable writing, labels, numbers, logos, watermark or graphics.
+ALT: Mint pediatric stethoscope and child cuff beside large wooden developmental cups
+INSPECTION: PASS: People-free pediatric still life with mint stethoscope, small unlabelled child cuff and large rounded wooden developmental cups. Object group is right aligned with broad clear left space. No text, labels, readable numbers, logos, watermark or room scene.
+
+FILE: about-pediatrics-23.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-74be382d-6e6b-4c44-96b7-f66d1f9660a7.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric About photograph, vertical 4:5. A candid daylight photograph of one Indian toddler about three, fully clothed in a cream long-sleeved shirt and mint dungarees with covered legs, sitting comfortably on a clean floor play mat and building a low tower of large soft foam blocks in mint, pale pink and cream. The safe broad foam blocks are much larger than the child's hands; the low tower stays below shoulder height. Natural engaged expression, age-appropriate play, authentic photographic skin and textures. Frame the whole seated child and blocks with comfortable margins, softly blurred plain pale background, no wider room or furniture. Only this child is present, no adults or other people. No text, logos, labels, watermark or graphic frame.
+ALT: A toddler building a low tower of large foam blocks on a play mat
+INSPECTION: PASS: One fully clothed Indian toddler sits on a clean mat and builds a low tower of large soft foam blocks. Natural engaged expression and safe age-appropriate play with mint/pink accents. No adult or other people, text, logos, watermark or lounge/reception scene.
+
+FILE: philosophy-pediatrics-23.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-64a131a7-c6a3-4940-89e1-5823b9e23056.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric care philosophy photograph, landscape 4:3. Clear attractive clinical editorial still life on a pale mint-white seamless surface: a real compact infant weighing scale with a smooth white gently concave tray and completely blank unlit display, a small folded cream muslin and a pair of tiny mint cotton infant socks resting beside the scale. No baby or person. Photograph from a gentle elevated three-quarter angle, natural fresh daylight and subtle realistic shadows. Keep the entire scale tray and base, cloth and socks inside the middle 60 percent of image width with 20 percent clear side margins and comfortable top/bottom margins; all main objects must fit fully in a centered square crop. Soft tactile cotton and clean white medical equipment, no furniture or room scene. No people, hands, readable numbers, text, labels, logos, watermark or graphic frames.
+ALT: Infant scale with blank screen, cream muslin and mint cotton socks
+INSPECTION: PASS: People-free infant weighing scale with completely blank display, mint cotton socks and folded cream muslin. The complete scale and supporting objects remain visible in a centered square crop. Clean pale mint/white clinical composition without furniture, readable text, labels, numbers, logos or watermark.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 5 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

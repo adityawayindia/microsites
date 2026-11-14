@@ -1,0 +1,55 @@
+Pediatrician 22 — Amber daylight — Dr. Ira Srinivasan
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-22.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-2042dc87-4f9a-4e5f-ba8d-99d951877364.png
+PROMPT: Use case: photorealistic-natural. Asset type: professional pediatrician profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Ira Srinivasan, an Indian female doctor about 38 with medium brown skin, naturally curly dark hair neatly tied back and delicate light-colored rectangular glasses. A modest amber blouse beneath a white clinical coat, small simple stud earrings, warm composed professional expression. Full head and waist-up framing, both shoulders visible, approximately 8 percent headroom, eye-level camera. Soft plain warm ivory studio backdrop, fresh flattering morning-style daylight, authentic skin detail and natural proportions. Only this one adult person. No stethoscope, badges, text, logos, watermark or graphic frame.
+ALT: Portrait of fictional pediatrician Dr. Ira Srinivasan
+INSPECTION: PASS: One fictional Indian female pediatrician with neatly tied curly hair, light rectangular glasses, amber blouse and white coat. Complete head and waist-up framing with natural skin and a warm ivory studio backdrop. No other people, text, logos or watermark.
+
+FILE: hero-pediatrics-22.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-9e3827bf-0056-4a7f-9d33-cdee86ee403d.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric website hero background, wide landscape 16:9. An attractive bright morning-light editorial still life on pale yellow-white paper: one real child-sized amber pediatric stethoscope, oversized smoothly finished wooden pre-literacy learning shapes such as a broad curved arch, short rounded bar and solid disc arranged separately without forming any letters or words, and a folded ivory baby blanket. Arrange the object group toward the LEFT third, roughly 8–35 percent of frame width, keeping the stethoscope chestpiece and shapes clearly visible near the left. Leave the RIGHT 60 percent as broad uncluttered warm white negative space. Fine natural shadows, tactile knit and smooth maple, restrained amber and muted blue details. Close tabletop photo, not a room. Strictly no people, hands, faces, readable text, letters, numbers, logos, labels, watermark or graphics.
+ALT: Amber pediatric stethoscope with abstract wooden learning shapes and an ivory baby blanket
+INSPECTION: PASS: People-free pediatric still life of amber stethoscope, separate large wooden arch/bar/disc learning shapes and an ivory baby blanket with pale-blue trim. Objects are left aligned with broad clear right space. Shapes form no readable text; no labels, logos, watermark or room scene.
+
+FILE: about-pediatrics-22.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-58c123dd-e528-4980-9105-458111e49866.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric About photograph, vertical 4:5. A candid editorial photograph of one Indian boy about eight, fully clothed in a modest amber short-sleeved shirt and blue trousers, reading a colorful picture book at a simple pale wooden table. He has neatly cropped dark hair and an absorbed calm expression. Picture-book pages show gentle landscape and animal illustrations with no written words. Soft bright morning daylight, natural skin texture, amber and soft blue accents. Frame the child and open book closely with comfortable margins and a plain softly blurred ivory background, no wider room scene. Only this child, no adults or other people. No readable text, labels, logos, watermark or graphic frame.
+ALT: A school-age boy reading a picture book in morning light
+INSPECTION: PASS: One fully clothed Indian school-age boy reads an illustrated nature picture book at a pale wooden table. Natural child-focused activity, amber/blue clothing and soft morning light. No adult, other people, readable writing, logos, watermark or lounge/reception scene.
+
+FILE: philosophy-pediatrics-22.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-aa2e58a8-c46b-4176-a734-ed72e9a1b454.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric care philosophy photograph, landscape 4:3. A refined overhead editorial still life on warm yellow-white paper: a complete compact pediatric reflex hammer with a pale amber rubber head, a clean digital thermometer with a completely blank unlit display and smooth white body, and a small open cream consultation notebook with completely blank pages. Arrange the instruments neatly beside the notebook in a sparse pleasing composition. Keep all objects inside the central 60 percent of image width, with 20 percent clear side margins and comfortable top/bottom margins; hammer, thermometer and every notebook corner must remain fully visible in a centered square crop. Gentle morning daylight, delicate shadows, realistic metal and paper textures. People-free pediatric still life, no rooms, hands, faces, readable numbers, writing, labels, logos, watermark or graphic frames.
+ALT: Pediatric reflex hammer and thermometer beside a blank consultation notebook
+INSPECTION: PASS: People-free overhead pediatric reflex hammer, thermometer with blank display and blank open notebook. Full instruments and all notebook corners fit a centered square crop. Warm yellow-white composition with clear realistic detail; no readable numbers, text, labels, logos or watermark.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 4 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

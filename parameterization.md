@@ -29,9 +29,11 @@ sites) is kept separately in [parameterization-log.md](parameterization-log.md).
 ## 0. Conventions
 
 **Naming convention:** once a template is fully parameterized, its folder gets the suffix
-`-param` (e.g. `<Specialty>/microsite-<specialty>-1` → `<Specialty>/microsite-<specialty>-1-param`).
-A folder without `-param` has not been converted. Rename in the same commit that finishes the
-conversion.
+`-param` after its gender (e.g. `<Specialty>/microsite-<specialty>-1-male` →
+`<Specialty>/microsite-<specialty>-1-male-param`). Use the same gender as the source;
+keep any `-assigned` suffix last (`-male-param-assigned`). See AGENTS.md §20 for the
+complete naming rule. A folder without `-param` has not been converted. Complete the
+rename locally when conversion finishes; do not commit or push unless explicitly requested.
 
 The suffix is a **repo folder name only**. Static content image URLs use the backend's
 `{{slug}}` as the bucket folder, never the repository folder name or a `-param` suffix:

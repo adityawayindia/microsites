@@ -1,0 +1,56 @@
+Homeopathy 16 — Blue glass — Dr. Siddhant Rao
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only the doctor portrait contains a person. All supporting images are people-free and specialty-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-16.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-45094de1-d047-4a45-b2b7-1e4cc3cbf658.png
+PROMPT: Use case: photorealistic-natural. Original high-quality editorial studio portrait of one fictional Indian male homeopathic physician around 38, Dr. Siddhant Rao. Distinct youthful face with a slightly angular jaw, medium warm brown skin, thick short dark hair swept neatly to the side, close neat beard, calm attentive dark eyes, natural small smile. Clean white clinical coat over pale blue collared shirt, no tie and no stethoscope. Relaxed standing pose angled slightly to the left while looking at camera, head, shoulders and waist-up torso fully visible, arms relaxed, natural anatomy. Vertical 3:4 portrait with generous headroom and side margins. Soft ice-white and muted blue studio backdrop, delicate refracted daylight, realistic skin and hair texture. Only this fictional doctor may appear. No text, badge, logo, watermark, other people or medical claims.
+ALT: Dr. Siddhant Rao, male homeopathic physician
+INSPECTION: PASS: one distinct fictional male doctor, neat beard and pale blue shirt, full head and waist-up pose, no stethoscope, labels or other people.
+
+FILE: hero-homeopathy-16.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-3d3a879b-c48b-4458-a997-a70730bb7e3c.png
+PROMPT: Use case: photorealistic-natural. Premium original editorial photography for an illustrative homeopathy practice website. Attractive clean ice-white and pale-blue glass palette, real materials, soft cool daylight with gentle refracted blue light. Absolutely no people, hands or human reflections. No room, reception, lounge or living-room scenes. No readable labels, text, logos, watermark, medical efficacy claims, plants, herbs, mortar or pestle. Wide landscape 16:9 hero background. Two small unlabelled clear glass homeopathic globule vials with plain white caps, holding tiny white spherical globules, arranged elegantly on the LEFT third of a broad frosted-glass tabletop. One standing vial and one lying at a gentle diagonal, compact group. Behind them a simple thick frosted-glass rectangular block catches pale blue refractions. The right two-thirds remain airy empty ice-white negative space for website profile text, with only subtle soft light gradients and glass shadows. Realistic glass edges, delicate translucency, premium minimalist product still life. Entire bottles visible, no clutter.
+ALT: Homeopathic globule vials on frosted glass in soft blue daylight
+INSPECTION: PASS: two clear globule vials grouped left, ample right text space, cool frosted glass refractions; no people or labels.
+
+FILE: about-homeopathy-16.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-385731f8-1824-4853-8031-32379adc6abe.png
+PROMPT: Use case: photorealistic-natural. Premium original editorial photography for an illustrative homeopathy practice website. Attractive clean ice-white and pale-blue glass palette, real materials, soft cool daylight with gentle refracted blue light. Absolutely no people, hands or human reflections. No room, reception, lounge or living-room scenes. No readable labels, text, logos, watermark, medical efficacy claims, plants, herbs, mortar or pestle. Vertical 4:5 macro still life. A single small clear cylindrical homeopathic globule vial with a plain white cap, tiny white round globules inside, standing beside a shallow hand-blown translucent pale blue glass dish holding a few tiny white globules. The dish has a refined irregular oval rim and visible delicate glass thickness. Placed on a smooth ice-white surface, compact centered arrangement with ample margins for rounded crop. Close focus on the vial and glass dish, fine material detail and subtle blue reflections. Different from a wide hero layout, intimate editorial object study.
+Final refinement using built-in imagegen: Edit only the four image corners. Remove the baked-in rounded card corners and the white corner wedges. Extend the existing pale blue photographic backdrop naturally all the way to every edge, producing a full rectangular 4:5 photograph with no border or frame. Preserve the vial, dish, globules, light, composition, colors and all other details unchanged. No text, people or new objects.
+ALT: A clear homeopathic globule vial beside a pale blue glass dish
+INSPECTION: PASS after corner refinement: full rectangular portrait photo of globule vial and blue glass dish, attractive realistic refractions, no baked frame or corner wedges, no people or text.
+
+FILE: philosophy-homeopathy-16.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-c36eda11-7215-4c82-8c8a-7704cbc9097a.png
+PROMPT: Use case: photorealistic-natural. Premium original editorial photography for an illustrative homeopathy practice website. Attractive clean ice-white and pale-blue glass palette, real materials, soft cool daylight with gentle refracted blue light. Absolutely no people, hands or human reflections. No room, reception, lounge or living-room scenes. No readable labels, text, logos, watermark, medical efficacy claims, plants, herbs, mortar or pestle. Landscape 4:3 still life. A tidy small stack of completely blank ivory consultation record cards, one card offset diagonally, with a slender silver pen and one small unlabelled amber homeopathic dropper vial with a navy rubber bulb. A clear glass prism off to the back casts soft cool-blue refracted shadows across the pale white surface. Main objects grouped centrally, the record cards dominant, dropper on their right, pen following card edge. Essentials contained in the middle 65 percent for safe square crop. No writing, ruled forms or numbers on the cards. Crisp thoughtful editorial photography, realistic glass reflections and quiet spatial depth.
+ALT: Blank consultation record cards and a homeopathic dropper vial in blue light
+INSPECTION: PASS: blank cards, silver pen, amber dropper vial and glass-prism shadows; no readable text or people, distinct from hero/About.
+
+FILE: gallery-globules.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-7b59331c-4ee9-4d30-a649-3f87894ac803.png
+PROMPT: Use case: photorealistic-natural. Original premium editorial photography for an illustrative homeopathy practice website, refined and attractive, believable real materials and natural light. No text, readable labels, brand logos, watermark, medical efficacy claims, or promises. No reception, lounge, living room or clinic-room interior. No people, hands or human reflections. Landscape 4:3 macro product still-life photograph of a small clear cylindrical homeopathic globule vial with a plain white cap, containing tiny round white globules, resting at a slight diagonal on warm light limestone. A few globules loosely beside it, neatly composed rather than spilled messily. Soft focused foreground and gentle shallow depth of field, neutral ivory and pale sand palette, attractive fine detail, daylight from the left. No label, no large conventional tablets or capsules, no other objects.
+ALT: Small white homeopathic globules in a clear vial on light stone
+INSPECTION: PASS: people-free clear vial with small white globules; uncluttered warm stone close-up, no labels or conventional capsules.
+
+FILE: gallery-dropper.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-301bfe2c-6c10-4a21-b0b2-c83e57e686de.png
+PROMPT: Use case: photorealistic-natural. Original premium editorial photography for an illustrative homeopathy practice website, refined and attractive, believable real materials and natural light. No text, readable labels, brand logos, watermark, medical efficacy claims, or promises. No reception, lounge, living room or clinic-room interior. No people, hands or human reflections. Landscape 4:3 editorial still life of two small unlabelled amber homeopathic glass bottles, one with a simple black rubber dropper top and the other closed with a smooth plain cap, plus one clean glass pipette resting on a matte pale ceramic tray. Restrained sand, warm white and amber palette, clean soft daylight, carefully arranged compact centered composition. Realistic transparent glass and delicate reflections, uncluttered medical dispensing detail, no liquids being administered, no herbs, no mortar or pestle.
+ALT: Clean glass droppers and small amber bottles on a neutral tray
+INSPECTION: PASS: people-free amber glass bottles and pipette on ceramic tray; credible glass detail, no labels or administration imagery.
+
+FILE: gallery-materia.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-68ffaff1-5def-4781-bf47-885db16901e1.png
+PROMPT: Use case: photorealistic-natural. Original premium editorial photography for an illustrative homeopathy practice website, refined and attractive, believable real materials and natural light. No text, readable labels, brand logos, watermark, medical efficacy claims, or promises. No reception, lounge, living room or clinic-room interior. No people, hands or human reflections. Landscape 4:3 premium editorial photograph of an open homeopathic materia medica style reference book on pale ivory desk surface, pages softly out of focus with no legible text, and a small unlabelled clear vial of tiny white homeopathic globules in crisp focus near the book's lower right corner. Gentle warm daylight and subtle soft shadows, restrained cream and warm grey tones, scholarly quiet still life. The vial fully visible and the main composition safely centered for responsive crops. No herbal specimens, no decorative medical symbols, no mortar or pestle.
+ALT: Open homeopathic reference book and a small globule vial
+INSPECTION: PASS: people-free globule vial and open book; page text deliberately defocused and unreadable; no labels, logos or claims.
+
+Gallery files are reused within the new Homeopathy 15–24 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: existing Homeopathy-11-Female FAQ pairs retained because the supplied FAQ PDF has no Homeopathy set. Safety context reviewed against https://www.nccih.nih.gov/health/homeopathy on 14 November 2026; no cure or efficacy claims added.

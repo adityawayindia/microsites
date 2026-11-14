@@ -1,0 +1,129 @@
+DigiDr verification - ENT/microsite-ent-19-female
+14 November 2026
+Dr. Anika Verma - female ent
+PASS: local implementation and fixture-backed integrations. Production service delivery UNVERIFIED.
+
+METHOD
+Built and tested one microsite at a time. Source verified before parameterization. Real browser, fonts, Font Awesome and phone utility; appointment/chat/social/visitor API responses intercepted only in temporary QA tools. No real appointments created.
+Three gallery images by default. Dynamic backend image loop retained. Static param images use microsite_buck/{{slug}}/assets/.
+Core booking helpers, calendar and submission blocks match AGENTS Appendix A.18; no booking logic redesign. Footers identical across all three pages.
+
+RUNTIME RESULTS
+37/37 interactions, including complete online and offline bookings, consent, uploads, validation and chat replies.
+9/9 booking edge cases; 12/12 modal, analytics and contrast checks.
+39/39 parameter flags, banner schedule and mobile asset, short/long content and grid checks; 6/6 Facebook fixture/fallback/carousel checks.
+Three pages at 320/375/768/1024/1440/1900px: no overflow, missing images or icon glyphs. Axe: zero WCAG A/AA violations on pages, booking, consent, chat and visible tooltip. Lighthouse was not run.
+Header full-name stress tests and gallery counts 4/5/6/7 passed. Mobile/tablet/desktop booking and chatbot screenshots inspected. Journey numbers, icons and rows checked at nine viewport widths.
+Phone/tablet hero image focal points rechecked at 375/768/1024px after final styling: no overflow, missing images or WCAG A/AA violations.
+Short viewport chat checks include 375x420 and 812x375. Compact 340x420 desktop, no suggestions.
+
+CHECKLIST: Item | Status | Evidence | Notes
+1 | PASS (local) | index.html:5 | Professional generated doctor portrait; circular header avatar; optimized local portrait.
+2 | PASS (local) | script/index.js:1651 | Header links and legal-footer section navigation tested; hash removed; mobile menu and Escape work.
+3 | PASS (local) | index.html:28 | Qualification, registration, optional fellowship, languages retain required order and icons.
+4 | PASS (local) | script/index.js:1078 | Three counters; year/count data read from rendered text, one-shot observer, reduced-motion handling.
+5 | PASS (local) | index.html:28 | Eight networks in required order. Unconfigured source links are disabled; all enabled template links tested.
+6 | PASS (local) | index.html:6 | Doctor information only; no extra promotional hero title, paragraph or suggestion UI.
+6a | PASS (local) | index.html:35 | Portrait frames stay outside the face; no overlaid slogans or labels obscure the doctor.
+7 | PASS (local) | script/index.js:1710 | Canonical seven-line Read More implementation; long and short biographies tested.
+8 | PASS (local) | styles/style.css:81 | 12-track grid: three/two/one columns at desktop/1100/640; centered remainder rows tested for 4/5/6/7 items. AGENTS breakpoint takes precedence over the older 1200 wording in verification item 8.
+9 | PASS (local) | index.html:37 | Six ent services; headings larger/bolder than 18px copy; no nested service cards.
+10 | PASS (local) | index.html:69 | Distinct care-philosophy design and three pillars; ENT-specific imagery; only the doctor portrait contains a person.
+11 | PASS (local) | index.html:72 | Four-step journey in required position; static specialty wording and responsive design.
+12 | PASS (local) | index.html:76 | Address, telephone, email and appointment CTA; required contact hooks retained.
+13 | PASS (local) | index.html:77 | Three ENT still-life scenes; responsive centered grid, keyboard lightbox, arrows and Escape tested.
+14 | PASS (local) | script/index.js:1139 | Six questions; one open answer at a time; keyboard-operable buttons and regions.
+15 | PASS (local) | index.html:95 | Info icon present beside online-consultation tab.
+16 | PASS (local) | script/index.js:550 | Exact telemedicine note; hover, keyboard focus and touch verified.
+17 | PASS (local) | script/index.js:379 | Scroll-gated consent; dismissal preserves fields and leaves checkbox unticked; agreeing enables booking.
+18 | PASS (local) | styles/style.css:496 | Primary booking action uses brand fill; tabs, upload and close retain neutral/outline styling.
+19 | PASS (local) | index.html:100 | No demo appointment adapter or sample-clinic notice in shipped pages.
+20 | PASS (local) | index.html:176 | Required consent wording with source doctor or rendered full_name.
+21 | PASS (local) | script/index.js:51 | Real intl-tel-input 29.2.2 and utils loaded; India default; invalid phone submission blocked.
+22 | PASS (local) | script/index.js:1685 | Live Unicode letter/space/apostrophe/hyphen sanitization.
+23 | PASS (local) | script/index.js:1687 | Past/unconfigured weekdays blocked; required fields, PDF/JPG/PNG type and 5 MB limit tested.
+24 | PASS (local) | script/index.js:357 | Both modes: validation -> consent -> API submission -> confirmation. Shared live/reference booking flow retained, without adding another review stage. Focus trapping/restoration, Escape, API failure and empty slots tested.
+25 | PASS (local) | styles/style.css:932 | White CTA span labels and functional phone dropdown verified in browser.
+26 | PASS (local) | index.html:229 | Canonical brand/Quick Links/Legal/visitor/copyright/disclaimer hierarchy.
+27 | PASS (local) | index.html:229 | Footer markup byte-identical across all three pages.
+28 | PASS (local) | styles/style.css:731 | Compact footer checked at 1440, 768 and 375; no extra rows.
+28a | PASS (local) | styles/style.css:808 | Computed 14px disclaimer at all six tested viewport widths on all three pages.
+29 | PASS (local) | index.html:229 | No image credits clutter the footer. Provenance lives in assets/IMAGE-SOURCES.txt.
+29a | PASS (local) | index.html:277 | Shared visitor API integration on all pages; browser fixture updates count; real production count remains unverified.
+30 | PASS (local) | styles/chatbot.css:197 | Compact chat: desktop 340x420; tablet/phone caps; short landscape and simulated keyboard-height viewports checked.
+30a | PASS (local) | script/chatbot.js:46 | No suggestions wrapper, chips, arrows or empty band in generated DOM before/after messages.
+31 | PASS (local) | script/chatbot.js:74 | Required two-line footer, including final punctuation.
+32 | PASS (local) | script/chatbot.js:167 | Launcher, typed Enter/send, response, close, live log and keyboard focus tested.
+33 | PASS (local) | script/chatbot.js:7 | ENT welcome; backend response contract tested with non-advisory fixture. Actual backend replies require configured doctor.
+34 | PASS (local) | privacy-policy.html:6 | Legal wording compared with AGENTS section 41; inherited typo incimedical corrected to incidental. Only profile/date/contact data differ.
+35 | PASS (local) | privacy-policy.html:5 | Back to Home present on both legal pages; footer section links reach correct homepage section.
+36 | PASS (local) | index.html:1; styles/style.css:1; script/index.js:1 | Required source, assets, styles, scripts and three SEO files present. Verification report is the only added audit document.
+37 | PASS (local) | index.html:5 | Required section order verified; social section hides when API has no usable posts.
+38 | PASS (local) | robots.txt:1; sitemap.xml:1; llms.txt:1 | Per-site draft URLs, doctor and specialty; param URLs use slug with extension-free routes.
+39 | PASS (local) | index.html:5 | No blog page or navigation link. Reference blog-detail-* classes remain only as legal-shell class names.
+40 | PASS (local) | index.html:1 | No previous doctor/specialty copy, TODO or Lorem. Only intentional placeholders: registration/contact defaults, GA4 ID and param fields.
+41 | PASS (local) | index.html:37 | Gender-appropriate ENT profile and consultation-focused copy; illustrative doctor/clinic details must be configured before publication.
+42 | PASS (local) | assets/IMAGE-SOURCES.txt:1 | Generated assets reviewed; only the doctor portrait contains a person. No unverifiable cure claims or testimonials.
+42a | PASS (local) | index.html:37 | No prohibited trust/reliability wording in visible content or metadata.
+42b | PASS (local) | index.html:28 | No unsupported doctor trust/verification labels; factual specialty label only.
+43 | PASS (local) | styles/style.css:1 | Distinct specialty palette: neutral base, brand areas and small interactive accents; visual 60/30/10 balance review.
+44 | PASS (local) | styles/style.css:1 | Computed key text/background pairs meet 4.5:1; axe checks cover page/dialog contrast. Lowest sampled ratios listed below.
+45 | PASS (local) | styles/style.css:931 | Alternating bands and 20px section padding; hero has its own layout padding.
+46 | PASS (local) | styles/style.css:930 | 1480px container scale, constrained text and shared footer width.
+47 | PASS (local) | styles/style.css:929 | 18px body; larger/bolder headings; 14px footer exception and documented modal/chat scale. Distinct Google Fonts per requested visual identity.
+48 | PASS (local) | styles/style.css:936 | Card, pillar, journey and contact headings larger/bolder than body.
+49 | PASS (local) | styles/style.css:950 | Visible focus and consistent hover styles; reduced motion disables animation.
+50 | PASS (local) | styles/style.css:948 | All three pages measured at 320/375/768/1024/1440/1900: no overflow, broken images or missing icon glyphs.
+51 | PASS (local) | styles/style.css:62 | 50+ character name, long specialty, qualification, fellowship, address/email stress fixtures; no header collisions or overflow.
+52 | PASS (local) | styles/style.css:947 | Mobile menu, booking/consent, gallery, social carousel, chat and footer checked; calendar retains compact reference cell scale.
+53 | PASS (local) | assets/IMAGE-SOURCES.txt:1 | Optimized JPEG assets below 500 KB, portrait 900x1200, scenes up to 1200px; image geometry and lazy loading present.
+53a | PASS (local) | assets/IMAGE-SOURCES.txt:1 | All generated assets visually reviewed; supporting scenes have no people; each portrait contains only the selected doctor.
+54 | PASS (local) | styles/style.css:20 | Shared responsive CSS block present once; text wraps, grids can shrink, cards grow and social rows wrap.
+55 | PASS (local) | index.html:1 | Unique page titles, descriptions, canonical, OG/Twitter, single H1; Physician JSON-LD on homepage.
+56 | PASS (local) | index.html:5 | Keyboard controls, labels and modal roles. Axe WCAG A/AA page/modal checks passed ; details below.
+57 | PASS (local) | index.html:1 | No unexpected JS exceptions or failed asset requests in fixture-backed browser checks. Live bucket deployment and backend transactions remain unverified.
+57a | PASS (local) | index.html:1 | Actual Font Awesome CSS loaded; glyphs, CTA colors and chat send/close icons reviewed. Site-specific chatbot SVG loaded through the QA local-asset mapping.
+58 | PASS (local) | index.html:1 | Existing ENT specialty; numbering continues 4-23 with matching -param folders.
+59 | PASS (local) | verification-report.txt:1 | This task writes only the forty new ENT folders; no existing file deleted; no commit or push. All pre-existing files are unchanged against the start-of-task hash inventory.
+
+E1-E5 | PASS with fixtures; live account content UNVERIFIED | index.html social-media; script/index.js fetchDoctorPosts/loadFbSdk/settleCard | qualifying posts, centering, lazy SDK, blocked fallback and carousel navigation.
+
+ANALYTICS S1-S5
+User-requested GA4 placeholder retained. Clarity project ymqvcvdc4v; ent specialty tag. Live collection unverified.
+nav_link_click | About | GA4 1, Clarity 1 | correct page_path
+nav_link_click | Services | GA4 1, Clarity 1 | correct page_path
+nav_link_click | Contact | GA4 1, Clarity 1 | correct page_path
+nav_link_click | Gallery | GA4 1, Clarity 1 | correct page_path
+nav_link_click | FAQ | GA4 1, Clarity 1 | correct page_path
+book_appointment_click | Navbar | GA4 1, Clarity 1 | correct page_path
+book_appointment_click | Hero | GA4 1, Clarity 1 | correct page_path
+read_more_click | null | GA4 1, Clarity 1 | correct page_path
+phone_number_click | null | GA4 1, Clarity 1 | correct page_path
+email_click | null | GA4 1, Clarity 1 | correct page_path
+book_appointment_click | Contact | GA4 1, Clarity 1 | correct page_path
+clinic_visit_tab_click | null | GA4 1, Clarity 1 | correct page_path
+online_consult_tab_click | null | GA4 1, Clarity 1 | correct page_path
+upload_report_click | null | GA4 1, Clarity 1 | correct page_path
+footer_nav_link_click | About | GA4 1, Clarity 1 | correct page_path
+footer_nav_link_click | Services | GA4 1, Clarity 1 | correct page_path
+footer_nav_link_click | Contact | GA4 1, Clarity 1 | correct page_path
+footer_nav_link_click | Gallery | GA4 1, Clarity 1 | correct page_path
+footer_nav_link_click | FAQ | GA4 1, Clarity 1 | correct page_path
+footer_nav_link_click | Privacy Policy | GA4 1, Clarity 1 | correct page_path
+footer_nav_link_click | Terms of Service | GA4 1, Clarity 1 | correct page_path
+Booking and consent events checked during full flows. No patient-entered information in event payloads.
+
+LOWEST SAMPLED CONTRAST
+.cta-btn: 5.93:1
+.chatbot-footer: 6.46:1
+.service-card p: 7.23:1
+
+UNVERIFIED EXTERNAL DELIVERY
+Names, portraits and clinic details are illustrative. Configure real registration, address, contact details, doctor IDs and availability before publication.
+Local API/SDK fixtures verify integration contracts, not production booking persistence, email delivery, real meet links, chatbot answers or Facebook content.
+Static assets must be uploaded to the real slug bucket. Public bucket responses and live GA4/Clarity collection were not verified. No deployment requested.
+
+SCOPE
+Only new ent-4 through ent-23 folders and their param versions are edited. Existing files are unchanged; no deletion, commit or push.
+Generated portraits and supporting images are local in assets/. Prompts and provenance: assets/IMAGE-SOURCES.txt.
+QA evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-ent-qa\19\base

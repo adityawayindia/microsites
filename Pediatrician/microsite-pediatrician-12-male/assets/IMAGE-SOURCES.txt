@@ -1,0 +1,55 @@
+Pediatrician 12 — Pebble & seafoam — Dr. Samar Kulkarni
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-12.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-1ebcc9a8-276a-4a57-b5b4-5ae2d1acd464.png
+PROMPT: Create an attractive authentic photorealistic professional portrait of fictional Indian male pediatrician Dr. Samar Kulkarni, about 43 years old. Distinct oval face, neatly side-parted dark hair, clean-shaven face, warm calm professional expression, realistic natural skin texture. White clinical coat over a steel-blue collared shirt, no stethoscope, badges, embroidery, text, logos or props. Vertical 3:4 waist-up portrait, full head with generous headroom, relaxed upright posture looking toward camera. Plain softly blurred pale pebble-grey and seafoam studio backdrop, beautiful soft daylight. Identity Pebble & seafoam: muted slate #3e5b63 and light seafoam, quiet refined atmosphere. One doctor only, no extra people, claims, watermark or graphic badges. Full rectangular edge-to-edge photograph, square corners without a frame; authentic professional photography, no glamour retouching.
+ALT: Portrait of the fictional pediatrician Dr. Samar Kulkarni
+INSPECTION: PASS: fictional male doctor with oval face, parted dark hair and clean-shaven appearance, steel-blue shirt and white coat; full head with headroom, no additional people or text.
+
+FILE: hero-pediatrics-12.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-633b4ded-c6b4-4657-98df-c1290b20d010.png
+PROMPT: Create a beautiful photorealistic editorial pediatric-care website hero still life, wide landscape 16:9. Identity Pebble & seafoam: pale pebble-grey surface, muted seafoam fabric and slate-blue accents. Arrange a real compact infant weighing scale with a shallow white tray and blank powered-off display, a neatly folded seafoam swaddle, a real pediatric stethoscope with accurate connected tubing and a small polished chestpiece, and a pair of tiny cream cotton baby socks. Group all meaningful objects on the LEFT THIRD, naturally overlapping with clear visibility of the scale and pediatric materials. Leave the RIGHT TWO THIRDS broad quiet pale pebble negative space for text. Fresh attractive soft daylight, refined realistic plastic, metal, cotton and muslin textures, gentle shadows. No baby, child, adult, hands, body parts or human reflections. No room/reception/lounge, furniture, plants, coastal scenery, readable text, numbers, labels, logos, watermark, graphic badges, medical claims or frame. Full rectangular edge-to-edge photograph with square corners.
+ALT: Infant scale, seafoam swaddle, pediatric stethoscope and tiny cotton socks
+INSPECTION: PASS: people-free infant scale with blank display, seafoam swaddle, pediatric stethoscope and tiny socks grouped left with quiet pebble space right; no labels or room scene.
+
+FILE: about-pediatrics-12.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-c95bf20f-a75a-4bd1-9ea7-8a8ce65911bc.png
+PROMPT: Create an attractive candid photorealistic pediatric early-development photograph, vertical 4:5. One fully clothed Indian toddler about three years old with short softly wavy dark hair is safely sitting on a simple pale padded activity mat, concentrating on stacking LARGE rounded wooden nesting cups. The toddler wears a modest seafoam cotton long-sleeved top, slate trousers and socks. Capture an engaging three-quarter side viewpoint showing the child's absorbed face, upper body and only the child's own two anatomically natural hands placing a large cup. The cups are oversized smooth pieces, no tiny parts or unsafe toys. Soft fresh daylight, calm seafoam and slate tones, tactile natural wood, realistic age and proportions. Keep face and cup activity central with comfortable framing. Tight cropped activity scene with a softly blurred plain backdrop; no adults, other child, extra hands, room interior, reception, lounge, sofa, furniture or plants. No words, labels, logos, watermark, medical claims, graphic badges or frame. Full rectangular edge-to-edge photograph, square corners.
+ALT: Indian toddler stacking large rounded wooden cups
+INSPECTION: PASS: single fully clothed toddler safely seated on a padded activity mat stacking oversized rounded wooden cups; only the child's own hands visible, no adults, additional people or readable text.
+
+FILE: philosophy-pediatrics-12.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-9993629c-75c3-43dd-b189-f5f1ca2e284f.png
+PROMPT: Create an attractive photorealistic TOP-DOWN editorial pediatric-care still life, landscape 4:3. Identity Pebble & seafoam: clean slate and white surfaces with a subtle seafoam accent. One real compact pediatric reflex hammer with a soft slate-blue rubber head and polished metal handle, a neatly coiled cloth measuring tape with no readable numbers, a small white clipboard holding completely blank cream paper, and three LARGE pebble-shaped smooth wooden developmental blocks form a compact centered group. The ENTIRE group should occupy only the middle 60 percent of image width, leaving generous empty slate-white tabletop margins at least 20 percent on both sides and 16 percent top/bottom. Both the complete hammer and clipboard must remain entirely visible in a centered square crop. Soft fresh daylight, crisp authentic medical-equipment construction, beautiful paper and wood grain, refined gentle shadows. Completely people-free, no hands, faces, body parts or human reflections. No room/reception/lounge, furniture, plants, text, letters, numbers, labels, logos, watermark, graphic badges, medical claims or frames. Full rectangular edge-to-edge photograph with square corners.
+ALT: Pediatric reflex hammer and growth materials with rounded wooden blocks
+INSPECTION: PASS: top-down reflex hammer, blank clipboard, unmarked measuring tape and rounded wooden blocks; all main objects remain fully visible in a centered square crop, no people or labels.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 6 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

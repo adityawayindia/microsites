@@ -1,0 +1,55 @@
+Pediatrician 21 — Raspberry petal — Dr. Ananya Rao
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-21.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-02a80826-8f7c-4c8c-a08f-0a30c5552cc4.png
+PROMPT: Use case: photorealistic-natural. Asset type: professional pediatrician profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Ananya Rao, an Indian female pediatrician about 42 with an oval face and shoulder-length dark hair neatly tucked behind her ears. Small simple stud earrings, no glasses, modest raspberry blouse beneath a white clinical coat. Warm composed professional expression and natural detailed skin. Full head and waist-up framing, both shoulders visible, about 8 percent comfortable headroom, eye-level camera. Plain soft pearl-cream studio backdrop with a restrained raspberry tint, flattering diffused daylight. Only this one adult. No stethoscope, badges, writing, logos, watermark or graphic frame.
+ALT: Portrait of fictional pediatrician Dr. Ananya Rao
+INSPECTION: PASS: One fictional Indian female pediatrician with shoulder-length dark hair tucked behind her ears, small studs, raspberry blouse and white coat. Complete head and waist-up framing with a warm professional expression and pearl backdrop. No text, logos, watermark or other people.
+
+FILE: hero-pediatrics-21.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-544df8c0-fd72-44c6-986b-97652461057d.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric website hero background, wide landscape 16:9. A delicate attractive editorial still-life photograph on warm pearl-white linen: a real child-sized raspberry pediatric stethoscope, a pair of tiny cream knitted baby booties, a clean soft-bristled wooden baby brush and neatly folded cream muslin. Arrange the entire group toward the RIGHT third, roughly 70–92 percent of frame width, keeping the stethoscope chestpiece and booties clearly visible at the right. Leave the LEFT 60 percent broad quiet pearl-white negative space. Soft natural daylight, fine realistic shadows, tactile knit, muslin, smooth wood and polished medical metal. Specialty-specific infant-care objects, no room scene. Strictly no people, hands, faces, silhouettes, readable text, labels, logos, watermark or baked-in graphics.
+ALT: Raspberry pediatric stethoscope with knitted infant booties, baby brush and cream muslin
+INSPECTION: PASS: People-free infant-care still life of a raspberry pediatric stethoscope, tiny knitted booties, soft wooden baby brush and cream muslin. Objects grouped on the right with broad clear pearl-white space on the left. No text, labels, logos, watermark or room scene.
+
+FILE: about-pediatrics-21.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-58c7cb70-64b3-4304-860a-1aca46335075.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric About photograph, vertical 4:5. A candid natural-light editorial photo of a single Indian girl about five arranging large colorful wooden geometric shape tiles into a flower on a simple pale tabletop. She is fully clothed in a modest long-sleeved cream top and raspberry pinafore with trousers, hair neatly tied back. Natural delighted concentration, age-appropriate large smooth tiles in raspberry, peach and soft teal, no small loose magnets. Close child-focused composition with comfortable margins and softly blurred neutral cream background, no wider room scene. Warm gentle daylight and authentic skin texture. Only this child is present, no adults or other people. No readable text, logos, labels, watermark or graphic frame.
+ALT: A young girl arranging large colored shape tiles into a flower
+INSPECTION: PASS: One fully clothed Indian girl uses large smooth colored wooden tiles to form a flower. Age-appropriate developmental play, natural expression and attractive raspberry/cream colors. No adults or other people, readable text, logos, watermark or lounge/reception scene.
+
+FILE: philosophy-pediatrics-21.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-0c04d84d-d733-4e36-a4a9-b31bd579cd4a.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric care philosophy photograph, landscape 4:3. An uncluttered elegant diagonal editorial still life on pearl-white stone: one complete real pediatric otoscope, a compact blank cream child-health record booklet opened to completely blank pages, and a softly coiled pale pink infant measuring tape with fine ticks but no readable numbers. Arrange them on a gentle diagonal while keeping the whole object group inside the central 60 percent of image width with 20 percent empty side margins and comfortable top/bottom space. The entire otoscope handle and tip, booklet corners and tape must remain fully visible in a centered square crop. Delicate daylight, natural realistic shadows, restrained raspberry and pearl palette. Close people-free pediatric instrument photograph, no rooms, hands, people, text, labels, logos, watermarks or graphic frames.
+ALT: Pediatric otoscope with blank child-health record and pale pink measuring tape
+INSPECTION: PASS: People-free diagonal arrangement of a complete pediatric otoscope, blank open child-health booklet and pale pink measuring tape. Entire instrument, booklet and tape fit the centered square crop with margins. No readable writing or numbers, labels, logos, watermark or room scene.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 3 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

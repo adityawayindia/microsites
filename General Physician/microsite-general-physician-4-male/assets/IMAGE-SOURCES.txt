@@ -1,0 +1,37 @@
+General Physician 4 - Dr. Arjun Bhatia
+
+Generated imagery for an illustrative doctor profile. No real patient imagery. Only the doctor portrait contains a person.
+
+
+
+FILE: doctor-4.jpg
+TOOL: OpenAI built-in image_gen
+ORIGINAL: exec-c84db86b-4938-4d8d-add5-dcae9c62853a.png
+PROMPT: Photorealistic professional portrait for a fictional Indian male general physician, Dr. Arjun Bhatia, around 44 years old. Medium-brown skin, neatly combed black hair with a little grey at the temples, clean-shaven, thoughtful friendly expression, looking directly at the camera. White medical coat over a muted slate-blue shirt, stethoscope, no name badge lettering. Waist-up vertical 3:4 composition with modest headroom and natural relaxed posture. Softly blurred pale mineral-blue medical examination setting, gentle window light, realistic skin texture, polished professional photography. Only this doctor appears. No other people, human pictures, text, logos or watermark.
+
+FILE: hero-physician.jpg
+TOOL: OpenAI built-in image_gen
+ORIGINAL: exec-f2e52170-c648-4650-bda9-ba64a84ba7a7.png
+PROMPT: Attractive photorealistic panoramic 16:9 hero background for a general physician website. A charcoal and brushed-silver stethoscope traces a broad sweeping curve beside a compact digital blood-pressure monitor and folded slate cuff on a luminous frost-blue clinical work surface. The monitor display is off. Arrange the devices and graceful tubing mainly around the RIGHT half and right perimeter; leave the LEFT half bright, uncluttered and softly textured for website text. Distinct cool mineral-blue and midnight tones, refined directional daylight, delicate reflections, precise medical equipment textures, elegant editorial composition. No room interior, reception, lounge, furniture, people, hands, human imagery, plants, flowers, medication, labels, readable numbers, text, logos or watermark.
+
+
+
+Supporting assets reused from General Medicine/microsite-general-medicine-6-male/assets; generated with image_gen on 13 November 2026. No lounge or reception imagery.
+
+clinical-examination.jpg
+Original: exec-22837576-8104-4ec1-b56a-137b073318c7.png
+Full generation prompt: Use case: photorealistic-natural. Create a high-quality editorial still-life photograph for a general medicine physician's website, showing tools for an adult physical examination. Close three-quarter overhead view of an unbranded black-and-silver otoscope with a spare clean speculum, a rubber-headed reflex hammer, a compact fingertip pulse oximeter with its screen off, and a simple digital clinical thermometer on a small clean stainless-steel instrument tray. A pale neutral clinical worktop fills the entire background; soft natural daylight, accurate recognizable instrument shapes and realistic material detail, refined uncluttered composition. Landscape 4:3 image, with the important instruments grouped toward the center so a portrait crop remains useful. No room view, reception, living room, lounge, furniture, flowers, people, hands, faces, human pictures, blood, needles, text, logos or watermarks. Equipment photography only, appropriate to general medical assessment.
+
+glucose-monitoring.jpg
+Original: exec-b14c9f3e-7f14-4269-9309-3f9c300f4a94.png
+Full generation prompt: Use case: photorealistic-natural. Create a premium but authentic editorial still-life photograph for a general medicine physician's website, illustrating diabetes review and blood-glucose monitoring. A recognizable unbranded handheld blood-glucose meter with its display switched off, one clean test strip aligned beside it, a small closed plain test-strip container, and a closed compact patient logbook with a simple pen. Carefully arranged as a compact central group on a pale blue-grey medical work surface, with generous clean margins around the group. Realistic plastic and paper textures, soft directional daylight, calm clinical colour balance. Landscape 4:3 composition, close overhead view, no room or furniture visible. No people, hands, body parts, blood, exposed needles, medication, food, reception or living-room furnishings, labels, lettering, numbers, logos or watermarks. Visually clear equipment for ongoing general medicine care, not an instructional diagram.
+
+medical-instruments.jpg
+Original: exec-14ed7ff7-917e-4890-a168-98b9a76fd58c.png
+Prompt summary: Black and silver stethoscope, blood pressure cuff and digital thermometer on a pale blue worktop with a closed notebook. Soft daylight; no people, hands, faces, human illustrations, text, logos or pills.
+
+
+
+favicon.svg: original code-native vector artwork. chatbot-icon.svg: shared DigiDr project asset.
+
+Images optimized as JPEG; originals retained. Each source/param pair uses the same imagery.

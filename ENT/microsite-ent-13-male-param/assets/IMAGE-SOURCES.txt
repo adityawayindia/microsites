@@ -1,0 +1,104 @@
+ENT 13 — Stillwater ink — Dr. Siddharth Nair
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and ENT-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-13.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-2a2a93e4-452b-487d-9e76-e16ee7e0617a.png
+PROMPT: Create one premium photorealistic studio portrait of fictional Indian male ENT specialist Dr. Siddharth Nair, age 41. Distinct narrow oval face, medium-brown skin, short straight black hair neatly side-parted with faint grey near temples, clean-shaven, thin dark rectangular spectacles, warm composed slight smile. White clinical coat over a charcoal collared shirt, no tie or stethoscope, no embroidery, badges or text. Vertical 3:4 framing, complete head with generous headroom, both shoulders and torso to waist visible, natural relaxed upright posture, only this doctor in frame. Soft deep desaturated blue and pale slate studio backdrop, Stillwater ink identity, flattering diffuse daylight and natural skin detail. No logos, labels, watermark, decorative frame, props or other people.
+ALT: Portrait of fictional ENT specialist Dr. Siddharth Nair
+INSPECTION: PASS: Indian male physician with narrow oval face, neat dark side-parted hair, clean-shaven face and rectangular spectacles; white coat over charcoal shirt, slate-blue backdrop, full head and upper body visible, no text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Create one premium photorealistic studio portrait of fictional Indian male ENT specialist Dr. Siddharth Nair, age 41. Distinct narrow oval face, medium-brown skin, short straight black hair neatly side-parted with faint grey near temples, clean-shaven, thin dark rectangular spectacles, warm composed slight smile. White clinical coat over a charcoal collared shirt, no tie or stethoscope, no embroidery, badges or text. Vertical 3:4 framing, complete head with generous headroom, both shoulders and torso to waist visible, natural relaxed upright posture, only this doctor in frame. Soft deep desaturated blue and pale slate studio backdrop, Stillwater ink identity, flattering diffuse daylight and natural skin detail. No logos, labels, watermark, decorative frame, props or other people.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-2a2a93e4-452b-487d-9e76-e16ee7e0617a.png",
+    "inspection": "PASS: Indian male physician with narrow oval face, neat dark side-parted hair, clean-shaven face and rectangular spectacles; white coat over charcoal shirt, slate-blue backdrop, full head and upper body visible, no text or logos."
+  }
+]
+
+FILE: hero-ent-13.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e54f471f-917a-4e12-ab9d-45071bc91ea8.png
+PROMPT: Premium photorealistic editorial photography for an ENT specialist microsite. Attractive studio daylight, realistic clinical equipment scale, precise metal and polymer textures. One separate photograph, not a diagram, illustration, collage, graphic frame or promotional banner. No readable text, numbers, labels, logos, brand names or watermarks. Wide landscape 16:9 hero background, Stillwater ink palette of pale blue ceramic, blue-grey and restrained petrol #27556b. Photograph a modern compact tabletop tympanometer with a gently sloped off-white housing, blank dark unlit screen and a few simple unmarked controls. Place its small clean ear probe in front with a tiny soft silicone tip, connected by a neatly curved thin cable. Everything rests naturally on a pale-blue ceramic surface. Group the complete device and probe in the LEFT third, approximately 8–40% of image width; the RIGHT half and most of center remain broad uncluttered pale-blue negative space. Beautiful soft side lighting and faint crisp ceramic reflections, realistic compact clinical equipment, no giant probe or extra props. Strictly people-free: no adults, children, hands, faces, human silhouettes, body parts or reflections of people. No room, lounge, reception, living room, floral still life, decorative furniture or plants. Only the specified clinical objects on the photographic surface.
+ALT: Modern tympanometer with a clean ear probe on pale blue ceramic
+INSPECTION: PASS: Compact blank-screen tympanometer and small clean ear probe grouped on the left, broad pale-blue negative space on the right; no people, readable labels, logos or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Premium photorealistic editorial photography for an ENT specialist microsite. Attractive studio daylight, realistic clinical equipment scale, precise metal and polymer textures. One separate photograph, not a diagram, illustration, collage, graphic frame or promotional banner. No readable text, numbers, labels, logos, brand names or watermarks. Wide landscape 16:9 hero background, Stillwater ink palette of pale blue ceramic, blue-grey and restrained petrol #27556b. Photograph a modern compact tabletop tympanometer with a gently sloped off-white housing, blank dark unlit screen and a few simple unmarked controls. Place its small clean ear probe in front with a tiny soft silicone tip, connected by a neatly curved thin cable. Everything rests naturally on a pale-blue ceramic surface. Group the complete device and probe in the LEFT third, approximately 8–40% of image width; the RIGHT half and most of center remain broad uncluttered pale-blue negative space. Beautiful soft side lighting and faint crisp ceramic reflections, realistic compact clinical equipment, no giant probe or extra props. Strictly people-free: no adults, children, hands, faces, human silhouettes, body parts or reflections of people. No room, lounge, reception, living room, floral still life, decorative furniture or plants. Only the specified clinical objects on the photographic surface.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-e54f471f-917a-4e12-ab9d-45071bc91ea8.png",
+    "inspection": "PASS: Compact blank-screen tympanometer and small clean ear probe grouped on the left, broad pale-blue negative space on the right; no people, readable labels, logos or room scene."
+  }
+]
+
+FILE: about-ent-13.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-20a8a63b-e017-41c0-b8bd-3ef532815084.png
+PROMPT: Premium photorealistic editorial photography for an ENT specialist microsite. Attractive studio daylight, realistic clinical equipment scale, precise metal and polymer textures. One separate photograph, not a diagram, illustration, collage, graphic frame or promotional banner. No readable text, numbers, labels, logos, brand names or watermarks. Vertical 4:5 close clinical equipment still life on tactile slate-blue paper. Show a clean compact stainless-steel ENT rigid nasal endoscope, black eyepiece prominently in the lower-right central area, slender complete metal shaft running diagonally toward upper-left, with one neatly looped black fiber-optic light cable forming a restrained arc behind it. The shaft, eyepiece and cable are fully contained inside generous edge margins. Camera close enough to reveal polished couplings and subtle knurling, but no oversized or impossible instrument parts; all rests flat and naturally on the paper. A single folded slate-blue paper edge creates a gentle geometric shadow at the top. Soft directional daylight, highly refined product photography, no powered box or extra instruments. Strictly people-free: no adults, children, hands, faces, human silhouettes, body parts or reflections of people. No room, lounge, reception, living room, floral still life, decorative furniture or plants. Only the specified clinical objects on the photographic surface.
+ALT: ENT endoscope eyepiece and neatly coiled light cable on slate blue paper
+INSPECTION: PASS: Detailed rigid ENT endoscope eyepiece, complete slender shaft and neatly looped cable on slate-blue paper; all instrument ends visible, no people, readable text, logos or interior scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Premium photorealistic editorial photography for an ENT specialist microsite. Attractive studio daylight, realistic clinical equipment scale, precise metal and polymer textures. One separate photograph, not a diagram, illustration, collage, graphic frame or promotional banner. No readable text, numbers, labels, logos, brand names or watermarks. Vertical 4:5 close clinical equipment still life on tactile slate-blue paper. Show a clean compact stainless-steel ENT rigid nasal endoscope, black eyepiece prominently in the lower-right central area, slender complete metal shaft running diagonally toward upper-left, with one neatly looped black fiber-optic light cable forming a restrained arc behind it. The shaft, eyepiece and cable are fully contained inside generous edge margins. Camera close enough to reveal polished couplings and subtle knurling, but no oversized or impossible instrument parts; all rests flat and naturally on the paper. A single folded slate-blue paper edge creates a gentle geometric shadow at the top. Soft directional daylight, highly refined product photography, no powered box or extra instruments. Strictly people-free: no adults, children, hands, faces, human silhouettes, body parts or reflections of people. No room, lounge, reception, living room, floral still life, decorative furniture or plants. Only the specified clinical objects on the photographic surface.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-20a8a63b-e017-41c0-b8bd-3ef532815084.png",
+    "inspection": "PASS: Detailed rigid ENT endoscope eyepiece, complete slender shaft and neatly looped cable on slate-blue paper; all instrument ends visible, no people, readable text, logos or interior scene."
+  }
+]
+
+FILE: philosophy-ent-13.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-9e00772e-06f0-407f-9342-c05ed085e716.png
+PROMPT: Edit this existing photograph by pulling the camera back slightly, reducing the entire equipment group uniformly by about 15% while keeping it centered on the same dark blue limestone surface. Preserve the exact audiometer and red-blue headphones, the corrected single cable from blue earcup to audiometer, natural lighting, material details, 4:3 landscape ratio and empty unlit screen. Do not change any device geometry or wiring. Extend only the matching blue limestone tabletop around the group. Ensure at least 20% empty width on both left and right and generous top/bottom margins, so the full equipment AND complete outer cable curve remain comfortably inside a centered square crop. No new objects, no people, no text, labels, logos or watermarks. Photorealistic premium product photograph.
+ALT: Compact audiometer and diagnostic headphones on dark blue limestone
+INSPECTION: PASS: Compact audiometer and diagnostic headphones on blue limestone; corrected cable connects naturally from one earcup to the audiometer. Wider final framing preserves all equipment and the complete cable comfortably within a centered square crop; no people, readable text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Premium photorealistic editorial photography for an ENT specialist microsite. Attractive studio daylight, realistic clinical equipment scale, precise metal and polymer textures. One separate photograph, not a diagram, illustration, collage, graphic frame or promotional banner. No readable text, numbers, labels, logos, brand names or watermarks. Landscape 4:3 high-angle premium clinical still life on dark desaturated blue limestone. Show a compact low-profile off-white audiometer with a blank unlit rectangular screen, two restrained unmarked rotary knobs and a few unlabelled neutral buttons. Place red-and-blue diagnostic headphones to its front-right, padded band lying naturally with earcups visible and a neat short cable loop connecting them. Compose the audiometer slightly upper-left of the group and the headphones lower-right, balanced diagonal arrangement with elegant soft daylight and blue-stone texture. ALL essential objects, the entire compact audiometer, every part of both earcups and padded band, and the complete cable loop must fit inside the CENTRAL 60% of image width and central 72% of image height with at least 20% empty side margins and 14% empty top/bottom margins, so a centered square crop keeps them intact. Frame generously, plausible mutually consistent scale, no extra devices or props. Strictly people-free: no adults, children, hands, faces, human silhouettes, body parts or reflections of people. No room, lounge, reception, living room, floral still life, decorative furniture or plants. Only the specified clinical objects on the photographic surface.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-d2a7ead9-3429-4c79-b895-c381da1af9fb.png",
+    "inspection": "Not selected: headphone cable formed a U-shaped loop directly between earcups instead of a natural equipment connection."
+  },
+  {
+    "type": "edit",
+    "inputOriginal": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-d2a7ead9-3429-4c79-b895-c381da1af9fb.png",
+    "prompt": "Edit this existing clinical still-life photograph. Preserve the off-white audiometer, red-and-blue diagnostic headphones, dark blue limestone surface, realistic lighting, 4:3 landscape ratio and people-free composition. Correct ONLY the physically implausible headphone cable: remove the U-shaped cable currently directly connecting one earcup to the other. Instead show one natural slim black lead emerging from the blue earcup, gently curving behind the headphones and terminating visibly in a small plausible jack on the right side of the audiometer. Keep the red earcup without a dangling connector. No floating cable, impossible joins or extra equipment. Keep the entire instrument group and complete cable inside the centered square-safe region with generous side margins. All screens remain unlit and blank. No people, hands, reflections of people, text, labels, numbers, logos or watermark. Attractive photorealism, preserve all other details.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-d4a8e54c-af04-41ca-a772-f6fc86f9f1cf.png",
+    "inspection": "Cable connection corrected; retained as intermediate because the outer cable curve left limited clearance inside a square crop."
+  },
+  {
+    "type": "edit",
+    "inputOriginal": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-d4a8e54c-af04-41ca-a772-f6fc86f9f1cf.png",
+    "prompt": "Edit this existing photograph by pulling the camera back slightly, reducing the entire equipment group uniformly by about 15% while keeping it centered on the same dark blue limestone surface. Preserve the exact audiometer and red-blue headphones, the corrected single cable from blue earcup to audiometer, natural lighting, material details, 4:3 landscape ratio and empty unlit screen. Do not change any device geometry or wiring. Extend only the matching blue limestone tabletop around the group. Ensure at least 20% empty width on both left and right and generous top/bottom margins, so the full equipment AND complete outer cable curve remain comfortably inside a centered square crop. No new objects, no people, no text, labels, logos or watermarks. Photorealistic premium product photograph.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-9e00772e-06f0-407f-9342-c05ed085e716.png",
+    "inspection": "PASS: Compact audiometer and diagnostic headphones on blue limestone; corrected cable connects naturally from one earcup to the audiometer. Wider final framing preserves all equipment and the complete cable comfortably within a centered square crop; no people, readable text or logos."
+  }
+]
+
+FILE: gallery-ent-hearing.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-4069df77-6c6c-4ef2-8c7d-43729b4af622.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. Attractive premium product photography of a realistic compact diagnostic hearing-test audiometer with a blank unlit screen and neutral unlabelled knobs, and diagnostic audiometry headphones placed neatly beside it. Correctly proportioned human-sized clinical equipment, warm ivory and muted petrol tabletop, restrained silver highlights. Three-quarter angle, entire equipment group comfortably inside the frame, soft natural daylight, clean realistic materials and subtle shadows. Specialty-specific hearing assessment still life, no people or children, no hands, no room/reception/lounge scene, no readable labels, numbers, text, logos, watermark or graphic frames.
+ALT: Diagnostic audiometry headphones beside a compact hearing-test unit
+INSPECTION: PASS: People-free compact audiometer and diagnostic headphones in a clean ivory/petrol product composition. Equipment is complete and proportionate; display blank and controls unlabelled. No text, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+FILE: gallery-ent-endoscope.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-ddb58b1d-1338-4560-beeb-f1ad8ae0097f.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A beautiful realistic clinical product photograph of clean ENT diagnostic endoscopy equipment arranged neatly on a pale sterile tray: a slender rigid ENT endoscope with its optical eyepiece, attached fiber-optic light cable gently coiled beside it, and a compact unlabelled light-source connector. Correct delicate real-world instrument proportions, polished stainless steel and black optical components, warm ivory and cool pearl surfaces, refined soft daylight. Show the complete instrument and cable arrangement with comfortable margins, overhead three-quarter composition. Equipment only, no patient use, no anatomical views or bodily material. No people, children, hands, reception/lounge/room scene, readable text, labels, logos, watermark or graphic frames.
+ALT: Clean ENT diagnostic endoscope equipment on a clinical tray
+INSPECTION: PASS: People-free clean rigid ENT endoscope, optical eyepiece and coiled light cable on a pale clinical tray. Complete slender instrument shown with realistic proportions; no patient use or anatomical view. No text, labels, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+FILE: gallery-ent-instruments.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e178c909-8318-4040-96d1-01f03c4f6229.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A refined editorial still life of three clean realistic ENT instruments: a complete otoscope, a polished medical tuning fork, and a traditional circular ENT head mirror with central aperture and a simple black headband lying on the table. Correct compact clinical proportions, the mirror reflects only soft neutral light and no person. Neatly arranged on warm ivory linen with subtle petrol accents, natural side daylight, crisp silver and tactile fabric details. Entire object group fits comfortably inside the photograph. Strictly equipment only, no people, children, hands, faces, rooms, reception/lounge, readable writing, labels, numbers, logos, watermark or graphic frames.
+ALT: Clean otoscope, tuning fork and ENT head mirror arranged on linen
+INSPECTION: PASS: People-free complete otoscope, tuning fork and traditional ENT head mirror with headband on linen. Mirror reflects neutral light only. Realistic compact instruments, no readable text, labels, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+Gallery files are reused within the new ENT 4–23 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: ENT FAQ set 1 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.enthealth.org/whats-an-ent/ reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

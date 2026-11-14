@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-anika-iyer/
+Disallow: /dr-anika-iyer/privacy-policy.html
+Disallow: /dr-anika-iyer/terms-of-service.html
+Sitemap: https://digidr.app/dr-anika-iyer/sitemap.xml

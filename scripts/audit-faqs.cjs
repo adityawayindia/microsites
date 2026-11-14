@@ -64,7 +64,7 @@ function audit(file) {
   const section = html.match(sectionPattern)?.[0];
   const row = {file:relative, specialty:matchedSpecialty || category};
   rows.push(row);
-  if (!matchedSpecialty) { row.status = ['Ayurvedic','Homeopathy','Radiology','microsite-ayurvedic-new-param'].includes(category) ? 'specialty-absent-from-pdf' : 'outside-specialty-drafts'; return; }
+  if (!matchedSpecialty) { row.status = ['Ayurvedic','Homeopathy','Radiology','microsite-ayurvedic-new-male-param'].includes(category) ? 'specialty-absent-from-pdf' : 'outside-specialty-drafts'; return; }
   if (!section) {row.status='missing-faq-section';return;}
   const q = [...section.matchAll(questions)].map(m=>decode(m[2]));
   const a = [...section.matchAll(answers)].map(m=>decode(m[2]));
@@ -79,7 +79,7 @@ function audit(file) {
     row.set='mixed (permitted by PDF)';row.status='matches-pdf';return;
   }
   if (/assigned|work pending|^live microsites\//i.test(relative)) {row.status='excluded-assigned-or-unfinished';return;}
-  const setNumber = +(relative.match(/-(\d+)(?:-param)?\/index.html$/)?.[1] || 1);
+  const setNumber = +(relative.match(/-(\d+)(?:-(?:male|female))?(?:-param)?\/index.html$/)?.[1] || 1);
   if (setNumber>6) {row.status='needs-set-assignment';return;}
   // Prefer an existing question-matched set to preserve deliberate assignments.
   const sameQuestions = Object.entries(sets).find(([,entries])=> entries.length===q.length && entries.every((e,i)=>e.question===q[i]));

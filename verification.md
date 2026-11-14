@@ -293,8 +293,9 @@ gallery counts and run the additional grid stress checks below.
     privacy-policy, terms-of-service) the `.footer-visitor-badge` count element has
     `id="visitorCount"`, the page ends with the inline visit-API script
     (`POST https://digidrapi.digidr.app/api/Microsite/${micrositeId}/visit`, verbatim from §44),
-    and `<body data-micrositeid>` is set (`{{micrositeId}}` on param sites, the folder name on
-    non-param sites). FAIL if any page lacks the script or the id, if the count is hard-coded
+    and `<body data-micrositeid>` is set (`{{micrositeId}}` on param sites, the registered
+    backend ID on non-param sites). A folder-only rename must preserve the existing ID.
+    FAIL if any page lacks the script or the id, if the count is hard-coded
     (e.g. "500"), or if the localStorage placeholder is the only source. `style.css` must contain
     the `.footer-visitor-badge` rules.
 
@@ -529,8 +530,13 @@ events in S2/S3 that are missing here, and events here that aren't in S2/S3.
 
 ## U. WORKSPACE HYGIENE
 58. If this is a new specialty, it is added to the AGENTS.md §20 table in the same change. Folder
-    naming follows `<Specialty>/microsite-<specialty>-<n>/`.
-59. No existing files were deleted, and no other microsite was modified unintentionally
+    naming follows `<Specialty>/microsite-<specialty>-<n>-<gender>/`, using lowercase
+    `male` or `female`; the matching template ends in `-<gender>-param`. Keep any
+    `-assigned` suffix after `-param`, preserve numbering, and confirm source/template
+    genders agree. Follow AGENTS.md §20 for existing unnumbered names. Leave all folders
+    inside `live microsites` unchanged. Check renamed paths, destination collisions,
+    and file preservation; do not change backend IDs, public slugs or storage URLs.
+59. No existing files were deleted without an explicit user request, and no other microsite was modified unintentionally
     (`git status` / `git diff --stat`).
 
 ---

@@ -1,0 +1,90 @@
+ENT 8 — Aubergine atelier — Dr. Vivaan Deshmukh
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and ENT-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-8.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-dac509a4-bce0-42ed-9035-f46e501eb84d.png
+PROMPT: Use case: photorealistic-natural. Asset type: professional ENT profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Vivaan Deshmukh, Indian male ENT specialist about 48, with a broad distinct face, short salt-and-pepper curly hair, neatly trimmed salt-and-pepper beard and no glasses. White clinical coat over a navy collared shirt. Warm composed professional expression, authentic skin texture and natural proportions. Full head and waist-up framing, both shoulders visible, approximately 8 percent headroom, eye-level camera. Soft plain aubergine/mauve studio backdrop, flattering directional daylight. Only this adult doctor. No stethoscope, badges, readable text, labels, logos, watermark or graphic frame.
+ALT: Portrait of fictional ENT specialist Dr. Vivaan Deshmukh
+INSPECTION: PASS: One fictional Indian male ENT specialist with short salt-and-pepper curls, tidy beard, navy shirt and white coat. Complete head and waist-up portrait with aubergine backdrop. No other people, text, logos or watermark.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Asset type: professional ENT profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Vivaan Deshmukh, Indian male ENT specialist about 48, with a broad distinct face, short salt-and-pepper curly hair, neatly trimmed salt-and-pepper beard and no glasses. White clinical coat over a navy collared shirt. Warm composed professional expression, authentic skin texture and natural proportions. Full head and waist-up framing, both shoulders visible, approximately 8 percent headroom, eye-level camera. Soft plain aubergine/mauve studio backdrop, flattering directional daylight. Only this adult doctor. No stethoscope, badges, readable text, labels, logos, watermark or graphic frame.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-dac509a4-bce0-42ed-9035-f46e501eb84d.png",
+    "inspection": "PASS: One fictional Indian male ENT specialist with short salt-and-pepper curls, tidy beard, navy shirt and white coat. Complete head and waist-up portrait with aubergine backdrop. No other people, text, logos or watermark."
+  }
+]
+
+FILE: hero-ent-8.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e1e290af-c9f9-469a-ba87-80cdd2ef7fcc.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT website hero background, wide landscape 16:9. Premium editorial product photograph of a small isolated intact outer-ear clinical teaching model on a simple ivory stand and a polished metallic tuning fork resting naturally on mauve travertine. The model is tasteful non-graphic educational resin, external ear only, no head or cutaway tissue. Correct compact clinical object proportions. Arrange both complete objects predominantly on the RIGHT third, around 70–92 percent of frame width. Leave the LEFT 60 percent broad quiet pale mauve/ivory negative space. Beautiful soft directional studio light, tactile stone and gentle metal highlights, restrained aubergine atelier palette. Close clinical still life only, no people, children, hands, faces, silhouettes, room/reception/lounge, readable text, labels, numbers, brands, watermark or graphics.
+ALT: Small outer-ear teaching model and metallic tuning fork on mauve travertine
+INSPECTION: PASS: People-free intact non-graphic outer-ear teaching model and polished tuning fork on mauve travertine. Complete objects are right aligned with broad clear left space. No text, labels, logos, watermark or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Asset type: ENT website hero background, wide landscape 16:9. Premium editorial product photograph of a small isolated intact outer-ear clinical teaching model on a simple ivory stand and a polished metallic tuning fork resting naturally on mauve travertine. The model is tasteful non-graphic educational resin, external ear only, no head or cutaway tissue. Correct compact clinical object proportions. Arrange both complete objects predominantly on the RIGHT third, around 70–92 percent of frame width. Leave the LEFT 60 percent broad quiet pale mauve/ivory negative space. Beautiful soft directional studio light, tactile stone and gentle metal highlights, restrained aubergine atelier palette. Close clinical still life only, no people, children, hands, faces, silhouettes, room/reception/lounge, readable text, labels, numbers, brands, watermark or graphics.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-e1e290af-c9f9-469a-ba87-80cdd2ef7fcc.png",
+    "inspection": "PASS: People-free intact non-graphic outer-ear teaching model and polished tuning fork on mauve travertine. Complete objects are right aligned with broad clear left space. No text, labels, logos, watermark or room scene."
+  }
+]
+
+FILE: about-ent-8.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-1ba63335-edd6-4d8b-9ce1-7f73648b6da5.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT About photograph, vertical 4:5. Premium clinical product still life of a realistic clean flexible ENT nasopharyngoscope neatly coiled in a wide gentle loop on a pearl-colored clinical tray. Show its attached optical eyepiece and control handle clearly beside the loop, with the delicate flexible insertion tube and tip visible. Correct compact human-sized clinical proportions and plausible connected construction, black optical components, silver fittings, tactile matte tray and restrained aubergine reflected light. Photograph from a gentle elevated angle with every principal component comfortably inside the frame. Beautiful clean daylight and realistic shadows. Equipment only, no patient use or anatomical view. No people, children, hands, faces, room/reception/lounge, readable writing, numbers, labels, brands, watermark or graphic frame.
+ALT: Flexible ENT diagnostic scope neatly coiled on a pearl tray
+INSPECTION: PASS: People-free clean flexible ENT scope with optical eyepiece and control handle on a pearl clinical tray. Main tube, tip and control components are visible within the portrait frame. No patient use, readable text, labels, logos, watermark or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Asset type: ENT About photograph, vertical 4:5. Premium clinical product still life of a realistic clean flexible ENT nasopharyngoscope neatly coiled in a wide gentle loop on a pearl-colored clinical tray. Show its attached optical eyepiece and control handle clearly beside the loop, with the delicate flexible insertion tube and tip visible. Correct compact human-sized clinical proportions and plausible connected construction, black optical components, silver fittings, tactile matte tray and restrained aubergine reflected light. Photograph from a gentle elevated angle with every principal component comfortably inside the frame. Beautiful clean daylight and realistic shadows. Equipment only, no patient use or anatomical view. No people, children, hands, faces, room/reception/lounge, readable writing, numbers, labels, brands, watermark or graphic frame.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-1ba63335-edd6-4d8b-9ce1-7f73648b6da5.png",
+    "inspection": "PASS: People-free clean flexible ENT scope with optical eyepiece and control handle on a pearl clinical tray. Main tube, tip and control components are visible within the portrait frame. No patient use, readable text, labels, logos, watermark or room scene."
+  }
+]
+
+FILE: philosophy-ent-8.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-983ede6d-3bce-4abe-8bb2-d0558bd2aa85.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT care philosophy photograph, LANDSCAPE 4:3. Premium close clinical still life of a small hearing-aid fitting set: a pair of discreet unbranded behind-the-ear hearing aids resting in a simple open pale fitting case with a few clean silicone ear domes organized in tiny compartments, beside one complete compact diagnostic otoscope. Realistic miniature hearing aids and appropriately larger otoscope, no giant instruments. Arrange on tactile aubergine linen under soft directional daylight, pearl and silver detail, refined attractive photographic material textures. Keep ALL essential objects fully inside the middle 60 percent of image width with at least 20 percent clear side margins and comfortable top/bottom space; complete fitting case, hearing aids and full otoscope must remain visible in a centered square crop. All objects rest naturally on the surface. No plants, people, children, hands, faces, silhouettes, room/reception/lounge, readable labels, writing, numbers, logos, watermark or graphic frames.
+ALT: Hearing aid fitting set and compact otoscope on aubergine linen
+INSPECTION: PASS: People-free hearing-aid fitting case with two discreet devices, clean silicone domes and complete compact otoscope on aubergine linen. All principal objects fit the centered square crop. No people, readable labels, text, numbers, logos, watermark or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Asset type: ENT care philosophy photograph, LANDSCAPE 4:3. Premium close clinical still life of a small hearing-aid fitting set: a pair of discreet unbranded behind-the-ear hearing aids resting in a simple open pale fitting case with a few clean silicone ear domes organized in tiny compartments, beside one complete compact diagnostic otoscope. Realistic miniature hearing aids and appropriately larger otoscope, no giant instruments. Arrange on tactile aubergine linen under soft directional daylight, pearl and silver detail, refined attractive photographic material textures. Keep ALL essential objects fully inside the middle 60 percent of image width with at least 20 percent clear side margins and comfortable top/bottom space; complete fitting case, hearing aids and full otoscope must remain visible in a centered square crop. All objects rest naturally on the surface. No plants, people, children, hands, faces, silhouettes, room/reception/lounge, readable labels, writing, numbers, logos, watermark or graphic frames.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-983ede6d-3bce-4abe-8bb2-d0558bd2aa85.png",
+    "inspection": "PASS: People-free hearing-aid fitting case with two discreet devices, clean silicone domes and complete compact otoscope on aubergine linen. All principal objects fit the centered square crop. No people, readable labels, text, numbers, logos, watermark or room scene."
+  }
+]
+
+FILE: gallery-ent-hearing.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-4069df77-6c6c-4ef2-8c7d-43729b4af622.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. Attractive premium product photography of a realistic compact diagnostic hearing-test audiometer with a blank unlit screen and neutral unlabelled knobs, and diagnostic audiometry headphones placed neatly beside it. Correctly proportioned human-sized clinical equipment, warm ivory and muted petrol tabletop, restrained silver highlights. Three-quarter angle, entire equipment group comfortably inside the frame, soft natural daylight, clean realistic materials and subtle shadows. Specialty-specific hearing assessment still life, no people or children, no hands, no room/reception/lounge scene, no readable labels, numbers, text, logos, watermark or graphic frames.
+ALT: Diagnostic audiometry headphones beside a compact hearing-test unit
+INSPECTION: PASS: People-free compact audiometer and diagnostic headphones in a clean ivory/petrol product composition. Equipment is complete and proportionate; display blank and controls unlabelled. No text, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+FILE: gallery-ent-endoscope.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-ddb58b1d-1338-4560-beeb-f1ad8ae0097f.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A beautiful realistic clinical product photograph of clean ENT diagnostic endoscopy equipment arranged neatly on a pale sterile tray: a slender rigid ENT endoscope with its optical eyepiece, attached fiber-optic light cable gently coiled beside it, and a compact unlabelled light-source connector. Correct delicate real-world instrument proportions, polished stainless steel and black optical components, warm ivory and cool pearl surfaces, refined soft daylight. Show the complete instrument and cable arrangement with comfortable margins, overhead three-quarter composition. Equipment only, no patient use, no anatomical views or bodily material. No people, children, hands, reception/lounge/room scene, readable text, labels, logos, watermark or graphic frames.
+ALT: Clean ENT diagnostic endoscope equipment on a clinical tray
+INSPECTION: PASS: People-free clean rigid ENT endoscope, optical eyepiece and coiled light cable on a pale clinical tray. Complete slender instrument shown with realistic proportions; no patient use or anatomical view. No text, labels, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+FILE: gallery-ent-instruments.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e178c909-8318-4040-96d1-01f03c4f6229.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A refined editorial still life of three clean realistic ENT instruments: a complete otoscope, a polished medical tuning fork, and a traditional circular ENT head mirror with central aperture and a simple black headband lying on the table. Correct compact clinical proportions, the mirror reflects only soft neutral light and no person. Neatly arranged on warm ivory linen with subtle petrol accents, natural side daylight, crisp silver and tactile fabric details. Entire object group fits comfortably inside the photograph. Strictly equipment only, no people, children, hands, faces, rooms, reception/lounge, readable writing, labels, numbers, logos, watermark or graphic frames.
+ALT: Clean otoscope, tuning fork and ENT head mirror arranged on linen
+INSPECTION: PASS: People-free complete otoscope, tuning fork and traditional ENT head mirror with headband on linen. Mirror reflects neutral light only. Realistic compact instruments, no readable text, labels, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+Gallery files are reused within the new ENT 4–23 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: ENT FAQ set 2 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.enthealth.org/whats-an-ent/ reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

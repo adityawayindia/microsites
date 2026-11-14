@@ -6,67 +6,67 @@
   "policy": "Preserve matching sets; otherwise use draft number 1–6. Do not change assigned/live/unfinished sites or specialties absent from the PDF.",
   "rows": [
     {
-      "file": "Ayurvedic/microsite-ayurvedic-1/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-1-male/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-1-param/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-1-male-param/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-2/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-2-male/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-2-param/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-2-male-param/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-3/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-3-male/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-3-param/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-3-male-param/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-4/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-4-male/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-4-param/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-4-male-param/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-5/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-5-male/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-5-param/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-5-male-param/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-6/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-6-male/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Ayurvedic/microsite-ayurvedic-6-param/index.html",
+      "file": "Ayurvedic/microsite-ayurvedic-6-male-param/index.html",
       "specialty": "Ayurvedic",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Cardiology/microsite-cardiology-1/index.html",
+      "file": "Cardiology/microsite-cardiology-1-male/index.html",
       "specialty": "Cardiology",
       "faqCount": 6,
       "commentedOut": false,
@@ -74,7 +74,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Cardiology/microsite-cardiology-1-param/index.html",
+      "file": "Cardiology/microsite-cardiology-1-male-param/index.html",
       "specialty": "Cardiology",
       "faqCount": 6,
       "commentedOut": false,
@@ -82,12 +82,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Default Template/microsite-default/index.html",
-      "specialty": "Default Template",
-      "status": "outside-specialty-drafts"
-    },
-    {
-      "file": "Dentist/microsite-dentist-1/index.html",
+      "file": "Dentist/microsite-dentist-1-male/index.html",
       "specialty": "Dentistry",
       "faqCount": 6,
       "commentedOut": false,
@@ -95,7 +90,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Dentist/microsite-dentist-1-param/index.html",
+      "file": "Dentist/microsite-dentist-1-male-param/index.html",
       "specialty": "Dentistry",
       "faqCount": 6,
       "commentedOut": false,
@@ -103,7 +98,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Dentist/microsite-dentist-2-assigned/index.html",
+      "file": "Dentist/microsite-dentist-2-male-assigned/index.html",
       "specialty": "Dentistry",
       "faqCount": 6,
       "commentedOut": false,
@@ -111,7 +106,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Dentist/microsite-dentist-3/index.html",
+      "file": "Dentist/microsite-dentist-3-male/index.html",
       "specialty": "Dentistry",
       "faqCount": 6,
       "commentedOut": false,
@@ -119,7 +114,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Dentist/microsite-dentist-3-param/index.html",
+      "file": "Dentist/microsite-dentist-3-male-param/index.html",
       "specialty": "Dentistry",
       "faqCount": 6,
       "commentedOut": false,
@@ -127,7 +122,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "ENT/microsite-ent-1/index.html",
+      "file": "ENT/microsite-ent-1-female/index.html",
       "specialty": "ENT",
       "faqCount": 6,
       "commentedOut": false,
@@ -135,7 +130,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "ENT/microsite-ent-2/index.html",
+      "file": "ENT/microsite-ent-2-male/index.html",
       "specialty": "ENT",
       "faqCount": 6,
       "commentedOut": false,
@@ -143,7 +138,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "ENT/microsite-ent-2-param/index.html",
+      "file": "ENT/microsite-ent-2-male-param/index.html",
       "specialty": "ENT",
       "faqCount": 6,
       "commentedOut": false,
@@ -151,7 +146,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "ENT/microsite-ent-3/index.html",
+      "file": "ENT/microsite-ent-3-male/index.html",
       "specialty": "ENT",
       "faqCount": 6,
       "commentedOut": false,
@@ -159,7 +154,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "ENT/microsite-ent-3-param/index.html",
+      "file": "ENT/microsite-ent-3-male-param/index.html",
       "specialty": "ENT",
       "faqCount": 6,
       "commentedOut": false,
@@ -167,7 +162,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Gastroenterology/microsite-gastroenterology-1/index.html",
+      "file": "Gastroenterology/microsite-gastroenterology-1-male/index.html",
       "specialty": "Gastroenterology",
       "faqCount": 6,
       "commentedOut": false,
@@ -175,7 +170,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Gastroenterology/microsite-gastroenterology-1-param/index.html",
+      "file": "Gastroenterology/microsite-gastroenterology-1-male-param/index.html",
       "specialty": "Gastroenterology",
       "faqCount": 6,
       "commentedOut": false,
@@ -183,7 +178,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Gastroenterology/microsite-gastroenterology-2/index.html",
+      "file": "Gastroenterology/microsite-gastroenterology-2-female/index.html",
       "specialty": "Gastroenterology",
       "faqCount": 6,
       "commentedOut": false,
@@ -191,7 +186,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Gastroenterology/microsite-gastroenterology-2-param/index.html",
+      "file": "Gastroenterology/microsite-gastroenterology-2-female-param/index.html",
       "specialty": "Gastroenterology",
       "faqCount": 6,
       "commentedOut": false,
@@ -199,7 +194,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Medicine/microsite-general-medicine-1/index.html",
+      "file": "General Medicine/microsite-general-medicine-1-male/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": false,
@@ -207,7 +202,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Medicine/microsite-general-medicine-1-param/index.html",
+      "file": "General Medicine/microsite-general-medicine-1-male-param/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": false,
@@ -215,7 +210,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Medicine/microsite-general-medicine-2-assigned/index.html",
+      "file": "General Medicine/microsite-general-medicine-2-male-assigned/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": false,
@@ -223,7 +218,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Medicine/microsite-general-medicine-3/index.html",
+      "file": "General Medicine/microsite-general-medicine-3-male/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": false,
@@ -231,7 +226,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Medicine/microsite-general-medicine-3-param/index.html",
+      "file": "General Medicine/microsite-general-medicine-3-male-param/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": false,
@@ -239,7 +234,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Physician/microsite-general-physician-1-assigned/index.html",
+      "file": "General Physician/microsite-general-physician-1-male-assigned/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": true,
@@ -247,7 +242,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Physician/microsite-general-physician-1-param-assigned/index.html",
+      "file": "General Physician/microsite-general-physician-1-male-param-assigned/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": false,
@@ -255,7 +250,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Physician/microsite-general-physician-2/index.html",
+      "file": "General Physician/microsite-general-physician-2-female/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": true,
@@ -263,7 +258,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Physician/microsite-general-physician-2-param/index.html",
+      "file": "General Physician/microsite-general-physician-2-female-param/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": true,
@@ -271,7 +266,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Physician/microsite-general-physician-3/index.html",
+      "file": "General Physician/microsite-general-physician-3-male/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": false,
@@ -279,7 +274,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "General Physician/microsite-general-physician-3-param/index.html",
+      "file": "General Physician/microsite-general-physician-3-male-param/index.html",
       "specialty": "General Medicine / Family Physician",
       "faqCount": 6,
       "commentedOut": false,
@@ -317,27 +312,27 @@
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Homeopathy/microsite-homeopathy/index.html",
+      "file": "Homeopathy/microsite-homeopathy-male/index.html",
       "specialty": "Homeopathy",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Homeopathy/microsite-homeopathy-1-param-assigned/index.html",
+      "file": "Homeopathy/microsite-homeopathy-1-male-param-assigned/index.html",
       "specialty": "Homeopathy",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Homeopathy/microsite-homeopathy-2/index.html",
+      "file": "Homeopathy/microsite-homeopathy-2-male/index.html",
       "specialty": "Homeopathy",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Homeopathy/microsite-homeopathy-2-param/index.html",
+      "file": "Homeopathy/microsite-homeopathy-2-male-param/index.html",
       "specialty": "Homeopathy",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Intensivist/microsite-intensivist-1/index.html",
+      "file": "Intensivist/microsite-intensivist-1-male/index.html",
       "specialty": "Critical Care",
       "faqCount": 6,
       "commentedOut": false,
@@ -345,7 +340,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Intensivist/microsite-intensivist-2-assigned/index.html",
+      "file": "Intensivist/microsite-intensivist-2-male-assigned/index.html",
       "specialty": "Critical Care",
       "faqCount": 6,
       "commentedOut": false,
@@ -393,17 +388,17 @@
       "status": "outside-specialty-drafts"
     },
     {
-      "file": "microsite-ayurvedic-new-param/index.html",
+      "file": "microsite-ayurvedic-new-male-param/index.html",
       "specialty": "microsite-ayurvedic-new-param",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "microsite-testing/index.html",
+      "file": "microsite-testing-female/index.html",
       "specialty": "microsite-testing",
       "status": "outside-specialty-drafts"
     },
     {
-      "file": "Neurology/microsite-neurology-1/index.html",
+      "file": "Neurology/microsite-neurology-1-male/index.html",
       "specialty": "Neurology",
       "faqCount": 6,
       "commentedOut": false,
@@ -411,7 +406,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Oncology/microsite-oncology-1-assigned/index.html",
+      "file": "Oncology/microsite-oncology-1-male-assigned/index.html",
       "specialty": "Oncology",
       "faqCount": 6,
       "commentedOut": false,
@@ -419,7 +414,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Oncology/microsite-oncology-2/index.html",
+      "file": "Oncology/microsite-oncology-2-male/index.html",
       "specialty": "Oncology",
       "faqCount": 6,
       "commentedOut": false,
@@ -427,7 +422,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Orthopedics/microsite-orthopedics-1/index.html",
+      "file": "Orthopedics/microsite-orthopedics-1-male/index.html",
       "specialty": "Orthopaedics",
       "faqCount": 6,
       "commentedOut": false,
@@ -435,7 +430,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Orthopedics/microsite-orthopedics-1-param/index.html",
+      "file": "Orthopedics/microsite-orthopedics-1-male-param/index.html",
       "specialty": "Orthopaedics",
       "faqCount": 6,
       "commentedOut": false,
@@ -443,7 +438,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-1-assigned/index.html",
+      "file": "Pediatrician/microsite-pediatrician-1-male-assigned/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": false,
@@ -451,7 +446,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-2/index.html",
+      "file": "Pediatrician/microsite-pediatrician-2-male/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": false,
@@ -459,7 +454,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-2-param/index.html",
+      "file": "Pediatrician/microsite-pediatrician-2-male-param/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": false,
@@ -467,7 +462,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-3/index.html",
+      "file": "Pediatrician/microsite-pediatrician-3-male/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": true,
@@ -475,7 +470,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-3-param/index.html",
+      "file": "Pediatrician/microsite-pediatrician-3-male-param/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": true,
@@ -483,7 +478,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-4/index.html",
+      "file": "Pediatrician/microsite-pediatrician-4-male/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": true,
@@ -491,7 +486,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-4-param/index.html",
+      "file": "Pediatrician/microsite-pediatrician-4-male-param/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": true,
@@ -499,7 +494,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-5 (work pending)/index.html",
+      "file": "Pediatrician/microsite-pediatrician-5-male (work pending)/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": false,
@@ -507,7 +502,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-6/index.html",
+      "file": "Pediatrician/microsite-pediatrician-6-male/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": false,
@@ -515,7 +510,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Pediatrician/microsite-pediatrician-6-param/index.html",
+      "file": "Pediatrician/microsite-pediatrician-6-male-param/index.html",
       "specialty": "Paediatrics",
       "faqCount": 6,
       "commentedOut": false,
@@ -523,7 +518,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Plastic Surgery/microsite-plastic-surgery-1/index.html",
+      "file": "Plastic Surgery/microsite-plastic-surgery-1-male/index.html",
       "specialty": "Plastic and Cosmetic Surgery",
       "faqCount": 6,
       "commentedOut": false,
@@ -531,7 +526,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Plastic Surgery/microsite-plastic-surgery-1-param/index.html",
+      "file": "Plastic Surgery/microsite-plastic-surgery-1-male-param/index.html",
       "specialty": "Plastic and Cosmetic Surgery",
       "faqCount": 6,
       "commentedOut": false,
@@ -539,7 +534,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Plastic Surgery/microsite-plastic-surgery-2/index.html",
+      "file": "Plastic Surgery/microsite-plastic-surgery-2-male/index.html",
       "specialty": "Plastic and Cosmetic Surgery",
       "faqCount": 6,
       "commentedOut": false,
@@ -547,7 +542,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Plastic Surgery/microsite-plastic-surgery-2-param/index.html",
+      "file": "Plastic Surgery/microsite-plastic-surgery-2-male-param/index.html",
       "specialty": "Plastic and Cosmetic Surgery",
       "faqCount": 6,
       "commentedOut": false,
@@ -555,27 +550,27 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Radiology/microsite-radiology-1/index.html",
+      "file": "Radiology/microsite-radiology-1-male/index.html",
       "specialty": "Radiology",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Radiology/microsite-radiology-1-param/index.html",
+      "file": "Radiology/microsite-radiology-1-male-param/index.html",
       "specialty": "Radiology",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Radiology/microsite-radiology-2/index.html",
+      "file": "Radiology/microsite-radiology-2-male/index.html",
       "specialty": "Radiology",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Radiology/microsite-radiology-2-param/index.html",
+      "file": "Radiology/microsite-radiology-2-male-param/index.html",
       "specialty": "Radiology",
       "status": "specialty-absent-from-pdf"
     },
     {
-      "file": "Urologist/microsite-urology-1-param/index.html",
+      "file": "Urologist/microsite-urology-1-male-param/index.html",
       "specialty": "Urology",
       "faqCount": 6,
       "commentedOut": false,
@@ -583,7 +578,7 @@
       "status": "matches-pdf"
     },
     {
-      "file": "Urologist/microsite-urology-2-param/index.html",
+      "file": "Urologist/microsite-urology-2-male-param/index.html",
       "specialty": "Urology",
       "faqCount": 6,
       "commentedOut": false,

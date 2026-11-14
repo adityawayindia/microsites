@@ -1,0 +1,111 @@
+ENT 23 — Signal charcoal — Dr. Tara Kapoor
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and ENT-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-23.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-18e40439-2235-480b-a23b-b9fe6113f611.png
+PROMPT: Create one premium photorealistic professional studio portrait of fictional Indian female ENT specialist Dr. Tara Kapoor, age 49. Distinct rounded face with defined cheekbones, warm medium-brown skin, neat short dark pixie haircut with subtle natural silver strands at the temples, no spectacles. Composed warm natural slight smile, realistic age-appropriate skin detail. White clinical coat over a modest charcoal blouse with a simple high neckline, no stethoscope, embroidery or badges. Vertical 3:4 portrait, complete head with generous headroom, both shoulders and upper body to waist visible, relaxed natural upright posture, only this woman in frame. Soft charcoal-grey and blue-grey studio backdrop, flattering pearl side light and natural skin texture. No labels, text, logos, watermark, props or graphic decoration.
+ALT: Portrait of fictional ENT specialist Dr. Tara Kapoor
+INSPECTION: PASS: Distinct Indian female physician with short silver-streaked pixie haircut; white coat over charcoal blouse, grey-blue studio backdrop, full head and upper body visible, no text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Create one premium photorealistic professional studio portrait of fictional Indian female ENT specialist Dr. Tara Kapoor, age 49. Distinct rounded face with defined cheekbones, warm medium-brown skin, neat short dark pixie haircut with subtle natural silver strands at the temples, no spectacles. Composed warm natural slight smile, realistic age-appropriate skin detail. White clinical coat over a modest charcoal blouse with a simple high neckline, no stethoscope, embroidery or badges. Vertical 3:4 portrait, complete head with generous headroom, both shoulders and upper body to waist visible, relaxed natural upright posture, only this woman in frame. Soft charcoal-grey and blue-grey studio backdrop, flattering pearl side light and natural skin texture. No labels, text, logos, watermark, props or graphic decoration.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-18e40439-2235-480b-a23b-b9fe6113f611.png",
+    "inspection": "PASS: Distinct Indian female physician with short silver-streaked pixie haircut; white coat over charcoal blouse, grey-blue studio backdrop, full head and upper body visible, no text or logos."
+  }
+]
+
+FILE: hero-ent-23.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-76d513c1-b821-4616-a8ed-3d313cc4b690.png
+PROMPT: Edit the central tuning fork in this ENT hero photograph. Replace the entire tuning fork with a NEW clean seamless polished steel tuning fork in exactly the same position and size, with two straight prongs and an intact handle. Its U-junction must be completely smooth, plain, unengraved silver with NO stamped circle, letter, symbol, logo, number, scratch pattern or identifying mark whatsoever. Rebuild that junction surface from clean metal rather than retaining its old texture. Preserve the otoscope, examination mirror, concrete, lighting, left-side group, broad clear right space and 16:9 ratio. No other objects or people, no text, labels or watermarks. Premium photorealistic clinical product photograph.
+ALT: Otoscope, examination mirror and tuning fork on light graphite concrete
+INSPECTION: PASS: Complete otoscope, clean unengraved tuning fork and examination mirror grouped left on light graphite concrete, broad clear right space. Final tuning fork has smooth plain metal with no identifying mark; no people, text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Premium photorealistic editorial photography for an ENT specialist microsite. Beautiful soft directional daylight, precise clinical equipment proportions and refined metal/polymer textures. One separate photograph, not an illustration, diagram, collage or graphic frame. No readable text, numbers, labels, brands, logos or watermarks. Wide landscape 16:9 hero photograph, Signal charcoal identity. On light graphite concrete arrange exactly three intact ENT instruments with restrained precision: one polished silver otoscope with a dark textured handle and clean ear speculum, one complete slender laryngeal examination mirror, and one complete polished steel tuning fork with two separate straight prongs, U-shaped junction and intact handle. All lie naturally flat. Arrange them as a tidy staggered group in the LEFT third, approximately 8–40% of frame width, with the otoscope on the outer left, tuning fork beside it and mirror gently angled across the front. Keep the RIGHT half and center-right broad, calm, empty light graphite negative space for webpage content. Elegant grey-blue shadows, clean tactile concrete and bright metal highlights, realistic small clinical scale. Mirror reflects only neutral studio light, no extra props. Strictly people-free: no adults, children, hands, faces, silhouettes, real human body parts or reflections of people. Only an explicitly requested isolated non-graphic resin teaching model may appear. No whole head, room, reception, lounge, living room, plants, flowers or decorative furniture.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-494584d8-f1e4-48ce-b349-6540c5e8251f.png",
+    "inspection": "Not selected: tuning fork carried a faint engraved identifying mark."
+  },
+  {
+    "type": "edit",
+    "inputOriginal": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-494584d8-f1e4-48ce-b349-6540c5e8251f.png",
+    "prompt": "Edit this existing 16:9 ENT hero photograph only to remove the small faint engraved mark or letter on the flat metal junction of the tuning fork. Replace it with uninterrupted clean brushed silver matching the surrounding texture. Keep all three complete instruments, their exact geometry, the light graphite concrete, left-side placement, broad right negative space and lighting unchanged. All instruments must be entirely unmarked with no readable text, symbols, branding or logos. No new objects, people, hands, watermarks or other changes. Preserve premium photorealism.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-f0e382f7-a8cb-4c7f-83aa-eda087437421.png",
+    "inspection": "Not selected: faint residual marking remained at the tuning-fork junction."
+  },
+  {
+    "type": "edit",
+    "inputOriginal": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-f0e382f7-a8cb-4c7f-83aa-eda087437421.png",
+    "prompt": "Edit the central tuning fork in this ENT hero photograph. Replace the entire tuning fork with a NEW clean seamless polished steel tuning fork in exactly the same position and size, with two straight prongs and an intact handle. Its U-junction must be completely smooth, plain, unengraved silver with NO stamped circle, letter, symbol, logo, number, scratch pattern or identifying mark whatsoever. Rebuild that junction surface from clean metal rather than retaining its old texture. Preserve the otoscope, examination mirror, concrete, lighting, left-side group, broad clear right space and 16:9 ratio. No other objects or people, no text, labels or watermarks. Premium photorealistic clinical product photograph.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-76d513c1-b821-4616-a8ed-3d313cc4b690.png",
+    "inspection": "PASS: Complete otoscope, clean unengraved tuning fork and examination mirror grouped left on light graphite concrete, broad clear right space. Final tuning fork has smooth plain metal with no identifying mark; no people, text or logos."
+  }
+]
+
+FILE: about-ent-23.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-63f5e9bf-c479-4e84-aaa3-6b6d4136eece.png
+PROMPT: Premium photorealistic editorial photography for an ENT specialist microsite. Beautiful soft directional daylight, precise clinical equipment proportions and refined metal/polymer textures. One separate photograph, not an illustration, diagram, collage or graphic frame. No readable text, numbers, labels, brands, logos or watermarks. Vertical 4:5 clinical product still life on matte blue-grey paper. Show a complete compact silver LED clinical examination headlight supported on its slim black padded adjustable headband, with the band resting naturally as a shallow oval. Beside it, exactly four clean dark disposable ear-examination specula stand neatly on their wide bases in a graduated row on a small flat pale-grey disc. Lamp is off, with a clear lens and no glowing effect. Entire headlight and band plus all specula remain inside generous frame margins. Soft directional daylight, refined polymer and metal detail, a subtle folded-paper shadow at one upper corner, distinct balanced arrangement, no extra instruments or objects. Strictly people-free: no adults, children, hands, faces, silhouettes, real human body parts or reflections of people. Only an explicitly requested isolated non-graphic resin teaching model may appear. No whole head, room, reception, lounge, living room, plants, flowers or decorative furniture.
+ALT: Clinical headlight and clean ear-examination specula on blue-grey paper
+INSPECTION: PASS: Complete clinical headlight with natural support and four clean ear specula on blue-grey paper; all equipment visible with no people, readable text, labels or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Premium photorealistic editorial photography for an ENT specialist microsite. Beautiful soft directional daylight, precise clinical equipment proportions and refined metal/polymer textures. One separate photograph, not an illustration, diagram, collage or graphic frame. No readable text, numbers, labels, brands, logos or watermarks. Vertical 4:5 clinical product still life on matte blue-grey paper. Show a complete compact silver LED clinical examination headlight supported on its slim black padded adjustable headband, with the band resting naturally as a shallow oval. Beside it, exactly four clean dark disposable ear-examination specula stand neatly on their wide bases in a graduated row on a small flat pale-grey disc. Lamp is off, with a clear lens and no glowing effect. Entire headlight and band plus all specula remain inside generous frame margins. Soft directional daylight, refined polymer and metal detail, a subtle folded-paper shadow at one upper corner, distinct balanced arrangement, no extra instruments or objects. Strictly people-free: no adults, children, hands, faces, silhouettes, real human body parts or reflections of people. Only an explicitly requested isolated non-graphic resin teaching model may appear. No whole head, room, reception, lounge, living room, plants, flowers or decorative furniture.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-63f5e9bf-c479-4e84-aaa3-6b6d4136eece.png",
+    "inspection": "PASS: Complete clinical headlight with natural support and four clean ear specula on blue-grey paper; all equipment visible with no people, readable text, labels or logos."
+  }
+]
+
+FILE: philosophy-ent-23.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-630b34b0-2058-4f94-83b9-a213a12594a0.png
+PROMPT: Edit this existing 4:3 clinical still-life photograph to repair the tympanometer probe cable. Preserve the pearl tympanometer, blank screen, ivory ear model, probe, charcoal ceramic background, natural lighting and square-safe composition. Remove all current broken/fading cable segments and replace them with exactly ONE short continuous solid light-grey cable that emerges from the visible front socket of the device, curves gently to the right across the tabletop in a simple U, and ends directly at the rear connector of the probe. Every millimeter of cable from socket to probe must be sharply and continuously visible, no gaps, fading, duplicated segments, invisible sections or impossible joins. Keep the cable inside the current central equipment footprint with generous outer margins. No other changes; no people, text, labels, logos or watermark.
+ALT: Tympanometer, clean ear probe and teaching model on charcoal ceramic
+INSPECTION: PASS: Blank-screen tympanometer, ear probe and non-graphic ivory outer-ear teaching model on charcoal ceramic. Corrected probe lead is continuously visible from device socket to probe, and all equipment fits comfortably inside a centered square crop; no people, text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Premium photorealistic editorial photography for an ENT specialist microsite. Beautiful soft directional daylight, precise clinical equipment proportions and refined metal/polymer textures. One separate photograph, not an illustration, diagram, collage or graphic frame. No readable text, numbers, labels, brands, logos or watermarks. Landscape 4:3 clinical still life on dark charcoal ceramic. Show a compact pearl-white tympanometer with a blank dark unlit screen and unmarked neutral controls, its small clean ivory ear probe placed in front with a soft silicone tip and one continuous short light-grey lead naturally connected to the device. To its back-right stands a small isolated ivory resin outer-ear teaching model on a low ivory base, clearly non-graphic educational material with no real flesh or whole head. Balanced compact arrangement: device back-left, probe front-center, small ear model back-right. Attractive soft side lighting ensures the white equipment remains crisp against charcoal, realistic modest clinical scale. ALL equipment, whole device, complete probe and connecting lead, full model and base must fit inside the CENTRAL 52% of image width and central 60% of height with at least 24% clear side margins and 20% top/bottom margins for a comfortable centered square crop. Camera framed generously, no extra props. Strictly people-free: no adults, children, hands, faces, silhouettes, real human body parts or reflections of people. Only an explicitly requested isolated non-graphic resin teaching model may appear. No whole head, room, reception, lounge, living room, plants, flowers or decorative furniture.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-40ac78f7-d222-4ed1-89b6-384066eaaafe.png",
+    "inspection": "Not selected: probe cable contained a faded disconnected section."
+  },
+  {
+    "type": "edit",
+    "inputOriginal": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-40ac78f7-d222-4ed1-89b6-384066eaaafe.png",
+    "prompt": "Edit this existing 4:3 clinical still-life photograph to repair the tympanometer probe cable. Preserve the pearl tympanometer, blank screen, ivory ear model, probe, charcoal ceramic background, natural lighting and square-safe composition. Remove all current broken/fading cable segments and replace them with exactly ONE short continuous solid light-grey cable that emerges from the visible front socket of the device, curves gently to the right across the tabletop in a simple U, and ends directly at the rear connector of the probe. Every millimeter of cable from socket to probe must be sharply and continuously visible, no gaps, fading, duplicated segments, invisible sections or impossible joins. Keep the cable inside the current central equipment footprint with generous outer margins. No other changes; no people, text, labels, logos or watermark.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-630b34b0-2058-4f94-83b9-a213a12594a0.png",
+    "inspection": "PASS: Blank-screen tympanometer, ear probe and non-graphic ivory outer-ear teaching model on charcoal ceramic. Corrected probe lead is continuously visible from device socket to probe, and all equipment fits comfortably inside a centered square crop; no people, text or logos."
+  }
+]
+
+FILE: gallery-ent-hearing.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-4069df77-6c6c-4ef2-8c7d-43729b4af622.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. Attractive premium product photography of a realistic compact diagnostic hearing-test audiometer with a blank unlit screen and neutral unlabelled knobs, and diagnostic audiometry headphones placed neatly beside it. Correctly proportioned human-sized clinical equipment, warm ivory and muted petrol tabletop, restrained silver highlights. Three-quarter angle, entire equipment group comfortably inside the frame, soft natural daylight, clean realistic materials and subtle shadows. Specialty-specific hearing assessment still life, no people or children, no hands, no room/reception/lounge scene, no readable labels, numbers, text, logos, watermark or graphic frames.
+ALT: Diagnostic audiometry headphones beside a compact hearing-test unit
+INSPECTION: PASS: People-free compact audiometer and diagnostic headphones in a clean ivory/petrol product composition. Equipment is complete and proportionate; display blank and controls unlabelled. No text, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+FILE: gallery-ent-endoscope.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-ddb58b1d-1338-4560-beeb-f1ad8ae0097f.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A beautiful realistic clinical product photograph of clean ENT diagnostic endoscopy equipment arranged neatly on a pale sterile tray: a slender rigid ENT endoscope with its optical eyepiece, attached fiber-optic light cable gently coiled beside it, and a compact unlabelled light-source connector. Correct delicate real-world instrument proportions, polished stainless steel and black optical components, warm ivory and cool pearl surfaces, refined soft daylight. Show the complete instrument and cable arrangement with comfortable margins, overhead three-quarter composition. Equipment only, no patient use, no anatomical views or bodily material. No people, children, hands, reception/lounge/room scene, readable text, labels, logos, watermark or graphic frames.
+ALT: Clean ENT diagnostic endoscope equipment on a clinical tray
+INSPECTION: PASS: People-free clean rigid ENT endoscope, optical eyepiece and coiled light cable on a pale clinical tray. Complete slender instrument shown with realistic proportions; no patient use or anatomical view. No text, labels, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+FILE: gallery-ent-instruments.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e178c909-8318-4040-96d1-01f03c4f6229.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A refined editorial still life of three clean realistic ENT instruments: a complete otoscope, a polished medical tuning fork, and a traditional circular ENT head mirror with central aperture and a simple black headband lying on the table. Correct compact clinical proportions, the mirror reflects only soft neutral light and no person. Neatly arranged on warm ivory linen with subtle petrol accents, natural side daylight, crisp silver and tactile fabric details. Entire object group fits comfortably inside the photograph. Strictly equipment only, no people, children, hands, faces, rooms, reception/lounge, readable writing, labels, numbers, logos, watermark or graphic frames.
+ALT: Clean otoscope, tuning fork and ENT head mirror arranged on linen
+INSPECTION: PASS: People-free complete otoscope, tuning fork and traditional ENT head mirror with headband on linen. Mirror reflects neutral light only. Realistic compact instruments, no readable text, labels, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+Gallery files are reused within the new ENT 4–23 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: ENT FAQ set 5 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.enthealth.org/whats-an-ent/ reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

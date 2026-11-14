@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-prateek-joshi/
+Disallow: /dr-prateek-joshi/privacy-policy.html
+Disallow: /dr-prateek-joshi/terms-of-service.html
+Sitemap: https://digidr.app/dr-prateek-joshi/sitemap.xml

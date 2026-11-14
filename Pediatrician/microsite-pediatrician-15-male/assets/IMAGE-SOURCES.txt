@@ -1,0 +1,55 @@
+Pediatrician 15 — Bluebird & chalk — Dr. Aditya Balan
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-15.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-95e60aef-559a-47db-a07f-051bbf5c7f22.png
+PROMPT: Create an attractive authentic photorealistic professional portrait of fictional Indian male pediatrician Dr. Aditya Balan, about 34 years old. Medium brown skin, distinct youthful oval face, short neatly textured dark hair, clean-shaven face and a pleasant confident professional expression. White clinical coat over a modest cobalt-blue collared shirt, no stethoscope, badges, embroidery, logos, writing or props. Vertical 3:4 waist-up portrait, full head with generous headroom, relaxed upright posture looking toward camera. Plain softly blurred chalk-white and subtle blue-grey studio backdrop, fresh flattering daylight, natural realistic skin. Identity Bluebird & chalk, restrained cobalt #354d85 and bright chalk white. One doctor only, no extra people, watermark, medical claims or graphic badges. Full rectangular edge-to-edge photograph, square corners without a frame; authentic editorial photography, no glamour retouching.
+ALT: Portrait of the fictional pediatrician Dr. Aditya Balan
+INSPECTION: PASS: fictional young male doctor with textured dark hair, clean-shaven face, cobalt shirt and white coat; full head with generous headroom, no other people or text.
+
+FILE: hero-pediatrics-15.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-3c61269c-18ed-49d9-a4d6-677df494447d.png
+PROMPT: Create an attractive photorealistic editorial pediatric-care website hero still life, wide landscape 16:9. Identity Bluebird & chalk: cobalt blue #354d85, chalk white and pale natural wood. Arrange a real cobalt pediatric stethoscope with accurate connected tubing, earpieces and small polished chestpiece beside oversized blue wooden counting blocks, a pair of clean child-sized transparent protective glasses with blue frames, and a small closed completely blank white notebook. Counting blocks have NO letters or numbers. Objects form a balanced group on the RIGHT THIRD of a chalk-white tabletop. Leave the LEFT TWO THIRDS broad quiet chalk-white negative space for text. Fresh attractive photographic daylight, crisp polished glass and metal detail, soft shadows, realistic materials. ZERO people, children, adults, hands, body parts or human reflections. No room/reception/lounge, furniture, dominant plants, text, labels, logos, watermark, medical claims, graphic badges or frame. Full rectangular edge-to-edge photograph with square corners.
+ALT: Cobalt pediatric stethoscope with counting blocks and child-sized protective glasses
+INSPECTION: PASS: cobalt pediatric stethoscope, oversized blue blocks, child-sized protective glasses and blank notebook grouped right with quiet chalk-white space left; people-free and without readable labels.
+
+FILE: about-pediatrics-15.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-1f6ca6e6-0b75-4874-8158-e14b944f2a39.png
+PROMPT: Create an attractive photorealistic editorial photograph of a single Indian schoolboy about ten years old preparing his everyday school belongings. He wears a neat cobalt-blue long-sleeved cotton shirt and comfortable light trousers. With a natural thoughtful smile, he places a simple reusable water bottle beside a plain school backpack on a small chalk-white activity table. The backpack is muted blue with no brand or school markings; the water bottle is simple cream with a blue lid. Vertical 4:5 composition showing his face, upper body and the school belongings clearly. Bright soft daylight, realistic fabric and bottle texture, clean blue-and-white palette, natural everyday action. Plain softly blurred neutral background, no adults or other children, no room/reception/lounge setting, no food or medical treatment. No writing, labels, logos, watermark, graphic borders or rounded corners. Authentic respectful child-health lifestyle photography.
+ALT: Indian school-age boy placing a water bottle beside his backpack
+INSPECTION: PASS: single fully clothed school-age boy placing a reusable water bottle beside an unbranded backpack; no adults, other children, room scene or text.
+
+FILE: philosophy-pediatrics-15.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-0936611b-c23f-4817-b907-38948f0b94a5.png
+PROMPT: Create an attractive photorealistic editorial pediatric-care equipment still life, landscape 4:3. Identity Bluebird & chalk: chalk-white tabletop, cobalt-blue cotton and clean grey medical materials. A real clean pediatric fingertip pulse oximeter with its screen OFF and completely blank, a small pediatric blood-pressure cuff with neatly coiled tubing, a folded cobalt cotton cloth, and one completely blank white consultation card form a compact diagonal composition. Devices have realistic construction and small pediatric proportions, with no brand markings. Beautiful soft daylight, crisp material texture, refined shadows. The ENTIRE group occupies only the middle 60 percent of frame width with at least 20 percent quiet margin on the left/right and 16 percent top/bottom, ensuring complete instruments remain visible in a centered square crop. No people, hands, fingers, body parts or human reflections. No room/reception/lounge, furniture, plants, readable text, digits, labels, logos, watermark, medical claims, graphic badges or frame. Full rectangular edge-to-edge photograph with square corners.
+ALT: Pediatric pulse oximeter and small cuff with blue cotton and a blank card
+INSPECTION: PASS: pediatric pulse oximeter with blank screen, small cuff and coiled tubing, blue cotton and blank card; complete instruments fit a centered square crop, no people or labels.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 3 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

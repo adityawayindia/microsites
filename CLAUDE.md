@@ -6,8 +6,13 @@
 
 ## Project shape
 
-Each specialty lives in its own folder (`<Specialty>/microsite-<specialty>-<n>/`) with an
-identical structure:
+Each specialty lives in its own folder (`<Specialty>/microsite-<specialty>-<n>-<gender>/`) with an
+identical structure. Use `male` or `female`; put `-param` after the gender and keep
+`-assigned` last. Source and parameterized copies share the same number and gender.
+Follow AGENTS.md §20 for legacy names and folder-only renames; preserve existing
+backend IDs and public slugs. Leave `live microsites` unchanged. The Default Template
+has been removed.
+
 ```
 index.html, privacy-policy.html, terms-of-service.html
 robots.txt, sitemap.xml, llms.txt   ← per-microsite drafts, see AGENTS.md §29
@@ -136,7 +141,7 @@ Practice Gallery → Booking Modal → Footer.
   and DigiDr using my details to provide my consultation. I can withdraw consent or
   request data deletion at info@digidr.app." — on `index.html`.
 - Doctor name matches the page's convention (`{{full_name}}` on param/live, hardcoded
-  name on non-param sites, `Dr. [Doctor Name]` in the Default Template). "Privacy
+  name on non-param sites). "Privacy
   Policy" stays plain text unless a link is requested.
 
 ## Hero fellowship line (AGENTS.md §4, optional)
@@ -154,7 +159,8 @@ Practice Gallery → Booking Modal → Footer.
 - Footer badge count (`id="visitorCount"`) is filled by the inline visit-API script from
   **AGENTS.md §44, verbatim**, on `index.html` **and both legal pages** — never the
   localStorage placeholder or a hard-coded number.
-- `<body data-micrositeid>` is `{{micrositeId}}` on param sites, the folder name on non-param.
+- `<body data-micrositeid>` is `{{micrositeId}}` on param sites and the registered backend
+  ID on non-param sites; preserve an existing ID when only the folder name changes.
 
 ## Other standards
 

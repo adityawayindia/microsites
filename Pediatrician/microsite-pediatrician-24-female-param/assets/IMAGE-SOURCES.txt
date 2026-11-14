@@ -1,0 +1,55 @@
+Pediatrician 24 — Periwinkle cloudline — Dr. Sana Kapoor
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-24.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-8820c751-a3dd-44c9-b81c-37d8249b0613.png
+PROMPT: Use case: photorealistic-natural. Asset type: professional pediatrician profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Sana Kapoor, an Indian female pediatrician about 44 with medium brown skin, dark hair neatly arranged in a low bun and thin subtle glasses. Modest periwinkle blouse beneath a white clinical coat. Calm warm professional expression, natural skin texture and proportions. Full head and waist-up framing, both shoulders visible, approximately 8 percent comfortable headroom, eye-level camera. Plain softly blurred pearl-white studio backdrop with a faint periwinkle tint, flattering soft daylight. Only this one adult. No stethoscope, badges, text, logos, watermark or graphic frame.
+ALT: Portrait of fictional pediatrician Dr. Sana Kapoor
+INSPECTION: PASS: One fictional Indian female pediatrician with dark hair in a low bun, thin glasses, periwinkle blouse and white coat. Full head and waist-up framing with warm professional expression and pale periwinkle studio backdrop. No other people, text, logos or watermark.
+
+FILE: hero-pediatrics-24.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-d508e179-7afb-40fb-bc13-c0d108eb17d8.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric website hero background, wide landscape 16:9. A fresh attractive editorial tabletop still life on pale white-blue matte paper: one real child-sized periwinkle pediatric stethoscope, two large smooth pale wooden cloud-shaped developmental toys and a loosely coiled cream child-growth measuring tape with fine ticks but no readable numbers. Group all objects toward the LEFT third, roughly 8–35 percent of frame width, keeping the stethoscope chestpiece and wooden clouds clearly visible on the left. Leave the RIGHT 60 percent broad quiet white-blue negative space. Beautiful soft daylight and cloud-like diffuse shadows, realistic wood grain, fabric and polished metal. Close specialty-specific product photo, not a room. Strictly no people, hands, faces, silhouettes, readable text, labels, logos, watermark or baked-in graphics.
+ALT: Periwinkle pediatric stethoscope with wooden cloud shapes and a coiled growth tape
+INSPECTION: PASS: People-free pediatric still life with periwinkle stethoscope, large wooden cloud shapes and cream measuring tape. Main objects are left aligned with broad clear white-blue right space. No readable numbers, text, labels, logos, watermark or room scene.
+
+FILE: about-pediatrics-24.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-d4879436-f4ff-4157-b08d-dcb6ce2444a0.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric About photograph, vertical 4:5. A candid editorial photo of a single Indian girl about six, fully clothed in a modest periwinkle long-sleeved top and light trousers, watching a few floating soap bubbles outdoors. She has neatly tied dark hair and a natural delighted expression, eyes following a bubble. She stands safely on a level garden path with a softly blurred green and pale-blue background. Frame the child and nearby bubbles closely with comfortable margins, fresh gentle daylight, authentic skin texture and delicate iridescent bubbles. Ordinary age-appropriate outdoor play. Only this child, no adults or other people, no person reflected in bubbles. No readable text, labels, logos, watermark or graphic frame.
+ALT: A child watching soap bubbles outdoors in soft daylight
+INSPECTION: PASS: One fully clothed Indian girl watches floating soap bubbles outdoors on a level garden path. Natural delighted expression, periwinkle clothing and soft garden background. No adults or other people, including in bubble reflections; no readable text, labels, logos or watermark.
+
+FILE: philosophy-pediatrics-24.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-c7ad5f5f-4f90-4cd4-bc19-c5b042d87d60.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric care philosophy photograph, landscape 4:3. An attractive fine editorial overhead still life on pale periwinkle paper: one complete real pediatric otoscope, a slim pediatric examination penlight with full handle visible and its light switched off, and one compact open child-growth notebook with completely blank cream pages. Elegant sparse arrangement and soft cloud-like daylight shadows, cool silver highlights, delicate white-blue and periwinkle palette. Keep the entire object group within the middle 60 percent of image width with 20 percent clear side margins and comfortable top/bottom space; both complete instruments and all notebook corners must fit fully inside a centered square crop. Close medical still life, no room scene. Strictly no people, hands, readable writing or numbers, labels, logos, watermark or graphic frames.
+ALT: Pediatric examination light and otoscope beside blank growth notes
+INSPECTION: PASS: People-free overhead complete pediatric otoscope and examination penlight beside a blank open child-growth notebook. All equipment and notebook corners fit a centered square crop. Clear realistic details and pale periwinkle background; no readable text, numbers, labels, logos, watermark or room scene.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 6 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

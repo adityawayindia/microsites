@@ -1,0 +1,39 @@
+Images generated using OpenAI built-in image_gen on 13 November 2026. Fictional demonstration doctor; practice details are illustrative. Supporting imagery contains no people. No real patient or staff photographs.
+
+FILE: dental-suite.jpg
+PROMPT: Premium architectural photograph of an empty contemporary dental treatment room. Clean ivory dental chair, articulated examination lamp, compact dental unit, pale oak cabinetry, softly lit frosted glass and a muted teal wall accent. Realistic professionally arranged equipment, welcoming daylight, wide 4:3 framing. No people, no body parts, no human photographs or reflections, no readable text, logos or watermark.
+VISUAL CHECK: inspected, no people.
+
+FILE: dental-instruments.jpg
+PROMPT: Premium editorial still-life photograph of clean dental examination instruments, a stainless steel mouth mirror and dental probe resting neatly on a small clean instrument tray, with an unbranded packaged toothbrush and a small ceramic cup on pale cream countertop. Subtle cool blue and ivory palette, soft daylight, tidy clinical realism, 4:3 landscape. Absolutely no people, hands, body parts, faces, human reflections, readable text, logos or watermark.
+VISUAL CHECK: inspected, no people.
+
+FILE: dental-care-model.jpg
+GENERATED: OpenAI built-in image_gen.
+ORIGINAL: exec-1dd7c044-e50c-4d1a-9728-4d867084ce78.png
+PROMPT: Create an attractive high-quality photorealistic editorial still-life image for a dentist website. A clean professional dental teaching model with ivory upper and lower teeth and muted natural pink model gums, slightly open in a neat clinical bite display, beside a polished stainless-steel dental mouth mirror and a clear removable aligner on a small pale ceramic tray. This is a manufactured demonstration model, not a human mouth or body part. Compact central composition on a luminous ivory clinical worktop with subtle soft teal reflected light, beautiful daylight and gentle shadows, polished enamel and translucent material detail, calm premium dental aesthetic. Landscape 4:3 with generous margins so a centered portrait crop retains the main tooth model. No room interiors, reception, lounge, furniture, people, hands, faces, lips, human photographs, blood, syringes, text, labels, logos or watermark. Tidy, welcoming, specialty-specific dental equipment photography.
+VISUAL CHECK: inspected; dental demonstration model only, no people.
+
+FILE: doctor-vivek-nair.jpg
+PROMPT: Create a high-quality photorealistic professional portrait for a fictional Indian male dentist, Dr Vivek Nair, approximately 50 years old, warm medium-brown skin, thick neatly groomed black-and-grey moustache, short salt-and-pepper hair, no beard, no eyeglasses. Friendly calm expression, direct eye contact, relaxed upright posture, natural hands lightly resting together below waist. Wearing a crisp white dental coat over a muted forest-green collared shirt. Waist-up portrait with complete head and shoulders and generous breathing room, centered composition, vertical 3:4 aspect ratio. Background is a softly blurred elegant contemporary dental clinic with cream walls, a small leafy plant and indistinct dental equipment, no other people, no photos of people. Soft natural window light, realistic skin texture, premium editorial healthcare photography. No stethoscope, no surgical mask, no gloves, no name badge, no text, no logos, no watermark. This is an original fictional person, not based on any real individual.
+VISUAL CHECK: inspected, one doctor only.
+
+FILE: hero-sage-studio.jpg
+GENERATED: 13 November 2026, OpenAI built-in image_gen.
+PROMPT: Use case: photorealistic-natural. Asset type: wide 16:9 hero background for a forest-green and cream dentist website. An empty serene dental studio photographed architecturally: pale oak cabinetry, a muted sage-green dental chair and a refined articulated exam lamp, a slim window and a small leafy indoor plant are concentrated in the FAR LEFT third. Gentle leaf shadows and morning sunlight across an ivory wall. RIGHT 60 percent is bright, spacious and mostly blank warm cream plaster for website doctor details. Calm sophisticated clinic, realistic equipment, soft diffused natural light, warm cream and restrained forest-green accents, low visual contrast. No people, faces, hands, body parts, human artwork or human reflections, text, signage, logos or watermarks.
+VISUAL CHECK: inspected; no people, faces, hands, human photographs or reflections. Decorative hero background; locally optimized JPEG.
+
+
+UNIQUE ABOUT AND CARE PHILOSOPHY IMAGES - 13 November 2026
+
+FILE: about-dental-7.jpg
+GENERATED: OpenAI built-in image_gen.
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1ce77-a6d9-75b0-b243-1afc745e9e64\exec-d9f5e58e-f7ab-40ec-aaa5-d72865003198.png
+PROMPT: Attractive photorealistic editorial dental still-life for a dentist website About section. A small open brushed stainless-steel dental instrument cassette, with a mouth mirror and several slender dental examination instruments neatly held in sage-green silicone rails. The lid stands slightly angled behind the instruments. Folded pale sage clinical drape on an ivory work surface, warm gentle natural daylight, soft reassuring atmosphere, precise authentic metal textures, no sharp tools pointing at viewer. Vertical 4:5, centered compact arrangement with margins. No people, hands, body parts, faces, human reflections or photographs; no room interior, reception, lounge, furniture, plants, blood, labels, readable text, logos or watermark.
+VISUAL CHECK: inspected; people-free dental objects, no reception or lounge.
+
+FILE: philosophy-dental-7.jpg
+GENERATED: OpenAI built-in image_gen.
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1ce77-a6d9-75b0-b243-1afc745e9e64\exec-1eb44d24-40f3-4210-a029-ff52716b73f5.png
+PROMPT: Attractive photorealistic editorial product still-life for a dentist website Care Philosophy section, illustrating everyday preventive dental care. One elegant unbranded white electric toothbrush standing on a small simple charging base, with a spare round brush head resting beside it and a tiny clean ceramic rinse cup. Pale sage and warm ivory clinical surface, gentle daylight, subtle soft-edged shadows, finely detailed white bristles and matte materials. Landscape 4:3, objects as a small balanced central group with ample space around them, suitable for a square crop. No people, hands, mouths, faces, human photographs or reflections; no bathroom or room interior, reception, lounge, furniture, plants, text, branding or watermark.
+VISUAL CHECK: inspected; people-free dental objects, no reception or lounge.

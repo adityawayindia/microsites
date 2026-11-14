@@ -1,0 +1,55 @@
+Pediatrician 16 — Sage canvas — Dr. Kunal Desai
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-16.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-b8b89f9e-8add-48bb-b120-b32925c89264.png
+PROMPT: Create an attractive authentic photorealistic professional portrait of fictional Indian male pediatrician Dr. Kunal Desai, about 40 years old. Distinct soft square face, short naturally wavy dark hair, tidy close beard, warm attentive professional expression, realistic skin texture. White clinical coat over a modest sage collared shirt, no stethoscope, badges, embroidery, writing, logos or props. Vertical 3:4 waist-up portrait, full head with generous headroom, relaxed upright posture looking toward camera. Plain softly blurred ivory and light sage studio backdrop, soft natural photographic daylight. Identity Sage canvas, muted sage #4c6150 with cream and restrained dusty rose warmth. One doctor only, no additional people, medical claims, watermark or graphic badges. Full rectangular edge-to-edge photograph with square corners, no frame or glamour retouching.
+ALT: Portrait of the fictional pediatrician Dr. Kunal Desai
+INSPECTION: PASS: One fictional Indian male doctor with short wavy dark hair, tidy beard, sage shirt and white coat. Full head and waist-up professional framing with ample headroom; softly blurred cream/sage studio background. No text, logos, watermark or other people.
+
+FILE: hero-pediatrics-16.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-ac5917e4-7c5d-45a3-9324-2f725e242944.png
+PROMPT: Create an attractive photorealistic editorial pediatric-care website hero still life, wide landscape 16:9. Identity Sage canvas: muted sage #4c6150, lightly textured ivory canvas, pale natural wood and a hint of dusty rose. A real sage pediatric stethoscope with accurate connected tubing, two earpieces and small polished chestpiece is arranged beside several LARGE smooth wooden balancing shapes with rounded edges and a pair of tiny cream cotton infant socks. Create a tasteful sculptural balance-shape arrangement rather than counting blocks or stacking rings. Group the objects on the LEFT THIRD, leaving the RIGHT TWO THIRDS broad quiet ivory canvas negative space for text. Beautiful soft daylight, gentle tactile shadows, realistic medical-device, cotton and wood details. ZERO people, babies, children, adults, hands, body parts or human reflections. No room/reception/lounge, furniture, plants, readable text, labels, logos, watermark, medical claims, graphic badges, borders or rounded corners. Full rectangular edge-to-edge photograph.
+ALT: Sage pediatric stethoscope with large wooden balance shapes and infant socks
+INSPECTION: PASS: Attractive people-free pediatric still life with sage child-sized stethoscope, large wooden balancing shapes and cream infant socks grouped on the left. Broad quiet ivory canvas space on the right supports hero text. No room scene, readable text, logos or watermark.
+
+FILE: about-pediatrics-16.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-40a8ae19-4b4e-4a13-97eb-53932b56e86f.png
+PROMPT: Create an attractive photorealistic editorial childhood-development photograph of one Indian girl about four years old enjoying a gentle balance activity. She wears a cream long-sleeved cotton top, sage trousers and simple soft sneakers with dusty rose details. She stands securely with both feet on one very low broad foam stepping stone, only three centimeters high, directly on a padded floor mat. Her arms are comfortably extended a little for balance and she has a natural focused small smile. There are no other raised obstacles or climbing equipment. Vertical 4:5 composition showing her complete figure and the low foam stone clearly with comfortable headroom. Soft daylight, natural child proportions, calm ivory and sage palette, plain softly blurred neutral backdrop, no room furnishings. No adults or other children, no lounge or reception, no words, labels, logos, watermark, graphic frame or rounded corners. Authentic safe ordinary play photograph, no medical treatment or claims.
+ALT: Young Indian girl balancing on a very low foam play stone
+INSPECTION: PASS: One fully clothed young Indian girl balances with both feet on a very low broad foam stepping pad on a floor play mat. Natural child-focused activity, safe large equipment, no adults or other people, no lounge/reception, text, logos or watermark.
+
+FILE: philosophy-pediatrics-16.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-cb5f3e7e-af0a-4695-8d84-3f8e3931c8e8.png
+PROMPT: Create an attractive photorealistic editorial pediatric examination-material still life, landscape 4:3. Identity Sage canvas: muted sage and dusty rose accents on an ivory tabletop. Neatly arrange one real compact pediatric otoscope and one small professional reflex hammer with believable metal and soft rubber construction beside a LARGE smooth wooden nesting rainbow and a neatly folded cream cotton cloth. The rainbow has broad rounded arches in pale wood, sage and dusty rose, with no writing. Refined high three-quarter viewpoint, beautiful soft daylight, tactile fabric and wood, crisp clean instrument detail. The ENTIRE group must occupy only the middle 60 percent of the frame width, leaving at least 20 percent quiet margins left/right and 16 percent top/bottom, so a centered square crop preserves both complete instruments and the rainbow. Completely people-free, no hands, faces, body parts or human reflections. No room/reception/lounge, furniture, plants, text, labels, logos, watermark, medical claims, graphic badges or frame. Full rectangular edge-to-edge photograph with square corners.
+ALT: Pediatric examination instruments with a wooden rainbow and folded cotton
+INSPECTION: PASS: People-free pediatric still life with otoscope, compact reflex hammer, rounded wooden rainbow and folded cream cotton on sage/dusty rose surfaces. Main instruments and rainbow remain within the central square crop; attractive natural light and distinct composition. No text, logos, watermark or room scene.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 4 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

@@ -1,0 +1,55 @@
+Pediatrician 26 — Lilac garden — Dr. Rhea Kulkarni
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-26.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-ca478e21-1da0-4d96-9cf2-85cd385c1a8f.png
+PROMPT: Use case: photorealistic-natural. Asset type: professional pediatrician profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Rhea Kulkarni, an Indian female pediatrician about 40 with medium brown skin, long dark hair neatly tied back and clean simple rectangular glasses. Modest lilac blouse beneath a white clinical coat. Natural warm professional expression, realistic skin detail and proportions. Full head and waist-up framing, both shoulders visible, approximately 8 percent comfortable headroom, eye-level camera. Plain softly blurred bright pearl studio backdrop with a subtle lilac tint, fresh flattering daylight. Only this one adult. No stethoscope, badges, text, labels, logos, watermark or graphic frame.
+ALT: Portrait of fictional pediatrician Dr. Rhea Kulkarni
+INSPECTION: PASS: One fictional Indian female pediatrician with tied-back dark hair, simple rectangular glasses, lilac blouse and white coat. Full head and waist-up framing with natural expression and pearl/lilac backdrop. No other people, text, logos or watermark.
+
+FILE: hero-pediatrics-26.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-bb6ad892-5d2d-4995-954a-50aacdc732d7.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric website hero background, wide landscape 16:9. A bright attractive editorial still-life photograph on a neutral pearl-white matte tabletop: one real child-sized lilac pediatric stethoscope, two large smoothly finished wooden flower-shaped developmental toys, a pair of tiny cream cotton infant socks and a compact completely blank cream notebook. Group all objects toward the LEFT third, around 8–35 percent of frame width, keeping the stethoscope chestpiece and flower shapes clearly visible near the left. Leave the RIGHT 60 percent as broad clean softly lit neutral negative space. Fresh daylight, subtle realistic shadows, tactile pale wood and cotton, restrained lilac and sage accents. Close pediatric tabletop still life, no room scene. Strictly no people, hands, faces, silhouettes, readable text, labels, numbers, logos, watermark or graphics.
+ALT: Lilac pediatric stethoscope with wooden flower shapes, infant socks and blank notes
+INSPECTION: PASS: People-free pediatric still life of lilac stethoscope, large wooden flower shapes, tiny cream socks and blank notebook. Objects are left aligned with broad clear right space; a restrained foliage accent stays at the edge. No readable text, labels, numbers, logos, watermark or room scene.
+
+FILE: about-pediatrics-26.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-36f36b90-91fb-496c-a819-e1451fb71a2d.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric About photograph, vertical 4:5. A candid natural-daylight editorial photo of a single Indian boy about seven, fully clothed in a modest lilac long-sleeved shirt and sage-green trousers, drawing with a large chunky piece of colored chalk on a low stable dark slate board resting on a simple child-height outdoor table. He makes a cheerful simple flower and leaf drawing, no letters or words. Natural engaged expression and neatly cropped dark hair, safe level garden setting with softly blurred foliage. Frame the boy and his drawing closely with comfortable margins; age-appropriate creative play, authentic skin detail and attractive lilac/green accents. Only this child, no adults or other people. No readable text, labels, logos, watermark or graphic frame.
+ALT: A school-age boy drawing with chunky chalk on a low board
+INSPECTION: PASS: One fully clothed Indian boy draws a flower with chunky chalk on a low stable board outdoors. Natural engaged expression, age-appropriate creative play and attractive lilac/green colors. No adults or other people, readable writing, labels, logos or watermark.
+
+FILE: philosophy-pediatrics-26.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-c96256a0-753e-42a4-8898-766d2219fabd.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric care philosophy photograph, landscape 4:3. A crisp elegant daylight editorial overhead still life on a pale neutral surface: one complete real pediatric otoscope, a small folded child-sized sage cuff with neatly gathered tubing and no gauge, folded lilac muslin, and two oversized smooth wooden developmental garden shapes, a simple flower and leaf. Arrange the equipment neatly with clear spacing. Keep the whole group in the middle 60 percent of image width with 20 percent clear side margins and comfortable top/bottom margins; every instrument, cuff and main wooden shape must fit fully inside a centered square crop. Beautiful natural shadows, lilac/sage/cream palette, realistic metal, cotton and wood details. Close people-free pediatric still life, no room scene. No hands, faces, people, readable text, numbers, labels, logos, watermark or graphic frames.
+ALT: Pediatric otoscope and small cuff with lilac muslin and wooden garden shapes
+INSPECTION: PASS: People-free overhead complete pediatric otoscope, compact cuff with gathered tubing, folded lilac muslin and oversized wooden flower/leaf shapes. All main objects and instruments fit the centered square crop. Clear realistic detail and pale neutral surface; no readable text, labels, numbers, logos, watermark or room scene.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 2 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

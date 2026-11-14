@@ -1,0 +1,90 @@
+ENT 10 — Burgundy folio — Dr. Kartik Banerjee
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and ENT-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-10.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-37a4078a-a0db-4285-ac3c-93667896a8ea.png
+PROMPT: Use case: photorealistic-natural. Asset type: professional ENT profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Kartik Banerjee, Indian male ENT specialist about 54, with a distinct oval face, thick grey hair neatly swept back, a small neatly trimmed silver moustache and rimless glasses. White clinical coat over a navy collared shirt. Warm thoughtful professional expression, authentic skin texture and natural proportions. Full head and waist-up framing, both shoulders visible, approximately 8 percent headroom, eye-level camera. Plain softly blurred muted burgundy studio backdrop, flattering gentle side daylight. Only this adult doctor. No stethoscope, badges, text, labels, logos, watermark or graphic frame.
+ALT: Portrait of fictional ENT specialist Dr. Kartik Banerjee
+INSPECTION: PASS: Distinct older Indian male physician with swept-back grey hair, neat silver moustache and rimless glasses; white coat over navy shirt, burgundy backdrop, complete head and upper body visible, no logos or text.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Asset type: professional ENT profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Kartik Banerjee, Indian male ENT specialist about 54, with a distinct oval face, thick grey hair neatly swept back, a small neatly trimmed silver moustache and rimless glasses. White clinical coat over a navy collared shirt. Warm thoughtful professional expression, authentic skin texture and natural proportions. Full head and waist-up framing, both shoulders visible, approximately 8 percent headroom, eye-level camera. Plain softly blurred muted burgundy studio backdrop, flattering gentle side daylight. Only this adult doctor. No stethoscope, badges, text, labels, logos, watermark or graphic frame.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-37a4078a-a0db-4285-ac3c-93667896a8ea.png",
+    "inspection": "PASS: Distinct older Indian male physician with swept-back grey hair, neat silver moustache and rimless glasses; white coat over navy shirt, burgundy backdrop, complete head and upper body visible, no logos or text."
+  }
+]
+
+FILE: hero-ent-10.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-28cbe84b-7dec-419a-b2de-835d1e83f6b5.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT website hero background, wide landscape 16:9. Premium editorial clinical product photograph of a polished traditional ENT head mirror with central aperture and a simple dark headband lying naturally beside a closed compact deep burgundy instrument case on warm ivory paper. Correct human-sized proportions and plausible mirror/headband construction, tactile case material and refined silver highlights. Arrange both complete objects predominantly on the RIGHT third, around 70–92 percent of frame width, keeping the mirror and case clearly visible. Leave the LEFT 60 percent broad calm warm ivory negative space. Beautiful directional studio daylight, elegant natural shadows, restrained burgundy-folio palette. Mirror reflects only neutral light. No people, children, hands, faces, silhouettes, room/reception/lounge, readable text, labels, numbers, brands, watermark or graphic frames.
+ALT: Polished ENT head mirror beside a burgundy instrument case
+INSPECTION: PASS: Polished ENT head mirror and closed burgundy instrument case grouped on the right with broad quiet ivory space on the left; natural supported arrangement, no people or reflections of people, no readable text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Asset type: ENT website hero background, wide landscape 16:9. Premium editorial clinical product photograph of a polished traditional ENT head mirror with central aperture and a simple dark headband lying naturally beside a closed compact deep burgundy instrument case on warm ivory paper. Correct human-sized proportions and plausible mirror/headband construction, tactile case material and refined silver highlights. Arrange both complete objects predominantly on the RIGHT third, around 70–92 percent of frame width, keeping the mirror and case clearly visible. Leave the LEFT 60 percent broad calm warm ivory negative space. Beautiful directional studio daylight, elegant natural shadows, restrained burgundy-folio palette. Mirror reflects only neutral light. No people, children, hands, faces, silhouettes, room/reception/lounge, readable text, labels, numbers, brands, watermark or graphic frames.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-28cbe84b-7dec-419a-b2de-835d1e83f6b5.png",
+    "inspection": "PASS: Polished ENT head mirror and closed burgundy instrument case grouped on the right with broad quiet ivory space on the left; natural supported arrangement, no people or reflections of people, no readable text or logos."
+  }
+]
+
+FILE: about-ent-10.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-55e07a93-81c5-4ef7-aa09-3dacffb2565e.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT About photograph, vertical 4:5. A refined detailed clinical still life of a complete polished metal medical tuning fork beside its small soft rubber diagnostic striker with a short smooth handle, arranged in a clean diagonal on warm ivory textured paper. Correct compact real-world instrument proportions, the fork has two straight tines and a rounded base, the striker is a simple unlabelled dark burgundy rubber mallet. Sparse artful composition, both objects fully inside the frame with generous margins, soft warm side daylight and beautiful fine shadows. Tactile paper and crisp silver details, no extra objects. Strictly people-free, no hands, children, faces, silhouettes, room/reception/lounge, readable writing, labels, numbers, logos, watermark or graphic frame.
+ALT: Medical tuning fork and soft diagnostic striker on ivory paper
+INSPECTION: PASS: Complete metallic tuning fork and burgundy soft diagnostic striker arranged diagonally on textured ivory paper; clean warm photographic detail, no people, text, logos or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Asset type: ENT About photograph, vertical 4:5. A refined detailed clinical still life of a complete polished metal medical tuning fork beside its small soft rubber diagnostic striker with a short smooth handle, arranged in a clean diagonal on warm ivory textured paper. Correct compact real-world instrument proportions, the fork has two straight tines and a rounded base, the striker is a simple unlabelled dark burgundy rubber mallet. Sparse artful composition, both objects fully inside the frame with generous margins, soft warm side daylight and beautiful fine shadows. Tactile paper and crisp silver details, no extra objects. Strictly people-free, no hands, children, faces, silhouettes, room/reception/lounge, readable writing, labels, numbers, logos, watermark or graphic frame.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-55e07a93-81c5-4ef7-aa09-3dacffb2565e.png",
+    "inspection": "PASS: Complete metallic tuning fork and burgundy soft diagnostic striker arranged diagonally on textured ivory paper; clean warm photographic detail, no people, text, logos or room scene."
+  }
+]
+
+FILE: philosophy-ent-10.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-7cc4e22b-6266-4cf0-ba97-4f1b5a51dde5.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT care philosophy photograph, LANDSCAPE 4:3. Premium overhead clinical still life of a small isolated ivory resin voice-box/larynx teaching model resting securely on its side on a plain low cream support, beside three neat stainless-steel laryngeal examination mirrors lying flat in a gentle diagonal fan on burgundy-toned marble. Model is a tasteful monochrome educational structure, entirely non-graphic, no whole head, face, skin or red tissue. Correct compact clinical proportions and realistic material detail. Distinct flat overhead composition rather than an upright standing-model display. All mirrors rest naturally on the surface with contact shadows and reflect neutral light only. Keep ALL essential objects fully within the middle 60 percent of image width with 20 percent clear side margins and comfortable top/bottom space, so a centered square crop retains the complete model, support and all mirror handles. Attractive soft daylight, no decorative props, people, children, hands, room/reception/lounge, text, labels, numbers, brands, watermark or graphic frame.
+ALT: Voice-box teaching model and laryngeal mirrors on burgundy marble
+INSPECTION: PASS: Isolated non-graphic ivory voice-box teaching model rests on a low support beside three laryngeal mirrors lying flat on burgundy marble; full instruments lie within central square-safe margins, no people, readable text, labels or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Asset type: ENT care philosophy photograph, LANDSCAPE 4:3. Premium overhead clinical still life of a small isolated ivory resin voice-box/larynx teaching model resting securely on its side on a plain low cream support, beside three neat stainless-steel laryngeal examination mirrors lying flat in a gentle diagonal fan on burgundy-toned marble. Model is a tasteful monochrome educational structure, entirely non-graphic, no whole head, face, skin or red tissue. Correct compact clinical proportions and realistic material detail. Distinct flat overhead composition rather than an upright standing-model display. All mirrors rest naturally on the surface with contact shadows and reflect neutral light only. Keep ALL essential objects fully within the middle 60 percent of image width with 20 percent clear side margins and comfortable top/bottom space, so a centered square crop retains the complete model, support and all mirror handles. Attractive soft daylight, no decorative props, people, children, hands, room/reception/lounge, text, labels, numbers, brands, watermark or graphic frame.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-7cc4e22b-6266-4cf0-ba97-4f1b5a51dde5.png",
+    "inspection": "PASS: Isolated non-graphic ivory voice-box teaching model rests on a low support beside three laryngeal mirrors lying flat on burgundy marble; full instruments lie within central square-safe margins, no people, readable text, labels or logos."
+  }
+]
+
+FILE: gallery-ent-hearing.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-4069df77-6c6c-4ef2-8c7d-43729b4af622.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. Attractive premium product photography of a realistic compact diagnostic hearing-test audiometer with a blank unlit screen and neutral unlabelled knobs, and diagnostic audiometry headphones placed neatly beside it. Correctly proportioned human-sized clinical equipment, warm ivory and muted petrol tabletop, restrained silver highlights. Three-quarter angle, entire equipment group comfortably inside the frame, soft natural daylight, clean realistic materials and subtle shadows. Specialty-specific hearing assessment still life, no people or children, no hands, no room/reception/lounge scene, no readable labels, numbers, text, logos, watermark or graphic frames.
+ALT: Diagnostic audiometry headphones beside a compact hearing-test unit
+INSPECTION: PASS: People-free compact audiometer and diagnostic headphones in a clean ivory/petrol product composition. Equipment is complete and proportionate; display blank and controls unlabelled. No text, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+FILE: gallery-ent-endoscope.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-ddb58b1d-1338-4560-beeb-f1ad8ae0097f.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A beautiful realistic clinical product photograph of clean ENT diagnostic endoscopy equipment arranged neatly on a pale sterile tray: a slender rigid ENT endoscope with its optical eyepiece, attached fiber-optic light cable gently coiled beside it, and a compact unlabelled light-source connector. Correct delicate real-world instrument proportions, polished stainless steel and black optical components, warm ivory and cool pearl surfaces, refined soft daylight. Show the complete instrument and cable arrangement with comfortable margins, overhead three-quarter composition. Equipment only, no patient use, no anatomical views or bodily material. No people, children, hands, reception/lounge/room scene, readable text, labels, logos, watermark or graphic frames.
+ALT: Clean ENT diagnostic endoscope equipment on a clinical tray
+INSPECTION: PASS: People-free clean rigid ENT endoscope, optical eyepiece and coiled light cable on a pale clinical tray. Complete slender instrument shown with realistic proportions; no patient use or anatomical view. No text, labels, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+FILE: gallery-ent-instruments.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e178c909-8318-4040-96d1-01f03c4f6229.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A refined editorial still life of three clean realistic ENT instruments: a complete otoscope, a polished medical tuning fork, and a traditional circular ENT head mirror with central aperture and a simple black headband lying on the table. Correct compact clinical proportions, the mirror reflects only soft neutral light and no person. Neatly arranged on warm ivory linen with subtle petrol accents, natural side daylight, crisp silver and tactile fabric details. Entire object group fits comfortably inside the photograph. Strictly equipment only, no people, children, hands, faces, rooms, reception/lounge, readable writing, labels, numbers, logos, watermark or graphic frames.
+ALT: Clean otoscope, tuning fork and ENT head mirror arranged on linen
+INSPECTION: PASS: People-free complete otoscope, tuning fork and traditional ENT head mirror with headband on linen. Mirror reflects neutral light only. Realistic compact instruments, no readable text, labels, logos, watermark or room scene.
+GENERATION HISTORY: []
+
+Gallery files are reused within the new ENT 4–23 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: ENT FAQ set 4 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.enthealth.org/whats-an-ent/ reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

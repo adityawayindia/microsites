@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-meera-kapoor/
+Disallow: /dr-meera-kapoor/privacy-policy.html
+Disallow: /dr-meera-kapoor/terms-of-service.html
+Sitemap: https://digidr.app/dr-meera-kapoor/sitemap.xml

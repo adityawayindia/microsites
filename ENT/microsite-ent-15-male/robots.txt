@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-yash-malhotra/
+Disallow: /dr-yash-malhotra/privacy-policy.html
+Disallow: /dr-yash-malhotra/terms-of-service.html
+Sitemap: https://digidr.app/dr-yash-malhotra/sitemap.xml

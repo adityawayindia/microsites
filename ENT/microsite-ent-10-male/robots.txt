@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-kartik-banerjee/
+Disallow: /dr-kartik-banerjee/privacy-policy.html
+Disallow: /dr-kartik-banerjee/terms-of-service.html
+Sitemap: https://digidr.app/dr-kartik-banerjee/sitemap.xml

@@ -1,0 +1,55 @@
+Pediatrician 7 — Grove & apricot — Dr. Vihaan Nair
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-7.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-c9b49300-b68d-49ff-8bfb-3832d5b7608c.png
+PROMPT: Create an attractive authentic photorealistic professional portrait of fictional Indian male pediatrician Dr. Aarav Menon, about 42 years old. Short neatly styled black hair with faint grey temples, clean shaven, naturally warm professional expression and realistic skin texture. White clinical coat over a pale sage collared shirt, no stethoscope, badges, embroidery, text, logos or props. Vertical 3:4 waist-up photograph, full head with ample headroom, relaxed posture looking toward camera. Plain softly blurred warm cream and sage studio backdrop, beautiful soft natural light. Identity Little Grove: deep forest green, soft cream and restrained muted apricot warmth. One doctor only, no other people, no medical claims, watermark or graphic elements. Full rectangular edge-to-edge photograph, square corners without a frame; professional editorial realism, not glamour posing.
+ALT: Portrait of the fictional pediatrician Dr. Vihaan Nair
+INSPECTION: PASS: fictional male doctor with short dark hair, faint grey temples, clean-shaven face, pale sage shirt and white coat; full head and waist-up framing, no other people or text. Name attribution updated without changing the exact generation prompt.
+
+FILE: hero-pediatrics-7.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-b967b952-c38c-4b54-8cdb-8e58904c4ddf.png
+PROMPT: Create an attractive photorealistic editorial pediatric-care website hero still life, wide landscape 16:9. Identity Little Grove: deep forest green, soft cream and restrained muted apricot. A real functioning child-sized green stethoscope with realistic earpieces and chestpiece, a neatly arranged simple wooden stacking-ring toy, and small cream knitted baby booties form an elegant compact group on a warm cream tabletop. Group these objects toward the RIGHT between 75 and 90 percent of frame width, with comfortable margins so the stethoscope chestpiece and toy are fully visible. Keep the LEFT TWO THIRDS quiet airy warm cream negative space for website text. Soft welcoming natural daylight, tactile wood and knit, authentic medical-device detail, subtle gentle shadows. Absolutely ZERO people, hands, faces, body parts or human reflections. No room, reception, lounge, furniture, generic decor, plant-dominated scene, readable writing, labels, numbers, logos, watermark or graphic badges. No illustration or medical claims. Full rectangular edge-to-edge photograph with square corners and no frame.
+ALT: Child-sized green stethoscope, wooden stacking rings and knitted baby booties
+INSPECTION: PASS: people-free pediatric stethoscope, wooden stacking rings and cream booties arranged on the right with quiet cream space at left; no room scene, readable labels or text. Supporting objects occupy roughly the right half.
+
+FILE: about-pediatrics-7.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-39c7f6de-9224-4a54-8e6a-15486ae5b36d.png
+PROMPT: Create an attractive candid photorealistic editorial pediatric childhood-development photograph, vertical 4:5. One fully clothed Indian child about five years old concentrates naturally on arranging LARGE simple wooden shape blocks on a low cream activity tabletop. The child wears a modest sage-green cotton top with sleeves and comfortable trousers, ordinary everyday clothing. Show the child's face, upper body and their own two hands as they thoughtfully place a large block, warm natural absorbed expression rather than posing for camera. No adult, second child, additional person, adult hand or extra hand anywhere. Soft natural window-like daylight from one side, shallow depth of field, beautifully tactile wood, muted apricot and cream accents. Tight cropped activity composition with a softly blurred plain background; do not show a room interior, reception, lounge, sofa or furniture setting. Authentic respectful ordinary childhood photography, realistic anatomy and age, no staged medical treatment or claims. No text, labels, logos, watermark, graphics, badges, frame or rounded corners; full rectangular edge-to-edge photograph.
+ALT: Young Indian child concentrating on wooden shape blocks
+INSPECTION: PASS: one fully clothed young Indian child concentrating on large wooden blocks, only the child's own hands visible; no adults, additional people, room scene or text.
+
+FILE: philosophy-pediatrics-7.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-a56b06a3-e217-4479-b9aa-f68ee87cec7a.png
+PROMPT: Create an attractive photorealistic TOP-DOWN editorial still life for a pediatrician's care philosophy section, landscape 4:3. Identity Little Grove: soft cream and pale sage tabletop with deep forest-green accents. Arrange a real compact pediatric stethoscope with realistic connected tubing, earpieces and chestpiece, a small blank cream consultation notebook, a softly coiled cloth measuring tape with NO readable numbers or writing, and one small simple wooden leaf-shaped toy. Clean thoughtful child-growth consultation materials, gentle natural daylight, tactile paper, wood and cloth. Keep ALL main objects compactly centered with at least 15 percent quiet margins at left and right and 12 percent top and bottom for a centered square crop. Completely people-free: no hands, faces, body parts or human reflections. No room, reception, lounge, furniture, dominant plants, medical claims, readable text, labels, numbers, logos, watermark or graphic decorations. Full rectangular edge-to-edge photograph with square corners and no frame.
+ALT: Pediatric stethoscope and blank growth consultation materials on a cream tabletop
+INSPECTION: PASS: top-down compact pediatric stethoscope, blank notebook, unmarked cloth tape and wooden leaf toy; centered main subjects suitable for square crop, no people or readable text.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 1 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

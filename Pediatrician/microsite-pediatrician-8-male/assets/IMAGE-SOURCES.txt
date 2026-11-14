@@ -1,0 +1,55 @@
+Pediatrician 8 — Sky & coral — Dr. Arjun Sinha
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-8.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-722d610c-5ffe-4135-838d-92ff9d0d38f5.png
+PROMPT: Create an attractive authentic photorealistic professional portrait of fictional Indian male pediatrician Dr. Arjun Sinha, around 37 years old. Distinct slim face, neatly styled short dark hair, a neat short beard, pleasant warm professional expression, realistic skin texture. White clinical coat over a pale blue collared shirt, no stethoscope, badge, embroidery, text, logos or props. Vertical 3:4 waist-up portrait, full head with generous headroom, relaxed upright posture looking toward camera. Plain softly blurred blue-grey studio backdrop, fresh flattering photographic daylight. Identity Sky & coral: restrained blue #245677 with light blue-white surfaces and subtle muted coral warmth. One doctor only, no additional people, no claims or watermark. Full rectangular edge-to-edge photograph, square corners, no frame or graphic badges; authentic professional photography, no glamour retouching.
+ALT: Portrait of the fictional pediatrician Dr. Arjun Sinha
+INSPECTION: PASS: fictional male doctor with slim face, neat short beard, pale blue shirt and white coat; full head and waist-up framing, distinct from Site 7, no extra people or text.
+
+FILE: hero-pediatrics-8.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10abb4c5-763e-4c7b-8344-08bda4fff720.png
+PROMPT: Create an attractive photorealistic editorial pediatric-care website hero still life, wide landscape 16:9. Identity Sky & coral: clear sky blues, white, muted coral and warm natural wood. Arrange a real blue pediatric stethoscope with accurate connected tubing, two earpieces and small chestpiece, a colorful LARGE wooden shape-sorter toy with simple rounded geometric blocks, and a softly curved infant cloth measuring tape with no readable numbers or text. Group all main objects on the LEFT THIRD of a pale blue-white tabletop, with at least one toy block and the stethoscope chestpiece clearly visible at the far left. Leave the RIGHT TWO THIRDS uncluttered bright light-blue and white negative space for text. Beautiful natural daylight, realistic instrument and wood detail, gentle shadows, tasteful lively colors. ZERO people, children, adults, hands, faces, body parts or human reflections. No room/reception/lounge scene, furniture, plants dominating, letters, numbers, logos, labels, watermark, illustration, graphic badges, medical claims or frame. Full rectangular edge-to-edge photograph, square corners.
+ALT: Blue pediatric stethoscope with a wooden shape sorter and infant measuring tape
+INSPECTION: PASS: people-free blue pediatric stethoscope, wooden shape sorter and unmarked cloth tape at left; broad light-blue negative space at right, no room scene or readable labels.
+
+FILE: about-pediatrics-8.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-56222695-73c6-44f8-a2d4-af1c87f08d1e.png
+PROMPT: Create an attractive candid photorealistic pediatric childhood-development photograph, vertical 4:5. One fully clothed Indian school-age boy about seven years old with short natural dark curls is absorbed in drawing large colorful circles, triangles and squares on a blank sheet at a small pale-blue activity tabletop. He wears a modest light blue cotton shirt with sleeves and comfortable trousers. Show his face, upper body and his own two anatomically natural hands, one holding a thick colored pencil and the other resting on the paper. Bright soft photographic daylight, authentic focused expression, muted coral pencil accents and joyful but restrained colors. The drawing contains only simple colored shapes, NO words, letters or numbers. Tight cropped activity scene with an indistinct plain background; no adult, other child, other person, adult hand, extra hand, room interior, reception, lounge, sofa or furniture setting. No medical treatment or claims, labels, logos, watermark, graphic badges or frame. Full rectangular edge-to-edge photograph with square corners.
+ALT: Curly-haired Indian school-age boy drawing colorful shapes
+INSPECTION: PASS: one fully clothed school-age Indian boy with curls drawing only colorful shapes; only his own two hands visible, no adults, additional people, room scene or words.
+
+FILE: philosophy-pediatrics-8.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-9c2437f7-9132-40e8-b6c6-4685b4b8c8b1.png
+PROMPT: Edit this exact pediatric equipment photograph only to widen the framing. Zoom out by approximately 25 percent and place the complete existing arrangement of otoscope, growth-chart paper and reflex hammer compactly in the center of the same pale blue tabletop. Preserve the original objects, shapes, colors, lighting, perspective and photographic realism. Add quiet pale blue background around all four edges. Every part of each instrument must be at least 17 percent of the image width away from both left and right edges, and 12 percent of the image height from top and bottom. A centered square crop of this landscape 4:3 photograph must retain both entire instruments. Keep the growth chart exactly as an unlabeled illustrative graphic with no readable words, letters or numbers. No added people, hands, objects, writing, logos, watermarks, frames or rounded corners.
+ALT: Pediatric otoscope and reflex hammer beside an unlabelled growth chart
+INSPECTION: PASS after framing correction: pediatric otoscope, reflex hammer and unlabeled illustrative growth chart centrally grouped with wide quiet margins; both instruments stay intact in a square crop, no people or readable text.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 2 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

@@ -1037,7 +1037,7 @@ that adds the folder — don't let a new specialty slug get invented ad hoc in a
 Each specialty lives in its own folder, one subfolder per microsite variant:
 
 ```
-<Specialty>/microsite-<specialty>-<n>/
+<Specialty>/microsite-<specialty>-<n>-<gender>/
   index.html
   privacy-policy.html
   terms-of-service.html
@@ -1056,6 +1056,36 @@ Each specialty lives in its own folder, one subfolder per microsite variant:
     analytics.js      ← GA4 + Clarity event tracking (§40), loaded before index.js
   assets/              ← images and media (doctor photo, about/philosophy photos, icons)
 ```
+
+**Gender in folder names (mandatory).** Use lowercase `male` or `female` for the
+doctor represented by the microsite. The source and its parameterized version must
+use the same specialty, number and gender:
+
+- Source: `microsite-dentist-4-male`
+- Parameterized: `microsite-dentist-4-male-param`
+- Female example: `microsite-dentist-9-female` and `microsite-dentist-9-female-param`
+- Assigned variants: `microsite-<specialty>-<n>-<gender>-assigned` and
+  `microsite-<specialty>-<n>-<gender>-param-assigned`
+- Keep other existing status labels after the gender, for example
+  `microsite-pediatrician-5-male (work pending)`.
+
+Continue numbering across both genders within each specialty; do not start separate
+male/female sequences. When renaming existing folders, only insert the gender:
+preserve the parent folder, existing number (or unnumbered name), and status suffixes.
+**Leave every folder inside `live microsites` unchanged**, including its name and
+contents, unless explicitly asked to change that live site. The generic Default Template
+has been removed; do not recreate it as part of the naming migration.
+Check doctor/profile text and image-generation records; parameterized
+copies inherit their source template's gender. Do not guess from the specialty or
+colour palette. If a template has no identifiable doctor gender, clarify its intended
+classification before assigning a gender suffix.
+
+**Folder names and deployed identifiers are separate.** A folder-only rename must
+not rewrite existing backend `data-micrositeid` values, booking doctor IDs, published
+slugs, analytics tags, canonical URLs or cloud-storage keys. Keep `{{slug}}`,
+`{{micrositeId}}` and other template placeholders intact. Update actual local path
+references and tools that parse folder names; check for destination collisions and
+verify that every existing file survives the rename. No automatic commit or push.
 
 - CSS lives exclusively in `styles/style.css` (plus the separately-loaded
   `chatbot.css`/`banner-module.css`/`legal.css` module files) — never inline
@@ -2736,7 +2766,9 @@ footer has the badge), verbatim:
 
 Requirements:
 - `<body data-micrositeid="…">`: `{{micrositeId}}` on parameterized sites; on non-parameterized
-  copies use the folder name (`microsite-<specialty>-<n>`) — it must be an ID the backend knows.
+  copies use the ID the backend knows. New drafts may use their gender-qualified folder
+  name (`microsite-<specialty>-<n>-<gender>`) when registered under that ID. Preserve an
+  existing ID during a folder-only rename; the backend ID does not change automatically.
 - The count element carries `id="visitorCount"` (initial text `0`), inside
   `.footer-visitor-badge`:
   `<strong|span class="footer-visitor-badge-count" id="visitorCount">0</strong>`.
@@ -2904,7 +2936,7 @@ How to use it:
   }
   </script>
 </head>
-<body data-micrositeid="microsite-<specialty>-<n>" data-slug="{{slug}}">
+<body data-micrositeid="microsite-<specialty>-<n>-<gender>" data-slug="{{slug}}">
 
   <!-- Header (A.2) · Hero (A.3) · About (§5, §24) · Services (§6, §23) · Social Media (A.4)
        · Care Philosophy (A.5) · Consultation Journey (A.6) · Contact (A.7) · Gallery + lightbox (A.8)
@@ -2920,7 +2952,8 @@ How to use it:
 </html>
 ```
 
-`data-micrositeid` is the folder name on a non-parameterized site (§44). The legal pages use the
+`data-micrositeid` is the backend-registered ID on a non-parameterized site (§44); a local
+folder rename does not change an existing ID. The legal pages use the
 same `<head>` with their own `<title>`/description, `<meta name="robots" content="noindex, follow" />`,
 a canonical of `https://digidr.app/{{slug}}/privacy-policy.html` (or `terms-of-service.html`), no
 JSON-LD and no banner/intl-tel-input files, plus `./styles/legal.css` after `style.css` (A.12).
@@ -5118,7 +5151,7 @@ Body of `privacy-policy.html` (`terms-of-service.html` has the same shell with t
 The pages have no site header; the article opens with the Back link.
 
 ```html
-<body data-micrositeid="microsite-<specialty>-<n>" data-slug="{{slug}}">
+<body data-micrositeid="microsite-<specialty>-<n>-<gender>" data-slug="{{slug}}">
   <main class="legal-page">
     <section class="blog-detail-section legal-section">
       <div class="container">

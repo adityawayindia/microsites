@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-pranav-kulkarni/
+Disallow: /dr-pranav-kulkarni/privacy-policy.html
+Disallow: /dr-pranav-kulkarni/terms-of-service.html
+Sitemap: https://digidr.app/dr-pranav-kulkarni/sitemap.xml

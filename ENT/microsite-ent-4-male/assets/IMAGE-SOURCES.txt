@@ -1,0 +1,68 @@
+ENT 4 — Acoustic linen — Dr. Aarav Menon
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and ENT-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-4.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-c6d33493-8fbb-49d6-87a3-d945f41db6ff.png
+PROMPT: Use case: photorealistic-natural. Asset type: professional ENT doctor profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Aarav Menon, an Indian male ENT physician about 42, neat short black hair with a little grey at the temples, clean-shaven face, warm composed professional expression. A white clinical coat over a modest navy collared shirt, no tie. Full head and waist-up framing, both shoulders visible, approximately 8 percent comfortable headroom, eye-level camera. Plain warm neutral ivory studio backdrop, flattering soft daylight, realistic skin texture and natural proportions. Only this adult person. No stethoscope, badges, writing, labels, logos, watermark or graphic frame.
+ALT: Portrait of fictional ENT specialist Dr. Aarav Menon
+INSPECTION: PASS: One fictional Indian male ENT physician with neat dark hair, clean-shaven face, navy shirt and white coat. Complete head and waist-up professional framing with a warm neutral backdrop. No other people, text, logos or watermark.
+
+FILE: hero-ent-4.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-ae019a02-5f09-408b-89f7-202a81e50480.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT website hero background, wide landscape 16:9. Beautiful premium clinical product photograph of realistic diagnostic audiometry headphones with deep petrol ear cushions and a polished metallic tuning fork on warm pale limestone. Correct human-sized equipment with careful material detail. Group the equipment predominantly on the RIGHT third, around 70–92 percent of frame width, keeping the tuning fork and both headphone ear cups clearly visible near the right. Leave the LEFT 60 percent as broad calm ivory negative space. Acoustic-linen identity: warm ivory, deep petrol and a restrained copper detail, soft artful side daylight, fine natural shadows. Close specialty-specific still life, no room scene. Strictly no people, children, hands, faces, silhouettes, readable text, labels, numbers, logos, watermark or graphic frames.
+ALT: Diagnostic audiometry headphones and a metallic tuning fork on warm limestone
+INSPECTION: PASS: People-free diagnostic headphones and metallic tuning fork on warm limestone. Right-side object placement leaves broad clear ivory space on the left. Attractive petrol/copper materials, realistic proportions and no readable text, labels, logos, watermark or room scene.
+
+FILE: about-ent-4.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e0553c29-95a8-4b0f-95ef-9dcc60f33bb9.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT About section photograph, vertical 4:5. An attractive close editorial still life of a complete realistic otoscope, three clean unused disposable ear specula arranged neatly on a small pale ceramic tray, and a polished metallic tuning fork on tactile warm ivory linen. Different composition from a headphones hero: instruments arranged in a diagonal from lower left to upper right, photographed from a gentle elevated angle. Keep complete equipment inside the frame with generous margins. Correct compact clinical instrument proportions, deep petrol accents, fine silver highlights and subtle copper-toned light. Natural photographic realism, beautiful diffused daylight. Close clinical still life only, no room, reception or lounge. No people, children, hands, readable labels, numbers, writing, logos, watermark or graphic frame.
+ALT: Otoscope, clean disposable specula and polished tuning fork on linen
+INSPECTION: PASS: People-free complete otoscope, clean disposable specula and polished tuning fork in a diagonal linen composition. All equipment fits within the portrait frame with clear details and realistic proportions. No text, labels, logos, watermark or room scene.
+
+FILE: philosophy-ent-4.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-dcf01580-a827-4bbe-8da9-ef2d371b0459.png
+PROMPT: Use case: precise-object-edit. Edit the supplied ENT clinical still-life photograph. Output must be LANDSCAPE 4:3. Preserve the compact diagnostic audiometer, blank screen and unlabelled controls, the red/blue audiometry headphones, and the small intact outer-ear teaching model with its stand. Preserve their realistic proportions, materials, warm limestone and ivory linen styling. Remove the vase and all foliage completely. Reframe by moving the camera back and widening the neutral tabletop and backdrop so the entire equipment group occupies only the middle 60 percent of the new image width, with at least 20 percent clear left and right margins. Every headphone ear cup, audiometer corner and the complete ear-model stand must fit fully inside a centered square crop. Soft daylight and subtle shadows, attractive clinical product photography. No new objects, people, hands, children, text, labels, numbers, logos, watermark or graphic frames. Keep the original three equipment subjects only.
+ALT: Compact diagnostic audiometer, headphones and an outer-ear teaching model
+INSPECTION: PASS after framing correction: Landscape 4:3 clinical still life with compact audiometer, diagnostic headphones and an intact non-graphic outer-ear teaching model. All principal equipment fits inside the centered square crop. Incidental vase and foliage removed; blank display and unlabelled controls. No people, text, logos or watermark.
+
+FILE: gallery-ent-hearing.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-4069df77-6c6c-4ef2-8c7d-43729b4af622.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. Attractive premium product photography of a realistic compact diagnostic hearing-test audiometer with a blank unlit screen and neutral unlabelled knobs, and diagnostic audiometry headphones placed neatly beside it. Correctly proportioned human-sized clinical equipment, warm ivory and muted petrol tabletop, restrained silver highlights. Three-quarter angle, entire equipment group comfortably inside the frame, soft natural daylight, clean realistic materials and subtle shadows. Specialty-specific hearing assessment still life, no people or children, no hands, no room/reception/lounge scene, no readable labels, numbers, text, logos, watermark or graphic frames.
+ALT: Diagnostic audiometry headphones beside a compact hearing-test unit
+INSPECTION: PASS: People-free compact audiometer and diagnostic headphones in a clean ivory/petrol product composition. Equipment is complete and proportionate; display blank and controls unlabelled. No text, logos, watermark or room scene.
+
+FILE: gallery-ent-endoscope.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-ddb58b1d-1338-4560-beeb-f1ad8ae0097f.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A beautiful realistic clinical product photograph of clean ENT diagnostic endoscopy equipment arranged neatly on a pale sterile tray: a slender rigid ENT endoscope with its optical eyepiece, attached fiber-optic light cable gently coiled beside it, and a compact unlabelled light-source connector. Correct delicate real-world instrument proportions, polished stainless steel and black optical components, warm ivory and cool pearl surfaces, refined soft daylight. Show the complete instrument and cable arrangement with comfortable margins, overhead three-quarter composition. Equipment only, no patient use, no anatomical views or bodily material. No people, children, hands, reception/lounge/room scene, readable text, labels, logos, watermark or graphic frames.
+ALT: Clean ENT diagnostic endoscope equipment on a clinical tray
+INSPECTION: PASS: People-free clean rigid ENT endoscope, optical eyepiece and coiled light cable on a pale clinical tray. Complete slender instrument shown with realistic proportions; no patient use or anatomical view. No text, labels, logos, watermark or room scene.
+
+FILE: gallery-ent-instruments.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e178c909-8318-4040-96d1-01f03c4f6229.png
+PROMPT: Use case: photorealistic-natural. Asset type: ENT practice gallery photograph, landscape 4:3. A refined editorial still life of three clean realistic ENT instruments: a complete otoscope, a polished medical tuning fork, and a traditional circular ENT head mirror with central aperture and a simple black headband lying on the table. Correct compact clinical proportions, the mirror reflects only soft neutral light and no person. Neatly arranged on warm ivory linen with subtle petrol accents, natural side daylight, crisp silver and tactile fabric details. Entire object group fits comfortably inside the photograph. Strictly equipment only, no people, children, hands, faces, rooms, reception/lounge, readable writing, labels, numbers, logos, watermark or graphic frames.
+ALT: Clean otoscope, tuning fork and ENT head mirror arranged on linen
+INSPECTION: PASS: People-free complete otoscope, tuning fork and traditional ENT head mirror with headband on linen. Mirror reflects neutral light only. Realistic compact instruments, no readable text, labels, logos, watermark or room scene.
+
+Gallery files are reused within the new ENT 4–23 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: ENT FAQ set 4 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.enthealth.org/whats-an-ent/ reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.
+
+PHILOSOPHY CORRECTION HISTORY
+{
+  "file": "philosophy-ent-4.jpg",
+  "initialPrompt": "Use case: photorealistic-natural. Asset type: ENT care philosophy photograph, landscape 4:3. An artful premium clinical still life of a realistic compact tabletop diagnostic audiometer with a blank unlit display and unlabelled controls, matching diagnostic headphones, and a small smooth anatomical OUTER-EAR teaching model on a simple neutral stand. The model is an intact external ear only, tasteful non-graphic educational resin, no cutaway or exposed internal tissue. All equipment is realistic human-sized and proportionate. Arrange the entire group centrally on warm limestone with ivory linen detail and deep petrol accents, leaving at least 20 percent clear space on both left and right and comfortable top/bottom margins. Every principal object must remain fully visible in a centered square crop. Gentle side daylight, refined photographic textures and shadows. No people, children, hands, rooms, reception or lounge, readable text, labels, numbers, logos, watermark or graphic frames.",
+  "initialOriginal": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-f2ade00e-ca26-41d6-8dc6-64d5bea734a0.png",
+  "initialInspection": "Not selected: generated square instead of requested 4:3; incidental vase/foliage distracted from equipment.",
+  "editPrompt": "Use case: precise-object-edit. Edit the supplied ENT clinical still-life photograph. Output must be LANDSCAPE 4:3. Preserve the compact diagnostic audiometer, blank screen and unlabelled controls, the red/blue audiometry headphones, and the small intact outer-ear teaching model with its stand. Preserve their realistic proportions, materials, warm limestone and ivory linen styling. Remove the vase and all foliage completely. Reframe by moving the camera back and widening the neutral tabletop and backdrop so the entire equipment group occupies only the middle 60 percent of the new image width, with at least 20 percent clear left and right margins. Every headphone ear cup, audiometer corner and the complete ear-model stand must fit fully inside a centered square crop. Soft daylight and subtle shadows, attractive clinical product photography. No new objects, people, hands, children, text, labels, numbers, logos, watermark or graphic frames. Keep the original three equipment subjects only.",
+  "finalOriginal": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-dcf01580-a827-4bbe-8da9-ef2d371b0459.png",
+  "finalInspection": "PASS after framing correction: Landscape 4:3 clinical still life with compact audiometer, diagnostic headphones and an intact non-graphic outer-ear teaching model. All principal equipment fits inside the centered square crop. Incidental vase and foliage removed; blank display and unlabelled controls. No people, text, logos or watermark.",
+  "tool": "OpenAI built-in image_gen",
+  "generatedDate": "2026-11-14"
+}

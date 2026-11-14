@@ -1,0 +1,55 @@
+Pediatrician 25 — Coral & pearl — Dr. Malini Nair
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-25.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-71f1dacb-9b9e-4efb-9f5b-b3de0258e844.png
+PROMPT: Use case: photorealistic-natural. Asset type: professional pediatrician profile photograph, vertical 3:4. Create a realistic studio portrait of fictional Dr. Malini Nair, an Indian female pediatrician about 52 with warm brown skin and shoulder-length dark hair with natural silver strands. Small simple stud earrings, no glasses, modest muted coral blouse beneath a white clinical coat. Warm experienced professional expression and authentic natural skin texture. Full head and waist-up framing, both shoulders visible, approximately 8 percent comfortable headroom, eye-level camera. Plain softly blurred warm pearl studio backdrop with a restrained coral tint, flattering natural daylight. Only one adult. No stethoscope, badges, readable writing, logos, watermark or graphic frame.
+ALT: Portrait of fictional pediatrician Dr. Malini Nair
+INSPECTION: PASS: One fictional Indian female pediatrician with shoulder-length salt-and-pepper hair, small studs, coral blouse and white coat. Complete head and waist-up framing, warm experienced expression and pearl/coral studio backdrop. No other people, text, logos or watermark.
+
+FILE: hero-pediatrics-25.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-aa4e6f27-31b5-4fe0-a7ed-4f433a70c0c1.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric website hero background, wide landscape 16:9. An attractive warm editorial still-life photograph on a pearl-white linen surface: one real child-sized coral pediatric stethoscope, a small cream knitted baby bonnet with no loose ties, a large smoothly finished wooden ring developmental toy and neatly folded white cotton. Arrange the entire group toward the RIGHT third, roughly 70–92 percent of frame width, keeping the stethoscope chestpiece and ring visibly separated near the right. Leave the LEFT 60 percent as broad clean pearl negative space. Beautiful gentle natural daylight, realistic soft shadows, tactile knit, pale wood and polished medical metal. Close infant-care still life, no room scene. Strictly no people, hands, faces, silhouettes, readable text, labels, logos, watermark or baked-in graphics.
+ALT: Coral pediatric stethoscope with an infant bonnet, wooden ring toy and folded cotton
+INSPECTION: PASS: People-free pediatric still life with coral stethoscope, cream knitted infant bonnet without loose ties, large smooth wooden ring and folded white cotton. Objects are right aligned with broad clear left space. No readable text, labels, logos, watermark or room scene.
+
+FILE: about-pediatrics-25.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-eaea67c2-3138-41b1-85ae-098437dd4b5c.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric About photograph, vertical 4:5. A candid editorial photograph of one Indian girl about nine, fully clothed in a modest coral short-sleeved top and cream trousers, thoughtfully arranging a colorful plate of prepared fruit at a bright clean simple table. The fruit is cut apple slices, banana rounds, orange segments and halved strawberries, ready to eat, with no knife or sharp tool present. She has neatly tied dark hair and a natural engaged expression. Soft bright daylight, pearl-white tabletop, warm coral accents, realistic fresh fruit and authentic skin detail. Close child-focused framing with comfortable margins and a plain softly blurred backdrop, no wider room scene. Only this child, no adults or other people. No readable text, logos, labels, watermark or graphic frame.
+ALT: A school-age girl arranging a colorful fruit plate
+INSPECTION: PASS: One fully clothed Indian school-age girl arranges prepared apple, banana, orange and strawberry pieces on a plate. Natural child activity with no knives or sharp tools, coral/cream styling and bright daylight. No adults or other people, readable text, logos, watermark or lounge/reception scene.
+
+FILE: philosophy-pediatrics-25.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-f23e689a-14c5-4e87-85f5-55cd584613cb.png
+PROMPT: Use case: photorealistic-natural. Asset type: pediatric care philosophy photograph, landscape 4:3. A fine editorial overhead still life on a warm pearl matte surface: softly coiled cream pediatric cloth measuring tape with fine tick marks but no readable numbers, one complete compact reflex hammer with a small coral rubber head, and a blank cream vaccination record booklet with completely blank cover and pages, kept closed with a narrow coral cotton ribbon. Arrange the items in a sparse attractive composition, keeping the entire object group inside the central 60 percent of image width with 20 percent empty side margins and comfortable top/bottom space. Complete hammer, tape and all booklet corners must stay fully visible in a centered square crop. Soft natural side light, delicate shadows and tactile cotton/paper/metal. Close people-free pediatric still life, no room scene. No hands, people, readable writing, numbers, labels, logos, watermark or graphic frames.
+ALT: Pediatric measuring tape and reflex hammer beside a blank vaccination record booklet
+INSPECTION: PASS: People-free overhead pediatric measuring tape, complete coral reflex hammer and blank record booklet with coral cotton ribbon. All objects fit within a centered square crop. Clear tactile details and warm pearl surface; no readable numbers, text, labels, logos or watermark.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 1 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.

@@ -1,0 +1,55 @@
+Pediatrician 11 — Midnight orbit — Dr. Ritwik Sen
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 14 November 2026. Only doctor portraits and selected child images contain people. Supporting images contain no other adults, and are pediatric-specific. Source and param copies share their site assets.
+
+
+
+FILE: doctor-11.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-7ae3dccd-7445-4130-8ab2-c36d1c6d5d8c.png
+PROMPT: Create an attractive authentic photorealistic professional portrait of fictional Indian male pediatrician Dr. Ritwik Sen, about 35 years old. Medium brown skin, distinct youthful angular face, short naturally curly dark hair, neat short beard, kind attentive professional expression, realistic skin texture. White clinical coat over a modest navy collared shirt, no stethoscope, badge, embroidery, text, logo or props. Vertical 3:4 waist-up portrait, full head with generous headroom, relaxed upright posture looking toward camera. Plain softly blurred deep blue-grey studio backdrop, refined soft daylight with clear flattering facial illumination. Identity Midnight orbit, desaturated navy #343e69 with restrained ivory highlights. One doctor only, no other people, medical claims, watermark or graphic badges. Full rectangular edge-to-edge photograph, square corners, no frame or glamour retouching.
+ALT: Portrait of the fictional pediatrician Dr. Ritwik Sen
+INSPECTION: PASS: fictional male doctor with short curls, neat beard, navy shirt and white coat; full head with generous headroom, no extra people or text.
+
+FILE: hero-pediatrics-11.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-64313123-6ea6-49a4-8a7a-20706ccf9fdf.png
+PROMPT: Create an attractive premium photorealistic editorial pediatric-care website hero still life, wide landscape 16:9. Identity Midnight orbit: desaturated midnight-blue surface, navy #343e69, pale ivory wood and restrained soft ochre. A real navy pediatric stethoscope with accurate connected tubing, two earpieces and small polished silver chestpiece is arranged beside LARGE pale natural-wood moon and star developmental shapes. All meaningful objects are grouped on the RIGHT THIRD, with comfortable margins. Leave the LEFT TWO THIRDS clean quiet desaturated midnight-blue negative space for light text. Elegant studio daylight produces luminous ivory wood, gentle silver highlights and enough brightness on the stethoscope to remain visible beneath a dark navy website overlay. Refined realistic wood grain, no literal outer-space scenery or graphic stars. ZERO people, children, adults, hands, body parts or human reflections. No room/reception/lounge, furniture, dominant plants, readable text, labels, logos, watermark, medical claims, graphic badges, border or rounded corners. Full rectangular edge-to-edge photograph.
+ALT: Navy pediatric stethoscope with pale wooden moon and star shapes
+INSPECTION: PASS: navy pediatric stethoscope with luminous pale wooden moon/star shapes grouped right against desaturated midnight blue; quiet left space and clear silver highlights, no people or labels.
+
+FILE: about-pediatrics-11.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-0e32e013-ae5f-40af-b1a7-9d420886767c.png
+PROMPT: Create an attractive candid photorealistic pediatric childhood-development photograph, vertical 4:5. One fully clothed Indian boy about eight years old with straight dark hair and a natural focused expression is assembling LARGE age-appropriate geometric magnetic tiles at a small plain blue-grey activity desk. He wears a modest navy cotton top with sleeves and comfortable light trousers. Tiles are large, safely enclosed magnetic construction shapes with no loose magnets or tiny parts, in translucent blue, ivory and ochre tones. Show the boy's face, upper body and only his own two anatomically natural hands thoughtfully joining two large tiles. Soft attractive daylight and realistic material detail. Tight centered activity composition with a softly blurred plain background; no adults, second child, extra hands, room interior, reception, lounge, sofa or furniture setting. No readable words, labels, logos, watermark, medical treatment, claims, graphic badges or frame. Full rectangular edge-to-edge photograph, square corners.
+ALT: Indian school-age boy assembling large geometric tiles
+INSPECTION: PASS: single fully clothed Indian boy assembling large enclosed magnetic tiles, only his own two hands visible; no loose magnets, adults, additional people, room scene or text.
+
+FILE: philosophy-pediatrics-11.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-f6a736dc-88d3-4b1e-b26c-d228aae82a3f.png
+PROMPT: Edit this exact photograph only to widen its framing. Zoom out approximately 25 percent, preserve every existing object and its relative layout, and add more of the same matte navy paper surface around all sides. The full arrangement of otoscope, blank cream notebook, silver examination penlight and wooden star must be compactly centered and occupy no more than the middle 65 percent of image width. In particular, the complete leftmost otoscope head must be well inside an 18 percent left margin; the star must be inside the matching right margin. Keep 14 percent top and bottom margins. Preserve the original photographic lighting, accurate instruments, colors and textures. Landscape 4:3, centered square crop must retain both complete instruments. Do not add anything: no people, hands, writing, labels, logos, watermark, border or rounded corners.
+ALT: Pediatric otoscope and examination penlight with a blank notebook and wooden star
+INSPECTION: PASS after framing correction: otoscope, examination penlight, blank notebook and wooden star centrally grouped with wide margins; complete instruments remain inside a centered square crop, no people or labels.
+
+FILE: gallery-pediatric-kit.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e506c04a-b465-46c1-9b1b-ddd9e8145ad7.png
+PROMPT: Create an attractive photorealistic editorial pediatric medical-equipment still-life photograph, landscape 4:3. A real child-sized stethoscope with forest-green flexible tubing, realistic earpieces and a small metal chestpiece is neatly arranged beside a real compact professional otoscope on a clean matte pale sage surface. Equipment must have believable medical-device construction, no toy-like inaccuracies, no brand markings. Soft fresh natural light with refined gentle shadows and crisp polished metal detail. Restrained cream and sage palette, clear uncluttered composition. People-free with no hands, body parts, reflections of people or patient. No room, reception, lounge, furniture, readable lettering, labels, logos, watermarks, efficacy claims or graphic overlays. Full rectangular edge-to-edge photograph, no border or rounded corners.
+ALT: Pediatric stethoscope and otoscope arranged on a clean sage surface
+INSPECTION: PASS: pediatric stethoscope and otoscope on clean sage surface, people-free with no labels or logos; equipment is fully visible.
+
+FILE: gallery-development-play.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-10cd4348-6544-41d0-8fff-50e47b55baad.png
+PROMPT: Create an attractive photorealistic editorial pediatric developmental-play still-life photograph, landscape 4:3. A small carefully arranged set of LARGE smooth wooden shape blocks and a simple wooden stacking-ring toy on a clean warm cream tabletop. Natural pale wood with muted sage and soft apricot accents on a few pieces, safe rounded edges, tasteful uncluttered composition emphasizing tactile material and ordinary early-childhood play. Soft bright natural daylight, gentle shadows, realistic wood grain, elevated professional photography. No people, children, adults, hands, body parts or human reflections. No room interior, reception, lounge, furniture, text, alphabet letters, labels, numbers, logos, watermark, medical claims, graphic badges or illustration. Full rectangular photograph edge to edge, square corners and no frame.
+ALT: Large wooden developmental blocks and stacking rings on a cream tabletop
+INSPECTION: PASS: large rounded wooden developmental shapes and stacking rings on cream tabletop; no people, letters, labels or room scene.
+
+FILE: gallery-growth-notes.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-49f2c516-bc1d-4991-9c33-5661cb08d5e0.png
+PROMPT: Create an attractive photorealistic editorial pediatric child-growth still-life photograph, landscape 4:3. A small open child-health notebook with entirely blank cream pages, a softly coiled unmarked cloth measuring tape with no readable numbers, and a pair of tiny cream knitted baby booties form a thoughtful compact arrangement on a pale warm sage tabletop. Soft natural daylight, warm ivory paper, realistic delicate knit and cloth texture, refined calm composition with comfortable margins. No writing anywhere, no labels, digits or diagrams. Completely people-free: no baby, child, adult, hand, body part or human reflection. No room, reception, lounge, sofa, furniture, plants dominating, logos, watermark, medical claims, graphic badges or illustrations. Full rectangular edge-to-edge photograph, square corners without a frame.
+ALT: Blank child health notebook with a measuring tape and knitted baby booties
+INSPECTION: PASS: blank notebook, cream knitted booties and unmarked cloth tape on pale sage; people-free with no readable text or labels.
+
+Gallery files are reused within the new Pediatrician 7–26 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: pediatric FAQ set 5 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.who.int/publications/i/item/9789240085336 reviewed 14 November 2026. No guarantees, cure claims or fabricated patient testimonials.
