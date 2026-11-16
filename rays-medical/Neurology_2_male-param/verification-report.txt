@@ -1,3 +1,9 @@
+SPECIALTY CONVERSION — 16 November 2026
+Converted to Neurology; folder: Neurology_2_male-param.
+Services and FAQ use the existing Rays Neurology content. Profile, metadata, specialty analytics and structured data updated. Booking identifiers, JavaScript, template placeholders and assets preserved.
+Validation: matching footers, six services/FAQs, local assets, unchanged booking scripts and JavaScript syntax. Full browser booking tests were not rerun for this content-only conversion.
+
+HISTORICAL PRE-CONVERSION AUDIT (not a fresh audit of this conversion):
 DigiDr verification - rays-medical/Neurosurgeon_male-param
 16 November 2026
 Dr. Karan Mehta - male Neurosurgeon

@@ -1,4 +1,4 @@
-# Dr. Karan Mehta — Neurosurgeon
+# Dr. Karan Mehta — Neurologist
 
 > Per-microsite draft for backend root merge. Consultation information and appointment booking.
 

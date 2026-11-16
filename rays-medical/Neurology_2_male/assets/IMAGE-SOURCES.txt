@@ -60,3 +60,4 @@ Gallery photographs generated 16 November 2026; shared only within the Rays Medi
 favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
 
 Content reference: https://www.newcastle-hospitals.nhs.uk/services/neurosciences/neurosurgery/; reviewed 16 November 2026. FAQ source: Original appointment-focused FAQ wording; specialty context from the cited source.
+16 November 2026: Site converted to Neurology. Original generation prompts above retained as provenance; existing brain, cranial and spinal teaching imagery retained.

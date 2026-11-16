@@ -1,0 +1,17 @@
+/* Portable static Rays Medical strip; inherits the microsite font. */
+.rays-topbar{position:sticky;top:0;z-index:500}
+.rays-topbar .site-header{position:relative;top:auto}
+.rays-top-strip{position:relative;isolation:isolate;overflow:hidden;background:#0e091e;color:#f5f2ff;border-bottom:1px solid #302544;font-family:var(--font-body),sans-serif}
+/* Stationary light at the edges, behind the content. */
+.rays-top-strip::before{content:'';position:absolute;z-index:-1;pointer-events:none;width:clamp(740px,68vw,1080px);height:400px;left:50%;top:50%;transform:translate(-50%,-50%);border:2px solid #b78aff;border-radius:50%;background:#10091f;box-shadow:0 0 9px #cfb1ff,0 0 34px #8849e6,0 0 76px #6631b5,inset 0 0 28px rgb(135 70 235 / 22%)}
+.rays-top-strip__inner{box-sizing:border-box;width:min(1480px,92%);margin:0 auto;padding:6px 24px;display:flex;align-items:center;justify-content:center;gap:24px;min-height:48px}
+.rays-top-strip__message{min-width:0;color:#e5dfee;font-size:18px;line-height:1.4}
+.rays-top-strip__message strong{color:#fff;font-weight:800}
+.rays-top-strip .rays-top-strip__action{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:34px;padding:3px 18px;gap:10px;border:1px solid #e1d5f6;border-radius:10px;background:linear-gradient(180deg,#fff,#eae1f8);color:#301e4b;font:700 18px/1.4 var(--font-body),sans-serif;box-shadow:inset 0 1px 0 #fff,0 2px 6px rgb(5 2 14 / 20%);cursor:pointer;text-decoration:none;white-space:nowrap}
+.rays-top-strip__arrow{display:block;width:18px;height:18px;flex:0 0 18px;color:inherit}
+.rays-top-strip .rays-top-strip__action:hover{background:#fff;color:#301e4b;border-color:#fff;transform:none}
+.rays-top-strip .rays-top-strip__action:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:640px){.rays-top-strip::before{width:calc(100% + 90px);height:240px}.rays-top-strip__inner{width:100%;padding:6px 16px;gap:12px;justify-content:space-between}.rays-top-strip__message{font-size:16px}.rays-top-strip .rays-top-strip__action{padding-inline:12px;font-size:16px}.rays-top-strip__arrow{display:none}}
+
+.rays-top-strip__mobile-break{display:none}
+@media(max-width:640px){.rays-top-strip__mobile-break{display:block}}
