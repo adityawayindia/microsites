@@ -1,0 +1,62 @@
+Rays Medical 15 — Burgundy atlas — Dr. Aditya Rao
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and specialty-appropriate. Source and param copies share their site assets.
+
+
+
+FILE: doctor-15.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-fba216d6-1acc-4afa-bf46-777fa8e331e0.png
+PROMPT: Use case: photorealistic-natural. Asset: vertical 3:4 fictional neurologist portrait. Dr Aditya Rao, Indian man about 44 years old, wavy dark hair, neatly trimmed moustache, no beard and no glasses, distinct oval face, natural calm warm expression looking at camera. White medical coat over pale cream shirt, waist-up with whole head and both shoulders visible, dignified relaxed posture. Warm ivory seamless studio background, refined soft window light, realistic skin and fabric, premium editorial portrait. One person only, no text, badges, names, logos, watermark, room or other people.
+ALT: Portrait of Dr. Aditya Rao in a white coat over a cream shirt
+INSPECTION: PASS: one distinct fictional male doctor; wavy hair and moustache, no beard/glasses; no text or logos.
+GENERATION HISTORY: []
+
+FILE: hero-rays-15.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-cb706497-a180-4c08-acf5-89497821abbd.png
+PROMPT: Use case: scientific-educational product photograph. Asset: wide 16:9 neurology website hero background. Beautiful anatomically accurate ivory brain teaching model seen at three-quarter angle on a low translucent burgundy acrylic plinth, beside a polished medical tuning fork and reflex hammer neatly arranged on folded oxblood fabric. Objects confined to RIGHT THIRD; generous pale warm ivory stone negative space across LEFT two-thirds for profile text. Premium clinical editorial photography, gentle side light, fine realistic brain gyri and instrument metal, muted burgundy and warm ivory palette. Inanimate non-graphic teaching model only. No person-shaped head, real tissue, people, hands, reflection of people, flowers, rooms, lounges, text, writing, labels, logos or watermark.
+ALT: Ivory brain teaching model and neurological assessment instruments with burgundy accents
+INSPECTION: PASS: attractive specialty-specific neurological teaching model and equipment, realistic molded materials, no people, hands, rooms, flowers, text or logos.
+GENERATION HISTORY: []
+
+FILE: about-rays-15.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-6e43c7a4-acfa-4d52-81f6-97db5a77db6b.png
+PROMPT: Use case: scientific-educational product photograph. Asset: portrait 4:5 neurology About image. Beautifully lit enlarged peripheral myelinated nerve fibre teaching model, clearly inanimate molded educational plastic on a low ivory stand. Show a long central axon passing through several ivory myelin sheath segments with narrow nodes of Ranvier between them, one cutaway segment exposing concentric layers in muted burgundy and warm cream. Elegant precise object arranged diagonally through portrait frame, entirely visible with breathing room. Warm neutral stone surface and soft ivory backdrop, premium clinical editorial side lighting, realistic smooth material. No person-shaped head, tissue, people, hands, rooms, flowers, writing, text, labels, logos, watermark.
+ALT: Enlarged myelinated nerve fibre teaching model on an ivory stand
+INSPECTION: PASS: attractive specialty-specific neurological teaching model and equipment, realistic molded materials, no people, hands, rooms, flowers, text or logos.
+GENERATION HISTORY: []
+
+FILE: philosophy-rays-15.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-3e525ca4-8029-4709-8108-6fc7a2ad87ed.png
+PROMPT: Use case: scientific-educational product photograph. Asset: landscape 4:3 neurology care philosophy image, centered square-crop safe composition. A small anatomically accurate three-vertebra lumbar spinal teaching model with ivory bone, muted coral discs and fine yellow nerve roots on a low burgundy base, beside a polished neurological tuning fork and compact reflex hammer arranged in a tidy fan. All objects fully visible within the central square area, generous outer margin. Warm ivory tabletop with a burgundy linen strip, premium clinical editorial studio lighting, realistic molded educational model and stainless steel detail. Distinct from a plain instrument tray photo. No person-shaped figure, actual tissue, people, hands, rooms, lounges, flowers, labels, numbers, text, logos or watermark.
+ALT: Lumbar spine teaching model, tuning fork and reflex hammer on burgundy linen
+INSPECTION: PASS: attractive specialty-specific neurological teaching model and equipment, realistic molded materials, no people, hands, rooms, flowers, text or logos.
+GENERATION HISTORY: []
+
+FILE: gallery-assessment.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-bfc5eb04-f1fb-45b4-8caf-2e75f0489fe4.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical equipment gallery photo. Attractive premium editorial still life of one clean white digital upper-arm blood pressure monitor with a completely blank dark inactive screen, its cuff neatly rolled beside it, and a charcoal stethoscope arranged in a graceful loop on ivory ceramic. Soft natural studio light, warm ivory and muted slate palette, close camera crop of objects only, fine realistic material detail. No people, hands, reflections of people, room, reception, text, numbers, labels, logos, watermark. Monitor has no printed markings, inactive blank screen.
+ALT: Blood pressure monitor with an inactive screen and a stethoscope on ivory ceramic
+INSPECTION: PASS: realistic equipment only; no people, room, text, labels or logos; attractive clear composition.
+GENERATION HISTORY: []
+
+FILE: gallery-ultrasound.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-f6b4968e-ec62-40e4-a2f7-93524248daa1.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical gallery photo. Premium realistic editorial photo of a single white diagnostic ultrasound probe resting diagonally on a light grey-blue clinical tabletop with its cable arranged neatly in one loop beside it. Distinct image, overhead three-quarter perspective, probe completely visible, accurate smooth curved transducer head, gentle bright studio light and refined shadows, minimal attractive composition. Equipment only. No people, hands, reflections of people, room, reception, furniture, readable text, labels, logos, watermark.
+ALT: Ultrasound probe and neatly looped cable on a pale clinical surface
+INSPECTION: PASS: realistic equipment only; no people, room, text, labels or logos; attractive clear composition.
+GENERATION HISTORY: []
+
+FILE: gallery-instruments.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-534e31a0-39aa-48d1-9da4-4c31b3b50049.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical gallery still life. Refined editorial product photograph of a medical reflex hammer with a triangular rubber head and a polished metal tuning fork placed parallel diagonally on a shallow pale stone tray. Realistic proportions, two complete clearly visible instruments, soft window light and subtle shadows, neutral cream and satin steel palette, attractive minimal clinical tools composition. No people, hands, reflections of people, room, reception, labels, text, numbers, logos or watermark.
+ALT: Reflex hammer and tuning fork on a neutral stone tray
+INSPECTION: PASS: realistic equipment only; no people, room, text, labels or logos; attractive clear composition.
+GENERATION HISTORY: []
+
+Gallery photographs generated 16 November 2026; shared only within the Rays Medical collection.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: https://www.ninds.nih.gov/sites/default/files/2025-05/NINDS_Neurological-Diagnostic-Tests-Procedures.pdf; reviewed 16 November 2026. FAQ source: DigiDr_FAQ_6_Sets_22_Specialities.pdf; Neurology set 2

@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-ira-kapoor/
+Disallow: /dr-ira-kapoor/privacy-policy.html
+Disallow: /dr-ira-kapoor/terms-of-service.html
+Sitemap: https://digidr.app/dr-ira-kapoor/sitemap.xml

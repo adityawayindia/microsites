@@ -1,0 +1,108 @@
+Dentist 29 — Olive atlas — Dr. Leela Balan
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and dental. Source and param copies share their site assets.
+
+
+
+FILE: doctor-29.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-3a28dd46-e19e-4774-ba9d-964cb9e83cd1.png
+PROMPT: Create one premium photorealistic professional editorial portrait photograph, vertical 3:4 aspect ratio. Fictional Indian female dentist Dr. Leela Balan, age 47, a distinctive individual with a softly square face, warm deep brown skin, expressive dark eyes, short neatly styled pixie haircut with a few subtle silver strands at the temples, fine oval gold-rimmed spectacles. White clinical coat over a modest navy professional blouse, no stethoscope or badge. Warm natural smile, realistic mature skin texture and natural anatomy. Full head with ample headroom, shoulders and waist visible, relaxed arms low, generous framing margins. Soft cream and muted olive studio backdrop with elegant diffuse daylight and subtle textile-like background texture, no scenery. Attractive refined editorial photography. Only this one adult doctor in frame. No readable writing, text, labels, logos, watermark, graphic frame or other people. One photograph, not illustration or collage.
+ALT: Portrait of fictional dentist Dr. Leela Balan
+INSPECTION: PASS: Visually inspected original. Distinct female doctor with short pixie hair, subtle grey strands and fine oval glasses, white coat over navy blouse. Full head and waist-up framing, natural expression, soft olive studio backdrop. No other people, readable text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Create one premium photorealistic professional editorial portrait photograph, vertical 3:4 aspect ratio. Fictional Indian female dentist Dr. Leela Balan, age 47, a distinctive individual with a softly square face, warm deep brown skin, expressive dark eyes, short neatly styled pixie haircut with a few subtle silver strands at the temples, fine oval gold-rimmed spectacles. White clinical coat over a modest navy professional blouse, no stethoscope or badge. Warm natural smile, realistic mature skin texture and natural anatomy. Full head with ample headroom, shoulders and waist visible, relaxed arms low, generous framing margins. Soft cream and muted olive studio backdrop with elegant diffuse daylight and subtle textile-like background texture, no scenery. Attractive refined editorial photography. Only this one adult doctor in frame. No readable writing, text, labels, logos, watermark, graphic frame or other people. One photograph, not illustration or collage.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-3a28dd46-e19e-4774-ba9d-964cb9e83cd1.png",
+    "inspection": "PASS: Visually inspected original. Distinct female doctor with short pixie hair, subtle grey strands and fine oval glasses, white coat over navy blouse. Full head and waist-up framing, natural expression, soft olive studio backdrop. No other people, readable text or logos."
+  }
+]
+
+FILE: hero-dentist-29.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-dc1123aa-3fce-4e29-a277-6ecfaa762f29.png
+PROMPT: Create one attractive premium photorealistic dental product still-life photograph, wide landscape 16:9 aspect ratio. A complete stainless steel dental examination mirror with a round reflective head, continuous gently angled neck and slim full handle, beside exactly three small realistic interdental brushes, each with a short plain ivory or muted olive plastic grip and a short fine cylindrical bristle tip. Tastefully arrange the mirror and brushes on a small gently folded olive linen cloth over a pale warm limestone tabletop. Objects predominantly RIGHT, contained around 66–91 percent of image width, broad calm light ivory negative space on the LEFT half for website text. All full objects visible, realistic small brush scale, coherent mirror shape, mirror reflecting only a plain light studio surface. Premium directional soft daylight, delicate shadows and natural metallic highlights, sophisticated olive atlas palette #58623b with warm cream. Close still-life tabletop only, no interior. Strictly no people, children, hands, faces, silhouettes, human reflections, rooms, lounges, reception, plants, flowers, readable writing, numbers, labels, engravings, brands, logos, watermark, graphic frame or collage.
+ALT: Dental mirror and three interdental brushes on olive linen
+INSPECTION: PASS: Visually inspected original. Complete continuous dental mirror and exactly three realistic small interdental brushes on olive linen, predominantly right with calm ivory left space. All dental objects visible and coherent, no human reflections, people, rooms, readable text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Create one attractive premium photorealistic dental product still-life photograph, wide landscape 16:9 aspect ratio. A complete stainless steel dental examination mirror with a round reflective head, continuous gently angled neck and slim full handle, beside exactly three small realistic interdental brushes, each with a short plain ivory or muted olive plastic grip and a short fine cylindrical bristle tip. Tastefully arrange the mirror and brushes on a small gently folded olive linen cloth over a pale warm limestone tabletop. Objects predominantly RIGHT, contained around 66–91 percent of image width, broad calm light ivory negative space on the LEFT half for website text. All full objects visible, realistic small brush scale, coherent mirror shape, mirror reflecting only a plain light studio surface. Premium directional soft daylight, delicate shadows and natural metallic highlights, sophisticated olive atlas palette #58623b with warm cream. Close still-life tabletop only, no interior. Strictly no people, children, hands, faces, silhouettes, human reflections, rooms, lounges, reception, plants, flowers, readable writing, numbers, labels, engravings, brands, logos, watermark, graphic frame or collage.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-dc1123aa-3fce-4e29-a277-6ecfaa762f29.png",
+    "inspection": "PASS: Visually inspected original. Complete continuous dental mirror and exactly three realistic small interdental brushes on olive linen, predominantly right with calm ivory left space. All dental objects visible and coherent, no human reflections, people, rooms, readable text or logos."
+  }
+]
+
+FILE: about-dentist-29.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-2edcb815-7114-4726-bcee-319667a1d5d6.png
+PROMPT: Create one premium photorealistic dental editorial still-life photograph, vertical 4:5 aspect ratio. A small ivory upper dental arch teaching model with one anatomically coherent U-shaped row of smooth teeth, presented from an elevated three-quarter angle, resting on a matte cream-and-olive oval ceramic tray. A complete polished stainless steel dental explorer lies diagonally beside the model: one full slim textured handle, continuous shank and a single small gently hooked examination tip, with all ends visible and no floating or disconnected parts. Close detailed composition with model in upper center and explorer running from lower left toward middle right; keep every essential object within the frame with generous margins. Restrained olive atlas palette, fine ceramic texture, elegant soft directional window-like light, realistic equipment proportions and refined photographic detail. Non-graphic ivory teaching model only, no red tissues or mouth. Plain pale background tabletop, no interior. No people, children, hands, faces, silhouettes, human reflections, rooms, lounges, reception, plants, flowers, readable text, engraved letters, numbers, labels, brands, logos, watermark, graphic frame or collage.
+ALT: Ivory dental arch teaching model and polished explorer on olive ceramic
+INSPECTION: PASS: Visually inspected original. Non-graphic ivory upper dental arch model and a complete polished explorer with continuous shank and hooked tip on an olive ceramic tray. All essential objects fit the portrait frame; attractive soft daylight, no people, rooms, readable text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Create one premium photorealistic dental editorial still-life photograph, vertical 4:5 aspect ratio. A small ivory upper dental arch teaching model with one anatomically coherent U-shaped row of smooth teeth, presented from an elevated three-quarter angle, resting on a matte cream-and-olive oval ceramic tray. A complete polished stainless steel dental explorer lies diagonally beside the model: one full slim textured handle, continuous shank and a single small gently hooked examination tip, with all ends visible and no floating or disconnected parts. Close detailed composition with model in upper center and explorer running from lower left toward middle right; keep every essential object within the frame with generous margins. Restrained olive atlas palette, fine ceramic texture, elegant soft directional window-like light, realistic equipment proportions and refined photographic detail. Non-graphic ivory teaching model only, no red tissues or mouth. Plain pale background tabletop, no interior. No people, children, hands, faces, silhouettes, human reflections, rooms, lounges, reception, plants, flowers, readable text, engraved letters, numbers, labels, brands, logos, watermark, graphic frame or collage.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-2edcb815-7114-4726-bcee-319667a1d5d6.png",
+    "inspection": "PASS: Visually inspected original. Non-graphic ivory upper dental arch model and a complete polished explorer with continuous shank and hooked tip on an olive ceramic tray. All essential objects fit the portrait frame; attractive soft daylight, no people, rooms, readable text or logos."
+  }
+]
+
+FILE: philosophy-dentist-29.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-5207f500-00e6-404d-b07d-dd94f46056aa.png
+PROMPT: Create one premium photorealistic dental still-life photograph, landscape 4:3 aspect ratio. A clear U-shaped removable dental retainer with believable fine individual tooth impressions, one compact ivory molar teaching model and one complete polished stainless steel dental examination mirror arranged as a tidy compact central triangular composition on pale olive stone. Use a slightly elevated near-overhead view, distinct from a hero product lineup. The mirror has its full round head, continuous short angled neck and complete slim handle; angle it along the lower edge of the group so its ends stay well inside the safe area. The reflective face shows only plain pale studio surroundings. Keep ALL main objects wholly inside the central 50 percent of image width and central 58 percent of height, with generous empty margins around the group for a centered square crop. Attractive realistic transparent material and soft metallic highlights, coherent dental geometry, natural soft daylight, olive #58623b and ivory palette, tasteful tactile stone. No red tissues or graphic anatomy. No people, children, hands, faces, silhouettes, human reflections, rooms, lounges, reception, plants, flowers, readable text, engraved letters, numbers, labels, brands, logos, watermark, graphic frame or collage. One photograph.
+ALT: Clear dental retainer, mirror and ivory tooth model on olive stone
+INSPECTION: PASS: Visually inspected original. Clear retainer, ivory molar teaching model and complete continuous dental mirror form a compact central group on olive stone. All objects safely inside the centered square crop with wide margins. No human reflections, people, rooms, readable text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Create one premium photorealistic dental still-life photograph, landscape 4:3 aspect ratio. A clear U-shaped removable dental retainer with believable fine individual tooth impressions, one compact ivory molar teaching model and one complete polished stainless steel dental examination mirror arranged as a tidy compact central triangular composition on pale olive stone. Use a slightly elevated near-overhead view, distinct from a hero product lineup. The mirror has its full round head, continuous short angled neck and complete slim handle; angle it along the lower edge of the group so its ends stay well inside the safe area. The reflective face shows only plain pale studio surroundings. Keep ALL main objects wholly inside the central 50 percent of image width and central 58 percent of height, with generous empty margins around the group for a centered square crop. Attractive realistic transparent material and soft metallic highlights, coherent dental geometry, natural soft daylight, olive #58623b and ivory palette, tasteful tactile stone. No red tissues or graphic anatomy. No people, children, hands, faces, silhouettes, human reflections, rooms, lounges, reception, plants, flowers, readable text, engraved letters, numbers, labels, brands, logos, watermark, graphic frame or collage. One photograph.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-5207f500-00e6-404d-b07d-dd94f46056aa.png",
+    "inspection": "PASS: Visually inspected original. Clear retainer, ivory molar teaching model and complete continuous dental mirror form a compact central group on olive stone. All objects safely inside the centered square crop with wide margins. No human reflections, people, rooms, readable text or logos."
+  }
+]
+
+FILE: gallery-dental-model.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\dental-care-model.jpg
+PROMPT: Create an attractive high-quality photorealistic editorial still-life image for a dentist website. A clean professional dental teaching model with ivory upper and lower teeth and muted natural pink model gums, slightly open in a neat clinical bite display, beside a polished stainless-steel dental mouth mirror and a clear removable aligner on a small pale ceramic tray. This is a manufactured demonstration model, not a human mouth or body part. Compact central composition on a luminous ivory clinical worktop with subtle soft teal reflected light, beautiful daylight and gentle shadows, polished enamel and translucent material detail, calm premium dental aesthetic. Landscape 4:3 with generous margins so a centered portrait crop retains the main tooth model. No room interiors, reception, lounge, furniture, people, hands, faces, lips, human photographs, blood, syringes, text, labels, logos or watermark. Tidy, welcoming, specialty-specific dental equipment photography.
+ALT: Dental teaching model beside a mirror and clear aligner
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/dental-care-model.jpg"
+  }
+]
+
+FILE: gallery-dental-instruments.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\dental-instruments.jpg
+PROMPT: Premium editorial still-life photograph of clean dental examination instruments, a stainless steel mouth mirror and dental probe resting neatly on a small clean instrument tray, with an unbranded packaged toothbrush and a small ceramic cup on pale cream countertop. Subtle cool blue and ivory palette, soft daylight, tidy clinical realism, 4:3 landscape. Absolutely no people, hands, body parts, faces, human reflections, readable text, logos or watermark.
+ALT: Dental examination instruments on a clean tray
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/dental-instruments.jpg"
+  }
+]
+
+FILE: gallery-dental-impressions.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\philosophy-dental-10.jpg
+PROMPT: Attractive photorealistic editorial dental still-life for a dentist website Care Philosophy section, illustrating careful preparation and individualized fitting. A polished stainless-steel dental impression tray holding clean pale-blue dental silicone with neat tooth impressions, beside a small ivory plaster study cast of a lower dental arch. All are manufactured dental materials, no real tissue. Arranged compactly on a frosted pale-blue clinical work surface with soft ivory light and delicate reflections. Landscape 4:3, centered grouping with generous margins for square cropping, precise recognizable shapes, welcoming premium dental laboratory photography. No people, hands, mouths, faces, body parts, human pictures, blood, needles, room interiors, reception, lounge, furniture, plants, text, labels, logos or watermark.
+ALT: Dental impression material and a manufactured study cast
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/philosophy-dental-10.jpg"
+  }
+]
+
+Gallery photographs were generated on 13 November 2026 and reused from Dentist-10 with recorded prompts. They are shared within the new Dentist 11–30 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: Dentist FAQ set 1 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.mouthhealthy.org/dental-care/questions-about-going-to-the-dentist reviewed 16 November 2026. No guarantees, cure claims or fabricated patient testimonials.

@@ -8,10 +8,10 @@ microsite and no other document is needed.
 
 > **IMPORTANT — Step 3 static image URLs (mandatory).** In the `-param` version, static
 > content images must use
-> `https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-image-filename>`.
+> `https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/<actual-image-filename>`.
 > Keep `{{slug}}` as the backend placeholder and preserve the actual filename and extension.
 > For example:
-> `https://storage.googleapis.com/microsite_buck/{{slug}}/assets/family-consultation.jpg`.
+> `https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/family-consultation.jpg`.
 > **Doctor profile and gallery images are excluded**: keep `{{profile}}` and the existing
 > `{{#images}}` / `{{image}}` gallery mapping. Do not rewrite those dynamic image values.
 > This applies during Step 3; the original non-parameterized site's image paths stay unchanged.
@@ -37,7 +37,7 @@ rename locally when conversion finishes; do not commit or push unless explicitly
 
 The suffix is a **repo folder name only**. Static content image URLs use the backend's
 `{{slug}}` as the bucket folder, never the repository folder name or a `-param` suffix:
-`https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-image-filename>`.
+`https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/<actual-image-filename>`.
 Replace older hardcoded template-folder image URLs during conversion.
 
 Rules that apply to every conversion:
@@ -51,7 +51,7 @@ Rules that apply to every conversion:
   otherwise be submitted as a `SlotId` if the slots call fails.
 - **Static content images — important.** About/Philosophy photos, static background images
   and other static section imagery use
-  `https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-image-filename>`.
+  `https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/<actual-image-filename>`.
   Do not leave relative `assets/` paths, `{{path}}/assets/` paths or hardcoded template-folder
   GCS paths in the `-param` version. `{{path}}` stays for CSS/JS only. Preserve each actual
   filename and extension; `abc.jpg` in an example is not a filename to ship. Apply the rule
@@ -2870,7 +2870,7 @@ For each `<Specialty>/microsite-*/` folder:
 
 **All pages**
 - [ ] **IMPORTANT: static content image URLs** use
-      `https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-image-filename>`.
+      `https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/<actual-image-filename>`.
       Check About, Philosophy, backgrounds and every other static section image, including
       `srcset` variants. Preserve filenames/extensions. No relative `assets/`,
       `{{path}}/assets/` or hardcoded template-folder URLs remain for these images.

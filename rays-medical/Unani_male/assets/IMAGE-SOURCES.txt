@@ -1,0 +1,66 @@
+Rays Medical 17 — Olive apothecary — Dr. Sameer Qureshi
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and specialty-appropriate. Source and param copies share their site assets.
+
+
+
+FILE: doctor-17.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-431ea79e-288a-47b3-a14e-85850a1a585b.png
+PROMPT: Use case: photorealistic-natural. Asset: vertical 3:4 fictional Unani physician portrait. Dr Sameer Qureshi, Indian man about 48 years old, medium brown complexion, short dark hair with grey sides, neatly trimmed short beard, no glasses, distinct broad face and natural composed friendly expression looking at camera. White medical coat over muted olive shirt, waist-up framing with whole head and both shoulders visible, natural posture. Warm ivory seamless studio backdrop, soft flattering natural window light, premium realistic editorial photography. One person only. No text, names, badges, logos, watermark, room or other people.
+ALT: Portrait of Dr. Sameer Qureshi in a white coat over an olive shirt
+INSPECTION: PASS: one distinct fictional male doctor, natural posture, olive shirt and short beard; no text or logos.
+GENERATION HISTORY: []
+
+FILE: hero-rays-17.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-271c7ce1-c3ff-4ffb-a704-733c251ed4d4.png
+PROMPT: Use case: product-mockup. Asset: wide 16:9 Unani practice website hero background. Premium botanical pharmacy still life: an aged brass mortar with pestle, one small unlabelled amber apothecary bottle with plain stopper, a tiny ceramic dish holding fennel seeds and a few dried rose petals. All objects clustered on RIGHT THIRD, left two-thirds generous pale warm ivory negative space for website profile text. Warm textured ivory stone surface, subtle muted olive linen detail under objects, elegant natural side light with soft shadows, attractive realistic editorial photography, beautiful brass patina and amber glass. No people, hands, reflections of people, living rooms, lounge, reception, interiors, text, labels, logos, watermark. No medical claims or therapeutic symbols.
+ALT: Brass mortar, amber apothecary bottle and botanical ingredients on ivory stone
+INSPECTION: PASS: attractive traditional pharmacy still life; no people, hands, rooms, labels, claims, text or logos; composition visually distinct from other sections.
+GENERATION HISTORY: []
+
+FILE: about-rays-17.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-cb4a82b7-06e7-4859-8fd5-afac7eeb30ed.png
+PROMPT: Use case: product-mockup. Asset: vertical 4:5 About photo for Unani physician microsite. Attractive close-up traditional botanical pharmacy still life: an elegant small aged brass measuring balance with two shallow brass pans, perfectly level, beside two tiny orderly ceramic bowls containing dried fennel seeds and dried rose petals. Warm ivory stone surface with subtle olive backdrop, realistic botanical details, rich brass patina, premium natural side lighting and delicate shadows. Entire balance visible, carefully composed central object with breathing room, refined editorial photography. No people, hands, reflections of people, medicine claims, charts, text, numbers, labels, logos, watermark, room, lounge or reception.
+ALT: Traditional brass balance with bowls of dried fennel seeds and rose petals
+INSPECTION: PASS: attractive traditional pharmacy still life; no people, hands, rooms, labels, claims, text or logos; composition visually distinct from other sections.
+GENERATION HISTORY: []
+
+FILE: philosophy-rays-17.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-37b645cb-2192-414a-8360-0543bf997845.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 Unani care philosophy photo, centered composition safe for square crop. Attractive premium editorial close-up from gentle overhead angle: small aged brass mortar and pestle lying together near two tiny ivory dishes of dried fennel seeds and dried rose petals, alongside a closed completely blank olive case-notebook and simple brass pen. A neatly folded ivory linen napkin underneath, warm muted olive and cream tabletop palette, natural soft window light, realistic botanical texture and metal patina. Different from hero: flat-lay composition centered around notebook and orderly ingredients, no amber bottle. All important objects fully visible in central area. No people, hands, reflections of people, text, labels, medical claims, logos, watermark, room, lounge or reception.
+ALT: Blank olive notebook beside a brass mortar and dried botanical ingredients
+INSPECTION: PASS: attractive traditional pharmacy still life; no people, hands, rooms, labels, claims, text or logos; composition visually distinct from other sections.
+GENERATION HISTORY: []
+
+FILE: gallery-assessment.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-bfc5eb04-f1fb-45b4-8caf-2e75f0489fe4.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical equipment gallery photo. Attractive premium editorial still life of one clean white digital upper-arm blood pressure monitor with a completely blank dark inactive screen, its cuff neatly rolled beside it, and a charcoal stethoscope arranged in a graceful loop on ivory ceramic. Soft natural studio light, warm ivory and muted slate palette, close camera crop of objects only, fine realistic material detail. No people, hands, reflections of people, room, reception, text, numbers, labels, logos, watermark. Monitor has no printed markings, inactive blank screen.
+ALT: Blood pressure monitor with an inactive screen and a stethoscope on ivory ceramic
+INSPECTION: PASS: realistic equipment only; no people, room, text, labels or logos; attractive clear composition.
+GENERATION HISTORY: []
+
+FILE: gallery-detail.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Ayurvedic\microsite-ayurvedic-7-male\assets\botanical-study.jpg
+PROMPT: Use case: photorealistic-natural. Asset type: people-free Ayurvedic clinic website editorial still life. A beautiful quiet botanical study on pale warm limestone: a modest aged brass mortar and pestle, fresh green tulsi leaves with natural variation, a small shallow ceramic bowl of dried botanicals, an amber glass bottle without label, and a folded ivory linen cloth. Forest green accents against creamy limestone, lateral natural morning window light and delicate leaf shadows. Restrained, believable high-end editorial photography, close enough for authentic material details, balanced asymmetrical composition, 4:3 landscape framing. Everything should look clean, contemporary and clinically thoughtful rather than mystical. Absolutely no people, hands, human body parts, faces, silhouettes, human photographs or reflections. No readable text, labels, logos, watermark, pills or therapeutic claims.
+ALT: Brass mortar, amber bottle and a bowl of dried botanicals
+INSPECTION: Parent visually reviewed: people-free botanical equipment still life, no room or readable labels. Existing project-generated gallery reuse.
+GENERATION HISTORY: [
+  "Reused gallery asset; original provenance: Ayurvedic/microsite-ayurvedic-7-male/assets/IMAGE-SOURCES.txt"
+]
+
+FILE: gallery-tools.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Ayurvedic\microsite-ayurvedic-7-male\assets\copper-botanicals.jpg
+PROMPT: Use case: photorealistic-natural. Asset type: people-free Ayurvedic still-life photography for a physician website. A finely composed editorial close-up of a small polished copper oil vessel and an unlabelled amber glass bottle on a warm terracotta stone surface, a few dried botanical roots and leaves in a shallow ceramic dish, a neatly folded natural flax linen towel, subtle fresh green leaf accent. Warm clay, muted cinnamon, cream and copper palette, soft oblique window light, tactile natural materials, understated contemporary Ayurvedic practice atmosphere. Landscape 4:3 framing, balanced negative space, premium realistic photography, clean orderly arrangement, no excessive decorative clutter. Absolutely no people, hands, human body parts, silhouettes, faces, photographs of people or reflections of people. No labels, readable text, logos, watermark or therapeutic claims.
+ALT: Copper vessel, amber bottle and dried botanical ingredients
+INSPECTION: Parent visually reviewed: people-free botanical equipment still life, no room or readable labels. Existing project-generated gallery reuse.
+GENERATION HISTORY: [
+  "Reused gallery asset; original provenance: Ayurvedic/microsite-ayurvedic-7-male/assets/IMAGE-SOURCES.txt"
+]
+
+Gallery images may be reused project-generated assets; original provenance is recorded above.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: https://ccrum.ayush.gov.in/; reviewed 16 November 2026. FAQ source: Original appointment-focused FAQ wording; specialty context from the cited source.

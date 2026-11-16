@@ -124,7 +124,7 @@ LOWEST SAMPLED TEXT CONTRAST RATIOS
 .service-card p: 6.62:1
 
 PARAMETERIZATION
-PASS: profile and gallery retain {{profile}} / {{#images}}{{image}}. Static content images and favicon use https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<actual-filename>. CSS/JS use {{path}}. No unresolved template expressions in rendered page text or attributes.
+PASS: profile and gallery retain {{profile}} / {{#images}}{{image}}. Static content images and favicon use https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/<actual-filename>. CSS/JS use {{path}}. No unresolved template expressions in rendered page text or attributes.
 Shared chatbot icon is the documented microsite-ent-1 asset; its public microsite_buck URL returned HTTP 200 during verification.
 No test fixtures, mock API adapters, preview server or browser dependencies are included in the delivered folders.
 

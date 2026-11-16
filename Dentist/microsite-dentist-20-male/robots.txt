@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-sanjay-menon/
+Disallow: /dr-sanjay-menon/privacy-policy.html
+Disallow: /dr-sanjay-menon/terms-of-service.html
+Sitemap: https://digidr.app/dr-sanjay-menon/sitemap.xml

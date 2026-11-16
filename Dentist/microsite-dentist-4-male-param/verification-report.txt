@@ -145,7 +145,7 @@ QA evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-dentist-qa\4\param
 HERO DESIGN UPDATE - 13 November 2026
 Added the unique, people-free hero-porcelain-waves.jpg background. Prompt and visual provenance are in assets/IMAGE-SOURCES.txt.
 Source and param: 19/19 focused hero checks passed across 320, 375, 768, 1024, 1440 and 1900px. No horizontal overflow or missing background images. Hero axe checks: zero WCAG A/AA violations. Appointment action and parameterized banner visibility passed. Desktop/mobile screenshots visually reviewed.
-Param background uses https://storage.googleapis.com/microsite_buck/{{slug}}/assets/hero-porcelain-waves.jpg. Production upload is required.
+Param background uses https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/hero-porcelain-waves.jpg. Production upload is required.
 Booking and other JavaScript, gallery images and footers are unchanged by this hero-only revision.
 QA evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-dentist-hero-review\4
 
@@ -177,7 +177,7 @@ UNIQUE ABOUT / PHILOSOPHY IMAGES - 13 November 2026
 Replaced the two supporting image references with distinct, people-free, dental-specific generated assets for this site. All 14 images across Dentist 4-10 have distinct SHA-256 hashes; source and param copies match.
 PASS: source and rendered param assets decode, have accurate alt text and intrinsic dimensions, retain lazy loading, and cause no horizontal overflow at 1440, 768, 375 and 320px. No JavaScript errors or failed asset requests in the focused local checks.
 PASS: desktop section screenshots and settled 375px viewport screenshots visually reviewed for image presentation. Both About and Philosophy images display within the existing frames.
-PASS: parameterized static images retain https://storage.googleapis.com/microsite_buck/{{slug}}/assets/<filename>. Local browser verification maps these URLs to the local image copies; production bucket upload and delivery were not tested.
+PASS: parameterized static images retain https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/<filename>. Local browser verification maps these URLs to the local image copies; production bucket upload and delivery were not tested.
 Scope verified against the pre-edit workspace hash inventory: only the two image tags, their new assets, image provenance and this audit note change. Styles, scripts, booking logic, galleries, hero images, portraits and legal pages remain byte-identical. Full booking flows were not rerun for this image-only change.
 Generated with the built-in imagegen tool; complete prompts and provenance are in assets/IMAGE-SOURCES.txt. No commit, push or deployment.
 Evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-dental-unique-sections\4

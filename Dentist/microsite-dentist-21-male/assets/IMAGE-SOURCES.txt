@@ -1,0 +1,108 @@
+Dentist 21 — Clay and ivory — Dr. Anirudh Kulkarni
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and dental. Source and param copies share their site assets.
+
+
+
+FILE: doctor-21.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-84505286-6929-4534-9e5b-9e6e0fba9d17.png
+PROMPT: Use case: photorealistic-natural. Professional dentist portrait, vertical 3:4. Fictional Indian male dentist Dr. Anirudh Kulkarni, age 54, with a distinct broad rectangular face, warm medium-brown skin, very short evenly clipped silver-grey hair, a tidy white moustache with clean-shaven chin, and thin gold oval spectacles. White clinical coat over a modest navy collared shirt, no stethoscope. Naturally warm smile, relaxed professional posture, realistic skin texture and facial anatomy. Full head with generous headroom and waist-up framing. Plain softly blurred clay and ivory studio backdrop, flattering soft directional portrait light. Only the doctor in frame. Single premium photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.
+ALT: Portrait of fictional dentist Dr. Anirudh Kulkarni
+INSPECTION: PASS: Distinct fictional male dentist with very short silver hair, white moustache and gold oval glasses. Complete head and waist-up framing, white coat over navy shirt, warm clay backdrop. No extra people, writing or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Professional dentist portrait, vertical 3:4. Fictional Indian male dentist Dr. Anirudh Kulkarni, age 54, with a distinct broad rectangular face, warm medium-brown skin, very short evenly clipped silver-grey hair, a tidy white moustache with clean-shaven chin, and thin gold oval spectacles. White clinical coat over a modest navy collared shirt, no stethoscope. Naturally warm smile, relaxed professional posture, realistic skin texture and facial anatomy. Full head with generous headroom and waist-up framing. Plain softly blurred clay and ivory studio backdrop, flattering soft directional portrait light. Only the doctor in frame. Single premium photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-84505286-6929-4534-9e5b-9e6e0fba9d17.png",
+    "inspection": "PASS: Distinct fictional male dentist with very short silver hair, white moustache and gold oval glasses. Complete head and waist-up framing, white coat over navy shirt, warm clay backdrop. No extra people, writing or logos."
+  }
+]
+
+FILE: hero-dentist-21.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-ee3f378f-4412-47b6-8c68-d07ebc100a0d.png
+PROMPT: Use case: product-mockup. Dentist website hero photograph, landscape 16:9. Premium still life of a small non-graphic dental implant teaching model and a separate ivory ceramic molar crown on pale terracotta stone. The model is a clean transparent rectangular acrylic block holding one realistic silver threaded implant, with a small continuous abutment above the block; clearly a manufactured desk teaching object. Crown rests beside it with believable molar shape and hollow underside subtly visible. Arrange the full objects in the RIGHT third between 65% and 93% width, leaving broad quiet light clay and ivory negative space on the LEFT half. Attractive soft warm directional studio light, fine silver reflections and tactile stone, realistic coherent threaded geometry. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single premium photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.
+ALT: Dental implant teaching model and ceramic crown on terracotta stone
+INSPECTION: PASS: Clear rectangular implant teaching model with coherent threaded implant and separate ceramic crown on terracotta stone. Subjects grouped right with broad clear left space; no people, labels, logos or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: product-mockup. Dentist website hero photograph, landscape 16:9. Premium still life of a small non-graphic dental implant teaching model and a separate ivory ceramic molar crown on pale terracotta stone. The model is a clean transparent rectangular acrylic block holding one realistic silver threaded implant, with a small continuous abutment above the block; clearly a manufactured desk teaching object. Crown rests beside it with believable molar shape and hollow underside subtly visible. Arrange the full objects in the RIGHT third between 65% and 93% width, leaving broad quiet light clay and ivory negative space on the LEFT half. Attractive soft warm directional studio light, fine silver reflections and tactile stone, realistic coherent threaded geometry. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single premium photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-ee3f378f-4412-47b6-8c68-d07ebc100a0d.png",
+    "inspection": "PASS: Clear rectangular implant teaching model with coherent threaded implant and separate ceramic crown on terracotta stone. Subjects grouped right with broad clear left space; no people, labels, logos or room scene."
+  }
+]
+
+FILE: about-dentist-21.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-5d3e6920-59f5-415c-a3cf-de62dff4d1d8.png
+PROMPT: Use case: product-mockup. Dentist About photograph, vertical 4:5. Premium overhead-oblique editorial photo of one clear transparent U-shaped dental retainer beside a small ivory molar teaching model on a shallow warm ivory ceramic saucer set on soft terracotta stone. Place the complete retainer upper center and the small tooth model at lower left, its crown and two short smooth roots clearly visible. Retainer has a single coherent row of plausible tooth sockets with delicate reflective edges, no melted or doubled forms. Both complete subjects have comfortable margins. Clay and ivory palette, soft morning side light and tactile ceramic glaze, attractive refined dental still life. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single premium photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.
+ALT: Clear dental retainer and ivory tooth model on clay ceramic
+INSPECTION: PASS: Complete clear retainer and small ivory molar model in a distinct overhead composition on an ivory saucer. Transparent edges and tooth roots visible, no people, text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: product-mockup. Dentist About photograph, vertical 4:5. Premium overhead-oblique editorial photo of one clear transparent U-shaped dental retainer beside a small ivory molar teaching model on a shallow warm ivory ceramic saucer set on soft terracotta stone. Place the complete retainer upper center and the small tooth model at lower left, its crown and two short smooth roots clearly visible. Retainer has a single coherent row of plausible tooth sockets with delicate reflective edges, no melted or doubled forms. Both complete subjects have comfortable margins. Clay and ivory palette, soft morning side light and tactile ceramic glaze, attractive refined dental still life. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single premium photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-5d3e6920-59f5-415c-a3cf-de62dff4d1d8.png",
+    "inspection": "PASS: Complete clear retainer and small ivory molar model in a distinct overhead composition on an ivory saucer. Transparent edges and tooth roots visible, no people, text or logos."
+  }
+]
+
+FILE: philosophy-dentist-21.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-e7cedaf2-2d2d-46fb-9539-f3585d13ca8e.png
+PROMPT: Use case: product-mockup. Dentist care philosophy photograph, landscape 4:3 with central-square-safe framing. Premium top-down still life of a small ivory dental-arch teaching model, one clean replaceable toothbrush head with white bristles and short ivory stem, and one small plain white floss dispenser with a short tidy strand. Arrange the arch at center-left and two care items at center-right in a compact balanced group on pale warm clay ceramic. The arch has one coherent U-shaped row of distinct teeth, all products plausible in scale and fully connected. Keep every subject and every edge entirely within the central 50% of width and 58% of height, leaving broad margins for a centered square crop. Beautiful soft daylight, warm ivory and terracotta shadows, crisp bristles and refined tactile materials. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single premium photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.
+ALT: Dental arch model with toothbrush head and floss
+INSPECTION: PASS: Ivory single-row dental arch, complete replaceable toothbrush head and plain floss dispenser in a compact central arrangement. All subjects including the short thread fit a centered square crop. No people, text, logos or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: product-mockup. Dentist care philosophy photograph, landscape 4:3 with central-square-safe framing. Premium top-down still life of a small ivory dental-arch teaching model, one clean replaceable toothbrush head with white bristles and short ivory stem, and one small plain white floss dispenser with a short tidy strand. Arrange the arch at center-left and two care items at center-right in a compact balanced group on pale warm clay ceramic. The arch has one coherent U-shaped row of distinct teeth, all products plausible in scale and fully connected. Keep every subject and every edge entirely within the central 50% of width and 58% of height, leaving broad margins for a centered square crop. Beautiful soft daylight, warm ivory and terracotta shadows, crisp bristles and refined tactile materials. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single premium photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-e7cedaf2-2d2d-46fb-9539-f3585d13ca8e.png",
+    "inspection": "PASS: Ivory single-row dental arch, complete replaceable toothbrush head and plain floss dispenser in a compact central arrangement. All subjects including the short thread fit a centered square crop. No people, text, logos or room scene."
+  }
+]
+
+FILE: gallery-dental-model.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\dental-care-model.jpg
+PROMPT: Create an attractive high-quality photorealistic editorial still-life image for a dentist website. A clean professional dental teaching model with ivory upper and lower teeth and muted natural pink model gums, slightly open in a neat clinical bite display, beside a polished stainless-steel dental mouth mirror and a clear removable aligner on a small pale ceramic tray. This is a manufactured demonstration model, not a human mouth or body part. Compact central composition on a luminous ivory clinical worktop with subtle soft teal reflected light, beautiful daylight and gentle shadows, polished enamel and translucent material detail, calm premium dental aesthetic. Landscape 4:3 with generous margins so a centered portrait crop retains the main tooth model. No room interiors, reception, lounge, furniture, people, hands, faces, lips, human photographs, blood, syringes, text, labels, logos or watermark. Tidy, welcoming, specialty-specific dental equipment photography.
+ALT: Dental teaching model beside a mirror and clear aligner
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/dental-care-model.jpg"
+  }
+]
+
+FILE: gallery-dental-instruments.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\dental-instruments.jpg
+PROMPT: Premium editorial still-life photograph of clean dental examination instruments, a stainless steel mouth mirror and dental probe resting neatly on a small clean instrument tray, with an unbranded packaged toothbrush and a small ceramic cup on pale cream countertop. Subtle cool blue and ivory palette, soft daylight, tidy clinical realism, 4:3 landscape. Absolutely no people, hands, body parts, faces, human reflections, readable text, logos or watermark.
+ALT: Dental examination instruments on a clean tray
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/dental-instruments.jpg"
+  }
+]
+
+FILE: gallery-dental-impressions.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\philosophy-dental-10.jpg
+PROMPT: Attractive photorealistic editorial dental still-life for a dentist website Care Philosophy section, illustrating careful preparation and individualized fitting. A polished stainless-steel dental impression tray holding clean pale-blue dental silicone with neat tooth impressions, beside a small ivory plaster study cast of a lower dental arch. All are manufactured dental materials, no real tissue. Arranged compactly on a frosted pale-blue clinical work surface with soft ivory light and delicate reflections. Landscape 4:3, centered grouping with generous margins for square cropping, precise recognizable shapes, welcoming premium dental laboratory photography. No people, hands, mouths, faces, body parts, human pictures, blood, needles, room interiors, reception, lounge, furniture, plants, text, labels, logos or watermark.
+ALT: Dental impression material and a manufactured study cast
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/philosophy-dental-10.jpg"
+  }
+]
+
+Gallery photographs were generated on 13 November 2026 and reused from Dentist-10 with recorded prompts. They are shared within the new Dentist 11–30 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: Dentist FAQ set 5 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.mouthhealthy.org/dental-care/questions-about-going-to-the-dentist reviewed 16 November 2026. No guarantees, cure claims or fabricated patient testimonials.

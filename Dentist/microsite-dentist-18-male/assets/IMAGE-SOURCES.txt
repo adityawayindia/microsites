@@ -1,0 +1,108 @@
+Dentist 18 — Indigo facets — Dr. Kunal Deshmukh
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and dental. Source and param copies share their site assets.
+
+
+
+FILE: doctor-18.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-3b9480b1-e297-466f-8b77-06bb479bf5d1.png
+PROMPT: Use case: photorealistic-natural. Professional portrait, vertical 3:4, of fictional Indian male dentist Dr. Kunal Deshmukh, age 51. Distinct stocky oval face, warm medium-brown skin, neat straight silver-grey hair combed into a precise short side part, clean-shaven, subtly hooded eyes and no spectacles. White clinical coat over charcoal collared shirt, no stethoscope. Natural friendly expression and relaxed shoulders, realistic skin texture. Full head with ample headroom, body to waist. Plain softly blurred indigo-grey studio backdrop, refined soft portrait lighting. Only the doctor in frame. One attractive photorealistic editorial photograph, not a collage or graphic. No readable text, letters, numbers, labels, brands, logos or watermarks.
+ALT: Portrait of fictional dentist Dr. Kunal Deshmukh
+INSPECTION: PASS: Distinct fictional male dentist with fuller oval face, straight silver side-parted hair and clean-shaven appearance. Complete head and waist-up framing, white coat over charcoal shirt, indigo-grey backdrop. No extra people, text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Professional portrait, vertical 3:4, of fictional Indian male dentist Dr. Kunal Deshmukh, age 51. Distinct stocky oval face, warm medium-brown skin, neat straight silver-grey hair combed into a precise short side part, clean-shaven, subtly hooded eyes and no spectacles. White clinical coat over charcoal collared shirt, no stethoscope. Natural friendly expression and relaxed shoulders, realistic skin texture. Full head with ample headroom, body to waist. Plain softly blurred indigo-grey studio backdrop, refined soft portrait lighting. Only the doctor in frame. One attractive photorealistic editorial photograph, not a collage or graphic. No readable text, letters, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-3b9480b1-e297-466f-8b77-06bb479bf5d1.png",
+    "inspection": "PASS: Distinct fictional male dentist with fuller oval face, straight silver side-parted hair and clean-shaven appearance. Complete head and waist-up framing, white coat over charcoal shirt, indigo-grey backdrop. No extra people, text or logos."
+  }
+]
+
+FILE: hero-dentist-18.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-c802e248-ecc6-4081-82e2-271b5db659d1.png
+PROMPT: Use case: product-mockup. Dentist website hero photograph, landscape 16:9. Premium dental still life of one complete compact cordless intraoral scanner resting diagonally on a low faceted indigo acrylic block. Pearl-white scanner body smoothly connects to its short angled rectangular scanning tip, with a small dark optical window clearly visible; realistic hand-held proportions, no cord, extra tips or disconnected parts. Group all objects in the LEFT third between 7% and 42% width, leaving broad clean pearl-indigo negative space on the RIGHT half. Slightly elevated three-quarter camera angle, indigo refracted light through acrylic, beautiful soft directional studio light with crisp pearl highlights. Entire scanner in frame. No people, children, hands, faces, silhouettes or people in reflections. No room, reception, lounge, plants or flowers. No human mouth, biological tissue, blood or procedure. One attractive photorealistic editorial photograph, not a collage or graphic. No readable text, letters, numbers, labels, brands, logos or watermarks.
+ALT: Intraoral dental scanner on indigo acrylic
+INSPECTION: PASS: Complete pearl-white intraoral scanner with connected optical tip on faceted indigo acrylic, grouped left with broad clear right-side space. No floating parts, people, text, logos or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: product-mockup. Dentist website hero photograph, landscape 16:9. Premium dental still life of one complete compact cordless intraoral scanner resting diagonally on a low faceted indigo acrylic block. Pearl-white scanner body smoothly connects to its short angled rectangular scanning tip, with a small dark optical window clearly visible; realistic hand-held proportions, no cord, extra tips or disconnected parts. Group all objects in the LEFT third between 7% and 42% width, leaving broad clean pearl-indigo negative space on the RIGHT half. Slightly elevated three-quarter camera angle, indigo refracted light through acrylic, beautiful soft directional studio light with crisp pearl highlights. Entire scanner in frame. No people, children, hands, faces, silhouettes or people in reflections. No room, reception, lounge, plants or flowers. No human mouth, biological tissue, blood or procedure. One attractive photorealistic editorial photograph, not a collage or graphic. No readable text, letters, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-c802e248-ecc6-4081-82e2-271b5db659d1.png",
+    "inspection": "PASS: Complete pearl-white intraoral scanner with connected optical tip on faceted indigo acrylic, grouped left with broad clear right-side space. No floating parts, people, text, logos or room scene."
+  }
+]
+
+FILE: about-dentist-18.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-61025826-951a-4f52-b81b-c34e783d3b76.png
+PROMPT: Use case: product-mockup. Dentist About photograph, vertical 4:5. Premium close editorial photo of one polished high-speed dental handpiece and one complete metal dental mirror, arranged separated as a shallow V on pale indigo stone. The handpiece has a continuous curved metal body, compact angled turbine head with one small straight bur and a plausible connector at its other end, no hose. Mirror has a small circular face, smoothly connected angled neck and whole slim handle. Keep both instruments and every tip fully visible with breathing room; no floating, duplicated or fused parts. Slightly elevated product camera, attractive soft directional light, indigo shadows and silver highlights, realistic proportions and tactile surfaces. No people, children, hands, faces, silhouettes or people in reflections. No room, reception, lounge, plants or flowers. No human mouth, biological tissue, blood or procedure. One attractive photorealistic editorial photograph, not a collage or graphic. No readable text, letters, numbers, labels, brands, logos or watermarks.
+ALT: Polished dental handpiece and mirror on indigo stone
+INSPECTION: PASS: Complete polished dental handpiece and mirror separated in a shallow V, continuous metal bodies and clearly connected heads. All ends visible on pale indigo stone; no people, writing or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: product-mockup. Dentist About photograph, vertical 4:5. Premium close editorial photo of one polished high-speed dental handpiece and one complete metal dental mirror, arranged separated as a shallow V on pale indigo stone. The handpiece has a continuous curved metal body, compact angled turbine head with one small straight bur and a plausible connector at its other end, no hose. Mirror has a small circular face, smoothly connected angled neck and whole slim handle. Keep both instruments and every tip fully visible with breathing room; no floating, duplicated or fused parts. Slightly elevated product camera, attractive soft directional light, indigo shadows and silver highlights, realistic proportions and tactile surfaces. No people, children, hands, faces, silhouettes or people in reflections. No room, reception, lounge, plants or flowers. No human mouth, biological tissue, blood or procedure. One attractive photorealistic editorial photograph, not a collage or graphic. No readable text, letters, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-61025826-951a-4f52-b81b-c34e783d3b76.png",
+    "inspection": "PASS: Complete polished dental handpiece and mirror separated in a shallow V, continuous metal bodies and clearly connected heads. All ends visible on pale indigo stone; no people, writing or logos."
+  }
+]
+
+FILE: philosophy-dentist-18.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-b2ffaead-07df-420a-82b6-77a0f2dfce9c.png
+PROMPT: Use case: product-mockup. Dentist care philosophy photograph, landscape 4:3 with central square-safe framing. Premium overhead-oblique dental still life of a small ivory U-shaped dental-arch teaching model and three separate small interdental brushes on matte pale indigo ceramic. The model has one plausible continuous row of distinct teeth; brushes have short ivory and indigo handles with tiny realistic wire-and-bristle heads. Model above, brushes fanned gently below in a compact central composition. Every object and brush tip must remain entirely inside the central 50% of width and 58% of height, leaving broad margins for a centered square crop. Soft directional daylight, luminous ivory against indigo, precise realistic product geometry. No melted teeth, giant brushes or disconnected bristles. No people, children, hands, faces, silhouettes or people in reflections. No room, reception, lounge, plants or flowers. No human mouth, biological tissue, blood or procedure. One attractive photorealistic editorial photograph, not a collage or graphic. No readable text, letters, numbers, labels, brands, logos or watermarks.
+ALT: Dental arch model with small interdental brushes
+INSPECTION: PASS: Coherent single-row ivory dental arch and three small complete interdental brushes in a compact central composition. All subjects fit comfortably inside a centered square crop; no people, text, logos or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: product-mockup. Dentist care philosophy photograph, landscape 4:3 with central square-safe framing. Premium overhead-oblique dental still life of a small ivory U-shaped dental-arch teaching model and three separate small interdental brushes on matte pale indigo ceramic. The model has one plausible continuous row of distinct teeth; brushes have short ivory and indigo handles with tiny realistic wire-and-bristle heads. Model above, brushes fanned gently below in a compact central composition. Every object and brush tip must remain entirely inside the central 50% of width and 58% of height, leaving broad margins for a centered square crop. Soft directional daylight, luminous ivory against indigo, precise realistic product geometry. No melted teeth, giant brushes or disconnected bristles. No people, children, hands, faces, silhouettes or people in reflections. No room, reception, lounge, plants or flowers. No human mouth, biological tissue, blood or procedure. One attractive photorealistic editorial photograph, not a collage or graphic. No readable text, letters, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-b2ffaead-07df-420a-82b6-77a0f2dfce9c.png",
+    "inspection": "PASS: Coherent single-row ivory dental arch and three small complete interdental brushes in a compact central composition. All subjects fit comfortably inside a centered square crop; no people, text, logos or room scene."
+  }
+]
+
+FILE: gallery-dental-model.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\dental-care-model.jpg
+PROMPT: Create an attractive high-quality photorealistic editorial still-life image for a dentist website. A clean professional dental teaching model with ivory upper and lower teeth and muted natural pink model gums, slightly open in a neat clinical bite display, beside a polished stainless-steel dental mouth mirror and a clear removable aligner on a small pale ceramic tray. This is a manufactured demonstration model, not a human mouth or body part. Compact central composition on a luminous ivory clinical worktop with subtle soft teal reflected light, beautiful daylight and gentle shadows, polished enamel and translucent material detail, calm premium dental aesthetic. Landscape 4:3 with generous margins so a centered portrait crop retains the main tooth model. No room interiors, reception, lounge, furniture, people, hands, faces, lips, human photographs, blood, syringes, text, labels, logos or watermark. Tidy, welcoming, specialty-specific dental equipment photography.
+ALT: Dental teaching model beside a mirror and clear aligner
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/dental-care-model.jpg"
+  }
+]
+
+FILE: gallery-dental-instruments.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\dental-instruments.jpg
+PROMPT: Premium editorial still-life photograph of clean dental examination instruments, a stainless steel mouth mirror and dental probe resting neatly on a small clean instrument tray, with an unbranded packaged toothbrush and a small ceramic cup on pale cream countertop. Subtle cool blue and ivory palette, soft daylight, tidy clinical realism, 4:3 landscape. Absolutely no people, hands, body parts, faces, human reflections, readable text, logos or watermark.
+ALT: Dental examination instruments on a clean tray
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/dental-instruments.jpg"
+  }
+]
+
+FILE: gallery-dental-impressions.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\philosophy-dental-10.jpg
+PROMPT: Attractive photorealistic editorial dental still-life for a dentist website Care Philosophy section, illustrating careful preparation and individualized fitting. A polished stainless-steel dental impression tray holding clean pale-blue dental silicone with neat tooth impressions, beside a small ivory plaster study cast of a lower dental arch. All are manufactured dental materials, no real tissue. Arranged compactly on a frosted pale-blue clinical work surface with soft ivory light and delicate reflections. Landscape 4:3, centered grouping with generous margins for square cropping, precise recognizable shapes, welcoming premium dental laboratory photography. No people, hands, mouths, faces, body parts, human pictures, blood, needles, room interiors, reception, lounge, furniture, plants, text, labels, logos or watermark.
+ALT: Dental impression material and a manufactured study cast
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/philosophy-dental-10.jpg"
+  }
+]
+
+Gallery photographs were generated on 13 November 2026 and reused from Dentist-10 with recorded prompts. They are shared within the new Dentist 11–30 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: Dentist FAQ set 2 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.mouthhealthy.org/dental-care/questions-about-going-to-the-dentist reviewed 16 November 2026. No guarantees, cure claims or fabricated patient testimonials.

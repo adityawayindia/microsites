@@ -1,0 +1,108 @@
+Dentist 25 — Rose quartz — Dr. Ananya Srinivasan
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and dental. Source and param copies share their site assets.
+
+
+
+FILE: doctor-25.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-71ead00f-8122-46b7-b662-0b0e66b9c51d.png
+PROMPT: Use case: photorealistic-natural. Professional dentist portrait, vertical 3:4. Fictional Indian female dentist Dr. Ananya Srinivasan, age 58, with a distinct oval face, warm medium-brown skin, dark hair with soft silver at the temples neatly parted and tied into a low bun, no spectacles. Clean white clinical coat over a modest navy blouse, no stethoscope. Natural warm smile, composed professional posture, realistic mature skin texture and facial anatomy. Full head with generous headroom and waist-up framing. Plain subtly blurred rose quartz and pearl studio backdrop, flattering soft diffused light. Only the doctor in frame. Single attractive photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.
+ALT: Portrait of fictional dentist Dr. Ananya Srinivasan
+INSPECTION: PASS: Fictional Indian female dentist with neatly tied hair and silver temples, natural mature features and warm expression. Full head and waist-up framing, white coat over navy blouse, rose quartz backdrop. No other people, text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: photorealistic-natural. Professional dentist portrait, vertical 3:4. Fictional Indian female dentist Dr. Ananya Srinivasan, age 58, with a distinct oval face, warm medium-brown skin, dark hair with soft silver at the temples neatly parted and tied into a low bun, no spectacles. Clean white clinical coat over a modest navy blouse, no stethoscope. Natural warm smile, composed professional posture, realistic mature skin texture and facial anatomy. Full head with generous headroom and waist-up framing. Plain subtly blurred rose quartz and pearl studio backdrop, flattering soft diffused light. Only the doctor in frame. Single attractive photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-71ead00f-8122-46b7-b662-0b0e66b9c51d.png",
+    "inspection": "PASS: Fictional Indian female dentist with neatly tied hair and silver temples, natural mature features and warm expression. Full head and waist-up framing, white coat over navy blouse, rose quartz backdrop. No other people, text or logos."
+  }
+]
+
+FILE: hero-dentist-25.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-5bcd54b1-26a7-46b3-aa0f-fe42286d6191.png
+PROMPT: Use case: product-mockup. Dentist website hero photograph, landscape 16:9. Premium editorial still life of a small ivory tooth cross-section teaching model and one complete polished dental mirror on pale opal-rose stone. The manufactured non-graphic resin tooth model rests flat at a slight diagonal with its smooth cut face visible, cream and beige inner layers and a fine muted peach root channel, no labels or red tissue. Mirror lies separately beside it, round head with a smoothly connected angled neck and continuous whole handle. Group all objects in RIGHT third between 64% and 94% width, broad clear warm pearl-pink negative space across LEFT half. Beautiful gentle side light, rose quartz palette, realistic clinical product proportions and tactile stone. No detached parts or giant models. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single attractive photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.
+ALT: Tooth cross-section teaching model and dental mirror on rose stone
+INSPECTION: PASS: Complete non-graphic tooth cross-section model and continuous dental mirror grouped right on rose stone. Broad clear left-side space, all roots and handle ends visible; no people, labels or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: product-mockup. Dentist website hero photograph, landscape 16:9. Premium editorial still life of a small ivory tooth cross-section teaching model and one complete polished dental mirror on pale opal-rose stone. The manufactured non-graphic resin tooth model rests flat at a slight diagonal with its smooth cut face visible, cream and beige inner layers and a fine muted peach root channel, no labels or red tissue. Mirror lies separately beside it, round head with a smoothly connected angled neck and continuous whole handle. Group all objects in RIGHT third between 64% and 94% width, broad clear warm pearl-pink negative space across LEFT half. Beautiful gentle side light, rose quartz palette, realistic clinical product proportions and tactile stone. No detached parts or giant models. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single attractive photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-5bcd54b1-26a7-46b3-aa0f-fe42286d6191.png",
+    "inspection": "PASS: Complete non-graphic tooth cross-section model and continuous dental mirror grouped right on rose stone. Broad clear left-side space, all roots and handle ends visible; no people, labels or logos."
+  }
+]
+
+FILE: about-dentist-25.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-3c00c3bc-519e-4a3b-9e2d-ae68978699d9.png
+PROMPT: Use case: product-mockup. Dentist About photograph, vertical 4:5. Premium detailed photo of one complete polished dental mirror and one clean replaceable electric toothbrush head on softly glazed rose quartz ceramic. Mirror diagonally crosses from lower left to upper center, entire continuous handle, angled neck and round head visible. Small separate toothbrush head sits at lower right, compact white bristles and short pearl-white stem with a plausible hollow connector, no brand. Attractive close three-quarter product composition, both objects complete with generous margins, realistic proportions. Soft directional daylight, subtle rose reflections, crisp fine bristle and knurled metal detail. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single attractive photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.
+ALT: Dental mirror and replaceable toothbrush head on rose ceramic
+INSPECTION: PASS: Whole dental mirror and separate replaceable toothbrush head with clear bristles and hollow connector on rose ceramic. Continuous instrument geometry and full framing; no people, text or logos.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: product-mockup. Dentist About photograph, vertical 4:5. Premium detailed photo of one complete polished dental mirror and one clean replaceable electric toothbrush head on softly glazed rose quartz ceramic. Mirror diagonally crosses from lower left to upper center, entire continuous handle, angled neck and round head visible. Small separate toothbrush head sits at lower right, compact white bristles and short pearl-white stem with a plausible hollow connector, no brand. Attractive close three-quarter product composition, both objects complete with generous margins, realistic proportions. Soft directional daylight, subtle rose reflections, crisp fine bristle and knurled metal detail. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single attractive photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-3c00c3bc-519e-4a3b-9e2d-ae68978699d9.png",
+    "inspection": "PASS: Whole dental mirror and separate replaceable toothbrush head with clear bristles and hollow connector on rose ceramic. Continuous instrument geometry and full framing; no people, text or logos."
+  }
+]
+
+FILE: philosophy-dentist-25.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1d7df-cf2c-7493-b23f-0edf988e9213\exec-6ef2a87c-e9d6-478a-8f66-37cd99006758.png
+PROMPT: Use case: product-mockup. Dentist care philosophy photo, landscape 4:3, central-square-safe framing. Premium close editorial still life of a small ivory dental-arch teaching model wearing one clear transparent aligner carefully fitted over its single row of teeth, with one complete small polished dental mirror beside it, on pale rose quartz stone. The U-shaped arch has one coherent row of realistic separate crowns; transparent aligner closely follows this exact row with delicate reflective edges, no doubled or extra tooth rows, no floating plastic. Mirror has round head and continuous connected slim handle. Arrange arch center-left and mirror diagonally at center-right as a compact group entirely within central 50% width and 58% height, leaving broad margins for a centered square crop. Soft diffused photographic light, pearl ivory, rose shadows and realistic manufactured materials. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single attractive photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.
+ALT: Clear aligner fitted on a dental arch beside a small mirror
+INSPECTION: PASS: Clear aligner visibly fitted over a coherent single-row ivory dental arch with a complete small mirror beside it. All objects fit comfortably in a centered square crop. No people, labels, logos or room scene.
+GENERATION HISTORY: [
+  {
+    "type": "generate",
+    "prompt": "Use case: product-mockup. Dentist care philosophy photo, landscape 4:3, central-square-safe framing. Premium close editorial still life of a small ivory dental-arch teaching model wearing one clear transparent aligner carefully fitted over its single row of teeth, with one complete small polished dental mirror beside it, on pale rose quartz stone. The U-shaped arch has one coherent row of realistic separate crowns; transparent aligner closely follows this exact row with delicate reflective edges, no doubled or extra tooth rows, no floating plastic. Mirror has round head and continuous connected slim handle. Arrange arch center-left and mirror diagonally at center-right as a compact group entirely within central 50% width and 58% height, leaving broad margins for a centered square crop. Soft diffused photographic light, pearl ivory, rose shadows and realistic manufactured materials. No people, children, hands, faces, silhouettes or people in reflections. No rooms, reception, lounge, plants or flowers. No actual human mouth, biological tissue, blood or procedure. Single attractive photorealistic editorial photograph, not a collage or graphic. No readable text, lettering, numbers, labels, brands, logos or watermarks.",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1d7df-cf2c-7493-b23f-0edf988e9213\\exec-6ef2a87c-e9d6-478a-8f66-37cd99006758.png",
+    "inspection": "PASS: Clear aligner visibly fitted over a coherent single-row ivory dental arch with a complete small mirror beside it. All objects fit comfortably in a centered square crop. No people, labels, logos or room scene."
+  }
+]
+
+FILE: gallery-dental-model.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\dental-care-model.jpg
+PROMPT: Create an attractive high-quality photorealistic editorial still-life image for a dentist website. A clean professional dental teaching model with ivory upper and lower teeth and muted natural pink model gums, slightly open in a neat clinical bite display, beside a polished stainless-steel dental mouth mirror and a clear removable aligner on a small pale ceramic tray. This is a manufactured demonstration model, not a human mouth or body part. Compact central composition on a luminous ivory clinical worktop with subtle soft teal reflected light, beautiful daylight and gentle shadows, polished enamel and translucent material detail, calm premium dental aesthetic. Landscape 4:3 with generous margins so a centered portrait crop retains the main tooth model. No room interiors, reception, lounge, furniture, people, hands, faces, lips, human photographs, blood, syringes, text, labels, logos or watermark. Tidy, welcoming, specialty-specific dental equipment photography.
+ALT: Dental teaching model beside a mirror and clear aligner
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/dental-care-model.jpg"
+  }
+]
+
+FILE: gallery-dental-instruments.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\dental-instruments.jpg
+PROMPT: Premium editorial still-life photograph of clean dental examination instruments, a stainless steel mouth mirror and dental probe resting neatly on a small clean instrument tray, with an unbranded packaged toothbrush and a small ceramic cup on pale cream countertop. Subtle cool blue and ivory palette, soft daylight, tidy clinical realism, 4:3 landscape. Absolutely no people, hands, body parts, faces, human reflections, readable text, logos or watermark.
+ALT: Dental examination instruments on a clean tray
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/dental-instruments.jpg"
+  }
+]
+
+FILE: gallery-dental-impressions.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\Dentist\microsite-dentist-10-female\assets\philosophy-dental-10.jpg
+PROMPT: Attractive photorealistic editorial dental still-life for a dentist website Care Philosophy section, illustrating careful preparation and individualized fitting. A polished stainless-steel dental impression tray holding clean pale-blue dental silicone with neat tooth impressions, beside a small ivory plaster study cast of a lower dental arch. All are manufactured dental materials, no real tissue. Arranged compactly on a frosted pale-blue clinical work surface with soft ivory light and delicate reflections. Landscape 4:3, centered grouping with generous margins for square cropping, precise recognizable shapes, welcoming premium dental laboratory photography. No people, hands, mouths, faces, body parts, human pictures, blood, needles, room interiors, reception, lounge, furniture, plants, text, labels, logos or watermark.
+ALT: Dental impression material and a manufactured study cast
+INSPECTION: Parent visually inspected the existing photograph: people-free, dental objects, no lounge or reception. Shared gallery exemption.
+GENERATION HISTORY: [
+  {
+    "date": "2026-11-13",
+    "source": "OpenAI built-in imagegen",
+    "reusedFrom": "Dentist/microsite-dentist-10-female/assets/philosophy-dental-10.jpg"
+  }
+]
+
+Gallery photographs were generated on 13 November 2026 and reused from Dentist-10 with recorded prompts. They are shared within the new Dentist 11–30 batch. All non-gallery photography is generated uniquely for each site.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: Dentist FAQ set 3 from DigiDr_FAQ_6_Sets_22_Specialities.pdf, reproduced as supplied. General service context: https://www.mouthhealthy.org/dental-care/questions-about-going-to-the-dentist reviewed 16 November 2026. No guarantees, cure claims or fabricated patient testimonials.

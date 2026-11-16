@@ -1,0 +1,62 @@
+Rays Medical 19 — Cobalt motion — Dr. Raghav Sinha
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and specialty-appropriate. Source and param copies share their site assets.
+
+
+
+FILE: doctor-19.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-9b172235-11ae-48d6-9ff6-9274b2abd164.png
+PROMPT: Use case: photorealistic-natural. Asset: vertical 3:4 fictional orthopedic surgeon portrait. Distinct Indian man about 50 years old, receding balding hair with close-cropped dark grey sides, clean-shaven, no glasses, approachable composed professional expression looking at camera. White medical coat over cobalt blue shirt, waist-up natural posture, whole head and both shoulders visible. Pale cool ivory seamless studio backdrop with soft slate undertone, flattering window light, realistic skin texture and fabric, premium editorial photography. One person only. No text, names, badges, logos, watermark, room or other people.
+ALT: Portrait of a male orthopedic surgeon in a white coat over a cobalt shirt
+INSPECTION: PASS: distinct fictional male doctor, receding hair, clean-shaven, cobalt shirt, natural posture; no text or logos.
+GENERATION HISTORY: []
+
+FILE: hero-rays-19.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-5ca94c11-da6e-402d-bd4a-71b361d42cce.png
+PROMPT: Use case: scientific-educational product photograph. Asset: wide 16:9 orthopedic website hero background. Premium clinical editorial still life of an anatomically accurate knee-joint teaching model: ivory femur, tibia, fibula, cartilage and ligament detail, clearly molded educational plastic on a low cobalt stand. A simple joint-range goniometer with two clear arms and blank circular protractor center rests beside it. All objects clustered on RIGHT THIRD, pale cool ivory stone negative space across LEFT two-thirds for website text. Soft refined studio side light, cobalt and slate accents, realistic materials, complete model visible. No actual human body parts, real tissue, people, hands, room, lounge, reception, flowers, text, numbers, labels, logos, watermark.
+ALT: Knee-joint teaching model and goniometer on a pale ivory surface
+INSPECTION: PASS: attractive orthopedic-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, readable labels, claims, logos or watermark. Goniometer markings are decorative ticks only.
+GENERATION HISTORY: []
+
+FILE: about-rays-19.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-5dddf00c-1ff4-453a-bedd-57989529a72c.png
+PROMPT: Use case: scientific-educational product photograph. Asset: portrait 4:5 orthopedic About image. Beautiful anatomically accurate shoulder-joint teaching model, ivory scapula and clavicle articulating with upper humerus, subtle blue cartilage and white ligament detail, clearly inanimate molded educational plastic mounted on a simple low slate-blue stand. Three-quarter view with all model visible and comfortable margins, cool ivory stone tabletop and soft pale slate backdrop, elegant natural studio side light, premium realistic clinical editorial photography. No actual human body parts, no real tissue, people, hands, faces, rooms, reception, lounge, flowers, labels, text, numbers, logos or watermark.
+ALT: Shoulder-joint teaching model on a slate-blue stand
+INSPECTION: PASS: attractive orthopedic-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, readable labels, claims, logos or watermark. Goniometer markings are decorative ticks only.
+GENERATION HISTORY: []
+
+FILE: philosophy-rays-19.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-c6fb57a4-8cee-4fd4-a2fa-4fd1f2608b56.png
+PROMPT: Use case: scientific-educational product photograph. Asset: landscape 4:3 orthopedic care philosophy image, square-crop safe. A small anatomically accurate hip-joint teaching model showing ivory pelvis half and femoral head with pale blue cartilage, clearly inanimate educational plastic on a small cobalt base, beside a transparent two-arm goniometer and closed completely blank slate notebook. Objects arranged compactly in the central square with comfortable margins, different from knee hero, gentle overhead three-quarter view. Pale ivory stone surface and cobalt fabric accent, beautiful soft studio light, realistic clinical editorial photography. No actual human body parts, real tissue, people, hands, rooms, lounges, reception, flowers, text, numbers, readable labels, logos or watermark.
+ALT: Hip-joint teaching model with goniometer and blank slate notebook
+INSPECTION: PASS: attractive orthopedic-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, readable labels, claims, logos or watermark. Goniometer markings are decorative ticks only.
+GENERATION HISTORY: []
+
+FILE: gallery-assessment.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-dcde4d10-4c19-4bf8-a54e-961498139a19.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 orthopedic gallery photo. A clean transparent medical joint-angle goniometer with two long acrylic arms meeting at a circular pivot, opened to an acute angle, lying diagonally on a shallow ivory examination tray. Fine unnumbered tick marks only, no letters or readable numbers. Entire instrument visible, realistic acrylic and stainless pivot, slate-blue tabletop edge, refined natural studio lighting, attractive minimal clinical editorial photograph. No people, hands, reflections of people, body parts, rooms, reception, lounge, flowers, text, labels, logos, watermark.
+ALT: Transparent joint-angle goniometer on an ivory examination tray
+INSPECTION: PASS: attractive orthopedic-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, readable labels, claims, logos or watermark. Goniometer markings are decorative ticks only.
+GENERATION HISTORY: []
+
+FILE: gallery-detail.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-2baddc11-c159-46c0-a99c-55acdf5b922f.png
+PROMPT: Use case: scientific-educational product photograph. Asset: landscape 4:3 orthopedic gallery photograph. Anatomically accurate foot and ankle teaching model made of ivory molded educational plastic: distinct tarsal and metatarsal bones, five toes, distal tibia/fibula and pale ligament details, mounted on a simple low cobalt blue stand. Clearly a plastic teaching model, not an actual human body part. Three-quarter side view, complete model comfortably centered on cool ivory stone, slate backdrop, beautiful soft studio lighting and precise realistic textures. No people, hands, real tissue, skin, rooms, lounge, reception, flowers, text, labels, numbers, logos or watermark.
+ALT: Foot and ankle teaching model on a cobalt stand
+INSPECTION: PASS: attractive orthopedic-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, readable labels, claims, logos or watermark. Goniometer markings are decorative ticks only.
+GENERATION HISTORY: []
+
+FILE: gallery-tools.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-5ad0d863-8688-4042-a0c3-5e0278b171e1.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 orthopedic gallery photo. Attractive clean still life of an unworn charcoal and cobalt orthopedic knee brace with open patella support and neat adjustable straps, resting beside a rolled ivory elastic compression bandage on a pale cool ivory stone surface. No leg or body inside the brace; clearly empty medical support equipment. Three-quarter close-up angle, all items fully visible with breathing room, soft clinical editorial studio light, realistic woven fabric and hook-loop texture, restrained slate/cobalt/ivory palette. No people, hands, body parts, reflections of people, rooms, reception, lounge, flowers, labels, numbers, text, logos, watermark or therapeutic claims.
+ALT: Unworn knee brace beside a rolled elastic bandage
+INSPECTION: PASS: attractive orthopedic-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, readable labels, claims, logos or watermark. Goniometer markings are decorative ticks only.
+GENERATION HISTORY: []
+
+Gallery images may be reused project-generated assets; original provenance is recorded above.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: https://www.orthoinfo.org/treatment/orthopaedics/; reviewed 16 November 2026. FAQ source: DigiDr_FAQ_6_Sets_22_Specialities.pdf; Orthopaedics set 1

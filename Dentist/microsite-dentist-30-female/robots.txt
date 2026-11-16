@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-tanya-verma/
+Disallow: /dr-tanya-verma/privacy-policy.html
+Disallow: /dr-tanya-verma/terms-of-service.html
+Sitemap: https://digidr.app/dr-tanya-verma/sitemap.xml

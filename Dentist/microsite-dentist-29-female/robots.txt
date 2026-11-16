@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-leela-balan/
+Disallow: /dr-leela-balan/privacy-policy.html
+Disallow: /dr-leela-balan/terms-of-service.html
+Sitemap: https://digidr.app/dr-leela-balan/sitemap.xml

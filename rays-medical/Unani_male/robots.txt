@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-sameer-qureshi/
+Disallow: /dr-sameer-qureshi/privacy-policy.html
+Disallow: /dr-sameer-qureshi/terms-of-service.html
+Sitemap: https://digidr.app/dr-sameer-qureshi/sitemap.xml

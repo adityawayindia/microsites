@@ -1,0 +1,62 @@
+Rays Medical 11 — Teal editorial — Dr. Aarav Menon
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and specialty-appropriate. Source and param copies share their site assets.
+
+
+
+FILE: doctor-11.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-b5a29e52-7346-4f1b-b225-44817b031e0a.png
+PROMPT: Use case: photorealistic-natural. Asset: professional fictional doctor portrait for a gynaecology microsite, vertical 3:4. One fictional Indian male gynaecologist, Dr Aarav Menon, around 44 years old, short neatly styled black hair with slight grey at temples, clean shaven, warm composed expression, looking at camera. Waist-up portrait, both shoulders completely in frame, white coat over a petrol-teal shirt. Soft ivory seamless studio background, flattering natural window light, realistic skin texture, elegant editorial photography. No readable text, no embroidered names, no logos, no badges, no watermark, no other people. Anatomically natural posture.
+ALT: Portrait of Dr. Aarav Menon in a white coat and teal shirt
+INSPECTION: PASS: one male doctor, realistic anatomy, no text or logos.
+GENERATION HISTORY: []
+
+FILE: hero-rays-11.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-75b19474-a06f-489e-acbd-804f6aae63b8.png
+PROMPT: Use case: product-mockup, premium medical editorial photograph. Asset: 16:9 wide website hero background for a gynaecology practice. An accurate small anatomical teaching model of a uterus with two fallopian tubes and ovaries, tasteful smooth pink educational plastic, standing beside a white abdominal ultrasound transducer with neatly arranged cable on pale teal stone. Objects entirely on RIGHT THIRD; left two-thirds pale ivory-teal negative space for profile text. Realistic tabletop closeup, soft side lighting, refined delicate shadows, attractive clean specialty-specific still life. Full model visible. No people, no hands, no faces, no body parts from a real person, no room, no reception, no text, no labels, no logo, no watermark. Non-graphic educational display.
+ALT: Uterus teaching model and abdominal ultrasound probe on pale teal stone
+INSPECTION: PASS: specialty-specific objects; no people, hands, room, readable text or logos. Clear pleasing composition.
+GENERATION HISTORY: []
+
+FILE: about-rays-11.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-a3b72c83-c85a-4234-97da-33664a5af193.png
+PROMPT: Use case: product-mockup. Asset: portrait 4:5 About image for gynaecology website. Premium editorial tabletop photography of a small anatomically accurate ivory and muted rose educational uterus model with two ovaries and two curved fallopian tubes, on a low matte ceramic stand, next to a closed sage green medical notebook with completely blank cover and a silver pen. Distinct from hero: three-quarter camera angle, warm ivory travertine surface, soft sage backdrop, morning side light. Objects clearly composed and fully visible, elegant calm polished scene, realistic materials and precise model. No people, hands, reflections of people, clinic rooms, lounge, reception, text, writing, numbers, labels, logos, watermarks. Non-graphic teaching model, no real body.
+ALT: Uterus teaching model with a sage notebook and pen on ivory stone
+INSPECTION: PASS: specialty-specific objects; no people, hands, room, readable text or logos. Clear pleasing composition.
+GENERATION HISTORY: []
+
+FILE: philosophy-rays-11.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-8d7524c0-40a1-4baf-aa99-c6455f1a04b8.png
+PROMPT: Use case: product-mockup. Asset: 4:3 care philosophy image for a gynaecology website. Refined photorealistic close-up still life of a white abdominal ultrasound probe with its cable neatly curved, one small translucent ultrasound gel bottle without any label, and a stack of completely blank ivory paper on a pale petrol-teal matte surface. Beautiful soft directional studio light, delicate shadows, premium editorial product photograph. Anatomically and mechanically plausible equipment, clean restrained arrangement filling the frame, no decorative room. No people, hands, body parts, reflections of people, text, labels, writing, logos, watermark, lounge or reception. No visible readable device controls.
+ALT: Ultrasound probe, unlabeled gel bottle and blank paper on a teal surface
+INSPECTION: PASS: specialty-specific objects; no people, hands, room, readable text or logos. Clear pleasing composition.
+GENERATION HISTORY: []
+
+FILE: gallery-assessment.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-bfc5eb04-f1fb-45b4-8caf-2e75f0489fe4.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical equipment gallery photo. Attractive premium editorial still life of one clean white digital upper-arm blood pressure monitor with a completely blank dark inactive screen, its cuff neatly rolled beside it, and a charcoal stethoscope arranged in a graceful loop on ivory ceramic. Soft natural studio light, warm ivory and muted slate palette, close camera crop of objects only, fine realistic material detail. No people, hands, reflections of people, room, reception, text, numbers, labels, logos, watermark. Monitor has no printed markings, inactive blank screen.
+ALT: Blood pressure monitor with an inactive screen and a stethoscope on ivory ceramic
+INSPECTION: PASS: realistic equipment only; no people, room, text, labels or logos; attractive clear composition.
+GENERATION HISTORY: []
+
+FILE: gallery-ultrasound.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-f6b4968e-ec62-40e4-a2f7-93524248daa1.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical gallery photo. Premium realistic editorial photo of a single white diagnostic ultrasound probe resting diagonally on a light grey-blue clinical tabletop with its cable arranged neatly in one loop beside it. Distinct image, overhead three-quarter perspective, probe completely visible, accurate smooth curved transducer head, gentle bright studio light and refined shadows, minimal attractive composition. Equipment only. No people, hands, reflections of people, room, reception, furniture, readable text, labels, logos, watermark.
+ALT: Ultrasound probe and neatly looped cable on a pale clinical surface
+INSPECTION: PASS: realistic equipment only; no people, room, text, labels or logos; attractive clear composition.
+GENERATION HISTORY: []
+
+FILE: gallery-instruments.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-534e31a0-39aa-48d1-9da4-4c31b3b50049.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical gallery still life. Refined editorial product photograph of a medical reflex hammer with a triangular rubber head and a polished metal tuning fork placed parallel diagonally on a shallow pale stone tray. Realistic proportions, two complete clearly visible instruments, soft window light and subtle shadows, neutral cream and satin steel palette, attractive minimal clinical tools composition. No people, hands, reflections of people, room, reception, labels, text, numbers, logos or watermark.
+ALT: Reflex hammer and tuning fork on a neutral stone tray
+INSPECTION: PASS: realistic equipment only; no people, room, text, labels or logos; attractive clear composition.
+GENERATION HISTORY: []
+
+Gallery photographs generated 16 November 2026; shared only within the Rays Medical collection.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: https://www.nhs.uk/womens-health/; reviewed 16 November 2026. FAQ source: DigiDr_FAQ_6_Sets_22_Specialities.pdf; Gynaecology and Obstetrics set 1

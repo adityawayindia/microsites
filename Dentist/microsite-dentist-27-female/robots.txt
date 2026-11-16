@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-kavita-desai/
+Disallow: /dr-kavita-desai/privacy-policy.html
+Disallow: /dr-kavita-desai/terms-of-service.html
+Sitemap: https://digidr.app/dr-kavita-desai/sitemap.xml
