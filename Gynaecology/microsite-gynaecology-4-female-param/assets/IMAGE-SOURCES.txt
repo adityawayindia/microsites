@@ -1,0 +1,68 @@
+Gynaecology 4 — Blue precision — Dr. Ishita Rao
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and specialty-appropriate. Source and param copies share their site assets.
+
+
+
+FILE: doctor-24.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-b08afb12-9991-4ad6-b23d-0dc5a8aacd56.png
+PROMPT: Use case: photorealistic-natural. Asset: vertical 3:4 fictional gynaecologist portrait. Dr Ishita Rao, Indian woman about 38 years old, medium brown skin, black hair neatly tied in a low ponytail, no glasses, small simple stud earrings. White medical coat over a powder-blue blouse, composed friendly professional expression looking at the camera. Whole head and both shoulders visible, natural waist-up posture, seamless pale blue studio backdrop. Flattering soft editorial daylight, realistic skin and fabric texture, refined attractive contemporary photography. Only one person. No writing, name badge, text, logos, watermark, rooms, other adults or flowers.
+ALT: Illustrative portrait of Dr. Ishita Rao in a white coat and powder-blue blouse.
+INSPECTION: PASS: Single fictional female doctor, low ponytail and stud earrings, full head and shoulders, seamless blue backdrop, no extra people or text.
+GENERATION HISTORY: []
+
+FILE: hero-rays-24.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-549e9cee-30d4-4c98-b971-5f7462addf78.png
+PROMPT: Use case: product-mockup. Asset: landscape 16:9 gynaecology website hero background. A clearly molded ivory female pelvic educational teaching model with a soft rose uterus-and-ovaries model mounted within its frame, entirely on the LEFT THIRD of a pale blue stone tabletop. Right two-thirds are clean uninterrupted pale cool ivory negative space for website text. Beautiful soft blue side light, realistic molded educational plastic and stone texture, elegant uncluttered clinical editorial photography. Model is obviously an inanimate teaching object, not an actual human body or tissue. No people, hands, real body parts, patients, rooms, reception, lounge, flowers, readable labels, text, writing, logos or watermark.
+ALT: Molded pelvic teaching model on a pale blue surface.
+INSPECTION: PASS: Educational plastic model occupies left side with clear pale right space; no people, real tissue, rooms or labels. Visual review only, not clinical anatomy certification.
+GENERATION HISTORY: []
+
+FILE: about-rays-24.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-95905c8d-bc3d-4186-be42-a6c6be8cc5cb.png
+PROMPT: Use case: product-mockup. Asset: portrait 4:5 gynaecology About photograph. Premium close-up colposcope optical head with dual ocular eyepieces and front lens, clean off-white equipment on a seamless pale blue background, tightly composed vertical specialist-equipment still life. Equipment viewed obliquely with precision knobs and a short support-arm segment visible, elegant soft blue side light, realistic matte medical plastic and optical glass, attractive contemporary clinical editorial photography. Not a room. No people, hands, real body parts, tissue, patients, clinic room, reception, lounge, flowers, text, labels, writing, logos or watermark.
+ALT: Colposcope optics in an equipment close-up on a pale blue background.
+INSPECTION: PASS: Distinct vertical equipment composition with eyepieces and lens; no people, rooms, branding or readable labels. Illustration not equipment validation.
+GENERATION HISTORY: []
+
+FILE: philosophy-rays-24.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-ff61727f-4ff3-4740-a7dd-5f32c961f1d5.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 gynaecology philosophy photograph. Central square-safe still life: a single white abdominal ultrasound probe with its cable loosely curving in a tidy loop on a matte powder-blue oval tray, beside a small closed completely blank cream consultation notebook. The WHOLE probe, cable, tray and notebook are generously inset inside the CENTRAL 60 PERCENT of the image width with broad empty margins at left and right, so all equipment survives a square crop. Pale cool ivory tabletop and soft powder-blue backdrop, beautiful natural side light, realistic plastic and ceramic texture, attractive precise clinical editorial photography. No people, hands, real body parts, tissue, patients, rooms, reception, lounge, flowers, readable labels, text, writing, logos or watermark.
+ALT: Ultrasound probe and blank consultation notebook on a blue tray.
+INSPECTION: PASS: Entire tray, probe, cable and notebook sit within central square-safe area; clean blue and ivory materials, no people, real tissue, text or labels.
+GENERATION HISTORY: []
+
+FILE: gallery-assessment.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\rays-medical\Gynaecologist_male\assets\gallery-assessment.jpg
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical equipment gallery photo. Attractive premium editorial still life of one clean white digital upper-arm blood pressure monitor with a completely blank dark inactive screen, its cuff neatly rolled beside it, and a charcoal stethoscope arranged in a graceful loop on ivory ceramic. Soft natural studio light, warm ivory and muted slate palette, close camera crop of objects only, fine realistic material detail. No people, hands, reflections of people, room, reception, text, numbers, labels, logos, watermark. Monitor has no printed markings, inactive blank screen.
+ALT: Blood pressure monitor with an inactive screen and a stethoscope on ivory ceramic
+INSPECTION: Existing project-generated gallery asset; reviewed for specialty relevance and people-free content.
+GENERATION HISTORY: [
+  "Reused from rays-medical/Gynaecologist_male/assets/IMAGE-SOURCES.txt"
+]
+
+FILE: gallery-detail.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\rays-medical\Gynaecologist_male\assets\gallery-ultrasound.jpg
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical gallery photo. Premium realistic editorial photo of a single white diagnostic ultrasound probe resting diagonally on a light grey-blue clinical tabletop with its cable arranged neatly in one loop beside it. Distinct image, overhead three-quarter perspective, probe completely visible, accurate smooth curved transducer head, gentle bright studio light and refined shadows, minimal attractive composition. Equipment only. No people, hands, reflections of people, room, reception, furniture, readable text, labels, logos, watermark.
+ALT: Ultrasound probe and neatly looped cable on a pale clinical surface
+INSPECTION: Existing project-generated gallery asset; reviewed for specialty relevance and people-free content.
+GENERATION HISTORY: [
+  "Reused from rays-medical/Gynaecologist_male/assets/IMAGE-SOURCES.txt"
+]
+
+FILE: gallery-tools.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\rays-medical\Gynaecologist_male\assets\about-rays-11.jpg
+PROMPT: Use case: product-mockup. Asset: portrait 4:5 About image for gynaecology website. Premium editorial tabletop photography of a small anatomically accurate ivory and muted rose educational uterus model with two ovaries and two curved fallopian tubes, on a low matte ceramic stand, next to a closed sage green medical notebook with completely blank cover and a silver pen. Distinct from hero: three-quarter camera angle, warm ivory travertine surface, soft sage backdrop, morning side light. Objects clearly composed and fully visible, elegant calm polished scene, realistic materials and precise model. No people, hands, reflections of people, clinic rooms, lounge, reception, text, writing, numbers, labels, logos, watermarks. Non-graphic teaching model, no real body.
+ALT: Uterus teaching model with a sage notebook and pen on ivory stone
+INSPECTION: Existing project-generated gallery asset; reviewed for specialty relevance and people-free content.
+GENERATION HISTORY: [
+  "Reused from rays-medical/Gynaecologist_male/assets/IMAGE-SOURCES.txt"
+]
+
+Gallery images may be reused project-generated assets; original provenance is recorded above.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: https://www.nhs.uk/womens-health/; reviewed 16 November 2026. FAQ source: DigiDr_FAQ_6_Sets_22_Specialities.pdf; Gynaecology and Obstetrics set 4

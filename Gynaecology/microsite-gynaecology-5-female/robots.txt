@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-nandini-sen/
+Disallow: /dr-nandini-sen/privacy-policy.html
+Disallow: /dr-nandini-sen/terms-of-service.html
+Sitemap: https://digidr.app/dr-nandini-sen/sitemap.xml
