@@ -84,7 +84,7 @@ CHECKLIST: Item | Status | Evidence | Notes
 57 | PASS (local) | index.html:1 | No unexpected JS exceptions or failed asset requests in fixture-backed browser checks. Live bucket deployment and backend transactions remain unverified.
 57a | PASS (local) | index.html:1 | Actual Font Awesome CSS loaded; glyphs, CTA colors and chat send/close icons reviewed. Site-specific chatbot SVG loaded through the QA local-asset mapping.
 58 | PASS (local) | index.html:1 | User-specified Gynaecology folders with matching -param versions.
-59 | PASS (local) | verification-report.txt:1 | This task writes only the twenty-eight new Gynaecology folders; no existing file deleted; no commit or push. All pre-existing files are unchanged against the start-of-task hash inventory.
+59 | PASS (local) | verification-report.txt:1 | This agent edits only the twenty-eight new Gynaecology folders and has not committed or pushed. Separate shared-workspace commit 4e5ab72 arrived during the task; its Homeopathy changes are preserved and audited separately from the immutable starting inventory.
 
 E1-E5 | PASS with fixtures; live account content UNVERIFIED | index.html social-media; script/index.js fetchDoctorPosts/loadFbSdk/settleCard | qualifying posts, centering, lazy SDK, blocked fallback and carousel navigation.
 
@@ -123,7 +123,10 @@ Names, portraits and clinic details are illustrative. Configure real registratio
 Local API/SDK fixtures verify integration contracts, not production booking persistence, email delivery, real meet links, chatbot answers or Facebook content.
 Static assets must be uploaded to the real slug bucket. Public bucket responses and live GA4/Clarity collection were not verified. No deployment requested.
 
+FIXES APPLIED
+No outstanding local defects after verification.
+
 SCOPE
-Only the fourteen new Gynaecology folders and their param versions are edited. Existing files are unchanged; no deletion, commit or push.
+Only the fourteen new Gynaecology folders and their param versions are edited by this agent. Separate shared-workspace commit 4e5ab72, including Homeopathy changes and sites 7-10, is preserved. This agent has not deleted existing files, committed, pushed or deployed.
 Generated portraits and supporting images are local in assets/. Prompts and provenance: assets/IMAGE-SOURCES.txt.
 QA evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-gyn14-qa\27\base
