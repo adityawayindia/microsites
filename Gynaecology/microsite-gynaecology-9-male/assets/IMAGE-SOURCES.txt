@@ -97,4 +97,4 @@ Gallery images may be reused project-generated assets; original provenance is re
 
 favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
 
-Content reference: https://www.nhs.uk/womens-health/; reviewed 17 November 2026. FAQ source: DigiDr_FAQ_6_Sets_22_Specialities.pdf; Gynaecology and Obstetrics set 3
+Content reference: https://www.nhs.uk/womens-health/; reviewed 17 November 2026. FAQ source: DigiDr_FAQ_6_Sets_25_Specialities.pdf (Gynaecology entries unchanged from the original 22-specialty edition); Gynaecology and Obstetrics set 3
