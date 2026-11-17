@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-kabir-sethi/
+Disallow: /dr-kabir-sethi/privacy-policy.html
+Disallow: /dr-kabir-sethi/terms-of-service.html
+Sitemap: https://digidr.app/dr-kabir-sethi/sitemap.xml

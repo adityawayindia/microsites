@@ -1,0 +1,17 @@
+# NOTE: llms.txt only takes effect at the domain root (digidr.app/llms.txt).
+# This file is a per-microsite draft. The backend team should merge this entry
+# into the combined domain-level llms.txt before deployment.
+
+# Dr. Vihaan Kamat
+
+> Dr. Vihaan Kamat, Homeopathic Physician, on DigiDr. Book a clinic or online consultation.
+
+- Specialty: Homeopathy
+- Clinic: Nivara Homeopathy Clinic, Bengaluru
+- Book a consultation: https://digidr.app/homeopathy-13-male/#home
+
+## Pages
+
+- [Profile](https://digidr.app/homeopathy-13-male/): Dr. Vihaan Kamat's profile, services, care philosophy, consultation journey and practice gallery.
+- [Privacy Policy](https://digidr.app/homeopathy-13-male/privacy-policy.html)
+- [Terms of Service](https://digidr.app/homeopathy-13-male/terms-of-service.html)

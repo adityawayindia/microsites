@@ -1,0 +1,100 @@
+Gynaecology 9 — Sage folio — Dr. Dev Patel
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 17 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and specialty-appropriate. Source and param copies share their site assets.
+
+
+
+FILE: doctor-29.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-798fa991-7ca1-4372-a6c8-4b6c409ef167.png
+PROMPT: Use case: photorealistic-natural. Asset: vertical 3:4 portrait of a fictional Indian male gynaecologist about 41 years old, an ordinary original face with no resemblance to any celebrity. Clean-shaven, medium brown skin, slightly longer neatly side-parted dark hair, no glasses, calm warm professional expression. White medical coat over muted sage shirt. Entire head and both shoulders visible, natural upper-body composition, seamless pale ivory-sage studio backdrop, soft flattering editorial daylight, authentic skin and fabric texture. Only one person. No writing, labels, name badge, text, branding, logo, watermark, rooms or flowers.
+ALT: Illustrative portrait of Dr. Dev Patel in a white coat and sage shirt.
+INSPECTION: PASS: Original fictional clean-shaven male portrait with longer side-parted hair, complete head and shoulders, natural expression and pale sage backdrop; no extra people or text.
+GENERATION HISTORY: [
+  {
+    "tool": "image_gen.imagegen",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\\exec-798fa991-7ca1-4372-a6c8-4b6c409ef167.png",
+    "prompt": "Use case: photorealistic-natural. Asset: vertical 3:4 portrait of a fictional Indian male gynaecologist about 41 years old, an ordinary original face with no resemblance to any celebrity. Clean-shaven, medium brown skin, slightly longer neatly side-parted dark hair, no glasses, calm warm professional expression. White medical coat over muted sage shirt. Entire head and both shoulders visible, natural upper-body composition, seamless pale ivory-sage studio backdrop, soft flattering editorial daylight, authentic skin and fabric texture. Only one person. No writing, labels, name badge, text, branding, logo, watermark, rooms or flowers.",
+    "selected": true,
+    "inspection": "PASS: Original fictional clean-shaven male portrait with longer side-parted hair, complete head and shoulders, natural expression and pale sage backdrop; no extra people or text."
+  }
+]
+
+FILE: hero-rays-29.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-5e609430-32f6-453b-a16a-a069b659f5b2.png
+PROMPT: Use case: product-mockup. Asset: landscape 16:9 gynaecology website hero background. A white colposcope optical head with twin ocular eyepieces and precision lens assembly, its compact short support visible, clustered on the RIGHT THIRD of a pale ivory clinical surface. Refined sage and ivory studio equipment still life, small muted sage architectural backing form, realistic clean medical plastic and optical glass, premium natural editorial lighting and soft shadows. Generous clear pale LEFT negative space for website profile text. Equipment only, not a room. No people, hands, patients, real body parts, tissue, rooms, reception, lounge, flowers, text, labels, branding, logo or watermark.
+ALT: Colposcope optical head in a sage and ivory equipment still life.
+INSPECTION: PASS: Colposcope on right with broad clear pale left space; attractive sage arch backing, no people, room scenery or labels. Illustration not equipment validation.
+GENERATION HISTORY: [
+  {
+    "tool": "image_gen.imagegen",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\\exec-5e609430-32f6-453b-a16a-a069b659f5b2.png",
+    "prompt": "Use case: product-mockup. Asset: landscape 16:9 gynaecology website hero background. A white colposcope optical head with twin ocular eyepieces and precision lens assembly, its compact short support visible, clustered on the RIGHT THIRD of a pale ivory clinical surface. Refined sage and ivory studio equipment still life, small muted sage architectural backing form, realistic clean medical plastic and optical glass, premium natural editorial lighting and soft shadows. Generous clear pale LEFT negative space for website profile text. Equipment only, not a room. No people, hands, patients, real body parts, tissue, rooms, reception, lounge, flowers, text, labels, branding, logo or watermark.",
+    "selected": true,
+    "inspection": "PASS: Colposcope on right with broad clear pale left space; attractive sage arch backing, no people, room scenery or labels. Illustration not equipment validation."
+  }
+]
+
+FILE: about-rays-29.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-b702933a-d557-43a8-8346-b62d8230f9a6.png
+PROMPT: Use case: product-mockup. Asset: portrait 4:5 gynaecology About photograph. A neatly packaged cervical screening kit on softly textured sage linen: a fine sampling brush inside a completely plain sealed transparent sleeve, a capped plain specimen vial with no contents visible, and a folded blank cream instruction card. Precise diagonal arrangement with each item complete, attractive natural side light, realistic packaging, medical plastic and fabric, refined ivory and sage palette, clean specialist equipment editorial still life. No people, hands, patients, biological material, real body parts, rooms, reception, lounge, flowers, text, readable labels, branding, logos or watermark.
+ALT: Packaged cervical screening kit on sage linen.
+INSPECTION: PASS: Complete protected brush, closed plain vial and blank folded card; clear specialty equipment, no biological material, people, text or labels.
+GENERATION HISTORY: [
+  {
+    "tool": "image_gen.imagegen",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\\exec-b702933a-d557-43a8-8346-b62d8230f9a6.png",
+    "prompt": "Use case: product-mockup. Asset: portrait 4:5 gynaecology About photograph. A neatly packaged cervical screening kit on softly textured sage linen: a fine sampling brush inside a completely plain sealed transparent sleeve, a capped plain specimen vial with no contents visible, and a folded blank cream instruction card. Precise diagonal arrangement with each item complete, attractive natural side light, realistic packaging, medical plastic and fabric, refined ivory and sage palette, clean specialist equipment editorial still life. No people, hands, patients, biological material, real body parts, rooms, reception, lounge, flowers, text, readable labels, branding, logos or watermark.",
+    "selected": true,
+    "inspection": "PASS: Complete protected brush, closed plain vial and blank folded card; clear specialty equipment, no biological material, people, text or labels."
+  }
+]
+
+FILE: philosophy-rays-29.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-061c7803-39ab-4a2a-80e2-2d9788e2690d.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 gynaecology philosophy photograph with square-safe composition. Close-up of one white abdominal ultrasound transducer with a grey curved scanning face and a neatly coiled cable, arranged beside three completely blank cream consultation note sheets and a plain closed sage pen on an ivory surface. Whole equipment and papers centered within the middle 60 percent of image width with generous clear side margins so a square crop preserves everything. Premium clinical editorial photography, gentle natural light, elegant sage and warm ivory palette, realistic clean plastic and paper texture. No people, hands, patients, tissue, real body parts, rooms, reception, lounge, flowers, text, labels, logos or watermark.
+ALT: Ultrasound probe and blank consultation notes on an ivory surface.
+INSPECTION: PASS: Complete probe, cable coil, blank sheets and pen contained within square-safe central area; no people, room scenery, readable text or labels.
+GENERATION HISTORY: [
+  {
+    "tool": "image_gen.imagegen",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\\exec-061c7803-39ab-4a2a-80e2-2d9788e2690d.png",
+    "prompt": "Use case: product-mockup. Asset: landscape 4:3 gynaecology philosophy photograph with square-safe composition. Close-up of one white abdominal ultrasound transducer with a grey curved scanning face and a neatly coiled cable, arranged beside three completely blank cream consultation note sheets and a plain closed sage pen on an ivory surface. Whole equipment and papers centered within the middle 60 percent of image width with generous clear side margins so a square crop preserves everything. Premium clinical editorial photography, gentle natural light, elegant sage and warm ivory palette, realistic clean plastic and paper texture. No people, hands, patients, tissue, real body parts, rooms, reception, lounge, flowers, text, labels, logos or watermark.",
+    "selected": true,
+    "inspection": "PASS: Complete probe, cable coil, blank sheets and pen contained within square-safe central area; no people, room scenery, readable text or labels."
+  }
+]
+
+FILE: gallery-assessment.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\rays-medical\Gynaecologist_male\assets\gallery-assessment.jpg
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical equipment gallery photo. Attractive premium editorial still life of one clean white digital upper-arm blood pressure monitor with a completely blank dark inactive screen, its cuff neatly rolled beside it, and a charcoal stethoscope arranged in a graceful loop on ivory ceramic. Soft natural studio light, warm ivory and muted slate palette, close camera crop of objects only, fine realistic material detail. No people, hands, reflections of people, room, reception, text, numbers, labels, logos, watermark. Monitor has no printed markings, inactive blank screen.
+ALT: Blood pressure monitor with an inactive screen and a stethoscope on ivory ceramic
+INSPECTION: Existing project-generated gallery asset; reviewed for specialty relevance and people-free content.
+GENERATION HISTORY: [
+  "Reused from rays-medical/Gynaecologist_male/assets/IMAGE-SOURCES.txt"
+]
+
+FILE: gallery-detail.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\rays-medical\Gynaecologist_male\assets\gallery-ultrasound.jpg
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical gallery photo. Premium realistic editorial photo of a single white diagnostic ultrasound probe resting diagonally on a light grey-blue clinical tabletop with its cable arranged neatly in one loop beside it. Distinct image, overhead three-quarter perspective, probe completely visible, accurate smooth curved transducer head, gentle bright studio light and refined shadows, minimal attractive composition. Equipment only. No people, hands, reflections of people, room, reception, furniture, readable text, labels, logos, watermark.
+ALT: Ultrasound probe and neatly looped cable on a pale clinical surface
+INSPECTION: Existing project-generated gallery asset; reviewed for specialty relevance and people-free content.
+GENERATION HISTORY: [
+  "Reused from rays-medical/Gynaecologist_male/assets/IMAGE-SOURCES.txt"
+]
+
+FILE: gallery-tools.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\rays-medical\Gynaecologist_male\assets\about-rays-11.jpg
+PROMPT: Use case: product-mockup. Asset: portrait 4:5 About image for gynaecology website. Premium editorial tabletop photography of a small anatomically accurate ivory and muted rose educational uterus model with two ovaries and two curved fallopian tubes, on a low matte ceramic stand, next to a closed sage green medical notebook with completely blank cover and a silver pen. Distinct from hero: three-quarter camera angle, warm ivory travertine surface, soft sage backdrop, morning side light. Objects clearly composed and fully visible, elegant calm polished scene, realistic materials and precise model. No people, hands, reflections of people, clinic rooms, lounge, reception, text, writing, numbers, labels, logos, watermarks. Non-graphic teaching model, no real body.
+ALT: Uterus teaching model with a sage notebook and pen on ivory stone
+INSPECTION: Existing project-generated gallery asset; reviewed for specialty relevance and people-free content.
+GENERATION HISTORY: [
+  "Reused from rays-medical/Gynaecologist_male/assets/IMAGE-SOURCES.txt"
+]
+
+Gallery images may be reused project-generated assets; original provenance is recorded above.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: https://www.nhs.uk/womens-health/; reviewed 17 November 2026. FAQ source: DigiDr_FAQ_6_Sets_22_Specialities.pdf; Gynaecology and Obstetrics set 3

@@ -1,0 +1,7 @@
+# NOTE: robots.txt only takes effect at the domain root (digidr.app/robots.txt).
+# Merge this per-microsite draft into the combined domain-level file.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://digidr.app/sitemap.xml

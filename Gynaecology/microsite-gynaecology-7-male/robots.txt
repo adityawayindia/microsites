@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-arjun-nair/
+Disallow: /dr-arjun-nair/privacy-policy.html
+Disallow: /dr-arjun-nair/terms-of-service.html
+Sitemap: https://digidr.app/dr-arjun-nair/sitemap.xml
