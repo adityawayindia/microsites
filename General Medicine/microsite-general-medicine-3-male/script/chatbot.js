@@ -1,7 +1,7 @@
 (function () {
     /* ── Config ── */
     var BOT_NAME = 'Assistant';
-    var BOT_ICON = './assets/chatbot-icon.svg';
+    var BOT_ICON = 'https://storage.googleapis.com/digidr/chatbot-icon.svg';
 
     var WELCOME_MSG = "Hi there! \uD83D\uDC4B I'm the clinic assistant. I can share general information about the clinic and help you book a visit. How can I help?";
 

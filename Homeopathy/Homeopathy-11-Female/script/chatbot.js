@@ -1,6 +1,6 @@
 /* Informational practice assistant. Local scripted answers; no AI or patient-message service is connected. */
 (function(){
-  const icon='assets/chatbot-icon.svg',doctor=document.querySelector('.brand-name')?.textContent.trim()||'the doctor';
+  const icon='https://storage.googleapis.com/digidr/chatbot-icon.svg',doctor=document.querySelector('.brand-name')?.textContent.trim()||'the doctor';
   const wrap=document.createElement('div');wrap.className='chatbot-fab-wrap';wrap.id='chatbotFabWrap';
   wrap.innerHTML=`<div class="chatbot-backdrop" id="chatbotBackdrop"></div>
 <div class="chatbot-window" id="chatbotWindow" role="dialog" aria-modal="true" aria-label="Practice information assistant" hidden data-clarity-mask="true">

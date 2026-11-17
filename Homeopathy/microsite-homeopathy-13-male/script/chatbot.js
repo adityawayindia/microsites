@@ -1,7 +1,7 @@
 (function () {
     /* ── Config ── */
     var BOT_NAME = 'Dr. Kamat Assistant';
-    var BOT_ICON = 'assets/chatbot-icon.svg';
+    var BOT_ICON = 'https://storage.googleapis.com/digidr/chatbot-icon.svg';
 
     var WELCOME_MSG = "Hello. I can help with clinic services, appointment options and practical visit information. For personal medical advice, please consult the doctor.";
 

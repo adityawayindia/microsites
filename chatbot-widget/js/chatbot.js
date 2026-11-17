@@ -1,7 +1,7 @@
 (function () {
     /* ── Config ── */
     var BOT_NAME = 'Assistant';
-    var BOT_ICON = 'img/chat_bot.png';
+    var BOT_ICON = 'https://storage.googleapis.com/digidr/chatbot-icon.svg';
 
     var WELCOME_MSG = "Hi there! 👋 I'm your Assistant. How can I help you today?";
 

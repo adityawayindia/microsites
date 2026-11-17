@@ -1,7 +1,7 @@
 (function () {
     /* ── Config ── */
     var BOT_NAME = 'Dr. Malhotra Assistant';
-    var BOT_ICON = 'assets/chatbot-icon.svg';
+    var BOT_ICON = 'https://storage.googleapis.com/digidr/chatbot-icon.svg';
 
     var WELCOME_MSG = "Hi there! 👋 I'm your Assistant. How can I help you today?";
 
