@@ -1,0 +1,100 @@
+Gynaecology 17 — Fern silhouette — Dr. Leela Menon
+
+Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+
+Built-in OpenAI imagegen; generated 17 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and specialty-appropriate. Source and param copies share their site assets.
+
+
+
+FILE: doctor-37.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-e5951b86-8573-45bb-8334-10bf8f3c6149.png
+PROMPT: Use case: photorealistic-natural. Asset: vertical 3:4 original fictional Indian female gynaecologist portrait in her mid-fifties. Deep brown skin, black hair with a visible silver streak gathered in a tidy low bun, small rectangular glasses, calm approachable mature face. White medical coat over muted olive blouse, small simple earrings. Complete head and both shoulders with comfortable margins, natural upper-body portrait, seamless warm ivory studio background, flattering soft editorial daylight, realistic skin and fabric texture. Only one person. No name badge, writing, text, labels, branding, logos, watermark, room, flowers or other people.
+ALT: Illustrative portrait of Dr. Leela Menon in a white coat and olive blouse.
+INSPECTION: PASS: Distinct mature female portrait with silver-streaked low bun and rectangular glasses; complete head and shoulders, no extra people/text. Parent approved.
+GENERATION HISTORY: [
+  {
+    "tool": "image_gen.imagegen",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\\exec-e5951b86-8573-45bb-8334-10bf8f3c6149.png",
+    "prompt": "Use case: photorealistic-natural. Asset: vertical 3:4 original fictional Indian female gynaecologist portrait in her mid-fifties. Deep brown skin, black hair with a visible silver streak gathered in a tidy low bun, small rectangular glasses, calm approachable mature face. White medical coat over muted olive blouse, small simple earrings. Complete head and both shoulders with comfortable margins, natural upper-body portrait, seamless warm ivory studio background, flattering soft editorial daylight, realistic skin and fabric texture. Only one person. No name badge, writing, text, labels, branding, logos, watermark, room, flowers or other people.",
+    "selected": true,
+    "inspection": "PASS: Distinct mature female portrait with silver-streaked low bun and rectangular glasses; complete head and shoulders, no extra people/text. Parent approved."
+  }
+]
+
+FILE: hero-rays-37.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-099d9f2d-71f8-4a4e-b20d-2caa4460da13.png
+PROMPT: Use case: product-mockup. Asset: landscape 3:2 gynaecology website hero background. Small clearly inanimate non-graphic ivory molded classroom teaching model of the uterus, fallopian tubes and ovaries on a low forest-green stone display block at the RIGHT THIRD. Smooth manufactured educational plastic with muted pastel internal details, not actual tissue. Subtle curved olive architectural backdrop behind the model, pale cream tabletop and extensive uninterrupted light cream negative space on the LEFT for website profile text. Beautiful photographic side lighting, realistic plastic and stone textures, sophisticated olive and ivory clinical editorial still life. No people, hands, faces, real body parts, rooms, lounge, reception, flowers, text, labels, branding, logos or watermark.
+ALT: Gynaecology teaching model on a forest-green stone display block.
+INSPECTION: PASS: Clearly molded teaching object right with wide cream left space and curved olive background; no people, real tissue or text. Visual review only, not anatomy certification. Parent approved.
+GENERATION HISTORY: [
+  {
+    "tool": "image_gen.imagegen",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\\exec-099d9f2d-71f8-4a4e-b20d-2caa4460da13.png",
+    "prompt": "Use case: product-mockup. Asset: landscape 3:2 gynaecology website hero background. Small clearly inanimate non-graphic ivory molded classroom teaching model of the uterus, fallopian tubes and ovaries on a low forest-green stone display block at the RIGHT THIRD. Smooth manufactured educational plastic with muted pastel internal details, not actual tissue. Subtle curved olive architectural backdrop behind the model, pale cream tabletop and extensive uninterrupted light cream negative space on the LEFT for website profile text. Beautiful photographic side lighting, realistic plastic and stone textures, sophisticated olive and ivory clinical editorial still life. No people, hands, faces, real body parts, rooms, lounge, reception, flowers, text, labels, branding, logos or watermark.",
+    "selected": true,
+    "inspection": "PASS: Clearly molded teaching object right with wide cream left space and curved olive background; no people, real tissue or text. Visual review only, not anatomy certification. Parent approved."
+  }
+]
+
+FILE: about-rays-37.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-6f79dcec-d690-43dd-97a4-c19b210d0971.png
+PROMPT: Use case: product-mockup. Asset: portrait 4:5 gynaecology About photograph. Compact white prenatal Doppler monitor with a completely blank inactive dark screen, its white probe and neatly coiled cord on pale olive linen. Refined diagonal overhead composition, whole equipment visible, textured fabric with subtle folds, elegant natural side light and soft shadows, realistic medical plastic, attractive olive and ivory editorial equipment photograph. Flat linen arrangement only: no display cylinder, no fluting, no room. No people, hands, faces, actual body parts, tissue, lounge, reception, flowers, screen graphics, writing, text, labels, branding, logos or watermark.
+ALT: Prenatal Doppler and coiled cord on pale olive linen.
+INSPECTION: PASS: Complete blank-screen monitor, probe and coiled cord in diagonal overhead composition; no people, room, labels or text. Illustration not equipment validation. Parent approved.
+GENERATION HISTORY: [
+  {
+    "tool": "image_gen.imagegen",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\\exec-6f79dcec-d690-43dd-97a4-c19b210d0971.png",
+    "prompt": "Use case: product-mockup. Asset: portrait 4:5 gynaecology About photograph. Compact white prenatal Doppler monitor with a completely blank inactive dark screen, its white probe and neatly coiled cord on pale olive linen. Refined diagonal overhead composition, whole equipment visible, textured fabric with subtle folds, elegant natural side light and soft shadows, realistic medical plastic, attractive olive and ivory editorial equipment photograph. Flat linen arrangement only: no display cylinder, no fluting, no room. No people, hands, faces, actual body parts, tissue, lounge, reception, flowers, screen graphics, writing, text, labels, branding, logos or watermark.",
+    "selected": true,
+    "inspection": "PASS: Complete blank-screen monitor, probe and coiled cord in diagonal overhead composition; no people, room, labels or text. Illustration not equipment validation. Parent approved."
+  }
+]
+
+FILE: philosophy-rays-37.jpg
+ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-d8754c7b-913a-4c4d-b62d-08b50ef1fc98.png
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 gynaecology philosophy photograph, central square-safe composition. One unopened cervical cytology brush in a clear sealed protective sleeve and one empty transparent sample container with a closed unlabelled ivory cap, alongside a completely blank small cream consultation notebook, arranged on a low oval sage tray. Whole arrangement centered inside middle 60 percent of image width with generous side margins for a square crop. Oblique closeup from the front corner, distinct long soft side shadows, warm ivory tabletop and olive backdrop, beautiful refined clinical editorial photography, realistic clean medical plastic, ceramic and paper. No biological material. No people, hands, faces, rooms, reception, lounge, flowers, text, labels, branding, logos or watermark.
+ALT: Protected screening brush, empty container and blank notebook on a sage tray.
+INSPECTION: PASS: Complete main equipment and notebook retain centered square crop; attractive oblique shadows, no biological material, people, labels or text. Parent approved.
+GENERATION HISTORY: [
+  {
+    "tool": "image_gen.imagegen",
+    "original": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\\exec-d8754c7b-913a-4c4d-b62d-08b50ef1fc98.png",
+    "prompt": "Use case: product-mockup. Asset: landscape 4:3 gynaecology philosophy photograph, central square-safe composition. One unopened cervical cytology brush in a clear sealed protective sleeve and one empty transparent sample container with a closed unlabelled ivory cap, alongside a completely blank small cream consultation notebook, arranged on a low oval sage tray. Whole arrangement centered inside middle 60 percent of image width with generous side margins for a square crop. Oblique closeup from the front corner, distinct long soft side shadows, warm ivory tabletop and olive backdrop, beautiful refined clinical editorial photography, realistic clean medical plastic, ceramic and paper. No biological material. No people, hands, faces, rooms, reception, lounge, flowers, text, labels, branding, logos or watermark.",
+    "selected": true,
+    "inspection": "PASS: Complete main equipment and notebook retain centered square crop; attractive oblique shadows, no biological material, people, labels or text. Parent approved."
+  }
+]
+
+FILE: gallery-assessment.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\rays-medical\Gynaecologist_male\assets\gallery-assessment.jpg
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical equipment gallery photo. Attractive premium editorial still life of one clean white digital upper-arm blood pressure monitor with a completely blank dark inactive screen, its cuff neatly rolled beside it, and a charcoal stethoscope arranged in a graceful loop on ivory ceramic. Soft natural studio light, warm ivory and muted slate palette, close camera crop of objects only, fine realistic material detail. No people, hands, reflections of people, room, reception, text, numbers, labels, logos, watermark. Monitor has no printed markings, inactive blank screen.
+ALT: Blood pressure monitor with an inactive screen and a stethoscope on ivory ceramic
+INSPECTION: Existing project-generated gallery asset; reviewed for specialty relevance and people-free content.
+GENERATION HISTORY: [
+  "Reused from rays-medical/Gynaecologist_male/assets/IMAGE-SOURCES.txt"
+]
+
+FILE: gallery-detail.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\rays-medical\Gynaecologist_male\assets\gallery-ultrasound.jpg
+PROMPT: Use case: product-mockup. Asset: landscape 4:3 clinical gallery photo. Premium realistic editorial photo of a single white diagnostic ultrasound probe resting diagonally on a light grey-blue clinical tabletop with its cable arranged neatly in one loop beside it. Distinct image, overhead three-quarter perspective, probe completely visible, accurate smooth curved transducer head, gentle bright studio light and refined shadows, minimal attractive composition. Equipment only. No people, hands, reflections of people, room, reception, furniture, readable text, labels, logos, watermark.
+ALT: Ultrasound probe and neatly looped cable on a pale clinical surface
+INSPECTION: Existing project-generated gallery asset; reviewed for specialty relevance and people-free content.
+GENERATION HISTORY: [
+  "Reused from rays-medical/Gynaecologist_male/assets/IMAGE-SOURCES.txt"
+]
+
+FILE: gallery-tools.jpg
+ORIGINAL: E:\Wayindia\DigiDr\Microsites\rays-medical\Gynaecologist_male\assets\about-rays-11.jpg
+PROMPT: Use case: product-mockup. Asset: portrait 4:5 About image for gynaecology website. Premium editorial tabletop photography of a small anatomically accurate ivory and muted rose educational uterus model with two ovaries and two curved fallopian tubes, on a low matte ceramic stand, next to a closed sage green medical notebook with completely blank cover and a silver pen. Distinct from hero: three-quarter camera angle, warm ivory travertine surface, soft sage backdrop, morning side light. Objects clearly composed and fully visible, elegant calm polished scene, realistic materials and precise model. No people, hands, reflections of people, clinic rooms, lounge, reception, text, writing, numbers, labels, logos, watermarks. Non-graphic teaching model, no real body.
+ALT: Uterus teaching model with a sage notebook and pen on ivory stone
+INSPECTION: Existing project-generated gallery asset; reviewed for specialty relevance and people-free content.
+GENERATION HISTORY: [
+  "Reused from rays-medical/Gynaecologist_male/assets/IMAGE-SOURCES.txt"
+]
+
+Gallery images may be reused project-generated assets; original provenance is recorded above.
+
+favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
+
+Content reference: https://www.nhs.uk/womens-health/; reviewed 17 November 2026. FAQ source: DigiDr_FAQ_6_Sets_25_Specialities.pdf (Gynaecology entries unchanged from the original 22-specialty edition); Gynaecology and Obstetrics set 5

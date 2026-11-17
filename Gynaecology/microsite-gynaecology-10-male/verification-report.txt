@@ -15,7 +15,7 @@ RUNTIME RESULTS
 Three pages at 320/375/768/1024/1440/1900px: no overflow, missing images or icon glyphs. Axe: zero WCAG A/AA violations on pages, booking, consent, chat and visible tooltip. Lighthouse was not run.
 Header full-name stress tests and gallery counts 4/5/6/7 passed. Mobile/tablet/desktop booking and chatbot screenshots inspected. Journey numbers, icons and rows checked at nine viewport widths.
 Phone/tablet hero image focal points rechecked at 375/768/1024px after final styling: no overflow, missing images or WCAG A/AA violations.
-Short viewport chat checks include 375x420 and 812x375. Compact 340x420 desktop, no suggestions.
+Short viewport chat checks include 375x420 and 812x375. Compact 340x420 desktop, no suggestions. Shared chatbot icon preserved from repository commit d73ddf3; QA uses a downloaded copy of the actual public SVG.
 
 CHECKLIST: Item | Status | Evidence | Notes
 1 | PASS (local) | index.html:5 | Professional generated doctor portrait; circular header avatar; optimized local portrait.
@@ -82,9 +82,9 @@ CHECKLIST: Item | Status | Evidence | Notes
 55 | PASS (local) | index.html:1 | Unique page titles, descriptions, canonical, OG/Twitter, single H1; Physician JSON-LD on homepage.
 56 | PASS (local) | index.html:5 | Keyboard controls, labels and modal roles. Axe WCAG A/AA page/modal checks passed ; details below.
 57 | PASS (local) | index.html:1 | No unexpected JS exceptions or failed asset requests in fixture-backed browser checks. Live bucket deployment and backend transactions remain unverified.
-57a | PASS (local) | index.html:1 | Actual Font Awesome CSS loaded; glyphs, CTA colors and chat send/close icons reviewed. Site-specific chatbot SVG loaded through the QA local-asset mapping.
+57a | PASS (local) | index.html:1 | Actual Font Awesome CSS loaded; glyphs, CTA colors and chat send/close icons reviewed. Shared chatbot SVG verified using the downloaded public asset through the QA mapping.
 58 | PASS (local) | index.html:1 | User-specified Gynaecology folders with matching -param versions.
-59 | PASS (local) | verification-report.txt:1 | This agent edits only the twenty-eight new Gynaecology folders and has not committed or pushed. Separate shared-workspace commits 4e5ab72 and a872c45 arrived during the task; their Homeopathy and FAQ-PDF changes are preserved and audited separately from the immutable starting inventory.
+59 | PASS (local) | verification-report.txt:1 | This agent edits only the twenty-eight new Gynaecology folders and has not committed or pushed. Separate shared-workspace commits arrived during the task; their unrelated Homeopathy, FAQ-PDF and shared chatbot icon changes are preserved and audited separately from the immutable starting inventory.
 
 E1-E5 | PASS with fixtures; live account content UNVERIFIED | index.html social-media; script/index.js fetchDoctorPosts/loadFbSdk/settleCard | qualifying posts, centering, lazy SDK, blocked fallback and carousel navigation.
 
@@ -124,9 +124,10 @@ Local API/SDK fixtures verify integration contracts, not production booking pers
 Static assets must be uploaded to the real slug bucket. Public bucket responses and live GA4/Clarity collection were not verified. No deployment requested.
 
 FIXES APPLIED
-No outstanding local defects after verification.
+Contact kicker given a contrasting pale pill and brand border so its label remains distinct on the tinted section background.
+Social Latest Updates kicker given a distinct tinted pill with its existing share icon; social carousel visual captures wait until scrolling settles.
 
 SCOPE
-Only the fourteen new Gynaecology folders and their param versions are edited by this agent. Separate shared-workspace commits 4e5ab72 and a872c45, including Homeopathy changes, a replacement FAQ PDF and sites 7-10, are preserved. This agent has not deleted existing files, committed, pushed or deployed.
+Only the fourteen new Gynaecology folders and their param versions are edited by this agent. Separate shared-workspace commits, including Homeopathy changes, a replacement FAQ PDF, shared chatbot icon and completed new sites, are preserved. This agent has not deleted existing files, committed, pushed or deployed.
 Generated portraits and supporting images are local in assets/. Prompts and provenance: assets/IMAGE-SOURCES.txt.
 QA evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-gyn14-qa\30\base
