@@ -1220,6 +1220,27 @@ window.__trackBookingSuccess = function (type) {
     var m = since.textContent.match(/\b(?:19|20)\d{2}\b/);
     if (m) since.textContent = m[0];
   }
+  /* Hero stats: if ANY of the three values is null/empty/0 (or an unreplaced
+     placeholder), remove ALL three stat cards (the whole .hero-stats) from the DOM. */
+  function isMissing(raw) {
+    var t = (raw == null ? "" : String(raw)).trim();
+    if (!t || t.indexOf("{{") !== -1 || /^(null|undefined|nan)$/i.test(t)) return true;
+    var n = parseInt(t.replace(/,/g, ""), 10);
+    return isNaN(n) || n === 0;
+  }
+  var statsWrap = document.querySelector(".hero-stats");
+  if (statsWrap) {
+    var vals = statsWrap.querySelectorAll(".hero-stat-box strong");
+    var bad = !vals.length;
+    vals.forEach(function (v) { if (isMissing(v.textContent)) bad = true; });
+    if (bad) statsWrap.remove();
+  }
+  /* Medical Regd. No.: remove the whole line when the value is null/empty */
+  var reg = document.querySelector(".hero-reg");
+  if (reg) {
+    var regVal = reg.textContent.replace(/Medical\s*Regd\.?\s*No\.?\s*:?/i, "").trim();
+    if (!regVal || regVal.indexOf("{{") !== -1 || /^(null|undefined)$/i.test(regVal)) reg.remove();
+  }
   var fel = document.querySelector('[data-hero-fellowship]');
   if (fel && (!fel.textContent.replace(/Fellowship:/i, "").trim() || fel.textContent.indexOf("{{") !== -1)) { fel.hidden = true; fel.style.display = "none"; }
 })();
