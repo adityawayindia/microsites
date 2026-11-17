@@ -1746,3 +1746,43 @@ if(incomingSectionHash && performance.getEntriesByType('navigation')[0]?.type !=
   }
   window.addEventListener("resize", debounce(function () { initReadMore(); }, 200));
 })();
+
+/* ==========================================================================
+   DigiDr: Hide empty hero stats & Medical Regd. No. (parameterized sites)
+   --------------------------------------------------------------------------
+   1. Hero stat cards (Practising Since / Languages / Consultation Modes):
+      if ANY ONE of the three values is null, empty, "null", 0, or an
+      unreplaced {{placeholder}}, ALL THREE cards are removed from the DOM
+      (the whole .hero-stats wrapper is removed, not just hidden).
+   2. Medical Regd. No. line (p.hero-reg): if the registration number is
+      null, empty, "null", or an unreplaced {{placeholder}}, the whole line
+      is removed from the DOM.
+   Runs once on load, before the stat counters start animating.
+   ========================================================================== */
+(function () {
+  function isEmptyValue(text) {
+    var t = (text == null ? "" : String(text)).trim();
+    return !t || t.indexOf("{{") !== -1 || /^(null|undefined|nan)$/i.test(t);
+  }
+
+  // 1. Hero stats: remove all three cards if any value is missing or zero
+  var statsWrap = document.querySelector(".hero-stats");
+  if (statsWrap) {
+    var values = statsWrap.querySelectorAll(".hero-stat-box strong");
+    var hideStats = values.length === 0;
+    values.forEach(function (el) {
+      var t = el.textContent;
+      if (isEmptyValue(t)) { hideStats = true; return; }
+      var n = parseInt(t.replace(/,/g, "").trim(), 10);
+      if (isNaN(n) || n === 0) hideStats = true;
+    });
+    if (hideStats) statsWrap.remove();
+  }
+
+  // 2. Medical Regd. No.: remove the whole line if the number is missing
+  var regLine = document.querySelector(".hero-reg");
+  if (regLine) {
+    var regNo = regLine.textContent.replace(/Medical\s*Regd\.?\s*No\.?\s*:?/i, "");
+    if (isEmptyValue(regNo)) regLine.remove();
+  }
+})();

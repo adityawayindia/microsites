@@ -1220,27 +1220,6 @@ window.__trackBookingSuccess = function (type) {
     var m = since.textContent.match(/\b(?:19|20)\d{2}\b/);
     if (m) since.textContent = m[0];
   }
-  /* Hero stats: if ANY of the three values is null/empty/0 (or an unreplaced
-     placeholder), remove ALL three stat cards (the whole .hero-stats) from the DOM. */
-  function isMissing(raw) {
-    var t = (raw == null ? "" : String(raw)).trim();
-    if (!t || t.indexOf("{{") !== -1 || /^(null|undefined|nan)$/i.test(t)) return true;
-    var n = parseInt(t.replace(/,/g, ""), 10);
-    return isNaN(n) || n === 0;
-  }
-  var statsWrap = document.querySelector(".hero-stats");
-  if (statsWrap) {
-    var vals = statsWrap.querySelectorAll(".hero-stat-box strong");
-    var bad = !vals.length;
-    vals.forEach(function (v) { if (isMissing(v.textContent)) bad = true; });
-    if (bad) statsWrap.remove();
-  }
-  /* Medical Regd. No.: remove the whole line when the value is null/empty */
-  var reg = document.querySelector(".hero-reg");
-  if (reg) {
-    var regVal = reg.textContent.replace(/Medical\s*Regd\.?\s*No\.?\s*:?/i, "").trim();
-    if (!regVal || regVal.indexOf("{{") !== -1 || /^(null|undefined)$/i.test(regVal)) reg.remove();
-  }
   var fel = document.querySelector('[data-hero-fellowship]');
   if (fel && (!fel.textContent.replace(/Fellowship:/i, "").trim() || fel.textContent.indexOf("{{") !== -1)) { fel.hidden = true; fel.style.display = "none"; }
 })();
@@ -1766,4 +1745,44 @@ if(incomingSectionHash && performance.getEntriesByType('navigation')[0]?.type !=
     };
   }
   window.addEventListener("resize", debounce(function () { initReadMore(); }, 200));
+})();
+
+/* ==========================================================================
+   DigiDr: Hide empty hero stats & Medical Regd. No. (parameterized sites)
+   --------------------------------------------------------------------------
+   1. Hero stat cards (Practising Since / Languages / Consultation Modes):
+      if ANY ONE of the three values is null, empty, "null", 0, or an
+      unreplaced {{placeholder}}, ALL THREE cards are removed from the DOM
+      (the whole .hero-stats wrapper is removed, not just hidden).
+   2. Medical Regd. No. line (p.hero-reg): if the registration number is
+      null, empty, "null", or an unreplaced {{placeholder}}, the whole line
+      is removed from the DOM.
+   Runs once on load, before the stat counters start animating.
+   ========================================================================== */
+(function () {
+  function isEmptyValue(text) {
+    var t = (text == null ? "" : String(text)).trim();
+    return !t || t.indexOf("{{") !== -1 || /^(null|undefined|nan)$/i.test(t);
+  }
+
+  // 1. Hero stats: remove all three cards if any value is missing or zero
+  var statsWrap = document.querySelector(".hero-stats");
+  if (statsWrap) {
+    var values = statsWrap.querySelectorAll(".hero-stat-box strong");
+    var hideStats = values.length === 0;
+    values.forEach(function (el) {
+      var t = el.textContent;
+      if (isEmptyValue(t)) { hideStats = true; return; }
+      var n = parseInt(t.replace(/,/g, "").trim(), 10);
+      if (isNaN(n) || n === 0) hideStats = true;
+    });
+    if (hideStats) statsWrap.remove();
+  }
+
+  // 2. Medical Regd. No.: remove the whole line if the number is missing
+  var regLine = document.querySelector(".hero-reg");
+  if (regLine) {
+    var regNo = regLine.textContent.replace(/Medical\s*Regd\.?\s*No\.?\s*:?/i, "");
+    if (isEmptyValue(regNo)) regLine.remove();
+  }
 })();
