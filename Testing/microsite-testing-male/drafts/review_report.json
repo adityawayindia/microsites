@@ -1,0 +1,630 @@
+{
+  "status": "DRAFT_REQUIRES_BILINGUAL_REVIEW",
+  "model": "sarvam-translate:v1",
+  "languages": [
+    "hi",
+    "or"
+  ],
+  "source_fields": 364,
+  "checks": [
+    {
+      "language": "hi",
+      "field": "locales.booking.su",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.booking.mo",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.booking.tu",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.booking.we",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.booking.th",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.booking.fr",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.booking.sa",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.terms_of_service.to_the_extent_permitted_by_law_doctor",
+      "checks": [
+        "The English liability clause says 'incimedical'. Confirm the intended term before approval."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.header.faq",
+      "checks": [
+        "Check text retained in Latin script."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.su",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.mo",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.tu",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.we",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.th",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.fr",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.sa",
+      "checks": [
+        "Check weekday label width on mobile."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.footer.faq",
+      "checks": [
+        "Check text retained in Latin script."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.terms_of_service.to_the_extent_permitted_by_law_doctor",
+      "checks": [
+        "The English liability clause says 'incimedical'. Confirm the intended term before approval."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.index_metadata.medical_consultations_with_doctor_name_explore_the",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.home.discover_the_practice",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.social_media.updates_and_information_from_the_practice",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.contact_us.contact_the_practice",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.contact_us.find_the_practice_get_in_touch_or",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.gallery.practice_gallery",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.gallery.a_closer_look_at_the_practice",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.gallery.enlarged_practice_gallery_image",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.faq.online_consultations_are_available_when_enabled_by",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.privacy_policy_metadata.read_the_privacy_policy_for_the_practice",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.privacy_policy.effective_date_insert_date",
+      "checks": [
+        "The English legal page still needs an effective date."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.terms_of_service_metadata.read_the_terms_of_service_for_the",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "locales.terms_of_service.effective_date_insert_date",
+      "checks": [
+        "The English legal page still needs an effective date."
+      ]
+    },
+    {
+      "language": "hi",
+      "field": "content.about.doctor_name_is_a_general_physician_offering",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.index_metadata.medical_consultations_with_doctor_name_explore_the",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context.",
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.header.contact",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.header.book_appointment",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.header.appointment",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.home.discover_the_practice",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context.",
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.home.book_appointment",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.social_media.updates_and_information_from_the_practice",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.process.appointment_booking",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.process.choose_a_clinic_visit_or_an_online",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.process.a_plan_explained_clearly",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.contact_us.contact_the_practice",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context.",
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.contact_us.find_the_practice_get_in_touch_or",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context.",
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.contact_us.get_in_touch",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.contact_us.book_appointment",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.gallery.practice_gallery",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.gallery.enlarged_practice_gallery_image",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.faq.online_consultations_are_available_when_enabled_by",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.faq.the_doctor_will_review_your_history_and",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context.",
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.book_an_appointment",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment.",
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.close_booking_form",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.appointment_type",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.online_consultations_are_governed_by_the_telemedicine",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.book_appointment",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.booking_your_appointment",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.your_appointment_is_confirmed",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.appointment_location",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.your_appointment_is_confirmed_2",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.something_went_wrong_while_booking_your_appointment",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.booking.appointment_confirmation",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.consent.by_submitting_this_form_i_consent_to",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.footer.contact",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy_metadata.read_the_privacy_policy_for_the_practice",
+      "checks": [
+        "Doctor-name placeholder restored after machine translation. Check the surrounding wording."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.effective_date_insert_date",
+      "checks": [
+        "The English legal page still needs an effective date."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.this_privacy_policy_explains_how_personal_information",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.appointment_details_preferred_date_and_time_reason",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.schedule_and_manage_appointments",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment.",
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.send_messages_about_your_appointment",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.service_providers_including_digidr_as_the_technology",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.correct_or_update_your_data",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.ask_for_your_data_to_be_erased",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.withdraw_your_consent",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.privacy_policy.our_site_may_contain_links_to_third",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.terms_of_service_metadata.read_the_terms_of_service_for_the",
+      "checks": [
+        "Doctor-name placeholder restored after machine translation. Check the surrounding wording."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.terms_of_service.effective_date_insert_date",
+      "checks": [
+        "The English legal page still needs an effective date."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.terms_of_service.this_website_is_intended_to_provide_general",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.terms_of_service.4_appointment_requests",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.terms_of_service.this_website_may_use_third_party_services",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.chatbot.hello_i_can_help_with_medical_services",
+      "checks": [
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.chatbot.close_chat",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.chatbot.type_your_message_2",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "locales.chatbot.ask_doctor",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "content.about.doctor_name_is_a_general_physician_offering",
+      "checks": [
+        "Check that 'practice' means the doctor's clinic or work in this context.",
+        "Check that the Odia wording means a consultation appointment."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "content.philosophy.listen_with_care",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "content.philosophy.explain_the_choices",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    },
+    {
+      "language": "or",
+      "field": "content.philosophy.review_together",
+      "checks": [
+        "Check trailing punctuation on this short label."
+      ]
+    }
+  ],
+  "unique_text_language_pairs": 670,
+  "verified_localized_entries": 728
+}

@@ -1,0 +1,20 @@
+{
+  "status": "DRAFT_REQUIRES_BILINGUAL_REVIEW",
+  "model": "sarvam-translate:v1",
+  "language": "bn",
+  "source_fields": 367,
+  "unique_english_strings": 338,
+  "translation_api_requests": 338,
+  "http_responses": {
+    "200": 338
+  },
+  "manual_display_fields": 5,
+  "checks": [
+    {
+      "field": "locales.terms_of_service.to_the_extent_permitted_by_law_doctor",
+      "checks": [
+        "Ambiguous word 'incimedical' in English source."
+      ]
+    }
+  ]
+}
