@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-anika-khanna/
+Disallow: /dr-anika-khanna/privacy-policy.html
+Disallow: /dr-anika-khanna/terms-of-service.html
+Sitemap: https://digidr.app/dr-anika-khanna/sitemap.xml

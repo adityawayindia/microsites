@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-arun-nambiar/
+Disallow: /dr-arun-nambiar/privacy-policy.html
+Disallow: /dr-arun-nambiar/terms-of-service.html
+Sitemap: https://digidr.app/dr-arun-nambiar/sitemap.xml

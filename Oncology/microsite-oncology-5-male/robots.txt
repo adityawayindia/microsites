@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-samar-rege/
+Disallow: /dr-samar-rege/privacy-policy.html
+Disallow: /dr-samar-rege/terms-of-service.html
+Sitemap: https://digidr.app/dr-samar-rege/sitemap.xml

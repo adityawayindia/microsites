@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-imran-rahmani/
+Disallow: /dr-imran-rahmani/privacy-policy.html
+Disallow: /dr-imran-rahmani/terms-of-service.html
+Sitemap: https://digidr.app/dr-imran-rahmani/sitemap.xml

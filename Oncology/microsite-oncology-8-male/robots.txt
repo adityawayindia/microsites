@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-rahul-thakkar/
+Disallow: /dr-rahul-thakkar/privacy-policy.html
+Disallow: /dr-rahul-thakkar/terms-of-service.html
+Sitemap: https://digidr.app/dr-rahul-thakkar/sitemap.xml

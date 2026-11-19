@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-tarun-bose/
+Disallow: /dr-tarun-bose/privacy-policy.html
+Disallow: /dr-tarun-bose/terms-of-service.html
+Sitemap: https://digidr.app/dr-tarun-bose/sitemap.xml

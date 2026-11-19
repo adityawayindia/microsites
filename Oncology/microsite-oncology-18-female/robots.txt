@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-ketaki-mehta/
+Disallow: /dr-ketaki-mehta/privacy-policy.html
+Disallow: /dr-ketaki-mehta/terms-of-service.html
+Sitemap: https://digidr.app/dr-ketaki-mehta/sitemap.xml

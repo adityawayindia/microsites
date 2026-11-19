@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-faiz-siddiqi/
+Disallow: /dr-faiz-siddiqi/privacy-policy.html
+Disallow: /dr-faiz-siddiqi/terms-of-service.html
+Sitemap: https://digidr.app/dr-faiz-siddiqi/sitemap.xml

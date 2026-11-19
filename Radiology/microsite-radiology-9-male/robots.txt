@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-vivek-nanda/
+Disallow: /dr-vivek-nanda/privacy-policy.html
+Disallow: /dr-vivek-nanda/terms-of-service.html
+Sitemap: https://digidr.app/dr-vivek-nanda/sitemap.xml

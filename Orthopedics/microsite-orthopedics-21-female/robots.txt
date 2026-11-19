@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-tanvi-baruah/
+Disallow: /dr-tanvi-baruah/privacy-policy.html
+Disallow: /dr-tanvi-baruah/terms-of-service.html
+Sitemap: https://digidr.app/dr-tanvi-baruah/sitemap.xml

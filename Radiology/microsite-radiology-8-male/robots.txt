@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-ajay-ramdas/
+Disallow: /dr-ajay-ramdas/privacy-policy.html
+Disallow: /dr-ajay-ramdas/terms-of-service.html
+Sitemap: https://digidr.app/dr-ajay-ramdas/sitemap.xml

@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-arvind-jagtap/
+Disallow: /dr-arvind-jagtap/privacy-policy.html
+Disallow: /dr-arvind-jagtap/terms-of-service.html
+Sitemap: https://digidr.app/dr-arvind-jagtap/sitemap.xml

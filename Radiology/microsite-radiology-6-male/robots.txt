@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-nitin-wankhede/
+Disallow: /dr-nitin-wankhede/privacy-policy.html
+Disallow: /dr-nitin-wankhede/terms-of-service.html
+Sitemap: https://digidr.app/dr-nitin-wankhede/sitemap.xml

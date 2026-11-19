@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-saisha-kulkarni/
+Disallow: /dr-saisha-kulkarni/privacy-policy.html
+Disallow: /dr-saisha-kulkarni/terms-of-service.html
+Sitemap: https://digidr.app/dr-saisha-kulkarni/sitemap.xml

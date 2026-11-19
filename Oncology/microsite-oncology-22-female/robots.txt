@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-malavika-sen/
+Disallow: /dr-malavika-sen/privacy-policy.html
+Disallow: /dr-malavika-sen/terms-of-service.html
+Sitemap: https://digidr.app/dr-malavika-sen/sitemap.xml

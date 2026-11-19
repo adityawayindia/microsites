@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-eshan-wagle/
+Disallow: /dr-eshan-wagle/privacy-policy.html
+Disallow: /dr-eshan-wagle/terms-of-service.html
+Sitemap: https://digidr.app/dr-eshan-wagle/sitemap.xml

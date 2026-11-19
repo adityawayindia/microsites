@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-abhay-doshi/
+Disallow: /dr-abhay-doshi/privacy-policy.html
+Disallow: /dr-abhay-doshi/terms-of-service.html
+Sitemap: https://digidr.app/dr-abhay-doshi/sitemap.xml

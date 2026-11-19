@@ -1,0 +1,117 @@
+Radiology\microsite-radiology-4-male-param verification
+19 November 2026
+Dr. Arun Nambiar | Radiologist
+
+PASS in local Chrome with simulated backend responses.
+
+Individual-site results
+Header stress passed at 320, 375, 480, 768, 1024, 1200, 1201, 1240, 1440 and 1900 CSS pixels using the configured name, a long multiword name and a long unbroken surname. Text and header controls remained fully visible. The mobile menu opened and closed after link selection.
+37 appointment, navigation, upload, gallery, analytics, consent, chatbot and validation checks passed. Both online and clinic-mode submissions and confirmations were exercised.
+Three pages at 320, 375, 768 and 1440 CSS pixels. Checked page width, complete doctor name, responsive gallery dimensions, footer disclaimer, hero image, image loading and icon glyphs.
+Axe WCAG 2 A/AA and WCAG 2.1 AA found zero violations in sampled page, booking, consent and chat states. Screenshots of hero, philosophy, journey, chat, consent and booking confirmations captured for visual review.
+No JavaScript exceptions, failed asset requests or console errors in the layout and widget checks. Simulator exercised Facebook fallback cards and confirmed analytics dispatch.
+The same footer markup was found on all three pages. Legal wording was checked against AGENTS.md §41.
+4 booking endpoints and 12 submission form fields match the live microsite. Three AGENTS Appendix A.18 implementation blocks match verbatim.
+39 template configuration, banner schedule, mobile/desktop imagery, grid, long-content and chatbot checks passed. 6 Facebook SDK, fallback and carousel checks passed.
+
+Checklist evidence. Item numbers refer to verification.md. The source locations identify the implementation. Runtime scope is recorded above. Site 3 exercises the booking failure, unavailable-mode and empty-slot states in the shared booking implementation.
+
+Item | Status | Evidence | Finding
+1 | PASS (source inspection) | index.html:33 | Header uses the doctor portrait in the avatar frame.
+2 | PASS (local test) | script/index.js:1651 | The menu and section links passed navigation and Escape checks.
+3 | PASS (source inspection) | index.html:59 | Credentials, registration and language rows use the profile data. The template supports an optional fellowship.
+4 | PASS (local test) | script/index.js:1078 | The hero counters read their values from the displayed text. The practising year reaches the configured value.
+5 | PASS (source inspection) | index.html:59 | The hero contains the standard social links. Link activation is configurable in the parameterized version.
+6 | PASS (source inspection) | index.html:36 | The hero contains the doctor, specialty, profile details and booking action.
+6a | PASS (source inspection) | index.html:66 | The portrait frame and adjacent elements are visible in the mobile and desktop review images.
+7 | PASS (local test) | script/index.js:1710 | The biography expands and collapses with Read More.
+8 | PASS (shared implementation) | styles/style.css:81 | The responsive service grid uses the shared centering rules. Variable item counts are exercised in the parameterized version.
+9 | PASS (source inspection) | index.html:72 | The radiology service entries have headings and descriptions.
+10 | PASS (source inspection) | index.html:101 | The philosophy section pairs radiology imagery with three principles.
+11 | PASS (local test) | index.html:110 | The journey contains four steps. Measurements found no overlapping step markers or overflowing rows at the tested widths.
+12 | PASS (source inspection) | index.html:121 | The contact section provides the practice address, contact links and booking action.
+13 | PASS (local test) | index.html:126 | Three gallery images render at equal dimensions. Keyboard opening, arrow navigation and Escape passed.
+14 | PASS (local test) | script/index.js:1139 | The six FAQ entries allow one open answer at a time.
+15 | PASS (source inspection) | index.html:147 | The booking dialog includes the online-consultation information control.
+16 | PASS (local test) | script/index.js:550 | The information tooltip opens and passes the accessibility scan.
+17 | PASS (local test) | script/index.js:379 | Consent is scroll-gated. Dismissing the panel preserves fields and leaves consent unchecked.
+18 | PASS (source inspection) | styles/style.css:496 | The booking, tab, close and upload controls retain the reference styling.
+19 | PASS (source inspection) | index.html:152 | The delivered site uses the production booking endpoints. QA intercepts them outside the site.
+20 | PASS (source inspection) | index.html:228 | The consent notice includes the doctor and the required privacy wording.
+21 | PASS (local test) | script/index.js:51 | The international phone control loads, accepts a valid number and rejects the invalid phone fixture.
+22 | PASS (shared implementation) | script/index.js:1685 | The name input uses the shared Unicode validation handler.
+23 | PASS (local test) | script/index.js:1687 | Submission validation, permitted uploads and invalid file size/type were exercised. Date and slot logic matches the canonical booking blocks.
+24 | PASS (local test) | script/index.js:357 | Online and clinic bookings both reached their matching confirmations with the expected request fields.
+25 | PASS (shared implementation) | styles/style.css:932 | Booking and field controls were exercised at phone width. The independently tested reference uses the same booking blocks.
+26 | PASS (source inspection) | index.html:282 | The footer includes branding, navigation, legal links, visitor count, copyright and disclaimer.
+27 | PASS (local test) | index.html:282 | The footer HTML matches across all three pages of the variant.
+28 | PASS (local test) | styles/style.css:731 | The shared footer layout was checked as part of the four-width page measurements.
+28a | PASS (local test) | styles/style.css:808 | The computed footer disclaimer size is 14px on all pages at the tested widths.
+29 | PASS (source inspection) | index.html:282 | The footer omits image credits. Asset provenance is in assets/IMAGE-SOURCES.txt.
+29a | PASS (local test) | index.html:330 | The visitor counter calls the configured API. QA supplies a synthetic counter response.
+30 | PASS (local test) | styles/chatbot.css:197 | The compact chatbot renders on phone and desktop. Its mobile window dimensions were measured.
+30a | PASS (local test) | script/chatbot.js:46 | The chatbot DOM contains no suggestions container.
+31 | PASS (source inspection) | script/chatbot.js:74 | The chatbot footer includes the informational-use and consult-your-doctor notice.
+32 | PASS (local test) | script/chatbot.js:167 | The chat window opens, accepts an entered message and displays the fixture reply.
+33 | PASS (local test) | script/chatbot.js:7 | The configured backend request and reply rendering were exercised with a synthetic reply.
+34 | PASS (local test) | privacy-policy.html:37 | The legal pages were compared with the prescribed AGENTS.md section 41 wording.
+35 | PASS (local test) | privacy-policy.html:35 | Both legal pages include the Back to Home control.
+36 | PASS (local test) | index.html:1; styles/style.css:1; script/index.js:1 | The main and legal pages load with their referenced scripts, styles and images.
+37 | PASS (local test) | index.html:35 | The required home sections exist in the source and initialize in Chrome.
+38 | PASS (source inspection) | robots.txt:1; sitemap.xml:1; llms.txt:1 | The local robots, sitemap and LLM discovery files contain the site metadata.
+39 | PASS (source inspection) | index.html:35 | The navigation and section structure follow the project specification.
+40 | PASS (source inspection) | index.html:5 | The Radiology profile and practice are illustrative. The image-source record identifies the doctor, images and generation prompts.
+41 | PASS (source inspection) | index.html:71 | Doctor name, specialty, profile assets and services follow the selected site configuration.
+42 | PASS (source inspection) | assets/IMAGE-SOURCES.txt:1 | The clinical copy uses the radiology consultation focus and the repository FAQ source.
+42a | PASS (source inspection) | index.html:71 | The consultation content follows the project restrictions on unverified promotional claims.
+42b | PASS (source inspection) | index.html:58 | The hero role describes the specialty.
+43 | PASS (source inspection) | styles/style.css:1 | The site declares neutral, brand and interactive color roles.
+44 | PASS (local test) | styles/style.css:1 | Axe found no violations in the tested page and widget states, including color contrast.
+45 | PASS (source inspection) | styles/style.css:931 | Section backgrounds and spacing are defined in the site theme.
+46 | PASS (source inspection) | styles/style.css:930 | The main and legal pages use the site container and shared footer structure.
+47 | PASS (source inspection) | styles/style.css:929 | Site text uses project typography. The footer disclaimer has its documented exception.
+48 | PASS (source inspection) | styles/style.css:936 | Cards and consultation steps expose headings separately from descriptions.
+49 | PASS (source inspection) | styles/style.css:950 | The style sheet includes focus styles and reduced-motion rules.
+50 | PASS (local test) | styles/style.css:948 | The three pages fit 320, 375, 768 and 1440px with loaded images and icon glyphs.
+51 | PASS (local test) | styles/style.css:62 | The configured name, a long multiword name and a long unbroken surname remained fully visible at every tested header width.
+52 | PASS (local test) | styles/style.css:947 | Mobile menu, booking, consent, gallery and chat were exercised at phone width.
+53 | PASS (source inspection) | assets/IMAGE-SOURCES.txt:1 | Bundled images load successfully. Below-the-fold images have dimensions and lazy-loading behavior.
+53a | PASS (source inspection) | assets/IMAGE-SOURCES.txt:1 | The asset provenance identifies the doctor portrait and the people-free radiology still lifes.
+54 | PASS (source inspection) | styles/style.css:20 | Responsive styles permit wrapping and shrinking of content without measured horizontal overflow.
+55 | PASS (source inspection) | index.html:5 | The pages have titles and metadata. Chrome found one H1 on each, and the homepage contains physician metadata.
+56 | PASS (local test) | index.html:32 | Keyboard interactions were exercised. Axe checked the pages, booking, consent and chat states.
+57 | PASS (local test) | index.html:24 | No uncaught JavaScript errors or failed assets were recorded in the browser checks with test integrations.
+57a | PASS (local test) | index.html:24 | The sampled pages loaded real fonts and icon styles, with no missing icon glyphs recorded.
+58 | PASS (source inspection) | index.html:1 | The numbered folder and gender suffix follow the existing Radiology scheme.
+59 | PASS (source inspection) | verification-report.txt:1 | Verification reads the site and writes browser evidence to a temporary directory.
+E1–E5 | PASS (local fixtures) | index.html, script/index.js | The source displays fallback posts with the fixture feed. The parameterized pair checks the loaded SDK, blocked SDK and carousel navigation.
+S1–S5 | PASS (local events) | script/analytics.js, layout-and-widgets.json, functional.json | GA4 and Clarity receive the expected local events. Booking analytics exclude patient-entered data.
+Live booking, messaging, analytics and Facebook services | UNVERIFIED (production) | External services | Local tests used synthetic responses.
+
+Analytics event observations
+nav_link_click | GA4 1 | Clarity 1
+nav_link_click | GA4 1 | Clarity 1
+nav_link_click | GA4 1 | Clarity 1
+nav_link_click | GA4 1 | Clarity 1
+nav_link_click | GA4 1 | Clarity 1
+book_appointment_click | GA4 1 | Clarity 1
+book_appointment_click | GA4 1 | Clarity 1
+read_more_click | GA4 1 | Clarity 1
+phone_number_click | GA4 1 | Clarity 1
+email_click | GA4 1 | Clarity 1
+book_appointment_click | GA4 1 | Clarity 1
+clinic_visit_tab_click | GA4 1 | Clarity 1
+online_consult_tab_click | GA4 1 | Clarity 1
+upload_report_click | GA4 1 | Clarity 1
+footer_nav_link_click | GA4 1 | Clarity 1
+footer_nav_link_click | GA4 1 | Clarity 1
+footer_nav_link_click | GA4 1 | Clarity 1
+footer_nav_link_click | GA4 1 | Clarity 1
+footer_nav_link_click | GA4 1 | Clarity 1
+footer_nav_link_click | GA4 1 | Clarity 1
+footer_nav_link_click | GA4 1 | Clarity 1
+
+Limitations
+APIs for booking, chat, Facebook, analytics and traffic were exercised with synthetic data. Production persistence, email, real meet links, Facebook content, chatbot answers, bucket deployment and analytics collection require live account configuration. Lighthouse was not run.
+Original image provenance is recorded in assets/IMAGE-SOURCES.txt.
+Local test evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-rad40-qa\4\param
