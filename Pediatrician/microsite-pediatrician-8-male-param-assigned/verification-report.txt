@@ -1,4 +1,4 @@
-DigiDr verification - Pediatrician/microsite-pediatrician-8-male-param
+DigiDr verification - Pediatrician/microsite-pediatrician-8-male-param-assigned
 14 November 2026
 Dr. Arjun Sinha - male pediatrician
 PASS: local implementation and fixture-backed integrations. Production service delivery UNVERIFIED.
