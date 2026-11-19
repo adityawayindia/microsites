@@ -16,7 +16,7 @@ window.scrollTo(0, 0);
 // writing a hash into the URL (which would otherwise persist across refresh).
 document.addEventListener("click", (event) => {
   const link = event.target.closest('a[href^="#"]');
-  if (!link) return;
+  if (!link || link.closest(".site-header")) return;
 
   const hash = link.getAttribute("href");
   if (!hash || hash === "#") return;
@@ -28,47 +28,59 @@ document.addEventListener("click", (event) => {
   targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+const siteHeader = document.querySelector(".site-header");
 
-if (menuToggle && mainNav) {
+if (siteHeader) {
+  const menuToggle = siteHeader.querySelector("#menuToggle");
+  const mainNav = siteHeader.querySelector("#mainNav");
+
+  function setMenuOpen(open) {
+    mainNav.classList.toggle("open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+  }
+
   menuToggle.addEventListener("click", () => {
-    const isOpen = mainNav.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    const open = !mainNav.classList.contains("open");
+    setMenuOpen(open);
+    if (open) mainNav.querySelector("a").focus({ preventScroll: true });
+  });
+
+  siteHeader.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mainNav.classList.contains("open")) {
+      setMenuOpen(false);
+      menuToggle.focus();
+    }
   });
 
   document.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof Node)) return;
-
-    const clickedInsideNav = mainNav.contains(target);
-    const clickedToggle = menuToggle.contains(target);
-
-    if (!clickedInsideNav && !clickedToggle && mainNav.classList.contains("open")) {
-      mainNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    }
+    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) setMenuOpen(false);
   });
-}
 
-// In-page anchor links: smooth-scroll without writing #section to the address bar,
-// and close the mobile menu once a nav link is chosen.
-document.addEventListener("click", (event) => {
-    const link = event.target instanceof Element ? event.target.closest('a[href^="#"]') : null;
-    if (!link) return;
-    const hash = link.getAttribute("href");
-    if (!hash || hash.length < 2) return;
-    let section = null;
-    try { section = document.querySelector(hash); } catch (e) { return; }
-    if (!section) return;
+  siteHeader.addEventListener("focusout", (event) => {
+    if (!siteHeader.contains(event.relatedTarget)) setMenuOpen(false);
+  });
+
+  siteHeader.addEventListener("click", (event) => {
+    const link = event.target.closest(".brand, .nav-links a");
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+
+    const isBrand = link.classList.contains("brand");
+    const section = isBrand ? null : document.getElementById(link.hash.slice(1));
+    if (!isBrand && !section) return;
 
     event.preventDefault();
-    if (menuToggle && mainNav && mainNav.classList.contains("open")) {
-        mainNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-    }
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
-});
+    if (mainNav.classList.contains("open")) menuToggle.focus({ preventScroll: true });
+    setMenuOpen(false);
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    const top = section ? window.scrollY + section.getBoundingClientRect().top - siteHeader.offsetHeight : 0;
+    window.scrollTo({ top, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  });
+
+  new ResizeObserver(() => {
+    siteHeader.style.setProperty("--header-height", siteHeader.offsetHeight + "px");
+    if (!menuToggle.getClientRects().length) setMenuOpen(false);
+  }).observe(siteHeader);
+}
 
 // DigiDr Stat Counter
 (function () {

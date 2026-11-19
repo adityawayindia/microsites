@@ -118,16 +118,6 @@ aside {
 }
 
 
-.site-header {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(159,18,57, 0.12);
-  box-shadow: 0 4px 18px rgba(60,8,25, 0.06);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
 /* Offset anchored sections for sticky header */
 .about-section,
 .services-section,
@@ -144,79 +134,221 @@ aside {
   margin: 0 auto;
 }
 
-.navbar {
-  min-height: 82px;
+/* General Medicine header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background: var(--white);
+  border-bottom: 1px solid var(--button-light);
+  box-shadow: 0 2px 20px hsla(344, 45%, 25%, .08);
+}
+
+/* The site's fixed dialogs and lightbox have their own stacking levels. */
+body:has(.booking-modal.is-open, .gallery-lightbox.is-open) > .site-header {
+  z-index: 50;
+}
+
+.site-header .navbar {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
+  min-height: 78px;
+  padding-block: 10px;
 }
 
-.brand {
-  display: inline-flex;
+.site-header .brand {
+  display: flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: inherit;
+  gap: 12px;
   min-width: 0;
+  text-decoration: none;
 }
 
-.avatar {
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
+.site-header .avatar {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border: 2px solid var(--button);
   border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  border: 2px solid rgba(159,18,57, 0.28);
+  background: var(--accent-soft);
 }
 
-.avatar img {
+.site-header .avatar img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.brand-name {
+.site-header .brand-text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  line-height: 1.35;
   white-space: normal;
   overflow-wrap: anywhere;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  word-break: normal;
+}
+
+.site-header .brand-name {
+  color: var(--button);
+  font-size: 18px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.site-header .brand-role {
+  color: var(--muted);
+  font-size: 18px;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.site-header .nav-links {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.site-header .nav-links a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--text);
   font-size: 18px;
   font-weight: 600;
-}
-
-.brand-role {
-  font-size: 18px;
-  color: var(--muted);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 38px;
-  margin-left: auto;
-  margin-right: 30px;
-}
-
-.nav-links a {
+  line-height: 1.5;
   text-decoration: none;
-  color: #32343a;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
-.nav-links a:hover {
+.site-header .nav-links a:is(:hover, :focus-visible) {
+  background: var(--accent-soft);
   color: var(--button);
+}
+
+/* A hidden booking button leaves the desktop navigation flush right. */
+.site-header .nav-actions {
+  display: contents;
+}
+
+.site-header .cta-btn {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  border: 0;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.site-header .cta-btn span { color: var(--white); }
+.site-header .cta-btn[hidden],
+.site-header .cta-text-mobile,
+.site-header .menu-toggle { display: none; }
+
+.site-header :is(a, button):focus-visible {
+  outline: 2px solid var(--button);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1200px) {
+  .site-header .navbar {
+    min-height: 60px;
+    gap: 12px;
+    padding: 8px 16px;
+  }
+
+  .site-header .brand { flex: 1; gap: 8px; }
+  .site-header .brand-name { font-size: 17px; }
+  .site-header .brand-role { font-size: 15px; }
+
+  .site-header .nav-actions {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-header .cta-btn {
+    min-height: 38px;
+    padding: 9px 16px;
+    font-size: 15px;
+  }
+
+  .site-header .cta-text-desktop { display: none; }
+  .site-header .cta-text-mobile { display: inline; }
+
+  .site-header .menu-toggle {
+    display: flex;
+    width: 38px;
+    height: 38px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px;
+    border: 1px solid var(--button-light);
+    border-radius: 12px;
+    color: var(--button);
+    background: var(--accent-soft);
+    cursor: pointer;
+  }
+
+  .site-header .menu-toggle span {
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+
+  .site-header .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+  .site-header .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .site-header .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
+
+  .site-header .nav-links {
+    display: none;
+    position: absolute;
+    inset: 100% 0 auto;
+    max-height: calc(100dvh - var(--header-height, 78px));
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    margin-left: 0;
+    padding: 8px;
+    background: var(--white);
+    border: 1px solid var(--button-light);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 12px 24px hsla(344, 45%, 25%, .12);
+  }
+
+  .site-header .nav-links.open { display: flex; }
+}
+
+@media (max-width: 640px) {
+  .site-header .navbar { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .site-header .navbar { gap: 8px; }
+  .site-header .brand-name { font-size: 16px; }
+  .site-header .brand-role { font-size: 14px; }
+  .site-header .cta-btn { padding: 8px 12px; font-size: 13px; }
+}
+
+@media (max-width: 360px) {
+  .site-header .brand-role { display: none; }
+  .site-header .cta-btn { padding: 8px 10px; }
 }
 
 .cta-btn {
@@ -236,37 +368,10 @@ aside {
   display: none;
 }
 
-.cta-text-mobile {
-  display: none;
-}
-.cta-text-desktop {
-  display: inline;
-}
-
 .cta-btn:hover {
   background: var(--button-hover);
   transform: translateY(-1px);
   box-shadow: 0 12px 24px rgba(159,18,57, 0.28);
-}
-
-.menu-toggle {
-  display: none;
-  width: 42px;
-  height: 42px;
-  border: 1px solid #e1e1e1;
-  background: var(--white);
-  border-radius: 8px;
-  padding: 9px 8px;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  display: block;
-  height: 2px;
-  width: 100%;
-  background: #333;
-  margin: 5px 0;
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .hero-section {
@@ -4778,15 +4883,6 @@ body {
     linear-gradient(180deg, #ffffff 0%, var(--bg) 40%, #faf2ee 100%);
 }
 
-.site-header {
-  border-bottom: 1px solid rgba(127,15,46, 0.1);
-  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.02);
-}
-
-.avatar {
-  border-color: rgba(127,15,46, 0.25);
-}
-
 /* 1. Hero Layout Swap & Clinical Pulse Circle */
 .hero-section {
   padding: 38px 0 46px;
@@ -6615,50 +6711,8 @@ select {
   transform: rotate(180deg);
 }
 
-/* ==========================================================================
-   DigiDr Compact Mobile Header
-   Single row: [menu] [name/role] [Appointment].
-   ========================================================================== */
 @media (max-width: 1200px) {
-  .navbar {
-    min-height: 60px;
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .navbar-actions { display: contents; }
-
-  .menu-toggle {
-    display: flex !important;
-    flex-direction: column;
-    order: -1;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    padding: 7px;
-    box-sizing: border-box;
-  }
-  .menu-toggle span { width: 22px; margin: 2px 0; }
-
-  .brand {
-    order: 1;
-    flex: 1 1 auto;
-    min-width: 0;
-    justify-content: flex-start;
-    gap: 8px;
-  }
-
-  .cta-btn {
+  .contact-cta-wrap .cta-btn {
     order: 2;
     flex: 0 0 auto;
     display: inline-flex;
@@ -6670,92 +6724,14 @@ select {
     box-sizing: border-box;
     white-space: nowrap;
   }
-  .cta-btn span { font-size: 15px; }
-  .navbar .cta-btn { margin-left: auto; }
-  .cta-text-desktop { display: none; }
-  .cta-text-mobile { display: inline; }
-
-  .brand-text { display: block; min-width: 0; }
-
-  .site-header .brand-name,
-  .site-header .brand-role {
-    text-align: left;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    word-break: normal;
-    overflow-wrap: anywhere;
-  }
-
-  .site-header .brand-name {
-    display: block;
-    white-space: normal;
-    font-size: 17px !important;
-    line-height: 1.25;
-  }
-
-  .site-header .brand-role {
-    display: block;
-    white-space: normal;
-    font-size: 15px !important;
-    line-height: 1.25;
-  }
-
-  .site-header .avatar { display: none; }
-
-  .nav-links {
-    position: absolute;
-    top: calc(100% + 6px);
-    left: 0;
-    right: 0;
-    z-index: 60;
-    background: #ffffff;
-    border: 1px solid #ececec;
-    border-radius: 12px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: 10px 0;
-    margin: 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-
-  .nav-links a {
-    width: 100%;
-    padding: 12px 16px;
-  }
-
-  .nav-links a:hover {
-    background: #f6f6f6;
-  }
-
-  .nav-links.open {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
 }
 
 @media (max-width: 480px) {
-  .navbar { gap: 8px; }
-
-  .site-header .brand-name { font-size: 16px !important; }
-  .site-header .brand-role { font-size: 14px !important; }
-
-  .cta-btn,
-  .cta-btn span { font-size: 13px !important; }
-
-  .cta-btn { padding: 8px 12px; }
+  .contact-cta-wrap .cta-btn { padding: 8px 12px; font-size: 13px !important; }
 }
 
-/* Very narrow phones: drop the role line, keep name + CTA */
 @media (max-width: 360px) {
-  .site-header .brand-role { display: none; }
-  .cta-btn { padding: 8px 10px; }
+  .contact-cta-wrap .cta-btn { padding: 8px 10px; }
 }
 
 /* ============================================================
