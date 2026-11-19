@@ -1,23 +1,16 @@
 const API_BASE = "https://digidrapi.digidr.app";
 //const API_BASE = "https://localhost:7088";
 
-function initVerificationBanner() {
+async function initVerificationBanner() {
     const form = document.getElementById("raysVerifyForm");
-    if (!form) return;
+    if (!form || !(await raysNeedsVerification)) return;
 
     const strip = form.closest(".rays-top-strip");
     const status = strip.querySelector(".rays-top-strip__status");
     const email = form.elements.namedItem("Email");
     const button = form.querySelector("button");
     const buttonLabel = button.querySelector("span");
-    const doctorId = form.dataset.userid.trim();
-    const storageKey = `rays-medical:verified:${doctorId}`;
-    try {
-        if (localStorage.getItem(storageKey) === "true") {
-            strip.hidden = true;
-            return;
-        }
-    } catch { /* The banner also works when browser storage is unavailable. */ }
+    strip.hidden = false;
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -30,20 +23,13 @@ function initVerificationBanner() {
             email.focus();
             return;
         }
-        if (!/^\d+$/.test(doctorId) || Number(doctorId) < 1) {
-            status.textContent = "Verification is unavailable for this profile.";
-            return;
-        }
-
         const body = new FormData(form);
         button.disabled = true;
         email.readOnly = true;
         buttonLabel.textContent = "Verifying…";
         status.textContent = "";
         try {
-            const url = new URL("/api/AdminOnbording", API_BASE);
-            url.searchParams.set("doctorUserId", doctorId);
-            const response = await fetch(url, { method: "PATCH", body });
+            const response = await fetch(raysVerificationUrl, { method: "PATCH", body });
             const result = await response.json();
             const message = typeof result?.message === "string" ? result.message.trim() : "";
             if (!response.ok || result?.isVerified !== true) {
@@ -52,9 +38,6 @@ function initVerificationBanner() {
             }
 
             form.hidden = true;
-            try {
-                localStorage.setItem(storageKey, "true");
-            } catch { /* Keep the verified state for this visit. */ }
             if (result.alreadyVerified === true || !message) {
                 strip.hidden = true;
                 return;
