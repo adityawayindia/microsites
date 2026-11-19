@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-tanmay-korde/
+Disallow: /dr-tanmay-korde/privacy-policy.html
+Disallow: /dr-tanmay-korde/terms-of-service.html
+Sitemap: https://digidr.app/dr-tanmay-korde/sitemap.xml

@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-kiran-sadanand/
+Disallow: /dr-kiran-sadanand/privacy-policy.html
+Disallow: /dr-kiran-sadanand/terms-of-service.html
+Sitemap: https://digidr.app/dr-kiran-sadanand/sitemap.xml

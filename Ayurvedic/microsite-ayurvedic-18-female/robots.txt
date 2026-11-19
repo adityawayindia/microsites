@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-reva-kulshreshtha/
+Disallow: /dr-reva-kulshreshtha/privacy-policy.html
+Disallow: /dr-reva-kulshreshtha/terms-of-service.html
+Sitemap: https://digidr.app/dr-reva-kulshreshtha/sitemap.xml

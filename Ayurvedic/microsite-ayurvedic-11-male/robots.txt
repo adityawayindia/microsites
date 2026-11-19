@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-shreyas-mhatre/
+Disallow: /dr-shreyas-mhatre/privacy-policy.html
+Disallow: /dr-shreyas-mhatre/terms-of-service.html
+Sitemap: https://digidr.app/dr-shreyas-mhatre/sitemap.xml
