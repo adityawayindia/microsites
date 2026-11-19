@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-prakash-tamhane/
+Disallow: /dr-prakash-tamhane/privacy-policy.html
+Disallow: /dr-prakash-tamhane/terms-of-service.html
+Sitemap: https://digidr.app/dr-prakash-tamhane/sitemap.xml

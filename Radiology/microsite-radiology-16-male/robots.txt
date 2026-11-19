@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-armaan-bahl/
+Disallow: /dr-armaan-bahl/privacy-policy.html
+Disallow: /dr-armaan-bahl/terms-of-service.html
+Sitemap: https://digidr.app/dr-armaan-bahl/sitemap.xml

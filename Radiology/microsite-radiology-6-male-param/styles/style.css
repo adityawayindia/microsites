@@ -1013,7 +1013,7 @@ h1,h2{font-weight:700}.hero-section{background:var(--bg);isolation:isolate}.hero
 .hero-backdrop { width:46%; inset-block:18px; border-radius:44% 44% 12px 12px; }
 .hero-content h1 { max-width:18ch; } .hero-stat-box { border:0; background:white; border-radius:24px 6px; }
 .hero-portrait { width:min(65%,245px); border-radius:50% 50% 26px 26px; outline:4px solid var(--brand-light); outline-offset:2px; }
-.hero-visual { justify-content:flex-end; align-items:flex-end; }
+.hero-visual { justify-content:flex-start; align-items:flex-end; }
   }
   @media (max-width: 1100px) {
     .hero-content { max-width: 100%; }

@@ -1013,10 +1013,10 @@ h1,h2{font-weight:700}.hero-section{background:var(--bg);isolation:isolate}.hero
 .hero-content h1, .hero-content :is(.hero-credentials,.languages,.hero-reg) { color: white; }
 .hero-content :is(.hero-credentials,.languages,.hero-reg) i { color: var(--brand-light); }
 .hero-role { background:var(--surface); color:var(--brand-dark); }
-.hero-backdrop { width:67%; inset-block:0; } .hero-section .hero-backdrop::after { background:linear-gradient(to right,var(--brand-dark) 0%,transparent 52%); }
+.hero-backdrop { width:50%; inset-block:0; } .hero-section .hero-backdrop::after { background:linear-gradient(to right,var(--brand-dark) 0%,transparent 18%); }
 .hero-stat-box { border:0; border-radius:3px 20px 3px 3px; }
 .hero-portrait { width:min(67%,285px); border:3px solid var(--surface); box-shadow:8px 8px 0 var(--brand); border-radius:8px; outline:0; }
-.hero-visual { justify-content:flex-end; align-items:flex-end; }
+.hero-visual { justify-content:flex-start; align-items:flex-end; }
   }
   @media (max-width: 1100px) {
     .hero-content { max-width: 100%; }

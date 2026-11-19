@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-shaan-suri/
+Disallow: /dr-shaan-suri/privacy-policy.html
+Disallow: /dr-shaan-suri/terms-of-service.html
+Sitemap: https://digidr.app/dr-shaan-suri/sitemap.xml

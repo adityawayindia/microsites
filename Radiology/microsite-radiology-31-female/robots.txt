@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-rehana-basu/
+Disallow: /dr-rehana-basu/privacy-policy.html
+Disallow: /dr-rehana-basu/terms-of-service.html
+Sitemap: https://digidr.app/dr-rehana-basu/sitemap.xml

@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-ela-vora/
+Disallow: /dr-ela-vora/privacy-policy.html
+Disallow: /dr-ela-vora/terms-of-service.html
+Sitemap: https://digidr.app/dr-ela-vora/sitemap.xml

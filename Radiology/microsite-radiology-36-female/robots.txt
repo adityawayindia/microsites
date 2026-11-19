@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-priyanka-mathur/
+Disallow: /dr-priyanka-mathur/privacy-policy.html
+Disallow: /dr-priyanka-mathur/terms-of-service.html
+Sitemap: https://digidr.app/dr-priyanka-mathur/sitemap.xml

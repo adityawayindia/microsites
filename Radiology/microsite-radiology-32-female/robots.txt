@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-deepika-srinivas/
+Disallow: /dr-deepika-srinivas/privacy-policy.html
+Disallow: /dr-deepika-srinivas/terms-of-service.html
+Sitemap: https://digidr.app/dr-deepika-srinivas/sitemap.xml

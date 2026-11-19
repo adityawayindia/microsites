@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-radhika-nair/
+Disallow: /dr-radhika-nair/privacy-policy.html
+Disallow: /dr-radhika-nair/terms-of-service.html
+Sitemap: https://digidr.app/dr-radhika-nair/sitemap.xml

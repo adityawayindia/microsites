@@ -89,27 +89,28 @@ S1–S5 | PASS (local events) | script/analytics.js, layout-and-widgets.json, fu
 Live booking, messaging, analytics and Facebook services | UNVERIFIED (production) | External services | Local tests used synthetic responses.
 
 Analytics event observations
-nav_link_click | GA4 1 | Clarity 1
-nav_link_click | GA4 1 | Clarity 1
-nav_link_click | GA4 1 | Clarity 1
-nav_link_click | GA4 1 | Clarity 1
-nav_link_click | GA4 1 | Clarity 1
-book_appointment_click | GA4 1 | Clarity 1
-book_appointment_click | GA4 1 | Clarity 1
-read_more_click | GA4 1 | Clarity 1
-phone_number_click | GA4 1 | Clarity 1
-email_click | GA4 1 | Clarity 1
-book_appointment_click | GA4 1 | Clarity 1
-clinic_visit_tab_click | GA4 1 | Clarity 1
-online_consult_tab_click | GA4 1 | Clarity 1
-upload_report_click | GA4 1 | Clarity 1
-footer_nav_link_click | GA4 1 | Clarity 1
-footer_nav_link_click | GA4 1 | Clarity 1
-footer_nav_link_click | GA4 1 | Clarity 1
-footer_nav_link_click | GA4 1 | Clarity 1
-footer_nav_link_click | GA4 1 | Clarity 1
-footer_nav_link_click | GA4 1 | Clarity 1
-footer_nav_link_click | GA4 1 | Clarity 1
+Event | Trigger | Found in code | Fired at runtime | Notes
+nav_link_click | Navigation link | index.html:34 | Yes | 5 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+book_appointment_click | Booking CTA | index.html:34 | Yes | 3 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+hero_social_link_click | Hero social link | index.html:59 | Yes | 8 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+read_more_click | Read More control | index.html:69 | Yes | 1 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+phone_number_click | Contact telephone | index.html:124 | Yes | 1 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+email_click | Contact email | index.html:124 | Yes | 1 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+clinic_visit_tab_click | Clinic consultation tab | index.html:146 | Yes | 1 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+online_consult_tab_click | Online consultation tab | index.html:147 | Yes | 1 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+upload_report_click | Upload report button | index.html:218 | Yes | 1 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+footer_nav_link_click | Footer navigation | index.html:312 | Yes | 7 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+footer_social_link_click | Footer social link | index.html:297 | Yes | 8 controls checked. One GA4 and one Clarity event per click, with GA4 label and matching page path.
+consent_checkbox_click | Uncheck consent after agreement | script/index.js:263 | Yes | A genuine checkbox change fired once in both local analytics queues.
+consent_modal_open | Open consent notice | script/index.js:443 | Yes | Recorded in the test booking flow. The shared event function routes it to GA4 and Clarity.
+consent_scrolled_to_bottom | Scroll to the end of consent | script/index.js:414 | Yes | Recorded in the test booking flow. The shared event function routes it to GA4 and Clarity.
+consent_agreed | Accept the consent notice | script/index.js:453 | Yes | Recorded in the test booking flow. The shared event function routes it to GA4 and Clarity.
+consent_dismissed | Close consent without agreeing | script/index.js:453 | Yes | Recorded in the test booking flow. The shared event function routes it to GA4 and Clarity.
+report_uploaded | Choose a valid report file | script/index.js:642 | Yes | Recorded in the test booking flow. The shared event function routes it to GA4 and Clarity.
+booking_submitted | Submit an online or clinic appointment | script/index.js:1213 | Yes | Both test submissions dispatched GA4 success once each. The shared event function also routes this event to Clarity.
+All expected S2/S3 event names were observed.
+Unexpected events in the tested controls and booking flow: none. Delivery to live analytics accounts was outside the local test.
+Evidence: analytics-supplement.json, functional.json and script/analytics.js.
 
 Limitations
 APIs for booking, chat, Facebook, analytics and traffic were exercised with synthetic data. Production persistence, email, real meet links, Facebook content, chatbot answers, bucket deployment and analytics collection require live account configuration. Lighthouse was not run.

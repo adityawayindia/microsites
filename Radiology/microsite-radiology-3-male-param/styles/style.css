@@ -1014,7 +1014,7 @@ h1,h2{font-weight:700}.hero-section{background:var(--bg);isolation:isolate}.hero
 .hero-content :is(.hero-credentials,.languages,.hero-reg) i { color: var(--brand-light); }
 .hero-role { background:var(--surface); color:var(--brand-dark); }
 .hero-stat-box { background:var(--surface); border:0; border-radius:4px; box-shadow:none; }
-.hero-backdrop { width:52%; inset-block:0; border-left:5px solid var(--brand-light); clip-path:ellipse(100% 110% at 100% 53%); }
+.hero-backdrop { width:46%; inset-block:0; border-left:5px solid var(--brand-light); clip-path:ellipse(100% 110% at 100% 53%); }
 .hero-portrait { width:min(66%,270px); border-radius:46% 46% 14px 14px; border:6px solid var(--surface); outline:0; }
 .hero-visual { justify-content:flex-start; align-items:flex-end; }
   }

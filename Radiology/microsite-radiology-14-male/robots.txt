@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-keshav-mantri/
+Disallow: /dr-keshav-mantri/privacy-policy.html
+Disallow: /dr-keshav-mantri/terms-of-service.html
+Sitemap: https://digidr.app/dr-keshav-mantri/sitemap.xml
