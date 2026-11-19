@@ -1,3 +1,16 @@
+document.getElementById("raysVerifyForm")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const email = form.querySelector(".rays-top-strip__email");
+    const button = form.querySelector(".rays-top-strip__action");
+    form.querySelector(".rays-top-strip__message").hidden = true;
+    email.hidden = false;
+    email.disabled = false;
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-label", "Verify site (opens in a new tab)");
+    email.focus();
+}, { once: true });
+
 const API_BASE = "https://digidrapi.digidr.app";
 //const API_BASE = "https://localhost:7088";
 async function compressImage(file) {
