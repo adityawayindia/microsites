@@ -1,5 +1,69 @@
 const API_BASE = "https://digidrapi.digidr.app";
 //const API_BASE = "https://localhost:7088";
+
+// Connect the verification form after the status check in the page head completes.
+async function initVerificationBanner() {
+    const form = document.getElementById("raysVerifyForm");
+    if (!form || !(await raysNeedsVerification)) return;
+
+    const strip = form.closest(".rays-top-strip");
+    const status = strip.querySelector(".rays-top-strip__status");
+    const email = form.elements.namedItem("Email");
+    const button = form.querySelector("button");
+    const buttonLabel = button.querySelector("span");
+    strip.hidden = false;
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (button.disabled || form.hidden) return;
+        // The first click opens the email field. The next valid submission sends the PATCH.
+        if (email.hidden) {
+            form.querySelector(".rays-top-strip__message").hidden = true;
+            email.hidden = false;
+            email.disabled = false;
+            button.setAttribute("aria-expanded", "true");
+            email.focus();
+            return;
+        }
+        const body = new FormData(form);
+        button.disabled = true;
+        email.readOnly = true;
+        buttonLabel.textContent = "Verifying…";
+        status.textContent = "";
+        try {
+            const response = await fetch(raysVerificationUrl, { method: "PATCH", body });
+            const result = await response.json();
+            const message = typeof result?.message === "string" ? result.message.trim() : "";
+            if (!response.ok || result?.isVerified !== true) {
+                status.textContent = message || "Verification was unsuccessful. Please try again.";
+                return;
+            }
+
+            // Only a newly verified profile gets the four-second confirmation.
+            form.hidden = true;
+            if (result.alreadyVerified === true || !message) {
+                strip.hidden = true;
+                return;
+            }
+            status.textContent = message;
+            window.setTimeout(async () => {
+                if (strip.animate && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    await strip.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 250, easing: "ease-out", fill: "forwards" }).finished;
+                }
+                strip.hidden = true;
+            }, 4000);
+        } catch {
+            status.textContent = "Verification could not be completed. Please try again.";
+        } finally {
+            email.readOnly = false;
+            button.disabled = false;
+            buttonLabel.textContent = "Verify";
+        }
+    });
+}
+
+initVerificationBanner();
+
 async function compressImage(file) {
 
     console.log("compressImage started");
