@@ -10,6 +10,8 @@
 /* Email entry and the inline API response. */
 .rays-top-strip__email{box-sizing:border-box;width:20em;min-width:0;min-height:36px;padding:4px 12px;border:1px solid #e1d5f6;border-radius:10px;background:#fff;color:#301e4b;font:400 16px/1.4 var(--font-body),sans-serif}
 .rays-top-strip__email::placeholder{color:#61586d}
+/* The sticky email field already sits in view. Skip the header offset while typing. */
+html:has(.rays-top-strip__email:focus) { scroll-padding-top: 0; }
 .rays-top-strip__action span{color:inherit;font:inherit}
 .rays-top-strip__status{margin:0;padding:8px 16px;color:#fff;text-align:center;overflow-wrap:anywhere}
 .rays-top-strip__status:empty{padding:0}
