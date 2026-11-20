@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-samira-rauf/
+Disallow: /dr-samira-rauf/privacy-policy.html
+Disallow: /dr-samira-rauf/terms-of-service.html
+Sitemap: https://digidr.app/dr-samira-rauf/sitemap.xml

@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-nandita-hazarika/
+Disallow: /dr-nandita-hazarika/privacy-policy.html
+Disallow: /dr-nandita-hazarika/terms-of-service.html
+Sitemap: https://digidr.app/dr-nandita-hazarika/sitemap.xml

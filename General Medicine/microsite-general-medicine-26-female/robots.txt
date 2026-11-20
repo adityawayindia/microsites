@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-meghana-dasgupta/
+Disallow: /dr-meghana-dasgupta/privacy-policy.html
+Disallow: /dr-meghana-dasgupta/terms-of-service.html
+Sitemap: https://digidr.app/dr-meghana-dasgupta/sitemap.xml

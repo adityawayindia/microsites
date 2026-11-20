@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-shruti-mahajan/
+Disallow: /dr-shruti-mahajan/privacy-policy.html
+Disallow: /dr-shruti-mahajan/terms-of-service.html
+Sitemap: https://digidr.app/dr-shruti-mahajan/sitemap.xml

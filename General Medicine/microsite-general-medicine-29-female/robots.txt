@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-mitali-padhye/
+Disallow: /dr-mitali-padhye/privacy-policy.html
+Disallow: /dr-mitali-padhye/terms-of-service.html
+Sitemap: https://digidr.app/dr-mitali-padhye/sitemap.xml

@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-ishan-tendulkar/
+Disallow: /dr-ishan-tendulkar/privacy-policy.html
+Disallow: /dr-ishan-tendulkar/terms-of-service.html
+Sitemap: https://digidr.app/dr-ishan-tendulkar/sitemap.xml

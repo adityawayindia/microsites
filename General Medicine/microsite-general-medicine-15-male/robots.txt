@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-rohan-valsan/
+Disallow: /dr-rohan-valsan/privacy-policy.html
+Disallow: /dr-rohan-valsan/terms-of-service.html
+Sitemap: https://digidr.app/dr-rohan-valsan/sitemap.xml
