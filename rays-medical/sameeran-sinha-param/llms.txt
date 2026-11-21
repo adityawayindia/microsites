@@ -1,4 +1,4 @@
-# Dr. {{full_name}} — {{speciality}}
+# Dr. {{full_name}} — Ayurvedic Physician
 
 > Per-microsite draft for backend root merge. Consultation information and appointment booking.
 

@@ -1,6 +1,13 @@
 DigiDr verification - rays-medical/sameeran-sinha-param
-16 November 2026
-Dr. Nikhil Kapoor - male Dermatologist
+21 November 2026 | Dr. Sameeran Sinha | Ayurvedic physician
+
+The home, privacy and terms pages were checked in Chromium at 375px and 1440px. All six page/viewport combinations passed the specialty-label and horizontal-overflow checks.
+Template rendered locally with fixture profile, services and gallery data. A legacy specialty value in the fixture did not override the Ayurvedic label. Backend content and production hosting were not tested.
+Checked the Ayurvedic Physician page title, Physician structured data, six static Ayurveda FAQ pairs, accordion keyboard activation, and loading of all displayed supporting photographs.
+Home and legal pages reference the Ayurvedic card in the site assets for Open Graph and Twitter previews. The Clarity specialty is ayurveda. GA4 configuration is G-11ZJG7LBWM.
+
+Archived build verification | 16 November 2026
+The results below describe the original template at the time of that audit.
 PASS: local implementation and fixture-backed integrations. Production service delivery UNVERIFIED.
 
 METHOD

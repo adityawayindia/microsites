@@ -1,6 +1,6 @@
 # Per-microsite draft for backend root merge.
 User-agent: *
-Allow: /dr-nikhil-kapoor/
-Disallow: /dr-nikhil-kapoor/privacy-policy.html
-Disallow: /dr-nikhil-kapoor/terms-of-service.html
-Sitemap: https://digidr.app/dr-nikhil-kapoor/sitemap.xml
+Allow: /sameeran-sinha/
+Disallow: /sameeran-sinha/privacy-policy.html
+Disallow: /sameeran-sinha/terms-of-service.html
+Sitemap: https://digidr.app/sameeran-sinha/sitemap.xml

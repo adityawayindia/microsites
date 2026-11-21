@@ -1,62 +1,16 @@
-Rays Medical 18 — Apricot clarity — Dr. Nikhil Kapoor
+Dr. Sameeran Sinha | Ayurvedic medicine | Rays Medical
 
-Illustrative doctor profile; names, credentials, practising year and practice details are template demonstration data, not a verified real practice. Configure them before publication.
+doctor-18.jpg: Original doctor card supplied for this microsite at https://storage.googleapis.com/digidr/Dr%20Sameeran%20Sinha.jpeg. The source page frames its portrait. The parameterized site uses the backend profile photo.
 
-Built-in OpenAI imagegen; generated 16 November 2026. Only the doctor portrait contains a person. Every supporting image is people-free and specialty-appropriate. Source and param copies share their site assets.
+Dr Sameeran Sinha.jpeg: Social-preview version of the supplied card with the specialty badge updated to Ayurvedic.
 
+Supporting photographs are existing project assets from Ayurvedic/microsite-ayurvedic-17-male/assets. Original prompts and generation details are recorded in that folder's IMAGE-SOURCES.txt.
 
+hero-rays-18.jpg <- hero.jpg: Amber jar, brass magnifier and turmeric root.
+about-rays-18.jpg <- about.jpg: Amber glass bottles on a wooden display block.
+philosophy-rays-18.jpg <- philosophy.jpg: Brass balance and folded paper on a tabletop.
+gallery-assessment.jpg <- gallery-assessment.jpg: Flowering tulsi sprigs beside a closed notebook.
+gallery-detail.jpg <- gallery-detail.jpg: Coriander, cumin and fennel seeds in brass bowls.
+gallery-tools.jpg <- gallery-tools.jpg: Stone mortar and pestle beside a wooden spoon and folded cloth.
 
-FILE: doctor-18.jpg
-ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-4e312c8d-4079-4ea2-9901-97569a43d5ca.png
-PROMPT: Use case: photorealistic-natural. Asset: vertical 3:4 fictional dermatologist portrait. Dr Nikhil Kapoor, Indian man about 39 years old, clean-shaven, neatly styled short dark hair, no glasses, distinctive youthful professional face with natural skin texture, warm calm expression looking at camera. White medical coat over a pale blue shirt, waist-up portrait with whole head and both shoulders visible, relaxed natural posture. Subtle pale apricot seamless studio backdrop, soft flattering natural light, premium editorial photography. Only one person. No text, names, badges, logos, watermark, room or other people.
-ALT: Portrait of Dr. Nikhil Kapoor in a white coat over a pale blue shirt
-INSPECTION: PASS: one distinct fictional male doctor, natural skin and posture, no glasses; no text or logos.
-GENERATION HISTORY: []
-
-FILE: hero-rays-18.jpg
-ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-642f1555-16b4-45c5-b150-ea9b28c8ab64.png
-PROMPT: Use case: scientific-educational product photograph. Asset: wide 16:9 dermatology website hero background. Elegant realistic tabletop still life of a professional handheld dermatoscope with circular lens and a small molded skin-layer teaching block showing epidermis, dermis, tiny hair follicles and pale subcutaneous layer. Equipment and educational model entirely on LEFT THIRD; generous clear pale apricot and ivory surface across RIGHT two-thirds for website text. Clearly inanimate molded objects, not real human skin. Beautiful soft natural side lighting, refined premium clinical editorial photography, copper-charcoal and muted teal accents on an ivory stand. No people, hands, body parts, room, reception, flowers, text, labels, logos, watermark, treatment claims.
-ALT: Dermatoscope and skin-layer teaching model on a pale apricot surface
-INSPECTION: PASS: attractive dermatology-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, labels, claims, text or logos.
-GENERATION HISTORY: []
-
-FILE: about-rays-18.jpg
-ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-d459d613-eaed-4481-8983-ae13c1fc8cb5.png
-PROMPT: Use case: scientific-educational product photograph. Asset: vertical 4:5 dermatologist About photo. Beautiful close-up of an enlarged molded skin cross-section educational teaching model on a neutral ivory stand: distinct epidermis and dermis layers, two hair follicles with sebaceous glands, fine capillary vessels, small coiled sweat gland and pale subcutaneous fat layer. Clearly inanimate smooth molded plastic, not real human skin or tissue. Three-quarter camera angle, ivory/apricot palette with muted coral detail, warm neutral stone surface, premium soft studio side light, clean realistic clinical editorial photograph. Entire model fully visible with generous margin. No people, body parts, hands, rooms, lounge, reception, flowers, text, labels, logos, watermark, claims.
-ALT: Enlarged skin cross-section teaching model with hair follicles and glands
-INSPECTION: PASS: attractive dermatology-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, labels, claims, text or logos.
-GENERATION HISTORY: []
-
-FILE: philosophy-rays-18.jpg
-ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-01ffb751-83c7-4f6f-8403-96505dc83081.png
-PROMPT: Use case: product-mockup. Asset: landscape 4:3 dermatologist care philosophy photo, square-crop safe. Precise clean clinical editorial product photography: a professional handheld dermatoscope with round lens, a closed completely blank muted teal case-notebook, and one unlabelled white topical cream tube with plain cap arranged neatly in center on a warm ivory and pale apricot stone surface. Different composition from hero, gently overhead camera angle, all three objects comfortably within central square with generous margins, soft natural side light, realistic glass metal and matte packaging, refined restrained styling. No people, hands, real skin, body parts, reflections of people, rooms, reception, text, branding, labels, logos, watermarks or therapeutic claims.
-ALT: Dermatoscope beside a blank teal notebook and unlabelled topical tube
-INSPECTION: PASS: attractive dermatology-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, labels, claims, text or logos. Square output with centered composition suitable for crop.
-GENERATION HISTORY: []
-
-FILE: gallery-assessment.jpg
-ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-c3ea4308-9a31-4838-a81c-9281ebe9f6e3.png
-PROMPT: Use case: product-mockup. Asset: landscape 4:3 dermatology practice gallery photograph. A single professional handheld dermatoscope with circular glass lens and charcoal handle lies diagonally on a shallow warm white examination tray, seen at a low three-quarter close-up angle. Different composition from overhead flat-lay, entire device visible, subtle apricot background and soft natural studio light, refined realistic medical product photograph with precise metal/glass detail. No people, hands, reflections of people, real skin, body parts, room, reception, text, labels, numbers, logos, branding, watermark or claims.
-ALT: Handheld dermatoscope on a warm white examination tray
-INSPECTION: PASS: attractive dermatology-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, labels, claims, text or logos.
-GENERATION HISTORY: []
-
-FILE: gallery-detail.jpg
-ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-7efd5787-e296-46d9-971d-2d5d3829917f.png
-PROMPT: Use case: scientific-educational product photograph. Asset: landscape 4:3 dermatology gallery photo. Enlarged individual hair-follicle educational model in ivory, muted peach and chestnut molded plastic, featuring hair shaft, bulb and small adjoining sebaceous gland, mounted on a simple low ivory stand. Clearly an inanimate teaching object, no real skin or body part. Entire model comfortably centered in landscape composition on pale apricot stone, beautiful diffuse studio light and soft shadows, refined realistic clinical editorial product photograph. No people, hands, tissue, faces, rooms, lounge, reception, flowers, text, labels, numbers, logos, watermark or claims.
-ALT: Enlarged molded hair-follicle teaching model on an ivory stand
-INSPECTION: PASS: attractive dermatology-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, labels, claims, text or logos.
-GENERATION HISTORY: []
-
-FILE: gallery-tools.jpg
-ORIGINAL: C:\Users\Lenovo\.codex\generated_images\01a1e346-df0e-7a93-b0bd-8f08f75c69f2\exec-66e82722-e8c3-42c6-8be3-2a67e0c0e0b0.png
-PROMPT: Use case: product-mockup. Asset: landscape 4:3 dermatology gallery photo. Attractive restrained skincare-related still life: one completely blank matte white topical tube with white cap, a small unlabelled frosted glass skincare bottle with plain white pump, and neatly folded white cotton cloth on warm ivory stone. Objects centered with clear space around them, three-quarter view, soft apricot light and subtle shadows, premium realistic clinical editorial photography, refined clean materials. No people, hands, reflections of people, real skin or body parts, room, reception, flowers, labels, text, logos, branding, watermark, medical claims.
-ALT: Blank topical tube and unlabelled skincare bottle beside a folded white cloth
-INSPECTION: PASS: attractive dermatology-specific inanimate teaching model and/or equipment; no real body parts, people, hands, rooms, labels, claims, text or logos.
-GENERATION HISTORY: []
-
-Gallery images may be reused project-generated assets; original provenance is recorded above.
-
-favicon.svg and chatbot-icon.svg: original code-native vector icons, unique palette/artwork per site.
-
-Content reference: https://www.aad.org/public/diseases; reviewed 16 November 2026. FAQ source: DigiDr_FAQ_6_Sets_22_Specialities.pdf; Dermatology set 1
+FAQ source: DigiDr_FAQ_6_Sets_25_Specialities.pdf, chapter 23 (Ayurveda). In display order: set 2 Q6, set 1 Q2, set 1 Q5, set 3 Q5, set 1 Q6, set 3 Q4.
