@@ -2,28 +2,46 @@
   "status": "DRAFT_REQUIRES_BILINGUAL_REVIEW",
   "provider": "google:general/nmt:plain-text",
   "languages": [
-    "hi"
+    "hi",
+    "or",
+    "bn"
   ],
   "files": [
     "E:\\Wayindia\\DigiDr\\Microsites\\Testing\\Google NMT\\microsite-testing-male\\drafts\\locales\\hi.json",
-    "E:\\Wayindia\\DigiDr\\Microsites\\Testing\\Google NMT\\microsite-testing-male\\drafts\\content\\doctor.hi.json"
+    "E:\\Wayindia\\DigiDr\\Microsites\\Testing\\Google NMT\\microsite-testing-male\\drafts\\content\\doctor.hi.json",
+    "E:\\Wayindia\\DigiDr\\Microsites\\Testing\\Google NMT\\microsite-testing-male\\drafts\\locales\\or.json",
+    "E:\\Wayindia\\DigiDr\\Microsites\\Testing\\Google NMT\\microsite-testing-male\\drafts\\locales\\bn.json",
+    "E:\\Wayindia\\DigiDr\\Microsites\\Testing\\Google NMT\\microsite-testing-male\\drafts\\content\\doctor.or.json",
+    "E:\\Wayindia\\DigiDr\\Microsites\\Testing\\Google NMT\\microsite-testing-male\\drafts\\content\\doctor.bn.json"
   ],
   "warnings": [
     {
       "language": "hi",
       "field": "locales.terms_of_service.to_the_extent_permitted_by_law_doctor",
       "issue": "The English liability clause contains the undefined word 'incimedical'. Confirm the intended term before approving its translation."
+    },
+    {
+      "language": "or",
+      "field": "locales.terms_of_service.to_the_extent_permitted_by_law_doctor",
+      "issue": "The English liability clause contains the undefined word 'incimedical'. Confirm the intended term before approving its translation."
+    },
+    {
+      "language": "bn",
+      "field": "locales.terms_of_service.to_the_extent_permitted_by_law_doctor",
+      "issue": "The English liability clause contains the undefined word 'incimedical'. Confirm the intended term before approving its translation."
     }
   ],
-  "api_chunks": 338,
-  "input_characters": 18211,
-  "cache_hits": 29,
+  "api_chunks": 1014,
+  "input_characters": 54633,
+  "cache_hits": 87,
+  "local_wording_fields": {
+    "hi": 163,
+    "or": 101,
+    "bn": 101
+  },
   "wording_review": {
     "buttons_and_headings": "Use short, familiar wording that clearly names the action or topic.",
     "body_text": "Use everyday patient-facing language. Preserve every fact, condition, negation, number and instruction from the English."
   },
-  "note": "No medical accuracy guarantee. No website deployment performed.",
-  "local_wording_fields": {
-    "hi": 163
-  }
+  "note": "No medical accuracy guarantee. No website deployment performed."
 }

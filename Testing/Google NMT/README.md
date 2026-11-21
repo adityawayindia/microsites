@@ -19,6 +19,6 @@ Use `--language or` for Odia or `--language bn` for Bengali. Each completed lang
 
 The script reads public English strings from `locales/en.json` and `content/doctor.en.json`. It uses saved wording when the field and English text both match, then translates other strings through Google's `general/nmt` model or its local cache. It saves the results under `drafts/locales` and `drafts/content` for bilingual review.
 
-Keep buttons and headings short and familiar. In paragraphs, use everyday words while preserving medical details, conditions, warnings and numbers. The Hindi wording edits are in `wording/hi.json`. Each entry records the English source so an edit to the source gets a fresh translation.
+Keep buttons and headings short and familiar. In paragraphs, use everyday words while preserving medical details, conditions, warnings and numbers. The wording edits for Hindi, Odia and Bengali are in `wording/hi.json`, `wording/or.json` and `wording/bn.json`. Each entry records the English source so an edit to the source gets a fresh translation.
 
 The preview combines the drafts with the original doctor facts and locally supplied display spellings. Switching languages makes zero Google Translation calls.

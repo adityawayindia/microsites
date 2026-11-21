@@ -1,10 +1,10 @@
 ﻿/* An opaque menu keeps its contrast on light, dark and photographic headers. */
 .language-picker {
-  --picker-ink: #302c33;
+  --picker-ink: var(--text);
   --picker-surface: #fff;
-  --picker-line: #8c848c;
-  --picker-hover: #f4f2f4;
-  --picker-selected: #eae6ea;
+  --picker-line: #718d99;
+  --picker-hover: var(--bg-2);
+  --picker-selected: var(--brand-light);
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -16,11 +16,11 @@
 
 @supports (color: color-mix(in srgb, white, black)) {
   .language-picker {
-    --picker-ink: color-mix(in srgb, #211c24 64%, var(--brand, #4f5261));
-    --picker-surface: color-mix(in srgb, white 98%, var(--brand, #4f5261));
-    --picker-line: color-mix(in srgb, #768088 65%, var(--brand, #4f5261));
-    --picker-hover: color-mix(in srgb, white 94%, var(--brand, #4f5261));
-    --picker-selected: color-mix(in srgb, white 85%, var(--brand, #4f5261));
+    --picker-ink: color-mix(in srgb, var(--text) 64%, var(--brand, #1c526f));
+    --picker-surface: color-mix(in srgb, white 98%, var(--brand, #1c526f));
+    --picker-line: color-mix(in srgb, #768088 65%, var(--brand, #1c526f));
+    --picker-hover: color-mix(in srgb, white 94%, var(--brand, #1c526f));
+    --picker-selected: color-mix(in srgb, white 85%, var(--brand, #1c526f));
   }
 }
 
@@ -68,10 +68,10 @@
   width: 10.25rem;
   max-width: calc(100vw - 24px);
   padding: 5px;
-  border: 1px solid var(--border, #dcd7dc);
+  border: 1px solid var(--border, #bfd3dc);
   border-radius: 15px;
   background: var(--picker-surface);
-  box-shadow: 0 8px 26px rgb(28 20 32 / 16%), 0 2px 5px rgb(28 20 32 / 6%);
+  box-shadow: 0 8px 26px rgb(16 47 70 / 16%), 0 2px 5px rgb(16 47 70 / 6%);
 }
 .language-picker .language-menu.align-start { inset-inline: 0 auto; }
 .language-picker .language-option {

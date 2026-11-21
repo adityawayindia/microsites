@@ -1,0 +1,407 @@
+{
+  "locales.header.about": {
+    "source": "About",
+    "translation": "ডাক্তার সম্পর্কে"
+  },
+  "locales.footer.about": {
+    "source": "About",
+    "translation": "ডাক্তার সম্পর্কে"
+  },
+  "locales.header.gallery": {
+    "source": "Gallery",
+    "translation": "ছবি"
+  },
+  "locales.footer.gallery": {
+    "source": "Gallery",
+    "translation": "ছবি"
+  },
+  "locales.header.faq": {
+    "source": "FAQ",
+    "translation": "সাধারণ প্রশ্ন"
+  },
+  "locales.footer.faq": {
+    "source": "FAQ",
+    "translation": "সাধারণ প্রশ্ন"
+  },
+  "locales.header.book_appointment": {
+    "source": "Book Appointment",
+    "translation": "সময় বুক করুন"
+  },
+  "locales.home.book_appointment": {
+    "source": "Book Appointment",
+    "translation": "সময় বুক করুন"
+  },
+  "locales.contact_us.book_appointment": {
+    "source": "Book Appointment",
+    "translation": "সময় বুক করুন"
+  },
+  "locales.booking.book_appointment": {
+    "source": "Book Appointment",
+    "translation": "সময় বুক করুন"
+  },
+  "locales.header.appointment": {
+    "source": "Appointment",
+    "translation": "অ্যাপয়েন্টমেন্ট"
+  },
+  "locales.header.toggle_navigation_menu": {
+    "source": "Toggle navigation menu",
+    "translation": "মেনু খুলুন বা বন্ধ করুন"
+  },
+  "locales.home.discover_the_practice": {
+    "source": "Discover the practice",
+    "translation": "ক্লিনিক সম্পর্কে জানুন"
+  },
+  "locales.home.medical_regd_no_to_be_configured": {
+    "source": "Medical Regd. No.: To be configured",
+    "translation": "চিকিৎসকের রেজিস্ট্রেশন নম্বর এখনও দেওয়া হয়নি"
+  },
+  "locales.home.practising_since": {
+    "source": "Practising Since",
+    "translation": "চিকিৎসা শুরুর বছর"
+  },
+  "locales.home.languages": {
+    "source": "Languages",
+    "translation": "ভাষা"
+  },
+  "locales.home.consultation_modes": {
+    "source": "Consultation Modes",
+    "translation": "পরামর্শের ধরন"
+  },
+  "locales.about.the_conversation_behind_the_care": {
+    "source": "The conversation behind the care.",
+    "translation": "কথা দিয়েই যত্নের শুরু"
+  },
+  "locales.about.read_less": {
+    "source": "Read Less",
+    "translation": "কম দেখুন"
+  },
+  "locales.services.areas_of_care": {
+    "source": "Areas of care",
+    "translation": "আমাদের সেবা"
+  },
+  "locales.services.care_for_today_a_view_of_the": {
+    "source": "Care for today. A view of the whole picture.",
+    "translation": "আপনার সার্বিক স্বাস্থ্যের যত্ন"
+  },
+  "locales.services.consultations_that_consider_your_concerns_your_routines": {
+    "source": "Consultations that consider your concerns, your routines and your existing care.",
+    "translation": "পরামর্শের সময় আপনার সমস্যা, দৈনন্দিন জীবন আর চলতি চিকিৎসার কথা বিবেচনা করা হয়।"
+  },
+  "locales.philosophy.care_philosophy": {
+    "source": "Care philosophy",
+    "translation": "যত্ন নেওয়ার পদ্ধতি"
+  },
+  "locales.process.consultation_journey": {
+    "source": "Consultation journey",
+    "translation": "পরামর্শের ধাপ"
+  },
+  "locales.process.what_to_expect": {
+    "source": "What to expect",
+    "translation": "পরামর্শ কীভাবে হয়"
+  },
+  "locales.process.a_clear_path_from_your_first_question": {
+    "source": "A clear path from your first question to a considered follow-up.",
+    "translation": "প্রথম প্রশ্ন থেকে পরের সাক্ষাৎ পর্যন্ত প্রতিটি ধাপে কী হয়, জেনে নিন।"
+  },
+  "locales.process.appointment_booking": {
+    "source": "Appointment booking",
+    "translation": "দেখা করার সময় নিন"
+  },
+  "locales.process.a_plan_explained_clearly": {
+    "source": "A plan explained clearly",
+    "translation": "পরের ধাপগুলো বুঝে নিন"
+  },
+  "locales.process.a_thoughtful_follow_up": {
+    "source": "A thoughtful follow-up",
+    "translation": "পরের সাক্ষাৎ"
+  },
+  "locales.contact_us.contact_the_practice": {
+    "source": "Contact the practice",
+    "translation": "ক্লিনিকে যোগাযোগ"
+  },
+  "locales.contact_us.arrange_your_next_visit": {
+    "source": "Arrange your next visit.",
+    "translation": "পরের সাক্ষাতের সময় নিন"
+  },
+  "locales.contact_us.find_the_practice_get_in_touch_or": {
+    "source": "Find the practice, get in touch or select an available appointment.",
+    "translation": "ক্লিনিকের ঠিকানা দেখুন, যোগাযোগ করুন বা দেখা করার জন্য খালি সময় বেছে নিন।"
+  },
+  "locales.contact_us.get_in_touch": {
+    "source": "Get in touch",
+    "translation": "যোগাযোগ করুন"
+  },
+  "locales.gallery.practice_gallery": {
+    "source": "Practice gallery",
+    "translation": "ক্লিনিকের ছবি"
+  },
+  "locales.gallery.a_closer_look_at_the_practice": {
+    "source": "A closer look at the practice.",
+    "translation": "এক নজরে ক্লিনিক"
+  },
+  "locales.gallery.enlarged_practice_gallery_image": {
+    "source": "Enlarged practice gallery image",
+    "translation": "ক্লিনিকের বড় ছবি"
+  },
+  "locales.gallery.enlarge_glucose_monitor_and_supplies_for_diabetes": {
+    "source": "Enlarge: Glucose monitor and supplies for diabetes reviews",
+    "translation": "বড় করে দেখুন: ডায়াবেটিস পর্যবেক্ষণের জন্য রক্তে শর্করা মাপার যন্ত্র ও সরঞ্জাম"
+  },
+  "locales.faq.before_your_visit": {
+    "source": "Before your visit",
+    "translation": "ডাক্তার দেখানোর আগে"
+  },
+  "locales.faq.frequently_asked_questions": {
+    "source": "Frequently asked questions",
+    "translation": "প্রায়ই জিজ্ঞাসা করা প্রশ্ন"
+  },
+  "locales.faq.what_should_i_bring_to_my_appointment": {
+    "source": "What should I bring to my appointment?",
+    "translation": "ডাক্তার দেখাতে কী নিয়ে যাব?"
+  },
+  "locales.faq.bring_your_current_medicine_list_previous_prescriptions": {
+    "source": "Bring your current medicine list, previous prescriptions, recent test reports and any home health readings you record. Make a note of your symptoms and the questions you want to discuss.",
+    "translation": "যেসব ওষুধ এখন খাচ্ছেন তার তালিকা, আগের প্রেসক্রিপশন ও সাম্প্রতিক পরীক্ষার রিপোর্ট আনুন। বাড়িতে স্বাস্থ্যের কোনও মাপ লিখে রাখলে সেই রেকর্ডও আনুন। আপনার উপসর্গ আর ডাক্তারকে কী জানতে চাইবেন, তা লিখে রাখুন।"
+  },
+  "locales.faq.online_consultations_are_available_when_enabled_by": {
+    "source": "Online consultations are available when enabled by the practice. The doctor may recommend an in-person visit if a physical examination or further assessment is needed.",
+    "translation": "ক্লিনিকে এই সুবিধা চালু থাকলে অনলাইনে পরামর্শ নিতে পারবেন। শারীরিক পরীক্ষা বা আরও মূল্যায়নের প্রয়োজন হলে ডাক্তার আপনাকে ক্লিনিকে আসতে বলতে পারেন।"
+  },
+  "locales.faq.the_doctor_will_review_your_history_and": {
+    "source": "The doctor will review your history and decide whether investigations are appropriate. Bring reports you already have; contact the practice about any specific preparation for your appointment.",
+    "translation": "আপনার স্বাস্থ্যের ইতিহাস দেখে ডাক্তার ঠিক করবেন কোনও পরীক্ষা দরকার কি না। আপনার কাছে যে রিপোর্ট আছে, সেগুলো আনুন। দেখা করার আগে বিশেষ কোনও প্রস্তুতি দরকার কি না, ক্লিনিকে জেনে নিন।"
+  },
+  "locales.booking.book_an_appointment": {
+    "source": "Book an appointment",
+    "translation": "সময় বুক করুন"
+  },
+  "locales.booking.appointment_type": {
+    "source": "Appointment type",
+    "translation": "পরামর্শের ধরন"
+  },
+  "locales.booking.clinic_visit": {
+    "source": "Clinic Visit",
+    "translation": "ক্লিনিকে সাক্ষাৎ"
+  },
+  "locales.booking.preferred_date": {
+    "source": "Preferred Date",
+    "translation": "পছন্দের তারিখ"
+  },
+  "locales.booking.select_a_date": {
+    "source": "Select a date",
+    "translation": "তারিখ বাছুন"
+  },
+  "locales.booking.su": {
+    "source": "Su",
+    "translation": "রবি"
+  },
+  "locales.booking.mo": {
+    "source": "Mo",
+    "translation": "সোম"
+  },
+  "locales.booking.tu": {
+    "source": "Tu",
+    "translation": "মঙ্গল"
+  },
+  "locales.booking.we": {
+    "source": "We",
+    "translation": "বুধ"
+  },
+  "locales.booking.th": {
+    "source": "Th",
+    "translation": "বৃহঃ"
+  },
+  "locales.booking.fr": {
+    "source": "Fr",
+    "translation": "শুক্র"
+  },
+  "locales.booking.sa": {
+    "source": "Sa",
+    "translation": "শনি"
+  },
+  "locales.booking.select_time_slot": {
+    "source": "Select Time Slot",
+    "translation": "সময় বাছুন"
+  },
+  "locales.booking.reason_for_visit": {
+    "source": "Reason For Visit",
+    "translation": "দেখা করার কারণ"
+  },
+  "locales.booking.please_choose_a_file_no_larger_than": {
+    "source": "Please choose a file no larger than 5 MB.",
+    "translation": "দয়া করে 5 MB বা তার চেয়ে ছোট ফাইল বেছে নিন।"
+  },
+  "locales.booking.booking_your_appointment": {
+    "source": "Booking your appointment...",
+    "translation": "আপনার সময় বুক করা হচ্ছে…"
+  },
+  "locales.booking.your_appointment_is_confirmed": {
+    "source": "Your appointment is confirmed.",
+    "translation": "ডাক্তারের সঙ্গে আপনার দেখা করার সময় নিশ্চিত হয়েছে।"
+  },
+  "locales.booking.your_appointment_is_confirmed_2": {
+    "source": "Your Appointment is Confirmed!",
+    "translation": "দেখা করার সময় নিশ্চিত হয়েছে!"
+  },
+  "locales.booking.appointment_location": {
+    "source": "Appointment Location:",
+    "translation": "দেখা করার জায়গা:"
+  },
+  "locales.booking.appointment_confirmation": {
+    "source": "Appointment confirmation",
+    "translation": "দেখা করার সময়ের নিশ্চয়তা"
+  },
+  "locales.footer.quick_links": {
+    "source": "Quick Links",
+    "translation": "দরকারি লিঙ্ক"
+  },
+  "locales.footer.quick_links_2": {
+    "source": "Quick links",
+    "translation": "দরকারি লিঙ্ক"
+  },
+  "locales.privacy_policy.back_to_home": {
+    "source": "Back to Home",
+    "translation": "মূল পাতায় ফিরুন"
+  },
+  "locales.terms_of_service.back_to_home": {
+    "source": "Back to Home",
+    "translation": "মূল পাতায় ফিরুন"
+  },
+  "locales.terms_of_service.4_appointment_requests": {
+    "source": "4) Appointment Requests",
+    "translation": "4) দেখা করার অনুরোধ"
+  },
+  "locales.terms_of_service.to_the_extent_permitted_by_law_doctor": {
+    "source": "To the extent permitted by law, {{doctor_name}} is not liable for any direct, indirect, incimedical, or consequential losses arising from use of this website, reliance on its content, or inability to access services.",
+    "translation": "আইনে যতটুকু অনুমতি দেওয়া হয়েছে, সেই সীমার মধ্যে এই ওয়েবসাইট ব্যবহার, এর বিষয়বস্তুর ওপর নির্ভর করা বা পরিষেবা পেতে না পারার ফলে কোনও প্রত্যক্ষ, পরোক্ষ, “incimedical” বা পরিণামজনিত ক্ষতির জন্য {{doctor_name}} দায়ী নন।",
+    "review_note": "The English liability clause contains the undefined word 'incimedical'. Confirm the intended term before approving its translation."
+  },
+  "locales.index_metadata.medical_consultations_with_doctor_name_explore_the": {
+    "source": "Medical consultations with {{doctor_name}}. Explore the practice and book a clinic or online appointment.",
+    "translation": "{{doctor_name}}-এর কাছে চিকিৎসার পরামর্শ নিন। ক্লিনিক সম্পর্কে জানুন এবং ক্লিনিকে বা অনলাইনে পরামর্শের সময় বুক করুন।"
+  },
+  "locales.social_media.updates_and_information_from_the_practice": {
+    "source": "Updates and information from the practice.",
+    "translation": "ক্লিনিকের খবর ও তথ্য।"
+  },
+  "locales.booking.i_agree_to_the_privacy_policy_and": {
+    "source": "I agree to the Privacy Policy and consent to {{doctor_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at {{email}}.",
+    "translation": "আমি গোপনীয়তা নীতিতে সম্মত। আমার পরামর্শের জন্য আমার তথ্য ব্যবহার করতে {{doctor_name}} ও DigiDr-কে অনুমতি দিচ্ছি। {{email}}-এ লিখে আমি সম্মতি ফিরিয়ে নিতে বা আমার তথ্য মুছে ফেলার অনুরোধ করতে পারি।"
+  },
+  "locales.booking.online_consultations_are_governed_by_the_telemedicine": {
+    "source": "Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.",
+    "translation": "অনলাইন পরামর্শের ক্ষেত্রে টেলিমেডিসিন প্র্যাকটিস গাইডলাইনস, ২০২০ প্রযোজ্য। এই পরিষেবা জরুরি অবস্থার জন্য নয়। শারীরিক পরীক্ষার প্রয়োজন হলে ডাক্তার আপনাকে ক্লিনিকে আসতে বলতে পারেন।"
+  },
+  "locales.faq.a_general_physician_helps_with_adult_health": {
+    "source": "A general physician helps with adult health concerns, new symptoms and ongoing conditions such as diabetes and high blood pressure. The doctor can also coordinate further assessment or specialist referral.",
+    "translation": "একজন সাধারণ চিকিৎসক প্রাপ্তবয়স্কদের স্বাস্থ্যসমস্যা, নতুন উপসর্গ এবং ডায়াবেটিস বা উচ্চ রক্তচাপের মতো দীর্ঘদিনের রোগে সাহায্য করেন। প্রয়োজনে তিনি আরও পরীক্ষা বা বিশেষজ্ঞের পরামর্শের ব্যবস্থাও করতে পারেন।"
+  },
+  "locales.privacy_policy.we_may_update_this_privacy_policy_periodically": {
+    "source": "We may update this Privacy Policy periodically. The latest version will always be posted on this page with the effective date. For changes that affect how your details are used, we will tell you where we hold your contact details.",
+    "translation": "আমরা সময়ে সময়ে এই গোপনীয়তা নীতি বদলাতে পারি। নতুন সংস্করণটি কবে থেকে কার্যকর, সেই তারিখসহ এই পাতায় সবসময় পাওয়া যাবে। আপনার তথ্য ব্যবহারের পদ্ধতি বদলালে, আমাদের কাছে আপনার যোগাযোগের তথ্য থাকলে আমরা আপনাকে জানাব।"
+  },
+  "locales.privacy_policy_metadata.read_the_privacy_policy_for_the_practice": {
+    "source": "Read the privacy policy for the practice of {{doctor_name}}.",
+    "translation": "{{doctor_name}}-এর ক্লিনিকের গোপনীয়তা নীতি পড়ুন।"
+  },
+  "locales.terms_of_service_metadata.read_the_terms_of_service_for_the": {
+    "source": "Read the terms of service for the practice of {{doctor_name}}.",
+    "translation": "{{doctor_name}}-এর ক্লিনিকের পরিষেবার শর্তাবলি পড়ুন।"
+  },
+  "locales.privacy_policy.this_privacy_policy_explains_how_personal_information": {
+    "source": "This Privacy Policy explains how personal information is collected, used, stored, and protected when you use this website and its consultation and appointment services.",
+    "translation": "এই ওয়েবসাইট এবং এর পরামর্শ ও বুকিং পরিষেবা ব্যবহার করলে আপনার ব্যক্তিগত তথ্য কীভাবে নেওয়া হয়, ব্যবহার করা হয়, সংরক্ষণ করা হয় এবং সুরক্ষিত রাখা হয়, এই নীতিতে তা বলা আছে।"
+  },
+  "locales.privacy_policy.appointment_details_preferred_date_and_time_reason": {
+    "source": "Appointment details (preferred date and time, reason for visit)",
+    "translation": "সাক্ষাতের তথ্য (পছন্দের তারিখ ও সময়, দেখা করার কারণ)"
+  },
+  "locales.privacy_policy.send_messages_about_your_appointment": {
+    "source": "Send messages about your appointment",
+    "translation": "আপনার বুকিং সম্পর্কে বার্তা পাঠাতে"
+  },
+  "locales.privacy_policy.service_providers_including_digidr_as_the_technology": {
+    "source": "Service providers, including DigiDr as the technology provider, and hosting, appointment, or communication tools",
+    "translation": "পরিষেবা প্রদানকারী, যেমন প্রযুক্তি সরবরাহকারী DigiDr এবং ওয়েব হোস্টিং, বুকিং বা যোগাযোগের জন্য ব্যবহৃত পরিষেবা"
+  },
+  "locales.terms_of_service.appointment_forms_and_contact_requests_do_not": {
+    "source": "Appointment forms and contact requests do not guarantee confirmed appointments. Confirmation is subject to availability and direct communication from the clinic.",
+    "translation": "ফর্ম পূরণ করলে বা যোগাযোগের অনুরোধ জানালেই দেখা করার সময় নিশ্চিত হয় না। তা নির্ভর করে খালি সময় ও ক্লিনিক থেকে সরাসরি যোগাযোগের ওপর।"
+  },
+  "locales.terms_of_service.this_website_is_intended_to_provide_general": {
+    "source": "This website is intended to provide general information about medical services, clinic details, educational content, and appointment request options.",
+    "translation": "এই ওয়েবসাইটে চিকিৎসা পরিষেবা, ক্লিনিক, স্বাস্থ্যশিক্ষার উপকরণ এবং ডাক্তারের সঙ্গে দেখা করার অনুরোধ জানানোর উপায় সম্পর্কে সাধারণ তথ্য পাওয়া যায়।"
+  },
+  "locales.consent.by_submitting_this_form_i_consent_to": {
+    "source": "By submitting this form, I consent to digidr.app collecting and processing the personal and health information provided by me, including my name, phone number, email address, appointment details, symptoms/reason for consultation, and uploaded medical reports, for scheduling, managing, and facilitating my consultation with the doctor.",
+    "translation": "এই ফর্ম পাঠিয়ে আমি digidr.app-কে আমার দেওয়া ব্যক্তিগত ও স্বাস্থ্য সংক্রান্ত তথ্য সংগ্রহ ও প্রক্রিয়াকরণের অনুমতি দিচ্ছি। এর মধ্যে আছে আমার নাম, ফোন নম্বর, ইমেল ঠিকানা, সাক্ষাতের তথ্য, উপসর্গ বা পরামর্শ নেওয়ার কারণ এবং আপলোড করা মেডিক্যাল রিপোর্ট। উদ্দেশ্য হল ডাক্তারের সঙ্গে আমার পরামর্শের সময় ঠিক করা, তার ব্যবস্থা করা এবং পরামর্শ নিতে সাহায্য করা।"
+  },
+  "locales.chatbot.hello_i_can_help_with_medical_services": {
+    "source": "Hello! I can help with Medical services, clinic information and appointment booking. How can I help?",
+    "translation": "নমস্কার! চিকিৎসা পরিষেবা, ক্লিনিকের তথ্য বা দেখা করার সময় বুক করতে আমি সাহায্য করতে পারি। আপনি কী জানতে চান?"
+  },
+  "content.about.doctor_name_is_a_general_physician_offering": {
+    "source": "{{doctor_name}} is a general physician offering consultations for adult health concerns, preventive care and ongoing medical conditions. A visit starts with the symptoms or questions that matter to you, followed by a discussion of your health history, medicines and daily routines. The doctor reviews available reports and examines you when needed before explaining the findings. Further tests or a specialist opinion may be discussed if they would help clarify the next steps. Care plans take account of your priorities and practical circumstances. Follow-up appointments allow time to review progress, test results and changes in your health. Clinic visits and online consultations are available when enabled by the practice; the doctor may recommend an in-person assessment when an examination is needed.",
+    "translation": "{{doctor_name}} একজন সাধারণ চিকিৎসক। তিনি প্রাপ্তবয়স্কদের স্বাস্থ্যসমস্যা, রোগ প্রতিরোধ ও দীর্ঘদিনের অসুখ নিয়ে পরামর্শ দেন। প্রথমে আপনার উপসর্গ বা যে প্রশ্নগুলো আপনার কাছে জরুরি, সেগুলো নিয়ে কথা হয়। তার পর ডাক্তার আপনার স্বাস্থ্যের ইতিহাস, ওষুধ ও দৈনন্দিন জীবন সম্পর্কে জানতে চান। তিনি আপনার রিপোর্ট দেখেন, প্রয়োজনে আপনাকে পরীক্ষা করেন এবং কী বোঝা গেল তা বুঝিয়ে বলেন। পরের পদক্ষেপ ঠিক করতে সাহায্য হলে আরও পরীক্ষা বা কোনও বিশেষজ্ঞের মতামত নেওয়ার কথা উঠতে পারে। আপনার কাছে কোন বিষয়গুলো গুরুত্বপূর্ণ এবং আপনার বাস্তব পরিস্থিতি কেমন, তা দেখেই চিকিৎসার পরিকল্পনা করা হয়। পরের সাক্ষাতে আপনার অগ্রগতি, পরীক্ষার ফল এবং স্বাস্থ্যের পরিবর্তন নিয়ে আলোচনা হয়। ক্লিনিকে যে সুবিধাগুলো চালু আছে, সেই অনুযায়ী সরাসরি বা অনলাইনে পরামর্শ নিতে পারেন। শারীরিক পরীক্ষার প্রয়োজন হলে ডাক্তার আপনাকে ক্লিনিকে আসতে বলতে পারেন।"
+  },
+  "content.services.diabetes_reviews": {
+    "source": "Diabetes reviews",
+    "translation": "ডায়াবেটিসের যত্ন"
+  },
+  "content.services.blood_pressure_care": {
+    "source": "Blood pressure care",
+    "translation": "রক্তচাপের যত্ন"
+  },
+  "content.services.preventive_health_reviews": {
+    "source": "Preventive health reviews",
+    "translation": "রোগ প্রতিরোধের পরামর্শ"
+  },
+  "content.services.long_term_care_follow_up": {
+    "source": "Long-term care follow-up",
+    "translation": "দীর্ঘমেয়াদি চিকিৎসার ফলো-আপ"
+  },
+  "content.services.assessment_of_new_symptoms_medical_history_and": {
+    "source": "Assessment of new symptoms, medical history and current medicines, with an explanation of the next steps.",
+    "translation": "ডাক্তার আপনার নতুন উপসর্গ, চিকিৎসার ইতিহাস ও চলতি ওষুধের কথা বিবেচনা করে পরের ধাপগুলো বুঝিয়ে বলেন।"
+  },
+  "content.services.ongoing_consultations_to_review_blood_sugar_records": {
+    "source": "Ongoing consultations to review blood sugar records, medicines and individual care goals.",
+    "translation": "নিয়মিত সাক্ষাতে রক্তে শর্করার রেকর্ড, ওষুধ আর আপনার চিকিৎসার লক্ষ্য নিয়ে আলোচনা হয়।"
+  },
+  "content.services.review_of_blood_pressure_readings_current_treatment": {
+    "source": "Review of blood pressure readings, current treatment and relevant health concerns.",
+    "translation": "আপনার রক্তচাপের মাপ, চলতি চিকিৎসা ও তার সঙ্গে যুক্ত স্বাস্থ্যসমস্যা নিয়ে আলোচনা হয়।"
+  },
+  "content.services.clinical_assessment_of_fever_and_common_infections": {
+    "source": "Clinical assessment of fever and common infections, with investigations or referral when appropriate.",
+    "translation": "ডাক্তার জ্বর ও সাধারণ সংক্রমণের লক্ষণ পরীক্ষা করেন। প্রয়োজনে তিনি আরও পরীক্ষা করাতে বা বিশেষজ্ঞের কাছে যেতে বলতে পারেন।"
+  },
+  "content.services.a_discussion_of_personal_health_risks_screening": {
+    "source": "A discussion of personal health risks, screening needs and everyday health routines.",
+    "translation": "আপনার কী কী রোগের ঝুঁকি আছে, আগেভাগে রোগ ধরতে কোনও পরীক্ষা দরকার কি না আর আপনার দৈনন্দিন স্বাস্থ্যের অভ্যাস নিয়ে কথা হয়।"
+  },
+  "content.services.review_of_continuing_medical_conditions_test_results": {
+    "source": "Review of continuing medical conditions, test results and coordination with other specialists.",
+    "translation": "ডাক্তার দীর্ঘদিনের রোগ ও পরীক্ষার ফল পর্যালোচনা করেন এবং আপনার চিকিৎসার জন্য অন্য বিশেষজ্ঞদের সঙ্গে যোগাযোগ রাখেন।"
+  },
+  "content.philosophy.considered_individual_care": {
+    "source": "Considered, individual care",
+    "translation": "আপনার প্রয়োজন অনুযায়ী যত্ন"
+  },
+  "content.philosophy.listen_with_care": {
+    "source": "Listen with care",
+    "translation": "আপনার কথা মন দিয়ে শোনা"
+  },
+  "content.philosophy.explain_the_choices": {
+    "source": "Explain the choices",
+    "translation": "চিকিৎসার বিকল্প বুঝিয়ে বলা"
+  },
+  "content.philosophy.review_together": {
+    "source": "Review together",
+    "translation": "একসঙ্গে অগ্রগতি দেখা"
+  },
+  "content.philosophy.follow_up_visits_make_space_to_discuss": {
+    "source": "Follow-up visits make space to discuss changes and reassess the plan.",
+    "translation": "পরের সাক্ষাতে স্বাস্থ্যের পরিবর্তন নিয়ে কথা হয় এবং চিকিৎসার পরিকল্পনা বদলানো দরকার কি না, তা দেখা যায়।"
+  }
+}

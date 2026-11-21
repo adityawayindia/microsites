@@ -93,8 +93,8 @@ initPhonePlugin();
             const language = document.documentElement.lang;
             const locale = language + "-IN";
             label.title = date.toLocaleDateString(locale, { weekday: "long" });
-            // The Hindi catalog already supplies the short names displayed in this row.
-            if (language === "hi" && label.dataset.l10n) return;
+            // The language switcher sets the short weekday names from the catalog.
+            if (label.dataset.l10n) return;
             label.textContent = language === "en"
                 ? label.title.slice(0, 2) : date.toLocaleDateString(locale, { weekday: "narrow" });
         });
