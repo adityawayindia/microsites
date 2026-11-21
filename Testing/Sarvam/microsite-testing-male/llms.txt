@@ -1,0 +1,10 @@
+# Dr. Vivek Iyer — General Physician
+
+> Per-microsite draft for backend root merge. Consultation information and appointment booking.
+
+## Pages
+- [Profile](https://digidr.app/dr-vivek-iyer/): About, services, care philosophy, consultation journey, contact, gallery and FAQ.
+- [Privacy Policy](https://digidr.app/dr-vivek-iyer/privacy-policy.html)
+- [Terms of Service](https://digidr.app/dr-vivek-iyer/terms-of-service.html)
+
+The chat and booking service are not for emergencies. Consult the doctor for individual medical advice.

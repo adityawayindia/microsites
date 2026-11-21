@@ -1,0 +1,29 @@
+{
+  "status": "DRAFT_REQUIRES_BILINGUAL_REVIEW",
+  "provider": "google:general/nmt:plain-text",
+  "languages": [
+    "hi"
+  ],
+  "files": [
+    "E:\\Wayindia\\DigiDr\\Microsites\\Testing\\Google NMT\\microsite-testing-male\\drafts\\locales\\hi.json",
+    "E:\\Wayindia\\DigiDr\\Microsites\\Testing\\Google NMT\\microsite-testing-male\\drafts\\content\\doctor.hi.json"
+  ],
+  "warnings": [
+    {
+      "language": "hi",
+      "field": "locales.terms_of_service.to_the_extent_permitted_by_law_doctor",
+      "issue": "The English liability clause contains the undefined word 'incimedical'. Confirm the intended term before approving its translation."
+    }
+  ],
+  "api_chunks": 338,
+  "input_characters": 18211,
+  "cache_hits": 29,
+  "wording_review": {
+    "buttons_and_headings": "Use short, familiar wording that clearly names the action or topic.",
+    "body_text": "Use everyday patient-facing language. Preserve every fact, condition, negation, number and instruction from the English."
+  },
+  "note": "No medical accuracy guarantee. No website deployment performed.",
+  "local_wording_fields": {
+    "hi": 163
+  }
+}

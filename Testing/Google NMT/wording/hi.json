@@ -1,0 +1,655 @@
+{
+  "locales.index_metadata.medical_consultations_with_doctor_name_explore_the": {
+    "source": "Medical consultations with {{doctor_name}}. Explore the practice and book a clinic or online appointment.",
+    "translation": "{{doctor_name}} से परामर्श लें। क्लिनिक के बारे में जानें और क्लिनिक या ऑनलाइन परामर्श के लिए अपॉइंटमेंट बुक करें।"
+  },
+  "locales.header.about": {
+    "source": "About",
+    "translation": "डॉक्टर के बारे में"
+  },
+  "locales.header.services": {
+    "source": "Services",
+    "translation": "सेवाएँ"
+  },
+  "locales.header.gallery": {
+    "source": "Gallery",
+    "translation": "तस्वीरें"
+  },
+  "locales.header.faq": {
+    "source": "FAQ",
+    "translation": "आम सवाल"
+  },
+  "locales.header.appointment": {
+    "source": "Appointment",
+    "translation": "अपॉइंटमेंट"
+  },
+  "locales.header.toggle_navigation_menu": {
+    "source": "Toggle navigation menu",
+    "translation": "मेनू खोलें या बंद करें"
+  },
+  "locales.home.discover_the_practice": {
+    "source": "Discover the practice",
+    "translation": "क्लिनिक के बारे में जानें"
+  },
+  "locales.home.medical_regd_no_to_be_configured": {
+    "source": "Medical Regd. No.: To be configured",
+    "translation": "चिकित्सा पंजीकरण संख्या अभी दर्ज नहीं है"
+  },
+  "locales.home.practising_since": {
+    "source": "Practising Since",
+    "translation": "चिकित्सा सेवा की शुरुआत"
+  },
+  "locales.home.languages": {
+    "source": "Languages",
+    "translation": "भाषाएँ"
+  },
+  "locales.about.diagnostic_instruments_for_a_general_medical_care": {
+    "source": "Diagnostic instruments for a general medical care examination",
+    "translation": "सामान्य स्वास्थ्य जाँच के उपकरण"
+  },
+  "locales.about.the_conversation_behind_the_care": {
+    "source": "The conversation behind the care.",
+    "translation": "देखभाल की शुरुआत बातचीत से"
+  },
+  "locales.about.read_less": {
+    "source": "Read Less",
+    "translation": "कम दिखाएँ"
+  },
+  "locales.services.areas_of_care": {
+    "source": "Areas of care",
+    "translation": "हमारी सेवाएँ"
+  },
+  "locales.services.care_for_today_a_view_of_the": {
+    "source": "Care for today. A view of the whole picture.",
+    "translation": "आपकी पूरी सेहत का ध्यान"
+  },
+  "locales.services.consultations_that_consider_your_concerns_your_routines": {
+    "source": "Consultations that consider your concerns, your routines and your existing care.",
+    "translation": "परामर्श में आपकी परेशानी, दिनचर्या और चल रहे इलाज को ध्यान में रखा जाता है।"
+  },
+  "locales.philosophy.care_philosophy": {
+    "source": "Care philosophy",
+    "translation": "देखभाल का तरीका"
+  },
+  "locales.philosophy.clarity_comfort_and_continuity": {
+    "source": "Clarity, comfort and continuity.",
+    "translation": "साफ़ जानकारी, सहज और निरंतर देखभाल"
+  },
+  "locales.philosophy.a_careful_examination_and_an_open_conversation": {
+    "source": "A careful examination and an open conversation form the starting point for your medical care.",
+    "translation": "आपकी देखभाल ध्यान से जाँच करने और खुलकर बातचीत करने से शुरू होती है।"
+  },
+  "locales.process.consultation_journey": {
+    "source": "Consultation journey",
+    "translation": "परामर्श के चरण"
+  },
+  "locales.process.what_to_expect": {
+    "source": "What to expect",
+    "translation": "परामर्श कैसे होता है"
+  },
+  "locales.process.a_clear_path_from_your_first_question": {
+    "source": "A clear path from your first question to a considered follow-up.",
+    "translation": "पहले सवाल से लेकर अगली मुलाकात तक, जानें हर चरण में क्या होता है।"
+  },
+  "locales.process.appointment_booking": {
+    "source": "Appointment booking",
+    "translation": "अपॉइंटमेंट लें"
+  },
+  "locales.process.choose_a_clinic_visit_or_an_online": {
+    "source": "Choose a clinic visit or an online consultation and an available appointment time.",
+    "translation": "क्लिनिक में या ऑनलाइन परामर्श का विकल्प चुनें। फिर उपलब्ध समय चुनें।"
+  },
+  "locales.process.conversation_assessment": {
+    "source": "Conversation & assessment",
+    "translation": "बातचीत और जाँच"
+  },
+  "locales.process.discuss_your_concerns_health_history_current_medicines": {
+    "source": "Discuss your concerns, health history, current medicines and relevant reports.",
+    "translation": "अपनी परेशानी, सेहत के इतिहास, चल रही दवाओं और ज़रूरी रिपोर्टों के बारे में बताएँ।"
+  },
+  "locales.process.a_plan_explained_clearly": {
+    "source": "A plan explained clearly",
+    "translation": "आगे की योजना समझें"
+  },
+  "locales.process.talk_through_the_assessment_suitable_next_steps": {
+    "source": "Talk through the assessment, suitable next steps and any questions you have.",
+    "translation": "जाँच में क्या पता चला और आगे क्या करना ठीक रहेगा, इस पर बात करें। अपने सवाल भी पूछें।"
+  },
+  "locales.process.a_thoughtful_follow_up": {
+    "source": "A thoughtful follow-up",
+    "translation": "अगली मुलाकात"
+  },
+  "locales.process.review_progress_with_the_doctor_and_discuss": {
+    "source": "Review progress with the doctor and discuss whether the plan needs to change.",
+    "translation": "डॉक्टर से बात करें कि आपकी सेहत में क्या बदलाव आया है और क्या इलाज की योजना बदलनी चाहिए।"
+  },
+  "locales.contact_us.arrange_your_next_visit": {
+    "source": "Arrange your next visit.",
+    "translation": "अगली मुलाकात तय करें"
+  },
+  "locales.contact_us.get_in_touch": {
+    "source": "Get in touch",
+    "translation": "संपर्क करें"
+  },
+  "locales.gallery.practice_gallery": {
+    "source": "Practice gallery",
+    "translation": "क्लिनिक की तस्वीरें"
+  },
+  "locales.gallery.a_closer_look_at_the_practice": {
+    "source": "A closer look at the practice.",
+    "translation": "क्लिनिक की एक झलक"
+  },
+  "locales.gallery.equipment_used_for_general_medical_assessment_and": {
+    "source": "Equipment used for general medical assessment and ongoing care.",
+    "translation": "सामान्य स्वास्थ्य जाँच और आगे की देखभाल में इस्तेमाल होने वाले उपकरण।"
+  },
+  "locales.gallery.glucose_monitor_and_supplies_for_diabetes_reviews": {
+    "source": "Glucose monitor and supplies for diabetes reviews",
+    "translation": "डायबिटीज़ की जाँच के लिए ब्लड शुगर मीटर और उससे जुड़ा सामान"
+  },
+  "locales.gallery.enlarge_glucose_monitor_and_supplies_for_diabetes": {
+    "source": "Enlarge: Glucose monitor and supplies for diabetes reviews",
+    "translation": "बड़ा करके देखें: ब्लड शुगर मीटर और डायबिटीज़ की जाँच का सामान"
+  },
+  "locales.gallery.clean_medical_examination_instruments": {
+    "source": "Clean medical examination instruments",
+    "translation": "जाँच के लिए साफ़ उपकरण"
+  },
+  "locales.gallery.enlarge_clean_medical_examination_instruments": {
+    "source": "Enlarge: Clean medical examination instruments",
+    "translation": "बड़ा करके देखें: जाँच के लिए साफ़ उपकरण"
+  },
+  "locales.gallery.enlarged_practice_gallery_image": {
+    "source": "Enlarged practice gallery image",
+    "translation": "क्लिनिक की तस्वीर बड़े आकार में"
+  },
+  "locales.gallery.close_image": {
+    "source": "Close image",
+    "translation": "तस्वीर बंद करें"
+  },
+  "locales.gallery.previous_image": {
+    "source": "Previous image",
+    "translation": "पिछली तस्वीर"
+  },
+  "locales.gallery.next_image": {
+    "source": "Next image",
+    "translation": "अगली तस्वीर"
+  },
+  "locales.gallery.enlarged_gallery_image": {
+    "source": "Enlarged gallery image",
+    "translation": "गैलरी की तस्वीर बड़े आकार में"
+  },
+  "locales.faq.before_your_visit": {
+    "source": "Before your visit",
+    "translation": "मुलाकात से पहले"
+  },
+  "locales.faq.frequently_asked_questions": {
+    "source": "Frequently asked questions",
+    "translation": "अक्सर पूछे जाने वाले सवाल"
+  },
+  "locales.faq.a_few_useful_details_to_help_you": {
+    "source": "A few useful details to help you prepare for your consultation.",
+    "translation": "यहाँ कुछ जानकारी है जो डॉक्टर से मिलने की तैयारी में आपकी मदद करेगी।"
+  },
+  "locales.faq.what_can_a_general_physician_help_with": {
+    "source": "What can a general physician help with?",
+    "translation": "जनरल फ़िज़िशियन किन समस्याओं में मदद करते हैं?"
+  },
+  "locales.faq.a_general_physician_helps_with_adult_health": {
+    "source": "A general physician helps with adult health concerns, new symptoms and ongoing conditions such as diabetes and high blood pressure. The doctor can also coordinate further assessment or specialist referral.",
+    "translation": "जनरल फ़िज़िशियन वयस्कों की स्वास्थ्य समस्याओं, नए लक्षणों और डायबिटीज़ या हाई ब्लड प्रेशर जैसी लंबे समय से चल रही बीमारियों में मदद करते हैं। ज़रूरत होने पर वे आगे की जाँच या किसी विशेषज्ञ से मिलने की व्यवस्था भी कर सकते हैं।"
+  },
+  "locales.faq.what_should_i_bring_to_my_appointment": {
+    "source": "What should I bring to my appointment?",
+    "translation": "अपॉइंटमेंट पर क्या लाऊँ?"
+  },
+  "locales.faq.bring_your_current_medicine_list_previous_prescriptions": {
+    "source": "Bring your current medicine list, previous prescriptions, recent test reports and any home health readings you record. Make a note of your symptoms and the questions you want to discuss.",
+    "translation": "अपनी दवाओं की सूची, पुराने पर्चे और हाल की जाँच रिपोर्ट साथ लाएँ। अगर आप घर पर अपनी सेहत से जुड़ी रीडिंग दर्ज करते हैं, तो वे भी लाएँ। अपने लक्षण और डॉक्टर से पूछने वाले सवाल लिख लें।"
+  },
+  "locales.faq.can_i_book_an_online_consultation": {
+    "source": "Can I book an online consultation?",
+    "translation": "क्या ऑनलाइन परामर्श बुक कर सकते हैं?"
+  },
+  "locales.faq.online_consultations_are_available_when_enabled_by": {
+    "source": "Online consultations are available when enabled by the practice. The doctor may recommend an in-person visit if a physical examination or further assessment is needed.",
+    "translation": "अगर क्लिनिक में ऑनलाइन परामर्श की सुविधा चालू है, तो आप इसका इस्तेमाल कर सकते हैं। शारीरिक जाँच या आगे के आकलन की ज़रूरत होने पर डॉक्टर आपको क्लिनिक आने की सलाह दे सकते हैं।"
+  },
+  "locales.faq.can_i_discuss_more_than_one_health": {
+    "source": "Can I discuss more than one health concern?",
+    "translation": "क्या एक से ज़्यादा समस्याओं पर बात कर सकते हैं?"
+  },
+  "locales.faq.yes_tell_the_doctor_about_your_concerns": {
+    "source": "Yes. Tell the doctor about your concerns at the start of the visit so you can agree on priorities and arrange any follow-up that is needed.",
+    "translation": "हाँ। मुलाकात की शुरुआत में अपनी परेशानियाँ बताएँ। इससे आप और डॉक्टर मिलकर तय कर सकते हैं कि पहले किस पर ध्यान दें और ज़रूरत हो तो अगली मुलाकात कब रखें।"
+  },
+  "locales.faq.will_i_need_tests_before_the_consultation": {
+    "source": "Will I need tests before the consultation?",
+    "translation": "क्या परामर्श से पहले जाँच करानी होगी?"
+  },
+  "locales.faq.the_doctor_will_review_your_history_and": {
+    "source": "The doctor will review your history and decide whether investigations are appropriate. Bring reports you already have; contact the practice about any specific preparation for your appointment.",
+    "translation": "डॉक्टर आपकी सेहत का इतिहास देखकर तय करेंगे कि जाँच की ज़रूरत है या नहीं। जो रिपोर्ट आपके पास हैं, उन्हें साथ लाएँ। मुलाकात से पहले किसी खास तैयारी के बारे में क्लिनिक से पूछें।"
+  },
+  "locales.faq.is_this_website_for_emergency_care": {
+    "source": "Is this website for emergency care?",
+    "translation": "क्या यह वेबसाइट आपात स्थिति में मदद देती है?"
+  },
+  "locales.faq.this_website_and_its_chatbot_are_not": {
+    "source": "This website and its chatbot are not emergency services. In an emergency, call 112 or go to the nearest hospital.",
+    "translation": "यह वेबसाइट और इसका चैटबॉट आपातकालीन सेवा नहीं देते। आपात स्थिति में 112 पर कॉल करें या सबसे नज़दीकी अस्पताल जाएँ।"
+  },
+  "locales.booking.appointment_type": {
+    "source": "Appointment type",
+    "translation": "अपॉइंटमेंट का प्रकार"
+  },
+  "locales.booking.clinic_visit": {
+    "source": "Clinic Visit",
+    "translation": "क्लिनिक में मुलाकात"
+  },
+  "locales.booking.online_consultations_are_governed_by_the_telemedicine": {
+    "source": "Online consultations are governed by the Telemedicine Practice Guidelines, 2020. They are not for emergencies, and the doctor may advise an in-person visit where an examination is needed.",
+    "translation": "ऑनलाइन परामर्श पर टेलीमेडिसिन प्रैक्टिस गाइडलाइंस, 2020 लागू हैं। यह सुविधा आपात स्थिति के लिए नहीं है। अगर शारीरिक जाँच ज़रूरी हो, तो डॉक्टर आपको क्लिनिक आने की सलाह दे सकते हैं।"
+  },
+  "locales.booking.preferred_date": {
+    "source": "Preferred Date",
+    "translation": "पसंदीदा तारीख"
+  },
+  "locales.booking.select_a_date": {
+    "source": "Select a date",
+    "translation": "तारीख चुनें"
+  },
+  "locales.booking.next_month": {
+    "source": "Next month",
+    "translation": "अगला महीना"
+  },
+  "locales.booking.su": {
+    "source": "Su",
+    "translation": "रवि"
+  },
+  "locales.booking.mo": {
+    "source": "Mo",
+    "translation": "सोम"
+  },
+  "locales.booking.tu": {
+    "source": "Tu",
+    "translation": "मंगल"
+  },
+  "locales.booking.we": {
+    "source": "We",
+    "translation": "बुध"
+  },
+  "locales.booking.th": {
+    "source": "Th",
+    "translation": "गुरु"
+  },
+  "locales.booking.fr": {
+    "source": "Fr",
+    "translation": "शुक्र"
+  },
+  "locales.booking.sa": {
+    "source": "Sa",
+    "translation": "शनि"
+  },
+  "locales.booking.select_time_slot": {
+    "source": "Select Time Slot",
+    "translation": "समय चुनें"
+  },
+  "locales.booking.reason_for_visit": {
+    "source": "Reason For Visit",
+    "translation": "मुलाकात का कारण"
+  },
+  "locales.booking.please_describe_your_symptoms_or_reason_for": {
+    "source": "Please describe your symptoms or reason for consultation...",
+    "translation": "अपने लक्षण या परामर्श लेने का कारण लिखें…"
+  },
+  "locales.booking.i_agree_to_the_privacy_policy_and": {
+    "source": "I agree to the Privacy Policy and consent to {{doctor_name}} and DigiDr using my details to provide my consultation. I can withdraw consent or request data deletion at {{email}}.",
+    "translation": "मैं गोपनीयता नीति से सहमत हूँ। मैं {{doctor_name}} और DigiDr को मेरे परामर्श के लिए मेरी जानकारी इस्तेमाल करने की अनुमति देता/देती हूँ। मैं {{email}} पर लिखकर अपनी सहमति वापस ले सकता/सकती हूँ या अपनी जानकारी हटाने का अनुरोध कर सकता/सकती हूँ।"
+  },
+  "locales.booking.booking_your_appointment": {
+    "source": "Booking your appointment...",
+    "translation": "अपॉइंटमेंट बुक हो रहा है…"
+  },
+  "locales.booking.please_enter_your_email_address": {
+    "source": "Please enter your email address.",
+    "translation": "कृपया अपना ईमेल पता दर्ज करें।"
+  },
+  "locales.booking.please_enter_a_valid_email_address": {
+    "source": "Please enter a valid email address.",
+    "translation": "कृपया सही ईमेल पता दर्ज करें।"
+  },
+  "locales.booking.please_enter_a_valid_phone_number": {
+    "source": "Please enter a valid phone number.",
+    "translation": "कृपया सही फ़ोन नंबर दर्ज करें।"
+  },
+  "locales.booking.please_select_a_preferred_date": {
+    "source": "Please select a preferred date.",
+    "translation": "कृपया अपनी पसंद की तारीख चुनें।"
+  },
+  "locales.booking.date_cannot_be_in_the_past": {
+    "source": "Date cannot be in the past.",
+    "translation": "कृपया आज या उसके बाद की तारीख चुनें।"
+  },
+  "locales.booking.please_provide_a_brief_description_min_10": {
+    "source": "Please provide a brief description (min 10 characters).",
+    "translation": "कृपया कम से कम 10 अक्षरों में संक्षेप में लिखें।"
+  },
+  "locales.booking.please_select_an_available_date": {
+    "source": "Please select an available date.",
+    "translation": "कृपया कोई उपलब्ध तारीख चुनें।"
+  },
+  "locales.booking.please_describe_your_reason_for_visiting_in": {
+    "source": "Please describe your reason for visiting in at least 10 characters.",
+    "translation": "कृपया कम से कम 10 अक्षरों में बताएँ कि आप डॉक्टर से क्यों मिलना चाहते हैं।"
+  },
+  "locales.booking.compressing_image": {
+    "source": "Compressing image...",
+    "translation": "तस्वीर का आकार छोटा किया जा रहा है…"
+  },
+  "locales.booking.preview": {
+    "source": "Preview",
+    "translation": "झलक देखें"
+  },
+  "locales.booking.error_compressing_image_please_try_another_file": {
+    "source": "Error compressing image. Please try another file.",
+    "translation": "तस्वीर का आकार छोटा नहीं हो सका। कृपया दूसरी फ़ाइल चुनें।"
+  },
+  "locales.booking.your_online_consultation_has_been_booked_successfully": {
+    "source": "Your online consultation has been booked successfully.",
+    "translation": "आपका ऑनलाइन परामर्श बुक हो गया है।"
+  },
+  "locales.booking.appointment_location": {
+    "source": "Appointment Location:",
+    "translation": "मुलाकात की जगह:"
+  },
+  "locales.booking.confirmation_details_have_been_sent_to_your": {
+    "source": "Confirmation details have been sent to your registered email",
+    "translation": "अपॉइंटमेंट की पुष्टि और जानकारी आपके दर्ज किए गए ईमेल पते पर भेज दी गई है।"
+  },
+  "locales.consent.your_rights": {
+    "source": "Your rights",
+    "translation": "आपके अधिकार"
+  },
+  "locales.consent.i_agree": {
+    "source": "I Agree",
+    "translation": "मैं सहमत हूँ"
+  },
+  "locales.consent.subject_to_applicable_law_and_necessary_medical": {
+    "source": "Subject to applicable law and necessary medical-record retention requirements, you may request access, correction, deletion, or withdrawal of consent regarding your personal information.",
+    "translation": "लागू कानून और मेडिकल रिकॉर्ड रखने के नियमों के अनुसार, आप अपनी जानकारी देखने, उसमें सुधार कराने या उसे हटाने का अनुरोध कर सकते हैं। आप अपनी सहमति वापस लेने का अनुरोध भी कर सकते हैं।"
+  },
+  "locales.footer.follow_me_on": {
+    "source": "Follow me on:",
+    "translation": "सोशल मीडिया पर मुझसे जुड़ें"
+  },
+  "locales.footer.quick_links": {
+    "source": "Quick Links",
+    "translation": "ज़रूरी लिंक"
+  },
+  "locales.footer.quick_links_2": {
+    "source": "Quick links",
+    "translation": "ज़रूरी लिंक"
+  },
+  "locales.footer.about": {
+    "source": "About",
+    "translation": "डॉक्टर के बारे में"
+  },
+  "locales.footer.services": {
+    "source": "Services",
+    "translation": "सेवाएँ"
+  },
+  "locales.footer.gallery": {
+    "source": "Gallery",
+    "translation": "तस्वीरें"
+  },
+  "locales.footer.faq": {
+    "source": "FAQ",
+    "translation": "आम सवाल"
+  },
+  "locales.footer.legal": {
+    "source": "Legal",
+    "translation": "कानूनी जानकारी"
+  },
+  "locales.footer.information_not_advice_content_on_this_site": {
+    "source": "Information, not advice. Content on this site is for general public awareness. It is not medical advice, does not create a doctor–patient relationship and does not replace a consultation. In an emergency, call 112 or go to the nearest hospital.",
+    "translation": "इस वेबसाइट की जानकारी आम लोगों की जागरूकता के लिए है। यह चिकित्सा सलाह नहीं है, इससे डॉक्टर और मरीज़ का संबंध नहीं बनता और यह डॉक्टर से परामर्श की जगह नहीं ले सकती। आपात स्थिति में 112 पर कॉल करें या सबसे नज़दीकी अस्पताल जाएँ।"
+  },
+  "locales.privacy_policy_metadata.read_the_privacy_policy_for_the_practice": {
+    "source": "Read the privacy policy for the practice of {{doctor_name}}.",
+    "translation": "{{doctor_name}} के क्लिनिक की गोपनीयता नीति पढ़ें।"
+  },
+  "locales.privacy_policy.back_to_home": {
+    "source": "Back to Home",
+    "translation": "मुख्य पेज पर लौटें"
+  },
+  "locales.privacy_policy.7_data_retention": {
+    "source": "7) Data Retention",
+    "translation": "7) जानकारी कब तक रखी जाती है"
+  },
+  "locales.privacy_policy.please_share_only_what_is_needed_for": {
+    "source": "Please share only what is needed for your visit. Do not upload government ID numbers or payment card details through the forms.",
+    "translation": "मुलाकात के लिए जितनी जानकारी ज़रूरी है, उतनी ही साझा करें। फ़ॉर्म में सरकारी पहचान पत्र के नंबर या भुगतान कार्ड की जानकारी न डालें।"
+  },
+  "locales.privacy_policy.if_the_patient_is_under_18_the": {
+    "source": "If the patient is under 18, the booking must be made by a parent or lawful guardian, who gives consent for the child. We do not track or target children with advertising.",
+    "translation": "अगर मरीज़ की उम्र 18 साल से कम है, तो बुकिंग माता-पिता या कानूनी अभिभावक को करनी होगी। वे ही बच्चे की ओर से सहमति देते हैं। विज्ञापन के लिए हम बच्चों की गतिविधियों पर नज़र नहीं रखते और न ही उन्हें लक्षित करते हैं।"
+  },
+  "locales.privacy_policy.we_may_update_this_privacy_policy_periodically": {
+    "source": "We may update this Privacy Policy periodically. The latest version will always be posted on this page with the effective date. For changes that affect how your details are used, we will tell you where we hold your contact details.",
+    "translation": "हम समय-समय पर इस गोपनीयता नीति को बदल सकते हैं। नया संस्करण हमेशा इसी पेज पर लागू होने की तारीख के साथ उपलब्ध रहेगा। अगर बदलाव से आपकी जानकारी के इस्तेमाल पर असर पड़ता है और हमारे पास आपसे संपर्क करने का विवरण है, तो हम आपको बताएँगे।"
+  },
+  "locales.terms_of_service_metadata.read_the_terms_of_service_for_the": {
+    "source": "Read the terms of service for the practice of {{doctor_name}}.",
+    "translation": "{{doctor_name}} के क्लिनिक की सेवा की शर्तें पढ़ें।"
+  },
+  "locales.terms_of_service.back_to_home": {
+    "source": "Back to Home",
+    "translation": "मुख्य पेज पर लौटें"
+  },
+  "locales.terms_of_service.11_governing_law": {
+    "source": "11) Governing Law",
+    "translation": "11) लागू कानून"
+  },
+  "locales.terms_of_service.to_the_extent_permitted_by_law_doctor": {
+    "source": "To the extent permitted by law, {{doctor_name}} is not liable for any direct, indirect, incimedical, or consequential losses arising from use of this website, reliance on its content, or inability to access services.",
+    "translation": "कानून जितनी छूट देता है, उस सीमा तक इस वेबसाइट के उपयोग, इसकी जानकारी पर भरोसा करने या सेवाओं तक पहुँच न होने से हुए प्रत्यक्ष, अप्रत्यक्ष, “incimedical” या परिणामी नुकसान के लिए {{doctor_name}} ज़िम्मेदार नहीं हैं।",
+    "review_note": "The English liability clause contains the undefined word 'incimedical'. Confirm the intended term before approving its translation."
+  },
+  "locales.chatbot.hello_i_can_help_with_medical_services": {
+    "source": "Hello! I can help with Medical services, clinic information and appointment booking. How can I help?",
+    "translation": "नमस्ते! मैं चिकित्सा सेवाओं, क्लिनिक की जानकारी और अपॉइंटमेंट बुक करने में आपकी मदद कर सकता हूँ। बताइए, आपको क्या जानना है?"
+  },
+  "locales.chatbot.send_message": {
+    "source": "Send message",
+    "translation": "संदेश भेजें"
+  },
+  "locales.chatbot.informational_only_not_medical_advice": {
+    "source": "Informational only, not medical advice.",
+    "translation": "यह केवल जानकारी है, चिकित्सा सलाह नहीं।"
+  },
+  "locales.chatbot.open_assistant": {
+    "source": "Open Assistant",
+    "translation": "सहायक खोलें"
+  },
+  "locales.chatbot.bot": {
+    "source": "bot",
+    "translation": "चैटबॉट"
+  },
+  "content.profile.general_physician": {
+    "source": "General Physician",
+    "translation": "जनरल फ़िज़िशियन"
+  },
+  "content.about.general_medical_care_that_considers_your_symptoms": {
+    "source": "General medical care that considers your symptoms, your history and your daily life.",
+    "translation": "आपकी देखभाल में आपके लक्षणों, सेहत के इतिहास और रोज़मर्रा की ज़िंदगी को ध्यान में रखा जाता है।"
+  },
+  "content.about.doctor_name_is_a_general_physician_offering": {
+    "source": "{{doctor_name}} is a general physician offering consultations for adult health concerns, preventive care and ongoing medical conditions. A visit starts with the symptoms or questions that matter to you, followed by a discussion of your health history, medicines and daily routines. The doctor reviews available reports and examines you when needed before explaining the findings. Further tests or a specialist opinion may be discussed if they would help clarify the next steps. Care plans take account of your priorities and practical circumstances. Follow-up appointments allow time to review progress, test results and changes in your health. Clinic visits and online consultations are available when enabled by the practice; the doctor may recommend an in-person assessment when an examination is needed.",
+    "translation": "{{doctor_name}} जनरल फ़िज़िशियन हैं। वे वयस्कों को स्वास्थ्य समस्याओं, बीमारियों से बचाव और लंबे समय से चल रही बीमारियों के लिए परामर्श देते हैं। मुलाकात की शुरुआत उन लक्षणों या सवालों से होती है जो आपके लिए सबसे ज़रूरी हैं। फिर डॉक्टर आपकी सेहत के इतिहास, दवाओं और दिनचर्या के बारे में पूछते हैं। वे उपलब्ध रिपोर्ट देखते हैं, ज़रूरत पड़ने पर आपकी जाँच करते हैं और समझाते हैं कि उन्हें क्या पता चला। अगर आगे का रास्ता तय करने में मदद मिले, तो वे दूसरी जाँच या किसी विशेषज्ञ की राय लेने पर भी बात कर सकते हैं। देखभाल की योजना में आपकी प्राथमिकताओं और परिस्थितियों का ध्यान रखा जाता है। अगली मुलाकातों में आप अपनी प्रगति, जाँच के नतीजों और सेहत में आए बदलावों पर बात कर सकते हैं। क्लिनिक में मुलाकात और ऑनलाइन परामर्श की उपलब्धता इस पर निर्भर करती है कि क्लिनिक ने कौन-सी सुविधाएँ चालू की हैं। अगर शारीरिक जाँच की ज़रूरत हो, तो डॉक्टर आपको क्लिनिक आने की सलाह दे सकते हैं।"
+  },
+  "content.services.general_medical_consultations": {
+    "source": "General medical consultations",
+    "translation": "सामान्य स्वास्थ्य परामर्श"
+  },
+  "content.services.assessment_of_new_symptoms_medical_history_and": {
+    "source": "Assessment of new symptoms, medical history and current medicines, with an explanation of the next steps.",
+    "translation": "डॉक्टर आपके नए लक्षणों, सेहत के इतिहास और चल रही दवाओं को देखकर समझाते हैं कि आगे क्या करना चाहिए।"
+  },
+  "content.services.diabetes_reviews": {
+    "source": "Diabetes reviews",
+    "translation": "डायबिटीज़ की देखभाल"
+  },
+  "content.services.ongoing_consultations_to_review_blood_sugar_records": {
+    "source": "Ongoing consultations to review blood sugar records, medicines and individual care goals.",
+    "translation": "नियमित मुलाकातों में आपके ब्लड शुगर के रिकॉर्ड, दवाओं और देखभाल के आपके अपने लक्ष्यों पर बात होती है।"
+  },
+  "content.services.blood_pressure_care": {
+    "source": "Blood pressure care",
+    "translation": "ब्लड प्रेशर की देखभाल"
+  },
+  "content.services.review_of_blood_pressure_readings_current_treatment": {
+    "source": "Review of blood pressure readings, current treatment and relevant health concerns.",
+    "translation": "आपके ब्लड प्रेशर की रीडिंग, चल रहे इलाज और इससे जुड़ी स्वास्थ्य समस्याओं पर बात होती है।"
+  },
+  "content.services.clinical_assessment_of_fever_and_common_infections": {
+    "source": "Clinical assessment of fever and common infections, with investigations or referral when appropriate.",
+    "translation": "डॉक्टर बुखार और आम संक्रमणों की जाँच करते हैं। ज़रूरत के अनुसार वे आगे की जाँच या किसी विशेषज्ञ से मिलने की सलाह दे सकते हैं।"
+  },
+  "content.services.preventive_health_reviews": {
+    "source": "Preventive health reviews",
+    "translation": "बीमारियों से बचाव"
+  },
+  "content.services.a_discussion_of_personal_health_risks_screening": {
+    "source": "A discussion of personal health risks, screening needs and everyday health routines.",
+    "translation": "आपको किन बीमारियों का खतरा हो सकता है, समय रहते उनका पता लगाने के लिए किन जाँचों की ज़रूरत है और आपकी रोज़मर्रा की स्वास्थ्य आदतें क्या हैं, इन पर बात होती है।"
+  },
+  "content.services.long_term_care_follow_up": {
+    "source": "Long-term care follow-up",
+    "translation": "लंबे समय तक देखभाल"
+  },
+  "content.services.review_of_continuing_medical_conditions_test_results": {
+    "source": "Review of continuing medical conditions, test results and coordination with other specialists.",
+    "translation": "डॉक्टर लंबे समय से चल रही बीमारियों और जाँच के नतीजों की समीक्षा करते हैं और देखभाल के लिए दूसरे विशेषज्ञों के साथ तालमेल रखते हैं।"
+  },
+  "content.philosophy.considered_individual_care": {
+    "source": "Considered, individual care",
+    "translation": "आपकी ज़रूरत के अनुसार देखभाल"
+  },
+  "content.philosophy.listen_with_care": {
+    "source": "Listen with care",
+    "translation": "आपकी बात ध्यान से सुनना"
+  },
+  "content.philosophy.a_full_conversation_about_your_concerns_routines": {
+    "source": "A full conversation about your concerns, routines and existing treatment.",
+    "translation": "आपकी परेशानियों, दिनचर्या और चल रहे इलाज के बारे में खुलकर बात होती है।"
+  },
+  "content.philosophy.explain_the_choices": {
+    "source": "Explain the choices",
+    "translation": "विकल्प समझाना"
+  },
+  "content.philosophy.understand_what_is_being_considered_why_it": {
+    "source": "Understand what is being considered, why it may be suitable and what comes next.",
+    "translation": "डॉक्टर समझाते हैं कि किन विकल्पों पर विचार हो रहा है, वे आपके लिए क्यों सही हो सकते हैं और आगे क्या होगा।"
+  },
+  "content.philosophy.review_together": {
+    "source": "Review together",
+    "translation": "मिलकर प्रगति देखना"
+  },
+  "content.philosophy.follow_up_visits_make_space_to_discuss": {
+    "source": "Follow-up visits make space to discuss changes and reassess the plan.",
+    "translation": "अगली मुलाकातों में आप सेहत में आए बदलावों पर बात कर सकते हैं और डॉक्टर के साथ देख सकते हैं कि योजना बदलने की ज़रूरत है या नहीं।"
+  },
+  "content.footer.general_medical_care_with_time_for_you": {
+    "source": "General medical care, with time for you.",
+    "translation": "आपकी बात सुनने के लिए समय और आपकी सेहत की देखभाल।"
+  },
+  "locales.consent.patient_consent_data_privacy": {
+    "source": "Patient Consent & Data Privacy",
+    "translation": "मरीज़ की सहमति और जानकारी की गोपनीयता"
+  },
+  "locales.consent.by_submitting_this_form_i_consent_to": {
+    "source": "By submitting this form, I consent to digidr.app collecting and processing the personal and health information provided by me, including my name, phone number, email address, appointment details, symptoms/reason for consultation, and uploaded medical reports, for scheduling, managing, and facilitating my consultation with the doctor.",
+    "translation": "यह फ़ॉर्म भेजकर मैं सहमति देता/देती हूँ कि digidr.app मेरी दी हुई निजी और स्वास्थ्य संबंधी जानकारी एकत्र कर सकता है और उसका इस्तेमाल कर सकता है। इसमें मेरा नाम, फ़ोन नंबर, ईमेल पता, अपॉइंटमेंट का विवरण, लक्षण या परामर्श का कारण और मेरी अपलोड की गई मेडिकल रिपोर्ट शामिल हैं। इसका उद्देश्य डॉक्टर के साथ मेरे परामर्श का समय तय करना, उसकी व्यवस्था संभालना और परामर्श में मदद करना है।"
+  },
+  "locales.consent.your_information_will_not_be_sold_or": {
+    "source": "Your information will not be sold or shared for marketing or unrelated purposes.",
+    "translation": "मार्केटिंग या सेवा से असंबंधित किसी उद्देश्य के लिए आपकी जानकारी बेची या साझा नहीं की जाएगी।"
+  },
+  "locales.consent.questions_or_complaints": {
+    "source": "Questions or Complaints",
+    "translation": "सवाल या शिकायतें"
+  },
+  "locales.consent.by_clicking_on_i_agree_button_i": {
+    "source": "By clicking on I Agree button, I confirm that I have read and understood this consent notice and agree to the processing of my information for the purposes stated above.",
+    "translation": "“मैं सहमत हूँ” पर क्लिक करके मैं पुष्टि करता/करती हूँ कि मैंने यह सूचना पढ़ और समझ ली है। ऊपर बताए गए उद्देश्यों के लिए मेरी जानकारी का इस्तेमाल करने पर मेरी सहमति है।"
+  },
+  "locales.privacy_policy.this_privacy_policy_explains_how_personal_information": {
+    "source": "This Privacy Policy explains how personal information is collected, used, stored, and protected when you use this website and its consultation and appointment services.",
+    "translation": "यह गोपनीयता नीति बताती है कि जब आप इस वेबसाइट का उपयोग करते हैं, परामर्श लेते हैं या अपॉइंटमेंट बुक करते हैं, तो आपकी निजी जानकारी कैसे ली जाती है, इस्तेमाल होती है, रखी जाती है और सुरक्षित रखी जाती है।"
+  },
+  "locales.privacy_policy.this_is_the_personal_microsite_of_doctor": {
+    "source": "This is the personal microsite of {{doctor_name}}, {{qualification}}, Registration No. To be configured. It is hosted on technology provided by DigiDr (digidr.app).",
+    "translation": "यह {{doctor_name}}, {{qualification}} की अपनी वेबसाइट है। पंजीकरण संख्या अभी दर्ज नहीं है। यह वेबसाइट DigiDr (digidr.app) की तकनीक पर चलती है।"
+  },
+  "locales.privacy_policy.doctor_name_decides_why_and_how_your": {
+    "source": "{{doctor_name}} decides why and how your details are used for your consultation and is the Data Fiduciary under the Digital Personal Data Protection Act, 2023 (\"DPDP Act\"). DigiDr provides the technology and handles your details only on the doctor's instructions. DigiDr is not a healthcare provider.",
+    "translation": "{{doctor_name}} तय करते हैं कि आपके परामर्श के लिए आपकी जानकारी का इस्तेमाल क्यों और कैसे होगा। डिजिटल व्यक्तिगत डेटा संरक्षण अधिनियम, 2023 (DPDP अधिनियम) के तहत डॉक्टर ही डेटा फ़िड्यूशरी हैं। DigiDr तकनीक उपलब्ध कराता है और आपकी जानकारी केवल डॉक्टर के निर्देशों के अनुसार संभालता है। DigiDr स्वास्थ्य सेवा प्रदाता नहीं है।"
+  },
+  "locales.privacy_policy.3_how_we_use_your_information_and": {
+    "source": "3) How We Use Your Information, and Your Consent",
+    "translation": "3) आपकी जानकारी का इस्तेमाल और आपकी सहमति"
+  },
+  "locales.privacy_policy.schedule_and_manage_appointments": {
+    "source": "Schedule and manage appointments",
+    "translation": "अपॉइंटमेंट तय करने और उनकी व्यवस्था संभालने के लिए"
+  },
+  "locales.privacy_policy.respond_to_inquiries_and_provide_support": {
+    "source": "Respond to inquiries and provide support",
+    "translation": "आपके सवालों के जवाब देने और मदद करने के लिए"
+  },
+  "locales.privacy_policy.send_messages_about_your_appointment": {
+    "source": "Send messages about your appointment",
+    "translation": "आपके अपॉइंटमेंट के बारे में संदेश भेजने के लिए"
+  },
+  "locales.privacy_policy.improve_the_website_using_anonymous_combined_usage": {
+    "source": "Improve the website using anonymous, combined usage data",
+    "translation": "वेबसाइट बेहतर बनाने के लिए, उसके इस्तेमाल की ऐसी जानकारी को मिलाकर जिसमें किसी की पहचान न हो"
+  },
+  "locales.privacy_policy.meet_legal_medical_and_regulatory_obligations": {
+    "source": "Meet legal, medical, and regulatory obligations",
+    "translation": "कानूनी, चिकित्सा संबंधी और नियामक ज़िम्मेदारियाँ पूरी करने के लिए"
+  },
+  "locales.privacy_policy.5_ai_assisted_content": {
+    "source": "5) AI-Assisted Content",
+    "translation": "5) एआई की मदद से तैयार सामग्री"
+  },
+  "locales.privacy_policy.6_sharing_of_information": {
+    "source": "6) Sharing of Information",
+    "translation": "6) जानकारी कब साझा की जाती है"
+  },
+  "locales.privacy_policy.12_third_party_links": {
+    "source": "12) Third-Party Links",
+    "translation": "12) दूसरी वेबसाइटों के लिंक"
+  },
+  "locales.privacy_policy.to_use_any_of_these_rights_write": {
+    "source": "To use any of these rights, write to {{doctor_name}} using the details below, or to DigiDr at {{email}}. If your grievance is not resolved, you may complain to the Data Protection Board of India.",
+    "translation": "इन अधिकारों का उपयोग करने के लिए नीचे दिए गए पते पर {{doctor_name}} को लिखें या {{email}} पर DigiDr को ईमेल करें। अगर आपकी शिकायत हल नहीं होती, तो आप भारतीय डेटा संरक्षण बोर्ड से शिकायत कर सकते हैं।"
+  },
+  "locales.terms_of_service.2_no_emergency_service": {
+    "source": "2) No Emergency Service",
+    "translation": "2) आपातकालीन सेवा उपलब्ध नहीं है"
+  },
+  "locales.terms_of_service.4_appointment_requests": {
+    "source": "4) Appointment Requests",
+    "translation": "4) अपॉइंटमेंट का अनुरोध"
+  },
+  "locales.terms_of_service.appointment_forms_and_contact_requests_do_not": {
+    "source": "Appointment forms and contact requests do not guarantee confirmed appointments. Confirmation is subject to availability and direct communication from the clinic.",
+    "translation": "फ़ॉर्म भरने या क्लिनिक से संपर्क करने भर से अपॉइंटमेंट पक्का नहीं होता। इसकी पुष्टि उपलब्ध समय और क्लिनिक से सीधे बातचीत पर निर्भर करती है।"
+  },
+  "locales.terms_of_service.7_third_party_tools_and_links": {
+    "source": "7) Third-Party Tools and Links",
+    "translation": "7) दूसरी सेवाओं के टूल और लिंक"
+  }
+}

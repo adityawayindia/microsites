@@ -1,0 +1,12 @@
+{
+  "doctor_name": "Dr. Vivek Iyer",
+  "qualification": "MBBS",
+  "clinic_name": "Chapter Physician Clinic",
+  "phone_display": "+91-0000000000",
+  "phone": "+910000000000",
+  "email": "info@digidr.app",
+  "clinic_address": "Clinic address to be configured",
+  "locality": "Bengaluru, Karnataka – 560038",
+  "doctor_url": "https://digidr.app/dr-vivek-iyer/",
+  "practising_since": 1998
+}
