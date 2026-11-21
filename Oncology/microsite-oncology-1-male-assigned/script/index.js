@@ -960,51 +960,22 @@ document.addEventListener("click", (event) => {
   });
 })();
 
-/* ==========================================================================
-   Contact Information cleanup — the card shows only if the backend sends a
-   phone number or an email. Empty lines are dropped; if both are empty the
-   [data-contact-info] block is removed together with its divider, and an
-   enclosing [data-contact-card] is removed too if nothing else is left in
-   it. Call buttons marked [data-contact-phone-cta] are removed when there is
-   no phone. The single-card layout is handled in styles/style.css.
-   ========================================================================== */
-(function initContactInfoCleanup() {
+// Keep the clinic address and both contact rows visible when a value is missing.
+(function renderContactDetails() {
   const info = document.querySelector('[data-contact-info]');
   if (!info) return;
 
   const phone = info.querySelector('[data-contact-phone]');
-  const email = info.querySelector('[data-contact-email]');
-
-  // An empty phone renders as "91-" / "+91-" — require a real number after the
-  // country code ("X" allowed so template placeholders like +91-XXXXXXXXXX stay).
   const phoneDigits = phone ? phone.textContent.split('-').slice(1).join('').replace(/[^\dXx]/g, '') : '';
-  const hasPhone = phoneDigits.length >= 6;
-  const hasEmail = !!email && /^[^\s@{}]+@[^\s@{}]+\.[^\s@{}]+$/.test(email.textContent.trim());
-
-  if (!hasPhone) {
+  if (phoneDigits.length < 6) {
+    if (phone) phone.replaceWith('Phone number: NA');
     document.querySelectorAll('[data-contact-phone-cta]').forEach((btn) => btn.remove());
   }
 
-  if (hasPhone && hasEmail) return;
-
-  if (!hasPhone && !hasEmail) {
-    const card = info.closest('[data-contact-card]');
-    [info.previousElementSibling, info.nextElementSibling].forEach((el) => {
-      if (el && /divider/.test(el.className)) el.remove();
-    });
-    info.remove();
-    if (card && !card.querySelector('a, button, [data-contact-keep]')) card.remove();
-    return;
+  const email = info.querySelector('[data-contact-email]');
+  if (email && !/^[^\s@{}]+@[^\s@{}]+\.[^\s@{}]+$/.test(email.textContent.trim())) {
+    email.replaceWith('Email: NA');
   }
-
-  // Exactly one is missing — remove that line together with its adjoining <br>.
-  const missing = hasPhone ? email : phone;
-  if (!missing) return;
-  const next = missing.nextElementSibling;
-  const prev = missing.previousElementSibling;
-  if (next && next.tagName === 'BR') next.remove();
-  else if (prev && prev.tagName === 'BR') prev.remove();
-  missing.remove();
 })();
 
 /* Hero: show only the year in "Practising since" */

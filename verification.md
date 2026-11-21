@@ -212,9 +212,11 @@ no dead nav link, no leftover carousel markup or script errors.
 
 ## H. CONTACT
 12. A Contact section exists with:
-    - the clinic's full address, and
-    - contact details: phone number (`tel:` link) and email address (`mailto:` link),
-    - plus a Book Appointment button that opens the modal.
+    - the clinic's full address,
+    - phone and email links (`tel:` and `mailto:`) for available values, and
+    - a Book Appointment button that opens the modal.
+    Check each field missing separately and both missing together. The address and both rows
+    stay visible. A missing value appears as plain text (`Phone number: NA` or `Email: NA`).
     Icons as in AGENTS.md Appendix A.7: `fa-location-dot` for the address, `fa-phone` for the
     contact details.
 
