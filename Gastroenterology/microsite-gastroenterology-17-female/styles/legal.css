@@ -1,0 +1,4 @@
+.legal-page .blog-detail-article { padding:clamp(20px,4vw,52px); background:var(--surface); border-top:4px solid var(--brand); border-radius:var(--radius-md); }
+.legal-page .blog-detail-back-link { color:var(--brand); min-height:44px; }
+.legal-page .blog-detail-content { overflow-wrap:anywhere; }
+@media(max-width:480px) { .legal-page .blog-detail-article {padding:18px 14px;} }

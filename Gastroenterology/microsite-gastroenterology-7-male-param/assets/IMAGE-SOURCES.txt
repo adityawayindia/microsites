@@ -1,0 +1,27 @@
+Burgundy Folio | Dr. Raghav Bhatia | Gastroenterology 7
+
+Illustrative draft. Doctor names, qualifications, practising years and practice details are sample data. The deploying practice supplies verified details and registered backend identifiers.
+
+Original assets generated for this project with the built-in OpenAI image generator. All source and parameterized assets match within this pair.
+
+portrait.webp — Individual portrait of a fictional Indian male gastroenterologist.
+Prompt: Photorealistic-natural, 2:3 vertical editorial portrait of one fictional Indian gastroenterologist, solo adult, male, early forties, Sikh doctor wearing a navy turban, full neat beard and light brown skin, crisp white coat over olive medical scrubs. Backdrop: orange-toned pale sandstone and diffused light. Centered face, enough space above entire head, full shoulders in frame and waist-up crop. Professional reassuring expression, natural skin texture, medium format portrait photography, carefully lit face and elegant clothing. No text, labels, brand marks, visible badge, logos, watermark, or other people.
+
+hero.webp — Framed digestive tract illustration in a clinic library
+Prompt: Single original premium editorial photograph, photographed on location or in a real studio, highly detailed compelling material surfaces, beautifully considered lighting, no text or logos, zero people (no hands, faces, silhouettes, reflections, human mannequins or person illustrations). Stand-alone frame without panels, borders or graphics. LANDSCAPE wide 3:2. For a digestive specialist's website hero background: a spare burgundy and ivory contemporary clinic library wall with one large framed unlabelled medical etching of the digestive tract, vase of dried grass and sliver of bench, straight-on editorial architecture. Place the main point of interest on the right half, allowing it to read behind the doctor's separate portrait. The left can recede softly.
+
+care.webp — Stethoscope resting on a burgundy notebook
+Prompt: Single original premium editorial photograph, photographed on location or in a real studio, highly detailed compelling material surfaces, beautifully considered lighting, no text or logos, zero people (no hands, faces, silhouettes, reflections, human mannequins or person illustrations). Stand-alone frame without panels, borders or graphics. Square editorial image for a gastroenterology clinic's care philosophy feature: an artfully coiled indigo stethoscope with a round brushed steel chestpiece on a burgundy journal, feathered diagonal light. Center the primary subject for a responsive editorial crop. People-free, calm and subtle.
+
+about.webp — Digestive anatomy models in a wooden teaching box
+Prompt: Single original premium editorial photograph, photographed on location or in a real studio, highly detailed compelling material surfaces, beautifully considered lighting, no text or logos, zero people (no hands, faces, silhouettes, reflections, human mannequins or person illustrations). Stand-alone frame without panels, borders or graphics. Vertical editorial photograph for a gastroenterology specialist's biography section in a medical publication: a small open wooden teaching box containing individual smooth, colourful stomach and liver educational shapes on cream felt. Center the composition for a 4:5 portrait-oriented photo. People-free, tactile and thoughtful.
+
+gallery-1.webp — Sunlit consultation room with a liver teaching model beside the desk. Shared original gallery photograph.
+
+gallery-2.webp — Endoscopy tower and examination couch in a procedure room. Shared original gallery photograph.
+
+gallery-3.webp — Clinic reception with green seating and a stone front desk. Shared original gallery photograph.
+
+favicon.svg and chatbot-icon.svg — Original vector marks for Burgundy Folio.
+
+FAQs — Gastroenterology, set 1, DigiDr_FAQ_6_Sets_25_Specialities.pdf.

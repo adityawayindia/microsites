@@ -1,0 +1,63 @@
+Gastroenterology 7 base | Browser verification | 23 November 2026
+
+Source: browser, UI fixture, and static checks. Output artifacts are stored in the temporary QA results directory. Third-party API access, dashboard receipt and uploads to the production asset bucket were not exercised.
+
+Item | Status | Evidence | Verification / fix
+1–2 | PASS | index.html:37 | Portrait and menu; 320–1900px profile-width and long-name tests in header-full-name.json.
+3–6a | PASS | index.html:77 | Role, qualifications and counter ordering, gallery and social labels checked on the rendered page. Screenshot review available in full-index-1440.jpg and hero-crop-375.png.
+7 | PASS | script/index.js:1696 | Expanded/collapsed state and automatic hiding for short biographies.
+8–9 | PASS | index.html:139 | Responsive service-card grids checked at 4, 5, 6 and 7 cards; title and body hierarchy measured.
+E1–E5 | PASS | index.html:167 | Local fixtures exercised the SDK, blocked embeds, fallback links, overflow controls, two-post centering, and mobile paging. Production Facebook posts require the practice account.
+10–11 | PASS | index.html:194 | Three pillars and four steps appear in the expected order; measured step geometry and font hierarchy.
+12 | PASS | index.html:263 | The practice address and available contact method render. The contact booking button opens the booking form.
+13 | PASS | index.html:289 | Equal gallery dimensions across breakpoints. Keyboard opening, arrows and Escape exercised.
+14 | PASS | index.html:310 | Five or more questions, initial item state, and single-open interaction checked.
+15–17 | PASS | index.html:392 | Pointer-triggered tooltip and modal accessibility checked; consent opens, requires scrolling, and returns to booking.
+18–20 | PASS | index.html:398 | Booking/consent visual states captured; configured consent label and absence of legacy demo message checked.
+21–24 | PASS | script/index.js:53 | Clinic and online form exercised separately including validation, time selection, PDF/image upload, modal success and failed submission. Local fixture assigned a test doctor ID to an unconfigured source form.
+25 | PASS | index.html:425 | Real intl-tel-input library and country validation; rendered form and compact/expanded controls checked.
+26–28a | PASS | index.html:545 | Equivalent rendered footer markup on all pages; measured disclaimer 14px/21px on six viewport widths; footer heights recorded.
+29–29a | PASS | index.html:595 | Fixture API returns visitor count 1,234 on every page; local instance did not register production visits.
+30–33 | PASS | script/chatbot.js:7 | Chat launch, Enter, fixture response, content area, absence of suggestion UI and six viewport geometries exercised.
+34–35 | PASS | privacy-policy.html:38 | Privacy and terms copy checked against AGENTS §41 on the pair; Back target checked on both pages.
+36–40 | PASS | index.html:47 | Expected local files, section order, anchor targets, SEO fields and one h1 per page.
+41–42b | PASS | index.html:77 | Illustrative doctor credentials and practice facts require owner confirmation. Gastroenterology website copy checked for legacy trust/verification wording.
+43–49 | PASS | styles/style.css:1 | WCAG A/AA axe scans and computed primary text contrast. Three lowest distinct sampled ratios: .cta-btn 7.24:1, .section-kicker 7.95:1, .service-card p 8.83:1.
+50–53 | PASS | styles/style.css:129 | 320/375/768/1024/1440/1900px checked; full-page mobile and desktop screenshots, modal screens, and image decoding completed.
+53a | PASS | assets/IMAGE-SOURCES.txt | The generated portrait shows one fictional doctor. The hero background, About image, care image and gallery photographs were visually inspected and are people-free.
+S1–S5 | PASS | script/analytics.js:7 | Event receipt verified in local GA4 and Clarity queues. Genuine IDs, dashboard receipt and configured production social URLs require deployment.
+54–56 | PASS | index.html:7 | Axe WCAG 2 A/AA and 2.1 AA checks covered homepage, legal pages, booking with tooltip, consent, and chat. Lighthouse was not run.
+57–57a | PASS | index.html:24 | No local page exceptions, failed assets, HTTP errors or console warnings. Checked FA pseudo-elements and nowrap disabled tooltips on the rendered page.
+58–59 | PASS | microsite-gastroenterology-7-male | Folder numbering, gender, image hashes and Git scope checked across all 20 pairs. Changes are confined to new folders.
+
+The illustrative source has no assigned social accounts or patient phone line. Disabled social controls do not navigate or fire click events. The rendered template exercises enabled social links and the phone event with fixtures.
+
+Event | Found in code | Fired locally | Trigger
+nav_link_click | index.html:37 | Yes | Clicked rendered control.
+book_appointment_click | index.html:40 | Yes | Clicked rendered control.
+read_more_click | index.html:125 | Yes | Clicked rendered control.
+email_click | index.html:281 | Yes | Clicked rendered control.
+clinic_visit_tab_click | index.html:391 | Yes | Clicked rendered control.
+online_consult_tab_click | index.html:392 | Yes | Clicked rendered control.
+upload_report_click | index.html:473 | Yes | Clicked rendered control.
+footer_nav_link_click | index.html:576 | Yes | Clicked rendered control.
+consent_checkbox_click | script/index.js:263 | Yes | Simulated booking and upload events.
+consent_modal_open | script/index.js:443 | Yes | Simulated booking and upload events.
+consent_scrolled_to_bottom | script/index.js:414 | Yes | Simulated booking and upload events.
+consent_agreed | script/index.js:453 | Yes | Simulated booking and upload events.
+consent_dismissed | script/index.js:453 | Yes | Simulated booking and upload events.
+report_uploaded | script/index.js:642 | Yes | Simulated booking and upload events.
+booking_submitted | script/index.js:1184 | Yes | Simulated booking and upload events.
+
+Unverified: production delivery and dashboard receipt; configured database IDs, patient records and published media URLs.
+
+Final checks
+
+- All three pages use byte-identical footer markup within this version.
+- Burgundy Folio uses 'Castoro', Georgia, serif for headings, primary colour #652c43, and portrait border radius 44% 6px 6px 6px.
+- Each source has four original non-gallery photographs and two original vector marks. SHA-256 comparisons found no reuse across the 20 designs. The three gallery photographs are shared. The source and its parameterized version carry matching assets.
+- All six question-and-answer pairs matched set 1 in the Gastroenterology chapter of DigiDr_FAQ_6_Sets_25_Specialities.pdf.
+- The booking endpoints and all eleven multipart submission field names match live microsites/samir-shah/script/index.js. Confirmation was exercised using synthetic data and intercepted responses.
+- The final script order, banner enable/disable controls, banner image decoding, chatbot startup, profile images and JSON-LD were rechecked in Chromium after the metadata pass.
+- SEO drafts now point to the combined domain-root sitemap and include the required page priorities and update frequencies. The legal canonical URLs use the deployment routes.
+- Live appointment acceptance, media bucket publication, Facebook account content and analytics dashboard receipt require registered practice configuration. GA4 still has a template measurement ID.

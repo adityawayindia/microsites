@@ -1,0 +1,27 @@
+Juniper Arcade | Dr. Ishaan Gokhale | Gastroenterology 3
+
+Illustrative draft. Doctor names, qualifications, practising years and practice details are sample data. The deploying practice supplies verified details and registered backend identifiers.
+
+Original assets generated for this project with the built-in OpenAI image generator. All source and parameterized assets match within this pair.
+
+portrait.webp — Individual portrait of a fictional Indian male gastroenterologist.
+Prompt: Photorealistic-natural. Studio-quality editorial photograph for a fictional Indian gastroenterologist's physician profile, portrait 2:3. One man only, early forties, warm medium-brown skin, wavy black hair, neatly trimmed short beard, calm friendly smile. White medical coat over a teal open-collar shirt, no stethoscope. Mid torso, straight on, head centered, framed from well above hair to hips, generous headroom, shoulders within frame. Muted jade plaster backdrop, luminous window side light, natural skin texture, clean cinematic camera work. No lettering, badges, logos or watermark.
+
+hero.webp — Endoscopy examination suite with a video tower and oak cabinetry
+Prompt: A horizontal, refined architectural editorial photograph for a gastroenterologist's website: a sunlit contemporary endoscopy examination room with a slim unbranded medical video endoscopy cart, articulated display and neatly docked flexible scope at right, warm blond oak, pale aqua glass and a sliver of examination couch; no people or human forms anywhere, no logos, no legible writing, clean subtle film texture, real surfaces and premium healthcare photography. Main focal point at the right edge, negative space at left, natural daylight, landscape 3:2.
+
+care.webp — Flexible endoscope on a teal instrument drape
+Prompt: Single original premium editorial photograph, photographed on location or in a real studio, highly detailed compelling material surfaces, beautifully considered lighting, no text or logos, zero people (no hands, faces, silhouettes, reflections, human mannequins or person illustrations). Stand-alone frame without panels, borders or graphics. Square editorial image for a gastroenterology clinic's care philosophy feature: a coiled black flexible endoscope and its realistically detailed control head resting on a teal sterile drape on brushed steel, overhead details, unbranded. Center the primary subject for a responsive editorial crop. People-free, calm and subtle.
+
+about.webp — Glass water carafe and linen on a sunlit consultation desk
+Prompt: Single original premium editorial photograph, photographed on location or in a real studio, highly detailed compelling material surfaces, beautifully considered lighting, no text or logos, zero people (no hands, faces, silhouettes, reflections, human mannequins or person illustrations). Stand-alone frame without panels, borders or graphics. Vertical editorial photograph for a gastroenterology specialist's biography section in a medical publication: a frosted sea-glass water carafe, two stacked natural linen napkins, ceramic cup and a closed consultation notebook on light oak in window sunshine. Center the composition for a 4:5 portrait-oriented photo. People-free, tactile and thoughtful.
+
+gallery-1.webp — Sunlit consultation room with a liver teaching model beside the desk. Shared original gallery photograph.
+
+gallery-2.webp — Endoscopy tower and examination couch in a procedure room. Shared original gallery photograph.
+
+gallery-3.webp — Clinic reception with green seating and a stone front desk. Shared original gallery photograph.
+
+favicon.svg and chatbot-icon.svg — Original vector marks for Juniper Arcade.
+
+FAQs — Gastroenterology, set 3, DigiDr_FAQ_6_Sets_25_Specialities.pdf.

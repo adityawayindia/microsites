@@ -1,0 +1,27 @@
+Graphite Studio | Dr. Mihir Dalal | Gastroenterology 8
+
+Illustrative draft. Doctor names, qualifications, practising years and practice details are sample data. The deploying practice supplies verified details and registered backend identifiers.
+
+Original assets generated for this project with the built-in OpenAI image generator. All source and parameterized assets match within this pair.
+
+portrait.webp — Individual portrait of a fictional Indian male gastroenterologist.
+Prompt: Photorealistic-natural, 2:3 vertical editorial portrait of one fictional Indian gastroenterologist, solo adult, male, early sixties, balding with close white hair at sides, prominent eyebrows, warm oval face, dark-framed glasses, white coat and a forest-green shirt. Backdrop: modern walnut panel and pale linen. Centered face, enough space above entire head, full shoulders in frame and waist-up crop. Professional reassuring expression, natural skin texture, medium format portrait photography, carefully lit face and elegant clothing. No text, labels, brand marks, visible badge, logos, watermark, or other people.
+
+hero.webp — Small bowel teaching sculpture in a dark display cabinet
+Prompt: Single original premium editorial photograph, photographed on location or in a real studio, highly detailed compelling material surfaces, beautifully considered lighting, no text or logos, zero people (no hands, faces, silhouettes, reflections, human mannequins or person illustrations). Stand-alone frame without panels, borders or graphics. LANDSCAPE wide 3:2. For a digestive specialist's website hero background: a dark spruce and bronze still life of a teaching model of the small bowel in pale sand-coloured ceramic, lit obliquely in a collector's cabinet, anatomically inspired and non-graphic. Place the main point of interest on the right half, allowing it to read behind the doctor's separate portrait. The left can recede softly.
+
+care.webp — Empty consultation chair beside a wooden stool
+Prompt: Single original premium editorial photograph, photographed on location or in a real studio, highly detailed compelling material surfaces, beautifully considered lighting, no text or logos, zero people (no hands, faces, silhouettes, reflections, human mannequins or person illustrations). Stand-alone frame without panels, borders or graphics. Square editorial image for a gastroenterology clinic's care philosophy feature: a timber stool beside an empty leather consultation chair with a neatly folded teal throw, slatted shadows, high-design clinical interior. Center the primary subject for a responsive editorial crop. People-free, calm and subtle.
+
+about.webp — Water glass and grain jar on pale green marble
+Prompt: Single original premium editorial photograph, photographed on location or in a real studio, highly detailed compelling material surfaces, beautifully considered lighting, no text or logos, zero people (no hands, faces, silhouettes, reflections, human mannequins or person illustrations). Stand-alone frame without panels, borders or graphics. Vertical editorial photograph for a gastroenterology specialist's biography section in a medical publication: a transparent glass of water beside a cork-lidded jar of whole grains and a narrow wooden spoon on pale green marble. Center the composition for a 4:5 portrait-oriented photo. People-free, tactile and thoughtful.
+
+gallery-1.webp — Sunlit consultation room with a liver teaching model beside the desk. Shared original gallery photograph.
+
+gallery-2.webp — Endoscopy tower and examination couch in a procedure room. Shared original gallery photograph.
+
+gallery-3.webp — Clinic reception with green seating and a stone front desk. Shared original gallery photograph.
+
+favicon.svg and chatbot-icon.svg — Original vector marks for Graphite Studio.
+
+FAQs — Gastroenterology, set 2, DigiDr_FAQ_6_Sets_25_Specialities.pdf.
