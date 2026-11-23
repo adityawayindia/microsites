@@ -1,0 +1,19 @@
+Jade pathways | Neurology 4
+
+The source profile, clinic address and practising year are illustrative. Supply the clinician’s approved details, live IDs and contact information before deployment. No real clinician or patient is depicted.
+
+doctor.jpg — individually generated with built-in OpenAI ImageGen. Prompt: Use case: photorealistic-natural. Create one vertical 3:4 high-quality portrait photograph of a fictional Indian male consultant neurologist aged 55, rounded cheeks, neat silver moustache, brushed back charcoal hair; pale apricot shirt, charcoal tie and white coat; sunlit ivory clinic with timber louvres. Direct eye contact, open professional expression. Single person centered, waist-up composition, generous breathing room above head and around shoulders to crop within an unusual portrait frame. Realistic skin texture, anatomically natural posture, softly blurred environment, thoughtful editorial photography. No writing, badges, logos, watermark or graphics.
+
+Hero, About and Care Philosophy artwork — individually generated with built-in OpenAI ImageGen. Art direction: deep jade with pale celadon.
+
+hero.webp — Jade green luminous diffusion MRI fibre tracts on velvet black.
+
+about.webp — Backlit teal MRI films clipped in a row.
+
+philosophy.webp — Matte jade consultation room and a single ceramic vase.
+
+banner.webp and banner-mobile.webp — site-specific responsive graphic using the commissioned imagery and palette.
+
+gallery-1.webp, gallery-2.webp, gallery-3.webp — shared ImageGen neurology gallery: Sunlit neurology consultation room; MRI scanner and examination table; EEG recording equipment beside the examination chair.
+
+favicon.svg and assistant.svg — original vector marks in this practice palette.

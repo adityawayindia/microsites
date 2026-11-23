@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-harsh-kotwal/
+Disallow: /dr-harsh-kotwal/privacy-policy.html
+Disallow: /dr-harsh-kotwal/terms-of-service.html
+Sitemap: https://digidr.app/dr-harsh-kotwal/sitemap.xml

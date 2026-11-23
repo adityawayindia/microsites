@@ -1,0 +1,19 @@
+Turquoise layers | Neurology 34
+
+The source profile, clinic address and practising year are illustrative. Supply the clinician’s approved details, live IDs and contact information before deployment. No real clinician or patient is depicted.
+
+doctor.jpg — individually generated with built-in OpenAI ImageGen. Prompt: Use case: photorealistic-natural. Create one vertical 3:4 high-quality portrait photograph of a fictional Indian male consultant neurologist aged 54, Sikh man in a dark sage turban, silver streaks in full black beard, kind attentive eyes; dark-blue shirt and white coat; oak furnishings and soft blue wall. Direct eye contact, open professional expression. Single person centered, waist-up composition, generous breathing room above head and around shoulders to crop within an unusual portrait frame. Realistic skin texture, anatomically natural posture, softly blurred environment, thoughtful editorial photography. No writing, badges, logos, watermark or graphics.
+
+Hero, About and Care Philosophy artwork — individually generated with built-in OpenAI ImageGen. Art direction: dark turquoise and golden sand.
+
+hero.webp — Golden stacked acrylic cross sections of a brain photographed on turquoise.
+
+about.webp — A translucent cross-sectional head anatomy teaching block.
+
+philosophy.webp — Sun-washed sea-green glass in a clinic vestibule.
+
+banner.webp and banner-mobile.webp — site-specific responsive graphic using the commissioned imagery and palette.
+
+gallery-1.webp, gallery-2.webp, gallery-3.webp — shared ImageGen neurology gallery: Sunlit neurology consultation room; MRI scanner and examination table; EEG recording equipment beside the examination chair.
+
+favicon.svg and assistant.svg — original vector marks in this practice palette.

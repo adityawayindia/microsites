@@ -1,0 +1,19 @@
+Persimmon interior | Neurology 38
+
+The source profile, clinic address and practising year are illustrative. Supply the clinician’s approved details, live IDs and contact information before deployment. No real clinician or patient is depicted.
+
+doctor.jpg — individually generated with built-in OpenAI ImageGen. Prompt: Use case: photorealistic-natural. Create one vertical 3:4 high-quality portrait photograph of a fictional Indian female consultant neurologist aged 40, rich warm brown complexion, thick dark hair pulled into a low bun, quiet confident smile; white consultant coat over jade blouse; softly sunlit pale sage clinic. Direct eye contact, open professional expression. Single person centered, waist-up composition, generous breathing room above head and around shoulders to crop within an unusual portrait frame. Realistic skin texture, anatomically natural posture, softly blurred environment, thoughtful editorial photography. No writing, badges, logos, watermark or graphics.
+
+Hero, About and Care Philosophy artwork — individually generated with built-in OpenAI ImageGen. Art direction: persimmon and warm ecru.
+
+hero.webp — Macro study of a tinted translucent teaching brain with an orange sagittal section.
+
+about.webp — An orange-tipped clinical reflex hammer photographed on travertine.
+
+philosophy.webp — An ecru linen clinic alcove with a persimmon seat.
+
+banner.webp and banner-mobile.webp — site-specific responsive graphic using the commissioned imagery and palette.
+
+gallery-1.webp, gallery-2.webp, gallery-3.webp — shared ImageGen neurology gallery: Sunlit neurology consultation room; MRI scanner and examination table; EEG recording equipment beside the examination chair.
+
+favicon.svg and assistant.svg — original vector marks in this practice palette.

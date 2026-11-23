@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-arindam-roychoudhury/
+Disallow: /dr-arindam-roychoudhury/privacy-policy.html
+Disallow: /dr-arindam-roychoudhury/terms-of-service.html
+Sitemap: https://digidr.app/dr-arindam-roychoudhury/sitemap.xml

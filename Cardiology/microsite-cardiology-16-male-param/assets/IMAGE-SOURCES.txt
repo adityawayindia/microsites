@@ -1,0 +1,18 @@
+Dr. Pranav Ghosh | Folio | Cardiology template 16
+
+The standalone practice and professional profile are fictional examples. Replace preview details with the registered doctor's information before publication.
+
+Portrait: generated with OpenAI image generation for this fictional male cardiologist. Source and parameterized counterpart represent the same practice.
+Hero artwork: Editorial cardiology illustration of aortic root and valve.
+About artwork: Illustration of the aortic arch and its branches with an inset of the three aortic valve cusps.
+Care artwork: Illustration of the three aortic valve cusps, beside a detail of aortic root and valve.
+The three original illustrations were designed for this site. Favicon, assistant mark and optional banner are original site-specific vector graphics.
+
+Gallery 1: original OpenAI-generated photograph of a blood pressure monitor from General Physician/microsite-general-physician-11-male/assets/gallery.webp.
+Gallery 2: ECG photograph by Pixabay on Pexels. https://www.pexels.com/photo/selective-focus-photography-of-white-and-black-vital-sign-printing-paper-415779/ . License verified 23 November 2026 at https://www.pexels.com/license/ .
+Gallery 3: original OpenAI-generated photograph from General Medicine/microsite-general-medicine-9-female/assets/medical-instruments.jpg.
+
+FAQs: DigiDr_FAQ_6_Sets_25_Specialities.pdf, Cardiology, set 4.
+
+Portrait generation brief:
+Original synthetic editorial portrait of an Indian male cardiologist, age 52, angular jaw, silver-flecked curls and beard, teal V-neck and white coat, mellow amber room. Centered full head, shoulders and upper torso, natural daylight, professional clinical setting, stethoscope, no text or logos.

@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-pallavi-morajkar/
+Disallow: /dr-pallavi-morajkar/privacy-policy.html
+Disallow: /dr-pallavi-morajkar/terms-of-service.html
+Sitemap: https://digidr.app/dr-pallavi-morajkar/sitemap.xml

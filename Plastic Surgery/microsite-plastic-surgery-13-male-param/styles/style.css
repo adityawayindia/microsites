@@ -1,0 +1,1283 @@
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('./fonts/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('./fonts/dm-sans-latin-wght-normal.woff2') format('woff2'); }
+
+:root {
+  --brand: #075464;
+  --brand-dark: #0a404e;
+  --brand-light: #e6eef0;
+  --brand-2: #48523c;
+  --brand-2-dark: #3d4637;
+  --brand-2-light: #f4efea;
+  --accent: #894f14;
+  --accent-dark: #694016;
+  --accent-light: #f8f4f1;
+  --accent-rgb: 137, 79, 20;
+  --bg: #f8fafa;
+  --bg-2: #ebf1f3;
+  --bg-3: #f9f6f3;
+  --surface: #fff;
+  --surface-2: #f8fafa;
+  --text: #0f2e38;
+  --muted: #34565e;
+  --border: #bacfd4;
+  --border-light: #dfe9eb;
+  --button: var(--accent);
+  --button-hover: var(--accent-dark);
+  --ink: #0a404e;
+  --ink-2: #075464;
+  --sky: #075464;
+  --sky-dark: #0a404e;
+  --sky-light: #e6eef0;
+  --teal: #075464;
+  --teal-dark: #0a404e;
+  --teal-light: #e6eef0;
+  --bronze: #075464;
+  --rose: #894f14;
+  --amber: #894f14;
+  --amber-dark: var(--accent-dark);
+  --amber-light: var(--accent-light);
+  --amber-rgb: var(--accent-rgb);
+  --amber-dark-rgb: 105, 64, 22;
+  --gold-soft: #e6eef0;
+  --overlay-backdrop: rgba(15,25,33,.72);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+  --shadow-card: 0 4px 18px rgba(7,84,100,.10);
+  --shadow-hover: 0 12px 30px rgba(7,84,100,.16);
+  --shadow-brand: 0 16px 36px rgba(7,84,100,.24);
+  --shadow-accent: 0 14px 30px rgba(137,79,20,.3);
+  --shadow-brand-2: var(--shadow-brand);
+  --shadow-sky: var(--shadow-brand);
+  --shadow-teal: var(--shadow-brand);
+  --shadow-amber: var(--shadow-accent);
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-display: var(--font-heading);
+  --hero-base: #f8fafa;
+  --hero-fg: #0a404e;
+  --hero-detail: #075464;
+  --tile-bg: #fcfdfd;
+  --tile-fg: #0a404e;
+  --tile-edge: #a8c3c9;
+  --fade-angle: 90deg;
+  --frame-radius: 50% / 40%;
+  --frame-cut: none;
+  --portrait-ratio: 4 / 5;
+  --frame-width: 340px;
+  --frame-color: #ffffff;
+  --frame-line: 6px;
+  --card-radius: 28px 6px;
+  --art-radius: 24px;
+  --icon-radius: 25% 4%;
+  --headline-weight: 700;
+  --tracking: -.045em;
+}
+
+/* ==========================================================================
+   DigiDr Global — Responsive Text & Auto-Height Container Rules
+   Apply to ALL microsites. Do not remove or override these.
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Rule 1: Universal Word Break & Text Wrapping */
+h1, h2, h3, h4, h5, h6, p, span, a, li, button, label, div, strong, cite {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+/* Rule 1.5: Line Height & Body Text Readability */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+p, li, span, a, button, label {
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.about-section p,
+.about-intro p,
+.about-story p,
+.about-story-new p {
+  text-align: justify;
+  line-height: 1.6;
+  color: var(--text);
+  hyphens: none;
+}
+
+/* Rule 2: Flex & Grid Child Shrink Defense */
+.hero-content,
+.hero-visual,
+.hero-stats-grid,
+.hero-stat-box,
+.expert-badge,
+.hero-actions,
+.container,
+.navbar,
+.brand-text,
+.languages,
+.social-links,
+.about-aside,
+.about-content,
+.service-card,
+.philosophy-content,
+.philosophy-visual,
+.philosophy-pillar,
+.process-step,
+.contact-item,
+.testimonial-card,
+.gallery-item,
+.footer-col,
+.booking-field,
+.booking-modal-dialog,
+.booking-calendar {
+  min-width: 0;
+}
+
+/* Rule 3: Parent Container Auto-Height Expansion */
+.hero-title,
+.hero-credentials,
+.hero-reg-id,
+.hero-stat-box,
+.expert-badge,
+.card,
+article,
+aside,
+.languages,
+.service-card,
+.process-step,
+.contact-item,
+.testimonial-card {
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+}
+
+
+/* Plastic-surgery-specific additions to the §22 Rule 2 / Rule 3 lists */
+.hero-float,
+.hero-procedures li,
+.hero-actions,
+.faq-question,
+.footer-links-group,
+.footer-visitor-badge {
+  min-width: 0;
+}
+.hero-float,
+.hero-procedures li,
+.hero-tagline,
+.footer-visitor-badge {
+  height: auto !important;
+  min-height: fit-content;
+  max-width: 100%;
+}
+
+/* ============================================================
+   GALLERY LIGHTBOX
+   ============================================================ */
+.gallery-lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 600; }
+.gallery-lightbox.is-open { display: flex; }
+.gallery-lightbox-backdrop { position: absolute; inset: 0; background: var(--overlay-backdrop); }
+.gallery-lightbox-content { position: relative; margin: 0; max-width: min(1100px, 92vw); max-height: 82vh; max-height: 82dvh; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); z-index: 1; }
+.gallery-lightbox-content img { display: block; width: auto; height: auto; max-width: min(1100px, 92vw); max-height: 82vh; max-height: 82dvh; object-fit: contain; background: #f8f9fa; }
+.gallery-lightbox-close {
+  position: absolute; top: 16px; right: 20px; z-index: 2;
+  width: 40px; height: 40px; border-radius: 999px; border: none;
+  background: rgba(255,255,255,0.9); color: var(--sky-dark);
+  font-size: 26px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease;
+}
+.gallery-lightbox-close:hover { background: #ffffff; }
+
+.gallery-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(11, 30, 48, 0.75);
+  color: #f9fafb;
+  font-size: 36px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+.gallery-lightbox-prev { left: 24px; }
+.gallery-lightbox-next { right: 24px; }
+.gallery-lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--sky-dark);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+.gallery-lightbox-prev:hover { transform: translateY(-50%) scale(1.1) translateX(-2px); }
+.gallery-lightbox-next:hover { transform: translateY(-50%) scale(1.1) translateX(2px); }
+
+@media (max-width: 768px) {
+  /* Pin prev/next to a row below the image instead of floating
+     beside it at mid-screen height. */
+  .gallery-lightbox-content { max-height: 68vh; max-height: 68dvh; }
+  .gallery-lightbox-content img { max-height: 68vh; max-height: 68dvh; }
+
+  .gallery-lightbox-nav {
+    top: auto;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    transform: none;
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+    left: 50%;
+  }
+  .gallery-lightbox-prev { transform: translateX(calc(-100% - 10px)); }
+  .gallery-lightbox-next { transform: translateX(10px); }
+  .gallery-lightbox-nav:hover { transform: translateX(calc(-100% - 10px)) scale(1.1); }
+  .gallery-lightbox-next:hover { transform: translateX(10px) scale(1.1); }
+}
+
+/* ============================================================
+   BOOKING MODAL
+   ============================================================ */
+.booking-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 700; padding: 20px; }
+.booking-modal.is-open { display: flex; }
+.booking-modal-backdrop { position: absolute; inset: 0; background: var(--overlay-backdrop); }
+
+.booking-modal-dialog {
+  position: relative;
+  background: var(--surface);
+  border-radius: 20px;
+  width: min(600px, 96vw);
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  box-shadow: 0 24px 80px rgba(10, 25, 45, 0.35);
+  z-index: 1;
+}
+
+/* Sticky header: close button + tabs stay pinned while the form scrolls */
+.booking-modal-header {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--surface);
+  margin-bottom: 16px;
+  padding: 20px 32px 0;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 2px solid var(--border);
+}
+
+.booking-modal-close {
+  position: absolute; top: 12px; right: 20px; z-index: 2;
+  min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center;
+  background: none; border: none; font-size: 28px; line-height: 1;
+  cursor: pointer; color: var(--muted); transition: color 0.2s ease;
+}
+.booking-modal-close:hover { color: var(--amber-dark); }
+
+.booking-modal-tabs {
+  position: relative; display: flex; gap: 8px; margin-bottom: -2px;
+}
+/* Sliding underline — JS sets --tab-left / --tab-width from the active tab */
+.booking-modal-tabs::after {
+  content: "";
+  position: absolute;
+  left: var(--tab-left, 0);
+  bottom: -2px;
+  width: var(--tab-width, 0);
+  height: 3px;
+  border-radius: 3px;
+  background: var(--amber);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.booking-tab {
+  background: none; border: none; padding: 10px 20px;
+  font-family: inherit; font-size: 16px; font-weight: 600; color: var(--muted); cursor: pointer;
+  border-bottom: 3px solid transparent; margin-bottom: -2px;
+  transition: color 0.25s ease;
+}
+.booking-tab.is-active { color: var(--bronze); }
+
+/* Form content eases in whenever the appointment type is switched */
+.booking-form.is-switching { animation: bookingFormSwap 0.3s ease; }
+@keyframes bookingFormSwap {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .booking-modal-tabs::after { transition: none; }
+  .booking-form.is-switching { animation: none; }
+}
+
+.booking-form { display: flex; flex-direction: column; gap: 10px; padding: 0 32px 32px; }
+.booking-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.booking-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.booking-field label { font-size: 16px; font-weight: 600; color: var(--sky-dark); }
+.booking-field input, .booking-field select, .booking-field textarea {
+  width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
+  border-radius: 10px; font-size: 16px; font-family: inherit; color: var(--text); background: var(--surface);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; outline: none;
+}
+.booking-field input:focus, .booking-field select:focus, .booking-field textarea:focus {
+  border-color: var(--amber); box-shadow: 0 0 0 3px rgba(238, 140, 109, 0.25);
+}
+.booking-field textarea { resize: vertical; }
+.booking-error { margin: 0; font-size: 16px; color: #dc2626; min-height: 0; }
+.booking-error:empty { display: none; }
+/* Info icon beside "Online Consultation" + its tooltip (hover on desktop, tap on touch) */
+.booking-tab-info {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; margin-left: 4px; vertical-align: middle;
+  font-size: 16px; color: var(--muted); cursor: help; border-radius: 50%;
+}
+.booking-tab-info:hover, .booking-tab-info.is-open { color: var(--bronze); }
+.booking-tab-tip {
+  position: absolute; top: calc(100% + 8px); left: 32px; right: 32px; z-index: 6;
+  padding: 12px 14px; border-radius: 10px;
+  background: #2b1d22; color: #fff; font-size: 16px; line-height: 1.5;
+  box-shadow: 0 8px 24px rgba(10, 25, 45, 0.25);
+  overflow-wrap: break-word; word-break: break-word; white-space: normal; min-width: 0; max-width: 100%;
+}
+.booking-tab-tip[hidden] { display: none; }
+
+.booking-select-wrap { position: relative; }
+.booking-select-wrap select { appearance: none; padding-right: 36px; }
+.booking-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
+
+/* Phone field ── intl-tel-input country code dropdown */
+.iti {
+  display: block; width: 100%;
+  --iti-border-color: var(--border);
+  --iti-country-selector-bg: var(--surface);
+}
+.iti__country-selector { border-radius: 12px; max-width: none; }
+.iti__selected-country { font-size: 16px; line-height: normal; }
+.iti__selected-dial-code { font-size: 16px; line-height: normal; color: var(--text); }
+.iti__dial-code { font-size: 15px; }
+.booking-field .iti__search-input {
+  padding-left: calc(var(--iti-spacer-horizontal) + var(--iti-globe-icon-size) + var(--iti-spacer-horizontal));
+  padding-right: calc(var(--iti-spacer-horizontal) + var(--iti-clear-icon-size) + var(--iti-spacer-horizontal));
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 15px;
+}
+.booking-field .iti__tel-input.is-invalid { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15); }
+
+.booking-datepicker { position: relative; }
+.booking-input-with-icon { position: relative; }
+.booking-date-display { cursor: pointer; }
+.booking-field input.booking-date-display { padding-right: 40px; }
+.booking-date-icon { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 16px; }
+.booking-calendar {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--surface);
+  border: 1px solid #eef0f2;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  padding: 14px;
+  min-width: 280px;
+  animation: bookingCalFadeIn 0.16s ease;
+}
+
+@keyframes bookingCalFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.booking-calendar-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.booking-calendar-title { font-size: 16px; font-weight: 600; color: var(--text); }
+.booking-calendar-nav {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #f3f4f6;
+  color: var(--amber-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.booking-calendar-nav:hover { background: #e5e7eb; }
+.booking-calendar-weekdays { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; font-size: 16px; font-weight: 600; color: #a8c4bf; margin-bottom: 4px; text-transform: uppercase; }
+.booking-calendar-weekdays span { padding: 4px 0; }
+.booking-calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; }
+.booking-calendar-day {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  font-size: 16px;
+  color: var(--text);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.booking-calendar-day--empty { cursor: default; }
+.booking-calendar-day:not(.is-disabled):not(.booking-calendar-day--empty):hover { background: #f3f4f6; }
+.booking-calendar-day.is-today { border: 1.5px solid var(--amber-dark); font-weight: 700; color: var(--amber-dark); }
+.booking-calendar-day.is-selected { background: var(--amber); color: var(--sky-dark); font-weight: 700; }
+.booking-calendar-day.is-disabled { color: #d1d5db; cursor: not-allowed; }
+
+@media (max-width: 640px) {
+  .booking-calendar { padding: 12px; }
+  .booking-calendar-day { font-size: 16px; }
+}
+
+.booking-field--file .booking-upload-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.booking-upload-btn {
+  flex-shrink: 0; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;
+  padding: 9px 18px; border-radius: var(--radius-pill); background: var(--amber); color: var(--sky-dark) !important;
+  /* AGENTS.md §11/§15: upload is a primary-action button, not a form-field
+     — 18px per the unified button scale, not the 16px form-control size. */
+  font-size: 18px; font-weight: 600; cursor: pointer; transition: filter 0.2s ease;
+}
+.booking-upload-btn:hover { filter: brightness(0.9); }
+.booking-field--file input[type="file"] { display: none; }
+.booking-upload-help { font-size: 16px; color: var(--muted); }
+
+.booking-upload-preview {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  min-width: 0;
+  height: auto;
+  max-width: 100%;
+}
+.booking-upload-preview.is-visible { display: flex; }
+.booking-upload-preview-thumb {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--bg-2);
+}
+/* The global `img { display: block }` reset beats the browser's native
+   [hidden] handling for <img> specifically — restore it here so a PDF
+   upload doesn't leave a broken-image box showing next to the file icon. */
+.booking-upload-preview-thumb[hidden] { display: none; }
+.booking-upload-preview-icon {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--amber-light);
+  color: var(--amber-dark);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+/* Same issue as the thumb above — an explicit `display: flex` here would
+   otherwise beat the browser's native [hidden] handling. */
+.booking-upload-preview-icon[hidden] { display: none; }
+.booking-upload-preview-info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.booking-upload-preview-name {
+  font-size: 16px; font-weight: 600; color: var(--sky-dark);
+  overflow-wrap: break-word; word-break: break-word;
+}
+.booking-upload-preview-size { font-size: 14px; color: var(--muted); }
+.booking-upload-preview-remove {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.booking-upload-preview-remove:hover { background: hsl(0, 72%, 94%); color: #dc2626; }
+
+.booking-consent-field { display: flex !important; flex-direction: row !important; align-items: center; gap: 10px; }
+.booking-consent-field input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--amber); cursor: pointer; }
+.booking-consent-field label { font-size: 16px; font-weight: 500; color: var(--sky-dark); cursor: pointer; max-width: none; }
+
+.booking-submit-btn {
+  width: 100%; padding: 14px; border: none; border-radius: var(--radius-pill);
+  background: var(--sky-dark);
+  /* AGENTS.md §11/§15: the submit button is the modal's primary CTA —
+     18px per the unified button scale, not the 16px form-control size. */
+  color: #ffffff; font-size: 18px; font-weight: 700;
+  cursor: pointer; transition: opacity 0.2s ease, transform 0.2s ease;
+  font-family: inherit;
+}
+.booking-submit-btn:hover:not([disabled]) { opacity: 0.92; transform: translateY(-2px); }
+.booking-submit-btn[disabled] { opacity: 0.7; cursor: not-allowed; } /* ink at 70% keeps the white label above 4.5:1 */
+
+/* Booking loader — shown over the form while the (demo) submit is in flight */
+.booking-loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.96);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 20;
+}
+.booking-loader[aria-hidden="false"] { display: flex; }
+.booking-loader p { margin: 0; font-size: 16px; color: var(--sky-dark); font-weight: 600; }
+.loader-spinner {
+  width: 46px;
+  height: 46px;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--amber);
+  border-radius: 50%;
+  animation: booking-spin 0.8s linear infinite;
+}
+@keyframes booking-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Booking confirmation popup — replaces the plain browser alert() */
+.booking-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 800;
+  padding: 20px;
+}
+.booking-popup {
+  background: var(--surface);
+  width: 380px;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--amber-dark);
+  padding: 34px 30px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(15, 58, 55, 0.25);
+}
+.booking-popup-icon { font-size: 52px; margin-bottom: 14px; color: var(--sky-dark); }
+.booking-popup.is-error .booking-popup-icon { color: #dc2626; }
+.booking-popup h2 { margin: 0 0 12px; font-size: 22px; color: var(--sky-dark); }
+.booking-popup.is-error h2 { color: #dc2626; }
+.booking-popup p { margin: 0 0 24px; font-size: 16px; color: var(--muted); line-height: 1.5; }
+.booking-popup-ok {
+  border: 2px solid var(--sky-dark);
+  background: var(--amber);
+  color: var(--sky-dark);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 34px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.booking-popup-ok:hover { background: var(--amber-dark); color: #fff; }
+
+@media (max-width: 640px) {
+  .booking-form-row { grid-template-columns: 1fr; }
+  .booking-modal-header { margin-bottom: 16px; padding: 6px 18px 0; }
+  .booking-form { padding: 0 18px 24px; }
+  /* close button gets its own row above the tabs so it never crowds the info icon */
+  .booking-modal-close { position: static; display: block; margin: 0 -8px 0 auto; width: 44px; height: 40px; }
+  .booking-tab-tip { left: 18px; right: 18px; }
+  /* keep both tabs on one line within the narrower dialog */
+  .booking-tab { padding: 10px 12px; white-space: nowrap; }
+}
+
+/* Read More toggle (About section) */
+.read-more-wrap .read-more-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.read-more-wrap.is-expanded .read-more-content {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--bronze);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.read-more-btn span {
+  color: var(--bronze);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover span,
+.read-more-btn:hover i,
+.read-more-btn:hover {
+  color: var(--ink);
+}
+
+.read-more-wrap.is-expanded .read-more-btn i {
+  transform: rotate(180deg);
+}
+
+   PATIENT CONSENT MODAL
+   Reuses the .booking-modal shell; swapped in when the consent
+   checkbox is clicked and swapped back out on close / "I Agree".
+   Fonts inherit from the page; colours follow this microsite's
+   existing booking-modal palette.
+   ============================================================ */
+.consent-modal-header { padding: 20px 32px 16px; margin-bottom: 0; }
+.consent-modal-title {
+  font-family: inherit; font-size: 26px; font-weight: 700; line-height: 1.3;
+  color: var(--sky-dark); margin: 0; padding-right: 44px;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+
+.consent-modal-body { padding: 20px 32px 8px; min-width: 0; }
+.consent-modal-body p,
+.consent-modal-body li {
+  font-size: 18px; line-height: 1.6; margin: 0 0 14px;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+.consent-modal-body h3 {
+  font-family: inherit; font-size: 20px; font-weight: 700; line-height: 1.35;
+  color: var(--sky-dark); margin: 22px 0 10px;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+.consent-modal-body ul { margin: 0 0 14px; padding-left: 22px; }
+.consent-modal-body li { margin-bottom: 8px; }
+.consent-modal-body strong { color: var(--sky-dark); }
+.consent-contact {
+  background: rgba(0, 0, 0, 0.04); border-radius: 10px; padding: 14px 16px;
+}
+.consent-modal-links { font-style: italic; }
+.consent-modal-links a {
+  font-size: 18px; color: var(--sky-dark);
+  text-decoration: underline; text-underline-offset: 2px;
+}
+
+/* Sticky action bar. Background inherits so tinted dialogs stay correct. */
+.consent-modal-footer {
+  position: sticky; bottom: 0; z-index: 5;
+  background: inherit;
+  padding: 16px 32px 24px;
+  border-top: 1.5px solid rgba(0, 0, 0, 0.10);
+  border-radius: 0 0 20px 20px;
+}
+
+/* Agree button is gated on reading: disabled until the notice is scrolled
+   through. The label always reads "I Agree"; the hint above carries the
+   instruction. */
+.consent-agree-btn { width: 100%; margin-top: 0 !important; }
+.consent-agree-btn span { color: #ffffff; }
+.consent-agree-btn[disabled] { opacity: 0.7; cursor: not-allowed; }
+.consent-agree-btn[disabled] span { color: #ffffff; }
+
+.consent-scroll-hint {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 0 0 10px; font-size: 16px; font-weight: 600; line-height: 1.4;
+  color: var(--sky-dark); text-align: center; min-width: 0;
+  overflow-wrap: break-word; word-break: break-word; white-space: normal;
+}
+.consent-scroll-hint i { flex-shrink: 0; animation: consentBounce 1.4s ease-in-out infinite; }
+.consent-modal-footer.is-read .consent-scroll-hint { display: none; }
+
+@keyframes consentBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent-scroll-hint i { animation: none; }
+}
+
+@media (max-width: 640px) {
+  .consent-modal-header { padding: 16px 18px 12px; }
+  .consent-modal-title { font-size: 22px; padding-right: 40px; }
+  .consent-modal-body { padding: 16px 18px 8px; }
+  .consent-modal-body p, .consent-modal-body li { font-size: 17px; }
+  .consent-modal-body h3 { font-size: 19px; }
+  .consent-modal-body ul { padding-left: 20px; }
+  .consent-modal-footer { padding: 14px 18px 20px; }
+  .consent-scroll-hint { font-size: 15px; }
+}
+
+/* Footer disclaimer */
+footer .footer-disclaimer {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 12px 24px 16px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px !important;
+  line-height: 1.5;
+  color: inherit;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* Chatbot launcher steps aside while the footer is visible (an open chat stays) */
+body.footer-in-view .chatbot-fab-wrap:not(.is-open) .chatbot-fab {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ============================================================
+   SOCIAL MEDIA — live Facebook post embeds (FACEBOOK_WIDGET_LOGIC.md)
+   Ivory band between the sand Services and midnight Philosophy
+   sections. Header/buttons follow this site's palette; the CARDS
+   are fixed (rule 14) and intentionally not remapped to the theme.
+   The JS hides the whole section when there are no posts.
+   ============================================================ */
+.social-media-section { padding: 20px 0; background: var(--bg); }
+.social-media-header { text-align: center; margin: 0 auto 44px; max-width: 760px; }
+.social-media-subtitle { margin-left: auto; margin-right: auto; }
+
+.social-media-carousel-wrap {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 56px;
+  min-width: 0;
+}
+
+/* --post-card-width is read by the JS to size the SDK embed (data-width),
+   so the iframe Facebook builds always matches the real card width. */
+.social-media-carousel {
+  --post-card-width: 300px;
+  --post-card-height: 400px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.social-media-carousel::-webkit-scrollbar { display: none; }
+
+/* Centred while the posts fit; scrolls (via the carousel) once they don't.
+   max-width: none beats the global div { max-width: 100% } reset — without it
+   the track is capped at the carousel width and centring pushes the first
+   cards off the left edge, where they can never be scrolled to. */
+.social-media-track {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+  justify-content: safe center;
+}
+/* Every card is locked to one height (--post-card-height). Facebook sizes its
+   iframe to the post's own content, which varies wildly (one long post
+   reported ~3700px), so the card clips the embed instead of growing or
+   scrolling. Height is NOT auto here, which deliberately departs from the
+   global auto-height rule: the content is a fixed-size cross-origin iframe. */
+.social-post-card {
+  flex: 0 0 var(--post-card-width);
+  min-width: 0;
+  max-width: 100%;
+  height: var(--post-card-height) !important;
+  min-height: 0;
+  background: #ffffff;
+  border: 1px solid hsl(155, 18%, 85%);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px hsla(168, 40%, 18%, 0.10);
+}
+
+/* Skeleton loading state: placeholder cards before the feed arrives, then the
+   same skeleton behind each embed until Facebook paints its iframe. */
+.social-post-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: #ffffff;
+}
+.social-post-card.is-loaded .social-post-skeleton { display: none; }
+
+.social-post-skeleton .sk {
+  display: block;
+  border-radius: 8px;
+  background: linear-gradient(100deg,
+    hsl(150, 24%, 94%) 30%, hsl(150, 25%, 99%) 50%, hsl(150, 24%, 94%) 70%);
+  background-size: 220% 100%;
+  animation: social-post-shimmer 1.4s ease-in-out infinite;
+}
+.social-post-skeleton .sk-head { display: flex; align-items: center; gap: 12px; }
+.social-post-skeleton .sk-avatar { flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%; }
+.social-post-skeleton .sk-lines { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.social-post-skeleton .sk-line { height: 12px; width: 100%; }
+.social-post-skeleton .sk-w80 { width: 80%; }
+.social-post-skeleton .sk-w60 { width: 60%; }
+.social-post-skeleton .sk-w40 { width: 40%; }
+.social-post-skeleton .sk-media { flex: 1 1 auto; min-height: 0; border-radius: 12px; }
+
+@keyframes social-post-shimmer {
+  from { background-position: 180% 0; }
+  to   { background-position: -80% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-post-skeleton .sk { animation: none; }
+}
+
+.social-post-card {
+  position: relative;
+}
+
+/* The embed is clipped by the fixed-height card — no scrolling. */
+.social-post-card .fb-post {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Bottom fade makes the cut look deliberate. */
+.social-post-card:not(.is-fallback)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 44px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* The SDK writes fixed inline widths onto its own wrappers; cap them so a
+   card can never push its siblings out of the track. */
+.social-post-card .fb-post,
+.social-post-card .fb-post span,
+.social-post-card .fb-post iframe {
+  max-width: 100% !important;
+}
+
+/* Shown when the embed is blocked or never paints — a real link card in place
+   of a blank box, built by the JS because the SDK strips the nested fallback. */
+.social-post-fallback {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+  background: var(--bg-2);
+}
+.social-post-fallback i {
+  font-size: 34px;
+  color: var(--ink);
+}
+.social-post-fallback span {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-post-fallback:hover span { color: var(--bronze); }
+.social-post-fallback:hover i { color: var(--bronze); }
+
+/* Fallback link shown when the SDK is blocked — never an empty box. */
+.social-post-card .fb-xfbml-parse-ignore {
+  margin: 0;
+  padding: 20px;
+}
+.social-post-card .fb-xfbml-parse-ignore a {
+  font-size: 18px;
+  color: var(--ink);
+  font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.social-post-card .fb-xfbml-parse-ignore a:hover { color: var(--bronze); }
+
+
+/* Prev/next — own class (rule 16), styled like the testimonials arrows */
+.social-carousel-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 46px; height: 46px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-size: 15px;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.social-carousel-btn i { color: inherit; }
+.social-carousel-btn:hover { background: var(--ink); color: var(--gold-soft); }
+.social-carousel-prev { left: 0; }
+.social-carousel-next { right: 0; }
+/* display:flex above would otherwise defeat [hidden]. */
+.social-carousel-prev[hidden],
+.social-carousel-next[hidden],
+.social-carousel-btn[hidden] { display: none; }
+.social-carousel-btn:disabled { opacity: 0.4; cursor: default; pointer-events: none; }
+
+@media (max-width: 640px) {
+  .social-media-carousel { --post-card-width: 280px; --post-card-height: 375px; }
+}
+@media (min-width: 641px) and (max-width: 1100px) {
+  .social-media-carousel { --post-card-width: 300px; --post-card-height: 400px; }
+}
+@media (max-width: 900px) {
+  /* Pin prev/next below the track instead of floating over the cards */
+  .social-media-carousel-wrap {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "carousel carousel" "prev next";
+    justify-items: center;
+    row-gap: 18px;
+  }
+  #socialMediaCarousel { grid-area: carousel; width: 100%; min-width: 0; }
+  .social-carousel-prev { grid-area: prev; position: static; transform: none; justify-self: end; margin-right: 8px; }
+  .social-carousel-next { grid-area: next; position: static; transform: none; justify-self: start; margin-left: 8px; }
+}
+
+/* Hide the scrollbar on the booking modal; the dialog still scrolls with wheel, touch and keyboard */
+.booking-modal-dialog { scrollbar-width: none; -ms-overflow-style: none; }
+.booking-modal-dialog::-webkit-scrollbar { display: none; }
+
+
+/* Typography, navigation and page grid */
+html { overflow-x: clip; scroll-padding-top: 96px; }
+body { margin: 0; font: 400 18px/1.55 var(--font-body); color: var(--text); background: var(--bg); overflow-x: clip; }
+h1,h2,h3,h4,p,figure { margin: 0; }
+h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--brand-dark); }
+h2 { font-size: clamp(30px,3vw,38px); }
+h3 { font-size: 22px; }
+p,a,li { font-size: 18px; }
+button,input,select,textarea { font-family: inherit; }
+img { display:block; max-width:100%; }
+a { color:#174c83; }
+span,i,strong { color:inherit; }
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible { outline:3px solid #1576ac; outline-offset:3px; }
+.container,.footer-inner,.footer-bottom-row { width:min(1480px,92%); margin-inline:auto; padding-inline:24px; }
+.site-header { position:sticky; top:0; z-index:500; background:var(--surface); border-bottom:1px solid var(--border); box-shadow:0 2px 20px color-mix(in srgb,var(--brand) 8%,transparent); }
+.navbar,.brand,.nav-links,.nav-actions { display:flex; align-items:center; }
+.navbar { gap:20px; padding-block:10px; }
+.brand { gap:12px; min-width:0; text-decoration:none; color:var(--brand-dark); }
+.avatar { display:block; width:46px; height:46px; flex:0 0 46px; border:2px solid currentColor; border-radius:50%; overflow:hidden; background:var(--brand-light); }
+.avatar img { width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+.brand-text { display:grid; }
+.brand-name,.brand-role { display:block; white-space:normal; overflow-wrap:anywhere; line-height:1.35; font-size:18px; }
+.brand-name { font-weight:700; }
+.nav-links { margin-left:auto; gap:2px; }
+.nav-links a { display:block; color:var(--text); text-decoration:none; border-radius:999px; padding:9px 12px; }
+.nav-links a:hover { color:var(--brand); background:var(--brand-light); }
+.nav-actions { gap:10px; flex-shrink:0; }
+.cta-btn,.booking-submit-btn,.consent-agree-btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:46px; padding:10px 20px; background:var(--accent); border:1px solid var(--accent); color:white; border-radius:var(--radius-pill); font:700 18px/1.35 var(--font-body); text-align:center; text-decoration:none; cursor:pointer; }
+.cta-btn:hover,.booking-submit-btn:hover { background:var(--accent-dark); color:white; }
+.cta-btn[hidden],.cta-text-mobile,.menu-toggle { display:none; }
+.menu-toggle { width:44px; height:44px; align-items:center; justify-content:center; flex-direction:column; gap:5px; background:transparent; border:1px solid var(--border); border-radius:50%; cursor:pointer; }
+.menu-toggle span { width:20px; height:2px; background:var(--brand-dark); }
+
+/* Portrait and photograph are separate layers, so backend photos can be replaced. */
+.hero-section { padding:0; color:var(--hero-fg); background:var(--hero-base); position:relative; isolation:isolate; }
+.hero-stage { position:relative; isolation:isolate; background:var(--hero-base); }
+.hero-stage::before { content:""; position:absolute; z-index:-2; inset:0; background-image:var(--static-image-hero-bg-jpg); background-size:cover; background-position:center; }
+.hero-stage::after { content:""; position:absolute; z-index:-1; inset:0; background:linear-gradient(var(--fade-angle),var(--hero-base) 4%,color-mix(in srgb,var(--hero-base) 99%,transparent) 37%,color-mix(in srgb,var(--hero-base) 95%,transparent) 53%,color-mix(in srgb,var(--hero-base) 17%,transparent) 78%,transparent); }
+.hero-layout { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); align-items:center; gap:clamp(32px,4.4vw,74px); padding-block:clamp(38px,4.5vw,72px); }
+.hero-content { min-width:0; max-width:760px; }
+.hero-title { color:inherit; font-size:clamp(36px,5.2vw,58px); line-height:1.05; font-weight:var(--headline-weight); letter-spacing:var(--tracking); margin:0 0 22px; overflow-wrap:anywhere; text-wrap:balance; }
+.expert-badge,.about-kicker,.services-kicker,.philosophy-kicker,.process-kicker,.social-media-kicker,.section-kicker { display:inline-flex; align-items:center; gap:10px; padding:7px 14px; font:700 18px/1.4 var(--font-body); margin:0 0 16px; border-radius:999px; background:var(--brand-light); border:1px solid var(--border); color:var(--brand-dark); letter-spacing:.02em; text-align:left; }
+.about-kicker::before,.section-kicker::before,.expert-badge-pulse { content:""; display:block; background:currentColor; width:7px; height:7px; flex:0 0 7px; border-radius:50%; }
+.hero-credentials,.hero-reg-id,.languages { margin:7px 0; font-size:18px; line-height:1.5; color:inherit; }
+.hero-credentials i,.hero-reg-id i,.languages i { width:22px; margin-right:7px; color:var(--hero-detail); text-align:center; }
+.hero-stats-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; max-width:620px; margin:24px 0 20px; }
+.hero-stat-box { display:grid; align-content:start; gap:4px; padding:14px 12px; background:var(--tile-bg); border:1px solid var(--tile-edge); border-radius:var(--card-radius); color:var(--tile-fg); }
+.hero-stat-box i { font-size:20px; }
+.hero-stat-box strong { font:700 26px/1.15 var(--font-body); font-variant-numeric:tabular-nums; }
+.hero-stat-box span { font-size:18px; line-height:1.35; }
+.hero-tools { display:flex; align-items:center; flex-wrap:wrap; gap:16px; }
+.social-links,.footer-social { display:flex; flex-wrap:wrap; gap:8px; }
+.social,.footer-social>a,.footer-social>span { flex:0 0 44px; width:44px; height:44px; border-radius:50%; display:inline-grid; place-items:center; position:relative; border:1px solid var(--tile-edge); color:var(--tile-fg); background:var(--tile-bg); text-decoration:none; font-size:19px; }
+.social-links { margin-top:16px; }
+.social:hover,.footer-social>a:hover { background:var(--brand-light); color:var(--brand-dark); }
+[data-tooltip]::after { pointer-events:none; content:attr(data-tooltip); position:absolute; bottom:calc(100% + 4px); left:50%; translate:-50% 0; visibility:hidden; white-space:nowrap; z-index:2; border-radius:6px; color:white; background:#25313c; padding:4px 8px; font:600 14px/1.3 var(--font-body); }
+[data-tooltip]:is(:hover,:focus-visible)::after { visibility:visible; }
+.hero-visual { display:grid; justify-items:center; align-content:center; position:relative; padding-inline:12px; }
+.hero-portrait { width:min(var(--frame-width),94%); aspect-ratio:var(--portrait-ratio); position:relative; isolation:isolate; background:var(--frame-color); border-radius:var(--frame-radius); clip-path:var(--frame-cut); overflow:hidden; }
+.hero-portrait img { width:100%; height:100%; object-fit:cover; object-position:center 35%; border:var(--frame-line) solid var(--frame-color); border-radius:inherit; }
+.hero-float { position:static; margin-top:12px; display:inline-flex; align-items:center; gap:8px; padding:7px 14px; border-radius:999px; background:var(--surface); color:var(--brand-dark); font-weight:700; font-size:18px; box-shadow:var(--shadow-card); }
+.hero-visual-blob { display:none; }
+
+/* Clinical information */
+.about-section,.services-section,.philosophy-section,.process-section,.contact-section,.gallery-section,.faq-section,.social-media-section { padding:clamp(25px,3.4vw,54px) 0; }
+.about-section { background:var(--surface); }
+.about-content { display:grid; grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr); column-gap:clamp(25px,5vw,82px); row-gap:4px; align-items:start; }
+.about-heading { grid-row:1/3; }
+.about-description { font:650 22px/1.45 var(--font-body); margin:0 0 12px; }
+.read-more-content p { max-width:75ch; margin:0; }
+.read-more-btn { min-height:44px; }
+.services-section,.gallery-section { background:var(--bg); }
+.services-header,.philosophy-content,.process-header,.gallery-header,.faq-header { min-width:0; }
+.services-header,.process-header,.gallery-header,.faq-header { margin:0 0 27px; }
+.services-subtitle,.philosophy-subtitle,.process-subtitle,.gallery-subtitle,.faq-subtitle { margin:10px 0 0; max-width:72ch; font-size:18px; color:var(--muted); }
+.services-grid,.gallery-grid { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:clamp(14px,1.8vw,26px); }
+.service-card,.gallery-item { grid-column:span 4; }
+.service-card { display:grid; align-content:start; gap:12px; padding:26px; background:var(--surface); border:1px solid var(--border); border-radius:var(--card-radius); box-shadow:var(--shadow-card); }
+.service-card p,.philosophy-pillar p,.process-step p,.contact-item p { color:var(--muted); }
+.service-icon,.pillar-icon,.contact-item-icon,.step-circle { display:inline-grid; place-items:center; width:50px; height:50px; background:var(--brand-light); color:var(--brand); border-radius:var(--icon-radius); font-size:21px; }
+.philosophy-section { background:var(--bg-2); }
+.philosophy-layout { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:clamp(32px,5vw,72px); align-items:center; }
+.philosophy-img-frame { overflow:hidden; border-radius:var(--art-radius); background:var(--brand-light); }
+.philosophy-img-frame img { width:100%; height:clamp(300px,35vw,490px); object-fit:cover; }
+.philosophy-pillars { display:grid; gap:0; margin-top:18px; }
+.philosophy-pillar { display:grid; grid-template-columns:50px minmax(0,1fr); gap:15px; padding:16px 0; border-top:1px solid var(--border); }
+.philosophy-pillar h3,.process-step h3,.contact-item h3 { font-size:21px; font-weight:700; margin-bottom:4px; }
+.process-section { background:var(--surface); }
+.process-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; }
+.process-step { position:relative; padding:22px; border-top:3px solid var(--brand); background:var(--bg); border-radius:var(--card-radius); }
+.step-number { float:right; color:var(--brand); font-size:18px; font-weight:700; }
+.step-circle { margin-bottom:12px; }
+.step-circle-ring { display:none; }
+.contact-section { background:var(--brand-dark); color:#fff; }
+.contact-card { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:22px 48px; }
+.contact-header h2,.contact-item h3,.contact-header p,.contact-item p,.contact-item a { color:inherit; }
+.contact-header p { margin-top:10px; }
+.contact-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.contact-item-icon { margin-bottom:10px; }
+.contact-item a { text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+.contact-divider { display:none; }
+.contact-actions { align-self:end; }
+.contact-actions .cta-btn { background:#fff; color:var(--brand-dark); border-color:#fff; }
+.gallery-item { background:var(--surface); border:0; padding:0; display:block; border-radius:var(--art-radius); overflow:hidden; cursor:zoom-in; }
+.gallery-item img { width:100%; aspect-ratio:1.5; object-fit:cover; transition:transform .25s; }
+.gallery-item:hover img { transform:scale(1.035); }
+@media(min-width:1101px) {
+  :is(.services-grid,.gallery-grid)>:last-child:nth-child(3n+1) { grid-column:3 / span 8; }
+  :is(.services-grid,.gallery-grid)>:nth-last-child(2):nth-child(3n+1) { grid-column:3 / span 4; }
+  :is(.services-grid,.gallery-grid)>:last-child:nth-child(3n+2) { grid-column:7 / span 4; }
+}
+.faq-section { background:var(--surface); }
+.faq-section .container { max-width:1100px; }
+.faq-header,.faq-list { text-align:left; }
+.faq-list { display:grid; gap:12px; }
+.faq-item { border:1px solid var(--border); border-radius:var(--card-radius); background:var(--bg); }
+.faq-question { display:flex; align-items:center; justify-content:space-between; gap:18px; width:100%; padding:16px 20px; font:700 20px/1.45 var(--font-body); color:var(--brand-dark); background:none; border:0; cursor:pointer; text-align:left; }
+.faq-answer { display:none; }
+.faq-item.is-active .faq-answer { display:block; padding:0 20px 18px; }
+.faq-item.is-active .faq-question i { transform:rotate(180deg); }
+.site-footer { padding:36px 0 15px; background:var(--brand-dark); border-top:4px solid var(--accent); color:#fff; }
+.footer-inner { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); align-items:start; gap:30px; }
+.site-footer .brand,.footer-nav a,.site-footer h4,.site-footer p,.site-footer span { color:inherit; }
+.footer-social-label { display:block; margin:16px 0 8px; font-weight:650; }
+.footer-social>a,.footer-social>span { background:transparent; color:white; border-color:#ffffff66; }
+.footer-right-col { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.footer-links-group h4 { font:700 20px/1.3 var(--font-body); margin:0 0 8px; }
+.footer-nav { display:grid; align-content:start; justify-items:start; }
+.footer-nav a { display:inline-flex; align-items:center; min-height:44px; text-decoration:none; }
+.footer-nav a:hover { text-decoration:underline; }
+.footer-visitor-badge { display:inline-flex; gap:8px; align-items:center; margin-top:16px; }
+.footer-bottom-row { margin-top:20px; padding-top:14px; border-top:1px solid #ffffff40; }
+.footer-disclaimer,.footer-disclaimer * { font-size:14px !important; line-height:1.5; margin-top:6px; }
+.legal-section { padding-block:36px; }
+.legal-article p,.legal-article ul { margin-block:12px; }
+.legal-article h2 { margin-top:26px; font-size:24px; }
+.legal-page .blog-detail-back-link { display:inline-flex; align-items:center; min-height:44px; }
+.legal-article ul { padding-left:24px; }
+.booking-tab.is-active { color:var(--brand-dark); }
+.booking-upload-btn { font-size:18px; color:var(--text); background:var(--surface); border:1px solid var(--border); }
+.booking-submit-btn,.booking-submit-btn:hover { color:#fff; }
+.booking-submit-btn:disabled { color:white; background:#59636d; }
+.booking-modal-close,.gallery-lightbox-close { min-width:44px; min-height:44px; }
+@media(max-width:1200px) {
+  .navbar { width:100%; min-height:60px; padding:8px 16px; gap:12px; }
+  .site-header .brand-name { font-size:17px; }
+  .site-header .brand-role { font-size:15px; }
+  .nav-actions { margin-left:auto; }
+  .nav-actions .cta-btn { font-size:15px; padding:8px 14px; }
+  .menu-toggle { display:flex; }
+  .nav-links { display:none; position:absolute; top:100%; left:0; right:0; margin-left:0; flex-direction:column; align-items:stretch; padding:8px 16px; background:var(--surface); box-shadow:var(--shadow-hover); max-height:70dvh; overflow:auto; }
+  .nav-links.open { display:flex; }
+}
+@media(max-width:1100px) {
+  .process-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .service-card,.gallery-item { grid-column:span 6; }
+  :is(.services-grid,.gallery-grid)>:last-child:nth-child(odd) { grid-column:4 / span 6; }
+  .philosophy-layout { grid-template-columns:minmax(0,1fr); }
+  .philosophy-img-frame img { max-height:360px; }
+}
+@media(max-width:820px) {
+  .hero-layout { display:flex; flex-direction:column; align-items:stretch; gap:26px; padding-block:28px; }
+  .hero-stage::after { background:linear-gradient(180deg,var(--hero-base) 6%,color-mix(in srgb,var(--hero-base) 98%,transparent) 54%,color-mix(in srgb,var(--hero-base) 20%,transparent) 80%,transparent); }
+  .hero-stage::before { background-position:center bottom; }
+  .hero-portrait { width:min(260px,82%); }
+  .about-content,.contact-card { grid-template-columns:1fr; gap:16px; }
+  .about-heading { grid-row:auto; }
+}
+@media(max-width:640px) {
+  .container,.footer-inner,.footer-bottom-row { width:100%; padding-inline:18px; }
+  .site-header .navbar { padding-inline:10px; }
+  .process-grid,.footer-inner { grid-template-columns:1fr; }
+  .services-grid>.service-card,.services-grid>.service-card:last-child:nth-child(odd) { grid-column:1/-1; }
+  .process-grid { gap:14px; }
+  .service-card,.process-step { padding:20px; }
+  .contact-grid { grid-template-columns:1fr; }
+  .gallery-grid { gap:10px; }
+  .gallery-item img { aspect-ratio:1.3; }
+  .site-footer .footer-bottom-row { padding-top:14px; }
+}
+@media(max-width:480px) {
+  .site-header .brand { gap:6px; }
+  .site-header .brand-name { font-size:16px; }
+  .site-header .brand-role { font-size:14px; }
+  .site-header .avatar { width:36px; height:36px; flex-basis:36px; }
+  .nav-actions { gap:6px; }
+  .nav-actions .cta-btn { font-size:13px; padding:8px 10px; }
+  .cta-text-desktop { display:none; }
+  .cta-text-mobile { display:inline; }
+  .hero-stats-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .hero-stat-box:last-child { grid-column:1/-1; display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+  .hero-tools { gap:6px; }
+  .social-links,.footer-social { gap:5px; }
+  .faq-question { padding:14px; }
+}
+@media(max-width:360px) { .site-header .brand-role { display:none; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; scroll-behavior:auto!important; } }
+
+/* Lagoon glass */
+.hero-stats-grid{gap:0;border-block:1px solid var(--tile-edge);padding-block:12px}.hero-stat-box{border:0;border-radius:0}.hero-stat-box+.hero-stat-box{border-left:1px solid var(--tile-edge)}.service-card{border-top:4px solid var(--brand)}.about-heading{border-left:4px solid var(--accent);padding-left:18px}
+@media(min-width:1101px){.philosophy-visual{order:-1}.philosophy-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+@media(min-width:1101px){.process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.process-step{display:grid;grid-template-columns:54px 1fr;gap:2px 15px}.step-circle{grid-row:1/3}.step-number{position:absolute;right:16px;top:10px}.process-step h3{padding-right:32px}.process-step p{grid-column:2}}
+@media(min-width:1101px){.services-section .container{display:grid;grid-template-columns:minmax(220px,.55fr) minmax(0,1.45fr);gap:28px}.services-header{margin:0}.services-grid .service-card{grid-column:span 6}.services-grid>.service-card:last-child:nth-child(odd){grid-column:4 / span 6}}
+
+.result-overlay { position:fixed; inset:0; z-index:999999; display:grid; place-items:center; padding:20px; background:var(--overlay-backdrop); }
+.result-dialog { width:min(470px,100%); max-height:85dvh; overflow:auto; padding:28px; border-radius:20px; background:white; text-align:center; box-shadow:var(--shadow-hover); }
+.result-dialog>i { color:#226539; font-size:42px; }
+.result-dialog>i.fa-circle-xmark { color:#a42b35; }
+.result-dialog h2 { font-size:22px; margin:12px 0; }
+.result-dialog p,.result-dialog button { font-size:16px; }
+.result-dialog button { margin-top:18px; min-height:44px; padding:8px 27px; color:white; background:var(--accent); border:0; border-radius:999px; cursor:pointer; }
+.booking-calendar-day.is-selected { color:#fff; }
+.booking-tab[aria-selected=true] { color:var(--text); }
+.contact-header .section-kicker { color:var(--brand-dark); }
+.booking-modal-dialog .booking-modal-tabs { padding-right:32px; }
+.preview-notice { font-size:16px; margin:0 0 12px; color:var(--muted); }
+.chatbot-footer { color:#414a54; }
+@media(max-width:480px) {.booking-modal {padding:6px}.booking-modal-dialog {width:min(100%,600px)}.booking-tab{padding-inline:5px;line-height:1.3}.booking-modal-header {padding-inline:12px}.booking-modal-close{right:4px;top:4px}}
+
+/* Final responsive and accessibility adjustments */
+@media(min-width:1101px) {
+  .gallery-grid>.gallery-item:last-child:nth-child(3n+1) { grid-column:5 / span 4; }
+}
+@media (max-width:1200px) {
+  .cta-text-desktop { display:none; }
+  .cta-text-mobile { display:inline; }
+}
+@media (max-width:820px) {
+  .hero-stage::before,.hero-stage::after { display:none; }
+  .hero-layout { display:grid; grid-template-columns:minmax(0,1fr); gap:0; padding-block:22px 28px; }
+  .hero-content { display:contents; }
+  .hero-layout .expert-badge { order:-3; justify-self:start; margin-bottom:12px; }
+  .hero-title { order:-2; margin:0 0 16px; padding:0; border:0; }
+  .hero-visual { order:-1; isolation:isolate; margin:0 -8px 16px; padding:15px 12px; border-radius:18px; overflow:hidden; justify-items:center; background:linear-gradient(90deg,var(--hero-base) 0%,transparent 60%),var(--static-image-hero-bg-jpg) center / cover; }
+  .hero-portrait { width:min(230px,68%); max-height:280px; }
+  .hero-float { margin-top:8px; padding:4px 12px; }
+  .hero-stats-grid { margin-block:12px; }
+  .hero-tools,.social-links { justify-content:flex-start; }
+  .hero-stat-box { min-width:0; }
+}
+@media(max-width:480px) {
+  .hero-visual { margin-inline:0; }
+  .hero-portrait { width:min(188px,70%); }
+  .hero-stat-box:last-child { border-left:0; }
+  .hero-stat-box span { line-height:1.35; }
+  .hero-stage .social-links { gap:5px; }
+}
+body:has(.booking-modal.is-open,.gallery-lightbox.is-open,#customPopup) .chatbot-fab-wrap { display:none; }
+.skip-link { position:fixed; top:2px; left:2px; z-index:10001; transform:translateY(-150%); background:white; color:var(--brand-dark); padding:8px 18px; border-radius:8px; }
+.skip-link:focus { transform:none; }
+.result-dialog>p { overflow-wrap:anywhere; }
+.booking-upload-btn { color:var(--text); }
+.iti__selected-country,.iti__selected-dial-code { color:var(--text); }
+.chatbot-messages:focus-visible { outline-offset:-2px; }
+
+.site-header{background:var(--brand-dark);color:#fff}.site-header .brand,.site-header .nav-links a{color:inherit}.site-header .nav-links a:hover{color:var(--brand-dark)}.site-header .menu-toggle{border-color:#ffffff70}.site-header .menu-toggle span{background:white}.site-header .cta-btn{background:#fff;color:var(--brand-dark);border-color:#fff}.site-header .cta-btn span{color:inherit}@media(max-width:1200px){.site-header .nav-links{background:var(--brand-dark)}.site-header .nav-actions .cta-btn{background:var(--accent);color:white;border-color:#ffffff80}}
+
+/* Focusable tooltips */
+[data-tooltip]::after { max-width:none; width:max-content; }
+.upload-clear { display:block; min-height:44px; background:transparent; color:var(--brand-dark); border:0; font:700 16px var(--font-body); text-decoration:underline; cursor:pointer; }
+
+.upload-clear[hidden] { display:none; }
+.social-links .is-disabled,.footer-social .is-disabled { cursor:default; }
+.social-links .is-disabled i,.footer-social .is-disabled i { opacity:.84; }
+.social-links .is-disabled:hover { color:var(--tile-fg); background:var(--tile-bg); }
+@media(min-width:1101px) {
+  .services-grid>.service-card { grid-column:span 4; }
+  .services-grid>.service-card:last-child:nth-child(3n+1) { grid-column:3 / span 8; }
+  .services-grid>.service-card:nth-last-child(2):nth-child(3n+1) { grid-column:3 / span 4; }
+  .services-grid>.service-card:last-child:nth-child(3n+2) { grid-column:7 / span 4; }
+  .services-grid>.service-card:last-child:nth-child(6n+3) { grid-column:span 4; }
+}
+@media(min-width:1101px) and (max-width:1200px) {
+  .services-section .services-grid>.service-card { grid-column:span 6; }
+  .services-section .services-grid>.service-card:last-child:nth-child(odd) { grid-column:4 / span 6; }
+}
+@media(max-width:480px) { .site-header .brand-name { font-size:16px; } }
+
+/* Appointment label on the dark masthead */
+.site-header .cta-btn { color:#fff; background:var(--accent); border-color:#ffffff80; }
+.site-header .cta-btn span { color:#fff; }
+.site-header .cta-btn:hover { background:var(--accent-dark); }
+
+.about-section .about-description { text-align:start; }

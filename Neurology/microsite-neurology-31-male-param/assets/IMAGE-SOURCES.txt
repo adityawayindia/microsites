@@ -1,0 +1,19 @@
+Cobalt instrument | Neurology 31
+
+The source profile, clinic address and practising year are illustrative. Supply the clinician’s approved details, live IDs and contact information before deployment. No real clinician or patient is depicted.
+
+doctor.jpg — individually generated with built-in OpenAI ImageGen. Prompt: Use case: photorealistic-natural. Create one vertical 3:4 high-quality portrait photograph of a fictional Indian male consultant neurologist aged 43, round-faced man with an olive complexion, short black hair combed back, thin moustache; charcoal shirt and clinical coat; warm amber and cream office. Direct eye contact, open professional expression. Single person centered, waist-up composition, generous breathing room above head and around shoulders to crop within an unusual portrait frame. Realistic skin texture, anatomically natural posture, softly blurred environment, thoughtful editorial photography. No writing, badges, logos, watermark or graphics.
+
+Hero, About and Care Philosophy artwork — individually generated with built-in OpenAI ImageGen. Art direction: royal cobalt and lemon accents.
+
+hero.webp — Sculptural macro product photo of a cobalt EEG electrode cap on a stand without a head.
+
+about.webp — Gold electrode discs connected to neat cobalt leads.
+
+philosophy.webp — Cobalt blue clinic furniture in direct sunlight.
+
+banner.webp and banner-mobile.webp — site-specific responsive graphic using the commissioned imagery and palette.
+
+gallery-1.webp, gallery-2.webp, gallery-3.webp — shared ImageGen neurology gallery: Sunlit neurology consultation room; MRI scanner and examination table; EEG recording equipment beside the examination chair.
+
+favicon.svg and assistant.svg — original vector marks in this practice palette.

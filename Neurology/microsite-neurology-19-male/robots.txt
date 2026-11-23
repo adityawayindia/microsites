@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /microsite-neurology-19-male/
+Disallow: /microsite-neurology-19-male/privacy-policy
+Disallow: /microsite-neurology-19-male/terms-of-service
+Sitemap: https://digidr.app/microsite-neurology-19-male/sitemap.xml

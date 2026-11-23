@@ -1,0 +1,18 @@
+Dr. Nikhil Trivedi | Graphite | Cardiology template 11
+
+The standalone practice and professional profile are fictional examples. Replace preview details with the registered doctor's information before publication.
+
+Portrait: generated with OpenAI image generation for this fictional male cardiologist. Source and parameterized counterpart represent the same practice.
+Hero artwork: Editorial cardiology illustration of microvascular network.
+About artwork: Illustration of a branching vascular network with an inset of red blood cells.
+Care artwork: Illustration of red blood cells, beside a detail of microvascular network.
+The three original illustrations were designed for this site. Favicon, assistant mark and optional banner are original site-specific vector graphics.
+
+Gallery 1: original OpenAI-generated photograph of a blood pressure monitor from General Physician/microsite-general-physician-11-male/assets/gallery.webp.
+Gallery 2: ECG photograph by Pixabay on Pexels. https://www.pexels.com/photo/selective-focus-photography-of-white-and-black-vital-sign-printing-paper-415779/ . License verified 23 November 2026 at https://www.pexels.com/license/ .
+Gallery 3: original OpenAI-generated photograph from General Medicine/microsite-general-medicine-9-female/assets/medical-instruments.jpg.
+
+FAQs: DigiDr_FAQ_6_Sets_25_Specialities.pdf, Cardiology, set 5.
+
+Portrait generation brief:
+Original synthetic editorial portrait of an Indian male cardiologist, age 56, friendly round face, silver tapered hair and rimless glasses, moss shirt and white coat, modern office. Centered full head, shoulders and upper torso, natural daylight, professional clinical setting, stethoscope, no text or logos.

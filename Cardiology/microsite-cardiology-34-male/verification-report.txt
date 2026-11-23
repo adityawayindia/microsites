@@ -1,0 +1,115 @@
+DigiDr cardiology verification
+microsite-cardiology-34-male
+23 November 2026
+
+Scope: standalone source and correspondingly rendered backend template. Checked on loopback HTTP in Chromium with the genuine phone-input library, Font Awesome, locally served Google Fonts, and deterministic booking, social, chat and analytics fixtures.
+Doctor and clinic identities in the standalone are illustrative. Production appointment delivery, email delivery, live analytics dashboards, per-doctor storage buckets and live Facebook permissions require configured staging or production accounts.
+
+Item | Status | Evidence | Fix applied
+Required pages, styles, scripts and SEO drafts | PASS | index.html:3 | —
+Page text, practice identity and correct order | PASS | index.html:43 | —
+Identical footer across three pages | PASS | index.html:445 | —
+Local assets and license files resolve | PASS | styles/style.css:2 | —
+FAQ question and answer pairs match the source PDF | PASS | index.html:246 | —
+Legal-page wording against workspace section 41 | PASS | privacy-policy.html:43 | 61 required blocks
+Booking contract and canonical implementations | PASS | script/index.js:3 | 4 routes, 12 multipart fields, 3 canonical code blocks
+Live visit count, analytics and help widget | PASS | script/analytics.js:7 | —
+Template vocabulary and both states of each field | PASS | index.html:315 | —
+Source syntax and content identifiers | PASS | index.html:30 | —
+Both self-hosted type families loaded | PASS | styles/style.css:1012 | —
+Hero, FAQ, icon glyphs and footer at 1440 | PASS | styles/style.css:1012 | —
+Hero, FAQ, icon glyphs and footer at 768 | PASS | styles/style.css:1012 | —
+Hero, FAQ, icon glyphs and footer at 375 | PASS | styles/style.css:1012 | —
+Hero, FAQ, icon glyphs and footer at 320 | PASS | styles/style.css:1012 | —
+All leftover service/gallery rows centered at 1440 | PASS | styles/style.css:1012 | —
+All leftover service/gallery rows centered at 900 | PASS | styles/style.css:1012 | —
+All leftover service/gallery rows centered at 375 | PASS | styles/style.css:1012 | —
+privacy-policy legal stylesheet, Back and mobile bounds | PASS | styles/style.css:1012 | —
+terms-of-service legal stylesheet, Back and mobile bounds | PASS | styles/style.css:1012 | —
+Automated accessibility checks, home | PASS | index.html:30 | —
+Automated accessibility checks, booking | PASS | index.html:315 | —
+Automated accessibility checks, consent | PASS | index.html:315 | —
+Automated accessibility checks, chat | PASS | script/chatbot.js:79 | —
+Automated accessibility checks, privacy-policy | PASS | privacy-policy.html:33 | —
+Automated accessibility checks, terms-of-service | PASS | terms-of-service.html:33 | —
+Lowest measured contrast ratios among sampled solid surfaces | Measured | .service-card h3 7.14:1, .faq-question span 7.14:1, .process-step p 7.14:1 | Full page was also checked with axe.
+home sections, services, gallery, FAQ | PASS | index.html:254 | —
+Home responsive 1900 | PASS | index.html:32 | —
+Home responsive 1440 | PASS | index.html:32 | —
+Home responsive 1201 | PASS | index.html:32 | —
+Home responsive 1200 | PASS | index.html:32 | —
+Home responsive 1024 | PASS | index.html:32 | —
+Home responsive 768 | PASS | index.html:32 | —
+Home responsive 390 | PASS | index.html:32 | —
+Home responsive 375 | PASS | index.html:32 | —
+Home responsive 320 | PASS | index.html:32 | —
+mobile navigation opens | PASS | index.html:32 | —
+navigation closes and cleans URL | PASS | index.html:32 | —
+FAQ single open state | PASS | index.html:254 | —
+keyboard gallery lightbox | PASS | index.html:296 | —
+gallery images decoded | PASS | index.html:296 | —
+offline name sanitization and required fields | PASS | index.html:315 | —
+offline weekdays and past dates blocked | PASS | index.html:315 | —
+offline no POST before consent | PASS | index.html:315 | —
+offline consent scroll gate | PASS | index.html:315 | —
+dismiss restores unchecked consent | PASS | index.html:315 | —
+offline invalid phone prevented | PASS | index.html:315 | —
+report validation and PDF preview | PASS | index.html:32 | —
+offline multipart POST with live fields | PASS | index.html:315 | —
+offline doctor and slot configuration | PASS | index.html:315 | —
+offline confirmation | PASS | index.html:315 | —
+online name sanitization and required fields | PASS | index.html:315 | —
+online weekdays and past dates blocked | PASS | index.html:315 | —
+online no POST before consent | PASS | index.html:315 | —
+online consent scroll gate | PASS | index.html:315 | —
+online invalid phone prevented | PASS | index.html:315 | —
+online multipart POST with live fields | PASS | index.html:315 | —
+online doctor and slot configuration | PASS | index.html:315 | —
+online confirmation | PASS | index.html:315 | —
+mobile chat stays in viewport | PASS | script/chatbot.js:236 | —
+chat API payload and reply | PASS | script/chatbot.js:236 | —
+Facebook live embed cards and filters | PASS | script/index.js:1303 | —
+Facebook mobile paging | PASS | script/index.js:1303 | —
+booking and consent analytics | PASS | script/analytics.js:7 | —
+privacy-policy responsive 1900 | PASS | privacy-policy.html:36 | —
+privacy-policy responsive 1440 | PASS | privacy-policy.html:36 | —
+privacy-policy responsive 1201 | PASS | privacy-policy.html:36 | —
+privacy-policy responsive 1200 | PASS | privacy-policy.html:36 | —
+privacy-policy responsive 1024 | PASS | privacy-policy.html:36 | —
+privacy-policy responsive 768 | PASS | privacy-policy.html:36 | —
+privacy-policy responsive 390 | PASS | privacy-policy.html:36 | —
+privacy-policy responsive 375 | PASS | privacy-policy.html:36 | —
+privacy-policy responsive 320 | PASS | privacy-policy.html:36 | —
+privacy-policy footer and chatbot | PASS | script/chatbot.js:236 | —
+terms-of-service responsive 1900 | PASS | privacy-policy.html:36 | —
+terms-of-service responsive 1440 | PASS | privacy-policy.html:36 | —
+terms-of-service responsive 1201 | PASS | privacy-policy.html:36 | —
+terms-of-service responsive 1200 | PASS | privacy-policy.html:36 | —
+terms-of-service responsive 1024 | PASS | privacy-policy.html:36 | —
+terms-of-service responsive 768 | PASS | privacy-policy.html:36 | —
+terms-of-service responsive 390 | PASS | privacy-policy.html:36 | —
+terms-of-service responsive 375 | PASS | privacy-policy.html:36 | —
+terms-of-service responsive 320 | PASS | privacy-policy.html:36 | —
+terms-of-service footer and chatbot | PASS | script/chatbot.js:236 | —
+online-only consult auto-selection | PASS | index.html:315 | —
+online-only slot query uses mode | PASS | index.html:315 | —
+blocked SDK exposes two centred fallback links | PASS | index.html:32 | —
+offline-only consult auto-selection | PASS | index.html:315 | —
+offline-only slot query uses mode | PASS | index.html:315 | —
+empty Facebook feed collapses | PASS | script/index.js:1303 | —
+unavailable modes hide every booking trigger | PASS | index.html:315 | —
+no runtime exceptions | PASS | index.html:32 | —
+no broken local or unexpected assets | PASS | index.html:32 | —
+no browser console errors | PASS | index.html:32 | —
+offline final routing: doctor, days, slots, multipart and confirmation | PASS | index.html:315 | —
+online final routing: doctor, days, slots, multipart and confirmation | PASS | index.html:315 | —
+menu, chatbot, and meaningful labels | PASS | script/chatbot.js:236 | —
+replacement and cleared banner schedules | PASS | script/banner-module.js:20 | —
+Final contact metadata, phone chooser and legal links | PASS | script/index.js:1722 | Absent channels render as NA. The country selector includes its visible dial code. Final browser console and resource checks passed.
+Gallery images shared only by permission. Every other authored image is unique across the 50 profiles. | PASS | assets/IMAGE-SOURCES.txt:17 | —
+Distinct portrait silhouette and brand color across all 50 designs | PASS | styles/style.css:1028 | —
+Full-page visual review on phone, tablet and desktop | PASS | styles/style.css:1006 | Adjusted upper edge and portrait alignment where needed. Added opaque stat tiles and compact phone chat launcher.
+
+External verification pending
+A registered staging doctor and test mailbox are needed to check persistence and email delivery against DigiDr. Fixture appointments reached a local multipart HTTP endpoint.
+Third-party dashboard receipt, real Facebook embed rendering, deployed bucket assets and real chatbot replies were outside the local environment.

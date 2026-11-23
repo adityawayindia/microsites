@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-kunal-ahuja/
+Disallow: /dr-kunal-ahuja/privacy-policy.html
+Disallow: /dr-kunal-ahuja/terms-of-service.html
+Sitemap: https://digidr.app/dr-kunal-ahuja/sitemap.xml

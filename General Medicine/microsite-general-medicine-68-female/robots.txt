@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-jaya-chidambaram/
+Disallow: /dr-jaya-chidambaram/privacy-policy.html
+Disallow: /dr-jaya-chidambaram/terms-of-service.html
+Sitemap: https://digidr.app/dr-jaya-chidambaram/sitemap.xml

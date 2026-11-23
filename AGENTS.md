@@ -1157,7 +1157,7 @@ apply:
 | 7 | Consultation Journey | 4-step animated timeline | §8, A.6 |
 | 8 | Contact | Dedicated address/phone/email card (mandatory section) | §18.1, §35, A.7 |
 | 9 | Practice Gallery | Grid + lightbox, equal-size images with centered incomplete rows | §10, §23, A.8 |
-| 10 | FAQ | Accordion of at least 5 specialty-specific questions, straight after the Gallery (`#faq`) | §39, A.9 |
+| 10 | FAQ | Heading above a single vertical stack of at least 5 specialty-specific accordion cards, straight after the Gallery (`#faq`) | §39, A.9 |
 | 11 | Booking Modal | Popup form: date/time, file upload, phone input, consent | §11, §25, §37, A.10 |
 | 12 | Footer | Branding, social links, quick/legal links, visitor badge, copyright | §12, §36, §44, A.11 |
 
@@ -2370,6 +2370,13 @@ also flags commented-out sections, but does not verify rendered accordion behavi
 **Section order.** This extends §21. The home page order is Header → Hero → About → Services → Social Media widget (optional, §30) →
 Care Philosophy → Consultation Journey → Contact → Practice Gallery → **FAQ** → Booking Modal →
 Footer. The FAQ section (`#faq`) comes straight after the Gallery and gets a nav link.
+
+**Required FAQ layout for every source and `-param` microsite, including custom designs.**
+Place the section kicker, heading and subtitle together at the top, left-aligned with the cards
+below. On desktop, tablet and mobile, stack the questions in a single column, one full-width
+card per row. Give each card its own surface, border and rounded corners, with a consistent
+vertical gap between cards. Keep the question on the left and its chevron on the right.
+Expand the answer directly beneath its question, inside the same card.
 
 **Static sections with their own design.** Care Philosophy, Consultation Journey, and any
 other section can have a design of its own (layout, imagery, wording). Such a design is static,
@@ -4277,8 +4284,9 @@ Lightbox JS (creates the prev/next buttons itself; Escape and arrow keys work):
 
 ```html
 <section class="faq-section" id="faq">
-  <div class="container">
+  <div class="container faq-layout">
     <div class="faq-header">
+      <span class="section-kicker">Helpful answers</span>
       <h2 class="faq-title">Frequently Asked Questions</h2>
       <p class="faq-subtitle">Answers to the questions patients ask most before their first visit.</p>
     </div>
@@ -4361,10 +4369,15 @@ Lightbox JS (creates the prev/next buttons itself; Escape and arrow keys work):
   background-size: 18px 18px;
 }
 
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 960px);
+  justify-content: center;
+  gap: 20px;
+}
+
 .faq-header {
-  text-align: center;
-  margin: 0 auto 40px;
-  max-width: 700px;
+  text-align: left;
 }
 
 .faq-title {
@@ -4379,15 +4392,13 @@ Lightbox JS (creates the prev/next buttons itself; Escape and arrow keys work):
   font-size: 18px;
   color: var(--muted);
   max-width: 640px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  max-width: 900px;
-  margin: 0 auto;
+  gap: 12px;
 }
 
 .faq-item {

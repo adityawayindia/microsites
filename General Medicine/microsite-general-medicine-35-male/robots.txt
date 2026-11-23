@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-bharat-soman/
+Disallow: /dr-bharat-soman/privacy-policy.html
+Disallow: /dr-bharat-soman/terms-of-service.html
+Sitemap: https://digidr.app/dr-bharat-soman/sitemap.xml

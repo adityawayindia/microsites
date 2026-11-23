@@ -1,0 +1,128 @@
+Verification — microsite-plastic-surgery-44-female-param
+
+Local Chrome audit for the backend template rendered with sample data.
+
+Item | Status | Evidence | Fix applied
+--- | --- | --- | ---
+Required file robots.txt | PASS | robots.txt | 
+Required file sitemap.xml | PASS | sitemap.xml | 
+Required file llms.txt | PASS | llms.txt | 
+Required file styles/style.css | PASS | styles/style.css | 
+Required file script/index.js | PASS | script/index.js | 
+Required file script/chatbot.js | PASS | script/chatbot.js | 
+Required file script/analytics.js | PASS | script/analytics.js | 
+Required file script/banner-module.js | PASS | script/banner-module.js | 
+JavaScript syntax analytics.js | PASS | script/analytics.js | 
+JavaScript syntax banner-module.js | PASS | script/banner-module.js | 
+JavaScript syntax chatbot.js | PASS | script/chatbot.js | 
+JavaScript syntax index.js | PASS | script/index.js | 
+JavaScript syntax intlTelInput.min.js | PASS | script/intlTelInput.min.js | 
+index canonical | PASS | index.html:34 | 
+index description | PASS | index.html:31 | 
+index OpenGraph | PASS | index.html:39 | 
+index Twitter | PASS | index.html:47 | 
+index chatbot | PASS | index.html:887 | 
+index GA4 | PASS | index.html:20 | 
+index Clarity | PASS | index.html:8 | 
+index visitors | PASS | index.html:850 | 
+index footer | PASS | index.html:806 | 
+index specialty and prohibited language | PASS | index.html | 
+index rendered placeholders (real) | PASS | index.html | 
+index rendered placeholders (configured) | PASS | index.html | 
+index rendered placeholders (sparse) | PASS | index.html | 
+privacy-policy canonical | PASS | privacy-policy.html:34 | 
+privacy-policy description | PASS | privacy-policy.html:31 | 
+privacy-policy OpenGraph | PASS | privacy-policy.html:39 | 
+privacy-policy Twitter | PASS | privacy-policy.html:46 | 
+privacy-policy chatbot | PASS | privacy-policy.html:279 | 
+privacy-policy GA4 | PASS | privacy-policy.html:20 | 
+privacy-policy Clarity | PASS | privacy-policy.html:8 | 
+privacy-policy visitors | PASS | privacy-policy.html:244 | 
+privacy-policy footer | PASS | privacy-policy.html:200 | 
+privacy-policy specialty and prohibited language | PASS | privacy-policy.html | 
+privacy-policy rendered placeholders (real) | PASS | privacy-policy.html | 
+privacy-policy rendered placeholders (configured) | PASS | privacy-policy.html | 
+privacy-policy rendered placeholders (sparse) | PASS | privacy-policy.html | 
+terms-of-service canonical | PASS | terms-of-service.html:34 | 
+terms-of-service description | PASS | terms-of-service.html:31 | 
+terms-of-service OpenGraph | PASS | terms-of-service.html:39 | 
+terms-of-service Twitter | PASS | terms-of-service.html:46 | 
+terms-of-service chatbot | PASS | terms-of-service.html:230 | 
+terms-of-service GA4 | PASS | terms-of-service.html:20 | 
+terms-of-service Clarity | PASS | terms-of-service.html:8 | 
+terms-of-service visitors | PASS | terms-of-service.html:195 | 
+terms-of-service footer | PASS | terms-of-service.html:151 | 
+terms-of-service specialty and prohibited language | PASS | terms-of-service.html | 
+terms-of-service rendered placeholders (real) | PASS | terms-of-service.html | 
+terms-of-service rendered placeholders (configured) | PASS | terms-of-service.html | 
+terms-of-service rendered placeholders (sparse) | PASS | terms-of-service.html | 
+Physician | PASS | index.html:61 | 
+counter | PASS | index.html:192 | 
+fellowship | PASS | index.html:184 | 
+FAQ | PASS | index.html:573 | 
+clinic | PASS | index.html:667 | 
+online | PASS | index.html:668 | 
+consent | PASS | index.html:764 | 
+tooltip | PASS | index.html:670 | 
+gallery | PASS | index.html:564 | 
+banner | PASS | index.html:140 | 
+Production booking endpoint contract | PASS | ["getappointment","getavailabledays","getslots","patient_appointment"] | 
+Production booking multipart field contract | PASS | ["Date","Day","DoctorId","Email","FullName","Phone","Reason","SlotId","Time","Type","Upload","UserId"] | 
+Template profile | PASS | index.html:93 | 
+Template gallery | PASS | index.html:554 | 
+Template services | PASS | index.html:296 | 
+Template staticImages | PASS | index.html:32 | 
+Template doctorID | PASS | index.html:673 | 
+Template banner | PASS | index.html:137 | 
+Page structure, booking form attributes and specialty | PASS | {"ids":[],"order":true,"title":"Dr. Diya Raman / Plastic Surgeon — Aesthetic & Reconstructive Surgery","h1":1,"form":"<form id=\"bookingForm\" class=\"booking-form\" novalidate=\"\" data-userid=\"88001\" data-address=\"41 Clinic Road\" data-clinicname=\"Plastic Surgery Test Clinic\" data-pincode=\"751001\" data-state=\"Odisha\" data-district=\"Khordha\" data-city=\"Bhubaneswar\"","hashes":[]} | 
+Identical footer markup | PASS | Identical HTML on all three pages | 
+All page layouts, assets and runtime placeholders at 320–1440px | PASS | 21 page/viewport combinations | Corrected the background asset path and phone portrait layout.
+Mobile navigation and clean URL | PASS |  | 
+FAQ accordion and bio toggle | PASS |  | 
+Gallery lightbox, image navigation and Escape | PASS |  | 
+offline consent, validation, calendar, file upload, request and confirmation | PASS | {"popup":"Success\n\nHello QA Patient,\n\nYour Appointment is Confirmed!\n\nAppointment Location:\nPlastic Surgery Test Clinic\n41 Clinic Road\nKhordha, Odisha – 751001\n\nConfirmation details have been sent to your registered email\nPlease arrive 15 minutes before your scheduled appointment to complete any necessary check-in.\n\nOK","posts":[{"route":"api/Patient_Appointment/patient_appointment","query":{},"method":"POST","fields":{"DoctorId":"88001","FullName":"QA Patient","Phone":"99999 99999","Email":"test@example.test","Date":"2026-11-23","Type":"offline","Day":"Monday","SlotId":"101","Time":"10:00 AM - 10:30 AM","Reason":"Routine specialist consultation","Upload":{"name":"qa-report.pdf","size":17,"type":"application/pdf"}}}]} | Added accessible focus handling and type and size checks for attachments.
+online consent, validation, calendar, file upload, request and confirmation | PASS | {"popup":"Success\n\nYour appointment is confirmed.\n\nPlease join 5 minutes before your scheduled time. Check your email for details.\n\nOK","posts":[{"route":"api/Patient_Appointment/patient_appointment","query":{},"method":"POST","fields":{"DoctorId":"88001","FullName":"QA Patient","Phone":"99999 99999","Email":"test@example.test","Date":"2026-11-23","Type":"online","Day":"Monday","SlotId":"101","Time":"10:00 AM - 10:30 AM","Reason":"Routine specialist consultation","Upload":{"name":"qa-report.pdf","size":17,"type":"application/pdf"}}}]} | Added accessible focus handling and type and size checks for attachments.
+Chat keyboard input, reply, sizing and dismissal | PASS | {"w":343,"h":580,"left":16,"right":359} | Capped the mobile panel and made the message log keyboard-focusable.
+Grid dimensions, leftovers and FAQ card layout | PASS | [{"width":375,"x":[{"count":4,"equal":true,"center":true},{"count":5,"equal":true,"center":true},{"count":6,"equal":true,"center":true},{"count":7,"equal":true,"center":true}],"faq":true},{"width":768,"x":[{"count":4,"equal":true,"center":true},{"count":5,"equal":true,"center":true},{"count":6,"equal":true,"center":true},{"count":7,"equal":true,"center":true}],"faq":true},{"width":1440,"x":[{"count":4,"equal":true,"center":true},{"count":5,"equal":true,"center":true},{"count":6,"equal":true,"center":true},{"count":7,"equal":true,"center":true}],"faq":true}] | Centred incomplete gallery rows at equal widths.
+WCAG 2 A/AA browser scan | PASS | No WCAG 2 A/AA axe violations in rendered homepage | 
+GA4 and Clarity interaction signals | PASS | {"ga":["consent_scrolled_to_bottom","nav_link_click","read_more_click","read_more_click","book_appointment_click","book_appointment_click","clinic_visit_tab_click","consent_modal_open","consent_scrolled_to_bottom","consent_agreed","report_uploaded","booking_submitted","book_appointment_click","online_consult_tab_click","online_consult_tab_click","online_consult_tab_click","consent_modal_open","consent_scrolled_to_bottom","consent_agreed","report_uploaded","booking_submitted"],"clarity":["consent_scrolled_to_bottom","nav_link_click","read_more_click","read_more_click","book_appointment_click","book_appointment_click","clinic_visit_tab_click","consent_modal_open","consent_scrolled_to_bottom","consent_agreed","report_uploaded","booking_submitted","book_appointment_click","online_consult_tab_click","online_consult_tab_click","online_consult_tab_click","consent_modal_open","consent_scrolled_to_bottom","consent_agreed","report_uploaded","booking_submitted"]} | 
+Facebook SDK embed and carousel | PASS | 3 | 
+Missing/optional template sections, long name, configured banner, brand links | PASS | {"full":"Dr. Anand Subramanian KrishnamurthyVenkataramanChandrasekharan","wrap":true,"banner":true,"offline":"none","online":"true","links":8,"bannerStates":{"hidden":true,"visible":true,"alt":"QA banner text","href":"https://example.test/notice"}} | 
+Clinic-only and no-appointment states | PASS |  | 
+Page runtime and network exceptions | PASS | No page exceptions or resource errors in local previews | 
+
+Per-site assets and data | PASS | All three page footers match. Both conditional template renderings, six specialty FAQ pairs and local asset references passed the static audit. |
+Site identity | PASS | Diya Raman, Sage plum, site-specific portrait frame. Original photographic asset sources are recorded in assets/IMAGE-CREDITS.md. |
+
+Production delivery requires an assigned clinic, backend credentials and service access. Appointment, chat, social-feed and analytics tests used local sample data or intercepted responses. No patient appointment, confirmation email or production analytics record was created by these tests.
+
+Screenshot and request evidence for this audit: C:\Users\Lenovo\AppData\Local\Temp\DigiPlastic50QA\evidence\44\param
+
+Additional checks | PASS | A 50-character name, the header action and grids with four, five, six and seven services were checked at six viewport widths. |
+
+Final desktop and phone hero screenshots: C:\Users\Lenovo\AppData\Local\Temp\DigiPlastic50Build\final-visuals\44
+
+
+Analytics events
+
+Event | Trigger | Code location | GA4 and Clarity runtime evidence
+--- | --- | --- | ---
+nav_link_click | Header navigation | index.html:102 | Observed on this copy
+book_appointment_click | Appointment action | index.html:110 | Observed on this copy
+hero_social_link_click | Enabled hero social link | index.html:209 | Observed on the configured reference render
+read_more_click | Biography toggle | index.html:269 | Observed on this copy
+phone_number_click | Contact telephone | index.html:526 | Observed on the configured reference render
+email_click | Contact email | index.html:527 | Observed on the configured reference render
+clinic_visit_tab_click | Clinic Visit tab | index.html:667 | Observed on this copy
+online_consult_tab_click | Online Consultation tab | index.html:668 | Observed on this copy
+upload_report_click | Report upload control | index.html:739 | Observed on the configured reference render
+footer_nav_link_click | Footer navigation | index.html:858 | Observed on the configured reference render
+footer_social_link_click | Enabled footer social link | index.html:821 | Observed on the configured reference render
+consent_checkbox_click | Consent checkbox | script/index.js:442 | Observed on the configured reference render
+consent_modal_open | Open the consent notice | script/index.js:626 | Observed on this copy
+consent_scrolled_to_bottom | Reach the end of the notice | script/index.js:597 | Observed on this copy
+consent_agreed | Agree to the notice | script/index.js:636 | Observed on this copy
+consent_dismissed | Dismiss the notice | script/index.js:636 | Observed on the configured reference render
+report_uploaded | Select a valid report | script/index.js:841 | Observed on this copy
+booking_submitted | Successful form submission | script/index.js:1190 | Observed on this copy
+legal_back_to_home_click | Legal page Back to Home | privacy-policy.html:60 | Both legal controls passed a focused browser click check with the bundled listener on this copy

@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-sajid-husain/
+Disallow: /dr-sajid-husain/privacy-policy.html
+Disallow: /dr-sajid-husain/terms-of-service.html
+Sitemap: https://digidr.app/dr-sajid-husain/sitemap.xml

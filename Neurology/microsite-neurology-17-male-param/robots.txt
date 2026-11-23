@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /{{slug}}/
+Disallow: /{{slug}}/privacy-policy
+Disallow: /{{slug}}/terms-of-service
+Sitemap: https://digidr.app/{{slug}}/sitemap.xml

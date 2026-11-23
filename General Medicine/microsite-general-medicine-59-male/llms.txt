@@ -1,0 +1,10 @@
+# Dr. Zubin Contractor — Internal Medicine Physician
+
+> Per-microsite draft for backend root merge. Consultation information and appointment booking.
+
+## Pages
+- [Profile](https://digidr.app/dr-zubin-contractor/): About, services, care philosophy, consultation journey, contact, gallery and FAQ.
+- [Privacy Policy](https://digidr.app/dr-zubin-contractor/privacy-policy.html)
+- [Terms of Service](https://digidr.app/dr-zubin-contractor/terms-of-service.html)
+
+The chat and booking service are not for emergencies. Consult the doctor for individual medical advice.

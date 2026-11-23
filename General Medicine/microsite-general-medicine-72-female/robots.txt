@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-roshni-mirza/
+Disallow: /dr-roshni-mirza/privacy-policy.html
+Disallow: /dr-roshni-mirza/terms-of-service.html
+Sitemap: https://digidr.app/dr-roshni-mirza/sitemap.xml

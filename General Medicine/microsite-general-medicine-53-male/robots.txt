@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-anand-raghuraman/
+Disallow: /dr-anand-raghuraman/privacy-policy.html
+Disallow: /dr-anand-raghuraman/terms-of-service.html
+Sitemap: https://digidr.app/dr-anand-raghuraman/sitemap.xml

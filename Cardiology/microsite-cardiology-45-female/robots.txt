@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /microsite-cardiology-45-female/
+Disallow: /microsite-cardiology-45-female/privacy-policy
+Disallow: /microsite-cardiology-45-female/terms-of-service
+Sitemap: https://digidr.app/microsite-cardiology-45-female/sitemap.xml

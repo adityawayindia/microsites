@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /microsite-neurology-39-female/
+Disallow: /microsite-neurology-39-female/privacy-policy
+Disallow: /microsite-neurology-39-female/terms-of-service
+Sitemap: https://digidr.app/microsite-neurology-39-female/sitemap.xml

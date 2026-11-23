@@ -1,0 +1,19 @@
+Olive archive | Neurology 7
+
+The source profile, clinic address and practising year are illustrative. Supply the clinician’s approved details, live IDs and contact information before deployment. No real clinician or patient is depicted.
+
+doctor.jpg — individually generated with built-in OpenAI ImageGen. Prompt: Use case: photorealistic-natural. Create one vertical 3:4 high-quality portrait photograph of a fictional Indian male consultant neurologist aged 39, dark complexion, long face, close buzz cut, high cheekbones and fine moustache; washed denim-blue shirt and lab coat; soft ochre art in the blurred background. Direct eye contact, open professional expression. Single person centered, waist-up composition, generous breathing room above head and around shoulders to crop within an unusual portrait frame. Realistic skin texture, anatomically natural posture, softly blurred environment, thoughtful editorial photography. No writing, badges, logos, watermark or graphics.
+
+Hero, About and Care Philosophy artwork — individually generated with built-in OpenAI ImageGen. Art direction: olive green and golden parchment.
+
+hero.webp — Antique scientific ink drawing of a Purkinje cell on parchment.
+
+about.webp — Specimen slide boxes and a brass objective on an olive table.
+
+philosophy.webp — Olive-painted clinic bookshelves and an empty leather chair.
+
+banner.webp and banner-mobile.webp — site-specific responsive graphic using the commissioned imagery and palette.
+
+gallery-1.webp, gallery-2.webp, gallery-3.webp — shared ImageGen neurology gallery: Sunlit neurology consultation room; MRI scanner and examination table; EEG recording equipment beside the examination chair.
+
+favicon.svg and assistant.svg — original vector marks in this practice palette.

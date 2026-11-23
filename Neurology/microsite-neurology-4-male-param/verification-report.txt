@@ -1,0 +1,200 @@
+microsite-neurology-4-male-param
+Local verification · 23/11/2026
+
+Doctor profile: Dr. Kabir Dev · male · Kochi
+Typography: Bricolage Grotesque / Work Sans
+Templates were rendered locally with sample data. Browser API requests used local HTTP fixtures. Source preview tests supplied test identifiers without changing the stored practice profile.
+
+Project checks
+Item | Status | Evidence
+Assets | Source and template have identical copies | PASS | about.webp, assistant.svg, banner-mobile.webp, banner.webp, doctor.jpg, favicon.svg, gallery-1.webp, gallery-2.webp, gallery-3.webp, hero.webp, philosophy.webp
+Assets | Unique to this practice | PASS | 8 distinct non-gallery images, including both banner formats and the assistant icon.
+source | Three identical footers | PASS | index.html, privacy-policy.html, terms-of-service.html
+source | Section order | PASS | home → about → services → social-media → philosophy → process → contact-us → gallery → faq
+source | Page links and asset filenames | PASS | All local links and static storage asset names resolve to shipped files.
+template | Three identical footers | PASS | index.html, privacy-policy.html, terms-of-service.html
+template | Section order | PASS | home → about → services → social-media → philosophy → process → contact-us → gallery → faq
+template | Page links and asset filenames | PASS | All local links and static storage asset names resolve to shipped files.
+Parameterization | Storage paths, profile, gallery and banners | PASS | favicon.svg, assistant.svg, hero.webp, about.webp, philosophy.webp
+Content | Specialty, name and template hygiene | PASS | Kabir Dev · male · Peripheral nerve care
+Content | FAQ pairs retained after rendering | PASS | Six pairs from DigiDr_FAQ_6_Sets_25_Specialities.pdf, Neurology set 4.
+Colour | Text, labels and primary actions | PASS | body 14.03:1, muted 7.98:1, heading 5.88:1, kicker 10.24:1, primary 7.29:1, secondary 7.17:1, footer 12.06:1
+Design | Font pairing and framed foreground | PASS | Bricolage Grotesque / Work Sans; brand #21654e; action #245c79
+Booking | Production transport on both versions | PASS | script/index.js; doctor/user, clinic and address from bookingForm data attributes.
+
+Browser and integration checks
+Item | Status | Evidence
+O36 files | PASS | index.html
+O36 script syntax | PASS | index.html
+K24 live booking API route and multipart field parity | PASS | script/index.js:239
+K24 canonical live booking logic | PASS | script/index.js:239
+O37 sections ordered | PASS | index.html:35
+L27 identical footers (normalised page anchors) | PASS | index.html:283
+index L29a/T55 | PASS | index.html:283
+index P40 specialty leftovers | PASS | index.html
+index configured Mustache render | PASS | index.html:35
+index sparse Mustache render | PASS | index.html:35
+privacy-policy L29a/T55 | PASS | index.html:283
+privacy-policy P40 specialty leftovers | PASS | privacy-policy.html:32
+privacy-policy configured Mustache render | PASS | privacy-policy.html:32
+privacy-policy sparse Mustache render | PASS | privacy-policy.html:32
+terms-of-service L29a/T55 | PASS | index.html:283
+terms-of-service P40 specialty leftovers | PASS | terms-of-service.html:32
+terms-of-service configured Mustache render | PASS | terms-of-service.html:32
+terms-of-service sparse Mustache render | PASS | terms-of-service.html:32
+privacy-policy N34 legal wording | PASS | privacy-policy.html:32
+terms-of-service N34 legal wording | PASS | terms-of-service.html:32
+S2/3 analytics event markup and hooks | PASS | script/analytics.js:7
+K21 real phone utilities | PASS | script/index.js:239
+A2 mobile menu | PASS | index.html:34
+A2 click/hash | PASS | index.html:34
+C7 Read More responsive | PASS | index.html:70
+J14 FAQ | PASS | index.html:130
+I13 gallery keyboard lightbox | PASS | index.html:128
+offline K23 empty validation | PASS | script/index.js:239
+offline K23 calendar blocks past/unavailable | PASS | script/index.js:239
+offline K17 unticked blocks POST | PASS | script/index.js:239
+offline K17 consent gate | PASS | script/index.js:239
+K17 dismiss preserves form | PASS | script/index.js:239
+offline K21 invalid phone | PASS | script/index.js:239
+K23 invalid attachment | PASS | script/index.js:239
+offline K24 single multipart HTTP POST | PASS | script/index.js:239
+offline K24 confirmation | PASS | script/index.js:239
+online K23 empty validation | PASS | script/index.js:239
+online K23 calendar blocks past/unavailable | PASS | script/index.js:239
+online K17 unticked blocks POST | PASS | script/index.js:239
+online K17 consent gate | PASS | script/index.js:239
+online K21 invalid phone | PASS | script/index.js:239
+online K24 single multipart HTTP POST | PASS | script/index.js:239
+online K24 confirmation | PASS | script/index.js:239
+K24 doctor ID in availability + slots routes | PASS | script/index.js:239
+S3 booking analytics both platforms / patient privacy | PASS | script/index.js:239
+M32 chat typed message + fixture reply | PASS | script/chatbot.js:235
+M30 chat 320x760 | PASS | script/chatbot.js:235
+M30 chat 375x820 | PASS | script/chatbot.js:235
+M30 chat 768x960 | PASS | script/chatbot.js:235
+M30 chat 1440x960 | PASS | script/chatbot.js:235
+M30 chat 812x375 | PASS | script/chatbot.js:235
+index geometry/assets 320 | PASS | styles/style.css:1095
+index geometry/assets 375 | PASS | styles/style.css:1095
+index geometry/assets 768 | PASS | styles/style.css:1095
+index geometry/assets 1200 | PASS | styles/style.css:1095
+index geometry/assets 1221 | PASS | styles/style.css:1095
+index geometry/assets 1440 | PASS | styles/style.css:1095
+T56 axe WCAG A/AA home | PASS | index.html:32
+privacy-policy geometry/assets 320 | PASS | privacy-policy.html:32
+privacy-policy geometry/assets 375 | PASS | privacy-policy.html:32
+privacy-policy geometry/assets 768 | PASS | privacy-policy.html:32
+privacy-policy geometry/assets 1200 | PASS | privacy-policy.html:32
+privacy-policy geometry/assets 1221 | PASS | privacy-policy.html:32
+privacy-policy geometry/assets 1440 | PASS | privacy-policy.html:32
+privacy-policy N35 back | PASS | privacy-policy.html:32
+terms-of-service geometry/assets 320 | PASS | terms-of-service.html:32
+terms-of-service geometry/assets 375 | PASS | terms-of-service.html:32
+terms-of-service geometry/assets 768 | PASS | terms-of-service.html:32
+terms-of-service geometry/assets 1200 | PASS | terms-of-service.html:32
+terms-of-service geometry/assets 1221 | PASS | terms-of-service.html:32
+terms-of-service geometry/assets 1440 | PASS | terms-of-service.html:32
+terms-of-service N35 back | PASS | terms-of-service.html:32
+T57 real browser console/network | PASS | index.html
+R long name/active socials 320 | PASS | styles/style.css:1095
+R long name/active socials 375 | PASS | styles/style.css:1095
+R long name/active socials 768 | PASS | styles/style.css:1095
+R long name/active socials 1200 | PASS | styles/style.css:1095
+R long name/active socials 1221 | PASS | styles/style.css:1095
+R long name/active socials 1440 | PASS | styles/style.css:1095
+E2 filtered/tagged five posts | PASS | index.html:76
+Banner active and responsive 1440 | PASS | script/banner-module.js:34
+Banner active and responsive 375 | PASS | script/banner-module.js:34
+Banner expiry | PASS | script/banner-module.js:34
+D8/I13 4 cards 1440 | PASS | index.html:128
+D8/I13 5 cards 1440 | PASS | index.html:128
+D8/I13 6 cards 1440 | PASS | index.html:128
+D8/I13 7 cards 1440 | PASS | index.html:128
+D8/I13 4 cards 768 | PASS | index.html:128
+D8/I13 5 cards 768 | PASS | index.html:128
+D8/I13 6 cards 768 | PASS | index.html:128
+D8/I13 7 cards 768 | PASS | index.html:128
+D8/I13 4 cards 375 | PASS | index.html:128
+D8/I13 5 cards 375 | PASS | index.html:128
+D8/I13 6 cards 375 | PASS | index.html:128
+D8/I13 7 cards 375 | PASS | index.html:128
+T57 configured browser console/network | PASS | index.html:35
+Sparse/optional booking online | PASS | script/index.js:239
+T57 sparse browser console/network | PASS | index.html:35
+Sparse/optional booking offline | PASS | script/index.js:239
+T57 sparse browser console/network | PASS | index.html:35
+Sparse/optional booking none | PASS | script/index.js:239
+T57 sparse browser console/network | PASS | index.html:35
+S3 trusted checkbox, hidden resize, true read and untick | PASS | index.html
+S2 delegated analytics, optional socials and legal links | PASS | script/analytics.js:7
+K21 corrected field feedback | PASS | script/index.js:239
+Banner blank/future/expired/reactivated programmatic schedule | PASS | script/banner-module.js:34
+Banner REST explicit empty replacements | PASS | script/banner-module.js:34
+index R50 viewport 1024 | PASS | index.html
+index R50 viewport 1900 | PASS | index.html
+privacy-policy blank legal contacts | PASS | privacy-policy.html:32
+privacy-policy R50 viewport 1024 | PASS | privacy-policy.html:32
+privacy-policy R50 viewport 1900 | PASS | privacy-policy.html:32
+terms-of-service blank legal contacts | PASS | terms-of-service.html:32
+terms-of-service R50 viewport 1024 | PASS | terms-of-service.html:32
+terms-of-service R50 viewport 1900 | PASS | terms-of-service.html:32
+Q44 token contrast | PASS | index.html
+param P42 claims index.html | PASS | index.html
+param P42 claims privacy-policy.html | PASS | privacy-policy.html:32
+param P42 claims terms-of-service.html | PASS | terms-of-service.html:32
+param P42 claims llms.txt | PASS | index.html
+param profile line/icon and actual CTA | PASS | index.html
+param B6 hero image before About | PASS | index.html
+param O39 no unwanted navigation | PASS | index.html:34
+param P41 service and process | PASS | index.html
+param T55 Physician structured data | PASS | index.html
+param static images and dynamic roles | PASS | index.html
+paired asset about.webp | PASS | index.html
+paired asset assistant.svg | PASS | index.html
+paired asset banner-mobile.webp | PASS | script/banner-module.js:34
+paired asset banner.webp | PASS | script/banner-module.js:34
+paired asset doctor.jpg | PASS | index.html
+paired asset favicon.svg | PASS | index.html
+paired asset hero.webp | PASS | index.html
+paired asset philosophy.webp | PASS | index.html
+
+Analytics events
+Event | Trigger | Source | Observed in captured GA4 calls | Observed in captured Clarity calls
+nav_link_click | Header navigation link | index.html:34 | Yes | Yes
+book_appointment_click | Booking call to action | index.html:34 | Yes | Yes
+hero_social_link_click | Enabled hero social link | index.html:60 | Yes | Yes
+read_more_click | Biography disclosure | index.html:70 | Yes | Yes
+phone_number_click | Configured contact telephone link | index.html:125 | Yes | Yes
+email_click | Configured contact email link | index.html:125 | Yes | Yes
+clinic_visit_tab_click | Clinic Visit tab | index.html:147 | Yes | Yes
+online_consult_tab_click | Online Consultation tab | index.html:148 | Yes | Yes
+upload_report_click | Report file chooser | index.html:219 | Yes | Yes
+footer_nav_link_click | Footer navigation link | index.html:313 | Yes | Yes
+footer_social_link_click | Enabled footer social link | index.html:298 | Yes | Yes
+consent_checkbox_click | Trusted consent checkbox activation or removal | script/index.js:263 | Yes | Yes
+consent_modal_open | Consent notice opens | script/index.js:443 | Yes | Yes
+consent_scrolled_to_bottom | Visible consent notice read to the end | script/index.js:414 | Yes | Yes
+consent_agreed | Consent accepted | script/index.js:453 | Yes | Yes
+consent_dismissed | Consent notice dismissed | script/index.js:453 | Yes | Yes
+report_uploaded | Valid attachment selected | script/index.js:642 | Yes | Yes
+booking_submitted | Booking accepted by the test endpoint | script/index.js:1181 | Yes | Yes
+Unmapped runtime event names: None
+Expected events without a source reference in this configuration: None
+Optional phone, email and social events depend on an enabled link in the practice configuration.
+Home accessibility scan (axe WCAG A/AA rules): 0 reported violations.
+
+Verified corrections
+Scheduled banners respect expired or empty settings, date removal and single-image configurations.
+Editing a phone number clears its previous validation feedback. The existing appointment transport and multipart fields are preserved.
+A real checkbox action is tracked once. Resizing a hidden consent notice cannot mark it as read.
+The compact booking dialog, mobile chatbot controls, footer and long-name header were checked at responsive widths.
+
+Production checks awaiting configuration
+No live doctor ID, staging tenant, notification mailbox, GA4 property or connected Facebook account was supplied. Backend appointment persistence and email delivery, actual third-party widget content, dashboard receipt of analytics, and uploaded storage objects require those deployment settings.
+Deployment or device check: Production doctor assignment and availability, booking persistence and notification email delivery
+Deployment or device check: Production visitor total and externally hosted template assets
+Deployment or device check: Facebook account contents, chatbot response quality, analytics property IDs and dashboard ingestion
+Deployment or device check: Physical device/virtual keyboard and manual assistive-technology testing
+
+Raw browser evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-neuro50-qa\results\4\param\audit.json

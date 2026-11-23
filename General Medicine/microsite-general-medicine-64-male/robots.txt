@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-subhranshu-pal/
+Disallow: /dr-subhranshu-pal/privacy-policy.html
+Disallow: /dr-subhranshu-pal/terms-of-service.html
+Sitemap: https://digidr.app/dr-subhranshu-pal/sitemap.xml

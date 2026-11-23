@@ -1,0 +1,18 @@
+Dr. Ananya Chawla | Heather | Cardiology template 44
+
+The standalone practice and professional profile are fictional examples. Replace preview details with the registered doctor's information before publication.
+
+Portrait: generated with OpenAI image generation for this fictional female cardiologist. Source and parameterized counterpart represent the same practice.
+Hero artwork: Editorial cardiology illustration of walking in cardiac rehabilitation.
+About artwork: Illustration of a rehabilitation walking track with an inset of a walking shoe on a running track.
+Care artwork: Illustration of a walking shoe on a running track, beside a detail of walking in cardiac rehabilitation.
+The three original illustrations were designed for this site. Favicon, assistant mark and optional banner are original site-specific vector graphics.
+
+Gallery 1: original OpenAI-generated photograph of a blood pressure monitor from General Physician/microsite-general-physician-11-male/assets/gallery.webp.
+Gallery 2: ECG photograph by Pixabay on Pexels. https://www.pexels.com/photo/selective-focus-photography-of-white-and-black-vital-sign-printing-paper-415779/ . License verified 23 November 2026 at https://www.pexels.com/license/ .
+Gallery 3: original OpenAI-generated photograph from General Medicine/microsite-general-medicine-9-female/assets/medical-instruments.jpg.
+
+FAQs: DigiDr_FAQ_6_Sets_25_Specialities.pdf, Cardiology, set 2.
+
+Portrait generation brief:
+Photorealistic natural vertical editorial portrait for an Indian cardiology clinic website. One fictional Indian female cardiologist, age 39, black shoulder-length blunt-cut hair, deep brown eyes, clear round eyeglasses; muted plum scrubs and white coat; matt grey imaging practice. Friendly steady gaze, slight variation in body angle, body centered horizontally. Medium portrait including entire head with 12% headroom, shoulders and upper body to waist, natural face proportions and honest skin texture, soft professional window light, beautifully composed realistic photograph with elegantly defocused clinical backdrop. Stethoscope loosely at neck. No letters, logos, text, watermarks, or other people.

@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-anirban-senapati/
+Disallow: /dr-anirban-senapati/privacy-policy.html
+Disallow: /dr-anirban-senapati/terms-of-service.html
+Sitemap: https://digidr.app/dr-anirban-senapati/sitemap.xml

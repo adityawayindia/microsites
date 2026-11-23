@@ -1,0 +1,127 @@
+microsite-general-medicine-49-male | verification report
+Dr. Akhil Bora | Internal Medicine Physician | male
+23 November 2026
+
+Scope and individual browser evidence
+41 passing browser/integration checks. Both clinic and online bookings rejected incomplete input, enforced consent, looked up slots, issued exactly one multipart POST, and displayed the appropriate success confirmation. Decoded synthetic patient, slot, mode and PDF values matched the entered values.
+C:\Users\Lenovo\AppData\Local\Temp\digidr-general-medicine-31-80-qa-current\results\49-base.json
+8 responsive homepage sizes (320, 375, 768, 1100, 1200, 1201, 1270, 1440). Service and gallery variations were exercised with 4, 5, 6 and 7 cards. Both legal pages were separately tested at 320, 375, 768 and 1440px.
+C:\Users\Lenovo\AppData\Local\Temp\digidr-general-medicine-31-80-qa-current\layout\49-base.json
+6 settled axe page/widget scans with zero reported violations: index/document, index/booking, index/consent, index/chat, privacy-policy/document, terms-of-service/document.
+C:\Users\Lenovo\AppData\Local\Temp\digidr-general-medicine-31-80-qa-current\accessibility\49-base.json
+31 header cases include actual, long multiword and unbroken names; desktop/collapsed boundary and mobile dropdown verified. 9 widths checked the FAQ heading above full-width stacked cards, the mobile photo order and small-screen statistic layout. Evidence: header-full-name.json, faq-and-mobile-photo-geometry.json.
+4 hero width checks with decoded eager, high priority photo and portrait; font and portrait text verified. Evidence: latest-hero-runtime.json, fonts-and-photo-alts.json.
+The three pages use byte-identical footer markup. Combined source and populated-template legal comparison: 49: 122 legal text checks passed against AGENTS §41 (configurable profile/date/contact fields excluded).
+Four booking route definitions and 12 possible form keys match live microsites/dr-ashok-s-gowda. All three AGENTS Appendix A.18 canonical code blocks match verbatim. Evidence: live-contract.json.
+The source displays its normal static profile. Shared optional backend configuration and banner cases were tested on the populated template.
+First pair reference C:\Users\Lenovo\AppData\Local\Temp\digidr-gmed50-qa\31\base covers 37 interactive checks and 9 additional failure, disabled-mode and empty-slot cases with synthetic responses.
+
+Whole-page and widget review | PASS | C:\Users\Lenovo\AppData\Local\Temp\digidr-gmed50-20261123\ready\49-base-viewed | Visual inspection of source homepage at 1440 CSS pixels. The blue inhaler is distinct beside the round portrait. The four journey cards and gallery run across the page. The booking form fits two columns and the assistant input fits inside its frame. Section order compared with the paired markup. Browser evidence in whole-review/49-base and the page/widget contact sheets.
+
+Item | Status | Evidence | Finding
+1 | PASS (source inspection) | index.html:35 | Header uses the doctor portrait in the avatar frame.
+2 | PASS (local rendered or fixture) | script/index.js:1622 | Chrome exercised the mobile menu and the primary section navigation.
+3 | PASS (source inspection) | index.html:61 | Credentials, registration and language rows use the profile data. The template supports an optional fellowship.
+4 | PASS (source and representative test) | script/index.js:1078 | Counters read the value and suffix from the visible profile text.
+5 | PASS (source inspection) | index.html:61 | The hero contains the standard social links. Link activation is configurable in the parameterized version.
+6 | PASS (source inspection) | index.html:38 | The hero contains the doctor, specialty, profile details and booking action.
+6a | PASS (visual review) | index.html:68 | The portrait frame and adjacent elements are visible in the mobile and desktop review images.
+7 | PASS (source and representative test) | script/index.js:1681 | The bio uses the canonical Read More handler; the first-pair browser test expanded and collapsed the same control.
+8 | PASS (source and representative test) | styles/style.css:81 | The responsive service grid uses the shared centering rules. Variable item counts are exercised in the parameterized version.
+9 | PASS (source inspection) | index.html:74 | The general medicine service entries have headings and descriptions.
+10 | PASS (source inspection) | index.html:114 | The philosophy section pairs general medicine imagery with three principles.
+11 | PASS (local rendered or fixture) | index.html:123 | Four steps are present; the whole-page visual review covers their desktop/mobile layout.
+12 | PASS (source inspection) | index.html:134 | The contact section provides the practice address, contact links and booking action.
+13 | PASS (local rendered or fixture) | index.html:139 | The default fixture has three gallery images. Chrome opened its lightbox; the eight-width grid test also exercised 4/5/6/7 images.
+14 | PASS (local rendered or fixture) | script/index.js:1139 | The six FAQ entries allow one open answer at a time.
+15 | PASS (source inspection) | index.html:163 | The booking dialog includes the online-consultation information control.
+16 | PASS (source and representative test) | script/index.js:550 | The booking information control is present. The bundle passed the settled booking-state axe scan; the first-pair browser test also operated the tooltip.
+17 | PASS (local rendered or fixture) | script/index.js:379 | Both submitted modes required consent. The shared first-pair checks also covered dismiss, scrolling and acceptance.
+18 | PASS (source inspection) | styles/style.css:496 | The booking, tab, close and upload controls retain the reference styling.
+19 | PASS (source inspection) | index.html:168 | The delivered site uses the production booking endpoints. QA intercepts them outside the site.
+20 | PASS (source inspection) | index.html:244 | The consent notice includes the doctor and the required privacy wording.
+21 | PASS (source and representative test) | script/index.js:51 | The published phone handler and international phone control were inspected. Both test bookings used the expected form value. The first pair also exercised invalid phone and real utility loading.
+22 | PASS (source and representative test) | script/index.js:1656 | The name input uses the shared Unicode validation handler.
+23 | PASS (source and representative test) | script/index.js:1658 | The two local submissions included a report and selected an available day and slot. The shared first-pair test also rejected invalid files and unavailable modes.
+24 | PASS (local rendered or fixture) | script/index.js:357 | Online and clinic bookings both reached their matching confirmations with the expected request fields.
+25 | PASS (source and representative test) | styles/style.css:932 | Booking and field controls were exercised at phone width. The independently tested reference uses the same booking blocks.
+26 | PASS (source inspection) | index.html:298 | The footer includes branding, navigation, legal links, visitor count, copyright and disclaimer.
+27 | PASS (local rendered or fixture) | index.html:298 | The footer HTML matches across all three pages of the variant.
+28 | PASS (local rendered or fixture) | styles/style.css:731 | The shared footer layout was checked as part of the four-width page measurements.
+28a | PASS (local rendered or fixture) | styles/style.css:808 | The computed footer disclaimer size is 14px on all pages at the tested widths.
+29 | PASS (source inspection) | index.html:298 | The footer omits image credits. Asset provenance is in assets/IMAGE-SOURCES.txt.
+29a | PASS (local rendered or fixture) | index.html:346 | The visitor counter calls the configured API. QA supplies a synthetic counter response.
+30 | PASS (local rendered or fixture) | styles/chatbot.css:197 | The compact chatbot renders on phone and desktop. Its mobile window dimensions were measured.
+30a | PASS (local rendered or fixture) | script/chatbot.js:48 | The chatbot DOM contains no suggestions container.
+31 | PASS (source inspection) | script/chatbot.js:76 | The chatbot footer includes the informational-use and consult-your-doctor notice.
+32 | PASS (local rendered or fixture) | script/chatbot.js:168 | The chat window opens, accepts an entered message and displays the fixture reply.
+33 | PASS (local rendered or fixture) | script/chatbot.js:9 | The configured backend request and reply rendering were exercised with a synthetic reply.
+34 | PASS (local rendered or fixture) | privacy-policy.html:38 | Legal text was compared against AGENTS.md section 41 with configurable fields excluded.
+35 | PASS (local rendered or fixture) | privacy-policy.html:36 | Both legal pages include the Back to Home control.
+36 | PASS (local rendered or fixture) | index.html:1; styles/style.css:1; script/index.js:1 | Home, privacy and terms rendered under the local integration fixture.
+37 | PASS (local rendered or fixture) | index.html:37 | The required home sections exist in the source and initialize in Chrome.
+38 | PASS (source inspection) | robots.txt:1; sitemap.xml:1; llms.txt:1 | The local robots, sitemap and LLM discovery files contain the site metadata.
+39 | PASS (source inspection) | index.html:37 | The navigation and section structure follow the project specification.
+40 | PASS (source inspection) | index.html:5 | The General Medicine profile and practice are illustrative. The image-source record identifies the doctor, images and generation prompts.
+41 | PASS (source inspection) | index.html:73 | Doctor name, specialty, profile assets and services follow the selected site configuration.
+42 | PASS (source inspection) | assets/IMAGE-SOURCES.txt:1 | The clinical copy uses the general medicine consultation focus and the repository FAQ source.
+42a | PASS (source inspection) | index.html:73 | The consultation content follows the project restrictions on unverified promotional claims.
+42b | PASS (source inspection) | index.html:60 | The hero role describes the specialty.
+43 | PASS (source inspection) | styles/style.css:1 | The site declares neutral, brand and interactive color roles.
+44 | PASS (local rendered or fixture) | styles/style.css:1 | Axe found no violations in the tested page and widget states, including color contrast.
+45 | PASS (source inspection) | styles/style.css:931 | Section backgrounds and spacing are defined in the site theme.
+46 | PASS (source inspection) | styles/style.css:930 | The main and legal pages use the site container and shared footer structure.
+47 | PASS (source inspection) | styles/style.css:929 | Site text uses project typography. The footer disclaimer has its documented exception.
+48 | PASS (source inspection) | styles/style.css:936 | Cards and consultation steps expose headings separately from descriptions.
+49 | PASS (source inspection) | styles/style.css:950 | The style sheet includes focus styles and reduced-motion rules.
+50 | PASS (local rendered or fixture) | styles/style.css:948 | Home and legal page layouts fit the four tested phone/tablet/desktop sizes; eight additional homepage widths checked the grids.
+51 | PASS (local rendered or fixture) | styles/style.css:62 | The configured name, a long multiword name and a long unbroken surname remained fully visible at every tested header width.
+52 | PASS (local rendered or fixture) | styles/style.css:947 | Mobile menu, booking, consent, gallery and chat were exercised at phone width.
+53 | PASS (source inspection) | assets/IMAGE-SOURCES.txt:1 | All seven supplied image files were checked on disk. The hero and portrait decoded in the widget/geometry browser fixture.
+53a | PASS (source inspection) | assets/IMAGE-SOURCES.txt:1 | The asset provenance identifies the doctor portrait and the people-free general medicine still lifes.
+54 | PASS (source inspection) | styles/style.css:20 | Responsive styles permit wrapping and shrinking of content without measured horizontal overflow.
+55 | PASS (source inspection) | index.html:5 | All three HTML pages have a title and a single H1. The homepage includes structured physician metadata.
+56 | PASS (local rendered or fixture) | index.html:34 | Axe checked six real browser states. Keyboard operations on the shared gallery, menu, booking and consent controls were exercised separately on the first pair.
+57 | PASS (local rendered or fixture) | index.html:26 | The browser fixtures recorded no uncaught exceptions or unexpected outgoing requests.
+57a | PASS (local rendered or fixture) | index.html:26 | A browser checked the actual site fonts and doctor portrait alternative text.
+58 | PASS (source inspection) | index.html:1 | The numbered folder and gender suffix follow the existing General Medicine scheme.
+59 | PASS (source inspection) | verification-report.txt:1 | Verification reads the site and writes browser evidence to a temporary directory.
+E1 | PASS (static and rendered) | index.html:88 | The social section appears between services and philosophy and defines the two labelled carousel arrows and track.
+E2 | PASS (local and shared fixture) | script/index.js:1303 and independent results | This variant displayed recent tagged non-video posts and advanced on mobile. Site 31/param adds SDK-rendered, fallback and post-count fixtures.
+E3 | PASS (source inspection) | styles/style.css:182 | Shared Facebook cards declare the desktop and phone dimensions, independent of the site palette.
+E4 | PASS (source and local fixture) | styles/style.css:182 and script/index.js:1303 | The track uses safe centering, arrows honor hidden state and the individual mobile carousel advanced in the browser.
+E5 | PASS (browser and representative fallback) | independent layout/accessibility and 31/param/facebook-recheck.json | Measured overflow and axe tests passed; the shared blocked-SDK fixture retained links.
+S1 | PASS (source configuration) | index.html:32, privacy-policy.html, terms-of-service.html and script/analytics.js:11 | One GA4 loader and the shared Clarity project per page. GA4 uses the requested placeholder/configurable ID, so live collection is unverified.
+S2 | PASS (individual local event queues) | analytics-supplement.json | Every enabled declarative control sent one tagged event per queue. Disabled source-social destinations are identified in the event table.
+S3 | PASS (matching implementation and representative browser) | script/index.js and 31/base/functional.json | Individual checkbox changes and both mode confirmations are supplemented by shared first-pair consent, file-upload and success-event checks.
+S4 | PASS (local testing) | analytics-supplement.json and independent results | Each interaction used local test queues or intercepted synthetic booking data.
+S5 | PASS (report) | Analytics observations in this file | Each expected declarative and programmatic event has a trigger, implementation location and observation scope.
+
+Analytics observations
+S1–S5 | Event | Trigger | Evidence | Finding
+PASS (individual local browser) | nav_link_click | Navigation link | index.html:36 | 5 controls sent one labelled GA4 and one Clarity event per click, with the expected page path.
+PASS (individual local browser) | book_appointment_click | Book Appointment | index.html:36 | 3 controls sent one labelled GA4 and one Clarity event per click, with the expected page path.
+INACTIVE (unconfigured link) | hero_social_link_click | Hero social | index.html | The published source icons lack a configured destination. The populated paired template exercises active links.
+PASS (individual local browser) | read_more_click | Read More | index.html:71 | 1 controls sent one labelled GA4 and one Clarity event per click, with the expected page path.
+PASS (individual local browser) | phone_number_click | Contact phone | index.html:137 | 1 controls sent one labelled GA4 and one Clarity event per click, with the expected page path.
+PASS (individual local browser) | email_click | Contact email | index.html:137 | 1 controls sent one labelled GA4 and one Clarity event per click, with the expected page path.
+PASS (individual local browser) | clinic_visit_tab_click | Clinic visit tab | index.html:162 | 1 controls sent one labelled GA4 and one Clarity event per click, with the expected page path.
+PASS (individual local browser) | online_consult_tab_click | Online consult tab | index.html:163 | 1 controls sent one labelled GA4 and one Clarity event per click, with the expected page path.
+PASS (individual local browser) | upload_report_click | Upload report button | index.html:234 | 1 controls sent one labelled GA4 and one Clarity event per click, with the expected page path.
+PASS (individual local browser) | footer_nav_link_click | Footer navigation | index.html:328 | 7 controls sent one labelled GA4 and one Clarity event per click, with the expected page path.
+INACTIVE (unconfigured link) | footer_social_link_click | Footer social | index.html | The published source icons lack a configured destination. The populated paired template exercises active links.
+PASS (individual local browser) | consent_checkbox_click | Uncheck consent after agreement | script/index.js:263 | Unchecked genuine form control after consent; both queues recorded the event.
+PASS (shared browser flow and matching code) | consent_modal_open | Open consent | script/index.js:443 | The shared first-pair booking test recorded this event. Its call site and analytics dispatcher match this variant.
+PASS (shared browser flow and matching code) | consent_scrolled_to_bottom | Scroll through consent | script/index.js:414 | The shared first-pair booking test recorded this event. Its call site and analytics dispatcher match this variant.
+PASS (shared browser flow and matching code) | consent_agreed | Agree to consent | script/index.js:453 | The shared first-pair booking test recorded this event. Its call site and analytics dispatcher match this variant.
+PASS (shared browser flow and matching code) | consent_dismissed | Dismiss without agreement | script/index.js:453 | The shared first-pair booking test recorded this event. Its call site and analytics dispatcher match this variant.
+PASS (shared browser flow and matching code) | report_uploaded | Choose a valid file | script/index.js:642 | The shared first-pair booking test recorded this event. Its call site and analytics dispatcher match this variant.
+PASS (shared browser flow and matching code) | booking_submitted | Submit valid appointment | script/index.js:1184 | The shared first-pair booking test recorded this event. Its call site and analytics dispatcher match this variant.
+
+Chrome console and network | PASS (individual home, privacy and terms) | console-network.json | All three pages recorded zero console errors, JavaScript exceptions, failed requests outside navigation cancellation, HTTP errors and undecoded visible images.
+
+Image uniqueness | PASS (SHA-256) | unique-clinical-images.json | Site-specific source doctor, hero, About and philosophy file hashes matched the paired template and were distinct within the 200 new images and from earlier General Medicine images.
+
+Mobile booking and chat clearance | PASS (retested after layout fix) | C:\Users\Lenovo\AppData\Local\Temp\digidr-gmed50-20261123\clearance\49-base.json | The expanded chat launcher could cover the hero Book Appointment button on phones. The revised mobile styling provided at least 35.1px of clearance in this variant at 320, 360, 375, 390, 480, 640px in expanded and collapsed states. The button label remained inside the control, the page fit, and both button actions opened the correct panel.
+
+Production integrations | UNVERIFIED | External services | Synthetic bookings were sent only to a local receiver. This audit did not establish real appointment persistence, email or meeting-link delivery, live Facebook availability, chatbot service answers, analytics collection, host availability or storage deployment.

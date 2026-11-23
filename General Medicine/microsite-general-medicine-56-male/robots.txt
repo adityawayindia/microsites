@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-deven-karve/
+Disallow: /dr-deven-karve/privacy-policy.html
+Disallow: /dr-deven-karve/terms-of-service.html
+Sitemap: https://digidr.app/dr-deven-karve/sitemap.xml
