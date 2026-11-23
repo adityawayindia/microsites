@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Apricot Press. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-30.jpg — Portrait of Dr. Kabir Sethi, pediatrician
+hero-pediatrics-30.jpg — Storybooks and a wooden book stand on a pediatric play table
+about-pediatrics-30.jpg — A child turning an illustrated picture book with wordless drawings
+philosophy-pediatrics-30.jpg — Child-sized stethoscope beside an open picture book with a simple line drawing of a rabbit and no writing
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 4 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-30.jpg
+Original generated file: exec-96c3e87c-e470-46c6-aaf4-b4fc5544b86b.png
+Final JPEG SHA-256: fb955e4ae81a53f810076c24e2e9c98591670b834515c115a219566f934324d0
+Prompt: Vertical 3:4 editorial portrait of fictional Indian male pediatrician Dr. Kabir Sethi, age 54, warm tan skin, slightly receding silver hair, a dark moustache and broad smile. White clinician's coat over a muted blue shirt. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of burnt apricot, almond and plum. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-30.jpg
+Original generated file: exec-42296d36-b90c-4377-83f8-87da40f7be2e.png
+Final JPEG SHA-256: 578708480b0524853defeebf71a2faca4d50c169f9d77b5488a11e02927e9d87
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low handmade paper surface: storybooks and a wooden book stand, alongside a clearly recognizable child-sized unbranded stethoscope. Palette of burnt apricot, almond and plum, luminous shadows and real texture. Place most objects at the right side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-30.jpg
+Original generated file: exec-1c5b9f98-5204-4207-9ec1-842e34c9f0f7.png
+Final JPEG SHA-256: 86a670cfbf61fc8ede4d031720f27903ef4f58798fb15bb282935b6601ecccc0
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian child about 7 years old, turning an illustrated picture book with wordless drawings. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in burnt apricot, almond and plum. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-30.jpg
+Original generated file: exec-1e850269-b031-40df-8b8f-1b116f582d57.png
+Final JPEG SHA-256: 2c528255b39ca57dc24031496e786342edeff4ce4ad7b66cb6ced8d848f624c9
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: child-sized stethoscope beside an open picture book with a simple line drawing of a rabbit and no writing. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours burnt apricot, almond and plum, subtle shadows, photographed from slightly above in side daylight. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

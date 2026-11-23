@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Cinnamon Loom. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-46.jpg — Portrait of Dr. Revathi Raman, pediatrician
+hero-pediatrics-46.jpg — A miniature wooden weaving loom with soft colorful strips on a pediatric play table
+about-pediatrics-46.jpg — A child threading a wide fabric strip through a small upright wooden loom
+philosophy-pediatrics-46.jpg — A small wooden loom and a woven cream swatch next to a child-sized stethoscope
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 2 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-46.jpg
+Original generated file: exec-87fd4702-e002-45bf-807d-25fae86b9529.png
+Final JPEG SHA-256: ef6432ed9606fa90a8b4a63ea228a5a96bce45eaff08f413320fac0d342c0c7f
+Prompt: Vertical 3:4 editorial portrait of fictional Indian female pediatrician Dr. Revathi Raman, age 51, deep brown skin, black hair threaded with silver, low braid and a gentle smile. White clinician's coat over a muted blue shirt. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of cinnamon, cream and ink violet. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-46.jpg
+Original generated file: exec-e6ddfab8-f755-4348-bd91-9a0c89958910.png
+Final JPEG SHA-256: 8d3479ca89bb4e66cc881d145ce269471351da51014fbf17b9976a30f176ac56
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low handmade paper surface: a miniature wooden weaving loom with soft colorful strips, alongside a clearly recognizable child-sized unbranded stethoscope. Palette of cinnamon, cream and ink violet, luminous shadows and real texture. Place most objects at the right side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-46.jpg
+Original generated file: exec-7949e479-8f32-4686-b934-bdf9c8841650.png
+Final JPEG SHA-256: e7b48ecf54f287f9230f519fd2ff58da9913aad40a243378f8c2800d0b75ea28
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian girl about 8 years old, threading a wide fabric strip through a small upright wooden loom. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in cinnamon, cream and ink violet. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-46.jpg
+Original generated file: exec-4c848958-a726-455c-9f13-6e1cac33bce0.png
+Final JPEG SHA-256: 317bb3f6cde1e6aab9d7143da82ef6e969b60f6bfecefd731fd38d0bea17cb0a
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: a small wooden loom and a woven cream swatch next to a child-sized stethoscope. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours cinnamon, cream and ink violet, subtle shadows, photographed from a high overhead angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

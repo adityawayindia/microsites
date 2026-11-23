@@ -1,0 +1,110 @@
+microsite-pediatrician-43-female-param | Peacock Atlas | 23 November 2026
+Dr. Ishita Basu • Pediatrician
+
+The browser rendered this Mustache template with a sample doctor, slug, service list and gallery.
+Verified locally using the production booking contract and controlled API responses. No patient appointments or chat messages were sent.
+
+Item | Status | Evidence | Verification / fix
+A1 | PASS (static) | index.html:5 | Header portrait and wrapping name
+A2 | PASS (static) | script/index.js:1031 | Mobile menu and fragment removal
+B3 | PASS (static) | index.html:28 | Ordered qualification, registration, optional fellowship and languages
+B4 | PASS (static) | script/index.js:1124 | Three one-shot counters including practising year
+B5 | PASS (static) | index.html:28 | Eight social platform glyphs in order
+B6/B6a | PASS (static) | index.html:35 | Name-led hero with image backdrop, portrait frame and booking action
+C7 | PASS (static) | script/index.js:1713 | Read-more expansion and auto-hide implementation
+C7 | PASS (static) | styles/style.css:170 | Seven-line collapsed biography
+D8/I13 | PASS (static) | styles/style.css:101 | Twelve-column grid and regular-width lone centered gallery item
+D9 | PASS (static) | index.html:37 | Pediatric service cards or backend service loop
+E1/O37 | PASS (static) | index.html:38 | Required section order and carousel hooks — home → about → services → social-media → philosophy → process → contact-us → gallery → faq
+E2 | PASS (static) | script/index.js:1336 | Doctor-slug feed, age/type/hashtag filtering, timeout and fallback
+E3/E4 | PASS (static) | styles/style.css:217 | Fixed post dimensions and safe centering
+E4/E5 | PASS (static) | script/index.js:1569 | Carousel scroll navigation and overflow controls
+F10/G11 | PASS (static) | index.html:64 | Three philosophy pillars and four consultation steps
+H12 | PASS (static) | index.html:71 | Address and optional phone/email states
+I13 | PASS (static) | index.html:72 | Three gallery items, lazy loading, lightbox dialog
+J14 | PASS (static) | index.html:73 | FAQ questions and a single open answer
+K15/K16 | PASS (static) | index.html:88 | Online info icon and exact telemedicine note
+K17 | PASS (static) | index.html:184 | Consent panel, scroll hint and agree control
+K18/K25 | PASS (static) | styles/style.css:508 | Booking control styles and primary action
+K19/K20 | PASS (static) | index.html:169 | Canonical consent label and no demo message
+K21 | PASS (static) | script/index.js:51 | India phone utility and field validation
+K22/K23 | PASS (static) | script/index.js:148 | Name sanitization, report size/type and date constraints
+K24 / §4b–c | PASS (static) | script/index.js:104 | Four appointment request paths and multipart fields match live microsites/dr-ashok-s-gowda/script/index.js — Date, Day, DoctorId, Email, FullName, Phone, Reason, SlotId, Time, Type, Upload, UserId
+K24 / A.18 | PASS (static) | script/index.js:3 | Verbatim current Appendix A.18 helper/calendar/modal blocks — match, match, match
+L26 | PASS (static) | index.html:222 | Footer structure and visitor badge
+L27/L29 | PASS (static) | index.html:222 | Byte-identical footer across three pages; no attribution rows
+L28/L28a | PASS (static) | styles/style.css:826 | Explicit 14px disclaimer
+L29a | PASS (static) | index.html:285 | Visitor badge and POST code on all pages
+M30 | PASS (static) | styles/chatbot.css:197 | Compact chat panel limits
+M30a | PASS (static) | script/chatbot.js:19 | No suggestion markup or reserved suggestions band
+M31/M32 | PASS (static) | script/chatbot.js:74 | Two-line chat disclaimer, live log and keyboard controls
+M33 | PASS (static) | script/chatbot.js:234 | Configured slug chat request and reply
+N34 | PASS (static) | privacy-policy.html:6 | Current §41 legal wording in order — 53 fixed blocks, all matched
+N35 | PASS (static) | privacy-policy.html:5 | Visible back-to-home action
+N34 | PASS (static) | terms-of-service.html:6 | Current §41 legal wording in order — 30 fixed blocks, all matched
+N35 | PASS (static) | terms-of-service.html:5 | Visible back-to-home action
+O36 | PASS (static) | index.html:1 | Required page, script, style and crawler files; no inline layout styles
+O37 | PASS (static) | index.html:5 | All nav destinations exist — about, services, contact-us, gallery, faq
+O38 | PASS (static) | sitemap.xml:3 | Domain-root crawler drafts and template slug URLs
+O39/O40/P42/P42a/P42b | PASS (static) | index.html:1 | No stale source name, blog links, sample text or banned claims
+P41 | PASS (static) | index.html:28 | Consistent doctor identity and specialty
+Q43/Q44 | PASS (static) | styles/style.css:9 | Palette and semantic tokens present
+Q45–49/T54 | PASS (static) | styles/style.css:34 | Responsive type, focus and reduced-motion rules
+R53 | PASS (static) | index.html:5 | Local images under 500 KiB — assets/hero-pediatrics-43.jpg / 208845 bytes
+T55 | PASS (static) | index.html:1 | Unique title/description/canonical, social tags, single H1 and Physician JSON-LD
+T56 | PASS (static) | index.html:5 | Alt attributes and accessible dialog roles
+T57 | PASS (static) | index.html:5 | Site asset references resolve on disk — 5 local image references; backend bucket requires deployment
+T57a | PASS (static) | index.html:1 | Font Awesome dependency, tooltip and navigation accessibility hooks
+U58 | PASS (static) | index.html:1 | Naming convention and gender suffix
+S1 | PASS (static) | index.html:3 | Single GA4/Clarity snippets, specialty tag, JS ordering and guards
+S2 | PASS (static) | index.html:5 | Declarative tracking coverage for interactive elements
+S3/S4 | PASS (static) | script/index.js:263 | Booking/upload/consent event names and dispatch
+JS syntax | PASS (static) | script/index.js:1 | All shipped JavaScript compiles
+Parameterization §0–1 | PASS (static) | index.html:1 | Profile, statistics, fellowship, banner, gallery and service fields
+Parameterization §1 | PASS (static) | index.html:36 | Complete 25 configurable section keys with own fallbacks
+Parameterization §1 | PASS (static) | index.html:30 | Enabled/disabled channel flags and WhatsApp contract
+Parameterization §4b | PASS (static) | index.html:93 | Appointment backend dataset
+Parameterization §0/§3 | PASS (static) | index.html:1 | Static images use per-slug bucket; page routes omit extension
+Parameterization smoke | PASS (static) | index.html:1 | Six template files render with all configuration flags on and off
+Pair integrity | PASS (static) | index.html:5 | Paired source and template images match byte-for-byte
+A–J | PASS (local) | index.html:28 | Navigation, FAQ state, gallery keyboard controls, biography expansion and section order verified in the browser.
+K15–25 | PASS (local) | index.html:80 | 37 interaction checks and 9 booking edge cases. Both visit types validate fields, require consent, submit a fixture request and show the confirmation. Error, empty-slot and upload paths exercised.
+M30–33 | PASS (local) | script/chatbot.js:4 | Opened, sent a test question, received a fixture reply and closed the panel. Checked responsive layout, typography and site artwork.
+L26–29a / N34–35 | PASS (local) | index.html:222 | Matched footer markup on all three pages. Footer disclaimer measured at 14px. Verified visit count, legal links, Back navigation and canonical legal text. Corrected the inherited spelling of “incidental” in the terms.
+Q / R50–52 | PASS (local) | styles/style.css:991 | 3 pages checked at 320, 375, 768, 1440px. 31 full-name stress cases; 36 layout, contrast, console and widget checks.
+R53/53a | PASS (local) | assets/IMAGE-SOURCES.txt | Reviewed generated doctor, pediatric background, About and Philosophy imagery and the shared gallery. The portrait contains one fictional doctor and the About photo depicts a child. The remaining photographs contain no people. Source/template asset hashes match; all JPEGs are under 500 KiB.
+S1–S5 | PASS (local) | script/analytics.js:7 | Test interactions exercised local GA4 and Clarity queues with instrumented responses. Configured-link events were checked on the rendered template.
+T54–57a | PASS (local) | index.html:1 | 6 axe scans (WCAG A/AA), including all three pages, open booking, consent, and chat; zero detected violations. Incident details for production services require provisioning.
+U58–59 | PASS (local) | Pediatrician/microsite-pediatrician-43-female | Verified 20 numbered sites and 20 matching templates. Git scope contains only these 40 new directories. All 120 nongallery image assets (photography, favicons and chat icons) are distinct across the 20 designs.
+Parameter settings / E1–E5 | PASS (local) | index.html:9 | 39 parameter, grid and banner checks and 6 Facebook SDK, scrolling and fallback checks. Asset-bucket URLs were served from this template’s matching local assets.
+Optional fields | PASS (local) | script/index.js:1163 | 24 full, partial and empty profile/contact cases. Suppressed empty credential rows and orphan address/qualification separators; consent routes use the active doctor slug.
+T57a | PASS (local) | styles/style.css:882 | Removed the inherited low-opacity hero glyph. Lowest measured disabled social glyph contrast across hero/footer and four viewport widths: 6.17:1.
+
+Event | Trigger | Found in code | Fired at runtime | Notes
+nav_link_click | Header navigation | index.html:5 | Yes | Local browser fixture
+book_appointment_click | Open booking | index.html:5 | Yes | Local browser fixture
+hero_social_link_click | Enabled hero social link | index.html:28 | Yes | Local browser fixture
+read_more_click | Biography toggle | index.html:36 | Yes | Local browser fixture
+phone_number_click | Practice phone link | index.html:71 | Yes | Local browser fixture
+email_click | Practice email link | index.html:71 | Yes | Local browser fixture
+clinic_visit_tab_click | Clinic Visit tab | index.html:87 | Yes | Local browser fixture
+online_consult_tab_click | Online Consultation tab | index.html:88 | Yes | Local browser fixture
+upload_report_click | Upload control | index.html:159 | Yes | Local browser fixture
+footer_social_link_click | Enabled footer social link | index.html:237 | Yes | Local browser fixture
+footer_nav_link_click | Footer navigation | index.html:252 | Yes | Local browser fixture
+consent_checkbox_click | Consent checkbox | script/index.js:263 | Yes | Local browser fixture
+consent_modal_open | Open consent notice | script/index.js:443 | Yes | Local browser fixture
+consent_scrolled_to_bottom | Reach end of consent notice | script/index.js:414 | Yes | Local browser fixture
+consent_agreed | I Agree | script/index.js:453 | Yes | Local browser fixture
+consent_dismissed | Close without agreeing | script/index.js:453 | Yes | Local browser fixture
+report_uploaded | Select valid report | script/index.js:642 | Yes | Local browser fixture
+booking_submitted | Receive successful appointment response | script/index.js:1213 | Yes | Local browser fixture
+
+Lowest measured solid colour contrasts
+WCAG relative luminance, declared solid token pairs. The lowest three of the eight sampled pairs are
+Primary action | #fff on #873f51 | 7.34:1 | styles/style.css:15
+Secondary icon | #873f51 on #fff | 7.34:1 | styles/style.css:12
+Heading | #13576e on #f1f8fa | 7.47:1 | styles/style.css:9
+
+Production checks pending
+The doctor profile, registration, contact details and backend IDs require clinic configuration. Production appointment delivery, Facebook account content, visitor totals, bucket uploads and receipt in GA4/Clarity dashboards were not exercised. Lighthouse was not run.

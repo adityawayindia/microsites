@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Moss Meadow. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-44.jpg — Portrait of Dr. Nandita Rao, pediatrician
+hero-pediatrics-44.jpg — Oversize felt butterflies and meadow flowers on a pediatric play table
+about-pediatrics-44.jpg — A child bringing a soft felt butterfly to a board of felt flowers
+philosophy-pediatrics-44.jpg — Two felt meadow flowers and a soft infant blanket beside a pediatric stethoscope
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 6 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-44.jpg
+Original generated file: exec-8f0e95c4-12d7-4479-94e3-c3925894e1fd.png
+Final JPEG SHA-256: 18713c331ab81a42c2b236b15fd2345d663836aacd6fe9d29c02b94984a4cb99
+Prompt: Vertical 3:4 editorial portrait of fictional Indian female pediatrician Dr. Nandita Rao, age 47, deep warm skin, dark shoulder-length curls pulled back, dark wide eyes. White clinician's coat over a light linen shirt. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of moss, soft wheat and damson. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-44.jpg
+Original generated file: exec-2ca38783-110a-4af4-baed-f863ba110c9d.png
+Final JPEG SHA-256: ab13956eb4445d9389c66ff5df93712a16e447764efd24289ed323cddb8b2978
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low washed oak worktop: oversize felt butterflies and meadow flowers, alongside a clearly recognizable child-sized unbranded stethoscope. Palette of moss, soft wheat and damson, luminous shadows and real texture. Place most objects at the right side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-44.jpg
+Original generated file: exec-7e39848e-d1a5-41d8-94c6-6c4f914553fc.png
+Final JPEG SHA-256: 0ba8edb2f4a2c1626c916439afe4c053744fef04b68987f4759aade14fb59922
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian boy about 6 years old, bringing a soft felt butterfly to a board of felt flowers. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in moss, soft wheat and damson. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-44.jpg
+Original generated file: exec-2034a90b-d9fe-4245-84b4-dbcdb2ab92a6.png
+Final JPEG SHA-256: b7cc278b0d91f41125ba0e21fdeb7ae63fc6e184290871f9d1393f2b95c22199
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: two felt meadow flowers and a soft infant blanket beside a pediatric stethoscope. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours moss, soft wheat and damson, subtle shadows, photographed at a low three-quarter angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Cypress Rhythm. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-39.jpg — Portrait of Dr. Manish Naik, pediatrician
+hero-pediatrics-39.jpg — Wooden xylophone with felt mallets on a pediatric play table
+about-pediatrics-39.jpg — A child trying a small wooden xylophone with a single padded mallet
+philosophy-pediatrics-39.jpg — A felt mallet resting on a single wooden xylophone bar beside a pediatric stethoscope
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 1 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-39.jpg
+Original generated file: exec-3bc785d5-1e39-40e4-b01a-158d51152e89.png
+Final JPEG SHA-256: 15e390b8234620da2a690cfe519f8fe0e6deb80d029c019f2731bc5e6e0070e7
+Prompt: Vertical 3:4 editorial portrait of fictional Indian male pediatrician Dr. Manish Naik, age 38, warm medium-brown skin, thick dark hair, short beard and soft eyes. White clinician's coat over a dark earth toned top. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of cypress, light jade and clove. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-39.jpg
+Original generated file: exec-de976d70-cfc5-4f7b-bedf-0e5ae33f4e35.png
+Final JPEG SHA-256: 7a7f5c49b5016e70879d993e0a3e16a046c2dc17cc0bbf851309086202940b52
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low linen-covered work surface: wooden xylophone with felt mallets, alongside a clearly recognizable blank child-health record booklet. Palette of cypress, light jade and clove, luminous shadows and real texture. Place most objects at the left side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-39.jpg
+Original generated file: exec-5afeec96-62bd-4555-ae4d-af2057cf3428.png
+Final JPEG SHA-256: 9e2398b5f4b868d6c2f6f1fe295a3136ba3c1eb7bc10e93e0be295f030500109
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian child about 6 years old, trying a small wooden xylophone with a single padded mallet. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in cypress, light jade and clove. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-39.jpg
+Original generated file: exec-be591f15-dbd5-475e-93e8-83468d5defa1.png
+Final JPEG SHA-256: 1e8d731ecb7ae9d3aed3a99d2f447458f3662d6cdfc6e526ffcd14af24aa4d4a
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: a felt mallet resting on a single wooden xylophone bar beside a pediatric stethoscope. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours cypress, light jade and clove, subtle shadows, photographed from slightly above in side daylight. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

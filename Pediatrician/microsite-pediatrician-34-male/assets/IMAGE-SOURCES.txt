@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Clay Workshop. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-34.jpg — Portrait of Dr. Aditya Borkar, pediatrician
+hero-pediatrics-34.jpg — Large clay animal shapes and tactile modeling tools on a pediatric play table
+about-pediatrics-34.jpg — A child shaping a simple clay animal with smooth clean fingers
+philosophy-pediatrics-34.jpg — Three large clay animal forms and a simple pediatric otoscope on folded linen
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 2 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-34.jpg
+Original generated file: exec-7f556e5b-1248-4175-a1ba-dc978fb05c8d.png
+Final JPEG SHA-256: 6c0940c6b7fff625bd7cbf749cc82823f2fb85c71b0fc51e67285e50bbbab335
+Prompt: Vertical 3:4 editorial portrait of fictional Indian male pediatrician Dr. Aditya Borkar, age 35, deep warm skin, wavy black hair, light beard and a small dimple. White clinician's coat over a muted blue shirt. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of iron red, linen and petrol blue. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-34.jpg
+Original generated file: exec-09ff555a-82cb-4d26-b557-b015ff28dffe.png
+Final JPEG SHA-256: f406571896233b5e4caf05fb72df536c4117f9fb3db139cda1d58427fd87060b
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low handmade paper surface: large clay animal shapes and tactile modeling tools, alongside a clearly recognizable child-sized unbranded stethoscope. Palette of iron red, linen and petrol blue, luminous shadows and real texture. Place most objects at the right side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-34.jpg
+Original generated file: exec-42a7ea71-f11a-47d1-aa72-5f9d5c4fff76.png
+Final JPEG SHA-256: 5808bf06da71f3f6c1e816f3abcfce8aa641a490eef19f2b984916c0e21b0672
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian girl about 6 years old, shaping a simple clay animal with smooth clean fingers. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in iron red, linen and petrol blue. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-34.jpg
+Original generated file: exec-05a2de93-1d50-4bcd-9701-016a2c6d1e83.png
+Final JPEG SHA-256: f3f2c6cb107b012829db384249c902eb6909d66ff4b0dd16f6b8013b11f7b5c7
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: three large clay animal forms and a simple pediatric otoscope on folded linen. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours iron red, linen and petrol blue, subtle shadows, photographed from a high overhead angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

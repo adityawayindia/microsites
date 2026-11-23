@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Raspberry Orchard. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-41.jpg — Portrait of Dr. Meera Pillai, pediatrician
+hero-pediatrics-41.jpg — Oversize felt pears and apple-tree shapes on a pediatric play table
+about-pediatrics-41.jpg — A child arranging large felt apple and pear shapes into groups
+philosophy-pediatrics-41.jpg — Two oversized felt pears beside a pediatric stethoscope and a blank health record
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 3 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-41.jpg
+Original generated file: exec-46a33143-a8b3-48c8-8f0c-921c12f89ee2.png
+Final JPEG SHA-256: 6285b7384d8b6323fd299044c3e65a6be5cdbe00b39941ec0f04ca6d0cf6d352
+Prompt: Vertical 3:4 editorial portrait of fictional Indian female pediatrician Dr. Meera Pillai, age 42, dark brown skin, neatly tied black hair with a side part and calm expressive eyes. White clinician's coat over a neat cool grey top. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of raspberry, vanilla and moss. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-41.jpg
+Original generated file: exec-36c8f20b-70dc-471e-9d45-dbc06a975d92.png
+Final JPEG SHA-256: 4ceeb6f1845490d6ebbe2407ad913a3d60447001e1d791c4e0e4d7b0c4974cf2
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low smooth matte tabletop: oversize felt pears and apple-tree shapes, alongside a clearly recognizable blank child-health record booklet. Palette of raspberry, vanilla and moss, luminous shadows and real texture. Place most objects at the left side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-41.jpg
+Original generated file: exec-bec4d59b-bd5c-4498-b65b-130a4be41125.png
+Final JPEG SHA-256: a8340941144a670e9d3217d1f98d87cf14a69d8dcdbb95066d8fce660c879b11
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian boy about 8 years old, arranging large felt apple and pear shapes into groups. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in raspberry, vanilla and moss. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-41.jpg
+Original generated file: exec-22d41547-69e4-4818-b86c-d2b7c248384e.png
+Final JPEG SHA-256: 0ed3e0976128466d2cf8983d35a9c624e1df270a619f04a4850e40998b4f427f
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: two oversized felt pears beside a pediatric stethoscope and a blank health record. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours raspberry, vanilla and moss, subtle shadows, photographed at a low three-quarter angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

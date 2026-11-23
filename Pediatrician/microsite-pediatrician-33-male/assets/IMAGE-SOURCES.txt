@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Indigo Fold. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-33.jpg — Portrait of Dr. Harish Iyer, pediatrician
+hero-pediatrics-33.jpg — Folded paper cranes and geometric origami on a pediatric play table
+about-pediatrics-33.jpg — A child opening a large folded origami bird on a white tabletop
+philosophy-pediatrics-33.jpg — A folded paper crane, softly coiled child-sized stethoscope and paper appointment notebook without writing
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 1 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-33.jpg
+Original generated file: exec-ff4bc817-928e-409e-a2bf-bf88e8cbb988.png
+Final JPEG SHA-256: cdc961d1bef1d599fa85dc0e3c5dbc05b0893498a4a289e4f9387f566cd6fd2d
+Prompt: Vertical 3:4 editorial portrait of fictional Indian male pediatrician Dr. Harish Iyer, age 52, rounded face, side-parted salt-and-pepper hair, fine moustache, easy expression. White clinician's coat over a neat cool grey top. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of indigo, rice-paper white and vermilion. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-33.jpg
+Original generated file: exec-f487241f-74c1-499b-a054-39fc107dadef.png
+Final JPEG SHA-256: 93c5e858d812d31c933ca1adaeb3afabb738476080c92d31a1efcb5e7268c28a
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low smooth matte tabletop: folded paper cranes and geometric origami, alongside a clearly recognizable blank child-health record booklet. Palette of indigo, rice-paper white and vermilion, luminous shadows and real texture. Place most objects at the left side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-33.jpg
+Original generated file: exec-3f0094e8-c680-463e-a8a9-5bc04b03a7d9.png
+Final JPEG SHA-256: cae36b364b411f976cdc3a2853fdbb0619d580cdf7c7535414a29656836724a9
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian child about 5 years old, opening a large folded origami bird on a white tabletop. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in indigo, rice-paper white and vermilion. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-33.jpg
+Original generated file: exec-403ddc5a-50f7-4332-b1bd-b10413f3adb8.png
+Final JPEG SHA-256: 2c490c59ecd962fb8cf803912b605357e9f21a00c640a09bf9aec5e3fd9a0c1d
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: a folded paper crane, softly coiled child-sized stethoscope and paper appointment notebook without writing. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours indigo, rice-paper white and vermilion, subtle shadows, photographed from slightly above in side daylight. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

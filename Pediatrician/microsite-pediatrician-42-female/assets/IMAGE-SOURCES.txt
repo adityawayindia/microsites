@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Copper Canyon. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-42.jpg — Portrait of Dr. Asha Kulkarni, pediatrician
+hero-pediatrics-42.jpg — Layered wooden arches in terracotta and cream on a pediatric play table
+about-pediatrics-42.jpg — A child placing two smooth curved blocks together to make an arch
+philosophy-pediatrics-42.jpg — A pair of stacked wooden arches, a coiled cloth measuring tape and an unlabelled checkup notebook
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 4 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-42.jpg
+Original generated file: exec-f2602ae4-3cb0-4ec5-bd95-2b5dfab4c62e.png
+Final JPEG SHA-256: 2b4394570f8eed3ac41f6268d0742fd0cfe408cc26bd80c0eba25d5807167447
+Prompt: Vertical 3:4 editorial portrait of fictional Indian female pediatrician Dr. Asha Kulkarni, age 55, streaks of silver in a low bun, warm medium-brown skin, amber-rimmed spectacles. White clinician's coat over a muted blue shirt. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of copper, sand and dark turquoise. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-42.jpg
+Original generated file: exec-b4cb7661-d548-4085-8246-17df5f2acc9a.png
+Final JPEG SHA-256: d74741c357d6f57032f9f3e6c4c307f40d627eb749cd870dfe50604430317eb9
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low handmade paper surface: layered wooden arches in terracotta and cream, alongside a clearly recognizable child-sized unbranded stethoscope. Palette of copper, sand and dark turquoise, luminous shadows and real texture. Place most objects at the right side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-42.jpg
+Original generated file: exec-993a5a64-bfcf-4f0e-918c-94bc9bbd1cd7.png
+Final JPEG SHA-256: f9b17f258e4467da0c711b3db30d2595657f1ccb58c34e92f2851506f6f29c3a
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian child about 9 years old, placing two smooth curved blocks together to make an arch. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in copper, sand and dark turquoise. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-42.jpg
+Original generated file: exec-fca3c2c6-e0b5-481c-9d53-a9941b2a6803.png
+Final JPEG SHA-256: 86d424aa0bc1ea04a5e32375942945d48d06e64d016c46de2e567d3689eb1294
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: a pair of stacked wooden arches, a coiled cloth measuring tape and an unlabelled checkup notebook. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours copper, sand and dark turquoise, subtle shadows, photographed from slightly above in side daylight. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

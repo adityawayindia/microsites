@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Aubergine Orbit. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-40.jpg — Portrait of Dr. Yusuf Siddiqui, pediatrician
+hero-pediatrics-40.jpg — Wooden planets and simple orbital rings on a pediatric play table
+about-pediatrics-40.jpg — A child sorting wooden spheres by size into a shallow tray
+philosophy-pediatrics-40.jpg — Two oversized wooden planets beside a pediatric otoscope on a pale lilac table
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 2 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-40.jpg
+Original generated file: exec-0b89c405-4630-4598-b424-f2f45ea46bea.png
+Final JPEG SHA-256: f76b5de21d3d6121ca5f9ccfdd8ca18279bdd73e762718e2852cf478e097145d
+Prompt: Vertical 3:4 editorial portrait of fictional Indian male pediatrician Dr. Yusuf Siddiqui, age 54, long face, greying beard and cropped dark hair, thin rectangular glasses. White clinician's coat over a light linen shirt. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of aubergine, lavender and rich umber. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-40.jpg
+Original generated file: exec-bdacac8d-fc31-4467-a5ad-65da7c1cd409.png
+Final JPEG SHA-256: 90a6af12ee26f08607b532e0cc801450b9f6554ae424dd65524f51b7d0279c00
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low washed oak worktop: wooden planets and simple orbital rings, alongside a clearly recognizable child-sized unbranded stethoscope. Palette of aubergine, lavender and rich umber, luminous shadows and real texture. Place most objects at the right side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-40.jpg
+Original generated file: exec-5c7a1dd1-daad-440b-99ee-c15e72327be3.png
+Final JPEG SHA-256: 9d022398e158d7d27178e374a830affd49923b4585845bb0465f8dbca53a2f24
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian girl about 7 years old, sorting wooden spheres by size into a shallow tray. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in aubergine, lavender and rich umber. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-40.jpg
+Original generated file: exec-971ff3de-1476-47fd-9a2c-db73f1acb5db.png
+Final JPEG SHA-256: a961e5e15a52733d825d16c3e1da1cf8220d3de81de1c32ffb046b343dddfbe3
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: two oversized wooden planets beside a pediatric otoscope on a pale lilac table. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours aubergine, lavender and rich umber, subtle shadows, photographed from a high overhead angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

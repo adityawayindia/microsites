@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Fern Field. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-28.jpg — Portrait of Dr. Rohan Menon, pediatrician
+hero-pediatrics-28.jpg — Pressed fern fronds and wooden leaf puzzles on a pediatric play table
+about-pediatrics-28.jpg — A child fitting a large wooden leaf piece into a broad puzzle board
+philosophy-pediatrics-28.jpg — Pediatric stethoscope with fern green tubing, blank folded growth notebook, and a single oversize wooden leaf
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 2 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-28.jpg
+Original generated file: exec-917884f3-1fa4-47c7-b70b-af3328123c46.png
+Final JPEG SHA-256: 1efd8333ce33ed29a8c1a184fa7197d51a6a358056e2c21a9f4ee81f86e0a427
+Prompt: Photorealistic-natural. Original editorial vertical 3:4 portrait of a fictional Indian male pediatrician, about 49, clean-shaven with short, wavy salt-and-pepper hair, medium-brown skin, broad nose, gentle welcoming expression, wearing an immaculate white medical coat over a muted ivory open-collar shirt. Composed waist-up with his whole head below the upper tenth, centered, ample space around the shoulders for a portrait mask. Pale warm grey daylight background with a hint of an out-of-focus clinic wall. Real skin texture, tasteful professional lighting. No stethoscope, logos, text, badge or watermark.
+
+hero-pediatrics-28.jpg
+Original generated file: exec-d8ac8f3b-6f42-4523-91de-6ef8c7019e33.png
+Final JPEG SHA-256: eb6ded7b66623e3b159cd33f21fd6cbeb395beb4451124d325c586dff71e2481
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low washed oak worktop: pressed fern fronds and wooden leaf puzzles, alongside a clearly recognizable child-sized unbranded stethoscope. Palette of fern, ivory and persimmon, luminous shadows and real texture. Place most objects at the right side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-28.jpg
+Original generated file: exec-3f378982-cf48-4121-a4e2-9fb84e288c7b.png
+Final JPEG SHA-256: 184f160909f88a31c03dd5df08467c610df82f5f18c44ef72f3d9d0f3b396284
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian girl about 5 years old, fitting a large wooden leaf piece into a broad puzzle board. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in fern, ivory and persimmon. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-28.jpg
+Original generated file: exec-5751c89d-c313-43ee-9ab2-4a0893849942.png
+Final JPEG SHA-256: 31e83c0763fc207c95aad493bc3f534192e1f01b77c50ec9549b07837569223d
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: pediatric stethoscope with fern green tubing, blank folded growth notebook, and a single oversize wooden leaf. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours fern, ivory and persimmon, subtle shadows, photographed from a high overhead angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

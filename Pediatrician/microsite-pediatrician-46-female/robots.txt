@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-revathi-raman/
+Disallow: /dr-revathi-raman/privacy-policy.html
+Disallow: /dr-revathi-raman/terms-of-service.html
+Sitemap: https://digidr.app/dr-revathi-raman/sitemap.xml

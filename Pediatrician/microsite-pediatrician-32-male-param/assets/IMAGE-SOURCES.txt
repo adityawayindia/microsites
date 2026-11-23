@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Banyan House. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-32.jpg — Portrait of Dr. Sameer Varma, pediatrician
+hero-pediatrics-32.jpg — Large wooden tree and nesting bird figures on a pediatric play table
+about-pediatrics-32.jpg — A child positioning a wooden bird in a tree-shaped play set
+philosophy-pediatrics-32.jpg — A wooden bird, tiny knitted infant booties and an unmarked cloth measuring tape
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 6 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-32.jpg
+Original generated file: exec-49aebaf1-3ebb-405a-be17-6e4189422841.png
+Final JPEG SHA-256: d6f556f671ae54397099fd1fc6bee8396eb3b1c3778a856e485c4d6c3bddca35
+Prompt: Vertical 3:4 editorial portrait of fictional Indian male pediatrician Dr. Sameer Varma, age 47, slender face, neatly combed black hair streaked with grey, clean-shaven with wire glasses. White clinician's coat over a light linen shirt. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of deep olive, limewash and cranberry. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-32.jpg
+Original generated file: exec-313f4a48-14a9-4067-851b-8cd24052064a.png
+Final JPEG SHA-256: aa91ea7e6f70aedc110b34d6014a8a8b4c1be48afe0975a42ebeea0ef00fac60
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low washed oak worktop: large wooden tree and nesting bird figures, alongside a clearly recognizable child-sized unbranded stethoscope. Palette of deep olive, limewash and cranberry, luminous shadows and real texture. Place most objects at the right side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-32.jpg
+Original generated file: exec-6d2b7326-11ae-4612-9b40-611e2eae8e6c.png
+Final JPEG SHA-256: 5722db692ae4879949abec279624dab313597f5ec5964644c4f62322fa378218
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian boy about 9 years old, positioning a wooden bird in a tree-shaped play set. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in deep olive, limewash and cranberry. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-32.jpg
+Original generated file: exec-b6fb9456-9b5d-4993-99b2-6553192e179f.png
+Final JPEG SHA-256: ba3e42792db45806a5126ca3a8f18679d72083b16bcd66940360660e73ab3666
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: a wooden bird, tiny knitted infant booties and an unmarked cloth measuring tape. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours deep olive, limewash and cranberry, subtle shadows, photographed at a low three-quarter angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

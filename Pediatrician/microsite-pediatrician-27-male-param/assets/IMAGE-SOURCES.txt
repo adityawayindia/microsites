@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Tidal Blue. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-27.jpg — Dr. Nikhil Marathe in a white coat
+hero-pediatrics-27.jpg — A wooden sailboat and pediatric stethoscope on a sea-glass tabletop
+about-pediatrics-27.jpg — A child folding a paper boat at a blue table
+philosophy-pediatrics-27.jpg — Three folded paper boats beside a measuring tape and wooden blocks
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 1 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-27.jpg
+Original generated file: exec-32928b1a-b725-4b4a-9aee-b849f224afe1.png
+Final JPEG SHA-256: dca0c4a9e324c35cafec835d4b36cd8664f366623c4c7addebb2ed8f61a589f3
+Prompt: Vertical 3:4 clinic photograph of a fictional Indian male pediatrician in his early 40s, neatly side-parted black hair with a few silver strands, thin round glasses, warm brown skin, neatly trimmed beard, soft unforced smile. A white medical coat over a deep marine blue shirt. Soft pale blue backdrop, daylight. Waist-up with generous space above and around his head, face sharp and centered. No text, logos, watermarks or graphic frame. Original professional photography for one pediatrician template.
+
+hero-pediatrics-27.jpg
+Original generated file: exec-3be3320a-5ffb-46c8-a05f-96347ed1d5fa.png
+Final JPEG SHA-256: a766fd477132621fa40bbf1bd1d00a3d439775abd3aecefb6a3d091fc5a64f8f
+Prompt: Wide landscape 16:9 high-end editorial still-life photograph for a pediatric website. A child's wooden sailboat, ocean-blue child-sized stethoscope, and folded cream muslin on a pale sea glass tabletop. Stage the objects near the far right and lower right; leave the left half soft and open. Beautiful slanting daylight and sea-green shadows, tangible materials, no people. No text, logos, watermarks or graphic frame. Original professional photography for one pediatrician template.
+
+about-pediatrics-27.jpg
+Original generated file: exec-db0bc362-e3ab-4b62-b17a-62f2d7b4ff12.png
+Final JPEG SHA-256: 4b2e2b30b16fba3deb7ab2c75057eef1d5f86b52277aec92a8dd6697744414b5
+Prompt: Vertical editorial photograph of a fully clothed Indian child around 7 concentrating on making a small paper boat at a blue tabletop. Natural hands, quiet afternoon daylight, candid and respectful, teal and ivory palette, no adults. No text, logos, watermarks or graphic frame. Original professional photography for one pediatrician template.
+
+philosophy-pediatrics-27.jpg
+Original generated file: exec-f2ec470b-55ad-4e32-a924-292336a21367.png
+Final JPEG SHA-256: 6922bdfb9f55472f672ed2a761f2552644ed8585582b76ddb20aff5a6808f2eb
+Prompt: Close editorial landscape photograph of three small folded paper boats lined up by size beside an unmarked child growth measuring tape and wooden blocks, subtle aqua and saffron details, warm light and uncluttered ivory background. No people. No text, logos, watermarks or graphic frame. Original professional photography for one pediatrician template.

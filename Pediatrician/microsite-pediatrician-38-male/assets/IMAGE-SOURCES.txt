@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Mulberry Thread. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-38.jpg — Portrait of Dr. Pranav Shah, pediatrician
+hero-pediatrics-38.jpg — Tactile yarn, woven shapes and threading boards on a pediatric play table
+about-pediatrics-38.jpg — A child weaving a thick ribbon through a smooth wooden lacing board
+philosophy-pediatrics-38.jpg — A woven swatch, blank child health record and a loosely coiled cloth tape
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 6 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-38.jpg
+Original generated file: exec-8c4e2ef5-a93c-4ce3-99d0-868a766e04b3.png
+Final JPEG SHA-256: bcfe9b25f05a758d1cf390ae5b4308be38c700b334a0ec4aa53f3c5654e3da65
+Prompt: Vertical 3:4 editorial portrait of fictional Indian male pediatrician Dr. Pranav Shah, age 48, broad forehead, cropped wavy salt-and-pepper hair and clean-shaven cheeks. White clinician's coat over a muted blue shirt. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of mulberry, blush ivory and spruce. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-38.jpg
+Original generated file: exec-cb33d859-7042-45af-b4ea-3056584bc599.png
+Final JPEG SHA-256: c9d435a9da35ab988e729e8ef2c9f47f11b72b7831b31efef3de857e2823a81a
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low handmade paper surface: tactile yarn, woven shapes and threading boards, alongside a clearly recognizable child-sized unbranded stethoscope. Palette of mulberry, blush ivory and spruce, luminous shadows and real texture. Place most objects at the right side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-38.jpg
+Original generated file: exec-f7f15034-1883-4a68-b028-3217545c7ca9.png
+Final JPEG SHA-256: 9fda04ac3bfdcf6de6d0828dc3ff430f8265d5a84fde5f2fa7a2259d261321aa
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian boy about 5 years old, weaving a thick ribbon through a smooth wooden lacing board. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in mulberry, blush ivory and spruce. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-38.jpg
+Original generated file: exec-7ebc4f37-82b7-4cca-a932-46a5f7ce9fb4.png
+Final JPEG SHA-256: f315ba95339e7eed3f90d21342b9c24acf6f187a1bc9f0eadcd5a6dbe1f6b6ad
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: a woven swatch, blank child health record and a loosely coiled cloth tape. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours mulberry, blush ivory and spruce, subtle shadows, photographed at a low three-quarter angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

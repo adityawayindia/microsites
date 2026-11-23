@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Peacock Atlas. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-43.jpg — Portrait of Dr. Ishita Basu, pediatrician
+hero-pediatrics-43.jpg — A tactile globe and large wooden map pieces on a pediatric play table
+about-pediatrics-43.jpg — A child matching a large geographical puzzle piece to its wooden board
+philosophy-pediatrics-43.jpg — A smooth unlabelled wooden globe, a large map puzzle piece and a folded pediatric cuff
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 5 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-43.jpg
+Original generated file: exec-60eade6e-ee67-4ce6-986a-36de12d39a7e.png
+Final JPEG SHA-256: a5035dcb5fab0ab60221bb8422f05e1a4497ff8b712a172153ff7b5ac9913a96
+Prompt: Vertical 3:4 editorial portrait of fictional Indian female pediatrician Dr. Ishita Basu, age 37, medium brown skin, chin-length wavy bob, broad cheeks and a welcoming expression. White clinician's coat over a dark earth toned top. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of peacock blue, mist and burgundy. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-43.jpg
+Original generated file: exec-8e8a336b-4aa8-410b-b324-b375e6eae656.png
+Final JPEG SHA-256: d923da13784d96bf1616bf1756b3136e49015a9808e7201ab686c6846caef1ce
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low linen-covered work surface: a tactile globe and large wooden map pieces, alongside a clearly recognizable blank child-health record booklet. Palette of peacock blue, mist and burgundy, luminous shadows and real texture. Place most objects at the left side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-43.jpg
+Original generated file: exec-889cfbbb-1a7c-4876-b6a1-fc05127f4afe.png
+Final JPEG SHA-256: 24f8918cb9f0bb8aaf2a1d54803aa285c8735070ffeb93f3fcaf6b010f9e3a2a
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian girl about 5 years old, matching a large geographical puzzle piece to its wooden board. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in peacock blue, mist and burgundy. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-43.jpg
+Original generated file: exec-7e8378db-88a3-41fc-adc3-b529effd75ad.png
+Final JPEG SHA-256: 4fa0443b5360cf182fc7bd6c0ded4caceb95542eccf75e08b136191bbb62e2a9
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: a smooth unlabelled wooden globe, a large map puzzle piece and a folded pediatric cuff. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours peacock blue, mist and burgundy, subtle shadows, photographed from a high overhead angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.

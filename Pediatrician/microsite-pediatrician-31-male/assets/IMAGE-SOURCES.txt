@@ -1,0 +1,33 @@
+Illustrative pediatrician profile for Plum Night. The name, qualifications, practising year and clinic details are demonstration content. Supply the practice’s verified profile, provider ID and contact details before publication.
+
+Created 23 November 2026. Original OpenAI-generated images for this site, provided with the matching backend template.
+
+doctor-31.jpg — Portrait of Dr. Devansh Roy, pediatrician
+hero-pediatrics-31.jpg — Wooden moons and stars on a pediatric play table
+about-pediatrics-31.jpg — A child sorting large wooden star shapes on a mauve tabletop
+philosophy-pediatrics-31.jpg — A crescent moon night light, softly folded child's blanket and blank sleep diary
+
+Gallery photographs: reused from Pediatrician/microsite-pediatrician-20-male/assets, where the original generation prompts and provenance are recorded. Favicon and assistant icon: original site-specific vector artwork.
+Pediatric FAQ set 5 comes from the existing pediatric microsites and the workspace FAQ collection.
+
+Generation records
+
+doctor-31.jpg
+Original generated file: exec-9cce13cd-2f54-429a-8378-c304b9a9e692.png
+Final JPEG SHA-256: 393339d3dce5c370905acad971b1f1ed6470bca473f0a74f82a6649f647d85cb
+Prompt: Vertical 3:4 editorial portrait of fictional Indian male pediatrician Dr. Devansh Roy, age 39, medium dark skin, dense side-parted black hair and a short boxed beard. White clinician's coat over a dark earth toned top. Contemporary, relaxed and attentive, looking towards the camera. Centered, neatly composed waist up with full shoulders visible; top quarter gives space for a curved portrait mask. Subtly defocused clinic wall, soft daylight, wardrobe and surroundings have touches of deep plum, mauve and soft brass. No other people or visible tools. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+hero-pediatrics-31.jpg
+Original generated file: exec-8537748e-5a89-4be0-abc2-3df01242aaf7.png
+Final JPEG SHA-256: 11697d78e50d680180a1bb86e2cf7c3d9d45d92db6522914d56ec6a442f24526
+Prompt: Wide 16:9 editorial pediatric background photograph. A beautifully arranged small still life on a low linen-covered work surface: wooden moons and stars, alongside a clearly recognizable blank child-health record booklet. Palette of deep plum, mauve and soft brass, luminous shadows and real texture. Place most objects at the left side of the image stretching into the middle so they are visible around a portrait inset; the opposite side is mostly open. No people or hands. No chairs or clinic waiting rooms. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+about-pediatrics-31.jpg
+Original generated file: exec-a4eb33d8-3995-426d-ad7d-22161eb08111.png
+Final JPEG SHA-256: 4dfc6b44f2705a36549cede21e59b901444358e341a7fbdc06da2029e66009ce
+Prompt: Vertical 4:5, gentle observational photograph for a child health clinic. One fully clothed Indian girl about 8 years old, sorting large wooden star shapes on a mauve tabletop. Thoughtful expression, natural child posture, hands anatomically correct. Warm incidental daylight, quiet design tones in deep plum, mauve and soft brass. Child and play object are both clearly visible. No other people, no adults and no medical claims. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
+
+philosophy-pediatrics-31.jpg
+Original generated file: exec-c5e1440b-0fd0-4dc2-977f-e88fa8d76559.png
+Final JPEG SHA-256: 5fe1222835190c7aa8258a8570949fd1883f38ffcdb7fcd2e645e023ad0ee0f0
+Prompt: Landscape 4:3. Carefully composed people-free pediatric editorial still life: a crescent moon night light, softly folded child's blanket and blank sleep diary. Set in the middle half of the image with roomy margins, softly lit, tactile and believable. Colours deep plum, mauve and soft brass, subtle shadows, photographed from a high overhead angle. No people, no room or reception, no hands or reflections. An original premium natural-light editorial photograph for a pediatric clinic website. No wording, labels, letters, branding, logos, graphic frames or watermark. Natural materials and graceful composition.
