@@ -1,4 +1,4 @@
-DigiDr verification — microsite-ayurvedic-3-param
+DigiDr verification — microsite-ayurvedic-3-male-param-assigned
 Date: 12 November 2026
 Profile: Dr. Aditya Nair — male Ayurvedic physician
 Result: PASS for local implementation and fixture-backed integration tests. Production service delivery is UNVERIFIED.
@@ -62,7 +62,7 @@ CHECKLIST (verification.md item | result | evidence | notes)
 37 | PASS | index.html:5 | Required section order verified; social section hides when API has no usable posts.
 38 | PASS | robots.txt:1; sitemap.xml:1; llms.txt:1 | Per-site draft URLs, doctor and specialty; param URLs use slug with extension-free routes.
 39 | PASS | index.html:5 | No blog page or navigation link. Reference blog-detail-* classes remain only as legal-shell class names.
-40 | PASS | index.html:1 | No previous doctor/specialty copy, TODO or Lorem. Only intentional placeholders: registration/contact defaults, source legal date, GA4 ID and param fields.
+40 | PASS | index.html:1 | No previous doctor/specialty copy, TODO or Lorem. Template fields remain for registration/contact defaults and the source legal date.
 41 | PASS | index.html:37 | Male Ayurvedic profile and consultation-focused copy; illustrative doctor/clinic details must be configured before publication.
 42 | PASS | assets/IMAGE-SOURCES.txt:1 | Generated assets reviewed; only doctor portrait contains a person. No unverifiable cure claims or testimonials.
 42a | PASS | index.html:37 | No prohibited trust/reliability wording in visible content or metadata.
@@ -95,7 +95,7 @@ E4 | PASS | script/index.js:1444 | Blocked SDK/empty embed gives usable external
 E5 | PASS (fixture); UNVERIFIED (live) | index.html:38 | Real account feed and Facebook login/privacy restrictions require deployment configuration.
 
 ANALYTICS (S1-S5)
-S1 | PASS (configuration) | index.html:3 | User-requested GA4 placeholder retained. Clarity shared project ymqvcvdc4v. Live analytics ingestion UNVERIFIED.
+S1 | PASS (configuration) | index.html:3 | GA4 measurement ID G-C1F8E3C6B4 is configured on all three pages. Clarity shared project ymqvcvdc4v. Live analytics ingestion UNVERIFIED.
 S2-S4 | PASS | script/analytics.js:7 | Each enabled declarative action fired exactly once to both queues; guards tolerate blocked globals.
 S5 | Event | Trigger | Evidence | Runtime
    nav_link_click | matching data-ga-event element | index.html:5 | yes, exactly once per action (GA4 and Clarity)
@@ -131,7 +131,7 @@ No test fixtures, mock API adapters, preview server or browser dependencies are 
 DEPLOYMENT / UNVERIFIED EXTERNAL CHECKS
 Doctor names, portraits and clinic details are illustrative; configure real practice details, registration, phone/email and DoctorId/userid before production booking.
 No live appointment was submitted. Production booking persistence, notifications, real meet links, visitor totals, actual chatbot replies and Facebook account content need configured backend data.
-The assets are delivered locally; uploading them to the real slug bucket and verifying deployed GCS responses is outside this local build. The GA4 ID remains a placeholder as expressly requested.
+The assets are delivered locally; uploading them to the real slug bucket and verifying deployed GCS responses is outside this local build.
 
 WORKSPACE HYGIENE
 No Git commit or push. All writes for this task are confined to the eight newly created Ayurvedic 3-6 / 3-6-param folders; QA tools and screenshots are in the OS temporary directory.
@@ -155,3 +155,8 @@ PASS: Removed ellipsis, clipping and character-width caps. Header names wrap ful
 
 GALLERY EQUAL-SIZE FOLLOW-UP - 12 November 2026
 PASS: All gallery items retain equal width and height; lone fourth/seventh images stay centered at the normal image size. Checked 4, 5, 6 and 7 items at 320, 375, 768, 1100, 1101 and 1440px; 4:3 ratio, centered incomplete rows, expected column counts and no horizontal overflow. Fourth-image lightbox opening, previous navigation and Escape passed. No JavaScript errors. 992/992 checks across all eight source/param sites. AGENTS.md and verification.md record this rule. Evidence: gallery-equal-size.json, gallery-equal-size-1440.png and gallery-equal-size-375.png in the QA directory.
+
+ASSIGNMENT AND DESIGN UPDATE - 23 November 2026
+The assigned directory contains all 21 original files and two new WebP backgrounds. Template bindings were compared with the previous version. Both backgrounds use the per-slug asset URL.
+Chrome rendered the template at 320, 375, 640, 768, 1100, 1101 and 1440px. All four steps were visible in order, both photographs decoded, and the document fit each viewport. Both fallback and custom journey copy rendered. Minimum contrast sampled behind the photo-overlay text was 7.41:1 for the hero and 5.86:1 for the journey across 375 and 1440px.
+The home, privacy and terms pages each requested the GA4 loader once and queued one config for G-C1F8E3C6B4. The hero booking button queued one book_appointment_click event. The browser used local asset and analytics fixtures. Live GA4 delivery and production asset hosting were not tested.
