@@ -1061,7 +1061,7 @@ html { scroll-behavior:smooth; scroll-padding-top:100px; } html,body { margin:0;
   .hero-layout { grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr); }
   .hero-content { grid-column:2; grid-row:1; }
   .hero-visual { grid-column:1; grid-row:1; justify-content:flex-end; }
-  .about-aside { grid-column:2; grid-row:1; } .about-content { grid-column:1; grid-row:1; } .about-layout { grid-template-columns:1.3fr .75fr; }
+  .about-aside { grid-column:2; grid-row:1; } .about-content { grid-column:1; grid-row:1; } .about-layout { grid-template-columns: minmax(0, 1fr) min(34%, 470px); }
   
   
 }

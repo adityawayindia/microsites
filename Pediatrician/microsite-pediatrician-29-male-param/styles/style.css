@@ -1194,7 +1194,7 @@ html { scroll-behavior:smooth; scroll-padding-top:100px; } html,body { margin:0;
 
 .journey-grid {counter-reset:step;}.process-step {border:0;border-left:2px solid rgba(255,255,255,.55);padding:2px 18px 8px;}.process-section .section-kicker {color:white;background:var(--brand-dark);}.step-marker {justify-content:start;gap:16px;}
 
-@media (min-width:1101px) { .about-aside {order:2;}.about-content {order:1;}.about-layout {grid-template-columns:1.35fr .75fr;}.philosophy-visual {order:2;}.philosophy-layout {grid-template-columns:1.12fr .88fr;}.journey-grid {grid-template-columns:1fr 1fr;}.process-step {display:grid;grid-template-columns:80px 1fr;column-gap:16px;}.step-marker {grid-row:1/3;flex-direction:column;justify-content:start;align-items:center;}.process-step p {grid-column:2;} }
+@media (min-width:1101px) { .about-aside {order:2;}.about-content {order:1;}.about-layout {grid-template-columns: minmax(0, 1fr) min(28%, 340px);}.philosophy-visual {order:2;}.philosophy-layout {grid-template-columns:1.12fr .88fr;}.journey-grid {grid-template-columns:1fr 1fr;}.process-step {display:grid;grid-template-columns:80px 1fr;column-gap:16px;}.step-marker {grid-row:1/3;flex-direction:column;justify-content:start;align-items:center;}.process-step p {grid-column:2;} }
 
 @media (max-width:1200px) { .site-header .nav-links { margin-left:0; } }
 @media (min-width:641px) and (max-width:1100px) { .hero-layout {grid-template-columns:.74fr 1.26fr;gap:20px;}.hero-visual {max-width:320px;}.hero-stats {gap:4px;}.hero-stat-box {padding:10px 6px;}.hero-visual {padding:14px 6px;}.hero-stat-box span {line-height:1.3;} }
