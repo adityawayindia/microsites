@@ -16,15 +16,6 @@
     }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DDLFELHEW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-7DDLFELHEW');
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. {{full_name}} | {{speciality}} — Precision Urology &amp; Kidney Care Clinic</title>
@@ -37,8 +28,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
   <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
-  <meta property="og:image" content="https://storage.googleapis.com/digidr/urology_og.png" />
-  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image" content="{{profile}}" />
   <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
   <meta property="og:locale" content="en_US" />
 
@@ -46,7 +36,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
   <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
-  <meta name="twitter:image" content="https://storage.googleapis.com/digidr/urology_og.png" />
+  <meta name="twitter:image" content="{{profile}}" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
