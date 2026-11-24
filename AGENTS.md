@@ -518,6 +518,12 @@ Hero markup: Appendix A.3.
 | Bio paragraphs | `18px`, line-height `1.6`, `text-align:justify` |
 | Photo frame | `aspect-ratio:4/5`, `5px solid var(--surface)` border, capped `max-width:340px` and centered at `≤1100px` |
 
+**Rays Medical layout.** For every source site and `-param` template in `rays-medical/`,
+use `grid-template-columns: minmax(0, 1fr) 340px` with a `48px` gap above `1100px`.
+Place the biography in the flexible left column and align the image to the container’s
+right edge. Cap biography paragraphs at `75ch`. At `1100px` and below, stack the
+biography first and center the image beneath it.
+
 **Read More toggle** — copy the code in §24 verbatim. Clamp value: `7` lines via
 `-webkit-line-clamp`. Toggle button font-size `18px` (matching body text, per §0.1).
 
