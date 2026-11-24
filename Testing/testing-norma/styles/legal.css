@@ -1,0 +1,17 @@
+.legal-page { background: var(--bg); }
+.legal-section { padding: 28px 0 36px; }
+.legal-article { max-width: 76ch; margin: auto; }
+.legal-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-bottom: 20px;
+  color: var(--brand);
+  font-weight: 700;
+}
+.legal-title { font-size: clamp(32px, 4vw, 44px); }
+.legal-effective-date { margin: 18px 0 30px; }
+.legal-section h2 { margin-top: 28px; font-size: 28px; }
+.legal-section h3 { font-size: 22px; }
+.legal-list { padding-left: 24px; }

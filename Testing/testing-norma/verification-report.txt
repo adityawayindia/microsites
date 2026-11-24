@@ -1,0 +1,36 @@
+testing-norma
+Local microsite verification, 24 November 2026
+
+The English profile and images come from the illustrative general-physician
+profile used in Testing. Browser checks used Chromium, cached copies of the
+declared CDN dependencies and local API responses.
+
+Item | Status | Evidence | Fix applied
+1–2 Header and navigation | PASS | index.html:34, script/index.js:976. The mobile menu opened and its FAQ link cleared the URL fragment. Full names wrapped at both sides of the 1200px breakpoint. | The logo targets the hero.
+3–6a Profile | PASS | index.html:67, script/index.js:1033. Three counters read their target text. Eight unavailable social links have accessible names. | The phone layout places the portrait beside the name.
+7 About | PASS | index.html:86, script/index.js:1628. A long bio expanded and collapsed; a short replacement hid the toggle. | Identified the profile as illustrative.
+8–9 Services | PASS | index.html:95, styles/style.css:81. Grids with 4, 5, 6 and 7 items centered their final rows at eight widths. | Removed decorative card numbers.
+E1–E5 Social feed | PASS with fixtures | index.html:120, script/index.js:1284. The empty feed hid the section. Five qualifying fixture posts populated the carousel and the mobile next control scrolled it. | Paging initializes when the cards render.
+10–11 Philosophy and journey | PASS | index.html:146 and :166. Three principles and four steps appear in the specified order. | Increased contrast on the journey section label.
+12 Contact | PASS for available details | index.html:189, script/index.js:1098. The address, phone availability, email and booking action are visible. | Removed the dummy telephone link on all three pages.
+13 Gallery | PASS | index.html:202, script/index.js:1140. Three local images, lightbox navigation and Escape were checked. Grid counts from 4 to 7 were also exercised. | Closing the lightbox removes the image source.
+14 FAQ | PASS | index.html:215, script/index.js:1073. Opening the second answer closed the first. | Six question-and-answer pairs come from General Medicine / Family Physician in DigiDr_FAQ_6_Sets_25_Specialities.pdf.
+15–20 Booking and consent | PASS locally | index.html:258, :269 and :360. Tested tooltip text, both modes, dismissal, reading gate, agreement and a successful return to the form. | Missing booking configuration has a visible status and prevents appointment requests.
+21–25 Booking validation and confirmation | PASS with fixtures | script/index.js:51 and :936. Tested missing fields, name sanitization, international telephone validation, PDF selection, rejected upload type, slot selection and both confirmations. | Confirmation text is rendered as text and submit requires a configured account.
+26–29a Footer | PASS locally | index.html:400. The three footers have identical markup. All nine viewport sizes retained the 14px disclaimer. A fixture visitor count reached the badge. | The draft does not use the source microsite's backend ID.
+30–33 Chat | PASS with fixtures | script/chatbot.js:74 and :254, styles/chatbot.css:626. Tested launch, message entry, response display, closing and sizes at 320, 375, 768 and 1440px. Desktop measured 340 by 420px. | Uses the bundled chat icon.
+34–35 Legal pages | PASS locally | privacy-policy.html:38 and terms-of-service.html:38. Compared 26 headings and 20 fixed paragraphs with section 41. Both Back links returned home. | Dedicated legal stylesheet and consistent contact details.
+36–42b Structure and content | PASS | index.html:42 through :400, robots.txt:1, sitemap.xml:1 and llms.txt:1. All referenced local resources resolve. No testimonials or blog pages. | Site metadata and the Clarity slug identify testing-norma.
+43–49 Presentation and accessibility | PASS in the tested states | styles/style.css:1, styles/legal.css:1. Axe reported zero WCAG A/AA violations on the homepage, both legal pages and the open booking, consent and chat panels. | Updated the FAQ layout, mobile hero and confirmation styling.
+50–52 Responsiveness | PASS in Chromium | styles/style.css:933. Measured all three pages at 320, 375, 640, 768, 1024, 1200, 1201, 1440 and 1900px. A long unbroken name and a long specialty fit the header. | Placed the third phone statistic across both columns.
+53–53a Images | PASS | index.html:66, :89 and :202, assets/IMAGE-SOURCES.txt. Inspected all five photos. Only the doctor portrait shows a person. Each JPEG is under 305KB. | Reused the local test profile photography.
+S1–S5 Analytics | PASS for local event delivery; live collection unverified | script/analytics.js:1. Captured two submitted bookings and one upload, checkbox, consent-open, scroll-complete and agreement event per booking. | Removed the inherited GA4 placeholder and fixed checkbox tracking.
+54–57a Assets, semantics and icons | PASS locally | index.html:5, styles/style.css:24. Unique headings, relative references and visible Font Awesome glyphs were checked across all pages. Browser run finished without runtime exceptions or local HTTP errors. | Replaced the source canonical URLs.
+58–59 Workspace | PASS | Testing/testing-norma. Git status showed only this new directory. | Used the exact requested folder name.
+
+Unverified with live services
+
+Real appointment availability, submission, the visitor counter and production
+GA4 collection require the identifiers assigned to this site. The test used no
+real patient data. Live Facebook embeds, Clarity ingestion, production chatbot
+replies and physical-device keyboard behavior were not exercised.
