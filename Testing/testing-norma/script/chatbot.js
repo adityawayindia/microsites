@@ -43,43 +43,43 @@
         '<div class="chatbot-backdrop" id="chatbotBackdrop" aria-hidden="true"></div>' +
 
         /* Chat window */
-        '<div class="chatbot-window" id="chatbotWindow" style="display:none;" role="dialog" aria-modal="true" aria-label="' + BOT_NAME + ' chat window">' +
+        '<div class="chatbot-window" id="chatbotWindow" style="display:none;" role="dialog" aria-modal="true" data-l10n-aria-label="chatbot.assistant_chat_window" aria-label="' + BOT_NAME + ' chat window">' +
 
         /* Header */
         '<div class="chatbot-header">' +
         '<div class="chatbot-header-avatar">' +
-        '<img src="' + BOT_ICON + '" alt="' + BOT_NAME + '">' +
+        '<img src="' + BOT_ICON + '" data-l10n-alt="chatbot.assistant" alt="' + BOT_NAME + '">' +
         '</div>' +
         '<div class="chatbot-header-info">' +
-        '<p class="chatbot-header-name">' + BOT_NAME + '</p>' +
+        '<p class="chatbot-header-name" data-l10n="chatbot.assistant">' + BOT_NAME + '</p>' +
         '</div>' +
-        '<button type="button" class="chatbot-header-close" id="chatbotCloseBtn" aria-label="Close chat">' +
+        '<button type="button" class="chatbot-header-close" id="chatbotCloseBtn" data-l10n-aria-label="chatbot.close_chat" aria-label="Close chat">' +
         /* This microsite loads Font Awesome, not Material Symbols */
         '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' +
         '</button>' +
         '</div>' +
 
         /* Messages */
-        '<div class="chatbot-messages" id="chatbotMessages" tabindex="0" role="log" aria-live="polite" aria-label="Chat messages"></div>' +
+        '<div class="chatbot-messages" id="chatbotMessages" tabindex="0" role="log" aria-live="polite" data-l10n-aria-label="chatbot.chat_messages" aria-label="Chat messages"></div>' +
 
         /* Input */
         '<div class="chatbot-input-area">' +
         '<div class="chatbot-input-wrap">' +
-        '<textarea class="chatbot-input" id="chatbotInput" placeholder="Type your message…" rows="1" aria-label="Type your message"></textarea>' +
+        '<textarea class="chatbot-input" id="chatbotInput" data-l10n-placeholder="chatbot.type_your_message" placeholder="Type your message…" rows="1" data-l10n-aria-label="chatbot.type_your_message_2" aria-label="Type your message"></textarea>' +
         '</div>' +
-        '<button class="chatbot-send-btn" id="chatbotSendBtn" aria-label="Send message" disabled>' + svgSend() + '</button>' +
+        '<button class="chatbot-send-btn" id="chatbotSendBtn" data-l10n-aria-label="chatbot.send_message" aria-label="Send message" disabled>' + svgSend() + '</button>' +
         '</div>' +
 
         /* Footer */
-        '<div class="chatbot-footer">Informational only, not medical advice.<br>Consult your doctor.</div>' +
+        '<div class="chatbot-footer"><span data-l10n="chatbot.informational_only_not_medical_advice">Informational only, not medical advice.</span><br><span data-l10n="chatbot.consult_your_doctor">Consult your doctor.</span></div>' +
 
         '</div>' +
 
         /* FAB */
-        '<button class="chatbot-fab" id="chatbotFab" aria-label="Open Assistant" aria-expanded="false" aria-controls="chatbotWindow">' +
+        '<button class="chatbot-fab" id="chatbotFab" data-l10n-aria-label="chatbot.open_assistant" aria-label="Open Assistant" aria-expanded="false" aria-controls="chatbotWindow">' +
         '<img class="chatbot-fab-logo" src="' + BOT_ICON + '" alt="" aria-hidden="true">' +
-        '<span class="chatbot-fab-text">Ask Doctor</span>' +
-        '<span class="chatbot-badge" id="chatbotBadge" aria-label="1 new message">1</span>' +
+        '<span class="chatbot-fab-text" data-l10n="chatbot.ask_doctor">Ask Doctor</span>' +
+        '<span class="chatbot-badge" id="chatbotBadge" data-l10n-aria-label="chatbot.1_new_message" aria-label="1 new message">1</span>' +
         '</button>' +
 
         '</div>';
@@ -113,14 +113,14 @@
     var hasOpened = false;
 
     /* ── Helpers ── */
-    function addMessage(text, sender) {
+    function addMessage(text, sender, systemMessage = false) {
         /* sender: 'bot' | 'user' */
         var msgEl = document.createElement('div');
         msgEl.className = 'chatbot-msg ' + sender;
 
         if (sender === 'bot') {
             msgEl.innerHTML =
-                '<div class="chatbot-msg-avatar"><img src="' + BOT_ICON + '" alt="bot"></div>' +
+                '<div class="chatbot-msg-avatar"><img src="' + BOT_ICON + '" data-l10n-alt="chatbot.bot" alt="bot"></div>' +
                 '<div>' +
                 '<div class="chatbot-msg-bubble">' + escHtml(text) + '</div>' +
                 '<div class="chatbot-msg-time">' + getTime() + '</div>' +
@@ -133,6 +133,7 @@
                 '</div>';
         }
 
+        if (systemMessage) window.micrositeLanguage.setMessage(msgEl.querySelector('.chatbot-msg-bubble'), 'chatbot', text);
         messagesEl.appendChild(msgEl);
         scrollToBottom();
     }
@@ -142,7 +143,7 @@
         el.className = 'chatbot-typing';
         el.id = 'chatbotTyping';
         el.innerHTML =
-            '<div class="chatbot-msg-avatar"><img src="' + BOT_ICON + '" alt="bot"></div>' +
+            '<div class="chatbot-msg-avatar"><img src="' + BOT_ICON + '" data-l10n-alt="chatbot.bot" alt="bot"></div>' +
             '<div class="chatbot-typing-dots"><span></span><span></span><span></span></div>';
         messagesEl.appendChild(el);
         scrollToBottom();
@@ -160,7 +161,7 @@
     function addDivider(label) {
         var el = document.createElement('div');
         el.className = 'chatbot-divider';
-        el.textContent = label;
+        window.micrositeLanguage.setMessage(el, 'chatbot', label);
         messagesEl.appendChild(el);
     }
 
@@ -178,7 +179,7 @@
         if (!hasOpened) {
             hasOpened = true;
             addDivider('Today');
-            addMessage(WELCOME_MSG, 'bot');
+            addMessage(WELCOME_MSG, 'bot', true);
         }
 
         /* Hide badge */
@@ -220,7 +221,7 @@
         wrap.classList.remove('is-kb-open');
         kbBaseHeight = 0;
         fab.setAttribute('aria-expanded', 'false');
-        fab.setAttribute('aria-label', 'Open Assistant');
+        fab.setAttribute('aria-label', window.micrositeLanguage.message('chatbot', 'Open Assistant'));
         if (backdrop) backdrop.setAttribute('aria-hidden', 'true');
         window_.classList.add('is-closing');
 
@@ -266,14 +267,14 @@
                 var reply =
                     (data && (data.reply || data.message || data.answer || data.response)) ||
                     "Thanks for your message! Our team will get back to you shortly. For immediate assistance, please call or visit our support page.";
-                addMessage(reply, 'bot');
+                addMessage(reply, 'bot', !(data && (data.reply || data.message || data.answer || data.response)));
             })
             .catch(function (err) {
                 console.error('MicrositeChat error:', err);
                 hideTyping();
                 addMessage(
                     "Sorry, I'm having trouble responding right now. Please call or visit our support page for immediate assistance.",
-                    'bot'
+                    'bot', true
                 );
             });
     }

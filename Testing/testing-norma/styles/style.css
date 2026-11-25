@@ -983,6 +983,35 @@ html { scroll-behavior:smooth; scroll-padding-top:100px; } html,body { margin:0;
 @media(max-width:1100px){.hero-backdrop::after{background:linear-gradient(180deg,rgba(252,249,245,.98) 0%,rgba(252,249,245,.94) 54%,rgba(252,249,245,.58) 100%);}}
 
 .site-header{background:var(--brand-dark);border-bottom:3px solid #c8baa0;box-shadow:none;}
+/* Inset the visible header pills while keeping the full controls tappable. */
+.site-header {
+  --header-control-height: 44px;
+  --header-pill-inset: 4px;
+}
+@media (min-width: 1201px) {
+  .site-header .navbar { column-gap: 8px; }
+}
+.site-header .cta-btn {
+  position: relative;
+  isolation: isolate;
+  min-height: var(--header-control-height);
+  padding-block: var(--header-pill-inset);
+  font-weight: 600;
+  background: transparent;
+  box-shadow: none;
+}
+.site-header .cta-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: var(--header-pill-inset) 0;
+  border-radius: inherit;
+  background: var(--button);
+  box-shadow: var(--shadow-accent);
+  pointer-events: none;
+  transition: background-color .2s;
+}
+.site-header .cta-btn:hover::before { background: var(--button-hover); }
 .site-header .brand-name,.site-header .brand-role,.site-header .nav-links a{color:#fff;}.site-header .avatar{border-color:#d8cfbc;}.site-header .menu-toggle span{background:#fff;}.site-header .nav-links a:hover{background:rgba(255,255,255,.12);}
 h1,h2{font-weight:400;letter-spacing:-.015em;} h1{line-height:1.12;}
 .hero-role{background:var(--bg);border:1px solid var(--brand);font-weight:700;}
@@ -1019,27 +1048,29 @@ h1,h2{font-weight:700;}
 }
 .hero-stat-box span, .contact-item > div { min-width: 0; overflow-wrap: anywhere; }
 
+@media (max-width: 1100px) {
+  .hero-visual { grid-row: 1; }
+}
+
 @media (max-width: 640px) {
-  .hero-layout {
-    grid-template-columns: minmax(0, 1fr) clamp(82px, 24vw, 128px);
-    gap: 8px 12px;
+  .hero-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
   }
-  .hero-content { display: contents; }
-  .hero-role { grid-column: 1; justify-self: start; margin: 0; }
-  .hero-content h1 { grid-column: 1; margin: 0 0 12px; }
+  .hero-role { justify-self: start; margin: 0; }
+  .hero-content h1 { margin: 0 0 12px; }
   .hero-visual {
-    grid-row: 1 / 3;
-    grid-column: 2;
+    max-width: clamp(170px, 50vw, 220px);
     padding: 5px;
-    align-self: center;
   }
   .hero-portrait { border-width: 3px; outline-offset: 3px; }
   .portrait-seal { display: none; }
   .hero-content > p, .hero-stats, .hero-actions, .hero-content > .social-links {
-    grid-column: 1 / -1;
     margin: 0;
   }
   .hero-stats { margin: 12px 0; }
+  .hero-actions { justify-content: center; }
   .hero-stat-box:last-child {
     grid-column: 1 / -1;
     flex-direction: row;

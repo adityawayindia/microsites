@@ -1,0 +1,36 @@
+{
+  "profile": {
+    "general_physician": "General Physician",
+    "english_hindi_kannada": "English, Hindi, Kannada"
+  },
+  "about": {
+    "general_medical_care_that_considers_your_symptoms": "General medical care that considers your symptoms, your history and your daily life.",
+    "doctor_name_is_a_general_physician_offering": "{{doctor_name}} is a general physician offering consultations for adult health concerns, preventive care and ongoing medical conditions. A visit starts with the symptoms or questions that matter to you, followed by a discussion of your health history, medicines and daily routines. The doctor reviews available reports and examines you when needed before explaining the findings. Further tests or a specialist opinion may be discussed if they would help clarify the next steps. Care plans take account of your priorities and practical circumstances. Follow-up appointments allow time to review progress, test results and changes in your health. Clinic visits and online consultations are available when enabled by the practice; the doctor may recommend an in-person assessment when an examination is needed."
+  },
+  "services": {
+    "general_medical_consultations": "General medical consultations",
+    "assessment_of_new_symptoms_medical_history_and": "Assessment of new symptoms, medical history and current medicines, with an explanation of the next steps.",
+    "diabetes_reviews": "Diabetes reviews",
+    "ongoing_consultations_to_review_blood_sugar_records": "Ongoing consultations to review blood sugar records, medicines and individual care goals.",
+    "blood_pressure_care": "Blood pressure care",
+    "review_of_blood_pressure_readings_current_treatment": "Review of blood pressure readings, current treatment and relevant health concerns.",
+    "fever_and_infections": "Fever and infections",
+    "clinical_assessment_of_fever_and_common_infections": "Clinical assessment of fever and common infections, with investigations or referral when appropriate.",
+    "preventive_health_reviews": "Preventive health reviews",
+    "a_discussion_of_personal_health_risks_screening": "A discussion of personal health risks, screening needs and everyday health routines.",
+    "long_term_care_follow_up": "Long-term care follow-up",
+    "review_of_continuing_medical_conditions_test_results": "Review of continuing medical conditions, test results and coordination with other specialists."
+  },
+  "philosophy": {
+    "considered_individual_care": "Considered, individual care",
+    "listen_with_care": "Listen with care",
+    "a_full_conversation_about_your_concerns_routines": "A full conversation about your concerns, routines and existing treatment.",
+    "explain_the_choices": "Explain the choices",
+    "understand_what_is_being_considered_why_it": "Understand what is being considered, why it may be suitable and what comes next.",
+    "review_together": "Review together",
+    "follow_up_visits_make_space_to_discuss": "Follow-up visits make space to discuss changes and reassess the plan."
+  },
+  "footer": {
+    "general_medical_care_with_time_for_you": "General medical care, with time for you."
+  }
+}

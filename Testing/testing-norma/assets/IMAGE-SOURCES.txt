@@ -35,3 +35,6 @@ Prompt summary: Black and silver stethoscope, blood pressure cuff and digital th
 favicon.svg: original code-native vector artwork. chatbot-icon.svg: shared DigiDr project asset.
 
 Images optimized as JPEG; originals retained. Each source/param pair uses the same imagery.
+
+google-translate-attribution.svg is the unmodified full-colour badge from Google's official Cloud Translation attribution download.
+https://docs.cloud.google.com/translate/attribution

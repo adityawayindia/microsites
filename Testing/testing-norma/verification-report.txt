@@ -7,7 +7,7 @@ declared CDN dependencies and local API responses.
 
 Item | Status | Evidence | Fix applied
 1–2 Header and navigation | PASS | index.html:34, script/index.js:976. The mobile menu opened and its FAQ link cleared the URL fragment. Full names wrapped at both sides of the 1200px breakpoint. | The logo targets the hero.
-3–6a Profile | PASS | index.html:67, script/index.js:1033. Three counters read their target text. Eight unavailable social links have accessible names. | The phone layout places the portrait beside the name.
+3–6a Profile | PASS | index.html, styles/style.css. Chromium checks covered all four languages and ten widths from 320px to 1440px, including both sides of the 1100px breakpoint. | The centered portrait appears above every hero detail in the single-column layout. Wider screens show the portrait to the right of the profile.
 7 About | PASS | index.html:86, script/index.js:1628. A long bio expanded and collapsed; a short replacement hid the toggle. | Identified the profile as illustrative.
 8–9 Services | PASS | index.html:95, styles/style.css:81. Grids with 4, 5, 6 and 7 items centered their final rows at eight widths. | Removed decorative card numbers.
 E1–E5 Social feed | PASS with fixtures | index.html:120, script/index.js:1284. The empty feed hid the section. Five qualifying fixture posts populated the carousel and the mobile next control scrolled it. | Paging initializes when the cards render.
@@ -34,3 +34,25 @@ Real appointment availability, submission, the visitor counter and production
 GA4 collection require the identifiers assigned to this site. The test used no
 real patient data. Live Facebook embeds, Clarity ingestion, production chatbot
 replies and physical-device keyboard behavior were not exercised.
+
+Share profile update, 25 November 2026
+
+Item | Status | Evidence | Change
+Hero placement | PASS | index.html, components/share-profile/share-profile.css. Checked all four languages at ten widths from 320px to 1900px. | Share profile and WhatsApp appear side by side. Both controls measure at least 44px high.
+WhatsApp sharing | PASS with intercepted navigation | components/share-profile/share-profile.js. Keyboard activation and a mobile-emulated tap opened the WhatsApp URL with the canonical profile link prefilled. | The visitor chooses the recipient in WhatsApp.
+Share button colors | PASS | components/share-profile/share-profile.css. Computed label contrast at 375px and 1440px was at least 5.39:1 across default, hover and focus states. | Share profile uses solid plum and WhatsApp uses #25D366 green.
+Device sharing | PASS with simulated share API | components/share-profile/share-profile.js. A tap in Chromium mobile touch emulation and keyboard activation invoked sharing with the doctor's name and canonical profile URL. Tested user activation, completion, cancellation, repeated taps and access denial. The component also parsed as ES2017. | Cancelling preserves the clipboard. The native operating-system share menu was not exercised.
+Copy fallback | PASS | components/share-profile/share-profile.js. Chromium's clipboard contained the canonical URL after sharing was unavailable. The label briefly read "Link copied" before returning to "Share profile". | A denied or unavailable clipboard reveals a focused, selected URL for manual copying.
+Hover animation | PASS | components/share-profile/share-profile.css. In Chromium the button lifted on hover and the icon tilted once, settled, and replayed on pointer re-entry. Checked reduced motion, keyboard focus and a mobile-emulated tap. | Motion is limited to hover-capable devices with no reduced-motion preference.
+Reuse and regression | PASS locally | A second instance in the footer used a different test canonical URL. The original booking action still opened the modal. | Reran the existing site browser checks with local fixtures. The accessibility scans reported zero violations in the tested states.
+Portable component | PASS in Chromium | Loaded the component on a separate fixture with default colors, a second brand palette, and explicit theme overrides. Checked paired and single actions, focus and hover contrast, and clipboard feedback in all four languages on the pilot. | Both actions use equal-height pills and single-color icons. The WhatsApp shortcut stays in place when the copy label changes.
+
+Google Cloud NMT language support, 25 November 2026
+
+Item | Status | Evidence | Change
+Translation generation | PASS | The shared Google Cloud general/nmt generator made 99 calls for 6,366 input characters across Hindi, Odia and Bengali. It also reused cached translations and existing wording. | build_translations.py packages the catalogs with this site's English copy and doctor facts.
+Language selection | PASS | Tested all four languages in Chromium at nine widths from 320px to 1900px, with HTTP and direct file opening. Both legal pages retained the selection. | Added a desktop header picker, a mobile menu picker, and a picker on each legal page.
+Interactions | PASS locally | Tested translated FAQs, sharing and copy feedback, chat controls, cancellation, booking validation, consent and both confirmation modes with local fixtures. Confirmed no calls to the Google Translation API from the browser. | Language switching preserves entered patient text and recovers from missing or delayed catalog loads.
+Language review | OPEN | The generated catalogs are machine-translation drafts. The existing English limitation-of-liability clause contains the undefined word "incimedical". | Bilingual review and clarification of that source term are pending.
+Picker animation | PASS in Chromium | Checked hover, opening and reopening, keyboard selection, Escape and reduced motion on all three pages. A phone-emulated tap opened the animated picker and selected Bengali. | The globe and chevron turn and the menu fades and slides into place.
+Header button height | PASS in Chromium | Both the language picker and appointment button have 36px visible pills and 44px click targets at 320, 375, 1200 and 1440px in all four languages. Clicks in the top margin opened each control. The native select fallback also retained the compact sizing.

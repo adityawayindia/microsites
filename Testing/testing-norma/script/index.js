@@ -84,7 +84,21 @@ initPhonePlugin();
     const gridEl = calendar.querySelector("[data-cal-grid]");
     const prevBtn = calendar.querySelector("[data-cal-prev]");
     const nextBtn = calendar.querySelector("[data-cal-next]");
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    document.addEventListener("site-language-change", () => {
+        render();
+        if (hiddenInput.value && selectedDate) trigger.value = formatDisplay(selectedDate);
+        const weekdays = calendar.querySelectorAll(".booking-calendar-weekdays span");
+        weekdays.forEach((label, day) => {
+            const date = new Date(2023, 0, 1 + day); // January 1 was a Sunday.
+            const language = document.documentElement.lang;
+            const locale = language + "-IN";
+            label.title = date.toLocaleDateString(locale, { weekday: "long" });
+            // The language switcher sets the short weekday names from the catalog.
+            if (label.dataset.l10n) return;
+            label.textContent = language === "en"
+                ? label.title.slice(0, 2) : date.toLocaleDateString(locale, { weekday: "narrow" });
+        });
+    });
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -122,14 +136,14 @@ initPhonePlugin();
 
     function pad(n) { return String(n).padStart(2, "0"); }
     function formatISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
-    function formatDisplay(d) { return `${pad(d.getDate())} ${monthNames[d.getMonth()].slice(0, 3)} ${d.getFullYear()}`; }
+    function formatDisplay(d) { return d.toLocaleDateString(document.documentElement.lang + "-IN", { day: "2-digit", month: "short", year: "numeric" }); }
     function isSameDay(a, b) {
         return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
     }
 
     function render() {
         if (!titleEl || !gridEl) return;
-        titleEl.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
+        titleEl.textContent = viewDate.toLocaleDateString(document.documentElement.lang + "-IN", { month: "long", year: "numeric" });
         gridEl.innerHTML = "";
 
         const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
@@ -531,7 +545,7 @@ initPhonePlugin();
             // under the other type must not carry over. Name, phone, email etc. are kept.
             form.dispatchEvent(new CustomEvent("slotreset"));
             const timeSelect = document.getElementById("preferredTime");
-            if (timeSelect) timeSelect.innerHTML = '<option value="">Select Time Slot</option>';
+            if (timeSelect) timeSelect.innerHTML = '<option value="" data-l10n="booking.select_time_slot">Select Time Slot</option>';
             showError("preferredDate", "");
             showError("preferredTime", "");
             form.classList.remove("is-switching");
@@ -589,13 +603,13 @@ initPhonePlugin();
     function showError(name, message) {
         const errorEl = form.querySelector(`.booking-error[data-error-for="${name}"]`);
         if (errorEl) {
-            errorEl.textContent = message || "";
+            window.micrositeLanguage.setMessage(errorEl, "booking", message || "");
         }
     }
 
     function clearErrors() {
         form.querySelectorAll(".booking-error").forEach((el) => {
-            el.textContent = "";
+            window.micrositeLanguage.setMessage(el, "booking", "");
         });
     }
 
@@ -652,7 +666,7 @@ initPhonePlugin();
             filePreviewDiv.innerHTML = `
                 <div class="preview-container">
                     <div style="text-align: center; padding: 20px;">
-                        <p style="margin: 0; color: #666;">Compressing image...</p>
+                        <p data-l10n="booking.compressing_image" style="margin: 0; color: #666;">Compressing image...</p>
                     </div>
                 </div>
             `;
@@ -682,7 +696,7 @@ initPhonePlugin();
                     previewReader.onload = (event) => {
                         filePreviewDiv.innerHTML = `
                         <div class="preview-container">
-                            <img src="${event.target.result}" alt="Preview" class="preview-image" />
+                            <img src="${event.target.result}" alt="Preview" data-l10n-alt="booking.preview" class="preview-image" />
                             <div class="preview-info">
                                 <p class="preview-name"></p>
                                 <p class="preview-size">${compressedSizeKB} KB</p>
@@ -698,7 +712,7 @@ initPhonePlugin();
                     filePreviewDiv.innerHTML = `
                     <div class="preview-container">
                         <div style="text-align: center; padding: 20px; color: #f44336;">
-                            <p>Error compressing image. Please try another file.</p>
+                            <p data-l10n="booking.error_compressing_image_please_try_another_file">Error compressing image. Please try another file.</p>
                         </div>
                     </div>
                 `;
@@ -749,12 +763,12 @@ initPhonePlugin();
             const slots = await response.json();
 
             preferredTimeSelect.innerHTML =
-                `<option value="">Select Time Slot</option>`;
+                `<option value="" data-l10n="booking.select_time_slot">Select Time Slot</option>`;
 
             if (!slots || slots.length === 0) {
 
                 preferredTimeSelect.innerHTML =
-                    `<option value="">No Slots Available</option>`;
+                    `<option value="" data-l10n="booking.no_slots_available">No Slots Available</option>`;
 
                 return;
             }
@@ -908,7 +922,9 @@ initPhonePlugin();
                 showPopup(msg, true);
                 window.__trackBookingSuccess?.("online");
             } else if (appointmentTypeResult === "offline") {
-                const location = [clinicName, clinicAddress, clinicDistrict, clinicState, clinicPincode].filter(Boolean).join(', ');
+                const locality = [clinicDistrict, clinicState].filter(Boolean).join(', ') + (clinicPincode ? ' – ' + clinicPincode : '');
+                const location = [clinicName, clinicAddress, locality].filter(Boolean)
+                    .map(value => window.micrositeLanguage.message("display_facts", value)).join(', ');
                 showPopup('Your appointment is confirmed.\n\n' + location + '\n\nPlease arrive 15 minutes before your appointment. Check your email for the confirmation details.');
                 window.__trackBookingSuccess?.("offline");
             }
@@ -921,7 +937,7 @@ initPhonePlugin();
 
         } catch (err) {
             console.error(err);
-            alert("Something went wrong.");
+            alert(window.micrositeLanguage.message("booking", "Something went wrong."));
 
         }
         finally {
@@ -943,10 +959,11 @@ initPhonePlugin();
         popup.innerHTML = `<div class="booking-result">
             <h2 id="bookingResultTitle"></h2>
             <p></p>
-            <button type="button" id="popupOkBtn">OK</button>
+            <button type="button" id="popupOkBtn" data-l10n="booking.ok">OK</button>
         </div>`;
-        popup.querySelector("h2").textContent = success ? "Appointment confirmed" : "Booking unsuccessful";
-        popup.querySelector("p").textContent = message;
+        window.micrositeLanguage.setMessage(popup.querySelector("h2"), "booking", success ? "Appointment confirmed" : "Booking unsuccessful");
+        popup.querySelector("p").textContent = String(message).split("\n\n")
+            .map(line => window.micrositeLanguage.message("booking", line)).join("\n\n");
         popup.querySelector("button").addEventListener("click", () => popup.remove());
         document.body.appendChild(popup);
     }
@@ -971,9 +988,34 @@ const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
 if (menuToggle && mainNav) {
-  menuToggle.addEventListener("click", () => {
+  const languageRow = mainNav.querySelector(".menu-language-row");
+  const status = document.getElementById("languageStatus");
+  const compactHeader = window.matchMedia("(max-width: 1200px)");
+  function arrangeMenu() {
+    const before = compactHeader.matches ? mainNav.querySelector("a") : null;
+    mainNav.insertBefore(languageRow, before);
+    mainNav.insertBefore(status, before);
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+  arrangeMenu();
+  compactHeader.addEventListener("change", arrangeMenu);
+
+  function closeMenu() {
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.focus();
+  }
+  menuToggle.addEventListener("click", (event) => {
     const isOpen = mainNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
+    if (isOpen && event.detail === 0) mainNav.querySelector(".language-trigger, a")?.focus();
+  });
+
+  mainNav.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mainNav.classList.contains("open")) {
+      closeMenu();
+    }
   });
 
   document.addEventListener("click", (event) => {
@@ -1148,6 +1190,7 @@ window.__trackBookingSuccess = function (type) {
     prevBtn = document.createElement("button");
     prevBtn.id = "galleryLightboxPrev";
     prevBtn.className = "gallery-lightbox-nav gallery-lightbox-prev";
+    prevBtn.dataset.l10nAriaLabel = "gallery.previous_image";
     prevBtn.setAttribute("aria-label", "Previous image");
     prevBtn.innerHTML = "&lsaquo;";
     lightbox.appendChild(prevBtn);
@@ -1156,6 +1199,7 @@ window.__trackBookingSuccess = function (type) {
     nextBtn = document.createElement("button");
     nextBtn.id = "galleryLightboxNext";
     nextBtn.className = "gallery-lightbox-nav gallery-lightbox-next";
+    nextBtn.dataset.l10nAriaLabel = "gallery.next_image";
     nextBtn.setAttribute("aria-label", "Next image");
     nextBtn.innerHTML = "&rsaquo;";
     lightbox.appendChild(nextBtn);
@@ -1168,6 +1212,7 @@ window.__trackBookingSuccess = function (type) {
     const img = galleryImages[currentIdx];
     if (img) {
       lightboxImage.src = img.src;
+      lightboxImage.dataset.l10nAlt = img.dataset.l10nAlt || "gallery.enlarged_gallery_image";
       lightboxImage.alt = img.alt || "Enlarged gallery image";
       lightbox.classList.add("is-open");
       lightbox.setAttribute("aria-hidden", "false");
@@ -1372,6 +1417,8 @@ window.__trackBookingSuccess = function (type) {
         icon.setAttribute("aria-hidden", "true");
 
         const label = document.createElement("span");
+        label.dataset.l10n = card.dataset.account ? "social_media.view_this_post_from_account_name_on" : "social_media.view_this_post_on_facebook";
+        label.dataset.account_name = card.dataset.account || "";
         label.textContent = card.dataset.account
             ? "View this post from " + card.dataset.account + " on Facebook"
             : "View this post on Facebook";
@@ -1445,6 +1492,8 @@ window.__trackBookingSuccess = function (type) {
         link.href = entry.permalink;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
+        link.dataset.l10n = entry.accountName ? "social_media.view_this_post_from_account_name_on" : "social_media.view_this_post_on_facebook";
+        link.dataset.account_name = entry.accountName || "";
         link.textContent = entry.accountName
             ? "View this post from " + entry.accountName + " on Facebook"
             : "View this post on Facebook";
@@ -1580,16 +1629,16 @@ window.__trackBookingSuccess = function (type) {
   new MutationObserver(()=>{
     const dialog=document.getElementById('customPopup')||document.querySelector('#consentModal.is-open')||document.querySelector('#bookingModal.is-open')||document.querySelector('.gallery-lightbox.is-open');
     if(dialog===lastDialog)return;
-    if(dialog){if(!lastDialog && !dialog.contains(document.activeElement))lastFocused=document.activeElement;if(dialog.id==='customPopup'){dialog.setAttribute('role','dialog');dialog.setAttribute('aria-modal','true');dialog.setAttribute('aria-label','Appointment confirmation');}const target=lastDialog?.id==='consentModal'&&dialog.id==='bookingModal'?document.getElementById('consentCheckbox'):dialog.querySelector('button,input:not([type="hidden"])');queueMicrotask(()=>target?.focus());}
+    if(dialog){if(!lastDialog && !dialog.contains(document.activeElement))lastFocused=document.activeElement;if(dialog.id==='customPopup'){dialog.setAttribute('role','dialog');dialog.setAttribute('aria-modal','true');dialog.setAttribute('aria-label',window.micrositeLanguage.message('booking','Appointment confirmation'));}const target=lastDialog?.id==='consentModal'&&dialog.id==='bookingModal'?document.getElementById('consentCheckbox'):dialog.querySelector('button,input:not([type="hidden"])');queueMicrotask(()=>target?.focus());}
     else if(lastFocused?.isConnected)lastFocused.focus();lastDialog=dialog;
   }).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});
   const form=document.getElementById('bookingForm');if(!form)return;
   const fullName=form.elements.fullName,phone=form.elements.phone,report=form.elements.report,preview=document.getElementById('filePreview');
-  const error=(key,message)=>{const el=form.querySelector('[data-error-for="'+key+'"]');if(el){el.textContent=message;el.setAttribute('role','alert');}};
+  const error=(key,message)=>{const el=form.querySelector('[data-error-for="'+key+'"]');if(el){window.micrositeLanguage.setMessage(el,'booking',message);el.setAttribute('role','alert');}};
   fullName.addEventListener('input',()=>{fullName.value=fullName.value.replace(/[^\p{L}\p{M}\s'’-]/gu,'');});
   document.querySelector('.booking-upload-btn')?.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();report.click();}});
   report.addEventListener('change',event=>{const file=report.files[0];error('report','');if(!file)return;const valid=['application/pdf','image/jpeg','image/png'].includes(file.type);if(!valid||file.size>5*1024*1024){event.stopImmediatePropagation();report.value='';queueMicrotask(()=>{report.dispatchEvent(new Event('change',{bubbles:true}));error('report',!valid?'Choose a PDF, JPG or PNG file.':'Please choose a file no larger than 5 MB.');});}},true);
-  new MutationObserver(()=>{if(!report.files.length||!preview.querySelector('.preview-info')||preview.querySelector('.file-remove'))return;const remove=document.createElement('button');remove.type='button';remove.className='file-remove';remove.textContent='Remove report';remove.addEventListener('click',()=>{report.value='';report.dispatchEvent(new Event('change',{bubbles:true}));});preview.append(remove);}).observe(preview,{childList:true,subtree:true});
+  new MutationObserver(()=>{if(!report.files.length||!preview.querySelector('.preview-info')||preview.querySelector('.file-remove'))return;const remove=document.createElement('button');remove.type='button';remove.className='file-remove';remove.dataset.l10n='booking.remove_report';remove.textContent='Remove report';remove.addEventListener('click',()=>{report.value='';report.dispatchEvent(new Event('change',{bubbles:true}));});preview.append(remove);}).observe(preview,{childList:true,subtree:true});
   const tab=document.getElementById('onlineConsultTab'),tip=document.getElementById('onlineConsultTip');tab?.addEventListener('focus',()=>{if(tab.matches(':focus-visible'))tip.hidden=false;});tab?.addEventListener('blur',()=>tip.hidden=true);
   form.addEventListener('submit',event=>{
     const fail=[];const name=fullName.value.trim();
@@ -1600,8 +1649,8 @@ window.__trackBookingSuccess = function (type) {
     if(!form.elements.preferredTime.value)fail.push(['preferredTime','Please select a time slot.']);
     if(form.elements.reason.value.trim().length<10)fail.push(['reason','Please describe your reason for visiting in at least 10 characters.']);
     if(!form.elements.consentCheckbox.checked)fail.push(['consentCheckbox','Please read and agree to the consent notice.']);
-    if(preview.textContent.includes('Compressing image'))fail.push(['report','Please wait for your report to finish preparing.']);
-    if(fail.length){event.preventDefault();event.stopImmediatePropagation();form.querySelectorAll('.booking-error').forEach(el=>el.textContent='');fail.forEach(([key,message])=>error(key,message));const field=form.querySelector('[name="'+fail[0][0]+'"]');if(field?.type!=='hidden')field?.focus();}
+    if(preview.querySelector('[data-l10n="booking.compressing_image"]'))fail.push(['report','Please wait for your report to finish preparing.']);
+    if(fail.length){event.preventDefault();event.stopImmediatePropagation();form.querySelectorAll('.booking-error').forEach(el=>window.micrositeLanguage.setMessage(el,'booking',''));fail.forEach(([key,message])=>error(key,message));const field=form.querySelector('[name="'+fail[0][0]+'"]');if(field?.type!=='hidden')field?.focus();}
   },true);
 })();
 
@@ -1615,7 +1664,7 @@ if(incomingSectionHash && performance.getEntriesByType('navigation')[0]?.type !=
     var btn = wrap.querySelector(".read-more-btn");
     var content = wrap.querySelector(".read-more-content");
     if (!btn || !content) return;
-    var isTruncated = content.scrollHeight > content.clientHeight + 2;
+    var isTruncated = wrap.classList.contains("is-expanded") || content.scrollHeight > content.clientHeight + 2;
     btn.style.display = isTruncated ? "" : "none";
   }
   function bindToggle(wrap) {
@@ -1626,7 +1675,7 @@ if(incomingSectionHash && performance.getEntriesByType('navigation')[0]?.type !=
     btn.addEventListener("click", function () {
       var expanded = wrap.classList.toggle("is-expanded");
       btn.setAttribute("aria-expanded", expanded ? "true" : "false");
-      if (label) label.textContent = expanded ? "Read Less" : "Read More";
+      if (label) window.micrositeLanguage.setMessage(label, "about", expanded ? "Read Less" : "Read More");
     });
   }
   function initReadMore(root) {

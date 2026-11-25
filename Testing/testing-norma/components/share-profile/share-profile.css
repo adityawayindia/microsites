@@ -1,0 +1,181 @@
+digidr-share-profile {
+  display: inline-grid;
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  font-family: var(--font-body, system-ui, sans-serif);
+}
+
+digidr-share-profile:empty,
+digidr-share-profile [hidden] {
+  display: none;
+}
+
+digidr-share-profile[with-whatsapp] {
+  grid-template-columns: minmax(0, max-content) max-content;
+}
+
+digidr-share-profile .share-action {
+  --action-fill: var(--profile-share-bg, var(--brand, #513850));
+  --action-hover: var(--profile-share-hover, var(--brand-dark, #352334));
+  --action-ink: var(--profile-share-ink, #fff);
+  --action-border: var(--action-fill);
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 46px;
+  margin: 0;
+  padding: 9px 14px;
+  border: 1px solid var(--action-border);
+  border-radius: var(--radius-pill, 999px);
+  background-color: var(--action-fill);
+  color: var(--action-ink);
+  font: 700 18px/1.35 var(--font-body, system-ui, sans-serif);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+digidr-share-profile .whatsapp-share {
+  --action-fill: #25d366;
+  --action-hover: #20c15d;
+  --action-ink: #083a24;
+  --action-border: #1b8248;
+}
+
+digidr-share-profile .share-action i {
+  flex: none;
+  width: 1em;
+  font-size: 20px;
+  line-height: 1;
+  color: inherit;
+}
+
+digidr-share-profile .whatsapp-share i { font-size: 22px; }
+
+digidr-share-profile[side-rail] {
+  position: fixed;
+  z-index: 400;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  grid-template-columns: 1fr;
+  gap: 0;
+  width: 48px;
+  border-radius: 15px 0 0 15px;
+  box-shadow: 0 3px 14px rgb(0 0 0 / 15%);
+}
+@media (max-width: 640px) {
+  digidr-share-profile[side-rail] { top: 42%; }
+}
+digidr-share-profile[side-rail] .share-action {
+  position: relative;
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  transform: none;
+}
+digidr-share-profile[side-rail] .share-action:first-child { border-top-left-radius: 15px; }
+digidr-share-profile[side-rail] .whatsapp-share { border-bottom-left-radius: 15px; }
+digidr-share-profile[side-rail] .call-action {
+  --action-fill: #ae303b;
+  --action-hover: #90232d;
+  --action-ink: white;
+}
+digidr-share-profile[side-rail] [aria-disabled="true"] {
+  --action-fill: #6c6165;
+  --action-hover: #6c6165;
+  cursor: default;
+}
+digidr-share-profile[side-rail] :is(.action-name, .share-label) {
+  position: absolute;
+  right: calc(100% + 5px);
+  width: max-content;
+  max-width: calc(100vw - 70px);
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--brand-dark, #352334);
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+}
+digidr-share-profile[side-rail] :is(:hover, :focus-visible, .is-copied) > :is(.action-name, .share-label) { opacity: 1; }
+digidr-share-profile[side-rail] label {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 6px);
+  width: min(250px, calc(100vw - 65px));
+  padding: 10px;
+  background: var(--surface, white);
+  border-radius: 10px;
+}
+
+digidr-share-profile .share-label {
+  display: grid;
+  min-width: 0;
+}
+
+digidr-share-profile .share-action span {
+  color: inherit;
+  font: inherit;
+}
+
+digidr-share-profile .share-label > span {
+  grid-area: 1 / 1;
+  align-self: center;
+  overflow-wrap: anywhere;
+}
+
+/* Both labels size the button. Only the current one is visible or announced. */
+digidr-share-profile button:not(.is-copied) .share-copied,
+digidr-share-profile button.is-copied .share-default {
+  visibility: hidden;
+}
+
+digidr-share-profile .share-action:focus-visible {
+  outline: 3px solid var(--profile-share-focus, var(--brand-dark, #352334));
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+@media (hover: hover) {
+  digidr-share-profile .share-action:hover { background-color: var(--action-hover); }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  digidr-share-profile .share-action { transition: transform 160ms ease-out, background-color 160ms ease-out; }
+  digidr-share-profile .share-action:hover { transform: translateY(-2px); }
+  digidr-share-profile .share-action:active { transform: translateY(0); }
+  digidr-share-profile button:hover .fa-share-nodes { animation: digidr-share-pop 360ms ease-out; }
+
+  @keyframes digidr-share-pop {
+    0%, 100% { transform: none; }
+    50% { transform: rotate(-10deg) scale(1.1); }
+  }
+}
+
+digidr-share-profile label {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 4px;
+  min-width: 0;
+  font-size: 18px;
+}
+
+digidr-share-profile input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 4px 10px;
+  border: 1px solid var(--brand, #513850);
+  border-radius: var(--radius-sm, 12px);
+  background: var(--surface, #fff);
+  color: var(--text, #302930);
+  font: inherit;
+}

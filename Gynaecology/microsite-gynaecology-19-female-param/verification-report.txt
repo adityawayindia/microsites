@@ -61,7 +61,7 @@ CHECKLIST: Item | Status | Evidence | Notes
 37 | PASS (local) | index.html:5 | Required section order verified; social section hides when API has no usable posts.
 38 | PASS (local) | robots.txt:1; sitemap.xml:1; llms.txt:1 | Per-site draft URLs, doctor and specialty; param URLs use slug with extension-free routes.
 39 | PASS (local) | index.html:5 | No blog page or navigation link. Reference blog-detail-* classes remain only as legal-shell class names.
-40 | PASS (local) | index.html:1 | No previous doctor/specialty copy, TODO or Lorem. Only intentional placeholders: registration/contact defaults, GA4 ID and param fields.
+40 | PASS (local) | index.html:1 | No previous doctor/specialty copy, TODO or Lorem. Only intentional placeholders: registration/contact defaults and param fields.
 41 | PASS (local) | index.html:37 | Gender-appropriate specialist profile and consultation-focused copy; illustrative doctor/clinic details must be configured before publication.
 42 | PASS (local) | assets/IMAGE-SOURCES.txt:1 | Generated assets reviewed; only the doctor portrait contains a person. No unverifiable cure claims or testimonials.
 42a | PASS (local) | index.html:37 | No prohibited trust/reliability wording in visible content or metadata.
@@ -89,7 +89,7 @@ CHECKLIST: Item | Status | Evidence | Notes
 E1-E5 | PASS with fixtures; live account content UNVERIFIED | index.html social-media; script/index.js fetchDoctorPosts/loadFbSdk/settleCard | qualifying posts, centering, lazy SDK, blocked fallback and carousel navigation.
 
 ANALYTICS S1-S5
-User-requested GA4 placeholder retained. Clarity project ymqvcvdc4v; configured specialty tag. Live collection unverified.
+GA4 loader and configuration verified on all three pages with measurement ID G-JZLFWHZEYX. Clarity project ymqvcvdc4v; configured specialty tag. Live collection unverified.
 nav_link_click | About | GA4 1, Clarity 1 | correct page_path
 nav_link_click | Services | GA4 1, Clarity 1 | correct page_path
 nav_link_click | Contact | GA4 1, Clarity 1 | correct page_path
@@ -147,3 +147,16 @@ SCOPE
 Only the fourteen new Gynaecology folders and their param versions are edited by this agent. Separate shared-workspace commits, including Homeopathy changes, a replacement FAQ PDF, shared chatbot icon and completed new sites, are preserved. This agent has not deleted existing files, committed, pushed or deployed.
 Generated portraits and supporting images are local in assets/. Prompts and provenance: assets/IMAGE-SOURCES.txt.
 QA evidence: C:\Users\Lenovo\AppData\Local\Temp\digidr-gyn14-qa\39\param
+25 November 2026 | Journey, FAQ and visual refinement
+Item | Status | Evidence | Change verified
+11 | PASS | index.html:67 and styles/style.css:956 | Four numbered stages form a horizontal timeline above 1100px and a vertical timeline at smaller widths.
+14 | PASS | index.html:116 and styles/style.css:1085 | All six original question/answer pairs match the previous version. The heading aligns above the single column of cards. Click, Enter and Space toggle the matching answer and aria-expanded state.
+Layout | PASS | styles/style.css:1199 | Checked 11 homepage widths from 320px to 1900px. Gallery grids with 4–7 images keep equal image sizes and center partial rows. Privacy and terms pages fit at 320, 375, 768, 1440 and 1900px.
+Interactions | PASS | index.html and script/index.js | Opened mobile navigation, About biography, booking, consent, chatbot and gallery lightbox in headless Chrome. Accordion checked with normal and reduced motion.
+Accessibility | PASS (automated) | index.html, privacy-policy.html and terms-of-service.html | Axe reported zero WCAG 2 A/AA and 2.1 AA violations in the tested page states. Google Fonts and Font Awesome loaded from local test copies.
+Template | PASS | index.html:67 | Rendered default and configured journey text, including long headings, descriptions and a long doctor name. All existing template tokens matched the original file.
+The interaction checks used local service fixtures. Production bookings and third-party analytics delivery were outside this visual verification.
+
+Footer spacing | PASS | styles/style.css, .footer-inner | On home, privacy and terms, the two columns are centered with a 36px gap above 640px. At 640px and below they stack with a 24px gap. Verified in Chrome at 11 widths from 320px to 2560px.
+
+Care philosophy | PASS | index.html, #philosophy and styles/style.css, .philosophy-content | The introduction and principles share a two-column layout above 900px and stack on narrower screens over the ultrasound photo. Checked 11 widths from 320px to 1900px in Chrome. The lowest sampled text contrast was 8.2:1 at 375px and 6.5:1 at 1440px.
