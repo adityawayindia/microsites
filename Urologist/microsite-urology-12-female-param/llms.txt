@@ -1,0 +1,9 @@
+# NOTE: Per-microsite draft; backend merges all entries into digidr.app/llms.txt.
+# Dr. {{full_name}}
+
+> {{speciality}} practice offering clinic and online consultations for urinary health.
+
+## Pages
+- [Profile](https://digidr.app/{{slug}}/)
+- [Privacy Policy](https://digidr.app/{{slug}}/privacy-policy)
+- [Terms of Service](https://digidr.app/{{slug}}/terms-of-service)

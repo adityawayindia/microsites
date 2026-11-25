@@ -1,0 +1,8 @@
+hero.webp — OpenAI built-in image generation. contemporary minimally invasive procedure suite, warm saffron wall detailing, steel camera tower and modern articulated theatre light on the right, no people.
+portrait.webp — OpenAI built-in image generation. Indian woman aged 39, brown skin and short dark pixie haircut, strong softly rounded face, tiny gold studs, confident look, espresso scrubs beneath white coat.
+about.webp — OpenAI built-in image generation. close up of clean slender endoscopic instruments arranged neatly on a sterile medical instrument tray, warm practical light.
+philosophy.webp — OpenAI built-in image generation. a clean laparoscopic camera head and two slender stainless instruments resting on unmarked espresso-toned medical cart, warm neutral light, no clutter.
+Generated portraits depict fictional doctors. Other generated photographs contain no people.
+gallery-ultrasound.jpg — Project-generated OpenAI image_gen still life, originally recorded in Radiology/microsite-radiology-13-male/assets/IMAGE-SOURCES.txt.
+gallery-exam.jpg — Project-generated OpenAI image_gen still life, originally recorded in Gynaecology/microsite-gynaecology-9-male/assets/IMAGE-SOURCES.txt.
+gallery-laboratory.webp — Photo by Testalize.me on Unsplash, https://unsplash.com/photos/white-and-orange-plastic-tube-KWb_41kG0GE. Unsplash License, https://unsplash.com/license. Source recorded in General Physician/microsite-general-physician-20-female/assets/IMAGE-SOURCES.txt. Photograph and current free commercial license verified 25 November 2026.

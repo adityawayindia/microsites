@@ -1,0 +1,8 @@
+hero.webp — OpenAI built-in image generation. backlit renal ultrasound scan in the rich deep green diagnostic room, ultrasound transducer and console below.
+portrait.webp — OpenAI built-in image generation. Indian man aged 49 with trimmed salt-and-pepper beard, charcoal glasses and short wavy hair.
+about.webp — OpenAI built-in image generation. a translucent cast of a single kidney cross-section on an oak tabletop beside renal ultrasound equipment.
+philosophy.webp — OpenAI built-in image generation. a glass carafe and kidney stone specimen teaching vial in a beautifully lit petrol green consultation room, window shadows and oak textures.
+Generated portraits depict fictional doctors. Other generated photographs contain no people.
+gallery-ultrasound.jpg — Project-generated OpenAI image_gen still life, originally recorded in Radiology/microsite-radiology-13-male/assets/IMAGE-SOURCES.txt.
+gallery-exam.jpg — Project-generated OpenAI image_gen still life, originally recorded in Gynaecology/microsite-gynaecology-9-male/assets/IMAGE-SOURCES.txt.
+gallery-laboratory.webp — Photo by Testalize.me on Unsplash, https://unsplash.com/photos/white-and-orange-plastic-tube-KWb_41kG0GE. Unsplash License, https://unsplash.com/license. Source recorded in General Physician/microsite-general-physician-20-female/assets/IMAGE-SOURCES.txt. Photograph and current free commercial license verified 25 November 2026.

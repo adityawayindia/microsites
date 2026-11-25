@@ -1,0 +1,8 @@
+hero.webp — OpenAI built-in image generation. cream-coloured advisory consulting room, soft oxblood leather chairs, classic ultrasound machine against warm plaster wall.
+portrait.webp — OpenAI built-in image generation. Indian man aged 55 with swept grey hair, clean shaven, rectangular spectacles and warm brown skin, ivory collar and dark wine tie.
+about.webp — OpenAI built-in image generation. a quiet desk with pale wooden anatomical pelvis model, clipboard and small adjustable brass reading lamp, natural side light.
+philosophy.webp — OpenAI built-in image generation. a clear acrylic urinary tract teaching model beside a folded white examination cover in a quiet daylight consultation room, gentle oxblood details.
+Generated portraits depict fictional doctors. Other generated photographs contain no people.
+gallery-ultrasound.jpg — Project-generated OpenAI image_gen still life, originally recorded in Radiology/microsite-radiology-13-male/assets/IMAGE-SOURCES.txt.
+gallery-exam.jpg — Project-generated OpenAI image_gen still life, originally recorded in Gynaecology/microsite-gynaecology-9-male/assets/IMAGE-SOURCES.txt.
+gallery-laboratory.webp — Photo by Testalize.me on Unsplash, https://unsplash.com/photos/white-and-orange-plastic-tube-KWb_41kG0GE. Unsplash License, https://unsplash.com/license. Source recorded in General Physician/microsite-general-physician-20-female/assets/IMAGE-SOURCES.txt. Photograph and current free commercial license verified 25 November 2026.

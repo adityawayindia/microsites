@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Per-microsite draft: backend must merge these entries into digidr.app/sitemap.xml. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://digidr.app/demo-urology-11/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+<url><loc>https://digidr.app/demo-urology-11/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+<url><loc>https://digidr.app/demo-urology-11/terms-of-service</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

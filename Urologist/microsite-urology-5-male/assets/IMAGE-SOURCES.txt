@@ -1,0 +1,8 @@
+hero.webp — OpenAI built-in image generation. high-tech modern endoscopy theatre with endoscopic camera tower, surgical exam light in upper right, crisp steel textures and indigo equipment.
+portrait.webp — OpenAI built-in image generation. Indian man aged 37, curly cropped black hair, clean shaven with pronounced cheekbones, warm brown skin, wearing indigo surgical scrubs beneath unbuttoned coat.
+about.webp — OpenAI built-in image generation. macro editorial photograph of a coiled flexible ureteroscope on a pristine blue surgical drape, shallow depth of field.
+philosophy.webp — OpenAI built-in image generation. beautifully lit silver ureteroscope camera head and polished lens resting on a navy sterile tray in a minimally invasive procedure suite.
+Generated portraits depict fictional doctors. Other generated photographs contain no people.
+gallery-ultrasound.jpg — Project-generated OpenAI image_gen still life, originally recorded in Radiology/microsite-radiology-13-male/assets/IMAGE-SOURCES.txt.
+gallery-exam.jpg — Project-generated OpenAI image_gen still life, originally recorded in Gynaecology/microsite-gynaecology-9-male/assets/IMAGE-SOURCES.txt.
+gallery-laboratory.webp — Photo by Testalize.me on Unsplash, https://unsplash.com/photos/white-and-orange-plastic-tube-KWb_41kG0GE. Unsplash License, https://unsplash.com/license. Source recorded in General Physician/microsite-general-physician-20-female/assets/IMAGE-SOURCES.txt. Photograph and current free commercial license verified 25 November 2026.

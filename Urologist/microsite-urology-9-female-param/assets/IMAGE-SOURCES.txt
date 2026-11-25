@@ -1,0 +1,8 @@
+hero.webp — OpenAI built-in image generation. bright blue-grey diagnostic suite, pale plaster, portable ultrasound cart and a pearlescent white pelvic teaching model on the right, wide window.
+portrait.webp — OpenAI built-in image generation. Indian woman aged 43 with shoulder-length black side-parted hair, medium brown skin, natural makeup, silver stud earrings, navy top under white medical coat.
+about.webp — OpenAI built-in image generation. a navy upholstered chair beside a low desk with ultrasound prints, cool natural light through tall linen blinds.
+philosophy.webp — OpenAI built-in image generation. a powder-blue portable bladder scanner and curved probe resting on an examination trolley, pale curtain, daylight tones.
+Generated portraits depict fictional doctors. Other generated photographs contain no people.
+gallery-ultrasound.jpg — Project-generated OpenAI image_gen still life, originally recorded in Radiology/microsite-radiology-13-male/assets/IMAGE-SOURCES.txt.
+gallery-exam.jpg — Project-generated OpenAI image_gen still life, originally recorded in Gynaecology/microsite-gynaecology-9-male/assets/IMAGE-SOURCES.txt.
+gallery-laboratory.webp — Photo by Testalize.me on Unsplash, https://unsplash.com/photos/white-and-orange-plastic-tube-KWb_41kG0GE. Unsplash License, https://unsplash.com/license. Source recorded in General Physician/microsite-general-physician-20-female/assets/IMAGE-SOURCES.txt. Photograph and current free commercial license verified 25 November 2026.

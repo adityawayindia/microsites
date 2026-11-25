@@ -1,0 +1,8 @@
+hero.webp — OpenAI built-in image generation. quiet women's urology consulting space with dusty pink and claret details, anatomical pelvic floor model next to discreet clinical equipment, indirect daylight.
+portrait.webp — OpenAI built-in image generation. Indian woman aged 51 with warm dark skin, salt-and-pepper hair swept into a low bun, thin bronze round glasses, modest blush blouse beneath white coat.
+about.webp — OpenAI built-in image generation. An empty clinical still life with a white ultrasound probe and closed folder on a dusty-rose worktop.
+philosophy.webp — OpenAI built-in image generation. a quiet pelvic health clinic with two pale rose conversation chairs and a small teaching model, privacy curtain, warm morning light.
+Generated portraits depict fictional doctors. Other generated photographs contain no people.
+gallery-ultrasound.jpg — Project-generated OpenAI image_gen still life, originally recorded in Radiology/microsite-radiology-13-male/assets/IMAGE-SOURCES.txt.
+gallery-exam.jpg — Project-generated OpenAI image_gen still life, originally recorded in Gynaecology/microsite-gynaecology-9-male/assets/IMAGE-SOURCES.txt.
+gallery-laboratory.webp — Photo by Testalize.me on Unsplash, https://unsplash.com/photos/white-and-orange-plastic-tube-KWb_41kG0GE. Unsplash License, https://unsplash.com/license. Source recorded in General Physician/microsite-general-physician-20-female/assets/IMAGE-SOURCES.txt. Photograph and current free commercial license verified 25 November 2026.

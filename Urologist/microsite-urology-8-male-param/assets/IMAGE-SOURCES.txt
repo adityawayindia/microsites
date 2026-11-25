@@ -1,0 +1,8 @@
+hero.webp — OpenAI built-in image generation. close-up architectural photograph inside a contemporary clinic with aubergine millwork and copper lighting, kidney stone demonstration model and ultrasound cart on right.
+portrait.webp — OpenAI built-in image generation. Indian man aged 42 with neatly tied black Sikh turban, trimmed beard, broad friendly smile, wearing a white medical coat over slate scrubs.
+about.webp — OpenAI built-in image generation. daylight across a tidy consulting desk with a renal anatomy reference model and a clear glass carafe of drinking water.
+philosophy.webp — OpenAI built-in image generation. an elegant clear water carafe and tumbler, ultrasound print with absolutely no text, muted plum clinic windowsill and soft daylight.
+Generated portraits depict fictional doctors. Other generated photographs contain no people.
+gallery-ultrasound.jpg — Project-generated OpenAI image_gen still life, originally recorded in Radiology/microsite-radiology-13-male/assets/IMAGE-SOURCES.txt.
+gallery-exam.jpg — Project-generated OpenAI image_gen still life, originally recorded in Gynaecology/microsite-gynaecology-9-male/assets/IMAGE-SOURCES.txt.
+gallery-laboratory.webp — Photo by Testalize.me on Unsplash, https://unsplash.com/photos/white-and-orange-plastic-tube-KWb_41kG0GE. Unsplash License, https://unsplash.com/license. Source recorded in General Physician/microsite-general-physician-20-female/assets/IMAGE-SOURCES.txt. Photograph and current free commercial license verified 25 November 2026.

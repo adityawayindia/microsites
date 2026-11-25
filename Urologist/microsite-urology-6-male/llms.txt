@@ -1,0 +1,9 @@
+# NOTE: Per-microsite draft; backend merges all entries into digidr.app/llms.txt.
+# Dr. Raghav Iyer
+
+> Urologist practice offering clinic and online consultations for urinary health.
+
+## Pages
+- [Profile](https://digidr.app/demo-urology-6/)
+- [Privacy Policy](https://digidr.app/demo-urology-6/privacy-policy)
+- [Terms of Service](https://digidr.app/demo-urology-6/terms-of-service)

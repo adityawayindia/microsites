@@ -1,0 +1,9 @@
+# NOTE: Per-microsite draft; backend merges all entries into digidr.app/llms.txt.
+# Dr. Kabir Sethi
+
+> Urologist practice offering clinic and online consultations for urinary health.
+
+## Pages
+- [Profile](https://digidr.app/demo-urology-5/)
+- [Privacy Policy](https://digidr.app/demo-urology-5/privacy-policy)
+- [Terms of Service](https://digidr.app/demo-urology-5/terms-of-service)

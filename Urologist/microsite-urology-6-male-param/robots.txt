@@ -1,0 +1,5 @@
+# Per-microsite draft: backend must merge this into ONE robots.txt at digidr.app.
+User-agent: *
+Allow: /
+
+Sitemap: https://digidr.app/sitemap.xml
