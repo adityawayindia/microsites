@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html data-ga-measurement-id="" lang="en">
+<html lang="en">
 <head><base href="/{{slug}}/"/>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -17,6 +17,13 @@
     }
   </script>
 <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{googleanalyticsid}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{googleanalyticsid}}');
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Dr. {{full_name}} | {{speciality}} | Detailed consultations</title>
@@ -28,7 +35,7 @@
 <meta content="website" property="og:type"/>
 <meta content="Dr. {{full_name}} | {{speciality}} | Detailed consultations" property="og:title"/>
 <meta content="Dr. {{full_name}}, {{speciality}}. Detailed case review, clinic visits and online follow-up consultations." property="og:description"/>
-<meta content="{{profile}}" property="og:image"/>
+<meta property="og:image" content="{{ogimage}}" />
 
 <meta content="Dr. {{full_name}}, {{speciality}}" property="og:image:alt"/>
 <meta content="en_US" property="og:locale"/>
@@ -36,23 +43,10 @@
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Dr. {{full_name}} | {{speciality}} | Detailed consultations" name="twitter:title"/>
 <meta content="Dr. {{full_name}}, {{speciality}}. Detailed case review, clinic visits and online follow-up consultations." name="twitter:description"/>
-<meta content="{{profile}}" name="twitter:image"/>
+<meta name="twitter:image" content="{{ogimage}}" />
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<script>
-  (function () {
-    var gaId = document.documentElement.getAttribute('data-ga-measurement-id') || '';
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
-    if (!gaId) return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
-    document.head.appendChild(tag);
-    window.gtag('js', new Date());
-    window.gtag('config', gaId);
-  })();
-</script><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" referrerpolicy="no-referrer" rel="stylesheet"/>
 <link href="{{path}}/styles/banner-module.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css" rel="stylesheet"/>

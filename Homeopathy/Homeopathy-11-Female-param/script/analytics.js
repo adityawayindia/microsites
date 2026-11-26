@@ -1,12 +1,5 @@
 // One guarded GA4 + Clarity dispatch per user action. Never send form or chat contents.
 (function(){
-  const measurementId=(document.body.dataset.ga4Id||'').trim();
-  window.dataLayer=window.dataLayer||[];
-  window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
-  if(/^G-[A-Z0-9]{6,}$/.test(measurementId)){
-    const script=document.createElement('script');script.async=true;script.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(measurementId);document.head.append(script);
-    window.gtag('js',new Date());window.gtag('config',measurementId);
-  }
   window.trackEvent=function(eventName,params={}){
     const safe={page_path:location.pathname};
     for(const key of ['label','checked','method','scrolled_to_bottom','appointment_type'])if(params[key]!==undefined)safe[key]=params[key];

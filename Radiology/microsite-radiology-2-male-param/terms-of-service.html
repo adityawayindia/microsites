@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER_MICROSITE_RADIOLOGY_1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{googleanalyticsid}}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-PLACEHOLDER_MICROSITE_RADIOLOGY_1');
+    gtag('config', '{{googleanalyticsid}}');
   </script>
 
   <!-- Microsoft Clarity -->
@@ -40,14 +40,14 @@
   <meta property="og:title" content="Terms of Service | Dr. {{full_name}} Diagnostic Imaging" />
   <meta property="og:description" content="Terms of service governing use of Dr. {{full_name}}'s diagnostic imaging website and appointment booking services." />
   <meta property="og:url" content="https://www.example.com/{{slug}}/terms-of-service" />
-  <meta property="og:image" content="{{profile}}" />
+  <meta property="og:image" content="{{ogimage}}" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Terms of Service | Dr. {{full_name}} Diagnostic Imaging" />
   <meta name="twitter:description" content="Terms of service governing use of Dr. {{full_name}}'s diagnostic imaging website and appointment booking services." />
-  <meta name="twitter:image" content="{{profile}}" />
+  <meta name="twitter:image" content="{{ogimage}}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link

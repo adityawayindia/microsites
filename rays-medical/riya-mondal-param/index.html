@@ -22,12 +22,12 @@
 <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}">
 <meta property="og:description" content="Medical consultations with Dr. {{full_name}}.">
 <meta property="og:url" content="https://digidr.app/{{slug}}/">
-<meta property="og:image" content="https://storage.googleapis.com/digidr/Dr%20Riya%20Mondal.jpeg">
+<meta property="og:image" content="{{ogimage}}" />
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}">
 <meta name="twitter:description" content="Medical consultations with Dr. {{full_name}}.">
-<meta name="twitter:image" content="https://storage.googleapis.com/digidr/Dr%20Riya%20Mondal.jpeg">
+<meta name="twitter:image" content="{{ogimage}}" />
 <meta name="theme-color" content="hsl(151,29%,27%)">
 <link rel="icon" type="image/svg+xml" href="https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,9 +39,9 @@
 <link rel="stylesheet" href="{{path}}/styles/style.css">
 <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css">
 <!-- Template configuration: replace the GA4 draft measurement ID before deployment. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZDX1K2S5P">
+<script async src="https://www.googletagmanager.com/gtag/js?id={{googleanalyticsid}}">
 </script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2ZDX1K2S5P');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{googleanalyticsid}}');</script>
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","ymqvcvdc4v");if(typeof clarity==='function'){clarity('set','microsite','{{slug}}');clarity('set','specialty','general-medicine');}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. {{full_name}}","image":"{{profile}}","url":"https://digidr.app/{{slug}}/","medicalSpecialty":"PrimaryCare","telephone":"+{{code}}{{phone}}","address":{"@type":"PostalAddress","streetAddress":"{{address}}","addressLocality":"{{city}}","addressRegion":"{{state}}","postalCode":"{{pincode}}","addressCountry":"IN"}}</script>
 <link rel="stylesheet" href="{{path}}/styles/rays-top-strip.css"></head>

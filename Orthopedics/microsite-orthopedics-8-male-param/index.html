@@ -10,12 +10,12 @@
 <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}">
 <meta property="og:description" content="Specialist consultations with Dr. {{full_name}}.">
 <meta property="og:url" content="https://digidr.app/{{slug}}/">
-<meta property="og:image" content="{{profile}}">
+<meta property="og:image" content="{{ogimage}}" />
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}">
 <meta name="twitter:description" content="Specialist consultations with Dr. {{full_name}}.">
-<meta name="twitter:image" content="{{profile}}">
+<meta name="twitter:image" content="{{ogimage}}" />
 <meta name="theme-color" content="#234ba0">
 <link rel="icon" type="image/svg+xml" href="https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="{{path}}/styles/style.css">
 <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css">
 <!-- GA4 measurement ID placeholder retained as requested. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER_MICROSITE_ORTHOPEDICS_8"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLACEHOLDER_MICROSITE_ORTHOPEDICS_8');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{googleanalyticsid}}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{googleanalyticsid}}');</script>
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","ymqvcvdc4v");if(typeof clarity==='function'){clarity('set','microsite','{{slug}}');clarity('set','specialty','orthopedics');}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. {{full_name}}","image":"{{profile}}","url":"https://digidr.app/{{slug}}/","medicalSpecialty":"Musculoskeletal","telephone":"+{{code}}{{phone}}","address":{"@type":"PostalAddress","streetAddress":"{{address}}","addressLocality":"{{city}}","addressRegion":"{{state}}","postalCode":"{{pincode}}","addressCountry":"IN"}}</script></head><body class="orthopedics-8" data-micrositeid="{{micrositeId}}" data-slug="{{slug}}"><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="container navbar"><a href="/{{slug}}/" class="brand" aria-label="Dr. {{full_name}}"><span class="avatar"><img src="{{profile}}" alt="Dr. {{full_name}}" width="46" height="46" /></span><span class="brand-text"><span class="brand-name">Dr. {{full_name}}</span><span class="brand-role">{{speciality}}</span></span></a>

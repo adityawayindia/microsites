@@ -17,13 +17,13 @@
   </script>
 
   <!-- Google tag (gtag.js) — TODO: replace G-XXXXXXXXXX with this microsite's real GA4 Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{googleanalyticsid}}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', '{{googleanalyticsid}}');
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,14 +39,14 @@
   <meta property="og:title" content="Privacy Policy | Dr. {{full_name}} General Medicine" />
   <meta property="og:description" content="Privacy policy for Dr. {{full_name}}'s general medicine practice, covering how patient and website data is collected, used, and protected." />
   <meta property="og:url" content="https://digidr.app/{{slug}}/privacy-policy" />
-  <meta property="og:image" content="{{profile}}" />
+  <meta property="og:image" content="{{ogimage}}" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Privacy Policy | Dr. {{full_name}} General Medicine" />
   <meta name="twitter:description" content="Privacy policy for Dr. {{full_name}}'s general medicine practice, covering how patient and website data is collected, used, and protected." />
-  <meta name="twitter:image" content="{{profile}}" />
+  <meta name="twitter:image" content="{{ogimage}}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
