@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-nandita-pradhan/
+Disallow: /dr-nandita-pradhan/privacy-policy.html
+Disallow: /dr-nandita-pradhan/terms-of-service.html
+Sitemap: https://digidr.app/dr-nandita-pradhan/sitemap.xml

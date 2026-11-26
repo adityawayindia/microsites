@@ -42,8 +42,8 @@
 <div class="menu-language-row"><span class="menu-language-label" data-l10n="header.language">Language</span><div class="language-picker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg><select id="siteLanguage" aria-label="Website language"><option value="en" lang="en">English</option><option value="hi" lang="hi">हिन्दी</option><option value="or" lang="or">ଓଡ଼ିଆ</option><option value="bn" lang="bn">বাংলা</option></select></div></div><span id="languageStatus" role="status"></span>
 </nav>
 <div class="nav-actions"><button class="cta-btn" type="button" id="openBookingBtn" data-ga-event="book_appointment_click" data-ga-label="Navbar"><span class="cta-text-desktop" data-l10n="header.book_appointment">Book Appointment</span><span class="cta-text-mobile" data-l10n="header.appointment">Appointment</span></button><button class="menu-toggle" type="button" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav" data-l10n-aria-label="header.toggle_navigation_menu"><span></span><span></span><span></span></button></div></div>
-</header>
 <digidr-share-profile side-rail with-whatsapp call-number="+12025550142"></digidr-share-profile>
+</header>
 <main id="main-content">
 <section class="hero-section" id="home">
 <div
@@ -75,8 +75,19 @@
 <h1 data-l10n="display_facts.doctor_name">Dr. Vivek Iyer</h1><p class="hero-credentials"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span class="locale-fragment" data-l10n="display_facts.qualification">MBBS</span></p><p class="hero-reg"><i class="fa-solid fa-id-card" aria-hidden="true"></i> <span class="locale-fragment" data-l10n="home.medical_regd_no_not_listed">Medical Regd. No.: Not listed</span></p><p class="languages"><i class="fa-solid fa-language" aria-hidden="true"></i> <span class="locale-fragment" data-l10n="profile.english_hindi_kannada">English, Hindi, Kannada</span></p>
 <div class="hero-stats">
 <div class="hero-stat-box"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><strong data-counter data-practising-since>1998</strong><span data-l10n="home.practising_since">Practising Since</span></div>
-<div class="hero-stat-box"><i class="fa-solid fa-language" aria-hidden="true"></i><strong data-counter>3</strong><span data-l10n="home.languages">Languages</span></div>
-<div class="hero-stat-box"><i class="fa-solid fa-laptop-medical" aria-hidden="true"></i><strong data-counter>2</strong><span data-l10n="home.consultation_modes">Consultation Modes</span></div></div>
+<div class="hero-stat-box">
+  <i class="fa-solid fa-language" aria-hidden="true"></i>
+  <strong data-counter>3</strong>
+  <span data-l10n="home.languages">Languages</span>
+</div>
+<div class="hero-stat-box">
+  <i class="fa-solid fa-laptop-medical" aria-hidden="true"></i>
+  <ul class="consultation-modes">
+    <li><i class="fa-solid fa-video" aria-hidden="true"></i><span data-l10n="home.online">Online</span></li>
+    <li><i class="fa-solid fa-house-medical" aria-hidden="true"></i><span data-l10n="home.offline">Offline</span></li>
+  </ul>
+  <span data-l10n="home.consultation_modes">Consultation Modes</span>
+</div></div>
 <div class="social-links" aria-label="Social media links" data-l10n-aria-label="home.social_media_links"><span class="social is-disabled" aria-label="Facebook Profile not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="0" role="link" data-l10n-aria-label="home.facebook_profile_not_linked" data-l10n-data-tooltip="home.not_enabled"><i class="fa-brands fa-facebook" aria-hidden="true"></i></span>
 <span class="social is-disabled" aria-label="Facebook Page not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="0" role="link" data-l10n-aria-label="home.facebook_page_not_linked" data-l10n-data-tooltip="home.not_enabled"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span>
 <span class="social is-disabled" aria-label="Instagram not linked" data-tooltip="Not Enabled" aria-disabled="true" tabindex="0" role="link" data-l10n-aria-label="home.instagram_not_linked" data-l10n-data-tooltip="home.not_enabled"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>

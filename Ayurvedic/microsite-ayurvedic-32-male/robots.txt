@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-gurkirat-sandhu/
+Disallow: /dr-gurkirat-sandhu/privacy-policy.html
+Disallow: /dr-gurkirat-sandhu/terms-of-service.html
+Sitemap: https://digidr.app/dr-gurkirat-sandhu/sitemap.xml

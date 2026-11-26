@@ -1,0 +1,26 @@
+Dr. Devendra Menon | Cardiology 53 | male
+
+A portrait-led panel layout in lavender, ink and soft gold. The name and compact information band were informed by the supplied senior designer’s reference.
+
+This standalone profile, registration and contact information are illustrative. Supply the registered clinician’s details before launch.
+
+Original ImageGen photographs. A single seated Indian male cardiac imaging specialist with silver hair, glasses and a white coat in a daylight clinic. An empty echocardiography room with a console on the left. A close-up of a phased-array ultrasound probe and coiled cable.
+Portrait: portrait.webp. Hero background: hero.webp. Supporting image: about.webp.
+The icon and optional banner are original practice graphics.
+
+Gallery 1: original OpenAI-generated photograph of a blood pressure monitor from General Physician/microsite-general-physician-11-male/assets/gallery.webp.
+Gallery 2: ECG photograph by Pixabay on Pexels. https://www.pexels.com/photo/selective-focus-photography-of-white-and-black-vital-sign-printing-paper-415779/ . License verified 23 November 2026 at https://www.pexels.com/license/ .
+Gallery 3: original OpenAI-generated photograph from General Medicine/microsite-general-medicine-9-female/assets/medical-instruments.jpg.
+
+FAQs: DigiDr_FAQ_6_Sets_25_Specialities.pdf, Cardiology set 5.
+
+ImageGen prompts (built-in generation)
+
+portrait.webp
+Photorealistic vertical environmental portrait for a fictional Indian male consultant cardiologist who specializes in echocardiography. One Indian man in his late fifties with silver hair, deep brown skin, trimmed dark and silver mustache, slim rectangular glasses, white medical coat over a deep indigo open-collar shirt, understated stethoscope. Seated naturally in his consultation room, composed but approachable expression and direct gaze. Include whole head and shoulders and upper body to waist, plenty of breathing room around face, large enough to crop to square. Cool daylight, softly blurred pale blue partitions and a little warm wood detail, realistic skin. Refined candid portrait, no text or logos, just one person. 4:5 vertical composition.
+
+hero.webp
+Wide landscape photograph, modern echocardiography suite, no people. Left of frame: a real ultrasound console with transducer resting in its holder and a grayscale echocardiogram on a flat monitor. The clinic is cool, daylight pale periwinkle walls, soft navy shadows, pale warm highlights. The right half is a softly illuminated quiet wall with room for a website title. Wide architectural camera view across console, polished and natural, medical editorial photography. No readable labels or logos.
+
+about.webp
+A photorealistic editorial detail photograph of the working end of one small phased-array cardiac ultrasound transducer in its cradle on a clean echocardiography console. Dark navy acoustic window, ivory handle and coiled cable, lightly blurred blue-grey controls, grazing daylight. Quiet modern Indian clinic, clinical realism, no people or hands, no text and no branding. Wide horizontal 3:2 composition with the probe centered and negative space.

@@ -23,6 +23,8 @@
     "doctor_name_home": "{{doctor_name}}, home"
   },
   "home": {
+    "offline": "Offline",
+    "online": "Online",
     "main_clinic_banner": "Main Clinic Banner",
     "clinic_promo_banner": "Clinic Promo Banner",
     "discover_the_practice": "Discover the practice",
@@ -403,6 +405,8 @@
     "bot": "bot"
   },
   "share": {
+    "short_share": "Share",
+    "short_copied": "Copied",
     "share_profile": "Share profile",
     "link_copied": "Link copied",
     "copy_this_link_manually": "Copy this link manually"

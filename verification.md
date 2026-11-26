@@ -22,8 +22,8 @@ horizontal scroll, clipped or overlapping content, or unreadable text, and tap t
 least 44px. Check this throughout the audit, not only in section R.
 
 **The checklist follows the page, top to bottom.** Sections A to N are in the order they appear
-on the home page (Header → Hero → About → Services → Social Media → Care Philosophy →
-Consultation Journey → Contact → Gallery → FAQ), followed by the Booking Modal, Footer, Chatbot
+on the home page (Header → Hero → About → Services → optional Social Media → static specialty
+sections → Contact → Gallery → FAQ), followed by the Booking Modal, Footer, Chatbot
 and the legal pages. Sections O to U are the site-wide checks. Items are numbered in one running
 sequence. The Social Media and Analytics sections use their own labels (E1–E5, S1–S5).
 
@@ -35,18 +35,16 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
 - For anything that needs runtime behaviour (modal flow, tooltip, chatbot layout, URL hash),
   open the page in a browser at 1440px, 768px and 375px and test it. If you can't, mark the item
   "UNVERIFIED (needs browser)". Never mark it PASS. Do the browser-only items last.
-- Fix every FAIL, then re-verify. Where AGENTS.md Appendix A gives the reference structure,
-  markup or text, copy it, changing only doctor-specific data.
+- Fix every FAIL, then re-verify. Follow Appendix A where the build rules require its markup
+  or text. For the static specialty sections, apply AGENTS.md §39 and items 10–11 below.
 - Do not commit or push unless told to.
-- **Sections with their own design:** Care Philosophy, Consultation Journey and any other section the
-  new microsite deliberately designs differently (layout, imagery, wording) are static, fixed content.
-  They may look different from the default designs and must not be flagged as a mismatch with them.
-  For these sections, check only that they are present, in the correct order, responsive, accessible,
-  readable (AA contrast, 18px body text), consistent with the specialty and the rest of the checklist,
-  and free of overflow and of leftover wording from the source template or another specialty.
-- **Default design (when no new design is made):** if the microsite does not give Care Philosophy,
-  Consultation Journey or FAQ a new design, they must use the default design below (AGENTS.md §39;
-  markup and CSS in Appendix A.5, A.6 and A.9), with only the wording changed to fit the specialty.
+- **Static specialty sections.** Accept both defaults, either default with a replacement, or one
+  or more replacements for both. Either retained section can also have a custom design. Apply
+  the visual review in item 11 to each section actually shown. Other custom designs still follow
+  their section's content, behaviour and accessibility requirements.
+- **Default designs.** Apply the corresponding reference below only when the site uses that
+  default design (AGENTS.md §39 and Appendix A.5, A.6 and A.9). Item 14 and the FAQ requirements
+  in §39 apply to every microsite.
   - *Care Philosophy* (`section.philosophy-section#philosophy`): a split-screen layout inside
     `.container.philosophy-layout`. The left side (`.philosophy-visual`) has a framed photo
     (`.philosophy-img-frame`, lazy-loaded, descriptive alt text) with a small badge on it
@@ -61,8 +59,8 @@ sequence. The Social Media and Analytics sections use their own labels (E1–E5,
     step has a round marker with an icon and a card with a large step number (01–04), an h3 heading
     and a one-sentence description. The four steps are: 1) Appointment Booking, 2) a diagnostic or
     evaluation step, 3) a personalised treatment plan, 4) recovery and follow-up.
-  - For all three sections, the layout, classes, icons, element order and counts (3 pillars, 4 steps) stay
-    as in the default design. The photo, badge text, kicker, titles, subtitles, headings and descriptions
+  - For each default design in use, check its layout, classes, icons, element order and counts.
+    The photo, badge text, kicker, titles, subtitles, headings and descriptions
     are rewritten for the doctor's specialty, and no wording from another specialty is left over. The kickers stay generic
     (no doctor names or "20+ years" claims). FAQ questions and answers are rewritten for the specialty.
   - *FAQ* (`section.faq-section#faq`, placed straight after the Gallery on the home page): a header
@@ -150,7 +148,7 @@ microsite has the Facebook-posts carousel. If it doesn't, it must be absent clea
 no dead nav link, no leftover carousel markup or script errors.
 
 **E1. Placement and markup**
-- The section sits between Services and Care Philosophy, with `id="social-media"`.
+- The section sits between Services and the first static specialty section, with `id="social-media"`.
 - Header: a kicker with a share icon ("Latest Updates"), an h2 ("From My Social Media") and a
   one-line subtitle. The wording is generic and fits the specialty.
 - Structure: `.social-media-carousel-wrap` containing the prev and next buttons
@@ -197,18 +195,32 @@ no dead nav link, no leftover carousel markup or script errors.
   order (one h2).
 - No console errors if the Facebook SDK is blocked: the fallback links remain visible.
 
-## F. CARE PHILOSOPHY
-10. The section exists after Social Media (or after Services if there is no social section), with
-    `id="philosophy"`. It uses its own static design or the default design described in the
-    rules above (AGENTS.md Appendix A.5: split-screen, framed photo with badge, kicker, h2, subtitle,
-    three pillars with index numbers). The wording is rewritten for the specialty with no text from
-    another specialty left over, and the kicker stays generic.
+## F. STATIC SPECIALTY SECTIONS
 
-## G. CONSULTATION JOURNEY
-11. The section exists after Care Philosophy, with `id="process"`. It uses its own static design or
-    the default design (AGENTS.md Appendix A.6: decorative background layer, centred header with the "Consultation
-    Journey" kicker, h2 "What to Expect", subtitle, zig-zag timeline of exactly 4 steps with markers,
-    numbers 01–04, h3 and one sentence each). The steps and wording fit the specialty.
+10. Record the headings of the sections between Social Media (or Services when Social Media is
+    absent) and Contact. For each replacement, name the patient question it answers and check
+    that the copy adds information beyond Services and FAQ. Check that any navigation links
+    match the visible headings and land on the intended sections, including from the mobile
+    menu and footer. Original IDs, pillar counts and timeline steps apply only to their default
+    designs. When a `-param` preview exists, verify that it shows the same selection.
+
+## G. VISUAL REVIEW OF THE STATIC SPECIALTY SECTIONS
+
+11. At **1440px, 768px and 375px**, scroll from the preceding section through each chosen
+    section and into Contact on the rendered page. For each width, record the section heading
+    and a concrete visual observation in the audit evidence. Check each of the following.
+
+    - The section has a clear focal point, the heading stands out from the supporting details,
+      and related text and imagery are grouped together. Any imagery or icons help explain the topic.
+    - Compare the section edges, heading sizes, colours, spacing and surfaces with Services and
+      Contact. Look for aligned margins and consistent styling at the transition into and out of
+      the section. Flag a mismatched typeface, an unexplained gap or a panel that repeats the
+      Services grid without adding information.
+    - At tablet and phone widths, the reading order is clear, 18px body text wraps naturally, and meaningful
+      image details remain visible. Check for stranded columns, excessive gaps, overlap and
+      clipping. Confirm the text/background contrast in item 44.
+
+    Record `UNVERIFIED (needs browser)` for any width you could not inspect.
 
 ## H. CONTACT
 12. A Contact section exists with:
@@ -340,7 +352,7 @@ gallery counts and run the additional grid stress checks below.
     style.css and all JS in index.js (plus chatbot.js, banner-module.js and analytics.js). No inline
     layout styles and no inline scripts, apart from the Clarity and GA4 snippets.
 37. The index.html section order is: Header/Nav → Hero → About → Services → Social Media widget
-    (only if present, see section E) → Care Philosophy → Consultation Journey → Contact → Practice
+    (only if present, see section E) → static specialty sections (item 10) → Contact → Practice
     Gallery → FAQ → Booking Modal → Footer (the FAQ comes straight after the Gallery). Every nav
     link's target id exists, including `#faq`. Section designs may differ from the default designs
     (see the rule above).
@@ -353,7 +365,7 @@ gallery counts and run the additional grid stress checks below.
     "[Insert" (outside the legal-page placeholders the doctor will fill) and any `{{ }}` template tags.
 
 ## P. CONTENT ACCURACY & SPECIALTY FIT
-41. All copy, services, FAQs, journey steps, chatbot replies and alt text match this doctor's
+41. All copy, services, FAQs, static specialty sections, chatbot replies and alt text match this doctor's
     specialty. Check gender, pronouns (use "Dr." and the correct he/she), qualifications and clinic
     details for consistency across hero, about, footer, legal pages, modal consent label, chatbot
     and meta tags.
@@ -388,7 +400,7 @@ gallery counts and run the additional grid stress checks below.
     Fonts are Google Fonts (Inter, Roboto or Outfit). The bottom footer disclaimer is the
     **14px exception** (item 28a); chatbot text keeps the scale in AGENTS.md §13.
 48. Card h3/h4 headings are visibly bolder and larger than the card body text everywhere (services,
-    philosophy, journey, contact). No card is nested inside another card.
+    static specialty sections, contact). No card is nested inside another card.
 49. Cards, hover states and focus states are consistent. Focus rings are visible, and animations
     respect `prefers-reduced-motion`.
 
@@ -403,7 +415,7 @@ gallery counts and run the additional grid stress checks below.
     `loading="lazy"`, the hero image is eager. No image is over about 500KB, and none is a
     placeholder.
 53a. **People-in-images rule (AGENTS.md §17).** Visually inspect every new/generated or
-     selected image, including hero backgrounds, About, Care Philosophy, gallery and banners,
+     selected image, including hero backgrounds, About, static specialty sections, gallery and banners,
      and verify the same assets in the `-param` copy. Only the doctor's portrait may include
      an adult, and it must show only that doctor. Pediatrician sites may additionally use
      children-only images; no parents, caregivers, staff or other adults may appear in them.
@@ -509,7 +521,7 @@ events in S2/S3 that are missing here, and events here that aren't in S2/S3.
     links are relative.
 57a. **Icon visibility (AGENTS.md §45).** On all three pages at 1440px, 768px and 375px, every icon
     renders and is clearly visible: header, hero (profile-line, stat, social and decorative icons),
-    services, philosophy, journey, contact, FAQ chevrons, carousel and lightbox controls, booking
+    services, static specialty sections, contact, FAQ chevrons, carousel and lightbox controls, booking
     modal (close, info "i", calendar arrows, date/select/upload icons), consent panel, footer social
     icons and visitor badge, legal Back arrow, and the chatbot (FAB logo, avatar, close, send). Check:
     - Each `<i>` glyph loads: Font Awesome 6.7.2 is linked on the page, the class exists in FA 6 with

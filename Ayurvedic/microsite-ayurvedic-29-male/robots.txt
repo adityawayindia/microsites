@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-sagar-shenoy/
+Disallow: /dr-sagar-shenoy/privacy-policy.html
+Disallow: /dr-sagar-shenoy/terms-of-service.html
+Sitemap: https://digidr.app/dr-sagar-shenoy/sitemap.xml

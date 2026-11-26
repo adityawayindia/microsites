@@ -1,0 +1,6 @@
+# Per-microsite draft for backend root merge.
+User-agent: *
+Allow: /dr-arvind-sen/
+Disallow: /dr-arvind-sen/privacy-policy.html
+Disallow: /dr-arvind-sen/terms-of-service.html
+Sitemap: https://digidr.app/dr-arvind-sen/sitemap.xml

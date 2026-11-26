@@ -24,6 +24,8 @@ window.micrositeLanguage.catalogs.en = {
     "doctor_name_home": "{{doctor_name}}, home"
   },
   "home": {
+    "offline": "Offline",
+    "online": "Online",
     "main_clinic_banner": "Main Clinic Banner",
     "clinic_promo_banner": "Clinic Promo Banner",
     "discover_the_practice": "Discover the practice",
@@ -426,6 +428,8 @@ window.micrositeLanguage.catalogs.en = {
     "bot": "bot"
   },
   "share": {
+    "short_share": "Share",
+    "short_copied": "Copied",
     "call": "Call",
     "share_profile": "Share profile",
     "link_copied": "Link copied",

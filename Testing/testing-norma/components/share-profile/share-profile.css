@@ -69,9 +69,6 @@ digidr-share-profile[side-rail] {
   border-radius: 15px 0 0 15px;
   box-shadow: 0 3px 14px rgb(0 0 0 / 15%);
 }
-@media (max-width: 640px) {
-  digidr-share-profile[side-rail] { top: 42%; }
-}
 digidr-share-profile[side-rail] .share-action {
   position: relative;
   min-height: 48px;
@@ -80,8 +77,8 @@ digidr-share-profile[side-rail] .share-action {
   border-radius: 0;
   transform: none;
 }
-digidr-share-profile[side-rail] .share-action:first-child { border-top-left-radius: 15px; }
-digidr-share-profile[side-rail] .whatsapp-share { border-bottom-left-radius: 15px; }
+digidr-share-profile[side-rail] .share-action:first-child { border-top-left-radius: inherit; }
+digidr-share-profile[side-rail] .whatsapp-share { border-bottom-left-radius: inherit; }
 digidr-share-profile[side-rail] .call-action {
   --action-fill: #ae303b;
   --action-hover: #90232d;
@@ -130,6 +127,7 @@ digidr-share-profile .share-label > span {
   align-self: center;
   overflow-wrap: anywhere;
 }
+digidr-share-profile .share-label > .compact-label { display: none; }
 
 /* Both labels size the button. Only the current one is visible or announced. */
 digidr-share-profile button:not(.is-copied) .share-copied,
@@ -178,4 +176,82 @@ digidr-share-profile input {
   background: var(--surface, #fff);
   color: var(--text, #302930);
   font: inherit;
+}
+
+.site-header > digidr-share-profile[side-rail] { z-index: auto; }
+
+@media (max-width: 640px), (pointer: coarse) and (orientation: landscape) and (max-height: 480px) {
+  .site-header:has(> digidr-share-profile[side-rail]:not(:empty)) {
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header > digidr-share-profile[side-rail] {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: 100%;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    padding-inline: 4px;
+    background: var(--brand-dark);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .site-header > digidr-share-profile[side-rail]::before {
+    content: "";
+    position: absolute;
+    inset: 0 12px auto;
+    height: 1px;
+    background: rgb(255 255 255 / 16%);
+    pointer-events: none;
+  }
+  .site-header > digidr-share-profile[side-rail][with-whatsapp] { grid-template-columns: auto auto auto; }
+  .site-header digidr-share-profile[side-rail] .share-action {
+    min-height: 44px;
+    gap: 5px;
+    padding: 0 min(2vw, 12px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--surface);
+    background: transparent;
+  }
+  .site-header digidr-share-profile .share-action + .share-action::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 50%;
+    width: 1px;
+    height: 14px;
+    transform: translateY(-50%);
+    background: rgb(255 255 255 / 23%);
+  }
+  .site-header digidr-share-profile .whatsapp-share { min-width: max-content; }
+  .site-header digidr-share-profile[side-rail] .share-action:active {
+    background: rgb(255 255 255 / 12%);
+  }
+  .site-header digidr-share-profile .share-action i {
+    font-size: 16px;
+    color: #e6d1b4;
+  }
+  .site-header digidr-share-profile[side-rail] :is(.action-name, .share-label) {
+    position: static;
+    width: auto;
+    max-width: none;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    opacity: 1;
+  }
+  .site-header digidr-share-profile .share-label > :not(.compact-label) { display: none; }
+  .site-header digidr-share-profile .share-label > .compact-label { display: block; }
+  .site-header digidr-share-profile .share-action:focus-visible {
+    outline-color: var(--surface);
+    outline-offset: -3px;
+    box-shadow: none;
+  }
+  .site-header digidr-share-profile[side-rail] label {
+    position: static;
+    width: auto;
+    text-align: start;
+    color: var(--text);
+  }
 }

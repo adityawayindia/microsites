@@ -649,39 +649,42 @@
 }
 
 /* ── Mobile Responsive ── */
+@media (max-width: 640px), (pointer: coarse) and (orientation: landscape) and (max-height: 480px) {
+    .chatbot-fab {
+        min-width: 44px;
+        height: 46px;
+        gap: 6px;
+        padding: 5px 12px 5px 8px;
+    }
+
+    .chatbot-fab.is-collapsed {
+        min-width: 48px;
+        width: 48px;
+        height: 48px;
+        padding: 5px;
+    }
+
+    .chatbot-fab img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .chatbot-fab.is-collapsed img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .chatbot-fab-text {
+        max-width: calc(100vw - 100px);
+        line-height: 1.25;
+    }
+}
+
 @media (max-width: 480px) {
     .chatbot-fab-wrap {
         left: 16px;
         right: 16px;
         bottom: 28px;
-    }
-
-    .chatbot-fab {
-        min-width: 98px;
-        height: 52px;
-        padding: 8px 16px 8px 10px;
-    }
-
-    .chatbot-fab.is-collapsed {
-        min-width: 56px;
-        width: 56px;
-        height: 56px;
-        padding: 6px;
-        gap: 0;
-    }
-
-    .chatbot-fab img {
-        width: 32px;
-        height: 32px;
-    }
-
-    .chatbot-fab.is-collapsed img {
-        width: 36px;
-        height: 36px;
-    }
-
-    .chatbot-fab-text {
-        font-size: 16px;
     }
 
     .chatbot-window {
@@ -744,6 +747,7 @@
 /* ── Site integration: keep the FAB out of the way of overlays ──
    The booking modal (z-index 120) and gallery lightbox (z-index 100) sit
    below the widget's 9999, so hide the launcher while either is open. */
+body:has(.site-header .nav-links.open) .chatbot-fab-wrap,
 body:has(.booking-modal.is-open) .chatbot-fab-wrap,
 body:has(.gallery-lightbox.is-open) .chatbot-fab-wrap {
     opacity: 0;

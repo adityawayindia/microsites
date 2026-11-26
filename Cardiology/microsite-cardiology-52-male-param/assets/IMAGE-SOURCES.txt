@@ -1,0 +1,26 @@
+Dr. Nikhil Vaidya | Cardiology 52 | male
+
+Burgundy clinical journal, warm ECG paper, a tall arched portrait and a ruled statistical strip.
+
+This standalone profile, registration and contact information are illustrative. Supply the registered clinician’s details before launch.
+
+Original ImageGen photographs. A 47-year-old Indian male preventive cardiologist in a white coat against warm clay. A close-up of ECG paper unrolling in angled daylight. An upper-arm cuff and readings notebook on a quiet clinic desk.
+Portrait: portrait.webp. Hero background: hero.webp. Supporting image: about.webp.
+The icon and optional banner are original practice graphics.
+
+Gallery 1: original OpenAI-generated photograph of a blood pressure monitor from General Physician/microsite-general-physician-11-male/assets/gallery.webp.
+Gallery 2: ECG photograph by Pixabay on Pexels. https://www.pexels.com/photo/selective-focus-photography-of-white-and-black-vital-sign-printing-paper-415779/ . License verified 23 November 2026 at https://www.pexels.com/license/ .
+Gallery 3: original OpenAI-generated photograph from General Medicine/microsite-general-medicine-9-female/assets/medical-instruments.jpg.
+
+FAQs: DigiDr_FAQ_6_Sets_25_Specialities.pdf, Cardiology set 4.
+
+ImageGen prompts (built-in generation)
+
+portrait.webp
+Photorealistic editorial portrait for a fictional Indian preventive cardiologist. A personable Indian man about 47, softly graying temples, dark wavy hair, neat short beard, warm brown eyes, no glasses, white physician coat over a pale blue shirt, dark red stethoscope draped naturally at his neck. Direct gaze, relaxed half smile, waist-up standing portrait, generous headroom, both shoulders and sides inside frame. Soft window light, muted plaster background in pale warm clay, editorial photography on 85mm, texture and believable skin. Vertical 4:5. No typography, logos or signage.
+
+hero.webp
+Wide landscape documentary still life photograph for a premium preventive cardiology practice. Analogue ECG graph paper with a single sharply inked realistic rhythm trace coming out of the roller of an electrocardiograph in a quiet examination room. Slight diagonal perspective, warm window light, dusty rose paper, cream and oxblood-toned shadows. Place the most interesting paper and machine details on the right, fairly open left half, no lettering, logos, people, or watermark. Tactile, close-cropped, contemporary medical journal photography.
+
+about.webp
+Wide 3:2 editorial photograph, overhead view of a sunlit pale wooden consultation desk in a contemporary Indian cardiology clinic. Realistic upper arm blood pressure cuff with hose and a small digital monitor resting beside a paper notebook of neatly ruled blood pressure readings and a dark pen. Objects arranged naturally, with much empty surface, warm chalk and dusty rose colors, soft directional light and real shadows. No person, no logos, no clearly readable text. Photorealistic, medically credible still life, restrained composition for a preventive cardiology article.

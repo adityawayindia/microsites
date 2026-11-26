@@ -18,7 +18,8 @@
 > modal with its info tooltip and consent panel, chatbot, legal pages with the Back button, and
 > the GA4 and Clarity events), mobile responsiveness (§31), and the global rules (colour contrast,
 > 18px body text, no overflow). Where a design choice would remove or break a required element,
-> keep the element.
+> keep the element. Care Philosophy and Consultation Journey are replaceable static content.
+> Either or both may give way to one or more sections tailored to the specialty (§21, §39).
 
 > **Building a new microsite from scratch? Don't read top to bottom.** Sections 0–17
 > below are per-component pixel specs (header, hero, about, etc.) — useful once you're
@@ -561,6 +562,8 @@ divider (`border-top`/spacing/icon row), not their own bordered or shadowed mini
 
 ## 7. Care Philosophy (Split-Screen)
 
+These dimensions apply to the default Care Philosophy design. See §39 for custom designs and replacements.
+
 | Element | Value |
 |---|---|
 | Section padding | `20px 0` |
@@ -574,6 +577,8 @@ divider (`border-top`/spacing/icon row), not their own bordered or shadowed mini
 ---
 
 ## 8. Consultation Journey (4-Step Timeline)
+
+These dimensions apply to the default Consultation Journey design. See §39 for custom designs and replacements.
 
 | Element | Value |
 |---|---|
@@ -952,16 +957,9 @@ Apply to every microsite:
 
 ## 18. Two Structural Additions Beyond the Original 10-Section List (Contact & Lightbox)
 
-The core section order is:
+The full page order is in §21. Two additions to the original list are required:
 
-Header → Hero (+ optional promotional banner) → About → Services → Care Philosophy →
-Consultation Journey → **Contact** → Practice Gallery (+ lightbox) →
-Booking Modal → Footer
-
-(The canonical build list in §21 now also includes the FAQ section after the Gallery, per
-§39. Where this list and §21 differ, §21 wins.) Two things below
-extend an earlier, shorter 10-section version of this list:
-- **Contact section** (id `#contact-us`) sits between Consultation Journey and
+- **Contact section** (id `#contact-us`) sits between the specialty sections chosen in §39 and
   Practice Gallery — a dedicated address/phone/email card, separate from the footer and
   separate from the booking modal. Treat this as a mandatory standard section
   going forward, positioned exactly there in the sequence. Section padding: `20px 0`,
@@ -999,8 +997,7 @@ separate mobile override needed for this value).
 |---|---|
 | About | **20px 0** |
 | Services | **20px 0** |
-| Philosophy | **20px 0** |
-| Consultation Journey | **20px 0** |
+| Each static specialty section (§39) | **20px 0** |
 | Contact | **20px 0** |
 | Gallery | **20px 0** |
 
@@ -1159,8 +1156,7 @@ apply:
 | 3 | About | Executive bio — no icons, premium typography, Read More toggle if long | §5, §24 |
 | 4 | Services | Responsive 12-track grid of core clinical services | §6, §23 |
 | 5 | Social Media widget | "From My Social Media" Facebook-posts carousel, straight after Services; hidden entirely when there are no posts (optional section) | §30, §30.1, A.4 |
-| 6 | Care Philosophy | Split-screen: image + floating badge, 3 pillars with connecting rail | §7, A.5 |
-| 7 | Consultation Journey | 4-step animated timeline | §8, A.6 |
+| 6–7 | Static specialty sections | Care Philosophy followed by Consultation Journey by default. Keep both, replace either, or replace both with one or more specialty-specific sections. | §39 (choice and design), §7/A.5 and §8/A.6 (defaults) |
 | 8 | Contact | Dedicated address/phone/email card (mandatory section) | §18.1, §35, A.7 |
 | 9 | Practice Gallery | Grid + lightbox, equal-size images with centered incomplete rows | §10, §23, A.8 |
 | 10 | FAQ | Heading above a single vertical stack of at least 5 specialty-specific accordion cards, straight after the Gallery (`#faq`) | §39, A.9 |
@@ -1692,8 +1688,8 @@ Working order for building a new microsite from this file alone:
     compact (§36), with the live visitor counter (§44).
 16. Add the booking-modal info tooltip, consent panel, and button-colour rules (§37, Appendix
     A.10), and the chatbot layout and two-line footer note (§38).
-17. Add the FAQ section after the Gallery and use the default Philosophy / Journey / FAQ
-    designs unless a new design is made (§39, Appendix A.5, A.6, A.9).
+17. Review the chosen static specialty sections in context (§39). Add the required FAQ after
+    the Gallery, following the FAQ content and layout rules in §39 and Appendix A.9.
 18. Add GA4 + `analytics.js` (Appendix A.14) and every event in §40 (on top of Clarity, §27).
 19. Copy the exact Privacy Policy and Terms of Service text, with the Back button (§41,
     page markup and `legal.css` in Appendix A.12).
@@ -2373,9 +2369,9 @@ specialty's set. Run `node scripts/audit-faqs.cjs` (requires Poppler `pdftotext`
 check local FAQ content; results are saved in `faq-audit.json`. This content audit
 also flags commented-out sections, but does not verify rendered accordion behavior.
 
-**Section order.** This extends §21. The home page order is Header → Hero → About → Services → Social Media widget (optional, §30) →
-Care Philosophy → Consultation Journey → Contact → Practice Gallery → **FAQ** → Booking Modal →
-Footer. The FAQ section (`#faq`) comes straight after the Gallery and gets a nav link.
+**Section order.** Place the static specialty sections after Social Media (after Services when
+Social Media is absent) and before Contact. The FAQ (`#faq`) comes straight after the Gallery
+and gets a nav link (§21).
 
 **Required FAQ layout for every source and `-param` microsite, including custom designs.**
 Place the section kicker, heading and subtitle together at the top, left-aligned with the cards
@@ -2384,15 +2380,26 @@ card per row. Give each card its own surface, border and rounded corners, with a
 vertical gap between cards. Keep the question on the left and its chevron on the right.
 Expand the answer directly beneath its question, inside the same card.
 
-**Static sections with their own design.** Care Philosophy, Consultation Journey, and any
-other section can have a design of its own (layout, imagery, wording). Such a design is static,
-fixed content: it does not have to match the default designs below. It must still be present, in the correct order,
-responsive (§31), accessible, readable (AA contrast, 18px body text), consistent with the
-specialty, and free of overflow and leftover wording from another specialty.
+**Choosing static specialty sections.** Care Philosophy and Consultation Journey are defaults.
+Keep or redesign either one, or replace either or both with one or more static sections. A
+single section can cover the space previously occupied by both. Choose a topic that answers a
+patient question the surrounding sections leave open. For example, an orthopaedic site might
+show which prior scans and reports to bring, while a dental site might use a captioned
+instrument photograph to explain a first examination. Use accurate content specific to the
+practice (§42) and carry the chosen sections through to its `-param` template. Give replacements
+descriptive headings and IDs, and update any header, mobile menu or footer links to them.
 
-**Default designs (use these when no new design is made).** Copy the reference design in
-Appendix A.5 (Care Philosophy), A.6 (Consultation Journey) and A.9 (FAQ) and change only the
-wording for the specialty. Layout, classes, icons, element order, and counts stay.
+**Designing a premium section.** Give the reader a clear focal point and use the site's type
+scale to lead from the heading to the supporting details. Align text and visuals to the same
+container as the neighbouring sections. Reuse the site's palette, spacing and surface treatments.
+Choose a composition that suits the content, such as a compact checklist beside an annotated
+image. Follow §17 for imagery. At narrow widths, preserve the reading order, keep image details
+legible and close any gaps left by stacked columns. Check the rendered result using items 10–11
+in `verification.md`.
+
+**Default designs.** When retaining a section with its default design, use Appendix A.5
+(Care Philosophy), A.6 (Consultation Journey) or A.9 (FAQ) as applicable. Use the reference
+layout, classes, icons, element order and counts for that design and adapt the content to the specialty.
 Kickers stay generic (no doctor names or "20+ years" claims).
 
 - **Care Philosophy**: `section.philosophy-section#philosophy`. Split-screen layout inside
@@ -2798,8 +2805,8 @@ Requirements:
 Every icon must actually render and be clearly visible on its background, at every width
 (320–1440px+). Check this on every new or edited microsite, on all three pages. It covers:
 header (avatar, hamburger), hero (credential/registration/fellowship/language icons, stat-tile
-icons, social icons, floating decorative icons), Services, Philosophy pillars and badge, Journey
-step circles, Contact items, FAQ chevrons, the Facebook carousel prev/next buttons, gallery
+icons, social icons, floating decorative icons), Services, the chosen static specialty sections
+(including pillar and step icons when used), Contact items, FAQ chevrons, the Facebook carousel prev/next buttons, gallery
 lightbox controls, the booking modal (close ×, info "i", calendar arrows, date and select
 icons, upload/preview icons), the consent panel, the footer social icons and visitor badge, the
 legal-page Back arrow, and the chatbot (FAB logo, avatar, close ×, send icon).
@@ -2851,7 +2858,8 @@ How to use it:
   `--accent-rgb`, `--bg`, `--bg-2`, `--bg-3`, `--surface`, `--border`, `--text`, `--muted`, the
   radius and shadow scales, `--overlay-backdrop` from §16). Set those tokens per site and the blocks
   pick up the palette. A site may restyle a component (the design may vary, see the top of this
-  file), but must keep the class names, ids and `data-*` hooks, because the JavaScript reads them.
+  file). Preserve the class names, IDs and `data-*` hooks used by its JavaScript. A static
+  replacement in §39 can use its own markup.
 - **JavaScript** goes into `script/index.js` in this order: the booking helpers and the phone/date
   picker (A.18 (A) and (B)), the A.13 page blocks, the gallery lightbox (A.8),
   the booking-modal IIFE (A.18 (C), which also runs the consent panel and the
@@ -2952,7 +2960,7 @@ How to use it:
 <body data-micrositeid="microsite-<specialty>-<n>-<gender>" data-slug="{{slug}}">
 
   <!-- Header (A.2) · Hero (A.3) · About (§5, §24) · Services (§6, §23) · Social Media (A.4)
-       · Care Philosophy (A.5) · Consultation Journey (A.6) · Contact (A.7) · Gallery + lightbox (A.8)
+       · Static specialty sections (§39) · Contact (A.7) · Gallery + lightbox (A.8)
        · FAQ (A.9) · Booking + consent modals (A.10) · Footer (A.11) -->
 
   <script src="./script/banner-module.js"></script>
@@ -5690,7 +5698,7 @@ Sitemap: https://digidr.app/sitemap.xml
 
 ## Pages
 
-- [Profile](https://digidr.app/{{slug}}/): Dr. {{full_name}}'s profile — about, services, care philosophy, consultation journey, and practice gallery.
+- [Profile](https://digidr.app/{{slug}}/): Dr. {{full_name}}'s profile — about, services, and practice gallery.
 - [Privacy Policy](https://digidr.app/{{slug}}/privacy-policy.html)
 - [Terms of Service](https://digidr.app/{{slug}}/terms-of-service.html)
 ```

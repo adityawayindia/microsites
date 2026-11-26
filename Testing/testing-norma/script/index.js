@@ -1053,7 +1053,7 @@ document.addEventListener("click", (event) => {
 
 // DigiDr Stat Counter
 (function () {
-  const statEls = document.querySelectorAll("[data-counter]");
+  const statEls = document.querySelectorAll("[data-counter], .consultation-modes");
   if (!statEls.length) return;
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1101,7 +1101,11 @@ document.addEventListener("click", (event) => {
     (entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          animateCount(entry.target);
+          if (entry.target.hasAttribute("data-counter")) {
+            animateCount(entry.target);
+          } else {
+            entry.target.classList.add("is-visible");
+          }
           obs.unobserve(entry.target);
         }
       });

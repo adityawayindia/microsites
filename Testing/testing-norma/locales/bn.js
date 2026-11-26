@@ -24,6 +24,8 @@ window.micrositeLanguage.catalogs.bn = {
     "doctor_name_home": "{{doctor_name}}, বাড়ি"
   },
   "home": {
+    "offline": "অফলাইন",
+    "online": "অনলাইন",
     "main_clinic_banner": "প্রধান ক্লিনিক ব্যানার",
     "clinic_promo_banner": "ক্লিনিক প্রচার ব্যানার",
     "discover_the_practice": "ক্লিনিক সম্পর্কে জানুন",
@@ -426,6 +428,8 @@ window.micrositeLanguage.catalogs.bn = {
     "bot": "বট"
   },
   "share": {
+    "short_share": "শেয়ার",
+    "short_copied": "কপি হয়েছে",
     "call": "কল করুন",
     "share_profile": "প্রোফাইল শেয়ার করুন",
     "link_copied": "লিঙ্ক কপি করা হয়েছে",

@@ -19,6 +19,8 @@ if (!customElements.get("digidr-share-profile")) {
           <span class="share-label" aria-live="polite" aria-atomic="true">
             <span class="share-default" data-l10n="share.share_profile">Share profile</span>
             <span class="share-copied" data-l10n="share.link_copied">Link copied</span>
+            <span class="share-default compact-label" data-l10n="share.short_share">Share</span>
+            <span class="share-copied compact-label" data-l10n="share.short_copied">Copied</span>
           </span>
         </button>
         ${whatsappAction}
@@ -52,6 +54,11 @@ if (!customElements.get("digidr-share-profile")) {
       const heading = this.ownerDocument.querySelector("h1");
       let resetTimer;
       let shareMenuOpen = false;
+
+      input.addEventListener("blur", () => { manualCopy.hidden = true; });
+      input.addEventListener("keydown", event => {
+        if (event.key === "Escape") button.focus();
+      });
 
       button.addEventListener("click", async () => {
         if (shareMenuOpen) return;

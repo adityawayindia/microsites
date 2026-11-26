@@ -1,0 +1,202 @@
+# Verification — microsite-cardiology-53-male-param
+
+Run by Codex on 26 November 2026.
+
+A portrait-led panel layout in lavender, ink and soft gold. The name and compact information band were informed by the supplied senior designer’s reference.
+
+136 local browser checks passed. Chromium used a loopback HTTP server. Real CSS, fonts, image files, JavaScript and multipart form encoding were exercised. DigiDr API and third-party analytics, Facebook and CDN traffic used local fixtures.
+
+Item | Status | Evidence | Observation or fix
+--- | --- | --- | ---
+1–2 | PASS | index.html:36, styles/style.css:1043 | Portrait, full name, dropdown and clean navigation tested from 320 to 1900px.
+3–6, 6a | PASS | index.html:68, index.html:79, script/index.js:1124 | Three counters and eight social channels. No promotional hero paragraph or portrait overlay label.
+7 | PASS | index.html:88, styles/style.css:253 | Expanded and collapsed with long replacement text at four widths.
+8–9 | PASS | index.html:93, styles/style.css:177 | Measured final rows with 4, 5, 6 and 7 items at three widths.
+E1–E5 | PASS (fixture) | index.html:94, script/index.js:1303 | Filtered posts, embeds, mobile paging, two centred fallback cards, skeletons, empty feed and late response checked.
+10–11 | PASS | index.html:121, index.html:127 | Reviewed Inside an echocardiogram and From referral to review at 1440, 768 and 375px.
+12 | PASS | index.html:137 | Clinic address, email, booking action and unavailable-contact handling.
+13–14 | PASS | index.html:151, index.html:155 | Keyboard lightbox, equal gallery cells and single-open accordion. Six pairs from Cardiology PDF set 5.
+15–20 | PASS | index.html:185, index.html:281, script/index.js:417 | Hover/tap guidance, consent scroll gate, dismiss/reopen, exact consent label and focus return.
+21–25 | PASS (fixture) | index.html:190, script/index.js:875 | Validated names, phone, required fields, availability, slots, attachment removal, formats, consent and retry. Received both multipart submissions and confirmations. Tested each type alone and both disabled.
+26–29, 28a, 29a | PASS (fixture) | index.html:320, privacy-policy.html:84, terms-of-service.html:74 | Consistent footer, 14px disclaimer, visitor response on all pages.
+30, 30a, 31–32 | PASS (fixture) | script/chatbot.js:46, styles/chatbot.css:197 | Opened and closed the chat, submitted using Enter and received a mock reply. Measured chat at 1440, 768, 375 and 320px.
+33 | UNVERIFIED (live replies) | script/chatbot.js:255 | Local greeting and transport checked. Production reply content depends on the live backend.
+34–35 | PASS | privacy-policy.html:41, terms-of-service.html:41 | Compared the project legal copy and checked Back links. privacy-policy.html 30/30 fixed paragraphs or groups, terms-of-service.html 21/21 fixed paragraphs or groups.
+36–40 | PASS | index.html:42, sitemap.xml:3, robots.txt:6 | Three pages, required assets, legal routes, section order and crawler drafts. No blog destinations.
+41–43, 42a–42b | PASS | index.html:68, assets/IMAGE-SOURCES.txt:5 | Cardiology-specific copy and imagery. Standalone profiles are illustrative. Scanned indexed text and checked rendered pages.
+44 | PASS (sampled) | styles/style.css:39, styles/style.css:1059 | Automated WCAG home scan, plus lowest three measured text/icon combinations: .contact-item a 6.12:1, .hero-section .social i 8.71:1, .footer-social > [data-tooltip] i 9.32:1.
+45–49 | PASS | styles/style.css:1084, styles/style.css:1090, styles/style.css:1148 | Shared container and section rhythm, heading hierarchy, distinct card surfaces and reduced-motion rules.
+50–53, 53a | PASS | styles/style.css:1124, index.html:67 | Viewport widths from 320 to 1900px. Long clinician name and narrow header measured. Original portrait and two people-free supporting photographs. Gallery reused as permitted.
+S1, S4–S5 | LOCAL PASS / LIVE UNVERIFIED | index.html:27, script/analytics.js:7 | Verified GA4 and Clarity queues. Production GA4 measurement IDs and dashboard receipt require account configuration.
+S2–S3 | PASS (fixture) | index.html:36, script/index.js:393 | Event evidence follows. Only enabled destinations emit clicks.
+54–56 | PASS | styles/style.css:108, index.html:8, index.html:171 | Checked metadata, image alt attributes, keyboard controls, focus, local links and responsive text.
+57, 57a | LOCAL PASS / LIVE UNVERIFIED | index.html:21, index.html:32 | Local browser runs had no uncaught errors, broken fixture assets or console errors. Checked icon glyphs and tooltip white-space on all pages. Remote delivery requires deployment.
+58–59 | PASS | microsite-cardiology-53-male-param/ | Next available source and matching template names. Existing site folders were preserved.
+
+Event | Trigger | Found in code | Fired locally | Notes
+--- | --- | --- | --- | ---
+nav_link_click | Header navigation | index.html:36 | Yes | Local GA4 event queue.
+book_appointment_click | Appointment CTA | index.html:39 | Yes | Local GA4 event queue.
+hero_social_link_click | Enabled profile social | index.html:70 | Yes | Local GA4 event queue.
+read_more_click | About text toggle | index.html:89 | Yes | Local GA4 event queue.
+phone_number_click | Enabled phone link | index.html:145 | Yes | Local GA4 event queue.
+email_click | Email link | index.html:145 | Yes | Local GA4 event queue.
+clinic_visit_tab_click | Clinic tab | index.html:184 | Yes | Local GA4 event queue.
+online_consult_tab_click | Online tab | index.html:185 | Yes | Local GA4 event queue.
+upload_report_click | Upload control | index.html:256 | Yes | Local GA4 event queue.
+footer_nav_link_click | Footer navigation | index.html:350 | Yes | Local GA4 event queue.
+footer_social_link_click | Enabled footer social | index.html:335 | Yes | Local GA4 event queue.
+consent_checkbox_click | User checks consent | script/index.js:263 | Yes | Local GA4 event queue.
+consent_modal_open | Consent panel opens | script/index.js:443 | Yes | Local GA4 event queue.
+consent_scrolled_to_bottom | Scroll gate unlocks | script/index.js:414 | Yes | Local GA4 event queue.
+consent_agreed | Patient agrees | script/index.js:453 | Yes | Local GA4 event queue.
+consent_dismissed | Patient dismisses | script/index.js:453 | Yes | Local GA4 event queue.
+report_uploaded | Accepted file selection | script/index.js:644 | Yes | Local GA4 event queue.
+booking_submitted | Successful booking response | script/index.js:1184 | Yes | Local GA4 event queue.
+
+Local browser checks
+
+PASS  home sections, services, gallery, FAQ
+PASS  Home responsive 1900
+PASS  Home responsive 1440
+PASS  Home responsive 1201
+PASS  Home responsive 1200
+PASS  Home responsive 1024
+PASS  Home responsive 768
+PASS  Home responsive 390
+PASS  Home responsive 375
+PASS  Home responsive 320
+PASS  mobile navigation opens
+PASS  navigation closes and cleans URL
+PASS  FAQ single open state
+PASS  keyboard gallery lightbox
+PASS  gallery images decoded
+PASS  offline name sanitization and required fields
+PASS  offline weekdays and past dates blocked
+PASS  offline no POST before consent
+PASS  offline consent scroll gate
+PASS  dismiss restores unchecked consent
+PASS  offline invalid phone prevented
+PASS  report validation and PDF preview
+PASS  offline multipart POST with live fields
+PASS  offline doctor and slot configuration
+PASS  offline confirmation
+PASS  online name sanitization and required fields
+PASS  online weekdays and past dates blocked
+PASS  online no POST before consent
+PASS  online consent scroll gate
+PASS  online invalid phone prevented
+PASS  online multipart POST with live fields
+PASS  online doctor and slot configuration
+PASS  online confirmation
+PASS  mobile chat stays in viewport
+PASS  chat API payload and reply
+PASS  Facebook live embed cards and filters
+PASS  Facebook mobile paging
+PASS  configured mobile banner
+PASS  banner expiration and reactivation
+PASS  consent click, read-once, analytics modes and privacy
+PASS  booking and consent analytics
+PASS  privacy-policy responsive 1900
+PASS  privacy-policy responsive 1440
+PASS  privacy-policy responsive 1201
+PASS  privacy-policy responsive 1200
+PASS  privacy-policy responsive 1024
+PASS  privacy-policy responsive 768
+PASS  privacy-policy responsive 390
+PASS  privacy-policy responsive 375
+PASS  privacy-policy responsive 320
+PASS  privacy-policy footer and chatbot
+PASS  terms-of-service responsive 1900
+PASS  terms-of-service responsive 1440
+PASS  terms-of-service responsive 1201
+PASS  terms-of-service responsive 1200
+PASS  terms-of-service responsive 1024
+PASS  terms-of-service responsive 768
+PASS  terms-of-service responsive 390
+PASS  terms-of-service responsive 375
+PASS  terms-of-service responsive 320
+PASS  terms-of-service footer and chatbot
+PASS  online-only consult auto-selection
+PASS  online-only slot query uses mode
+PASS  blocked SDK exposes two centred fallback links
+PASS  offline-only consult auto-selection
+PASS  offline-only slot query uses mode
+PASS  empty Facebook feed collapses
+PASS  absent banner, registration and fellowship
+PASS  missing phone and email show NA
+PASS  long profile wrapping 320
+PASS  long profile wrapping 375
+PASS  long profile wrapping 768
+PASS  long profile wrapping 1200
+PASS  long profile wrapping 1201
+PASS  long profile wrapping 1440
+PASS  long profile wrapping 1900
+PASS  unavailable modes hide every booking trigger
+PASS  no runtime exceptions
+PASS  no broken local or unexpected assets
+PASS  no browser console errors
+PASS  feed starts with three skeletons
+PASS  no late reply resurrects social band
+PASS  online info tooltip hover and tap
+PASS  uploaded report removable
+PASS  failed POST gives a retryable form and no success event
+PASS  double submit produces only one request
+PASS  Escape returns focus to originating CTA
+PASS  all tagged controls generate one GA4 and Clarity event
+PASS  FAQ rows 1440
+PASS  Body, CTA and footer type 1440
+PASS  FAQ rows 768
+PASS  Body, CTA and footer type 768
+PASS  FAQ rows 375
+PASS  Body, CTA and footer type 375
+PASS  WCAG automated check
+PASS  Long biography 1440
+PASS  Long biography 768
+PASS  Long biography 375
+PASS  Long biography 320
+PASS  services-grid final row 1440
+PASS  services-grid final row 768
+PASS  services-grid final row 375
+PASS  gallery-grid final row 1440
+PASS  gallery-grid final row 768
+PASS  gallery-grid final row 375
+PASS  home metadata, local links, tags, visitor count and text
+PASS  home visible icon glyphs 1440
+PASS  home single-line social tooltips 1440
+PASS  home visible icon glyphs 768
+PASS  home single-line social tooltips 768
+PASS  home visible icon glyphs 375
+PASS  home single-line social tooltips 375
+PASS  privacy-policy metadata, local links, tags, visitor count and text
+PASS  privacy-policy Back link
+PASS  privacy-policy visible icon glyphs 1440
+PASS  privacy-policy single-line social tooltips 1440
+PASS  privacy-policy visible icon glyphs 768
+PASS  privacy-policy single-line social tooltips 768
+PASS  privacy-policy visible icon glyphs 375
+PASS  privacy-policy single-line social tooltips 375
+PASS  terms-of-service metadata, local links, tags, visitor count and text
+PASS  terms-of-service Back link
+PASS  terms-of-service visible icon glyphs 1440
+PASS  terms-of-service single-line social tooltips 1440
+PASS  terms-of-service visible icon glyphs 768
+PASS  terms-of-service single-line social tooltips 768
+PASS  terms-of-service visible icon glyphs 375
+PASS  terms-of-service single-line social tooltips 375
+PASS  online-only actual multipart submission
+PASS  offline-only actual multipart submission
+PASS  Chat dimensions and footer 1440
+PASS  Chat dimensions and footer 768
+PASS  Chat dimensions and footer 375
+PASS  Chat dimensions and footer 320
+PASS  Representative text and icon contrast
+PASS  Desktop navigation clearance
+
+Corrections verified
+
+Mobile layout adjustments keep the profile name, stat labels and booking tabs readable. The consent gate only emits a read event while its dialog is visible. A genuine checkbox click is tracked when it opens that dialog. Booking analytics map the clinic label independently of the API’s offline type. Upload analytics contain no filename.
+
+Deployment checks still open
+
+Assign the clinician, contact information and production GA4 ID. Confirm rendering with the assigned slug, upload static assets to its storage bucket and verify delivery. A staged booking, delivery of confirmation email, the live Facebook SDK, live chat replies and collection in the analytics dashboards require a configured practice.

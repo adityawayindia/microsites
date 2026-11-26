@@ -1,0 +1,82 @@
+microsite-ayurvedic-32-male verification
+26 November 2026
+
+Item | Status | Evidence | Result
+Project structure, markup, live API contract and asset references | PASS | index.html:1 | 32 of 32 checks passed.
+Responsive home and legal pages | PASS | index.html:33 | 27 of 27 checks passed. Widths 320, 375, 390, 768, 1024, 1200, 1201, 1440 and 1900 CSS pixels.
+Full header name and collision checks | PASS | index.html:33 | 24 of 24 checks passed. A 50+ character name and a long unbroken surname were tested.
+Hero photograph, profile and counters | PASS | index.html:36 | 5 of 5 checks passed.
+Section card heading hierarchy and text fit | PASS | styles/style.css:102 | 3 of 3 checks passed.
+Navigation, biography, gallery and FAQ | PASS | index.html:34 | 7 of 7 checks passed.
+Online and clinic booking, consent and validation | PASS | script/index.js:305 | 25 of 25 checks passed. Requests used synthetic details and the live multipart field names. Both successful confirmations were read in Chrome.
+Facebook feed, filtering, fallback and carousel | PASS | script/index.js:1356 | 6 of 6 checks passed. Exercised local Facebook SDK states and feed results.
+Configured and unconfigured contact details | PASS | index.html:135 | 2 of 2 checks passed. Validated contact targets with a synthetic number and address.
+Chatbot window, message, reply and rapid close and reopen | PASS | script/chatbot.js:238 | 5 of 5 checks passed.
+Banner configuration | PASS | script/banner-module.js:33 | 9 of 9 checks passed. Checked the schedule, configured artwork, mobile fallback, endpoint configuration and disabled states.
+Shared footer and legal text | PASS | index.html:297 | 3 of 3 checks passed.
+GA4 and Clarity dispatch | PASS | script/analytics.js:7 | 6 of 6 checks passed. Analytics collection was intercepted locally.
+Service and gallery last-row alignment | PASS | styles/style.css:124 | 24 of 24 checks passed. Each grid used totals of 4, 5, 6 and 7 at 375, 768 and 1440 CSS pixels.
+Automated axe accessibility checks | PASS | index.html:35 | 6 of 6 checks passed. WCAG 2 A/AA and 2.1 A/AA rules.
+Visible icon glyphs and decoded images | PASS | index.html:24 | 16 of 16 checks passed. Checked home, calendar, chat and legal pages at 375, 768 and 1440 CSS pixels.
+Console and local HTTP responses | PASS | script/index.js:1707 | 3 of 3 checks passed.
+Final hero photograph, name and badge on phone | PASS | index.html:66 | 1 of 1 checks passed. At 375 ? 812 the name has 335px of width and the badge has 235px. The portrait starts at y=398px.
+
+Analytics controls were activated in the browser.
+Page | Event | Controls tested | GA4 and Clarity once
+index | nav_link_click | 5 | PASS
+index | book_appointment_click | 3 | PASS
+index | read_more_click | 1 | PASS
+index | clinic_visit_tab_click | 1 | PASS
+index | online_consult_tab_click | 1 | PASS
+index | upload_report_click | 1 | PASS
+index | footer_nav_link_click | 7 | PASS
+privacy-policy | footer_nav_link_click | 7 | PASS
+terms-of-service | footer_nav_link_click | 7 | PASS
+
+Booking events observed in the interaction flow
+Event | Instances in the local event queue
+consent_modal_open | 3
+consent_scrolled_to_bottom | 3
+consent_agreed | 2
+consent_dismissed | 1
+report_uploaded | 2
+booking_submitted | 2
+consent_checkbox_click | One GA4 and one Clarity event observed during a user-initiated uncheck.
+
+Changes checked
+Responsive hero positioning keeps the photograph near the doctor summary. The banner module supports date and image updates. The header, chatbot launcher and country selector use accessible names aligned with their visible labels.
+
+Verification limits
+The doctor profile and booking account must be provisioned by the backend. Appointment requests, meeting links, chat replies, Facebook posts and analytics delivery were tested using a local service fixture. GA4 uses a placeholder measurement ID pending provisioning. Production account ownership, feed contents, external dashboard receipt and live patient bookings were unverified.
+
+Verification checklist references
+Item(s) | Status | Evidence | Finding
+1, 2 | PASS | index.html:33 | Header portrait, complete name and clean-link navigation; browser checks include long names and hamburger selection.
+3, 4 | PASS | index.html:59 | Profile rows and three animated counts; the four-digit year remained on one line at all six width checks.
+5, 6, 6a | PASS | index.html:58 | One doctor heading, eight social positions, a single photograph in its own frame and a booking action.
+7 | PASS | script/index.js:1681 | Biography clamp and expand/collapse controls.
+8, 9 | PASS | styles/style.css:124 | Service layout, relevant content and incomplete-row placement at four different item counts.
+E1–E5 | PASS | script/index.js:1356 | Placement, feed filters, skeletons, SDK and fallback states, centering, paging and hidden empty feed; exercised locally.
+10, 11 | PASS | index.html:113 | Three care principles and four consultation steps, with responsive layout.
+12 | PASS | index.html:134 | Configured and empty contact rows and appointment CTA. The source doctor and address are illustrative.
+13, 14 | PASS | index.html:138 | Three gallery photographs, lightbox navigation and six accordion entries from the workspace Ayurveda PDF.
+15, 16 | PASS | index.html:164 | Online information icon and reference tooltip; desktop hover and mobile tap checks.
+17, 18, 19, 20 | PASS | index.html:258 | Consent panel text, gated agreement, secondary controls and form-state preservation.
+21, 22, 23 | PASS | script/index.js:59 | Country selector, input and calendar validation, report types, removal and size handling.
+24, 25 | PASS | index.html:161 | Clinic and online tabs, primary actions, validation and both confirmation states. Multipart submissions reached the local test server.
+26, 27, 28, 28a, 29 | PASS | styles/style.css:774 | Shared three-page footer, compact controls and 14px disclaimer. Credits are maintained in the asset inventory.
+29a | LOCAL PASS / production unverified | index.html:368 | Visitor POST and formatting on each page. The production count requires the assigned microsite ID.
+30, 30a, 31 | PASS | script/chatbot.js:46 | Panel, composer, footer note, keyboard controls and absence of rendered suggestion chips.
+32, 33 | LOCAL PASS / production unverified | script/chatbot.js:258 | Local welcome and request/reply integration passed. Responses authored by a production chatbot are unverified.
+34, 35 | PASS | privacy-policy.html:36 | Legal wording and visible Back links on both pages were checked.
+36, 37, 38, 39, 40 | PASS | index.html:35 | Folder inventory, ordered homepage sections, SEO files and source-identity checks. No blog pages or routes.
+41, 42, 42a, 42b | PASS | assets/IMAGE-SOURCES.txt:3 | Checked specialty, pronouns, illustrative claims, restricted wording, imagery and FAQ set.
+43, 44, 45 | PASS | styles/style.css:10 | Brand, neutral and accent surfaces, alternating sections, computed contrast and axe scans.
+46, 47, 48, 49 | PASS | styles/style.css:973 | Page measure, typography, card hierarchy, focus states and reduced-motion rules.
+50, 51, 52 | PASS | styles/style.css:1014 | Desktop, tablet, phone and long-header checks. At 375px the real portfolio portrait enters the first viewport.
+53, 53a | PASS | assets/IMAGE-SOURCES.txt:5 | Dimensions, lazy loading, file sizes, 80 unique generated content photographs and people-free non-portrait artwork reviewed across the collection.
+S1 | LOCAL PASS / production unverified | script/analytics.js:7 | GA4 dispatch and shared Clarity project checked. Production GA4 ID and dashboard receipt require configuration.
+S2, S3, S4, S5 | PASS | script/analytics.js:23 | See the browser control counts above. Checked clicks, upload, consent and booking dispatch with synthetic data.
+54, 55, 56 | PASS | index.html:8 | Global CSS, page-specific metadata, accessible names, dialogs, keyboard and legal page navigation.
+57, 57a | PASS | index.html:24 | All local images, scripts and icon glyphs checked. Public Google font styles, Font Awesome, telephone-input dependencies and DigiDr chatbot artwork also returned HTTP 200.
+58, 59 | PASS | index.html:32 | Checked source/template numbering and gender, limited deliverables to the 40 new Ayurvedic folders.
