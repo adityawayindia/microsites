@@ -558,6 +558,8 @@ initPhonePlugin();
     infoIcon?.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") toggleInfoTip(true); });
     infoIcon?.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") toggleInfoTip(false); });
     infoIcon?.addEventListener("click", () => toggleInfoTip(infoTip.hidden));
+    onlineTab?.addEventListener("focus", () => toggleInfoTip(true));
+    onlineTab?.addEventListener("blur", () => toggleInfoTip(false));
     document.addEventListener("click", (e) => { if (!infoIcon?.contains(e.target)) toggleInfoTip(false); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleInfoTip(false); });
 
@@ -1716,4 +1718,29 @@ if(incomingSectionHash && performance.getEntriesByType('navigation')[0]?.type !=
     };
   }
   window.addEventListener("resize", debounce(function () { initReadMore(); }, 200));
+})();
+
+
+/* Dental collection motion: enhancement only; content is visible without JavaScript. */
+(function initDentalMotion() {
+  if (!('IntersectionObserver' in window)) return;
+  const animated = document.querySelectorAll('.hero-section,.service-card,.process-section');
+  const active = new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.target.classList.toggle('is-in-view', entry.isIntersecting));
+  }, { threshold: 0.05 });
+  animated.forEach(el => active.observe(el));
+  const reveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('has-arrived');
+      reveal.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.about-intro,.about-layout .read-more-wrap,.service-card,.philosophy-intro,.philosophy-visual,.philosophy-pillar,.process-step,.gallery-item').forEach(el => {
+    el.classList.add('arrival-item');
+    reveal.observe(el);
+  });
+  const syncVisibility = () => document.body.classList.toggle('motion-paused', document.hidden);
+  document.addEventListener('visibilitychange', syncVisibility);
+  syncVisibility();
 })();

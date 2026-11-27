@@ -1,0 +1,87 @@
+DENTIST 11-30 — LUXURY DESIGN REFRESH
+Date: 27 November 2026
+
+Scope
+20 source sites and their 20 parameterized counterparts, including the existing
+assigned variants for sites 12 and 29. Validation was completed before the
+user-requested Git commit and push to main.
+The recent cardiology-male site and the supplied example.png informed the visual
+direction. No cardiology, older dentist, or live-microsite files were changed.
+
+Designs
+11  Porcelain gallery     Framed editorial portrait, teal and champagne
+12  Midnight salon       Reversed navy hero, arched portrait, sea-glass details
+13  Sage conservatory    Green alcove, sage and plum, open editorial biography
+14  Graphite architecture Landscape image and inset portrait, graphite and teal
+15  Plum atelier         Double arches, plum and forest, sculpted service cards
+16  Tidal lens           Circular portrait, aqua and indigo, rounded statistics
+17  Oxblood folio        Burgundy split background, blue accents, fine rulework
+18  Indigo prism        Three-column hero, lilac profile, pale-gold metrics rail
+19  Amber cabinet       Double frames, amber and petrol, symmetric information row
+20  Ceramic diptych     Centered profile panel, blue and aubergine, stacked metrics
+21  Clay sculpture      Oval portrait, clay and olive, asymmetric forms
+22  Evergreen pavilion  Green portrait alcove, blue-tinted metrics bench
+23  Slate archive       Editorial image plate, slate and plum, restrained typography
+24  Mulberry triptych   Profile, arched portrait and metrics, mulberry and teal
+25  Rose residence      Bold portrait/profile panels, rose, lilac and warm gold
+26  Marine observatory  Navy profile panel, marine and lavender, portrait column
+27  Sienna journal      Offset image composition, sienna and sage
+28  Lavender prism      Peach portrait, lavender profile, butter-yellow statistics
+29  Olive atlas         Oval portrait, olive and indigo, horizontal information row
+30  Charcoal contour    Dark studio hero, charcoal and violet, asymmetric portrait
+
+Each source/template pair shares its complete style.css. Each numbered design
+has its own hero composition and an independently combined biography, care,
+journey and contact layout. All required sections and the existing content remain.
+
+Audit results
+Item | Status | Evidence | Fix applied
+Responsive layouts | PASS | 40 folders, index at 320/375/768/1024/1200/1210/1440/1900px; 20 source screenshot sets | Explicit grid areas and mobile resets; no detected content overflow
+Header and long names | PASS | 50+ character name including an unbroken family name, long specialty and qualification at six widths | Full-name wrapping and min-width safeguards retained
+Header without booking CTA | PASS | Right-edge navigation measurement at 1440px in every folder | Desktop auto margin retained
+Hero content | PASS | index.html .hero-identity/.hero-stats/.hero-connect/.hero-visual | Profile content retained without promotional headings or new claims
+Template parameters | PASS | Original/current placeholder multisets match in all 40 files; rendered fixtures contain no visible raw tags | Existing flags, loops, URLs and vocabulary preserved
+Source/template style parity | PASS | Exact CSS comparison for all 20 pairs | Matching changes in source and param folders
+Services and gallery | PASS | 4/5/6/7 items at 1440/768/375px in all 40 folders | Existing 12-track centering retained; equal gallery dimensions
+Text contrast | PASS | Computed page-text foreground/background checks at eight widths in all 40 folders | Contrasting light/dark surfaces; explicit white headings/body on dark service and contact areas
+FAQ | PASS | One-open-at-a-time interactions at 1440/375px in all 40 folders | Full-width, rounded, individually bordered cards; original Q&A unchanged
+Gallery lightbox | PASS | Open and Escape-close at 1440/375px in all 40 folders | Existing behavior retained
+Booking modal | PASS (UI) | Open, clinic/online tabs at 1440/375px in all 40 folders | Existing form and booking code retained
+Booking information tooltip | PASS | Keyboard focus on Online Consultation shows the note at both widths | Added focus/blur equivalents to the existing hover/tap handlers
+Consent panel | PASS (UI) | Opens, starts gated, enables after scrolling, accepts consent at both widths | Existing consent markup and flow retained
+Mobile menu | PASS | Opens and closes after navigation; URL has no hash | Existing navigation handlers retained
+Chatbot | PASS (layout) | Open/close and dimensions at 1440/375px in all 40 folders | Existing widget retained
+Legal pages | PASS (layout) | Both pages at 1440/768/375/320px in all 40 folders | Shared palette and typography retained; 14px disclaimer verified
+Content preservation | PASS | 120 normalized comparisons of FAQ, booking and footer markup against HEAD | These content blocks were not rewritten
+Motion | PASS | 10 representative source/template previews, sites 11/18/25/28/30 | Animated dental contours, emblem rings, floating details, service accents and one-time arrivals
+Motion visibility/reduced motion | PASS | Actual browser animation states while visible, off-screen and with reduced motion | IntersectionObserver pauses continuous effects; CSS disables motion when requested
+Hero counters | PASS | Three counters reach their displayed target values in all 10 motion previews | Original counter implementation retained
+JavaScript syntax | PASS | node --check on all 40 edited index.js files | New motion initialization is isolated from existing handlers
+Browser errors and local assets | PASS | No page exceptions or local HTTP 404s in the 40-folder regression | Local assets and template path fixtures resolve
+Workspace hygiene | PASS | git diff --check; only scoped source/template files plus this report and comparison image | No deletions or changes to live microsites
+
+Counts
+3,040 regression assertions passed across 40 source/template folders.
+160 additional source layout captures/checks covered 20 designs at eight widths.
+10 animation/counter previews passed. All 20 source/template CSS pairs match.
+
+Evidence locations
+Representative implementation:
+  microsite-dentist-11-male/index.html — hero, about and philosophy wrappers
+  microsite-dentist-11-male/styles/style.css:974 — luxury composition rules
+  microsite-dentist-11-male/styles/style.css:1152 — art direction and motion
+  microsite-dentist-11-male/script/index.js — tooltip focus/blur and initDentalMotion
+Visual comparison:
+  ../screenshots/Dentist/luxury-overview.png
+Detailed automated logs and full-page captures:
+  C:/Users/Lenovo/AppData/Local/Temp/dentist-luxury-qa/
+
+Verification limits
+- This is a design-change regression audit, not a fresh medical/legal content audit.
+  Existing FAQ selections, legal wording, doctor data and backend identifiers were preserved.
+- Booking API calls, social feeds, visitor counts and analytics requests were intercepted
+  during browser checks. No real patient booking was submitted. Live submission, delivery,
+  Facebook embeds, GA4/Clarity ingestion and chatbot backend responses remain unverified.
+- Template previews used local representative data. Deployment through the production
+  template renderer was not performed.
+- Lighthouse and axe scores were not collected.
