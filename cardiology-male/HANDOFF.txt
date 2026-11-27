@@ -1,0 +1,53 @@
+The desktop rail and mobile strip use the same actions. Share opens the system share sheet where supported, and Call uses the configured practice phone. The demo has no WhatsApp contact, so its rail button and WhatsApp social icon both show Not Enabled on hover or keyboard focus on desktop.
+
+27 November 2026 - Latest update: native browser/system sharing only; testing-norma copy-link/manual-copy fallback retained without a custom share menu. The parameterized URL remains https://digidr.app/{{slug}}. Shared maroon gradient footer applies to all three pages in both versions. Visual verification deferred at user request; only syntax and template consistency checked.
+
+Cardiology male microsite — local handoff
+27 November 2026 — redesigned visual identity
+
+Source: cardiology-male/index.html
+Backend template: cardiology-male-param/index.html
+Both include privacy-policy.html, terms-of-service.html, identical footer content, styles, scripts, assets and the SEO drafts.
+
+Serve over HTTP for browser preview. The parameterized HTML requires the existing DigiDr Mustache renderer; it is not intended to be opened as an unrendered static page.
+
+The source uses an explicitly illustrative profile, Dr. Aarav Mehta. No real doctor, clinic, registration, fellowship, date, contact or analytics account was supplied. Replace these illustrative details with approved clinician information before publication. Phone/email show NA. Social channels are visibly disabled until configured.
+
+Current design
+Warm white and deep burgundy with muted crimson actions; locally hosted Lora and Plus Jakarta Sans. A three-panel hero combines a asymmetrically rounded portrait, separate burgundy credentials panel and vertical statistics. Supporting sections use a split burgundy About panel, sculpted service cards, an image-led preparation section, four-column consultation milestones, a burgundy contact panel, framed gallery and refined FAQ accordion. The shared light footer is consistent across all pages. Active original photos are portrait-v2.webp and heart-care-v2.webp. The hero now also includes cardiac-heart.webp, a decorative original heart sculpture, accompanied by ECG motifs and small dusty-rose cardiac accents. Upload this new static asset with the other assets. See assets/IMAGE-SOURCES.txt for provenance and generation prompts.
+
+Runtime configuration
+- Source body data-micrositeid and data-slug, and bookingForm data-userid, are intentionally empty. This avoids requests to invented or unrelated live doctor IDs. The booking form can be inspected, but available slots and submission require an assigned doctor.
+- The parameterized pages use the standard {{micrositeId}}, {{slug}}, {{userid}}, clinic data and profile placeholders from parameterization.md.
+- Set meta[name="ga-measurement-id"] content to the assigned G-... Measurement ID on all three pages. The bootstrap initializes the event queue but loads GA4 only when this field is valid. No invented Measurement ID or another doctor's ID is included.
+- The shared Clarity project is ymqvcvdc4v. Parameterized tags use {{slug}} and the cardiology specialty.
+- Theme colors, fonts, radii and shadows are CSS custom properties in styles/style.css. No unsupported branding placeholders were invented.
+- Standard social has/no flags, services and gallery loops, banner fields, credentials, contact values and section-text fallbacks are supported. The specialty-specific preparation section and the PDF FAQs remain static as required by the playbook.
+- Upload assets for the assigned slug to https://storage.googleapis.com/digidr/microsites/<slug>/assets/. Static template imagery uses the {{slug}} storage path. Doctor portrait and gallery remain dynamic {{profile}} / {{image}} fields. Keep styles/fonts alongside styles/style.css.
+- Banner artwork includes a separate mobile version. The standalone banner is off by default; the parameterized has_banner block and configured dates/source values activate it.
+- SEO files are per-microsite drafts for backend merging at the shared domain root.
+
+Booking compatibility
+The existing DigiDr availability, slots, multipart submission, upload, consent and confirmation logic is retained. Endpoint: https://digidrapi.digidr.app. No fixture API code is shipped in the site. The only initialization guards skip requests when a source draft has no assigned ID; they do not change configured booking requests. Confirmation styling was adjusted without changing submission behavior.
+
+Verification
+See verification-report.txt. Online and clinic flows were exercised through real local HTTP multipart round trips with controlled API responses. No live appointment was created. Production booking acceptance, confirmation email, Facebook rendering, live chatbot replies, visitor totals and analytics dashboard receipt need the assigned practice and deployment. No cloud site was created, no files outside the two requested new folders were changed, and nothing was committed or pushed.
+
+Services and sharing update
+27 November 2026 - Services refresh and profile sharing
+Services: full-width card copy, sculpted icon corners, subtle ECG details and split section header; existing dynamic services loop and 4/5/6/7-card centering retained.
+Share Profile: placed directly before Website in a nonbreaking icon group. Native Web Share when available; otherwise a keyboard-accessible dialog with WhatsApp, Facebook, Email and Copy Link. Escape/close/backdrop restore focus; denied clipboard access falls back to selection/manual copy. Source shares the current page without tracking query/hash; template shares https://digidr.app/{{slug}} via data-profile-url. Include script/profile-share.js in deployment; template loads it through {{path}}.
+
+Consultation card: Online/Offline labels come from the existing getappointment?userid={{userid}} response (boolean online/offline). No new Mustache fields or additional API call. Parameterized count remains the fallback if availability cannot be confirmed; neither mode enabled shows Not Enabled. Source demo initially shows both illustrative modes.
+
+Research & Articles: placed after Consultation Journey and before Contact, with a matching footer shortcut on all pages. Titles, journals, years and supplied co-author retained. Bibliographic links verified against PubMed 35528126, PubMed 35172738 / DOI 10.1186/s12872-022-02503-1, and PubMed 34104416 / DOI 10.1177/2045894021992678. These are user-supplied publications, not an assertion of authorship by the illustrative source doctor.
+
+Typography update: user-requested proportional 5% reduction via --type-scale: .95. Covers heading/body/button/footer/legal/chat type and icon glyphs. Mobile text-entry controls retain 16px to prevent focus zoom. This intentionally supersedes the default 18px body specification for these two sites. Visual review remains deferred.
+
+Latest typography request: reduce the current .95 scale by 20%, giving --type-scale: .76. The mobile input minimum override was removed so this reduction applies uniformly across text controls as requested.
+
+Typography correction: 90% of the prior .95 baseline, giving --type-scale: .855, supersedes the .76 setting.
+
+Research & Articles background: assets/research-cardiology-atlas.webp. The param template references the standard GCS {{slug}} asset location; include the new WebP in the asset upload. Image provenance and complete generation prompt are in assets/IMAGE-SOURCES.txt.
+
+Hero background: include assets/hero-cardiology-bg.webp in deployment. Source CSS resolves ../assets/ from styles/; param uses the absolute GCS {{slug}} path. Original generated image and complete prompt recorded in assets/IMAGE-SOURCES.txt.

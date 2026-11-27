@@ -1,0 +1,442 @@
+27 November 2026 - Research & Articles added before Contact. Three supplied publications displayed in editorial cards with year pills, journal metadata, optional co-author and publication links. Sources: https://pubmed.ncbi.nlm.nih.gov/35528126/ ; https://doi.org/10.1186/s12872-022-02503-1 ; https://doi.org/10.1177/2045894021992678 . Param template uses has_research_articles and research_articles[]; research-example.json provides the ready-to-merge backend payload. Footer research shortcuts synchronized across all pages. 20 focused content/template/link/accessibility checks passed, plus template contract checks; no visual review or screenshots, per user deferral. Backend data-provider integration requires supplying the documented new fields.
+
+27 November 2026 - Right-side Share / Call / WhatsApp rail added from testing-norma's styling, with its compact mobile header row. Call uses configured practice phone, disabled when unavailable; WhatsApp shares the profile URL. Hero Share Profile retained. Native sharing now resolves and validates HTTP(S) public URLs, preferring configured template URL then canonical, and never passes file: URLs or unresolved placeholders to navigator.share. Both share controls share an in-flight lock. 12 targeted functional checks passed with native API mocked, plus syntax/template contract checks. No screenshots or visual review; actual OS share-sheet verification remains deferred.
+
+27 November 2026 - Latest update: native browser/system sharing only; testing-norma copy-link/manual-copy fallback retained without a custom share menu. The parameterized URL remains https://digidr.app/{{slug}}. Shared maroon gradient footer applies to all three pages in both versions. Visual verification deferred at user request; only syntax and template consistency checked.
+
+27 November 2026 - Services refresh and profile sharing
+Services: full-width card copy, sculpted icon corners, subtle ECG details and split section header; existing dynamic services loop and 4/5/6/7-card centering retained.
+Share Profile: placed directly before Website in a nonbreaking icon group. Native Web Share when available; otherwise a keyboard-accessible dialog with WhatsApp, Facebook, Email and Copy Link. Escape/close/backdrop restore focus; denied clipboard access falls back to selection/manual copy. Source shares the current page without tracking query/hash; template shares https://digidr.app/{{slug}} via data-profile-url. Include script/profile-share.js in deployment; template loads it through {{path}}.
+
+Verification (local browser fixtures):
+Item | Status | Evidence | Fix applied
+Share layout 1440/768/375/320, source and rendered template | PASS | results/share-services/checks.json, 54/54 checks | Share/Website group prevents separation; no horizontal overflow
+Native share payload/cancellation/failure | PASS (mocked browser API) | script/profile-share.js; exact configured URL tested | Cancellation does not open fallback; unsupported/blocked sharing opens menu
+Copy, manual-copy fallback, keyboard focus and dismissal | PASS | results/share-services/checks.json | Explicit focus cycle and immediate scroll/focus restoration
+Share-dialog WCAG automated checks | PASS | zero axe violations in both versions | Named dialog, labels, visible focus and live status
+Section layout/accessibility, service counts 4/5/6/7 | PASS | 34/34 results/sites/1/{base,param}/review.json checks | Existing responsive grid placement retained
+Template fields/flags and identical rendered footers | PASS | template-contract.cjs | New script uses {{path}} and sharing uses {{slug}}
+Booking and integration regression | PASS | 149/149 local functional checks | Existing booking API logic unchanged
+Visual review | PASS | desktop and phone screenshots, share menu at 1440/768/375/320 | Readable full-width service descriptions and responsive copy controls
+Unverified: actual native operating-system share sheets and completed sends to third-party apps (browser API cases mocked; no external messages sent). Bookings use local fixtures; no live appointment submitted.
+
+27 November 2026 - Lora and supporting-section redesign
+Both versions updated: self-hosted Lora headings; split About; sculpted service cards; preparation, milestones, contact, gallery and FAQ redesigned. Hero ECG retained.
+Verified: 149/149 functional checks (online and clinic booking using local fixtures); 34/34 layout/accessibility checks; 33/33 final checks; 12/12 control checks; template contract passed; ECG animation and reduced-motion fallback passed in both versions. Visual inspection at desktop and mobile; no horizontal overflow at 1440, 768, 375 and 320px. No live appointment submissions were made.
+
+Burgundy/crimson palette update — 27 November 2026
+230/230 affected local checks passed after recoloring.
+Current palette: primary burgundy #6b2431, deep burgundy #3e1720, crimson action #b32743, warm-white background #fcf9f8, charcoal text #32272a and muted text #665157. Blue is retained for semantic text links and keyboard focus. Green success and red error states are preserved.
+Recolored shared CSS, section surfaces, borders/shadows, appointment controls, chatbot accents, theme metadata, favicon/chatbot vector artwork, and desktop/mobile banners in both versions. The rounded layout, photographs, original heart sculpture and all scripts are retained.
+Verification: home and legal-page WCAG checks; contrast samples; responsive views from 320 to 1900px; source and template booking flows with local HTTP fixtures; consent/confirmation/chat layouts; banner art and aspect ratios. No runtime/asset errors in the tested views. No live booking or deployment performed.
+
+Earlier verification records
+Cardiology identity enhancement — 27 November 2026
+204/204 affected local checks passed: source and rendered-template functional, responsive/visual/accessibility and control checks, plus the static audit. The three-page parameterization contract also passed with no issues.
+Added a transparent original heart sculpture and ECG trace to the hero, subtle ECG-paper grids, dusty-rose cardiac icon accents, heartbeat dividers, and specialty-specific preparation/journey headings. Retained the required single fixed cardiology service icon in the backend loop.
+Reviewed the site at 1440, 768, 375 and 320px. Functional tests cover all pages through 1900px, online/offline booking submissions, validation, consent, chat, gallery, social-feed fixtures and analytics queues. No console errors, unexpected assets or overflow in tested views. Scripts are byte-for-byte unchanged. New static image path and existing template flags render correctly. Generated artwork is decorative and hidden from assistive technology.
+Bookings used controlled local responses; live configuration and deployment limitations remain as listed below.
+
+Earlier verification records
+Rounded-corner refinement — 27 November 2026
+185/185 affected local checks passed after the refinement: source and rendered-template functional suites, responsive/visual/accessibility review, and both banner sizes.
+Reviewed home layouts at 1440, 768, 375 and 320px. The broader functional suite also covers 1900, 1201, 1200, 1024 and 390px, legal pages, navigation, gallery, FAQ, booking, consent, chatbot and social modules. Online and offline booking submissions used controlled local HTTP responses.
+Changes: asymmetric curved portrait frame with a white edge; 28px hero/service/contact surfaces; 20px gallery/FAQ corners; rounded supporting image and banner frames; gentler borders, restrained shadows, subtle profile-panel shading and slightly more space around section content.
+Verified HTML, booking/other scripts and image files are byte-for-byte unchanged from the approved design. Source and parameterized styles match. No production submission or deployment performed.
+
+Earlier full verification record
+Cardiology male — verification report
+27 November 2026; verified by Codex
+
+311/311 recorded local checks passed across source, rendered template and shared checks.
+
+Method: Chromium over loopback HTTP; actual site CSS, local fonts, images and JavaScript. Test-only API fixtures received and decoded the real multipart requests. Third-party analytics, Facebook SDK and library CDNs used controlled/cached test responses. Raw source also tested with its unassigned identifiers. Tests do not establish live backend or dashboard delivery. No patient appointments were created.
+
+Item | Status | Evidence | Observation / fix
+--- | --- | --- | ---
+1–2 | PASS | index.html:35 | Circular avatar; full doctor name, clean URLs, mobile menu and appointment label. Long names checked at 320, 375, 768, 1200, 1201, 1440 and 1900px.
+3–6, 6a | PASS | index.html:76 | Four profile lines; exactly three counters; eight social channels in the required order; one short portrait label in normal flow; no promotional hero paragraph. New asymmetrically rounded portrait, masthead and three-panel profile composition.
+7 | PASS | index.html:79 | Shared seven-line Read More behavior; short and long biographies tested.
+8–9 | PASS | styles/style.css:140 | Services tested with 4, 5, 6 and 7 cards at desktop, tablet and phone; final rows centered and headings larger than copy.
+E1–E5 | PASS (local fixtures) | script/index.js:1306 | Feed filters, max five posts, newest first, no videos/old/non-DigiDr posts, skeletons, late-reply timeout, empty-feed collapse, blocked-SDK fallbacks, two-card centering and mobile paging. Live SDK content remains unverified.
+10–11 | PASS (visual) | index.html:111 | Custom sections: preparation copy sits beside a framed still-life image on ink blue; the appointment sequence uses a vertical list beside its heading. At tablet and phone widths these sections stack in reading order. Reviewed at 1440/768/375px.
+12 | PASS | index.html:119 | Clinic address, phone/email links and appointment action. Missing phone, missing email, and both missing tested; NA rows preserved.
+13 | PASS | index.html:136 | Exactly three default photographs; keyboard lightbox and decoding pass. Equal 4:3 dimensions for 4/5/6/7 images at 1440/768/375/320px. Mobile gallery is one column.
+14 | PASS | index.html:144 | Six exact Cardiology Set 5 PDF pairs, same in source and template; single full-width stack, first open, one-open-at-a-time accordion.
+15–20 | PASS | index.html:166 | Info tooltip hover/tap/focus, exact text, neutral secondary controls, doctor-specific consent label, scroll-to-agree gate, dismiss/reopen and focus return tested.
+21–25 | PASS (local HTTP) | script/index.js:240 | Online and offline requests decoded as multipart FormData. Name/phone/email/date/slot/reason/consent validation; invalid and oversized files; PDF and compressed image uploads; duplicate prevention; failed submission retry; unavailable modes; successful confirmations. No patient data in analytics events.
+26–29, 28a | PASS | index.html:309 | Same footer content and styling on all pages; link destinations adjusted for legal pages. Fixed param legal-page section links. Disclaimer remains 14px. No public image credits.
+29a | PASS (fixture); live unverified | index.html:376 | Visit API count renders on all three assigned previews. Unassigned source IDs are empty; no fake live count is submitted.
+30, 30a, 31–32 | PASS | script/chatbot.js:3 | Chat dimensions, Enter/send/close, input, icons, exact two-line footer, no suggestion UI; 1440/768/375/320 and short landscape/keyboard-sized viewports checked. Unconfigured source returns a clear unavailable message without an API request.
+33 | LOCAL PASS; live unverified | script/chatbot.js:260 | Cardiology greeting and fixture reply transport verified. Production medical safety and reply content require the configured backend.
+34–35 | PASS | privacy-policy.html:38 | Fixed legal paragraphs compared with AGENTS.md (30 privacy groups and 21 terms groups). Doctor/contact substitutions and Back links checked. Effective date remains [Insert Date] in source and {{date}} in template.
+36–40 | PASS | index.html:44 | Required pages/modules/SEO drafts present; semantic structure, section order and link targets checked; no blog pages or unrelated specialty content. Reference booking JS retains its inline generated popup markup, styled through the site CSS.
+41–43, 42a–42b | PASS | index.html:5 | Illustrative identity clearly disclosed in source; specialty/gender consistent; no banned trust/verification wording in visible content. Porcelain neutral surfaces, ink-blue brand panels and restricted cobalt interactive accents.
+44 | PASS (automated and sampled) | styles/style.css:17 | WCAG A/AA automated checks pass for home and both legal pages. Sampled text and icon color pairs meet 4.5:1. Fixed the visitor count inherited white text on the new light footer; home and both legal pages pass the subsequent contrast audit. Confirmation OK button retains readable white text.
+45–49 | PASS | styles/style.css:1137 | 18px body text, distinct card headings, local Bodoni Moda/Plus Jakarta Sans, shared 1480px container, brand bands, reduced motion, focus states, no nested service/contact cards. Confirmation typography 22px heading and 16px body/button.
+50–52 | PASS | styles/style.css:1274 | Pages measured at 320,375,390,768,1024,1200,1201,1440,1900px with no horizontal overflow. Long clinician names and specialty/address values wrap; primary controls, modal scroll and focus handling checked.
+53, 53a | PASS (visual) | assets/IMAGE-SOURCES.txt:1 | New cool-grey doctor portrait and people-free stethoscope/ECG still life; gallery photographs visually checked. All photographs under 263 KB; active original photographs approximately 53 and 100 KB. Local WOFF2 fonts and SIL licenses included.
+S1 | LOCAL PASS; GA4 setup pending | index.html:29 | Shared Clarity script/tags and GA4 event queue present on each page. Set the real GA4 ID in the meta configuration before deployment. No invented ID is used.
+S2–S5 | PASS (local queues); dashboards unverified | script/analytics.js:7 | Declarative controls and programmatic consent/upload/booking events tested once per action. Both GA4 and Clarity queue events verified; patient text and filenames excluded. Live collection requires deployment and account access.
+54–57, 57a | PASS locally | styles/style.css:79 | Metadata, local asset delivery, text wrapping, semantic controls, image alt text and glyph visibility checked. Zero uncaught page errors, console errors or unexpected/broken fixture assets. Raw unconfigured source also has no API or asset errors.
+58–59 | PASS | cardiology-male/; cardiology-male-param/ | Names and root location follow the explicit user request. Git status contains only these two new directories. Existing sites, live microsites, workspace rules and scripts were not modified. No commit, push or deployment.
+
+Parameterization
+- Three rendered pages scanned for literal braces in DOM/attributes, metadata and links. No remaining tags.
+- Standard has/no switches and 17 section-text fallbacks rendered both ways. Backend vocabulary retained; profile, service/gallery loops and banner settings checked.
+- Static heart-care/favicon/chat icon paths use the required {{slug}} GCS prefix. CSS/JS use {{path}}; dynamic profile/gallery references are preserved. No new template tokens in JS/CSS. Desktop and mobile banner artwork now matches the required 16:2.5 and 16:5 aspect ratios without cropping lettering.
+- Same specialty sections and six PDF FAQs as the source.
+- Both booking types, online-only, offline-only and neither-enabled states exercised. Real local HTTP round trips verified DoctorId, FullName, Phone, Email, Date, Type, Day, SlotId, Time, Reason and Upload.
+- All three footers match after normalizing homepage-relative links.
+
+Analytics events verified in local queues
+- nav_link_click
+- book_appointment_click
+- hero_social_link_click
+- read_more_click
+- phone_number_click
+- email_click
+- clinic_visit_tab_click
+- online_consult_tab_click
+- upload_report_click
+- footer_nav_link_click
+- footer_social_link_click
+- consent_checkbox_click
+- consent_modal_open
+- consent_scrolled_to_bottom
+- consent_agreed
+- consent_dismissed
+- report_uploaded
+- booking_submitted
+
+Visual observations
+1440px: prominent serif doctor name above a three-panel hero; asymmetrically rounded portrait; ink-blue credentials; vertical statistics. Rounded service catalogue, dark preparation section, vertical appointment sequence, adjoining contact panels, framed gallery and light shared footer.
+768px: portrait and credentials share two columns with statistics below; remaining content stacks, with two-column service/gallery grids. Full header name remains visible.
+375px and 320px: one-column profile and section content; wrapped socials and stats; no overflow or clipped text. Booking, consent, chatbot and confirmation dialogs inspected. Legal pages share the same footer.
+Banners: rebuilt the mobile artwork after visual inspection revealed cropped text; both supplied images now match their display aspect ratios and have been rechecked.
+
+FAQ audit note
+The workspace command node scripts/audit-faqs.cjs references the missing DigiDr_FAQ_6_Sets_22_Specialities.pdf and exits before writing. The supplied replacement is DigiDr_FAQ_6_Sets_25_Specialities.pdf. A targeted audit using the same extraction/column parser verified all six Cardiology Set 5 pairs in both new folders against that updated PDF. The workspace script and faq-audit.json were left unchanged.
+
+Unverified production dependencies
+- Approved clinician identity, contact details, registered userid/micrositeId/slug and effective date.
+- Assigned GA4 Measurement ID and analytics dashboard receipt.
+- Actual staging/live booking acceptance and confirmation email delivery.
+- Live Facebook SDK delivery and connected posts, live chatbot reply content and visitor totals.
+- Deployment under the resolved slug and GCS asset uploads.
+See HANDOFF.txt.
+
+Individual local checks
+PASS | base | home sections, services, gallery, FAQ
+PASS | base | Home responsive 1900
+PASS | base | Home responsive 1440
+PASS | base | Home responsive 1201
+PASS | base | Home responsive 1200
+PASS | base | Home responsive 1024
+PASS | base | Home responsive 768
+PASS | base | Home responsive 390
+PASS | base | Home responsive 375
+PASS | base | Home responsive 320
+PASS | base | mobile navigation opens
+PASS | base | navigation closes and cleans URL
+PASS | base | FAQ single open state
+PASS | base | keyboard gallery lightbox
+PASS | base | gallery images decoded
+PASS | base | offline name sanitization and required fields
+PASS | base | offline weekdays and past dates blocked
+PASS | base | offline no POST before consent
+PASS | base | offline consent scroll gate
+PASS | base | dismiss restores unchecked consent
+PASS | base | offline invalid phone prevented
+PASS | base | report validation and PDF preview
+PASS | base | offline multipart POST with live fields
+PASS | base | offline doctor and slot configuration
+PASS | base | offline confirmation
+PASS | base | online name sanitization and required fields
+PASS | base | online weekdays and past dates blocked
+PASS | base | online no POST before consent
+PASS | base | online consent scroll gate
+PASS | base | online invalid phone prevented
+PASS | base | online multipart POST with live fields
+PASS | base | online doctor and slot configuration
+PASS | base | online confirmation
+PASS | base | mobile chat stays in viewport
+PASS | base | chat API payload and reply
+PASS | base | Facebook live embed cards and filters
+PASS | base | Facebook mobile paging
+PASS | base | consent click, read-once, analytics modes and privacy
+PASS | base | booking and consent analytics
+PASS | base | privacy-policy responsive 1900
+PASS | base | privacy-policy responsive 1440
+PASS | base | privacy-policy responsive 1201
+PASS | base | privacy-policy responsive 1200
+PASS | base | privacy-policy responsive 1024
+PASS | base | privacy-policy responsive 768
+PASS | base | privacy-policy responsive 390
+PASS | base | privacy-policy responsive 375
+PASS | base | privacy-policy responsive 320
+PASS | base | privacy-policy footer and chatbot
+PASS | base | terms-of-service responsive 1900
+PASS | base | terms-of-service responsive 1440
+PASS | base | terms-of-service responsive 1201
+PASS | base | terms-of-service responsive 1200
+PASS | base | terms-of-service responsive 1024
+PASS | base | terms-of-service responsive 768
+PASS | base | terms-of-service responsive 390
+PASS | base | terms-of-service responsive 375
+PASS | base | terms-of-service responsive 320
+PASS | base | terms-of-service footer and chatbot
+PASS | base | online-only consult auto-selection
+PASS | base | online-only slot query uses mode
+PASS | base | blocked SDK exposes two centred fallback links
+PASS | base | offline-only consult auto-selection
+PASS | base | offline-only slot query uses mode
+PASS | base | empty Facebook feed collapses
+PASS | base | unavailable modes hide every booking trigger
+PASS | base | no runtime exceptions
+PASS | base | no broken local or unexpected assets
+PASS | base | no browser console errors
+PASS | base | home metadata, local links, tags, visitor count and text
+PASS | base | home visible icon glyphs 1440
+PASS | base | home single-line social tooltips 1440
+PASS | base | home visible icon glyphs 768
+PASS | base | home single-line social tooltips 768
+PASS | base | home visible icon glyphs 375
+PASS | base | home single-line social tooltips 375
+PASS | base | privacy-policy metadata, local links, tags, visitor count and text
+PASS | base | privacy-policy Back link
+PASS | base | privacy-policy visible icon glyphs 1440
+PASS | base | privacy-policy single-line social tooltips 1440
+PASS | base | privacy-policy visible icon glyphs 768
+PASS | base | privacy-policy single-line social tooltips 768
+PASS | base | privacy-policy visible icon glyphs 375
+PASS | base | privacy-policy single-line social tooltips 375
+PASS | base | terms-of-service metadata, local links, tags, visitor count and text
+PASS | base | terms-of-service Back link
+PASS | base | terms-of-service visible icon glyphs 1440
+PASS | base | terms-of-service single-line social tooltips 1440
+PASS | base | terms-of-service visible icon glyphs 768
+PASS | base | terms-of-service single-line social tooltips 768
+PASS | base | terms-of-service visible icon glyphs 375
+PASS | base | terms-of-service single-line social tooltips 375
+PASS | base | online-only actual multipart submission
+PASS | base | offline-only actual multipart submission
+PASS | base | FAQ rows 1440
+PASS | base | Body, CTA and footer type 1440
+PASS | base | FAQ rows 768
+PASS | base | Body, CTA and footer type 768
+PASS | base | FAQ rows 375
+PASS | base | Body, CTA and footer type 375
+PASS | base | WCAG automated check
+PASS | base | Long biography 1440
+PASS | base | Long biography 768
+PASS | base | Long biography 375
+PASS | base | Long biography 320
+PASS | base | services-grid final row 1440
+PASS | base | services-grid final row 768
+PASS | base | services-grid final row 375
+PASS | base | gallery-grid final row 1440
+PASS | base | gallery-grid final row 768
+PASS | base | gallery-grid final row 375
+PASS | base | Chat dimensions and footer 1440
+PASS | base | Chat dimensions and footer 768
+PASS | base | Chat dimensions and footer 375
+PASS | base | Chat dimensions and footer 320
+PASS | base | Representative text and icon contrast
+PASS | base | Desktop navigation clearance
+PASS | base | feed starts with three skeletons
+PASS | base | no late reply resurrects social band
+PASS | base | online info tooltip hover and tap
+PASS | base | uploaded report removable
+PASS | base | failed POST gives a retryable form and no success event
+PASS | base | double submit produces only one request
+PASS | base | Escape returns focus to originating CTA
+PASS | base | all tagged controls generate one GA4 and Clarity event
+PASS | param | home sections, services, gallery, FAQ
+PASS | param | Home responsive 1900
+PASS | param | Home responsive 1440
+PASS | param | Home responsive 1201
+PASS | param | Home responsive 1200
+PASS | param | Home responsive 1024
+PASS | param | Home responsive 768
+PASS | param | Home responsive 390
+PASS | param | Home responsive 375
+PASS | param | Home responsive 320
+PASS | param | mobile navigation opens
+PASS | param | navigation closes and cleans URL
+PASS | param | FAQ single open state
+PASS | param | keyboard gallery lightbox
+PASS | param | gallery images decoded
+PASS | param | offline name sanitization and required fields
+PASS | param | offline weekdays and past dates blocked
+PASS | param | offline no POST before consent
+PASS | param | offline consent scroll gate
+PASS | param | dismiss restores unchecked consent
+PASS | param | offline invalid phone prevented
+PASS | param | report validation and PDF preview
+PASS | param | offline multipart POST with live fields
+PASS | param | offline doctor and slot configuration
+PASS | param | offline confirmation
+PASS | param | online name sanitization and required fields
+PASS | param | online weekdays and past dates blocked
+PASS | param | online no POST before consent
+PASS | param | online consent scroll gate
+PASS | param | online invalid phone prevented
+PASS | param | online multipart POST with live fields
+PASS | param | online doctor and slot configuration
+PASS | param | online confirmation
+PASS | param | mobile chat stays in viewport
+PASS | param | chat API payload and reply
+PASS | param | Facebook live embed cards and filters
+PASS | param | Facebook mobile paging
+PASS | param | configured mobile banner
+PASS | param | banner expiration and reactivation
+PASS | param | consent click, read-once, analytics modes and privacy
+PASS | param | booking and consent analytics
+PASS | param | privacy-policy responsive 1900
+PASS | param | privacy-policy responsive 1440
+PASS | param | privacy-policy responsive 1201
+PASS | param | privacy-policy responsive 1200
+PASS | param | privacy-policy responsive 1024
+PASS | param | privacy-policy responsive 768
+PASS | param | privacy-policy responsive 390
+PASS | param | privacy-policy responsive 375
+PASS | param | privacy-policy responsive 320
+PASS | param | privacy-policy footer and chatbot
+PASS | param | terms-of-service responsive 1900
+PASS | param | terms-of-service responsive 1440
+PASS | param | terms-of-service responsive 1201
+PASS | param | terms-of-service responsive 1200
+PASS | param | terms-of-service responsive 1024
+PASS | param | terms-of-service responsive 768
+PASS | param | terms-of-service responsive 390
+PASS | param | terms-of-service responsive 375
+PASS | param | terms-of-service responsive 320
+PASS | param | terms-of-service footer and chatbot
+PASS | param | online-only consult auto-selection
+PASS | param | online-only slot query uses mode
+PASS | param | blocked SDK exposes two centred fallback links
+PASS | param | offline-only consult auto-selection
+PASS | param | offline-only slot query uses mode
+PASS | param | empty Facebook feed collapses
+PASS | param | absent banner, registration and fellowship
+PASS | param | missing phone and email show NA
+PASS | param | long profile wrapping 320
+PASS | param | long profile wrapping 375
+PASS | param | long profile wrapping 768
+PASS | param | long profile wrapping 1200
+PASS | param | long profile wrapping 1201
+PASS | param | long profile wrapping 1440
+PASS | param | long profile wrapping 1900
+PASS | param | unavailable modes hide every booking trigger
+PASS | param | no runtime exceptions
+PASS | param | no broken local or unexpected assets
+PASS | param | no browser console errors
+PASS | param | home metadata, local links, tags, visitor count and text
+PASS | param | home visible icon glyphs 1440
+PASS | param | home single-line social tooltips 1440
+PASS | param | home visible icon glyphs 768
+PASS | param | home single-line social tooltips 768
+PASS | param | home visible icon glyphs 375
+PASS | param | home single-line social tooltips 375
+PASS | param | privacy-policy metadata, local links, tags, visitor count and text
+PASS | param | privacy-policy Back link
+PASS | param | privacy-policy visible icon glyphs 1440
+PASS | param | privacy-policy single-line social tooltips 1440
+PASS | param | privacy-policy visible icon glyphs 768
+PASS | param | privacy-policy single-line social tooltips 768
+PASS | param | privacy-policy visible icon glyphs 375
+PASS | param | privacy-policy single-line social tooltips 375
+PASS | param | terms-of-service metadata, local links, tags, visitor count and text
+PASS | param | terms-of-service Back link
+PASS | param | terms-of-service visible icon glyphs 1440
+PASS | param | terms-of-service single-line social tooltips 1440
+PASS | param | terms-of-service visible icon glyphs 768
+PASS | param | terms-of-service single-line social tooltips 768
+PASS | param | terms-of-service visible icon glyphs 375
+PASS | param | terms-of-service single-line social tooltips 375
+PASS | param | online-only actual multipart submission
+PASS | param | offline-only actual multipart submission
+PASS | param | FAQ rows 1440
+PASS | param | Body, CTA and footer type 1440
+PASS | param | FAQ rows 768
+PASS | param | Body, CTA and footer type 768
+PASS | param | FAQ rows 375
+PASS | param | Body, CTA and footer type 375
+PASS | param | WCAG automated check
+PASS | param | Long biography 1440
+PASS | param | Long biography 768
+PASS | param | Long biography 375
+PASS | param | Long biography 320
+PASS | param | services-grid final row 1440
+PASS | param | services-grid final row 768
+PASS | param | services-grid final row 375
+PASS | param | gallery-grid final row 1440
+PASS | param | gallery-grid final row 768
+PASS | param | gallery-grid final row 375
+PASS | param | Chat dimensions and footer 1440
+PASS | param | Chat dimensions and footer 768
+PASS | param | Chat dimensions and footer 375
+PASS | param | Chat dimensions and footer 320
+PASS | param | Representative text and icon contrast
+PASS | param | Desktop navigation clearance
+PASS | param | feed starts with three skeletons
+PASS | param | no late reply resurrects social band
+PASS | param | online info tooltip hover and tap
+PASS | param | uploaded report removable
+PASS | param | failed POST gives a retryable form and no success event
+PASS | param | double submit produces only one request
+PASS | param | Escape returns focus to originating CTA
+PASS | param | all tagged controls generate one GA4 and Clarity event
+PASS | shared | cardiology-male
+PASS | shared | cardiology-male
+PASS | shared | cardiology-male
+PASS | shared | cardiology-male
+PASS | shared | cardiology-male-param
+PASS | shared | cardiology-male-param
+PASS | shared | cardiology-male-param
+PASS | shared | cardiology-male-param
+PASS | shared | cardiology-male-param
+PASS | shared | home unconfigured source has no API calls
+PASS | shared | privacy-policy fixed legal paragraphs match AGENTS
+PASS | shared | privacy-policy unconfigured source has no API calls
+PASS | shared | terms-of-service fixed legal paragraphs match AGENTS
+PASS | shared | terms-of-service unconfigured source has no API calls
+PASS | shared | Raw source no runtime or asset errors
+PASS | shared | Original campaign banner 1440
+PASS | shared | Original campaign banner 375
+PASS | shared | base privacy-policy WCAG
+PASS | shared | privacy-policy fixed legal paragraphs match AGENTS
+PASS | shared | base terms-of-service WCAG
+PASS | shared | terms-of-service fixed legal paragraphs match AGENTS
+PASS | shared | base equal gallery dimensions 1440
+PASS | shared | base equal gallery dimensions 768
+PASS | shared | base equal gallery dimensions 375
+PASS | shared | base equal gallery dimensions 320
+PASS | shared | base confirmation layout 1440
+PASS | shared | base confirmation layout 768
+PASS | shared | base confirmation layout 375
+PASS | shared | base confirmation layout 320
+PASS | shared | base short viewport chat 375x500
+PASS | shared | base short viewport chat 768x375
+PASS | shared | base short viewport chat 320x568
+PASS | shared | base final runtime errors
+PASS | shared | param privacy-policy WCAG
+PASS | shared | param terms-of-service WCAG
+PASS | shared | param equal gallery dimensions 1440
+PASS | shared | param equal gallery dimensions 768
+PASS | shared | param equal gallery dimensions 375
+PASS | shared | param equal gallery dimensions 320
+PASS | shared | param confirmation layout 1440
+PASS | shared | param confirmation layout 768
+PASS | shared | param confirmation layout 375
+PASS | shared | param confirmation layout 320
+PASS | shared | param short viewport chat 375x500
+PASS | shared | param short viewport chat 768x375
+PASS | shared | param short viewport chat 320x568
+PASS | shared | optional contacts false,true
+PASS | shared | optional contacts true,false
+PASS | shared | optional contacts false,false
+PASS | shared | param final runtime errors
+
+Layout review after hero CTA removal: 27 November 2026. Rebalanced the illustration/credentials gap and centered the portrait beside the tablet profile panel. Source and template section/layout/accessibility reviews passed; previews at 1440, 768, 375 and 320px showed no horizontal overflow or runtime errors. Hero booking button remains removed.

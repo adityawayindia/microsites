@@ -1,0 +1,64 @@
+Cardiology male — architectural editorial redesign
+27 November 2026
+
+Active original photographs
+portrait-v2.webp (850 x 1133, approximately 53 KB)
+Original imagegen portrait edit of this microsite's fictional Indian male cardiologist. It does not depict an assigned real clinician. Used in the hero and header/footer avatars. Generated for this redesign; no other microsite's portrait was reused.
+Prompt: Identity-preserving editorial portrait edit for a completely redesigned premium cardiology website. Keep exactly the same fictional Indian male doctor: same face, hair, beard, glasses, white medical coat, charcoal shirt, stethoscope and relaxed hands. Replace the warm brown room with a minimal cool pale-grey architectural clinic, soft frosted glass and very subtle blue-grey vertical divisions. Remove all burgundy, walnut wood, plant and heart model from the background. Cool neutral daylight, highly refined magazine portrait, realistic natural skin, gentle side lighting. Vertical 3:4 composition, full head and shoulders and upper body with hands visible, doctor centered, no excessive empty headroom. No text, logos or graphic overlays. Keep his recognisable appearance.
+Original output: C:/Users/Lenovo/.codex/generated_images/01a21b48-2c37-74e0-ab9c-d7f93bbff265/exec-d293716c-a7d9-4898-9119-ab2596a42e45.png
+
+heart-care-v2.webp (1000 x 667, approximately 100 KB)
+Original imagegen photograph for this site's consultation preparation section.
+Prompt: Premium editorial still-life photograph for a cardiology consultation website, wide landscape 3:2. A polished stainless-steel and midnight-blue stethoscope arranged with a clean folded ECG paper and a closed slate-blue notebook, on a pale cool-grey stone desk. Very deliberate geometric composition, hard-but-softened window light creates long architectural diagonal shadows. Subtle steel reflections. Desaturated blue-grey, silver and white, generous negative space, impeccable upscale magazine art direction. Camera at a 45 degree angle, close enough that the stethoscope and ECG detail are legible. No heart model, no people, no hands, no decorative plants, no beige or brown tones. No readable text, logos or watermark.
+Original output: C:/Users/Lenovo/.codex/generated_images/01a21b48-2c37-74e0-ab9c-d7f93bbff265/exec-926bdbfc-9dbf-4904-9c47-eca31bbb53b8.png
+
+Both images are optimized WebP exports. The matching parameterized template is the same microsite and uses these assets. The prior generated portrait.webp and heart-care.webp are retained as unused originals; the current pages reference the v2 files. The template's profile field remains dynamic.
+
+favicon.svg, chatbot-icon.svg, banner.svg, banner-mobile.svg
+Original SVG artwork created for this redesign. The small pulse symbol, asymmetric rounded portrait frame and grid decoration are original SVG/CSS. Banner artwork is composed for 16:2.5 desktop and 16:5 mobile, with no cropped lettering.
+
+Gallery reuse, expressly permitted by the brief
+gallery-1.webp — original generated blood-pressure monitor photograph, reused via Cardiology/microsite-cardiology-53-male/assets/gallery-1.webp.
+gallery-2.webp — ECG photograph by Pixabay on Pexels:
+https://www.pexels.com/photo/selective-focus-photography-of-white-and-black-vital-sign-printing-paper-415779/
+Pexels license verified 27 November 2026: https://www.pexels.com/license/
+Free website use and modification permitted; attribution not required. No endorsement is implied.
+gallery-3.jpg — original generated instruments photograph from General Medicine/microsite-general-medicine-9-female/assets/medical-instruments.jpg, reused via the cardiology source above.
+All gallery assets are people-free.
+
+Typography
+Bodoni Moda headings and Plus Jakarta Sans body, downloaded from Google Fonts and self-hosted. SIL Open Font License files are included in styles/fonts/. Earlier Manrope/DM Sans files are retained but no longer loaded by the stylesheet.
+
+Design research (inspiration only; no artwork or site code copied)
+https://www.rubikdigital.co.uk/work/the-schoeman-clinic
+https://www.framer.com/marketplace/templates/ezema/
+https://oakline.health/
+The redesigned site uses editorial typography, a three-panel hero, an asymmetrically rounded portrait, ink-blue profile and preparation sections, a rounded service catalogue, a vertical appointment sequence, split contact panels and a light footer. These compositions and the porcelain/ink/cobalt palette were implemented for this microsite.
+
+Content references
+FAQs: DigiDr_FAQ_6_Sets_25_Specialities.pdf, Cardiology, Set 5. All six questions and answers match the supplied PDF exactly.
+Clinical context reviewed: https://www.nhs.uk/conditions/coronary-heart-disease/diagnosis/
+No new treatment recommendations or guaranteed outcome claims were introduced.
+
+Cardiology identity enhancement — 27 November 2026
+cardiac-heart.webp (400 x 525, 44,322 bytes)
+Original decorative heart sculpture generated with the built-in imagegen tool. Transparent alpha preserved in the optimized WebP export. Used only as decorative hero artwork; it is not a diagnostic or instructional anatomy diagram. No existing photographs were altered.
+Saved in cardiology-male/assets/cardiac-heart.webp and cardiology-male-param/assets/cardiac-heart.webp. The template uses the standard {{slug}} GCS static-asset path.
+Original output: C:/Users/Lenovo/.codex/generated_images/01a21b48-2c37-74e0-ab9c-d7f93bbff265/exec-5d77f681-11a9-45c4-bad2-e55fc4c1c6d0.png
+Final generation prompt: Use case: stylized-concept. Asset type: decorative cutout for a premium cardiology website. Create one exquisitely crafted anatomical human heart sculpture, anterior three-quarter view, complete silhouette and great vessels visible, filling most of a vertical composition. Anatomically inspired recognizable human cardiac structure, not the Valentine heart symbol. Matte porcelain ivory ventricular surface with subtle fine coronary vessel relief; aorta and a few vessel details in muted dusty rose, pulmonary vessels in desaturated slate blue. High-end medical editorial 3D render, refined realistic ceramic material, soft studio lighting from upper left with gentle cool shadows. Elegant, calm, sophisticated and clearly cardiology-related. Isolated on a genuinely transparent background with clean alpha edges; no pedestal, no ground plane, no background, no floating particles, no people, no text, labels, arrows or logos. Not a medical instructional diagram. No blood, gore, glossy plastic, neon colors or exaggerated anatomy. Full object uncropped with a little transparent margin. Intended to sit on a deep ink-blue website panel.
+Original ECG SVG motifs and graph-paper CSS texture were authored for this site. They are decorative, with no simulated patient readings or monitoring claims. Dusty-rose accents are limited to small heart/ECG details; the approved ink-blue/cobalt palette and rounded layout remain.
+
+Palette update — 27 November 2026
+Current site palette is burgundy, muted crimson and warm white. Original SVG banner/favicon/chatbot artwork was recolored directly; no photographs or generated raster illustrations were modified. Earlier generation prompts above describe the original asset requests and remain unchanged for provenance.
+
+Heading font update: self-hosted Lora variable font from Google Fonts (SIL Open Font License); license included in styles/fonts. Plus Jakarta Sans remains the body font.
+
+Research background - 27 November 2026
+research-books.webp: original AI-generated editorial still life, created with the built-in imagegen tool. Decorative medical books/notebook; not an instructional anatomy image. WebP export resized to 1600px width; fading is applied in CSS, not baked into the image. Original: C:/Users/Lenovo/.codex/generated_images/01a21b48-2c37-74e0-ab9c-d7f93bbff265/exec-c9e90ac1-de35-4782-ae02-4cb7ee53d444.png
+Final prompt: Use case: photorealistic-natural. Asset type: wide decorative background photograph for the Research & Articles section of an elegant cardiology website. Primary request: cardiology reference books and an open notebook on a quiet research desk, intended to fade gently behind white publication cards. Scene: warm ivory stone desk, a few cloth-bound medical reference volumes in muted burgundy and taupe at the left edge, an open cream notebook with subtle faint handwritten notes and an understated anatomical heart sketch at the lower right, a simple dark pen beside it. Composition: wide landscape overhead editorial still life, objects concentrated around the outer edges, generous calm mostly empty ivory area through the center; full scene naturally photographed. Lighting: soft diffused daylight, low contrast, delicate shadows, refined quiet academic atmosphere. Colors: warm off-white, muted dusty rose, restrained maroon, pale beige. Materials: real paper grain and textured cloth book covers. No people, no logos, no readable titles or branding, no prominent lettering, no UI, no decorative border, no watermark, no dramatic dark shadows. Create a real photographic image, not a website mockup. Opaque background.
+
+Hero photograph - 27 November 2026
+hero-cardiology-bg.webp: original built-in imagegen output, decorative ECG/stethoscope still life, resized to 1600px wide WebP. Not a diagnostic tracing. CSS supplies fading. Original: C:/Users/Lenovo/.codex/generated_images/01a21b48-2c37-74e0-ab9c-d7f93bbff265/exec-d41a99af-0a35-4abe-a4c9-3056e750c87e.png
+Final prompt: Use case: photorealistic-natural. Asset type: wide background photograph for the hero section of a premium cardiology doctor's website. Create a calm, refined overhead medical editorial still life: cream ECG graph paper with subtle generic ECG traces at the lower right edge, a high-quality stethoscope with muted burgundy tubing and brushed steel chestpiece curving along the far right edge, and the corner of a closed ivory medical notebook near the lower left edge. The central two thirds and upper left should be mostly clear warm off-white desktop with delicate paper and stone texture, suitable behind website typography and profile cards. Soft natural diffused light, very gentle shadows, low visual contrast, realistic materials, warm ivory and restrained muted rose/maroon palette. Photographic, not illustration or a website mockup. Landscape composition, generous negative space, objects around outer edges, no people, no visible patient information, no readable text, no numbers, no branding, no logos, no watermarks. The ECG is decorative, not a diagnostic tracing. Opaque background.
+
+research-cardiology-atlas.webp ? original image generated with the built-in image generation tool. Final prompt: Wide landscape overhead editorial photograph for the background of a cardiology publications section. On the upper RIGHT, an open well-used ivory medical atlas with a LARGE recognizable antique anatomical engraving of the human heart with great vessels and coronary arteries in muted carmine ink, occupying the right page. Place that heart clearly in the upper right quarter so it shows above overlaid article cards. Garnet cloth hardcover books partly visible under the open atlas. Lower LEFT edge: long overlapping rose ECG graph-paper strips, a researcher's gently annotated manuscript showing plotted graphs and pencil checklist, and a silver mechanical pencil. Central area and upper left primarily calm warm ivory desk for website text. Scholarly, authentic academic study; soft angled daylight and subtle paper texture. Arrange the key objects slightly inset at the edges, close overhead crop, high-end natural photographic detail, gentle tonal contrast that will survive a translucent ivory overlay. Deep burgundy, muted arterial red, warm cream, graphite. The notebook and book pages are the focus; avoid flowers, generic lifestyle props, stethoscopes, floating graphics, readable text, logos, personal information and watermarks. No interface, no simulated buttons. 16:9, opaque, one continuous photo.

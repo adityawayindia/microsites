@@ -71,7 +71,7 @@ Rules that apply to every conversion:
 - **Small profile image stays in the header and footer, as usual.** The compact/avatar-size
   `{{profile}}` image in the header (logo area) and the footer is unchanged and is not
   affected by the "only once" rule above — that rule applies to the *big* profile image only.
-  (`{{profile}}` in `og:image` / `twitter:image` / JSON-LD is also unaffected — see §3.)
+  The Physician JSON-LD `image` uses `{{profile}}`. Social preview images use `{{ogimage}}` (§3).
 - **Disabled-social CSS:** if the template has no `.is-disabled` / `data-tooltip` styling for
   social icons, add the block in §1.1 (it dims the glyph and surface, not the whole element, so
   the "Not Enabled" tooltip stays readable). Also add `html, body { overflow-x: clip; }` so the
@@ -111,7 +111,7 @@ Rules that apply to every conversion:
 
 ---
 
-## 1. Placeholder vocabulary (160 total)
+## 1. Placeholder vocabulary (162 total)
 
 Syntax: `{{var}}` for values, `{{#flag}}…{{/flag}}` for sections that show or hide.
 
@@ -124,7 +124,7 @@ Syntax: `{{var}}` for values, `{{#flag}}…{{/flag}}` for sections that show or 
 - Registration: `{{#hasmic}}…Medical Regd. No.: {{mci}}…{{/hasmic}}`.
 - **Hero stat tiles** (Practising Since, Languages, Consultation Modes, in that order). The three tiles use `{{practising_since}}` (the year,
   with `data-practising-since`), `{{languages_count}}` and `{{consultation_modes_count}}`, each
-  with `data-counter` (§4). These three are not in the 160-key count above; confirm with the
+  with `data-counter` (§4). These three are not in the 162-key count above; confirm with the
   backend team that it sends them for every doctor.
 - **Fellowships (placeholder `{{fellowship}}`, flag `hasFellowship`).
   Shown ONLY when the backend sends a value:** the line is `<p data-hero-fellowship>` wrapped in
@@ -309,8 +309,10 @@ in `:root` if the template names them differently.
 ```
 
 ### System
-`slug`, `path`, `micrositeId`, `userid`, `date`
+`slug`, `path`, `micrositeId`, `userid`, `date`, `googleanalyticsid`, `ogimage`
 
+- `{{googleanalyticsid}}` is the GA4 measurement ID the backend supplies for the hosted microsite.
+- `{{ogimage}}` is the full social preview image URL the backend supplies for Open Graph and Twitter cards.
 - `{{date}}`: "Effective Date" on privacy-policy.html and terms-of-service.html.
 - `{{path}}`: prefix for script and style URLs (`{{path}}/styles/style.css`,
   `{{path}}/script/index.js`).
@@ -439,10 +441,30 @@ so search engines and LLM crawlers see the same URLs the pages link to. Never le
 `www.example.com` (or other placeholder) domain or a "TODO: replace with live production
 domain" comment in a converted template.
 
+**GA4 and social preview images.** These rules apply to unassigned `-param` templates outside
+`live microsites`. Include the following Google tag once in the `<head>` of `index.html`,
+`privacy-policy.html` and `terms-of-service.html`. Both the loader URL and the configuration
+call use the same backend measurement ID. If a template already initializes GA4 elsewhere,
+move that initialization into the head and preserve its event handlers.
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{googleanalyticsid}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{googleanalyticsid}}');
+</script>
+```
+
+Use `{{ogimage}}` directly as the `content` of both social image tags wherever they already
+appear. Some legal pages omit social image tags.
+
 ### 3.1 `index.html` `<head>`
 
-Keep the head's order and the analytics snippets; change these lines (the description wording
-stays specific to the template's specialty, with the doctor's name and specialty templated):
+Keep the existing head order. Use the template's specialty-specific description with the
+backend doctor name and specialty.
 
 ```html
 <!-- Clarity tags: microsite is always {{slug}}; specialty is the template's tag slug (§3.4) -->
@@ -462,7 +484,7 @@ stays specific to the template's specialty, with the doctor's name and specialty
 <meta property="og:url" content="https://digidr.app/{{slug}}/" />
 <meta property="og:title" content="Dr. {{full_name}} | {{speciality}}" />
 <meta property="og:description" content="Dr. {{full_name}}, {{speciality}}." />
-<meta property="og:image" content="{{profile}}" />
+<meta property="og:image" content="{{ogimage}}" />
 <meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:alt" content="Dr. {{full_name}}, {{speciality}}" />
 <meta property="og:locale" content="en_US" />
@@ -470,7 +492,7 @@ stays specific to the template's specialty, with the doctor's name and specialty
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Dr. {{full_name}} | {{speciality}}" />
 <meta name="twitter:description" content="Dr. {{full_name}}, {{speciality}}." />
-<meta name="twitter:image" content="{{profile}}" />
+<meta name="twitter:image" content="{{ogimage}}" />
 
 <!-- Library CSS first, then site CSS, all site files under {{path}} -->
 <link rel="stylesheet" href="{{path}}/styles/banner-module.css" />
@@ -511,8 +533,7 @@ And at the end of `<body>`, in this order (the visitor script, §5b, comes last)
 ```
 
 intl-tel-input v29.2.2 (CSS and JS) must load before `index.js`; the booking code calls
-`window.intlTelInput` (§4c). Keep the GA4 `gtag.js` snippet as it is: the Measurement ID is not a
-placeholder. `{{profile}}` is already a full URL; never prefix it.
+`window.intlTelInput` (§4c).
 
 ### 3.2 Legal pages `<head>`
 
@@ -529,10 +550,10 @@ placeholder. `{{profile}}` is already a full URL; never prefix it.
 <meta property="og:title" content="Privacy Policy | Dr. {{full_name}}" />
 <meta property="og:description" content="Privacy policy for Dr. {{full_name}}'s practice, covering how patient and website data is collected, used, and protected." />
 <meta property="og:url" content="https://digidr.app/{{slug}}/privacy-policy" />
-<meta property="og:image" content="{{profile}}" />
+<meta property="og:image" content="{{ogimage}}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Privacy Policy | Dr. {{full_name}}" />
-<meta name="twitter:image" content="{{profile}}" />
+<meta name="twitter:image" content="{{ogimage}}" />
 <link rel="stylesheet" href="{{path}}/styles/style.css" />
 <link rel="stylesheet" href="{{path}}/styles/chatbot.css" id="chatbot-css" />
 <link rel="stylesheet" href="{{path}}/styles/legal.css" />
@@ -2869,6 +2890,11 @@ prefix (that is a broken link).
 For each `<Specialty>/microsite-*/` folder:
 
 **All pages**
+
+- [ ] Render each page with a sample `googleanalyticsid`. Verify exactly one `gtag.js` loader
+      and one `gtag('config', …)` call, both using that measurement ID.
+- [ ] Render with distinct `ogimage` and `profile` URLs. Where social image tags exist, verify
+      `og:image` and `twitter:image` both contain the full `ogimage` URL.
 - [ ] **IMPORTANT: static content image URLs** use
       `https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/<actual-image-filename>`.
       Check About, Philosophy, backgrounds and every other static section image, including
@@ -2914,7 +2940,7 @@ For each `<Specialty>/microsite-*/` folder:
       form data attributes.
 - [ ] Script and style URLs prefixed with `{{path}}`.
 - [ ] `<head>`, end-of-body scripts and JSON-LD as in §3.1: `https://digidr.app/{{slug}}/`
-      canonical and `og:url`, `{{profile}}` image, Clarity `microsite` = `{{slug}}` and
+      canonical and `og:url`, `{{profile}}` for the Physician JSON-LD image, Clarity `microsite` = `{{slug}}` and
       `specialty` from §3.4. No `example.com` and no TODO comment left.
 
 **privacy-policy.html / terms-of-service.html**
