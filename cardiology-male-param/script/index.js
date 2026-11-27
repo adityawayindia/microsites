@@ -33,7 +33,7 @@
     if (!section.querySelector('.research-item')) {
         section.remove();
         shortcut?.remove();
-        document.querySelector('#mainNav a[href="#research-papers"]')?.remove();
+        document.querySelectorAll('a[href="#research-papers"]').forEach(link => link.remove());
     }
 })();
 
