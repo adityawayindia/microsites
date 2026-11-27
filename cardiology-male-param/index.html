@@ -137,16 +137,20 @@
 </div></div></section>
 {{#hasresearchpaper}}<section class="research-section" id="research-papers" aria-labelledby="research-title" style="--research-bg-image:url('https://storage.googleapis.com/digidr/microsites/{{slug}}/assets/research-cardiology-atlas.webp')"><div class="container" id="research">
  <div class="section-heading"><span class="section-kicker">Publications</span><h2 id="research-title">Research &amp; Publications</h2><p>Case reports and clinical studies in cardiovascular medicine.</p></div>
- <ol class="research-list" role="list">{{#researchpaper}}{{#title}}<li class="research-item"><article class="research-card">
+ <ol class="research-list" role="list">{{#researchpaper}}<li class="research-item"><article class="research-card">
   <div class="research-marker" aria-hidden="true"><i class="fa-solid fa-book-open"></i></div>
   <div class="research-content">
-    <div class="research-meta">{{#year}}<span class="research-year"><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="research-sr-only">Year: </span>{{year}}</span>{{/year}}{{#journal}}<p class="research-journal"><strong>Journal:</strong> {{journal}}</p>{{/journal}}</div>
+    <div class="research-meta">
+      <span class="research-year"><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="research-sr-only">Year: </span><span data-paper-value>{{year}}</span></span>
+      <p class="research-journal"><strong>Journal:</strong> <span data-paper-value>{{journal}}</span></p>
+    </div>
     <h3>{{title}}</h3>
-    <div class="research-card-bottom">{{#coauthor}}<p class="research-coauthor"><strong>Co-author:</strong> {{coauthor}}</p>{{/coauthor}}
-      {{#link}}<a class="research-link" href="{{link}}" target="_blank" rel="noopener noreferrer" data-ga-event="research_publication_click" data-ga-label="{{title}}">View Publication<span class="research-sr-only">: {{title}} (opens in a new tab)</span><i class="fa-solid fa-book-open" aria-hidden="true"></i></a>{{/link}}
+    <div class="research-card-bottom">
+      <p class="research-coauthor"><strong>Co-author:</strong> <span data-paper-value>{{coauthor}}</span></p>
+      <a class="research-link" href="{{link}}" target="_blank" rel="noopener noreferrer" data-ga-event="research_publication_click" data-ga-label="{{title}}">View Publication<span class="research-sr-only">: {{title}} (opens in a new tab)</span><i class="fa-solid fa-book-open" aria-hidden="true"></i></a>
     </div>
   </div>
-</article></li>{{/title}}{{/researchpaper}}</ol>
+</article></li>{{/researchpaper}}</ol>
 </div></section>{{/hasresearchpaper}}
 <section class="contact-section" id="contact-us"><div class="container contact-layout"><div class="section-heading"><span class="section-kicker">Contact</span>
 <h2>Contact the practice</h2>

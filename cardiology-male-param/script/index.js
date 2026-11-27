@@ -1,12 +1,16 @@
 (function initResearchPapers() {
+    // A missing scalar can arrive as an empty string or an unexpanded field.
+    function hasPaperText(value) {
+        return value.replace(/\{\{\s*(?:title|journal|year|coauthor)\s*\}\}/g, '').trim().length > 0;
+    }
     const shortcut = document.querySelector('[data-paper-titles]');
-    if (shortcut && !shortcut.dataset.paperTitles.trim()) shortcut.remove();
+    if (shortcut && !hasPaperText(shortcut.dataset.paperTitles)) shortcut.remove();
 
     const section = document.getElementById('research-papers');
     if (!section) return;
 
     for (const item of section.querySelectorAll('.research-item')) {
-        if (!item.querySelector('h3').textContent.trim()) {
+        if (!hasPaperText(item.querySelector('h3').textContent)) {
             item.remove();
             continue;
         }
@@ -19,8 +23,8 @@
                 link.remove();
             }
         }
-        for (const field of item.querySelectorAll('.research-year, .research-journal, .research-coauthor')) {
-            if (!field.lastChild.textContent.trim()) field.remove();
+        for (const value of item.querySelectorAll('[data-paper-value]')) {
+            if (!hasPaperText(value.textContent)) value.parentElement.remove();
         }
         for (const row of item.querySelectorAll('.research-meta, .research-card-bottom')) {
             if (!row.childElementCount) row.remove();
@@ -28,6 +32,7 @@
     }
     if (!section.querySelector('.research-item')) {
         section.remove();
+        shortcut?.remove();
         document.querySelector('#mainNav a[href="#research-papers"]')?.remove();
     }
 })();
